@@ -9,7 +9,7 @@ and results of the competition.
 
 ### News
 {% for news in site.news  %}
-- {{ news.date | date_to_string }} [{{news.title}}]({{ news.url }})
+- {{ news.newsdate | date_to_string }} [{{news.title}}]({{ news.url }})
 {% endfor %}
 ### Key dates
 See the [rules]() for the complete timeline
