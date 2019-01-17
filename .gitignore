@@ -3,3 +3,4 @@ Gemfile
 Gemfile.lock
 howto-serve
 *.swp
+bin
