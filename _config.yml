@@ -10,3 +10,5 @@ collections:
         output: true
     organizers:
         output: true
+    results:
+        output: false

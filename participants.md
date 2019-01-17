@@ -19,7 +19,7 @@ non-competing solvers by the organizers for comparison.
     </tr>
     {% for solver in site.participants %}
     <tr>
-        <td><a href="{{ solver.url }}">{{ solver.name}}</a></td>
+        <td><a href="{{ solver.url }}">{{ solver.name }}</a></td>
         <td>{% if solver.nonIncrementalTrack %}X{% endif %}</td>
         <td>{% if solver.incrementalTrack %}X{% endif %}</td>
         <td>{% if solver.unsatCoreTrack %}X{% endif %}</td>
