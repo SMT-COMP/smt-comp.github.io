@@ -3,12 +3,13 @@ layout: participant
 name: solver-04
 nonIncrementalTrack: False
 incrementalTrack: True
-unsatCoreTrack: True
-preliminaryID: 19524
-finalID: 18380
-seed: 7
+unsatCoreTrack: False
+preliminaryID: 14474
+finalID: 11524
+seed: 437
 sysDescUrl: https://github.com
 sysDescName: solver-04
 contactName: solver-04
 contactEmail: foo@bar
+solverHomePage: https://github.com
 ---

@@ -1,14 +1,15 @@
 ---
 layout: participant
 name: solver-12
-nonIncrementalTrack: True
-incrementalTrack: True
+nonIncrementalTrack: False
+incrementalTrack: False
 unsatCoreTrack: False
-preliminaryID: 4047
-finalID: 17871
-seed: 87
+preliminaryID: 4412
+finalID: 2040
+seed: 206
 sysDescUrl: https://github.com
 sysDescName: solver-12
 contactName: solver-12
 contactEmail: foo@bar
+solverHomePage: https://github.com
 ---
