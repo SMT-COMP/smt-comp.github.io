@@ -13,8 +13,8 @@ non-competing solvers by the organizers for comparison.
         <th>Preliminary Version Solver ID</th>
         <th>Final Version Solver ID</th>
         <th>Seed</th>
-        <th>System Description</th>
 -->
+        <th>System Description</th>
         <th>Contact</th>
     </tr>
     {% for solver in site.participants %}
@@ -26,8 +26,8 @@ non-competing solvers by the organizers for comparison.
 <!--        <td>{{ solver.preliminaryID }}</td>
         <td>{{ solver.finalID }}</td>
         <td>{{ solver.seed }}</td>
-        <td><a href="{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
 -->
+        <td><a href="{{ solver.sysDescUrl }}">{{ solver.sysDescName }}</a></td>
         <td>{{ solver.contactName }} <a href="mailto:{{ solver.contactEmail }}"> ({{ solver.contactEmail }})</a></td>
     </tr>
     {% endfor %}
