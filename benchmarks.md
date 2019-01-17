@@ -5,15 +5,16 @@ rules.
 
 The SMT-LIB benchmarks are available in space [root/SMT/SMT-LIB benchmarks/2018-05-20](https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=294532) on StarExec.
 
-### Main Track
+### Single Problem Track
 
 {% assign n_benchmarks = 0 %}
 {% for benchmark in site.main-benchmarks %}
   {% assign n_benchmarks = n_benchmarks | plus:1 %}
 {% endfor %}
 
-All non-incremental SMT-LIB benchmarks are eligible for the main track.
-In total there are {{ n_benchmarks }} main track divisions.
+All non-incremental SMT-LIB benchmarks are eligible for the Single
+Problem Track.  In total there are {{ n_benchmarks }} Single Problem
+Track divisions.
 
 <table>
     <tr>

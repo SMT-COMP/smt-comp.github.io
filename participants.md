@@ -6,7 +6,7 @@ non-competing solvers by the organizers for comparison.
 <table>
     <tr>
         <th>Solver</th>
-        <th>Non-Incremental Track</th>
+        <th>Single Problem Track</th>
         <th>Incremental Track</th>
         <th>Unsat-Core Track</th>
 <!--
