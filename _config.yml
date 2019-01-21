@@ -14,3 +14,9 @@ collections:
         output: false
     single-results:
         output: true
+    incremental-results:
+        output: true
+    unsatcore-results:
+        output: true
+    challenge-results:
+        output: true
