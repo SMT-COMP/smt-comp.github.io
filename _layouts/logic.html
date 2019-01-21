@@ -1,4 +1,27 @@
-{% include head.html %}
-<h2>{{ page.name }} </h2>
-      {{ content }}
-{% include tail.html %}
+---
+layout: default
+---
+<h2>{{ page.logicname }}</h2>
+{{ content }}
+<h3>Tracks</h3>
+<table>
+    <tr>
+        <th>
+            Track name
+        </th>
+        <th>
+            Number of benchmarks
+        </th>
+    </tr>
+    {% for track in page.tracks %}
+    <tr>
+        <td>
+            {{ track.name }}
+        </td>
+        <td>
+            {{ track.n_insts }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+

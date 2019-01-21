@@ -1,20 +1,36 @@
 {% include head.html %}
+
+{% assign spt = "no" %}
+{% assign it = "no" %}
+{% assign uct = "no" %}
+{% assign ct = "no" %}
+
+{% for logic in page.logics %}
+    {% for track in logic.tracks %}
+        {% if track == "Single Problem Track" %} {% assign spt = "yes" %} {% endif %}
+        {% if track == "Incremental Track" %} {% assign it = "yes" %} {% endif %}
+        {% if track == "Unsat Core Track" %} {% assign uct = "yes" %} {% endif %}
+        {% if track == "Challenge Track" %} {% assign ct = "yes" %} {% endif %}
+    {% endfor %}
+{% endfor %}
+
 <h2>{{ page.name }} </h2>
 <table>
   <tr>
-      <td>Non-Incremental Track</td>
-      <td>{% if page.nonIncrementalTrack %} yes {% else %} no {%
-          endif %}</td>
+      <td>Single Problem Track</td>
+      <td>{{ spt }}</td>
   </tr>
   <tr>
       <td>Incremental Track</td>
-      <td>{% if page.incrementalTrack %} yes {% else %} no {%
-          endif %}</td>
+      <td>{{ it }}</td>
   </tr>
   <tr>
       <td>Unsat-Core Track</td>
-      <td>{% if page.unsatCoreTrack %} yes {% else %} no {%
-          endif %}</td>
+      <td>{{ uct }}</td>
+  </tr>
+  <tr>
+      <td>Challenge Track</td>
+      <td>{{ ct }}</td>
   </tr>
   <tr>
       <td>Preliminary ID</td>

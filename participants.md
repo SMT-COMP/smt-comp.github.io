@@ -9,6 +9,7 @@ non-competing solvers by the organizers for comparison.
         <th>Single Problem Track</th>
         <th>Incremental Track</th>
         <th>Unsat-Core Track</th>
+        <th>Challenge Track</th>
         <th>Preliminary Version Solver ID</th>
         <th>Final Version Solver ID</th>
         <th>Seed</th>
@@ -17,11 +18,27 @@ non-competing solvers by the organizers for comparison.
         <th>Contact</th>
     </tr>
     {% for solver in site.participants %}
+    {% assign spt = "" %}
+    {% assign it = "" %}
+    {% assign uct = "" %}
+    {% assign ct = "" %}
+
+    {% for logic in solver.logics %}
+        {% for track in logic.tracks %}
+            {% if track == "Single Problem Track" %} {% assign spt = "X" %} {% endif %}
+            {% if track == "Incremental Track" %} {% assign it = "X" %} {% endif %}
+            {% if track == "Unsat Core Track" %} {% assign uct = "X" %} {% endif %}
+            {% if track == "Challenge Track" %} {% assign ct = "X" %} {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+
     <tr>
         <td><a href="{{ solver.url }}">{{ solver.name }}</a></td>
-        <td>{% if solver.nonIncrementalTrack %}X{% endif %}</td>
-        <td>{% if solver.incrementalTrack %}X{% endif %}</td>
-        <td>{% if solver.unsatCoreTrack %}X{% endif %}</td>
+        <td>{{ spt }} </td>
+        <td>{{ it }} </td>
+        <td>{{ uct }}</td>
+        <td>{{ ct }}</td>
         <td>{{ solver.preliminaryID }}</td>
         <td>{{ solver.finalID }}</td>
         <td>{{ solver.seed }}</td>

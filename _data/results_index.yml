@@ -1,0 +1,19 @@
+- name: QF_AFBCDE
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_AFBCDE.html
+      benchmarks: single-benchmarks
+    - name: Incremental Track
+      link: incremental-results/QF_AFBCDE/incremental.html
+    - name: Unsat Core Track
+      link: unsatcore-results/QF_AFBCDE/unsatcore.html
+
+- name: AFBCDE
+  tracks:
+    - name: Single Problem Track
+      link: results/AFBCDE/single_problem.html
+    - name: Incremental Track
+      link: results/AFBCDE/incremental.html
+    - name: Unsat Core Track
+      link: results/AFBCDE/unsatcore.html
+

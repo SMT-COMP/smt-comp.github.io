@@ -1,0 +1,78 @@
+---
+layout: default
+---
+{% include tablesorter.html %}
+<h2>{{ page.division }} ({{ page.track }})</h2>
+<p>
+Competition results for the {{ page.division }} division as of
+{{ page.resultdate | time_to_string }}
+<p>
+Benchmarks in this division: {{ page.n_benchmarks }}
+<p>
+Time limit: {{ page.time_limit }}
+<p>
+<h3>Winners</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Sequential Performance</th>
+            <th>Parallel Performance</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            {{ page.seq_winner }}
+        </td>
+        <td>
+            {{ page.par_winner }}
+        </td>
+    </tr>
+</table>
+
+<h3>Sequential performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correctly Solved Score</th>
+        <th>CPU time Score</th>
+        <th>Solved</th>
+        <th>Unsolved</th>
+    </tr>
+</thead>
+{% for solver in page.sequential %}
+<tr>
+    <td>{{ solver.name }}</td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.solved }}</td>
+    <td>{{ solver.unsolved }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Parallel performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correctly Solved Score</th>
+        <th>CPU time Score</th>
+        <th>Solved</th>
+        <th>Unsolved</th>
+    </tr>
+</thead>
+{% for solver in page.parallel %}
+<tr>
+    <td>{{ solver.name }}</td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.solved }}</td>
+    <td>{{ solver.unsolved }}</td>
+</tr>
+{% endfor %}
+</table>
