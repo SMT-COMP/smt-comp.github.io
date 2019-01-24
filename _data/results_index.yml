@@ -1,50 +1,250 @@
 
-- name: RDLLRAUFRDLRDL
+- name: LRAIDLNIALRANIA
   tracks:
-    - name: Single Problem Track
-      results: single-results/RDLLRAUFRDLRDL.html
-    - name: Incremental Track
-      results: incremental-results/RDLLRAUFRDLRDL.html
     - name: Unsat Core Track
-      results: unsatcore-results/RDLLRAUFRDLRDL.html
-
-- name: QF_BVLRARDLBVIDL
-  tracks:
-    - name: Single Problem Track
-      results: single-results/QF_BVLRARDLBVIDL.html
-    - name: Unsat Core Track
-      results: unsatcore-results/QF_BVLRARDLBVIDL.html
+      results: unsatcore-results/LRAIDLNIALRANIA.html
     - name: Challenge Track
-      results: challenge-results/QF_BVLRARDLBVIDL.html
+      results: challenge-results/LRAIDLNIALRANIA.html
 
-- name: NIARDLFPDTRDLRDLFP
+- name: QF_IDLRDLUFBVNIA
   tracks:
     - name: Single Problem Track
-      results: single-results/NIARDLFPDTRDLRDLFP.html
+      results: single-results/QF_IDLRDLUFBVNIA.html
+
+- name: RDLBVNIALRA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/RDLBVNIALRA.html
     - name: Incremental Track
-      results: incremental-results/NIARDLFPDTRDLRDLFP.html
-    - name: Unsat Core Track
-      results: unsatcore-results/NIARDLFPDTRDLRDLFP.html
+      results: incremental-results/RDLBVNIALRA.html
     - name: Challenge Track
-      results: challenge-results/NIARDLFPDTRDLRDLFP.html
+      results: challenge-results/RDLBVNIALRA.html
 
-- name: IDLDTFPLRAA
+- name: BVDTNIANIAFPLIA
+  tracks:
+    - name: Challenge Track
+      results: challenge-results/BVDTNIANIAFPLIA.html
+
+- name: IDLLRAFPBVNIADTIDLRDL
   tracks:
     - name: Single Problem Track
-      results: single-results/IDLDTFPLRAA.html
-    - name: Unsat Core Track
-      results: unsatcore-results/IDLDTFPLRAA.html
-
-- name: RDLFPNIAFPRDLFPNIANRABV
-  tracks:
-    - name: Single Problem Track
-      results: single-results/RDLFPNIAFPRDLFPNIANRABV.html
+      results: single-results/IDLLRAFPBVNIADTIDLRDL.html
     - name: Incremental Track
-      results: incremental-results/RDLFPNIAFPRDLFPNIANRABV.html
+      results: incremental-results/IDLLRAFPBVNIADTIDLRDL.html
     - name: Unsat Core Track
-      results: unsatcore-results/RDLFPNIAFPRDLFPNIANRABV.html
+      results: unsatcore-results/IDLLRAFPBVNIADTIDLRDL.html
     - name: Challenge Track
-      results: challenge-results/RDLFPNIAFPRDLFPNIANRABV.html
+      results: challenge-results/IDLLRAFPBVNIADTIDLRDL.html
+
+- name: ABVNIA
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/ABVNIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/ABVNIA.html
+    - name: Challenge Track
+      results: challenge-results/ABVNIA.html
+
+- name: DTIDLUFRDLUFLRA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/DTIDLUFRDLUFLRA.html
+    - name: Challenge Track
+      results: challenge-results/DTIDLUFRDLUFLRA.html
+
+- name: UFUFRDLNRANRAFPIDLALIA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/UFUFRDLNRANRAFPIDLALIA.html
+    - name: Incremental Track
+      results: incremental-results/UFUFRDLNRANRAFPIDLALIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/UFUFRDLNRANRAFPIDLALIA.html
+    - name: Challenge Track
+      results: challenge-results/UFUFRDLNRANRAFPIDLALIA.html
+
+- name: QF_UFALIAIDLFPLIA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_UFALIAIDLFPLIA.html
+    - name: Incremental Track
+      results: incremental-results/QF_UFALIAIDLFPLIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_UFALIAIDLFPLIA.html
+    - name: Challenge Track
+      results: challenge-results/QF_UFALIAIDLFPLIA.html
+
+- name: QF_RDLIDLNRADT
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_RDLIDLNRADT.html
+    - name: Incremental Track
+      results: incremental-results/QF_RDLIDLNRADT.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_RDLIDLNRADT.html
+    - name: Challenge Track
+      results: challenge-results/QF_RDLIDLNRADT.html
+
+- name: LIA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/LIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/LIA.html
+
+- name: QF_NIAUFLIANIADTLIAFPDTDT
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_NIAUFLIANIADTLIAFPDTDT.html
+    - name: Incremental Track
+      results: incremental-results/QF_NIAUFLIANIADTLIAFPDTDT.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_NIAUFLIANIADTLIAFPDTDT.html
+    - name: Challenge Track
+      results: challenge-results/QF_NIAUFLIANIADTLIAFPDTDT.html
+
+- name: NRA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/NRA.html
+    - name: Incremental Track
+      results: incremental-results/NRA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/NRA.html
+    - name: Challenge Track
+      results: challenge-results/NRA.html
+
+- name: LIADTBVBVABVUFBVBVLRAIDL
+  tracks:
+    - name: Single Problem Track
+      results: single-results/LIADTBVBVABVUFBVBVLRAIDL.html
+    - name: Incremental Track
+      results: incremental-results/LIADTBVBVABVUFBVBVLRAIDL.html
+    - name: Unsat Core Track
+      results: unsatcore-results/LIADTBVBVABVUFBVBVLRAIDL.html
+    - name: Challenge Track
+      results: challenge-results/LIADTBVBVABVUFBVBVLRAIDL.html
+
+- name: FPNIAUFNRAUFNRARDLAUFNRALIA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/FPNIAUFNRAUFNRARDLAUFNRALIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/FPNIAUFNRAUFNRARDLAUFNRALIA.html
+    - name: Challenge Track
+      results: challenge-results/FPNIAUFNRAUFNRARDLAUFNRALIA.html
+
+- name: QF_FP
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_FP.html
+    - name: Incremental Track
+      results: incremental-results/QF_FP.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_FP.html
+    - name: Challenge Track
+      results: challenge-results/QF_FP.html
+
+- name: LRALRAFPLRABVNIALRA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/LRALRAFPLRABVNIALRA.html
+    - name: Incremental Track
+      results: incremental-results/LRALRAFPLRABVNIALRA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/LRALRAFPLRABVNIALRA.html
+
+- name: QF_LRALRARDLALIANIA
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/QF_LRALRARDLALIANIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_LRALRARDLALIANIA.html
+
+- name: QF_FPFPAUFIDLLRARDL
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_FPFPAUFIDLLRARDL.html
+    - name: Incremental Track
+      results: incremental-results/QF_FPFPAUFIDLLRARDL.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_FPFPAUFIDLLRARDL.html
+    - name: Challenge Track
+      results: challenge-results/QF_FPFPAUFIDLLRARDL.html
+
+- name: QF_LRANRARDL
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_LRANRARDL.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_LRANRARDL.html
+    - name: Challenge Track
+      results: challenge-results/QF_LRANRARDL.html
+
+- name: QF_DTUFIDLNRANIAUF
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_DTUFIDLNRANIAUF.html
+    - name: Incremental Track
+      results: incremental-results/QF_DTUFIDLNRANIAUF.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_DTUFIDLNRANIAUF.html
+    - name: Challenge Track
+      results: challenge-results/QF_DTUFIDLNRANIAUF.html
+
+- name: QF_IDLNIANIABVUFUFNIAFPBVLIA
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/QF_IDLNIANIABVUFUFNIAFPBVLIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_IDLNIANIABVUFUFNIAFPBVLIA.html
+
+- name: QF_LIABVUFNIAAUFNIAAA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_LIABVUFNIAAUFNIAAA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_LIABVUFNIAAUFNIAAA.html
+    - name: Challenge Track
+      results: challenge-results/QF_LIABVUFNIAAUFNIAAA.html
+
+- name: QF_UFNIABVUF
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_UFNIABVUF.html
+    - name: Incremental Track
+      results: incremental-results/QF_UFNIABVUF.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_UFNIABVUF.html
+
+- name: LIAUFUFIDL
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/LIAUFUFIDL.html
+    - name: Unsat Core Track
+      results: unsatcore-results/LIAUFUFIDL.html
+    - name: Challenge Track
+      results: challenge-results/LIAUFUFIDL.html
+
+- name: IDLBVLRALIALRADTLRALRABV
+  tracks:
+    - name: Single Problem Track
+      results: single-results/IDLBVLRALIALRADTLRALRABV.html
+    - name: Incremental Track
+      results: incremental-results/IDLBVLRALIALRADTLRALRABV.html
+    - name: Challenge Track
+      results: challenge-results/IDLBVLRALIALRADTLRALRABV.html
+
+- name: UFFPUFNIAALIA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/UFFPUFNIAALIA.html
+    - name: Incremental Track
+      results: incremental-results/UFFPUFNIAALIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/UFFPUFNIAALIA.html
+    - name: Challenge Track
+      results: challenge-results/UFFPUFNIAALIA.html
 
 - name: RDL
   tracks:
@@ -54,337 +254,301 @@
       results: incremental-results/RDL.html
     - name: Unsat Core Track
       results: unsatcore-results/RDL.html
-
-- name: QF_RDLDTBVRDLIDLIDLNIARDLBVLRALIA
-  tracks:
-    - name: Single Problem Track
-      results: single-results/QF_RDLDTBVRDLIDLIDLNIARDLBVLRALIA.html
-    - name: Incremental Track
-      results: incremental-results/QF_RDLDTBVRDLIDLIDLNIARDLBVLRALIA.html
-
-- name: QF_FPLRALRADTFPDTIDLLIANIANIAUF
-  tracks:
-    - name: Single Problem Track
-      results: single-results/QF_FPLRALRADTFPDTIDLLIANIANIAUF.html
-    - name: Incremental Track
-      results: incremental-results/QF_FPLRALRADTFPDTIDLLIANIANIAUF.html
-    - name: Unsat Core Track
-      results: unsatcore-results/QF_FPLRALRADTFPDTIDLLIANIANIAUF.html
-
-- name: QF_NIANRALRA
-  tracks:
-    - name: Single Problem Track
-      results: single-results/QF_NIANRALRA.html
-    - name: Incremental Track
-      results: incremental-results/QF_NIANRALRA.html
-    - name: Unsat Core Track
-      results: unsatcore-results/QF_NIANRALRA.html
     - name: Challenge Track
-      results: challenge-results/QF_NIANRALRA.html
+      results: challenge-results/RDL.html
 
-- name: QF_NRABVRDLLIALRADTDT
+- name: BVRDLRDLLRA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_NRABVRDLLIALRADTDT.html
+      results: single-results/BVRDLRDLLRA.html
     - name: Incremental Track
-      results: incremental-results/QF_NRABVRDLLIALRADTDT.html
+      results: incremental-results/BVRDLRDLLRA.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_NRABVRDLLIALRADTDT.html
-    - name: Challenge Track
-      results: challenge-results/QF_NRABVRDLLIALRADTDT.html
+      results: unsatcore-results/BVRDLRDLLRA.html
 
-- name: QF_UFNIABVDTNIANIABVIDL
+- name: QF_RDLLRANRAIDLA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_UFNIABVDTNIANIABVIDL.html
-    - name: Incremental Track
-      results: incremental-results/QF_UFNIABVDTNIANIABVIDL.html
+      results: single-results/QF_RDLLRANRAIDLA.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_UFNIABVDTNIANIABVIDL.html
+      results: unsatcore-results/QF_RDLLRANRAIDLA.html
     - name: Challenge Track
-      results: challenge-results/QF_UFNIABVDTNIANIABVIDL.html
+      results: challenge-results/QF_RDLLRANRAIDLA.html
 
-- name: QF_LRALIABVLRA
+- name: QF_LRANRANIAAAUFNRADTNRAIDL
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/QF_LRANRANIAAAUFNRADTNRAIDL.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_LRANRANIAAAUFNRADTNRAIDL.html
+    - name: Challenge Track
+      results: challenge-results/QF_LRANRANIAAAUFNRADTNRAIDL.html
+
+- name: NRA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_LRALIABVLRA.html
+      results: single-results/NRA.html
     - name: Incremental Track
-      results: incremental-results/QF_LRALIABVLRA.html
+      results: incremental-results/NRA.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_LRALIABVLRA.html
+      results: unsatcore-results/NRA.html
     - name: Challenge Track
-      results: challenge-results/QF_LRALIABVLRA.html
+      results: challenge-results/NRA.html
 
-- name: QF_ANRAFPLRAIDL
+- name: UFNRAIDLNIARDLNRAUFRDLBV
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_ANRAFPLRAIDL.html
-    - name: Incremental Track
-      results: incremental-results/QF_ANRAFPLRAIDL.html
-    - name: Challenge Track
-      results: challenge-results/QF_ANRAFPLRAIDL.html
+      results: single-results/UFNRAIDLNIARDLNRAUFRDLBV.html
+    - name: Unsat Core Track
+      results: unsatcore-results/UFNRAIDLNIARDLNRAUFRDLBV.html
 
-- name: QF_UF
+- name: NIARDLBVRDLLRANIA
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/NIARDLBVRDLLRANIA.html
+    - name: Challenge Track
+      results: challenge-results/NIARDLBVRDLLRANIA.html
+
+- name: RDLLRALIA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_UF.html
+      results: single-results/RDLLRALIA.html
     - name: Incremental Track
-      results: incremental-results/QF_UF.html
+      results: incremental-results/RDLLRALIA.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_UF.html
+      results: unsatcore-results/RDLLRALIA.html
     - name: Challenge Track
-      results: challenge-results/QF_UF.html
+      results: challenge-results/RDLLRALIA.html
 
-- name: QF_BVRDL
+- name: DTNIANIAFPIDLRDLNIALIA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_BVRDL.html
+      results: single-results/DTNIANIAFPIDLRDLNIALIA.html
     - name: Incremental Track
-      results: incremental-results/QF_BVRDL.html
+      results: incremental-results/DTNIANIAFPIDLRDLNIALIA.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_BVRDL.html
+      results: unsatcore-results/DTNIANIAFPIDLRDLNIALIA.html
     - name: Challenge Track
-      results: challenge-results/QF_BVRDL.html
+      results: challenge-results/DTNIANIAFPIDLRDLNIALIA.html
 
-- name: QF_DTFPIDLLIAA
+- name: QF_RDLIDLRDLNIAUFLRALIADTUFRDLRDL
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_DTFPIDLLIAA.html
+      results: single-results/QF_RDLIDLRDLNIAUFLRALIADTUFRDLRDL.html
     - name: Incremental Track
-      results: incremental-results/QF_DTFPIDLLIAA.html
+      results: incremental-results/QF_RDLIDLRDLNIAUFLRALIADTUFRDLRDL.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_DTFPIDLLIAA.html
-    - name: Challenge Track
-      results: challenge-results/QF_DTFPIDLLIAA.html
+      results: unsatcore-results/QF_RDLIDLRDLNIAUFLRALIADTUFRDLRDL.html
 
-- name: QF_BVIDLIDLUFRDLNRAFPDT
+- name: DTDTNIABVFP
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_BVIDLIDLUFRDLNRAFPDT.html
+      results: single-results/DTDTNIABVFP.html
     - name: Incremental Track
-      results: incremental-results/QF_BVIDLIDLUFRDLNRAFPDT.html
-    - name: Unsat Core Track
-      results: unsatcore-results/QF_BVIDLIDLUFRDLNRAFPDT.html
+      results: incremental-results/DTDTNIABVFP.html
 
-- name: QF_NRAUFDTBVNIALRANIAIDL
+- name: RDLNIALRADTIDL
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_NRAUFDTBVNIALRANIAIDL.html
+      results: single-results/RDLNIALRADTIDL.html
     - name: Incremental Track
-      results: incremental-results/QF_NRAUFDTBVNIALRANIAIDL.html
+      results: incremental-results/RDLNIALRADTIDL.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_NRAUFDTBVNIALRANIAIDL.html
+      results: unsatcore-results/RDLNIALRADTIDL.html
     - name: Challenge Track
-      results: challenge-results/QF_NRAUFDTBVNIALRANIAIDL.html
+      results: challenge-results/RDLNIALRADTIDL.html
 
-- name: NRALRARDLDTLRARDL
-  tracks:
-    - name: Incremental Track
-      results: incremental-results/NRALRARDLDTLRARDL.html
-    - name: Challenge Track
-      results: challenge-results/NRALRARDLDTLRARDL.html
-
-- name: NIALRANIAALRANIABVBVRDL
+- name: ADTRDLFPBVLRAIDLBVDTBVA
   tracks:
     - name: Single Problem Track
-      results: single-results/NIALRANIAALRANIABVBVRDL.html
+      results: single-results/ADTRDLFPBVLRAIDLBVDTBVA.html
     - name: Incremental Track
-      results: incremental-results/NIALRANIAALRANIABVBVRDL.html
+      results: incremental-results/ADTRDLFPBVLRAIDLBVDTBVA.html
     - name: Unsat Core Track
-      results: unsatcore-results/NIALRANIAALRANIABVBVRDL.html
-    - name: Challenge Track
-      results: challenge-results/NIALRANIAALRANIABVBVRDL.html
+      results: unsatcore-results/ADTRDLFPBVLRAIDLBVDTBVA.html
 
-- name: QF_RDLUFUFAIDLNRAFPUFDTLIA
+- name: LIANIAIDLLIADT
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_RDLUFUFAIDLNRAFPUFDTLIA.html
-    - name: Incremental Track
-      results: incremental-results/QF_RDLUFUFAIDLNRAFPUFDTLIA.html
+      results: single-results/LIANIAIDLLIADT.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_RDLUFUFAIDLNRAFPUFDTLIA.html
+      results: unsatcore-results/LIANIAIDLLIADT.html
     - name: Challenge Track
-      results: challenge-results/QF_RDLUFUFAIDLNRAFPUFDTLIA.html
+      results: challenge-results/LIANIAIDLLIADT.html
 
-- name: QF_LRAIDLRDLFPFPLIA
+- name: QF_IDLUFIDLRDL
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_LRAIDLRDLFPFPLIA.html
+      results: single-results/QF_IDLUFIDLRDL.html
     - name: Incremental Track
-      results: incremental-results/QF_LRAIDLRDLFPFPLIA.html
+      results: incremental-results/QF_IDLUFIDLRDL.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_LRAIDLRDLFPFPLIA.html
+      results: unsatcore-results/QF_IDLUFIDLRDL.html
     - name: Challenge Track
-      results: challenge-results/QF_LRAIDLRDLFPFPLIA.html
+      results: challenge-results/QF_IDLUFIDLRDL.html
 
-- name: NRALRAIDL
+- name: QF_NIANRADTAUFNIAUFBV
   tracks:
     - name: Single Problem Track
-      results: single-results/NRALRAIDL.html
+      results: single-results/QF_NIANRADTAUFNIAUFBV.html
     - name: Incremental Track
-      results: incremental-results/NRALRAIDL.html
+      results: incremental-results/QF_NIANRADTAUFNIAUFBV.html
     - name: Unsat Core Track
-      results: unsatcore-results/NRALRAIDL.html
+      results: unsatcore-results/QF_NIANRADTAUFNIAUFBV.html
     - name: Challenge Track
-      results: challenge-results/NRALRAIDL.html
+      results: challenge-results/QF_NIANRADTAUFNIAUFBV.html
 
-- name: QF_UFFP
+- name: BVNRANRA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_UFFP.html
+      results: single-results/BVNRANRA.html
     - name: Incremental Track
-      results: incremental-results/QF_UFFP.html
-    - name: Challenge Track
-      results: challenge-results/QF_UFFP.html
+      results: incremental-results/BVNRANRA.html
 
-- name: NRAFPLRARDLDTNIALIAALRA
-  tracks:
-    - name: Incremental Track
-      results: incremental-results/NRAFPLRARDLDTNIALIAALRA.html
-    - name: Unsat Core Track
-      results: unsatcore-results/NRAFPLRARDLDTNIALIAALRA.html
-    - name: Challenge Track
-      results: challenge-results/NRAFPLRARDLDTNIALIAALRA.html
-
-- name: QF_NIANIARDLANIA
+- name: QF_DTIDLFPLIADTAUFRDLANRA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_NIANIARDLANIA.html
+      results: single-results/QF_DTIDLFPLIADTAUFRDLANRA.html
     - name: Incremental Track
-      results: incremental-results/QF_NIANIARDLANIA.html
+      results: incremental-results/QF_DTIDLFPLIADTAUFRDLANRA.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_NIANIARDLANIA.html
+      results: unsatcore-results/QF_DTIDLFPLIADTAUFRDLANRA.html
     - name: Challenge Track
-      results: challenge-results/QF_NIANIARDLANIA.html
+      results: challenge-results/QF_DTIDLFPLIADTAUFRDLANRA.html
 
-- name: QF_FPLRANRARDLFP
+- name: QF_NRAIDLBVARDLDTNIANIADTNRAUF
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_FPLRANRARDLFP.html
+      results: single-results/QF_NRAIDLBVARDLDTNIANIADTNRAUF.html
     - name: Incremental Track
-      results: incremental-results/QF_FPLRANRARDLFP.html
+      results: incremental-results/QF_NRAIDLBVARDLDTNIANIADTNRAUF.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_FPLRANRARDLFP.html
-    - name: Challenge Track
-      results: challenge-results/QF_FPLRANRARDLFP.html
+      results: unsatcore-results/QF_NRAIDLBVARDLDTNIANIADTNRAUF.html
 
-- name: QF_ARDLNRABV
+- name: BVNRAUFFPAUF
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_ARDLNRABV.html
+      results: single-results/BVNRAUFFPAUF.html
     - name: Incremental Track
-      results: incremental-results/QF_ARDLNRABV.html
-    - name: Unsat Core Track
-      results: unsatcore-results/QF_ARDLNRABV.html
+      results: incremental-results/BVNRAUFFPAUF.html
 
-- name: QF_LRALIA
+- name: QF_LIALIABVRDLNRARDLRDLA
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_LRALIA.html
+      results: single-results/QF_LIALIABVRDLNRARDLRDLA.html
     - name: Incremental Track
-      results: incremental-results/QF_LRALIA.html
+      results: incremental-results/QF_LIALIABVRDLNRARDLRDLA.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_LRALIA.html
+      results: unsatcore-results/QF_LIALIABVRDLNRARDLRDLA.html
     - name: Challenge Track
-      results: challenge-results/QF_LRALIA.html
+      results: challenge-results/QF_LIALIABVRDLNRARDLRDLA.html
 
-- name: QF_DTFPIDLUFFPBVRDLLRA
-  tracks:
-    - name: Incremental Track
-      results: incremental-results/QF_DTFPIDLUFFPBVRDLLRA.html
-    - name: Unsat Core Track
-      results: unsatcore-results/QF_DTFPIDLUFFPBVRDLLRA.html
-    - name: Challenge Track
-      results: challenge-results/QF_DTFPIDLUFFPBVRDLLRA.html
-
-- name: NRANRARDLNIALIAUFLIARDLBVNIAA
+- name: QF_UFFPNIALRALIAUFUF
   tracks:
     - name: Single Problem Track
-      results: single-results/NRANRARDLNIALIAUFLIARDLBVNIAA.html
+      results: single-results/QF_UFFPNIALRALIAUFUF.html
+    - name: Incremental Track
+      results: incremental-results/QF_UFFPNIALRALIAUFUF.html
     - name: Unsat Core Track
-      results: unsatcore-results/NRANRARDLNIALIAUFLIARDLBVNIAA.html
+      results: unsatcore-results/QF_UFFPNIALRALIAUFUF.html
     - name: Challenge Track
-      results: challenge-results/NRANRARDLNIALIAUFLIARDLBVNIAA.html
+      results: challenge-results/QF_UFFPNIALRALIAUFUF.html
 
-- name: QF_RDLLRABV
+- name: QF_BVNRAALRADTUFIDLA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_BVNRAALRADTUFIDLA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_BVNRAALRADTUFIDLA.html
+    - name: Challenge Track
+      results: challenge-results/QF_BVNRAALRADTUFIDLA.html
+
+- name: LRAFPLRANIAFPLIAABVFPA
+  tracks:
+    - name: Challenge Track
+      results: challenge-results/LRAFPLRANIAFPLIAABVFPA.html
+
+- name: QF_LRAUFUFIDLUFRDLFPLRABVALIA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_LRAUFUFIDLUFRDLFPLRABVALIA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_LRAUFUFIDLUFRDLFPLRABVALIA.html
+    - name: Challenge Track
+      results: challenge-results/QF_LRAUFUFIDLUFRDLFPLRABVALIA.html
+
+- name: ALRAA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/ALRAA.html
+    - name: Incremental Track
+      results: incremental-results/ALRAA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/ALRAA.html
+    - name: Challenge Track
+      results: challenge-results/ALRAA.html
+
+- name: QF_IDLAIDLFPLRANRABV
   tracks:
     - name: Incremental Track
-      results: incremental-results/QF_RDLLRABV.html
+      results: incremental-results/QF_IDLAIDLFPLRANRABV.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_RDLLRABV.html
+      results: unsatcore-results/QF_IDLAIDLFPLRANRABV.html
+    - name: Challenge Track
+      results: challenge-results/QF_IDLAIDLFPLRANRABV.html
 
-- name: NIAALRADTRDLLRABV
+- name: LIADTBVBVLIA
   tracks:
     - name: Single Problem Track
-      results: single-results/NIAALRADTRDLLRABV.html
+      results: single-results/LIADTBVBVLIA.html
     - name: Incremental Track
-      results: incremental-results/NIAALRADTRDLLRABV.html
+      results: incremental-results/LIADTBVBVLIA.html
     - name: Unsat Core Track
-      results: unsatcore-results/NIAALRADTRDLLRABV.html
-    - name: Challenge Track
-      results: challenge-results/NIAALRADTRDLLRABV.html
+      results: unsatcore-results/LIADTBVBVLIA.html
 
-- name: LIAALIALRA
+- name: QF_IDLDTA
   tracks:
     - name: Single Problem Track
-      results: single-results/LIAALIALRA.html
+      results: single-results/QF_IDLDTA.html
     - name: Incremental Track
-      results: incremental-results/LIAALIALRA.html
+      results: incremental-results/QF_IDLDTA.html
     - name: Unsat Core Track
-      results: unsatcore-results/LIAALIALRA.html
-
-- name: IDLNRADTLRAUFIDLLIA
-  tracks:
-    - name: Single Problem Track
-      results: single-results/IDLNRADTLRAUFIDLLIA.html
-    - name: Unsat Core Track
-      results: unsatcore-results/IDLNRADTLRAUFIDLLIA.html
+      results: unsatcore-results/QF_IDLDTA.html
     - name: Challenge Track
-      results: challenge-results/IDLNRADTLRAUFIDLLIA.html
+      results: challenge-results/QF_IDLDTA.html
 
-- name: UFALRAUFLIAFPNIA
+- name: QF_RDLLRAIDLLIABVRDLADTIDLDT
   tracks:
     - name: Single Problem Track
-      results: single-results/UFALRAUFLIAFPNIA.html
+      results: single-results/QF_RDLLRAIDLLIABVRDLADTIDLDT.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_RDLLRAIDLLIABVRDLADTIDLDT.html
+    - name: Challenge Track
+      results: challenge-results/QF_RDLLRAIDLLIABVRDLADTIDLDT.html
+
+- name: QF_BVNIAUFRDLIDLLRADTALRA
+  tracks:
+    - name: Single Problem Track
+      results: single-results/QF_BVNIAUFRDLIDLLRADTALRA.html
+    - name: Unsat Core Track
+      results: unsatcore-results/QF_BVNIAUFRDLIDLLRADTALRA.html
+    - name: Challenge Track
+      results: challenge-results/QF_BVNIAUFRDLIDLLRADTALRA.html
+
+- name: IDLUFNRAUFNIALRAAIDLAFP
+  tracks:
+    - name: Single Problem Track
+      results: single-results/IDLUFNRAUFNIALRAAIDLAFP.html
     - name: Incremental Track
-      results: incremental-results/UFALRAUFLIAFPNIA.html
-    - name: Challenge Track
-      results: challenge-results/UFALRAUFLIAFPNIA.html
+      results: incremental-results/IDLUFNRAUFNIALRAAIDLAFP.html
+    - name: Unsat Core Track
+      results: unsatcore-results/IDLUFNRAUFNIALRAAIDLAFP.html
 
-- name: QF_LRALRANRAUFLRADTRDLFPRDLFP
+- name: QF_IDLBVUFFP
   tracks:
     - name: Single Problem Track
-      results: single-results/QF_LRALRANRAUFLRADTRDLFPRDLFP.html
+      results: single-results/QF_IDLBVUFFP.html
     - name: Incremental Track
-      results: incremental-results/QF_LRALRANRAUFLRADTRDLFPRDLFP.html
+      results: incremental-results/QF_IDLBVUFFP.html
     - name: Unsat Core Track
-      results: unsatcore-results/QF_LRALRANRAUFLRADTRDLFPRDLFP.html
-    - name: Challenge Track
-      results: challenge-results/QF_LRALRANRAUFLRADTRDLFPRDLFP.html
-
-- name: DTDTNIALIAFPRDLNIALRAIDLNRA
-  tracks:
-    - name: Unsat Core Track
-      results: unsatcore-results/DTDTNIALIAFPRDLNIALRAIDLNRA.html
-    - name: Challenge Track
-      results: challenge-results/DTDTNIALIAFPRDLNIALRAIDLNRA.html
-
-- name: FP
-  tracks:
-    - name: Single Problem Track
-      results: single-results/FP.html
-    - name: Incremental Track
-      results: incremental-results/FP.html
-    - name: Unsat Core Track
-      results: unsatcore-results/FP.html
-    - name: Challenge Track
-      results: challenge-results/FP.html
-
-- name: QF_NIANRAANRAIDL
-  tracks:
-    - name: Single Problem Track
-      results: single-results/QF_NIANRAANRAIDL.html
-    - name: Unsat Core Track
-      results: unsatcore-results/QF_NIANRAANRAIDL.html
-    - name: Challenge Track
-      results: challenge-results/QF_NIANRAANRAIDL.html
+      results: unsatcore-results/QF_IDLBVUFFP.html

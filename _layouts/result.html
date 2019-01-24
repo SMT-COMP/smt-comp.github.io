@@ -16,7 +16,11 @@ Time limit: {{ page.time_limit }}
     <thead>
         <tr>
             <th>Sequential Performance</th>
+            <th>Sequential SAT Performance</th>
+            <th>Sequential UNSAT Performance</th>
             <th>Parallel Performance</th>
+            <th>Parallel SAT Performance</th>
+            <th>Parallel UNSAT Performance</th>
         </tr>
     </thead>
     <tr>
@@ -24,7 +28,19 @@ Time limit: {{ page.time_limit }}
             {{ page.seq_winner }}
         </td>
         <td>
+            {{ page.seq_sat_winner }}
+        </td>
+        <td>
+            {{ page.seq_unsat_winner }}
+        </td>
+        <td>
             {{ page.par_winner }}
+        </td>
+        <td>
+            {{ page.par_sat_winner }}
+        </td>
+        <td>
+            {{ page.par_unsat_winner }}
         </td>
     </tr>
 </table>
@@ -38,6 +54,8 @@ Time limit: {{ page.time_limit }}
         <th>Correctly Solved Score</th>
         <th>CPU time Score</th>
         <th>Solved</th>
+        <th>Solved SAT</th>
+        <th>Solved UNSAT</th>
         <th>Unsolved</th>
     </tr>
 </thead>
@@ -48,6 +66,8 @@ Time limit: {{ page.time_limit }}
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.solved }}</td>
+    <td>{{ solver.solved_sat }}</td>
+    <td>{{ solver.solved_unsat }}</td>
     <td>{{ solver.unsolved }}</td>
 </tr>
 {% endfor %}
@@ -62,6 +82,8 @@ Time limit: {{ page.time_limit }}
         <th>Correctly Solved Score</th>
         <th>CPU time Score</th>
         <th>Solved</th>
+        <th>Solved SAT</th>
+        <th>Solved UNSAT</th>
         <th>Unsolved</th>
     </tr>
 </thead>
@@ -72,6 +94,8 @@ Time limit: {{ page.time_limit }}
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.solved }}</td>
+    <td>{{ solver.solved_sat }}</td>
+    <td>{{ solver.solved_unsat }}</td>
     <td>{{ solver.unsolved }}</td>
 </tr>
 {% endfor %}

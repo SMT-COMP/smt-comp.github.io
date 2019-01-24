@@ -1,146 +1,130 @@
 ---
-layout: result
-resultdate: 2019-01-21 16:41:15.364513
+layout: result_uc
+resultdate: 2019-01-24 11:23:59.791534
 division: RDL
 track: Unsat Core Track
-n_benchmarks: 75452
+n_benchmarks: 2136
 time_limit: 2400
 
-seq_winner: rFnmqSl
-par_winner: ThQZySKykYcngyK RnuHlfnhpTm
+seq_winner: yla UhYRY
+seq_sat_winner: PpmwPNcc
+seq_unsat_winner: MWAYxth KRpaGLsXYiiHgqf
+par_winner: VkwghMZQTKc
+par_sat_winner: PpmwPNcc
+par_unsat_winner: MWAYxth KRpaGLsXYiiHgqf
 
 sequential:
-- name: Vutw
-  errorScore: 901.304651
-  correctScore: 181.664515
-  CPUScore: 783.706379
-  solved: 554
-  unsolved: 60
-- name: ThQZySKykYcngyK RnuHlfnhpTm
-  errorScore: 575.098926
-  correctScore: 504.596544
-  CPUScore: 374.778126
-  solved: 779
-  unsolved: 895
-- name: JYndRYbCXXu EvwE
-  errorScore: 164.835103
-  correctScore: 149.654332
-  CPUScore: 296.033549
-  solved: 523
-  unsolved: 931
-- name: ckXyNKUbGo
-  errorScore: 223.597267
-  correctScore: 4.167340
-  CPUScore: 334.473471
+- name: VkwghMZQTKc
+  errorScore: 256.997334
+  correctScore: 752.716824
+  CPUScore: 377.483689
   solved: 924
-  unsolved: 786
-- name: UOookusQfAgnio
-  errorScore: 548.458811
-  correctScore: 635.560201
-  CPUScore: 66.755108
-  solved: 113
-  unsolved: 149
-- name: sI
-  errorScore: 256.599107
-  correctScore: 831.106173
-  CPUScore: 848.657665
-  solved: 469
-  unsolved: 589
-- name: rFnmqSl
-  errorScore: 139.910986
-  correctScore: 833.217456
-  CPUScore: 471.806034
-  solved: 154
-  unsolved: 583
-- name: cifioSKGJyMle oQKBf
-  errorScore: 662.575447
-  correctScore: 340.166328
-  CPUScore: 44.377411
-  solved: 865
-  unsolved: 151
-- name: QlzXYhPs
-  errorScore: 955.174171
-  correctScore: 138.458544
-  CPUScore: 901.250845
-  solved: 381
-  unsolved: 213
-- name: Grlwqp
-  errorScore: 842.829852
-  correctScore: 224.737667
-  CPUScore: 467.561165
-  solved: 584
-  unsolved: 218
-- name: WkolzS yKwdbY
-  errorScore: 74.989023
-  correctScore: 319.111449
-  CPUScore: 715.979782
-  solved: 755
-  unsolved: 112
+  solved_sat: 377
+  solved_unsat: 391
+  unsolved: 522
+- name: MWAYxth KRpaGLsXYiiHgqf
+  errorScore: 711.558029
+  correctScore: 606.455450
+  CPUScore: 568.155188
+  solved: 770
+  solved_sat: 1016
+  solved_unsat: 949
+  unsolved: 199
+- name: PpmwPNcc
+  errorScore: 139.996705
+  correctScore: 275.590509
+  CPUScore: 662.387651
+  solved: 970
+  solved_sat: 1956
+  solved_unsat: 344
+  unsolved: 58
+- name: rcrf
+  errorScore: 122.698013
+  correctScore: 572.689939
+  CPUScore: 776.218081
+  solved: 779
+  solved_sat: 124
+  solved_unsat: 516
+  unsolved: 414
+- name: kTsilpgO
+  errorScore: 339.416944
+  correctScore: 618.204281
+  CPUScore: 133.987971
+  solved: 145
+  solved_sat: 1519
+  solved_unsat: 534
+  unsolved: 399
+- name: yla UhYRY
+  errorScore: 297.915063
+  correctScore: 894.116413
+  CPUScore: 469.001883
+  solved: 475
+  solved_sat: 1438
+  solved_unsat: 219
+  unsolved: 25
+- name: ixrnBtgLxOYmVnj
+  errorScore: 28.248916
+  correctScore: 224.381254
+  CPUScore: 996.344430
+  solved: 156
+  solved_sat: 1681
+  solved_unsat: 184
+  unsolved: 512
 parallel:
-- name: Vutw
-  errorScore: 57.491322
-  correctScore: 33.759791
-  CPUScore: 497.930252
-  solved: 568
-  unsolved: 80
-- name: ThQZySKykYcngyK RnuHlfnhpTm
-  errorScore: 396.470642
-  correctScore: 982.486696
-  CPUScore: 523.646836
-  solved: 76
-  unsolved: 153
-- name: JYndRYbCXXu EvwE
-  errorScore: 113.201216
-  correctScore: 173.694007
-  CPUScore: 579.831751
-  solved: 612
-  unsolved: 35
-- name: ckXyNKUbGo
-  errorScore: 137.032866
-  correctScore: 2.048660
-  CPUScore: 407.353520
-  solved: 1005
-  unsolved: 1474
-- name: UOookusQfAgnio
-  errorScore: 208.826505
-  correctScore: 745.114505
-  CPUScore: 50.395620
-  solved: 5
-  unsolved: 40
-- name: sI
-  errorScore: 468.400017
-  correctScore: 735.798120
-  CPUScore: 1593.589709
-  solved: 49
-  unsolved: 445
-- name: rFnmqSl
-  errorScore: 96.178871
-  correctScore: 969.235456
-  CPUScore: 70.209722
-  solved: 170
-  unsolved: 372
-- name: cifioSKGJyMle oQKBf
-  errorScore: 488.510427
-  correctScore: 620.304125
-  CPUScore: 25.261605
-  solved: 1140
-  unsolved: 21
-- name: QlzXYhPs
-  errorScore: 1027.558538
-  correctScore: 235.169690
-  CPUScore: 1661.510863
-  solved: 439
-  unsolved: 281
-- name: Grlwqp
-  errorScore: 236.276383
-  correctScore: 243.440436
-  CPUScore: 204.410925
-  solved: 99
-  unsolved: 21
-- name: WkolzS yKwdbY
-  errorScore: 5.568351
-  correctScore: 399.222035
-  CPUScore: 948.026713
-  solved: 1148
-  unsolved: 173
+- name: VkwghMZQTKc
+  errorScore: 308.912956
+  correctScore: 1193.071332
+  CPUScore: 614.134028
+  solved: 1586
+  solved_sat: 381
+  solved_unsat: 651
+  unsolved: 563
+- name: MWAYxth KRpaGLsXYiiHgqf
+  errorScore: 1233.766163
+  correctScore: 685.168595
+  CPUScore: 789.986462
+  solved: 574
+  solved_sat: 1236
+  solved_unsat: 1838
+  unsolved: 288
+- name: PpmwPNcc
+  errorScore: 110.564395
+  correctScore: 205.640775
+  CPUScore: 799.240133
+  solved: 1127
+  solved_sat: 3126
+  solved_unsat: 549
+  unsolved: 97
+- name: rcrf
+  errorScore: 9.963926
+  correctScore: 1076.677460
+  CPUScore: 433.673457
+  solved: 33
+  solved_sat: 2
+  solved_unsat: 241
+  unsolved: 175
+- name: kTsilpgO
+  errorScore: 358.996324
+  correctScore: 821.238307
+  CPUScore: 181.151861
+  solved: 122
+  solved_sat: 1446
+  solved_unsat: 545
+  unsolved: 406
+- name: yla UhYRY
+  errorScore: 476.474361
+  correctScore: 870.971517
+  CPUScore: 427.741714
+  solved: 7
+  solved_sat: 427
+  solved_unsat: 312
+  unsolved: 31
+- name: ixrnBtgLxOYmVnj
+  errorScore: 10.495215
+  correctScore: 335.998476
+  CPUScore: 1425.353547
+  solved: 53
+  solved_sat: 3041
+  solved_unsat: 340
+  unsolved: 477
 ---
