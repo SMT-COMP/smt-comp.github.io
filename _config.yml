@@ -6,12 +6,12 @@ collections:
         output: true
     participants:
         output: true
-    news:
-        output: true
     organizers:
         output: true
     results:
         output: false
+    news:
+        output: true
     single-results:
         output: true
     incremental-results:

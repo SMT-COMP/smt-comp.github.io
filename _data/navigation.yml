@@ -2,8 +2,6 @@
   link: index.html
 - name: Introduction
   link: introduction.html
-- name: News
-  link: news.html
 - name: Rules
   link: rules.html
 - name: Benchmarks
