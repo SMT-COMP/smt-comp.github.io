@@ -12,6 +12,7 @@ and results of the competition.
 - {{ news.newsdate | date_to_string }} [{{news.title}}]({{ news.url }})
 {% endfor %}
 ### Key dates
+- March 1: Deadline for new benchmark contributions
 - July 7-9: SMT Workshop (presentation of results)
 
 ### Organizers
