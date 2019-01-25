@@ -2,17 +2,17 @@
   link: index.html
 - name: Introduction
   link: introduction.html
-- name: Rules
-  link: rules.html
-- name: Benchmarks
-  link: benchmarks.html
-- name: Tools
-  link: tools.html
-- name: Specs
-  link: specs.html
-- name: Participants
-  link: participants.html
-- name: Results
-  link: results.html
+  #- name: Rules
+  #  link: rules.html
+  #- name: Benchmarks
+  #  link: benchmarks.html
+  #- name: Tools
+  #  link: tools.html
+  #- name: Specs
+  #  link: specs.html
+  #- name: Participants
+  #  link: participants.html
+  #- name: Results
+  #  link: results.html
 - name: Previous
   link: previous.html
