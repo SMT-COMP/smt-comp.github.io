@@ -6,8 +6,6 @@ collections:
         output: true
     participants:
         output: true
-    organizers:
-        output: true
     results:
         output: false
     news:

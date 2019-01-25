@@ -12,13 +12,11 @@ and results of the competition.
 - {{ news.newsdate | date_to_string }} [{{news.title}}]({{ news.url }})
 {% endfor %}
 ### Key dates
-See the [rules]() for the complete timeline
 - July 7-9: SMT Workshop (presentation of results)
 
 ### Organizers
 SMT-COMP 2019 is organized by:
-{% for organizer in site.organizers %}
-- [{{ organizer.name }}](mailto:{{ organizer.email }}) {% if organizer.chair %} (competition co-chair)
-  {% endif %}
-{% endfor %}
-
+- Liana Hadarean - Amazon, USA
+- [Antti Hyvarinen](https://www.inf.usi.ch/postdoc/hyvarinen/) - Universita della Svizzera italiana, CH
+- [Aina Niemetz](https://cs.stanford.edu/people/niemetz) (co-chair) - Stanford University, USA
+- [Giles Reger](http://www.cs.man.ac.uk/~regerg/) (co-chair) - University of Manchester, UK
