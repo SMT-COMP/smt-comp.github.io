@@ -14,5 +14,7 @@
   #  link: participants.html
   #- name: Results
   #  link: results.html
+- name: Benchmark submission
+  link: benchmark_submission.html
 - name: Previous
   link: previous.html
