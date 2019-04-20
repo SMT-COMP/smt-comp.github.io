@@ -2,8 +2,8 @@
   link: index.html
 - name: Introduction
   link: introduction.html
-  #- name: Rules
-  #  link: rules.html
+- name: Rules
+  link: rules.html
   #- name: Benchmarks
   #  link: benchmarks.html
   #- name: Tools
