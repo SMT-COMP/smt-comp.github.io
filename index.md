@@ -7,16 +7,19 @@ The SMT Workshop will include a block of time to present the competitors
 and results of the competition.
 
 ### News
-{% for news in site.news  %}
-- {{ news.newsdate | date_to_string }} [{{news.title}}]({{ news.url }})
+<ul>
+{% assign newsList = site.news | reverse %}
+{% for news in newsList %}
+  <li> {{ news.newsdate | date_to_string }} <a href="{{ news.url }}">{{ news.title }}</a> </li>
 {% endfor %}
+</ul>
 
 ### Key dates
-**March 1**  &nbsp; Deadline for new benchmark contributions  
-**May 1**    &nbsp; Final versions of competition tools  
-**May 19**   &nbsp; Deadline for first versions of solvers (for all tracks)  
-**June 2**   &nbsp; Deadline for final versions of solvers, including system descriptions  
-**July 7-8** &nbsp; SMT Workshop (presentation of results)
+ - **March 1**  &nbsp; Deadline for new benchmark contributions
+ - **May 1**    &nbsp; Final versions of competition tools
+ - **May 19**   &nbsp; Deadline for first versions of solvers (for all tracks)
+ - **June 2**   &nbsp; Deadline for final versions of solvers, including system descriptions
+ - **July 7-8** &nbsp; SMT Workshop (presentation of results)
 
 ### Organizers
 - Liana Hadarean - Amazon, USA
