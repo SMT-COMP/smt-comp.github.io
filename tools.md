@@ -1,13 +1,14 @@
+---
+layout: default
+---
 ## Tools
-### Main Track
-- Benchmark scrambler [sources](https://github.com/SMT-COMP/scrambler)
-- [Postprocessor]() (also available on [StarExec]())
-### Application Track
-- Benchmark scrambler: [sources]() [StarExec binary]() (also available
-  on [StarExec]())
-- [Trace executor]() (sources)
-- [Postprocessor]() (also available on [StarExec]())
-### Unsat-Core Track
-- Benchmark scrambler [sources]() [StarExec binary]() (also available on
-  [StarExec]())
-- Postprocessor: [Postprocessor]() (also available on [StarExec]())
+
+{% for track in site.data.tools %}
+### {{ track.name }}
+<ul>
+{% for tool in track.tools %}
+<li> {{ tool.name }} [<a href="{{ tool.repo }}">repository</a>]</li>
+{% endfor %}
+</ul>
+{% endfor %}
+

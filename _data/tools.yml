@@ -1,0 +1,35 @@
+- name: Single Query Track
+  tools:
+  - name: Benchmark scrambler
+    repo: https://github.com/SMT-COMP/scrambler
+  - name: Postprocessor
+    repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
+
+- name: Incremental Track
+  tools:
+  - name: Benchmark scrambler
+    repo: https://github.com/SMT-COMP/scrambler
+  - name: Trace executor
+    repo: https://github.com/SMT-COMP/trace-executor
+  - name: Postprocessor
+    repo: https://github.com/SMT-COMP/postprocessors/tree/master/incremental-track
+
+- name: Industry-Challenge Track
+  tools:
+  - name: Benchmark scrambler
+    repo: https://github.com/SMT-COMP/scrambler
+  - name: Postprocessor
+    repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
+
+- name: Unsat-Core Track
+  tools:
+  - name: Benchmark scrambler
+    repo: https://github.com/SMT-COMP/scrambler
+  - name: Postprocessor
+    repo: https://github.com/SMT-COMP/postprocessors/tree/master/unsat-core-track
+- name: Model-Validation Track
+  tools:
+  - name: Benchmark scrambler
+    repo: https://github.com/SMT-COMP/scrambler
+  - name: Postprocessor
+    repo: https://github.com/SMT-COMP/postprocessors/tree/master/model-validation-track
