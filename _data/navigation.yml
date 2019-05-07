@@ -6,8 +6,8 @@
   link: 2019/rules19.pdf
   #- name: Benchmarks
   #  link: benchmarks.html
-  #- name: Tools
-  #  link: tools.html
+- name: Tools
+  link: tools.html
   #- name: Specs
   #  link: specs.html
   #- name: Participants
