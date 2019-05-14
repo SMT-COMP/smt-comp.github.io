@@ -8,8 +8,8 @@
   #  link: benchmarks.html
 - name: Tools
   link: tools.html
-  #- name: Specs
-  #  link: specs.html
+- name: Specs
+  link: specs.html
   #- name: Participants
   #  link: participants.html
   #- name: Results
