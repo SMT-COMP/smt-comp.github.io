@@ -8,7 +8,7 @@ contactName: Shaowei Cai, Xindi Zhang, Bing He
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: Boolector 3.0.1-pre
-competing: no
+competing: "no"
 seed: unknown
 solverHomePage: n/a
 sysDescrUrl: boolector-ReasonLS.pdf

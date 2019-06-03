@@ -8,7 +8,7 @@ contactName: Gereon Kremer
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: yes
+competing: "yes"
 seed: unknown
 solverHomePage: https://github.com/smtrat/smtrat/wiki
 sysDescrUrl: smtrat.pdf

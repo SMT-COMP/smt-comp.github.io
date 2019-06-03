@@ -8,7 +8,7 @@ contactName: Tjark Weber
 variantOf: n/a
 wrapperTool: Par4 is a wrapper tool. It calls several other SMT solvers that participated in SMT-COMP 2018. The full list of wrapped solvers is still subject to change and will be provided in the system description.
 derivedTool: n/a
-competing: yes
+competing: "yes"
 seed: 0
 solverHomePage: n/a
 sysDescrUrl: Par4.pdf

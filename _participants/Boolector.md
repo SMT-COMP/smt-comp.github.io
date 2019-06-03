@@ -8,7 +8,7 @@ contactName: Aina Niemetz, Mathias Preiner, Armin Biere
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: yes
+competing: "yes"
 seed: 42
 solverHomePage: https://boolector.github.io
 sysDescrUrl: boolector.pdf

@@ -8,7 +8,7 @@ contactName: Parag Singla, Ronak Agarwal, Saket Dingliwal, Happy Mittal
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: CVC4 smtcomp2018
-competing: no
+competing: "no"
 seed: unknown
 solverHomePage: n/a
 sysDescrUrl: cvc4-symbreak.pdf

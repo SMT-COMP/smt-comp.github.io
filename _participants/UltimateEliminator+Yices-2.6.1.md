@@ -8,7 +8,7 @@ contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
 variantOf: n/a
 wrapperTool: Yices-2.6.1
 derivedTool: n/a
-competing: yes
+competing: "yes"
 seed: 0
 solverHomePage: https://ultimate.informatik.uni-freiburg.de/
 sysDescrUrl: 2019UltimateEliminator.pdf

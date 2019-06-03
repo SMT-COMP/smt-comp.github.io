@@ -8,7 +8,7 @@ contactName: Alberto Griggio, Ahmed Irfan, Alessandro Cimatti, Roberto Sebastian
 variantOf: 23373
 wrapperTool: n/a
 derivedTool: n/a
-competing: yes
+competing: "yes"
 seed: 512
 solverHomePage: n/a
 sysDescrUrl: mathsat5.pdf
