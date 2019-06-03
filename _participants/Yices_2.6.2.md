@@ -1,105 +1,105 @@
 ---
 layout: participant
-contactEmail: bruno.dutertre@sri.com
-name: Yices 2.6.2
-preliminaryID: 23363
-finalID: 23694
-contactName: Bruno Dutertre, Dejan Jovanovic, Ian A. Mason, Stéphane Graham-Lengrand
-variantOf: 
-wrapperTool: 
-derivedTool: 
-competing: yes
-seed: 255
-solverHomePage: http://yices.csl.sri.com
-sysDescrUrl: yices.pdf
-sysDescrName: Yices
+contactEmail: "bruno.dutertre@sri.com"
+name: "Yices 2.6.2"
+preliminaryID: "23363"
+finalID: "23694"
+contactName: "Bruno Dutertre, Dejan Jovanovic, Ian A. Mason, Stéphane Graham-Lengrand"
+variantOf: ""
+wrapperTool: ""
+derivedTool: ""
+competing: "yes"
+seed: "255"
+solverHomePage: "http://yices.csl.sri.com"
+sysDescrUrl: "yices.pdf"
+sysDescrName: "Yices"
 logics:
-- name: QF_ABV
+"- name: "QF_ABV"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_ALIA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_ALIA"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_AUFBV
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_AUFBV"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_AUFLIA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_AUFLIA"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_AX
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_AX"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_BV
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_BV"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_IDL
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_IDL"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_LIA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_LIA"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_LIRA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_LIRA"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_LRA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_LRA"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_NIA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_NIA"
   tracks:
-  - track_single_query
-- name: QF_NIRA
+"  - "track_single_query""
+- name: "QF_NIRA"
   tracks:
-  - track_single_query
-- name: QF_NRA
+"  - "track_single_query""
+- name: "QF_NRA"
   tracks:
-  - track_single_query
-- name: QF_RDL
+"  - "track_single_query""
+- name: "QF_RDL"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UF
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_UF"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UFBV
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_UFBV"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UFIDL
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_UFIDL"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UFLIA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_UFLIA"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UFLRA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_UFLRA"
   tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UFNIA
+"  - "track_single_query"
+  - "track_unsat_core""
+- name: "QF_UFNIA"
   tracks:
-  - track_single_query
-- name: QF_UFNRA
+"  - "track_single_query""
+- name: "QF_UFNRA"
   tracks:
-  - track_single_query
-- name: QF_BV (non-incremental)
+"  - "track_single_query""
+- name: "QF_BV (non-incremental)"
   tracks:
-  - track_challenge
-- name: QF_ABV (non-incremental)
+"  - "track_challenge""
+- name: "QF_ABV (non-incremental)"
   tracks:
-  - track_challenge
-- name: QF_AUFBV (non-incremental)
+"  - "track_challenge""
+- name: "QF_AUFBV (non-incremental)"
   tracks:
-  - track_challenge
+"  - "track_challenge"""
 ---

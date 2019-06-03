@@ -1,89 +1,89 @@
 ---
 layout: participant
-contactEmail: albin.coquereau@ocamlpro.com
-name: Alt-Ergo
-preliminaryID: 23333
-finalID: 23530
-contactName: Guillaume Bury, Sylvain Conchon, Albin Coquereau, Mohamed Iguernlala, Steven de Oliveira
-variantOf: 
-wrapperTool: 
-derivedTool: 
-competing: yes
-seed: 42
-solverHomePage: https://alt-ergo.ocamlpro.com/
-sysDescrUrl: Alt-Ergo.pdf
-sysDescrName: Alt-Ergo
+contactEmail: "albin.coquereau@ocamlpro.com"
+name: "Alt-Ergo"
+preliminaryID: "23333"
+finalID: "23530"
+contactName: "Guillaume Bury, Sylvain Conchon, Albin Coquereau, Mohamed Iguernlala, Steven de Oliveira"
+variantOf: ""
+wrapperTool: ""
+derivedTool: ""
+competing: "yes"
+seed: "42"
+solverHomePage: "https://alt-ergo.ocamlpro.com/"
+sysDescrUrl: "Alt-Ergo.pdf"
+sysDescrName: "Alt-Ergo"
 logics:
-- name: ALIA
+"- name: "ALIA"
   tracks:
-  - track_single_query
-- name: AUFDTLIA
+"  - "track_single_query""
+- name: "AUFDTLIA"
   tracks:
-  - track_single_query
-- name: AUFLIA
+"  - "track_single_query""
+- name: "AUFLIA"
   tracks:
-  - track_single_query
-- name: AUFLIRA
+"  - "track_single_query""
+- name: "AUFLIRA"
   tracks:
-  - track_single_query
-- name: AUFNIA
+"  - "track_single_query""
+- name: "AUFNIA"
   tracks:
-  - track_single_query
-- name: AUFNIRA
+"  - "track_single_query""
+- name: "AUFNIRA"
   tracks:
-  - track_single_query
-- name: QF_ALIA
+"  - "track_single_query""
+- name: "QF_ALIA"
   tracks:
-  - track_single_query
-- name: QF_ANIA
+"  - "track_single_query""
+- name: "QF_ANIA"
   tracks:
-  - track_single_query
-- name: QF_AUFLIA
+"  - "track_single_query""
+- name: "QF_AUFLIA"
   tracks:
-  - track_single_query
-- name: QF_AUFNIA
+"  - "track_single_query""
+- name: "QF_AUFNIA"
   tracks:
-  - track_single_query
-- name: QF_AX
+"  - "track_single_query""
+- name: "QF_AX"
   tracks:
-  - track_single_query
-- name: QF_DT
+"  - "track_single_query""
+- name: "QF_DT"
   tracks:
-  - track_single_query
-- name: QF_UF
+"  - "track_single_query""
+- name: "QF_UF"
   tracks:
-  - track_single_query
-- name: QF_UFLIA
+"  - "track_single_query""
+- name: "QF_UFLIA"
   tracks:
-  - track_single_query
-- name: QF_UFLRA
+"  - "track_single_query""
+- name: "QF_UFLRA"
   tracks:
-  - track_single_query
-- name: QF_UFNIA
+"  - "track_single_query""
+- name: "QF_UFNIA"
   tracks:
-  - track_single_query
-- name: QF_UFNRA
+"  - "track_single_query""
+- name: "QF_UFNRA"
   tracks:
-  - track_single_query
-- name: UF
+"  - "track_single_query""
+- name: "UF"
   tracks:
-  - track_single_query
-- name: UFDT
+"  - "track_single_query""
+- name: "UFDT"
   tracks:
-  - track_single_query
-- name: UFDTLIA
+"  - "track_single_query""
+- name: "UFDTLIA"
   tracks:
-  - track_single_query
-- name: UFDTNIA
+"  - "track_single_query""
+- name: "UFDTNIA"
   tracks:
-  - track_single_query
-- name: UFLIA
+"  - "track_single_query""
+- name: "UFLIA"
   tracks:
-  - track_single_query
-- name: UFLRA
+"  - "track_single_query""
+- name: "UFLRA"
   tracks:
-  - track_single_query
-- name: UFNIA
+"  - "track_single_query""
+- name: "UFNIA"
   tracks:
-  - track_single_query
+"  - "track_single_query"""
 ---

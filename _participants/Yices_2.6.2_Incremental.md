@@ -1,68 +1,68 @@
 ---
 layout: participant
-contactEmail: bruno.dutertre@sri.com
-name: Yices 2.6.2 Incremental
-preliminaryID: 23364
-finalID: 23695
-contactName: Bruno Dutertre, Dejan Jovanovic, Ian A. Mason, Stéphane Graham-Lengrand
-variantOf: 23694
-wrapperTool: 
-derivedTool: 
-competing: yes
-seed: 255
-solverHomePage: http://yices.csl.sri.com
-sysDescrUrl: yices.pdf
-sysDescrName: Yices
+contactEmail: "bruno.dutertre@sri.com"
+name: "Yices 2.6.2 Incremental"
+preliminaryID: "23364"
+finalID: "23695"
+contactName: "Bruno Dutertre, Dejan Jovanovic, Ian A. Mason, Stéphane Graham-Lengrand"
+variantOf: "23694"
+wrapperTool: ""
+derivedTool: ""
+competing: "yes"
+seed: "255"
+solverHomePage: "http://yices.csl.sri.com"
+sysDescrUrl: "yices.pdf"
+sysDescrName: "Yices"
 logics:
-- name: QF_ABV
+"- name: "QF_ABV"
   tracks:
-  - track_incremental
-- name: QF_ALIA
+"  - "track_incremental""
+- name: "QF_ALIA"
   tracks:
-  - track_incremental
-- name: QF_AUFBV
+"  - "track_incremental""
+- name: "QF_AUFBV"
   tracks:
-  - track_incremental
-- name: QF_AUFLIA
+"  - "track_incremental""
+- name: "QF_AUFLIA"
   tracks:
-  - track_incremental
-- name: QF_BV
+"  - "track_incremental""
+- name: "QF_BV"
   tracks:
-  - track_incremental
-- name: QF_LIA
+"  - "track_incremental""
+- name: "QF_LIA"
   tracks:
-  - track_incremental
-- name: QF_LRA
+"  - "track_incremental""
+- name: "QF_LRA"
   tracks:
-  - track_incremental
-- name: QF_NIA
+"  - "track_incremental""
+- name: "QF_NIA"
   tracks:
-  - track_incremental
-- name: QF_UF
+"  - "track_incremental""
+- name: "QF_UF"
   tracks:
-  - track_incremental
-- name: QF_UFBV
+"  - "track_incremental""
+- name: "QF_UFBV"
   tracks:
-  - track_incremental
-- name: QF_UFBVLIA
+"  - "track_incremental""
+- name: "QF_UFBVLIA"
   tracks:
-  - track_incremental
-- name: QF_UFLIA
+"  - "track_incremental""
+- name: "QF_UFLIA"
   tracks:
-  - track_incremental
-- name: QF_UFLRA
+"  - "track_incremental""
+- name: "QF_UFLRA"
   tracks:
-  - track_incremental
-- name: QF_UFNIA
+"  - "track_incremental""
+- name: "QF_UFNIA"
   tracks:
-  - track_incremental
-- name: QF_BV (incremental)
+"  - "track_incremental""
+- name: "QF_BV (incremental)"
   tracks:
-  - track_challenge
-- name: QF_ABV (incremental)
+"  - "track_challenge""
+- name: "QF_ABV (incremental)"
   tracks:
-  - track_challenge
-- name: QF_AUFBV (incremental)
+"  - "track_challenge""
+- name: "QF_AUFBV (incremental)"
   tracks:
-  - track_challenge
+"  - "track_challenge"""
 ---
