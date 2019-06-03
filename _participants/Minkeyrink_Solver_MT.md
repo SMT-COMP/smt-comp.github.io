@@ -9,10 +9,10 @@ variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
 competing: Y
-seed: unknown
-solverHomePage: unknown
-sysDescrUrl: unknown
-sysDescrName: unknown
+seed: n/a
+solverHomePage: n/a
+sysDescrUrl: minkeyrink.pdf
+sysDescrName: Minkeyrink Solver
 logics:
 - name: QF_BV
   tracks:

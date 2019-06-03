@@ -1,7 +1,7 @@
 ---
 layout: participant
 contactEmail: trev_abroad@yahoo.com
-name: Minkeyrink Solver 
+name: Minkeyrink Solver
 preliminaryID: 23392
 finalID: 23720
 contactName: Trevor Hansen, Mate Soos
@@ -9,10 +9,10 @@ variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
 competing: Y
-seed: unknown
-solverHomePage: unknown
-sysDescrUrl: unknown
-sysDescrName: unknown
+seed: n/a
+solverHomePage: n/a
+sysDescrUrl: minkeyrink.pdf
+sysDescrName: Minkeyrink Solver
 logics:
 - name: QF_BV
   tracks:
