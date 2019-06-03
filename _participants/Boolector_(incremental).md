@@ -10,9 +10,9 @@ wrapperTool: n/a
 derivedTool: n/a
 competing: Y
 seed: 42
-solverHomePage: unknown
-sysDescrUrl: Boolector
-sysDescrName: https://boolector.github.io
+solverHomePage: https://boolector.github.io
+sysDescrUrl: boolector.pdf
+sysDescrName: Boolector
 logics:
 - name: QF_ABV
   tracks:

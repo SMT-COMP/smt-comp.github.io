@@ -3,16 +3,16 @@ layout: participant
 contactEmail: heizmann@informatik.uni-freiburg.de
 name: UltimateEliminator+SMTInterpol
 preliminaryID: 23426
-finalID: 23426
+finalID: 23743
 contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
 variantOf: n/a
 wrapperTool: SMTInterpol-2.5-101-g5390cba7
 derivedTool: n/a
 competing: Y
 seed: 0
-solverHomePage: unknown
-sysDescrUrl: n/a
-sysDescrName: unknown
+solverHomePage: https://ultimate.informatik.uni-freiburg.de/
+sysDescrUrl: 2019UltimateEliminator.pdf
+sysDescrName: UltimateEliminator
 logics:
 - name: ALIA
   tracks:

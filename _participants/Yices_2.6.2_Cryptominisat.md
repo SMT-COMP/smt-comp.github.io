@@ -9,10 +9,10 @@ variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
 competing: Y
-seed: unknown
-solverHomePage: unknown
-sysDescrUrl: unknown
-sysDescrName: unknown
+seed: 255
+solverHomePage: http://yices.csl.sri.com
+sysDescrUrl: yices.pdf
+sysDescrName: Yices
 logics:
 - name: QF_BV
   tracks:

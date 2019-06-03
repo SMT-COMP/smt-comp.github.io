@@ -10,9 +10,9 @@ wrapperTool: n/a
 derivedTool: CVC4 smtcomp2018
 competing: N
 seed: unknown
-solverHomePage: unknown
-sysDescrUrl: unknown
-sysDescrName: unknown
+solverHomePage: n/a
+sysDescrUrl: cvc4-symbreak.pdf
+sysDescrName: CVC4-SymBreak
 logics:
 - name: AUFLIA
   tracks:

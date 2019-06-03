@@ -10,9 +10,9 @@ wrapperTool: n/a
 derivedTool: Boolector 3.0.1-pre
 competing: N
 seed: unknown
-solverHomePage: unknown
-sysDescrUrl: unknown
-sysDescrName: unknown
+solverHomePage: n/a
+sysDescrUrl: boolector-ReasonLS.pdf
+sysDescrName: Boolector-ReasonLS
 logics:
 - name: QF_BV
   tracks:
