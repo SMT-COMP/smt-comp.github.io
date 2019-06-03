@@ -15,6 +15,11 @@
         {% if track == "track_model_validation" %} {% assign mvt = mvt |append: " " |append: logic.name %} {% endif %}
     {% endfor %}
 {% endfor %}
+{% assign sqt = sqt | split: " " %}
+{% assign it = it | split: " " %}
+{% assign uct = uct | split: " " %}
+{% assign ct = ct | split: " " %}
+{% assign mvt = mvt | split: " " %}
 
 <h2>{{ page.name }} </h2>
 <table>
@@ -23,23 +28,23 @@
       <td>{{ page.competing }}</td>
   <tr>
       <td>Single Query Track</td>
-      <td>{{ sqt }}</td>
+      <td>{{ sqt |join: ", "}}</td>
   </tr>
   <tr>
       <td>Incremental Track</td>
-      <td>{{ it }}</td>
+      <td>{{ it |join: ", " }}</td>
   </tr>
   <tr>
       <td>Unsat-Core Track</td>
-      <td>{{ uct }}</td>
+      <td>{{ uct |join: ", " }}</td>
   </tr>
   <tr>
       <td>Challenge Track</td>
-      <td>{{ ct }}</td>
+      <td>{{ ct |join: ", " }}</td>
   </tr>
   <tr>
       <td>Model Validation Track</td>
-      <td>{{ mvt }}</td>
+      <td>{{ mvt |join: ", " }}</td>
   </tr>
   <tr>
       <td>Preliminary ID</td>
