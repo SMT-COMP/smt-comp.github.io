@@ -8,7 +8,7 @@ contactName: Mohamed IGUERNLALA
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 12019
 solverHomePage: https://alt-ergo.ocamlpro.com/
 sysDescrUrl: Ctrl-Ergo.pdf

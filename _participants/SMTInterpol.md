@@ -8,7 +8,7 @@ contactName: Tanja Schindler, Jochen Hoenicke, Jürgen Christ
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 983571724
 solverHomePage: http://ultimate.informatik.uni-freiburg.de/smtinterpol/
 sysDescrUrl: smtinterpol.pdf

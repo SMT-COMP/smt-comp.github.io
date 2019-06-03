@@ -8,7 +8,7 @@ contactName: Sebastian Krings, Michael Leuschel
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 9247
 solverHomePage: http://www.prob2.de
 sysDescrUrl: proB.pdf

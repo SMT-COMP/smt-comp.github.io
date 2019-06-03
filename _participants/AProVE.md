@@ -8,7 +8,7 @@ contactName: Carsten Fuhs
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 896120349
 solverHomePage: http://aprove.informatik.rwth-aachen.de/
 sysDescrUrl: AProVE19.pdf

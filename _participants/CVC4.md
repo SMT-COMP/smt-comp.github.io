@@ -8,7 +8,7 @@ contactName: Clark Barrett, Haniel Barbosa, Martin Brain, Tim King, Makai Mann, 
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 439
 solverHomePage: http://cvc4.cs.stanford.edu
 sysDescrUrl: cvc4.pdf

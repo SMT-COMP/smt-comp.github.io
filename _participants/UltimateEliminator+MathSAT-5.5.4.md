@@ -8,7 +8,7 @@ contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
 variantOf: n/a
 wrapperTool: MathSAT-5.5.4
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 0
 solverHomePage: https://ultimate.informatik.uni-freiburg.de/
 sysDescrUrl: 2019UltimateEliminator.pdf

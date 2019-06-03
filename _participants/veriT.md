@@ -8,7 +8,7 @@ contactName: Haniel Barbosa, Daniel El Ouraoui, Pascal Fontaine, Hans-Jörg Schu
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 7800
 solverHomePage: http://www.verit-solver.org
 sysDescrUrl: veriT.pdf

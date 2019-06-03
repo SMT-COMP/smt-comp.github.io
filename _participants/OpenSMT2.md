@@ -8,7 +8,7 @@ contactName: Martin Blicha, Leonardo Alt, Matteo Marescotti, Sepideh Asadi, Parv
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 568
 solverHomePage: http://verify.inf.usi.ch/opensmt
 sysDescrUrl: OpenSMT2.pdf

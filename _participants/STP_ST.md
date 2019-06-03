@@ -8,7 +8,7 @@ contactName: Various
 variantOf: n/a
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 1094795585
 solverHomePage: https://github.com/stp/stp
 sysDescrUrl: STP.pdf

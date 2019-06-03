@@ -8,7 +8,7 @@ contactName: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
 wrapperTool: n/a
 derivedTool: n/a
-competing: Y
+competing: yes
 seed: 1094795585
 solverHomePage: https://github.com/stp/stp
 sysDescrUrl: STP.pdf
