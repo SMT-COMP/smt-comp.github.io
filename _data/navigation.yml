@@ -10,8 +10,8 @@
   link: tools.html
 - name: Specs
   link: specs.html
-  #- name: Participants
-  #  link: participants.html
+- name: Participants
+  link: participants.html
   #- name: Results
   #  link: results.html
 - name: Benchmark submission

@@ -1,24 +1,29 @@
 {% include head.html %}
 
-{% assign spt = "no" %}
-{% assign it = "no" %}
-{% assign uct = "no" %}
-{% assign ct = "no" %}
+{% assign sqt = "" %}
+{% assign it = "" %}
+{% assign uct = "" %}
+{% assign ct = "" %}
+{% assign mvt = "" %}
 
 {% for logic in page.logics %}
     {% for track in logic.tracks %}
-        {% if track == "Single Problem Track" %} {% assign spt = "yes" %} {% endif %}
-        {% if track == "Incremental Track" %} {% assign it = "yes" %} {% endif %}
-        {% if track == "Unsat Core Track" %} {% assign uct = "yes" %} {% endif %}
-        {% if track == "Challenge Track" %} {% assign ct = "yes" %} {% endif %}
+        {% if track == "track_single_query" %} {% assign sqt = sqt |append: " " |append: logic.name %} {% endif %}
+        {% if track == "track_incremental" %} {% assign it = it |append: " " |append: logic.name %} {% endif %}
+        {% if track == "track_unsat_core" %} {% assign uct = uct |append: " " |append: logic.name %} {% endif %}
+        {% if track == "track_challenge" %} {% assign ct = ct |append: " " |append: logic.name %} {% endif %}
+        {% if track == "track_model_validation" %} {% assign mvt = mvt |append: " " |append: logic.name %} {% endif %}
     {% endfor %}
 {% endfor %}
 
 <h2>{{ page.name }} </h2>
 <table>
+    <tr>
+      <td>Competing</td>
+      <td>{{ page.competing }}</td>
   <tr>
-      <td>Single Problem Track</td>
-      <td>{{ spt }}</td>
+      <td>Single Query Track</td>
+      <td>{{ sqt }}</td>
   </tr>
   <tr>
       <td>Incremental Track</td>
@@ -31,6 +36,10 @@
   <tr>
       <td>Challenge Track</td>
       <td>{{ ct }}</td>
+  </tr>
+  <tr>
+      <td>Model Validation Track</td>
+      <td>{{ mvt }}</td>
   </tr>
   <tr>
       <td>Preliminary ID</td>
@@ -46,8 +55,20 @@
   </tr>
   <tr>
       <td>System Description</td>
-      <td><a href="{{ page.sysDescUrl }}">{{
-              page.sysDescName }}</a></td>
+      <td><a href="/2019/system-descriptions/{{ page.sysDescrUrl }}">{{
+              page.sysDescrName }}</a></td>
+  </tr>
+  <tr>
+      <td>Variant of a tool</td>
+      <td>{{ page.variantOf }}</td>
+  </tr>
+  <tr>
+      <td>Derived from a tool</td>
+      <td>{{ page.derivedTool }}</td>
+  </tr>
+  <tr>
+      <td>Wrapper tool</td>
+      <td>{{ page.wrapperTool }}</td>
   </tr>
   <tr>
       <td>Solver Homepage</td>
@@ -55,10 +76,11 @@
               page.solverHomePage }}</a></td>
   </tr>
   <tr>
+      <td>Contributors</td>
+      <td>{{ page.contactName }}</td>
+  <tr>
       <td>Contact</td>
-      <td>{{ page.contactName }} <a href="mailto:{{
-      page.contactEmail }}">({{ page.contactEmail }})</a>
-      </td>
+      <td><a href="mailto:{{ page.contactEmail }}">{{ page.contactEmail }}</a></td>
   </tr>
 </table>
 <h2>Notes</h2>
