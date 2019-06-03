@@ -5,7 +5,7 @@ name: Boolector (incremental)
 preliminaryID: 23381
 finalID: 23712
 contactName: Aina Niemetz, Mathias Preiner, Armin Biere
-variantOf: 23380
+variantOf: 23711
 wrapperTool: n/a
 derivedTool: n/a
 competing: Y

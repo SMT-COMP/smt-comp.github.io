@@ -5,14 +5,14 @@ name: Poolector
 preliminaryID: 23384
 finalID: 23730
 contactName: Aina Niemetz, Mathias Preiner, Armin Biere
-variantOf: 23380
+variantOf: 23711
 wrapperTool: n/a
 derivedTool: n/a
 competing: Y
 seed: 42
-solverHomePage: n/a
-sysDescrUrl: n/a
-sysDescrName: n/a
+solverHomePage:  https://boolector.github.io
+sysDescrUrl: boolector.pdf
+sysDescrName: Poolector
 logics:
 - name: QF_ABV
   tracks:
