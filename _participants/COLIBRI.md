@@ -5,12 +5,12 @@ name: COLIBRI
 preliminaryID: 23355
 finalID: 23355
 contactName: Bruno Marre, François Bobot, Zakaria Chihani 
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 614823377508390721
-solverHomePage: n/a
+solverHomePage: 
 sysDescrUrl: colibri.pdf
 sysDescrName: COLIBRI
 logics:

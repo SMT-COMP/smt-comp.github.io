@@ -6,9 +6,9 @@ preliminaryID: 23381
 finalID: 23712
 contactName: Aina Niemetz, Mathias Preiner, Armin Biere
 variantOf: 23711
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 42
 solverHomePage: https://boolector.github.io
 sysDescrUrl: boolector.pdf

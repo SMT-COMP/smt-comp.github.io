@@ -5,10 +5,10 @@ name: UltimateEliminator+MathSAT-5.5.4
 preliminaryID: 23425
 finalID: 23742
 contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
-variantOf: n/a
+variantOf: 
 wrapperTool: MathSAT-5.5.4
-derivedTool: n/a
-competing: "yes"
+derivedTool: 
+competing: yes
 seed: 0
 solverHomePage: https://ultimate.informatik.uni-freiburg.de/
 sysDescrUrl: 2019UltimateEliminator.pdf

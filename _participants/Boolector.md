@@ -5,10 +5,10 @@ name: Boolector
 preliminaryID: 23380
 finalID: 23711
 contactName: Aina Niemetz, Mathias Preiner, Armin Biere
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 42
 solverHomePage: https://boolector.github.io
 sysDescrUrl: boolector.pdf

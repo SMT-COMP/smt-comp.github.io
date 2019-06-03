@@ -5,10 +5,10 @@ name: Alt-Ergo
 preliminaryID: 23333
 finalID: 23530
 contactName: Guillaume Bury, Sylvain Conchon, Albin Coquereau, Mohamed Iguernlala, Steven de Oliveira
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 42
 solverHomePage: https://alt-ergo.ocamlpro.com/
 sysDescrUrl: Alt-Ergo.pdf

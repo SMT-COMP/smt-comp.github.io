@@ -2,15 +2,15 @@
 layout: participant
 contactEmail: hebing@ios.ac.cn
 name: Boolector-ReasonLS
-preliminaryID: n/a
+preliminaryID: 
 finalID: 23692
 contactName: Shaowei Cai, Xindi Zhang, Bing He
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: Boolector 3.0.1-pre
-competing: "no"
-seed: unknown
-solverHomePage: n/a
+variantOf: 
+wrapperTool: 
+derivedTool: Boolector (GitHub master b982737).
+competing: no
+seed: 
+solverHomePage: 
 sysDescrUrl: boolector-ReasonLS.pdf
 sysDescrName: Boolector-ReasonLS
 logics:

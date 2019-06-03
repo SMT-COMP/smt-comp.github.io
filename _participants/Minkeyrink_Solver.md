@@ -5,12 +5,12 @@ name: Minkeyrink Solver
 preliminaryID: 23392
 finalID: 23720
 contactName: Trevor Hansen, Mate Soos
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
-seed: n/a
-solverHomePage: n/a
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
+seed: 
+solverHomePage: 
 sysDescrUrl: minkeyrink.pdf
 sysDescrName: Minkeyrink Solver
 logics:

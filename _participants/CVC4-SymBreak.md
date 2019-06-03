@@ -2,15 +2,15 @@
 layout: participant
 contactEmail: cs1150254@iitd.ac.in
 name: CVC4-SymBreak
-preliminaryID: n/a
+preliminaryID: 
 finalID: 23704
 contactName: Parag Singla, Ronak Agarwal, Saket Dingliwal, Happy Mittal
-variantOf: n/a
-wrapperTool: n/a
+variantOf: 
+wrapperTool: 
 derivedTool: CVC4 smtcomp2018
-competing: "no"
-seed: unknown
-solverHomePage: n/a
+competing: no
+seed: 
+solverHomePage: 
 sysDescrUrl: cvc4-symbreak.pdf
 sysDescrName: CVC4-SymBreak
 logics:

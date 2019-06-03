@@ -5,12 +5,12 @@ name: MathSAT-na-ext
 preliminaryID: 23427
 finalID: 23679
 contactName: Alberto Griggio, Ahmed Irfan, Alessandro Cimatti, Roberto Sebastiani
-variantOf: 23373
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 23680
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 512
-solverHomePage: n/a
+solverHomePage: 
 sysDescrUrl: mathsat5.pdf
 sysDescrName: MathSAT5
 logics:

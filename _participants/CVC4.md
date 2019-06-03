@@ -3,12 +3,12 @@ layout: participant
 contactEmail: noetzli@cs.stanford.edu
 name: CVC4
 preliminaryID: 23420
-finalID: 23420
+finalID: 23737
 contactName: Clark Barrett, Haniel Barbosa, Martin Brain, Tim King, Makai Mann, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Cesare Tinelli, Yoni Zohar
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 439
 solverHomePage: http://cvc4.cs.stanford.edu
 sysDescrUrl: cvc4.pdf

@@ -5,12 +5,12 @@ name: Par4
 preliminaryID: 23391
 finalID: 23672
 contactName: Tjark Weber
-variantOf: n/a
+variantOf: 
 wrapperTool: Par4 is a wrapper tool. It calls several other SMT solvers that participated in SMT-COMP 2018. The full list of wrapped solvers is still subject to change and will be provided in the system description.
-derivedTool: n/a
-competing: "yes"
+derivedTool: 
+competing: yes
 seed: 0
-solverHomePage: n/a
+solverHomePage: 
 sysDescrUrl: Par4.pdf
 sysDescrName: Par4
 logics:

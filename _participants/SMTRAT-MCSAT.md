@@ -5,11 +5,11 @@ name: SMTRAT-MCSAT
 preliminaryID: 23328
 finalID: 23434
 contactName: Gereon Kremer
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
-seed: unknown
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
+seed: 
 solverHomePage: https://github.com/smtrat/smtrat/wiki
 sysDescrUrl: smtrat.pdf
 sysDescrName: SMT-RAT

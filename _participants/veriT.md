@@ -5,10 +5,10 @@ name: veriT
 preliminaryID: 23406
 finalID: 23693
 contactName: Haniel Barbosa, Daniel El Ouraoui, Pascal Fontaine, Hans-Jörg Schurr
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 7800
 solverHomePage: http://www.verit-solver.org
 sysDescrUrl: veriT.pdf

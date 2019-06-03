@@ -5,10 +5,10 @@ name: veriT+raSAT+Redlog
 preliminaryID: 23399
 finalID: 23399
 contactName: Haniel Barbosa, Pascal Fontaine, Maximilian Jaroschek, Marek Kosta, Mizuhito Ogawa, Thomas Sturm, Vu Xuan Tung
-variantOf: veriT, 23406
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 23693
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 13
 solverHomePage: http://www.verit-solver.org
 sysDescrUrl: veriT+raSAT+Redlog.pdf

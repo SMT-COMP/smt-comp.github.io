@@ -5,10 +5,10 @@ name: SPASS-SATT
 preliminaryID: 23356
 finalID: 23356
 contactName: Martin Bromberger, Mathias Fleury, Simon Schwarz, and Christoph Weidenbach
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 73
 solverHomePage: https://www.spass-prover.org/
 sysDescrUrl: SPASS-SATT.pdf

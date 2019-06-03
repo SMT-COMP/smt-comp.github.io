@@ -5,10 +5,10 @@ name: SMTInterpol
 preliminaryID: 23360
 finalID: 23554
 contactName: Tanja Schindler, Jochen Hoenicke, Jürgen Christ
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 983571724
 solverHomePage: http://ultimate.informatik.uni-freiburg.de/smtinterpol/
 sysDescrUrl: smtinterpol.pdf

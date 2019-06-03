@@ -5,10 +5,10 @@ name: Vampire
 preliminaryID: 23409
 finalID: 23703
 contactName: Giles Reger, Martin Suda, Andrei Voronkov, Laura Kovacs, Evgenii Kotelnikov, Simon Robillard, Martin Riener
-variantOf: n/a
+variantOf: 
 wrapperTool: Z3 4.5
-derivedTool: n/a
-competing: "yes"
+derivedTool: 
+competing: yes
 seed: 4051
 solverHomePage: https://vprover.github.io
 sysDescrUrl: vampire.pdf

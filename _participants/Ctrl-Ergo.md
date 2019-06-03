@@ -5,10 +5,10 @@ name: Ctrl-Ergo
 preliminaryID: 23398
 finalID: 23398
 contactName: Mohamed IGUERNLALA
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 12019
 solverHomePage: https://alt-ergo.ocamlpro.com/
 sysDescrUrl: Ctrl-Ergo.pdf

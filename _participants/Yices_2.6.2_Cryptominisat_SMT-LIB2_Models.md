@@ -5,10 +5,10 @@ name: Yices 2.6.2 Cryptominisat/SMT-LIB2 Models
 preliminaryID: 23372
 finalID: 23700
 contactName: Bruno Dutertre, Dejan Jovanovic, Ian A. Mason, Stéphane Graham-Lengrand
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+variantOf: 23694
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 255
 solverHomePage: http://yices.csl.sri.com
 sysDescrUrl: yices.pdf

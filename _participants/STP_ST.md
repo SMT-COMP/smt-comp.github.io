@@ -4,11 +4,11 @@ contactEmail: trev_abroad@yahoo.com
 name: STP ST
 preliminaryID: 23394
 finalID: 23721
-contactName: Various
-variantOf: n/a
-wrapperTool: n/a
-derivedTool: n/a
-competing: "yes"
+contactName: Trevor Hansen, Norbert Manthey, Mate Soos
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
 seed: 1094795585
 solverHomePage: https://github.com/stp/stp
 sysDescrUrl: STP.pdf

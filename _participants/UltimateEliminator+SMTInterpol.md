@@ -5,10 +5,10 @@ name: UltimateEliminator+SMTInterpol
 preliminaryID: 23426
 finalID: 23743
 contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
-variantOf: n/a
+variantOf: 
 wrapperTool: SMTInterpol-2.5-101-g5390cba7
-derivedTool: n/a
-competing: "yes"
+derivedTool: 
+competing: yes
 seed: 0
 solverHomePage: https://ultimate.informatik.uni-freiburg.de/
 sysDescrUrl: 2019UltimateEliminator.pdf
