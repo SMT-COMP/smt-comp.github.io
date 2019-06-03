@@ -1,41 +1,41 @@
 ---
 layout: participant
-contactEmail: "cs1150254@iitd.ac.in"
-name: "CVC4-SymBreak"
-preliminaryID: ""
-finalID: "23704"
-contactName: "Parag Singla, Ronak Agarwal, Saket Dingliwal, Happy Mittal"
-variantOf: ""
-wrapperTool: ""
-derivedTool: "CVC4 smtcomp2018"
-competing: "no"
-seed: ""
-solverHomePage: ""
-sysDescrUrl: "cvc4-symbreak.pdf"
-sysDescrName: "CVC4-SymBreak"
+contactEmail: cs1150254@iitd.ac.in
+name: CVC4-SymBreak
+preliminaryID: 
+finalID: 23704
+contactName: Parag Singla, Ronak Agarwal, Saket Dingliwal, Happy Mittal
+variantOf: 
+wrapperTool: 
+derivedTool: CVC4 smtcomp2018
+competing: no
+seed: 
+solverHomePage: 
+sysDescrUrl: cvc4-symbreak.pdf
+sysDescrName: CVC4-SymBreak
 logics:
-"- name: "AUFLIA"
+- name: AUFLIA
   tracks:
-"  - "track_single_query""
-- name: "AUFLIRA"
+  - track_single_query
+- name: AUFLIRA
   tracks:
-"  - "track_single_query""
-- name: "AUFNIA"
+  - track_single_query
+- name: AUFNIA
   tracks:
-"  - "track_single_query""
-- name: "QF_LIA"
+  - track_single_query
+- name: QF_LIA
   tracks:
-"  - "track_single_query""
-- name: "QF_LRA"
+  - track_single_query
+- name: QF_LRA
   tracks:
-"  - "track_single_query""
-- name: "QF_NIA"
+  - track_single_query
+- name: QF_NIA
   tracks:
-"  - "track_single_query""
-- name: "QF_NRA"
+  - track_single_query
+- name: QF_NRA
   tracks:
-"  - "track_single_query""
-- name: "UFNIA"
+  - track_single_query
+- name: UFNIA
   tracks:
-"  - "track_single_query"""
+  - track_single_query
 ---

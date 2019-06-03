@@ -1,103 +1,103 @@
 ---
 layout: participant
-contactEmail: "hoenicke@informatik.uni-freiburg.de"
-name: "SMTInterpol"
-preliminaryID: "23360"
-finalID: "23554"
-contactName: "Tanja Schindler, Jochen Hoenicke, Jürgen Christ"
-variantOf: ""
-wrapperTool: ""
-derivedTool: ""
-competing: "yes"
-seed: "983571724"
-solverHomePage: "http://ultimate.informatik.uni-freiburg.de/smtinterpol/"
-sysDescrUrl: "smtinterpol.pdf"
-sysDescrName: "SMTInterpol"
+contactEmail: hoenicke@informatik.uni-freiburg.de
+name: SMTInterpol
+preliminaryID: 23360
+finalID: 23554
+contactName: Tanja Schindler, Jochen Hoenicke, Jürgen Christ
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
+seed: 983571724
+solverHomePage: http://ultimate.informatik.uni-freiburg.de/smtinterpol/
+sysDescrUrl: smtinterpol.pdf
+sysDescrName: SMTInterpol
 logics:
-"- name: "ALIA"
+- name: ALIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental""
-- name: "AUFLIA"
+  - track_single_query
+  - track_incremental
+- name: AUFLIA
   tracks:
-"  - "track_single_query""
-- name: "AUFLIRA"
+  - track_single_query
+- name: AUFLIRA
   tracks:
-"  - "track_single_query""
-- name: "LIA"
+  - track_single_query
+- name: LIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental""
-- name: "LRA"
+  - track_single_query
+  - track_incremental
+- name: LRA
   tracks:
-"  - "track_single_query"
-  - "track_incremental""
-- name: "QF_ALIA"
+  - track_single_query
+  - track_incremental
+- name: QF_ALIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_AUFLIA"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_AUFLIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_AX"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_AX
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_IDL"
+  - track_single_query
+  - track_unsat_core
+- name: QF_IDL
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_LIA"
+  - track_single_query
+  - track_unsat_core
+- name: QF_LIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_LIRA"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_LIRA
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_LRA"
+  - track_single_query
+  - track_unsat_core
+- name: QF_LRA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_RDL"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_RDL
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_UF"
+  - track_single_query
+  - track_unsat_core
+- name: QF_UF
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_UFIDL"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFIDL
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_UFLIA"
+  - track_single_query
+  - track_unsat_core
+- name: QF_UFLIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_UFLRA"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFLRA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "UF"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: UF
   tracks:
-"  - "track_single_query""
-- name: "UFIDL"
+  - track_single_query
+- name: UFIDL
   tracks:
-"  - "track_single_query""
-- name: "UFLIA"
+  - track_single_query
+- name: UFLIA
   tracks:
-"  - "track_single_query""
-- name: "UFLRA"
+  - track_single_query
+- name: UFLRA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"""
+  - track_single_query
+  - track_incremental
 ---

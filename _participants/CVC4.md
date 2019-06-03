@@ -1,191 +1,191 @@
 ---
 layout: participant
-contactEmail: "noetzli@cs.stanford.edu"
-name: "CVC4"
-preliminaryID: "23420"
-finalID: "23737"
-contactName: "Clark Barrett, Haniel Barbosa, Martin Brain, Tim King, Makai Mann, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Cesare Tinelli, Yoni Zohar"
-variantOf: ""
-wrapperTool: ""
-derivedTool: ""
-competing: "yes"
-seed: "439"
-solverHomePage: "http://cvc4.cs.stanford.edu"
-sysDescrUrl: "cvc4.pdf"
-sysDescrName: "CVC4"
+contactEmail: noetzli@cs.stanford.edu
+name: CVC4
+preliminaryID: 23420
+finalID: 23737
+contactName: Clark Barrett, Haniel Barbosa, Martin Brain, Tim King, Makai Mann, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Cesare Tinelli, Yoni Zohar
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
+seed: 439
+solverHomePage: http://cvc4.cs.stanford.edu
+sysDescrUrl: cvc4.pdf
+sysDescrName: CVC4
 logics:
-"- name: "ABVFP"
+- name: ABVFP
   tracks:
-"  - "track_single_query""
-- name: "ALIA"
+  - track_single_query
+- name: ALIA
   tracks:
-"  - "track_single_query""
-- name: "AUFBVDTLIA"
+  - track_single_query
+- name: AUFBVDTLIA
   tracks:
-"  - "track_single_query""
-- name: "AUFDTLIA"
+  - track_single_query
+- name: AUFDTLIA
   tracks:
-"  - "track_single_query""
-- name: "AUFLIA"
+  - track_single_query
+- name: AUFLIA
   tracks:
-"  - "track_single_query""
-- name: "AUFLIRA"
+  - track_single_query
+- name: AUFLIRA
   tracks:
-"  - "track_single_query""
-- name: "AUFNIA"
+  - track_single_query
+- name: AUFNIA
   tracks:
-"  - "track_single_query""
-- name: "AUFNIRA"
+  - track_single_query
+- name: AUFNIRA
   tracks:
-"  - "track_single_query""
-- name: "BV"
+  - track_single_query
+- name: BV
   tracks:
-"  - "track_single_query""
-- name: "BVFP"
+  - track_single_query
+- name: BVFP
   tracks:
-"  - "track_single_query""
-- name: "FP"
+  - track_single_query
+- name: FP
   tracks:
-"  - "track_single_query""
-- name: "LIA"
+  - track_single_query
+- name: LIA
   tracks:
-"  - "track_single_query""
-- name: "LRA"
+  - track_single_query
+- name: LRA
   tracks:
-"  - "track_single_query""
-- name: "NIA"
+  - track_single_query
+- name: NIA
   tracks:
-"  - "track_single_query""
-- name: "NRA"
+  - track_single_query
+- name: NRA
   tracks:
-"  - "track_single_query""
-- name: "QF_ABV"
+  - track_single_query
+- name: QF_ABV
   tracks:
-"  - "track_single_query""
-- name: "QF_ABVFP"
+  - track_single_query
+- name: QF_ABVFP
   tracks:
-"  - "track_single_query""
-- name: "QF_ALIA"
+  - track_single_query
+- name: QF_ALIA
   tracks:
-"  - "track_single_query""
-- name: "QF_ANIA"
+  - track_single_query
+- name: QF_ANIA
   tracks:
-"  - "track_single_query""
-- name: "QF_AUFBV"
+  - track_single_query
+- name: QF_AUFBV
   tracks:
-"  - "track_single_query""
-- name: "QF_AUFLIA"
+  - track_single_query
+- name: QF_AUFLIA
   tracks:
-"  - "track_single_query""
-- name: "QF_AUFNIA"
+  - track_single_query
+- name: QF_AUFNIA
   tracks:
-"  - "track_single_query""
-- name: "QF_AX"
+  - track_single_query
+- name: QF_AX
   tracks:
-"  - "track_single_query""
-- name: "QF_BV"
+  - track_single_query
+- name: QF_BV
   tracks:
-"  - "track_single_query""
-- name: "QF_BVFP"
+  - track_single_query
+- name: QF_BVFP
   tracks:
-"  - "track_single_query""
-- name: "QF_BVFPLRA"
+  - track_single_query
+- name: QF_BVFPLRA
   tracks:
-"  - "track_single_query""
-- name: "QF_DT"
+  - track_single_query
+- name: QF_DT
   tracks:
-"  - "track_single_query""
-- name: "QF_FP"
+  - track_single_query
+- name: QF_FP
   tracks:
-"  - "track_single_query""
-- name: "QF_FPLRA"
+  - track_single_query
+- name: QF_FPLRA
   tracks:
-"  - "track_single_query""
-- name: "QF_IDL"
+  - track_single_query
+- name: QF_IDL
   tracks:
-"  - "track_single_query""
-- name: "QF_LIA"
+  - track_single_query
+- name: QF_LIA
   tracks:
-"  - "track_single_query""
-- name: "QF_LIRA"
+  - track_single_query
+- name: QF_LIRA
   tracks:
-"  - "track_single_query""
-- name: "QF_LRA"
+  - track_single_query
+- name: QF_LRA
   tracks:
-"  - "track_single_query""
-- name: "QF_NIA"
+  - track_single_query
+- name: QF_NIA
   tracks:
-"  - "track_single_query""
-- name: "QF_NIRA"
+  - track_single_query
+- name: QF_NIRA
   tracks:
-"  - "track_single_query""
-- name: "QF_NRA"
+  - track_single_query
+- name: QF_NRA
   tracks:
-"  - "track_single_query""
-- name: "QF_RDL"
+  - track_single_query
+- name: QF_RDL
   tracks:
-"  - "track_single_query""
-- name: "QF_S"
+  - track_single_query
+- name: QF_S
   tracks:
-"  - "track_single_query""
-- name: "QF_SLIA"
+  - track_single_query
+- name: QF_SLIA
   tracks:
-"  - "track_single_query""
-- name: "QF_UF"
+  - track_single_query
+- name: QF_UF
   tracks:
-"  - "track_single_query""
-- name: "QF_UFBV"
+  - track_single_query
+- name: QF_UFBV
   tracks:
-"  - "track_single_query""
-- name: "QF_UFIDL"
+  - track_single_query
+- name: QF_UFIDL
   tracks:
-"  - "track_single_query""
-- name: "QF_UFLIA"
+  - track_single_query
+- name: QF_UFLIA
   tracks:
-"  - "track_single_query""
-- name: "QF_UFLRA"
+  - track_single_query
+- name: QF_UFLRA
   tracks:
-"  - "track_single_query""
-- name: "QF_UFNIA"
+  - track_single_query
+- name: QF_UFNIA
   tracks:
-"  - "track_single_query""
-- name: "QF_UFNRA"
+  - track_single_query
+- name: QF_UFNRA
   tracks:
-"  - "track_single_query""
-- name: "UF"
+  - track_single_query
+- name: UF
   tracks:
-"  - "track_single_query""
-- name: "UFBV"
+  - track_single_query
+- name: UFBV
   tracks:
-"  - "track_single_query""
-- name: "UFDT"
+  - track_single_query
+- name: UFDT
   tracks:
-"  - "track_single_query""
-- name: "UFDTLIA"
+  - track_single_query
+- name: UFDTLIA
   tracks:
-"  - "track_single_query""
-- name: "UFDTNIA"
+  - track_single_query
+- name: UFDTNIA
   tracks:
-"  - "track_single_query""
-- name: "UFIDL"
+  - track_single_query
+- name: UFIDL
   tracks:
-"  - "track_single_query""
-- name: "UFLIA"
+  - track_single_query
+- name: UFLIA
   tracks:
-"  - "track_single_query""
-- name: "UFLRA"
+  - track_single_query
+- name: UFLRA
   tracks:
-"  - "track_single_query""
-- name: "UFNIA"
+  - track_single_query
+- name: UFNIA
   tracks:
-"  - "track_single_query""
-- name: "QF_BV (non-incremental)"
+  - track_single_query
+- name: QF_BV (non-incremental)
   tracks:
-"  - "track_challenge""
-- name: "QF_ABV (non-incremental)"
+  - track_challenge
+- name: QF_ABV (non-incremental)
   tracks:
-"  - "track_challenge""
-- name: "QF_AUFBV (non-incremental)"
+  - track_challenge
+- name: QF_AUFBV (non-incremental)
   tracks:
-"  - "track_challenge"""
+  - track_challenge
 ---

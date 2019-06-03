@@ -1,51 +1,51 @@
 ---
 layout: participant
-contactEmail: "airfan@stanford.edu"
-name: "MathSAT-default"
-preliminaryID: "23373"
-finalID: "23680"
-contactName: "Alberto Griggio, Ahmed Irfan, Alessandro Cimatti, Roberto Sebastiani"
-variantOf: ""
-wrapperTool: ""
-derivedTool: ""
-competing: "yes"
-seed: "512"
-solverHomePage: ""
-sysDescrUrl: "mathsat5.pdf"
-sysDescrName: "MathSAT5"
+contactEmail: airfan@stanford.edu
+name: MathSAT-default
+preliminaryID: 23373
+finalID: 23680
+contactName: Alberto Griggio, Ahmed Irfan, Alessandro Cimatti, Roberto Sebastiani
+variantOf: 
+wrapperTool: 
+derivedTool: 
+competing: yes
+seed: 512
+solverHomePage: 
+sysDescrUrl: mathsat5.pdf
+sysDescrName: MathSAT5
 logics:
-"- name: "QF_ANIA"
+- name: QF_ANIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_AUFNIA"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_AUFNIA
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_NIA"
+  - track_single_query
+  - track_unsat_core
+- name: QF_NIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_NIRA"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_NIRA
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_NRA"
+  - track_single_query
+  - track_unsat_core
+- name: QF_NRA
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_UFNIA"
+  - track_single_query
+  - track_unsat_core
+- name: QF_UFNIA
   tracks:
-"  - "track_single_query"
-  - "track_incremental"
-  - "track_unsat_core""
-- name: "QF_UFNRA"
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFNRA
   tracks:
-"  - "track_single_query"
-  - "track_unsat_core""
-- name: "QF_AUFBVNIA"
+  - track_single_query
+  - track_unsat_core
+- name: QF_AUFBVNIA
   tracks:
-"  - "track_incremental"""
+  - track_incremental
 ---
