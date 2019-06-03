@@ -8,7 +8,7 @@ contactName: Marc Brockschmidt, Florian Frohn, Carsten Fuhs, Jürgen Giesl, Jera
 variantOf: 
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 896120349
 solverHomePage: http://aprove.informatik.rwth-aachen.de/
 sysDescrUrl: AProVE19.pdf

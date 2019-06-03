@@ -1,13 +1,13 @@
 ---
 layout: participant
 contactEmail: soos.mate@gmail.com
-name: stp-mt
+name: STP-mt
 preliminaryID: 23397
 finalID: 23663
 contactName: Trevor Hansen, Norbert Manthey, Mate Soos
-variantOf: STP
-wrapperTool: n/a
-derivedTool: n/a
+variantOf: 23321
+wrapperTool: 
+derivedTool: 
 competing: "yes"
 seed: 1094795585
 solverHomePage: https://github.com/stp/stp

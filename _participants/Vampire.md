@@ -8,7 +8,7 @@ contactName: Giles Reger, Martin Suda, Andrei Voronkov, Laura Kovacs, Evgenii Ko
 variantOf: 
 wrapperTool: Z3 4.5
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 4051
 solverHomePage: https://vprover.github.io
 sysDescrUrl: vampire.pdf

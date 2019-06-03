@@ -8,7 +8,7 @@ contactName: Bruno Marre, François Bobot, Zakaria Chihani
 variantOf: 
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 614823377508390721
 solverHomePage: 
 sysDescrUrl: colibri.pdf

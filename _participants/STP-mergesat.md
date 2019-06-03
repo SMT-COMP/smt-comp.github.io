@@ -1,13 +1,13 @@
 ---
 layout: participant
 contactEmail: nmanthey@conp-solutions.com
-name: stp-mergesat
+name: STP-mergesat
 preliminaryID: 23401
 finalID: 23401
-contactName: Mate Soos, Trevor Hansen, Norbert Manthey
+contactName: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
-wrapperTool: n/a
-derivedTool: n/a
+wrapperTool: 
+derivedTool: 
 competing: "yes"
 seed: 1094795585
 solverHomePage: https://github.com/stp/stp

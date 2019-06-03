@@ -1,13 +1,13 @@
 ---
 layout: participant
 contactEmail: soos.mate@gmail.com
-name: stp-incremental
+name: STP-incremental
 preliminaryID: 23396
 finalID: 23678
 contactName: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
-wrapperTool: n/a
-derivedTool: n/a
+wrapperTool: 
+derivedTool: 
 competing: "yes"
 seed: 1094795585
 solverHomePage: https://github.com/stp/stp

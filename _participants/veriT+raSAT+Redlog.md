@@ -8,7 +8,7 @@ contactName: Haniel Barbosa, Pascal Fontaine, Maximilian Jaroschek, Marek Kosta,
 variantOf: 23693
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 13
 solverHomePage: http://www.verit-solver.org
 sysDescrUrl: veriT+raSAT+Redlog.pdf

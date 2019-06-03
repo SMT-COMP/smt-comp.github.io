@@ -8,7 +8,7 @@ contactName: Bruno Dutertre, Dejan Jovanovic, Ian A. Mason, Stéphane Graham-Len
 variantOf: 23694
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 255
 solverHomePage: http://yices.csl.sri.com
 sysDescrUrl: yices.pdf

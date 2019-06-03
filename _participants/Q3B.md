@@ -8,7 +8,7 @@ contactName: Martin Jonáš, Jan Strejček
 variantOf: 
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 93629305
 solverHomePage: https://github.com/martinjonas/Q3B/releases/tag/smtcomp2019
 sysDescrUrl: q3b.pdf

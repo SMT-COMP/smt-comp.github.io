@@ -8,7 +8,7 @@ contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
 variantOf: 
 wrapperTool: SMTInterpol-2.5-101-g5390cba7
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 0
 solverHomePage: https://ultimate.informatik.uni-freiburg.de/
 sysDescrUrl: 2019UltimateEliminator.pdf

@@ -1,13 +1,13 @@
 ---
 layout: participant
 contactEmail: nmanthey@conp-solutions.com
-name: stp-portfolio
+name: STP-portfolio
 preliminaryID: 23403
 finalID: 23403
-contactName: Mate Soos, Trevor Hansen, Norbert Manthey
+contactName: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
-wrapperTool: n/a
-derivedTool: n/a
+wrapperTool: 
+derivedTool: 
 competing: "yes"
 seed: 1094795585
 solverHomePage: https://github.com/stp/stp

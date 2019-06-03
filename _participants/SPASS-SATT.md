@@ -8,7 +8,7 @@ contactName: Martin Bromberger, Mathias Fleury, Simon Schwarz, and Christoph Wei
 variantOf: 
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 73
 solverHomePage: https://www.spass-prover.org/
 sysDescrUrl: SPASS-SATT.pdf

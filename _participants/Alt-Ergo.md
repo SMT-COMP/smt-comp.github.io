@@ -8,7 +8,7 @@ contactName: Guillaume Bury, Sylvain Conchon, Albin Coquereau, Mohamed Iguernlal
 variantOf: 
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 42
 solverHomePage: https://alt-ergo.ocamlpro.com/
 sysDescrUrl: Alt-Ergo.pdf

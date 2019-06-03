@@ -8,7 +8,7 @@ contactName: Trevor Hansen, Mate Soos
 variantOf: 
 wrapperTool: 
 derivedTool: 
-competing: yes
+competing: "yes"
 seed: 
 solverHomePage: 
 sysDescrUrl: minkeyrink.pdf
