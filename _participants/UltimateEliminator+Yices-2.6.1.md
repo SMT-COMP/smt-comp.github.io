@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: heizmann@informatik.uni-freiburg.de
+contact: heizmann@informatik.uni-freiburg.de
 name: UltimateEliminator+Yices-2.6.1
 preliminaryID: 23423
 finalID: 23744
-contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
+team: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
 variantOf: 
 wrapperTool: Yices-2.6.1
 derivedTool: 

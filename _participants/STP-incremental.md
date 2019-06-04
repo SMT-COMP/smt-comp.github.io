@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: soos.mate@gmail.com
+contact: soos.mate@gmail.com
 name: STP-incremental
 preliminaryID: 23396
 finalID: 23678
-contactName: Trevor Hansen, Norbert Manthey, Mate Soos
+team: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
 wrapperTool: 
 derivedTool: 

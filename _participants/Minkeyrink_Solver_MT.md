@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: trev_abroad@yahoo.com
+contact: trev_abroad@yahoo.com
 name: Minkeyrink Solver MT
 preliminaryID: 23393
 finalID: 23719
-contactName: Trevor Hansen, Mate Soos
+team: Trevor Hansen, Mate Soos
 variantOf: 
 wrapperTool: 
 derivedTool: 

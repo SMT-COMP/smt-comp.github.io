@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: soos.mate@gmail.com
+contact: soos.mate@gmail.com
 name: STP-mt
 preliminaryID: 23397
 finalID: 23663
-contactName: Trevor Hansen, Norbert Manthey, Mate Soos
+team: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
 wrapperTool: 
 derivedTool: 

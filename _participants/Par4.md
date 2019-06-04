@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: tjark.weber@it.uu.se
+contact: tjark.weber@it.uu.se
 name: Par4
 preliminaryID: 23391
 finalID: 23672
-contactName: Tjark Weber
+team: Tjark Weber
 variantOf: 
 wrapperTool: AProVE (smt-comp 2018), Boolector (smt-comp 2018), COLIBRI (smt-comp 2018), CVC4 (smt-comp 2018), SMTInterpol (smt-comp 2018), SMTRAT (smt-comp 2018), veriT (smt-comp 2018), Yices (smt-comp 2018), Z3 (smt-comp 2018)
 derivedTool: 

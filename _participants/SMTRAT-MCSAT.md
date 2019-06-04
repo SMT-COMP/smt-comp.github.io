@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: gereon.kremer@cs.rwth-aachen.de
+contact: gereon.kremer@cs.rwth-aachen.de
 name: SMTRAT-MCSAT
 preliminaryID: 23328
 finalID: 23434
-contactName: Gereon Kremer
+team: Gereon Kremer
 variantOf: 
 wrapperTool: 
 derivedTool: 

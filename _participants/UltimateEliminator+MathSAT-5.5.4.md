@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: heizmann@informatik.uni-freiburg.de
+contact: heizmann@informatik.uni-freiburg.de
 name: UltimateEliminator+MathSAT-5.5.4
 preliminaryID: 23425
 finalID: 23742
-contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
+team: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
 variantOf: 
 wrapperTool: MathSAT-5.5.4
 derivedTool: 

@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: nmanthey@conp-solutions.com
+contact: nmanthey@conp-solutions.com
 name: STP-minisat
 preliminaryID: 23402
 finalID: 23402
-contactName: Trevor Hansen, Norbert Manthey, Mate Soos
+team: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
 wrapperTool: 
 derivedTool: 

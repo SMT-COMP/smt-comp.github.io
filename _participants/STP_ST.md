@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: trev_abroad@yahoo.com
+contact: trev_abroad@yahoo.com
 name: STP ST
 preliminaryID: 23394
 finalID: 23721
-contactName: Trevor Hansen, Norbert Manthey, Mate Soos
+team: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 
 wrapperTool: 
 derivedTool: 

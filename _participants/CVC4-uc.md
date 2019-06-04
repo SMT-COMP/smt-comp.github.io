@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: noetzli@cs.stanford.edu
+contact: noetzli@cs.stanford.edu
 name: CVC4-uc
 preliminaryID: 23416
 finalID: 23732
-contactName: Clark Barrett, Haniel Barbosa, Martin Brain, Tim King, Makai Mann, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Cesare Tinelli, Yoni Zohar
+team: Clark Barrett, Haniel Barbosa, Martin Brain, Tim King, Makai Mann, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Cesare Tinelli, Yoni Zohar
 variantOf: CVC4, 23420
 wrapperTool: 
 derivedTool: 

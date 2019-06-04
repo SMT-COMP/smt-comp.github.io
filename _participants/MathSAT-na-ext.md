@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: airfan@stanford.edu
+contact: airfan@stanford.edu
 name: MathSAT-na-ext
 preliminaryID: 23427
 finalID: 23679
-contactName: Alberto Griggio, Ahmed Irfan, Alessandro Cimatti, Roberto Sebastiani
+team: Alberto Griggio, Ahmed Irfan, Alessandro Cimatti, Roberto Sebastiani
 variantOf: 23680
 wrapperTool: 
 derivedTool: 

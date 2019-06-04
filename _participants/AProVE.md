@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: carsten@dcs.bbk.ac.uk
+contact: carsten@dcs.bbk.ac.uk
 name: AProVE
 preliminaryID: 1229
 finalID: 1229
-contactName: Marc Brockschmidt, Florian Frohn, Carsten Fuhs, Jürgen Giesl, Jera Hensel, Peter Schneider-Kamp, Thomas Ströder, Rene Thiemann
+team: Marc Brockschmidt, Florian Frohn, Carsten Fuhs, Jürgen Giesl, Jera Hensel, Peter Schneider-Kamp, Thomas Ströder, Rene Thiemann
 variantOf: 
 wrapperTool: 
 derivedTool: 

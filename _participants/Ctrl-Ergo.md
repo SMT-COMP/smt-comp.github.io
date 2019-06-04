@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: mohamed.iguernlala@ocamlpro.com
+contact: mohamed.iguernlala@ocamlpro.com
 name: Ctrl-Ergo
 preliminaryID: 23398
 finalID: 23398
-contactName: Mohamed IGUERNLALA
+team: Mohamed IGUERNLALA
 variantOf: 
 wrapperTool: 
 derivedTool: 

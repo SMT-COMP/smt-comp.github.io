@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: albin.coquereau@ocamlpro.com
+contact: albin.coquereau@ocamlpro.com
 name: Alt-Ergo
 preliminaryID: 23333
 finalID: 23530
-contactName: Guillaume Bury, Sylvain Conchon, Albin Coquereau, Mohamed Iguernlala, Steven de Oliveira
+team: Guillaume Bury, Sylvain Conchon, Albin Coquereau, Mohamed Iguernlala, Steven de Oliveira
 variantOf: 
 wrapperTool: 
 derivedTool: 

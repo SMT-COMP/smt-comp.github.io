@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: nmanthey@conp-solutions.com
+contact: nmanthey@conp-solutions.com
 name: STP-riss
 preliminaryID: 23400
 finalID: 23400
-contactName: Trevor Hansen, Norbert Manthey, Mate Soos
+team: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
 wrapperTool: 
 derivedTool: 

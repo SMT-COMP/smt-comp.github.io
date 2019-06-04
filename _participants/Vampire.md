@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: giles.reger@manchester.ac.uk
+contact: giles.reger@manchester.ac.uk
 name: Vampire
 preliminaryID: 23409
 finalID: 23703
-contactName: Giles Reger, Martin Suda, Andrei Voronkov, Laura Kovacs, Evgenii Kotelnikov, Simon Robillard, Martin Riener
+team: Giles Reger, Martin Suda, Andrei Voronkov, Laura Kovacs, Evgenii Kotelnikov, Simon Robillard, Martin Riener
 variantOf: 
 wrapperTool: Z3 4.5
 derivedTool: 

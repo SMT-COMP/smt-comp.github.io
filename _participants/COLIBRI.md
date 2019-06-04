@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: francois.bobot@cea.fr
+contact: francois.bobot@cea.fr
 name: COLIBRI
 preliminaryID: 23355
 finalID: 23355
-contactName: Bruno Marre, François Bobot, Zakaria Chihani 
+team: Bruno Marre, François Bobot, Zakaria Chihani 
 variantOf: 
 wrapperTool: 
 derivedTool: 

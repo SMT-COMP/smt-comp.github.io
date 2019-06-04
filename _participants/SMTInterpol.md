@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: hoenicke@informatik.uni-freiburg.de
+contact: hoenicke@informatik.uni-freiburg.de
 name: SMTInterpol
 preliminaryID: 23360
 finalID: 23554
-contactName: Tanja Schindler, Jochen Hoenicke, Jürgen Christ
+team: Tanja Schindler, Jochen Hoenicke, Jürgen Christ
 variantOf: 
 wrapperTool: 
 derivedTool: 

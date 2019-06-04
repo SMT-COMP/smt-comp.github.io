@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: heizmann@informatik.uni-freiburg.de
+contact: heizmann@informatik.uni-freiburg.de
 name: UltimateEliminator+SMTInterpol
 preliminaryID: 23426
 finalID: 23743
-contactName: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
+team: Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann
 variantOf: 
 wrapperTool: SMTInterpol-2.5-101-g5390cba7
 derivedTool: 

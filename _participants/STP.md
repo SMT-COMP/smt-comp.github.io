@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: nmanthey@conp-solutions.com
+contact: nmanthey@conp-solutions.com
 name: STP
 preliminaryID: 23321
 finalID: 23321
-contactName: Trevor Hansen, Norbert Manthey, Mate Soos
+team: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 
 wrapperTool: 
 derivedTool: 

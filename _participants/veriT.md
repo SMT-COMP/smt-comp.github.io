@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: hans-jorg.schurr@inria.fr
+contact: hans-jorg.schurr@inria.fr
 name: veriT
 preliminaryID: 23406
 finalID: 23693
-contactName: Haniel Barbosa, Daniel El Ouraoui, Pascal Fontaine, Hans-Jörg Schurr
+team: Haniel Barbosa, Daniel El Ouraoui, Pascal Fontaine, Hans-Jörg Schurr
 variantOf: 
 wrapperTool: 
 derivedTool: 

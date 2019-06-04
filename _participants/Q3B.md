@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: martin.jonas@mail.muni.cz
+contact: martin.jonas@mail.muni.cz
 name: Q3B
 preliminaryID: 23405
 finalID: 23686
-contactName: Martin Jonáš, Jan Strejček
+team: Martin Jonáš, Jan Strejček
 variantOf: 
 wrapperTool: 
 derivedTool: 

@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: sebastian.krings@uni-duesseldorf.de
+contact: sebastian.krings@uni-duesseldorf.de
 name: ProB
 preliminaryID: 22647
 finalID: 23466
-contactName: Sebastian Krings, Michael Leuschel
+team: Sebastian Krings, Michael Leuschel
 variantOf: 
 wrapperTool: 
 derivedTool: 

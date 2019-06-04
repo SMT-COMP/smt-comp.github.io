@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: cs1150254@iitd.ac.in
+contact: cs1150254@iitd.ac.in
 name: CVC4-SymBreak
 preliminaryID: 
 finalID: 23704
-contactName: Parag Singla, Ronak Agarwal, Saket Dingliwal, Happy Mittal
+team: Parag Singla, Ronak Agarwal, Saket Dingliwal, Happy Mittal
 variantOf: 
 wrapperTool: 
 derivedTool: CVC4 smtcomp2018

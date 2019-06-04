@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: mbromber@mpi-inf.mpg.de
+contact: mbromber@mpi-inf.mpg.de
 name: SPASS-SATT
 preliminaryID: 23356
 finalID: 23356
-contactName: Martin Bromberger, Mathias Fleury, Simon Schwarz, and Christoph Weidenbach
+team: Martin Bromberger, Mathias Fleury, Simon Schwarz, and Christoph Weidenbach
 variantOf: 
 wrapperTool: 
 derivedTool: 

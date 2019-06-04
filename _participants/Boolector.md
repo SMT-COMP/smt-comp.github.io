@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: preiner@cs.stanford.edu
+contact: preiner@cs.stanford.edu
 name: Boolector
 preliminaryID: 23380
 finalID: 23711
-contactName: Aina Niemetz, Mathias Preiner, Armin Biere
+team: Aina Niemetz, Mathias Preiner, Armin Biere
 variantOf: 
 wrapperTool: 
 derivedTool: 

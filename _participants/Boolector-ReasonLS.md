@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: hebing@ios.ac.cn
+contact: hebing@ios.ac.cn
 name: Boolector-ReasonLS
 preliminaryID: 
 finalID: 23692
-contactName: Shaowei Cai, Xindi Zhang, Bing He
+team: Shaowei Cai, Xindi Zhang, Bing He
 variantOf: 
 wrapperTool: 
 derivedTool: Boolector (GitHub master b982737).

@@ -1,10 +1,10 @@
 ---
 layout: participant
-contactEmail: gereon.kremer@cs.rwth-aachen.de
+contact: gereon.kremer@cs.rwth-aachen.de
 name: SMT-RAT
 preliminaryID: 23327
 finalID: 23731
-contactName: Gereon Kremer
+team: Gereon Kremer
 variantOf: 
 wrapperTool: 
 derivedTool: 

@@ -7,13 +7,13 @@ non-competing solvers by the organizers for comparison.
     <tr>
         <th>Solver</th>
         <th>Competing</th>
-        <th>Single Problem Track</th>
+        <th>Single Query Track</th>
         <th>Incremental Track</th>
         <th>Unsat-Core Track</th>
         <th>Challenge Track</th>
         <th>Model Validation Track</th>
-        <th>Preliminary Version Solver ID</th>
-        <th>Final Version Solver ID</th>
+        <th>Preliminary Solver ID</th>
+        <th>Final Solver ID</th>
         <th>Seed</th>
         <th>System Description</th>
         <th>Solver Homepage</th>
@@ -50,7 +50,7 @@ non-competing solvers by the organizers for comparison.
         <td>{{ solver.seed }}</td>
         <td><a href="/2019/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
         <td><a href="{{ solver.solverHomePage }}">{{ solver.solverHomePage }}</a></td>
-        <td>{{ solver.contactName }} <a href="mailto:{{ solver.contactEmail }}"> ({{ solver.contactEmail }})</a></td>
+        <td><a href="mailto:{{ solver.contact }}"> ({{ solver.contact }})</a></td>
     </tr>
     {% endfor %}
 </table>
