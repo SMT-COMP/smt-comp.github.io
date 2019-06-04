@@ -50,7 +50,7 @@ non-competing solvers by the organizers for comparison.
         <td>{{ solver.seed }}</td>
         <td><a href="/2019/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
         <td><a href="{{ solver.solverHomePage }}">{{ solver.solverHomePage }}</a></td>
-        <td><a href="mailto:{{ solver.contact }}"> ({{ solver.contact }})</a></td>
+        <td><a href="mailto:{{ solver.contact }}"> {{ solver.contact }}</a></td>
     </tr>
     {% endfor %}
 </table>
