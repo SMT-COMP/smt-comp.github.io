@@ -1,6 +1,6 @@
 ## Participants
 
-These solvers have been submitted to SMT-COMP 2019 or were entered as
+The following solvers have been submitted to SMT-COMP 2019 or were entered as
 non-competing solvers by the organizers for comparison.
 
 <table>
@@ -54,5 +54,21 @@ non-competing solvers by the organizers for comparison.
         <td><a href="mailto:{{ solver.contact }}"> {{ solver.contact }}</a></td>
     </tr>
     {% endfor %}
+    <tr>
+      <td><b>Total</b></td>
+      <td><b>41</b></td>
+      <td><b>17</b></td>
+      <td><b>9</b></td>
+      <td><b>20</b></td>
+      <td><b>11</b></td>
+      <td></td>
+      <td></td>
+      <td><b>933722448</b> (mod 2<sup>30</sup>)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
 </table>
 n. Non-competing.
+
+The opening value of the NYSE Composite Index on 2018-06-03 was 12888.51, resulting in a competition seed of 933722448 + 12889 = <b>933735337</b>.
