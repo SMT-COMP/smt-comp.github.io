@@ -6,7 +6,7 @@ preliminaryID: 23391
 finalID: 23672
 contactName: Tjark Weber
 variantOf: 
-wrapperTool: Par4 is a wrapper tool. It calls several other SMT solvers that participated in SMT-COMP 2018. The full list of wrapped solvers is still subject to change and will be provided in the system description.
+wrapperTool: AProVE (smt-comp 2018), Boolector (smt-comp 2018), COLIBRI (smt-comp 2018), CVC4 (smt-comp 2018), SMTInterpol (smt-comp 2018), SMTRAT (smt-comp 2018), veriT (smt-comp 2018), Yices (smt-comp 2018), Z3 (smt-comp 2018)
 derivedTool: 
 competing: "yes"
 seed: 0
