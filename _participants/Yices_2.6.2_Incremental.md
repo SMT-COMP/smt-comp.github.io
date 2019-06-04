@@ -44,9 +44,6 @@ logics:
 - name: QF_UFBV
   tracks:
   - track_incremental
-- name: QF_UFBVLIA
-  tracks:
-  - track_incremental
 - name: QF_UFLIA
   tracks:
   - track_incremental
