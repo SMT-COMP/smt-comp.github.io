@@ -35,8 +35,12 @@ non-competing solvers by the organizers for comparison.
         {% endfor %}
     {% endfor %}
 
-    <tr>
-        <td><a href="{{ solver.url }}">{{ solver.name }}{% if solver.competing == "no" %}<sup>n</sup>{% endif %}</a></td>
+    <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+        <td>
+          <a href="{{ solver.url }}">
+            {{ solver.name }}{% if solver.competing == "no" %}<sup>n</sup>{% endif %}
+          </a>
+        </td>
         <td>{{ sqt }} </td>
         <td>{{ it }} </td>
         <td>{{ uct }}</td>

@@ -24,67 +24,67 @@
 <h2>{{ page.name }} </h2>
 <table>
     <tr>
-      <td>Competing</td>
+      <td><b>Competing</b></td>
       <td>{{ page.competing }}</td>
   <tr>
-      <td>Single Query Track</td>
+      <td><b>Single Query Track</b></td>
       <td>{{ sqt |join: ", "}}</td>
   </tr>
   <tr>
-      <td>Incremental Track</td>
+      <td><b>Incremental Track</b></td>
       <td>{{ it |join: ", " }}</td>
   </tr>
   <tr>
-      <td>Unsat-Core Track</td>
+      <td><b>Unsat-Core Track</b></td>
       <td>{{ uct |join: ", " }}</td>
   </tr>
   <tr>
-      <td>Challenge Track</td>
+      <td><b>Challenge Track</b></td>
       <td>{{ ct |join: ", " }}</td>
   </tr>
   <tr>
-      <td>Model Validation Track</td>
+      <td><b>Model Validation Track</b></td>
       <td>{{ mvt |join: ", " }}</td>
   </tr>
   <tr>
-      <td>Preliminary ID</td>
+      <td><b>Preliminary ID</b></td>
       <td>{{ page.preliminaryID }}</td>
   </tr>
   <tr>
-      <td>Final ID</td>
+      <td><b>Final ID</b></td>
       <td>{{ page.finalID }}</td>
   </tr>
   <tr>
-      <td>Seed</td>
+      <td><b>Seed</b></td>
       <td>{{ page.seed }}</td>
   </tr>
   <tr>
-      <td>System Description</td>
+      <td><b>System Description</b></td>
       <td><a href="/2019/system-descriptions/{{ page.sysDescrUrl }}">{{
               page.sysDescrName }}</a></td>
   </tr>
   <tr>
-      <td>Variant of Submission ID</td>
+      <td><b>Variant of Submission ID</b></td>
       <td>{{ page.variantOf }}</td>
   </tr>
   <tr>
-      <td>Derived from Solver</td>
+      <td><b>Derived from Solver</b></td>
       <td>{{ page.derivedTool }}</td>
   </tr>
   <tr>
-      <td>Wrapped Solvers</td>
+      <td><b>Wrapped Solvers</b></td>
       <td>{{ page.wrapperTool }}</td>
   </tr>
   <tr>
-      <td>Website</td>
+      <td><b>Website</b></td>
       <td><a href="{{ page.solverHomePage }}">{{
               page.solverHomePage }}</a></td>
   </tr>
   <tr>
-      <td>Team Members</td>
+      <td><b>Team Members</b></td>
       <td>{{ page.team}}</td>
   <tr>
-      <td>Contact</td>
+      <td><b>Contact</b></td>
       <td><a href="mailto:{{ page.contact }}">{{ page.contact }}</a></td>
   </tr>
 </table>
