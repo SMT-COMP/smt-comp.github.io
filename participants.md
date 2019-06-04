@@ -6,7 +6,6 @@ non-competing solvers by the organizers for comparison.
 <table>
     <tr>
         <th>Solver</th>
-        <th>Competing</th>
         <th>Single Query Track</th>
         <th>Incremental Track</th>
         <th>Unsat-Core Track</th>
@@ -36,10 +35,8 @@ non-competing solvers by the organizers for comparison.
         {% endfor %}
     {% endfor %}
 
-
     <tr>
-        <td><a href="{{ solver.url }}">{{ solver.name }}</a></td>
-        <td>{{ solver.competing }}</td>
+        <td><a href="{{ solver.url }}">{{ solver.name }}{% if solver.competing == "no" %}<sup>n</sup>{% endif %}</a></td>
         <td>{{ sqt }} </td>
         <td>{{ it }} </td>
         <td>{{ uct }}</td>
@@ -54,3 +51,4 @@ non-competing solvers by the organizers for comparison.
     </tr>
     {% endfor %}
 </table>
+n. Non-competing.
