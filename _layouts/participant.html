@@ -11,14 +11,14 @@
         {% if track == "track_single_query" %} {% assign sqt = sqt |append: " " |append: logic.name %} {% endif %}
         {% if track == "track_incremental" %} {% assign it = it |append: " " |append: logic.name %} {% endif %}
         {% if track == "track_unsat_core" %} {% assign uct = uct |append: " " |append: logic.name %} {% endif %}
-        {% if track == "track_challenge" %} {% assign ct = ct |append: " " |append: logic.name %} {% endif %}
+        {% if track == "track_challenge" %} {% assign ct = ct |append: ":" |append: logic.name %} {% endif %}
         {% if track == "track_model_validation" %} {% assign mvt = mvt |append: " " |append: logic.name %} {% endif %}
     {% endfor %}
 {% endfor %}
 {% assign sqt = sqt | split: " " %}
 {% assign it = it | split: " " %}
 {% assign uct = uct | split: " " %}
-{% assign ct = ct | split: " " %}
+{% assign ct = ct | split: ":" %}
 {% assign mvt = mvt | split: " " %}
 
 <h2>{{ page.name }} </h2>
