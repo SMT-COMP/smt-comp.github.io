@@ -71,4 +71,4 @@ non-competing solvers by the organizers for comparison.
 </table>
 n. Non-competing.
 
-The opening value of the NYSE Composite Index on 2018-06-03 was 12888.51, resulting in a competition seed of 933722448 + 12889 = <b>933735337</b>.
+The opening value of the NYSE Composite Index on 2019-06-03 was 12888.51, resulting in a competition seed of 933722448 + 12889 = <b>933735337</b>.
