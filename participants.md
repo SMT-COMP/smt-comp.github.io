@@ -56,11 +56,11 @@ non-competing solvers by the organizers for comparison.
     {% endfor %}
     <tr>
       <td><b>Total</b></td>
-      <td><b>41</b></td>
-      <td><b>17</b></td>
+      <td><b>40</b></td>
+      <td><b>16</b></td>
+      <td><b>9</b></td>
+      <td><b>20</b></td>
       <td><b>10</b></td>
-      <td><b>21</b></td>
-      <td><b>11</b></td>
       <td></td>
       <td></td>
       <td><b>912668687</b> (mod 2<sup>30</sup>)</td>
