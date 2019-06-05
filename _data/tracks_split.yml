@@ -1,0 +1,13 @@
+- raw_name: track_single_query
+  pretty_name: Single Query Track
+- raw_name: track_incremental
+  pretty_name: Incremental Track
+- raw_name: track_single_query_challenge
+  pretty_name: Single Query Track (challenge)
+- raw_name: track_incremental_challenge
+  pretty_name: Incremental Track (challenge)
+- raw_name: track_unsat_core
+  pretty_name: Unsat Core Track
+- raw_name: track_model_validation
+  pretty_name: Model Validation Track
+
