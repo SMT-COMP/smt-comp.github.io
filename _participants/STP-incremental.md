@@ -18,7 +18,6 @@ logics:
   tracks:
   - track_single_query
   - track_incremental
-  - track_unsat_core
   - track_model_validation
 - name: QF_BV (incremental)
   tracks:

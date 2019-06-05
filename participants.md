@@ -63,7 +63,7 @@ non-competing solvers by the organizers for comparison.
       <td><b>11</b></td>
       <td></td>
       <td></td>
-      <td><b>933722448</b> (mod 2<sup>30</sup>)</td>
+      <td><b>912668687</b> (mod 2<sup>30</sup>)</td>
       <td></td>
       <td></td>
       <td></td>
@@ -71,4 +71,4 @@ non-competing solvers by the organizers for comparison.
 </table>
 n. Non-competing.
 
-The opening value of the NYSE Composite Index on 2019-06-03 was 12888.51, resulting in a competition seed of 933722448 + 12889 = <b>933735337</b>.
+The opening value of the NYSE Composite Index on 2019-06-03 was 12888.51, resulting in a competition seed of 912668687 + 12889 = <b>912681576</b>.
