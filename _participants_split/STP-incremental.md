@@ -3,7 +3,7 @@ layout: participant_split
 contact: soos.mate@gmail.com
 name: STP-incremental
 preliminaryID: 23396
-finalID: 23678
+finalID: 23687
 team: Trevor Hansen, Norbert Manthey, Mate Soos
 variantOf: 23321
 wrapperTool: 
