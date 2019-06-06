@@ -69,6 +69,8 @@
   tracks:
   - track_single_query
   - track_incremental
+  - track_single_query_challenge
+  - track_incremental_challenge
   - track_unsat_core
 - name: QF_ABVFP
   tracks:
@@ -89,6 +91,8 @@
   tracks:
   - track_single_query
   - track_incremental
+  - track_single_query_challenge
+  - track_incremental_challenge
   - track_unsat_core
 - name: QF_AUFLIA
   tracks:
@@ -107,6 +111,8 @@
   tracks:
   - track_single_query
   - track_incremental
+  - track_single_query_challenge
+  - track_incremental_challenge
   - track_unsat_core
   - track_model_validation
 - name: QF_BVFP
@@ -256,21 +262,3 @@
 - name: QF_UFBVLIA
   tracks:
   - track_incremental
-- name: QF_BV (non-incremental)
-  tracks:
-  - track_challenge
-- name: QF_BV (incremental)
-  tracks:
-  - track_challenge
-- name: QF_ABV (non-incremental)
-  tracks:
-  - track_challenge
-- name: QF_ABV (incremental)
-  tracks:
-  - track_challenge
-- name: QF_AUFBV (non-incremental)
-  tracks:
-  - track_challenge
-- name: QF_AUFBV (incremental)
-  tracks:
-  - track_challenge

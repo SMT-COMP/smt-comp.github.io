@@ -17,22 +17,16 @@ logics:
 - name: QF_ABV
   tracks:
   - track_incremental
+  - track_incremental_challenge
 - name: QF_AUFBV
   tracks:
   - track_incremental
+  - track_incremental_challenge
 - name: QF_BV
   tracks:
   - track_incremental
+  - track_incremental_challenge
 - name: QF_UFBV
   tracks:
   - track_incremental
-- name: QF_BV (incremental)
-  tracks:
-  - track_challenge
-- name: QF_ABV (incremental)
-  tracks:
-  - track_challenge
-- name: QF_AUFBV (incremental)
-  tracks:
-  - track_challenge
 ---

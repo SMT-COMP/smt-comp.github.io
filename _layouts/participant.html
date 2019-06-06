@@ -1,51 +1,27 @@
 {% include head.html %}
 
-{% assign sqt = "" %}
-{% assign it = "" %}
-{% assign uct = "" %}
-{% assign ct = "" %}
-{% assign mvt = "" %}
-
-{% for logic in page.logics %}
-    {% for track in logic.tracks %}
-        {% if track == "track_single_query" %} {% assign sqt = sqt |append: logic.name  |append: ":"%} {% endif %}
-        {% if track == "track_incremental" %} {% assign it = it |append: logic.name |append: ":" %} {% endif %}
-        {% if track == "track_unsat_core" %} {% assign uct = uct |append: logic.name |append: ":" %} {% endif %}
-        {% if track == "track_challenge" %} {% assign ct = ct |append: logic.name |append: ":" %} {% endif %}
-        {% if track == "track_model_validation" %} {% assign mvt = mvt |append: logic.name |append: ":" %} {% endif %}
-    {% endfor %}
-{% endfor %}
-{% assign sqt = sqt | split: ":" %}
-{% assign it = it | split: ":" %}
-{% assign uct = uct | split: ":" %}
-{% assign ct = ct | split: ":" %}
-{% assign mvt = mvt | split: ":" %}
-
 <h2>{{ page.name }} </h2>
 <table>
     <tr>
       <td><b>Competing</b></td>
       <td>{{ page.competing }}</td>
-  <tr>
-      <td><b>Single Query Track</b></td>
-      <td>{{ sqt |join: ", "}}</td>
-  </tr>
-  <tr>
-      <td><b>Incremental Track</b></td>
-      <td>{{ it |join: ", " }}</td>
-  </tr>
-  <tr>
-      <td><b>Unsat-Core Track</b></td>
-      <td>{{ uct |join: ", " }}</td>
-  </tr>
-  <tr>
-      <td><b>Challenge Track</b></td>
-      <td>{{ ct |join: ", " }}</td>
-  </tr>
-  <tr>
-      <td><b>Model Validation Track</b></td>
-      <td>{{ mvt |join: ", " }}</td>
-  </tr>
+{%- for track_descr in site.data.tracks -%}
+<tr>
+<td><b>{{ track_descr.pretty_name }}</b></td>
+<td>
+    {%- assign logic_str = "" -%}
+    {%- for slogic in page.logics -%}
+        {%- for strack in slogic.tracks -%}
+            {%- if strack == track_descr.raw_name -%}
+                {%- assign logic_str = logic_str |append: slogic.name |append: ":" -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endfor -%}
+    {%- assign logic_str = logic_str | split: ":" -%}
+{{ logic_str |join: ", " }}
+</td>
+</tr>
+{%- endfor -%}
   <tr>
       <td><b>Preliminary ID</b></td>
       <td>{{ page.preliminaryID }}</td>

@@ -62,6 +62,7 @@ logics:
 - name: QF_ABV
   tracks:
   - track_single_query
+  - track_single_query_challenge
 - name: QF_ABVFP
   tracks:
   - track_single_query
@@ -74,6 +75,7 @@ logics:
 - name: QF_AUFBV
   tracks:
   - track_single_query
+  - track_single_query_challenge
 - name: QF_AUFLIA
   tracks:
   - track_single_query
@@ -86,6 +88,7 @@ logics:
 - name: QF_BV
   tracks:
   - track_single_query
+  - track_single_query_challenge
 - name: QF_BVFP
   tracks:
   - track_single_query
@@ -179,13 +182,4 @@ logics:
 - name: UFNIA
   tracks:
   - track_single_query
-- name: QF_BV (non-incremental)
-  tracks:
-  - track_challenge
-- name: QF_ABV (non-incremental)
-  tracks:
-  - track_challenge
-- name: QF_AUFBV (non-incremental)
-  tracks:
-  - track_challenge
 ---

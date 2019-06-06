@@ -18,11 +18,7 @@ logics:
   tracks:
   - track_single_query
   - track_incremental
+  - track_single_query_challenge
+  - track_incremental_challenge
   - track_model_validation
-- name: QF_BV (non-incremental)
-  tracks:
-  - track_challenge
-- name: QF_BV (incremental)
-  tracks:
-  - track_challenge
 ---
