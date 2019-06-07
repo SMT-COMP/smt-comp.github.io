@@ -1,0 +1,6 @@
+- raw_name: track_single_query
+  url: 2019/selected_benchmarks/single_query_2019.tar.xz
+- raw_name: track_single_query_challenge
+  url: 2019/selected_benchmarks/challenge_nonincremental_2019.tar.xz
+- raw_name: track_incremental_challenge
+  url: 2019/selected_benchmarks/challenge_incremental_2019.tar.xz

@@ -1,27 +1,31 @@
 ---
 layout: default
 ---
-<h2>{{ page.logicname }}</h2>
+<h2>{{ page.division }}</h2>
 {{ content }}
 <h3>Tracks</h3>
 <table>
-    <tr>
-        <th>
-            Track name
-        </th>
-        <th>
-            Number of benchmarks
-        </th>
-    </tr>
-    {% for track in page.tracks %}
-    <tr>
-        <td>
-            {{ track.name }}
-        </td>
-        <td>
-            {{ track.n_insts }}
-        </td>
-    </tr>
-    {% endfor %}
+<tr>
+<th>
+Track name
+</th>
+<th>
+Number of benchmarks
+</th>
+</tr>
+{% for track_descr in site.data.tracks %}
+<tr>
+<td>
+{{ track_descr.pretty_name }}
+</td>
+<td>
+    {%- for ltrack in page.tracks -%}
+        {%- if ltrack.name == track_descr.raw_name -%}
+{{ ltrack.n_insts }}
+        {%- endif -%}
+    {%- endfor -%}
+</td>
+</tr>
+{% endfor %}
 </table>
 
