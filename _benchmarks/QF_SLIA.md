@@ -3,7 +3,7 @@ layout: logic
 division: QF_SLIA
 tracks:
 - name: track_single_query
-  n_insts: 31826
+  n_insts: 0
   n_excluded: 0
 - name: track_incremental
   n_insts: 0
