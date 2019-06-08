@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: UFDTNIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#UFDTNIA
 tracks:
 - name: track_single_query
   n_insts: 0

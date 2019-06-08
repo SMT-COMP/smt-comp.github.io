@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_LIRA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_LIRA
 tracks:
 - name: track_single_query
   n_insts: 5

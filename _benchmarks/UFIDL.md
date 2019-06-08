@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: UFIDL
+description: http://smtlib.cs.uiowa.edu/logics.shtml#UFIDL
 tracks:
 - name: track_single_query
   n_insts: 59

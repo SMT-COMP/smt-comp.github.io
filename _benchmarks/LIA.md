@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: LIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#LIA
 tracks:
 - name: track_single_query
   n_insts: 300

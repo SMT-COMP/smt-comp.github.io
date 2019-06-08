@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: FP
+description: http://smtlib.cs.uiowa.edu/logics.shtml#FP
 tracks:
 - name: track_single_query
   n_insts: 17

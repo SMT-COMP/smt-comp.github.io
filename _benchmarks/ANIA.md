@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: ANIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#ANIA
 tracks:
 - name: track_single_query
   n_insts: 0

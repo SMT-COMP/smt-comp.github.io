@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: ALIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#ALIA
 tracks:
 - name: track_single_query
   n_insts: 42

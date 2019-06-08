@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: BVFP
+description: http://smtlib.cs.uiowa.edu/logics.shtml#BVFP
 tracks:
 - name: track_single_query
   n_insts: 7

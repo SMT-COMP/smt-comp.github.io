@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: UF
+description: http://smtlib.cs.uiowa.edu/logics.shtml#UF
 tracks:
 - name: track_single_query
   n_insts: 1858

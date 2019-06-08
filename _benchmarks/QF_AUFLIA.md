@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_AUFLIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_AUFLIA
 tracks:
 - name: track_single_query
   n_insts: 504

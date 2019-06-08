@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: UFBV
+description: http://smtlib.cs.uiowa.edu/logics.shtml#UFBV
 tracks:
 - name: track_single_query
   n_insts: 89

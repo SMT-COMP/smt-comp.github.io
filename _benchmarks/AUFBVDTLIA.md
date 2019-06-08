@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: AUFBVDTLIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBVDTLIA
 tracks:
 - name: track_single_query
   n_insts: 300

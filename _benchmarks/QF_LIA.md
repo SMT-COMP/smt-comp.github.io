@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_LIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_LIA
 tracks:
 - name: track_single_query
   n_insts: 2899

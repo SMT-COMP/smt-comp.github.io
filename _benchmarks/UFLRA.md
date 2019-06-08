@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: UFLRA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#UFLRA
 tracks:
 - name: track_single_query
   n_insts: 10

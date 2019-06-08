@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_UFNIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_UFNIA
 tracks:
 - name: track_single_query
   n_insts: 7

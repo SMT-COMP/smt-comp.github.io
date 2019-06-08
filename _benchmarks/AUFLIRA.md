@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: AUFLIRA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#AUFLIRA
 tracks:
 - name: track_single_query
   n_insts: 9904

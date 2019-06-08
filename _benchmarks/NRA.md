@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: NRA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#NRA
 tracks:
 - name: track_single_query
   n_insts: 1901

@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_RDL
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_RDL
 tracks:
 - name: track_single_query
   n_insts: 150

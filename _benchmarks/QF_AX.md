@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_AX
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_AX
 tracks:
 - name: track_single_query
   n_insts: 300

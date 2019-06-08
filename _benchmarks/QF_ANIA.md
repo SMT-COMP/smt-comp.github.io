@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_ANIA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_ANIA
 tracks:
 - name: track_single_query
   n_insts: 4

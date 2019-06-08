@@ -1,6 +1,7 @@
 ---
 layout: logic
 division: QF_FPLRA
+description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_FPLRA
 tracks:
 - name: track_single_query
   n_insts: 0
