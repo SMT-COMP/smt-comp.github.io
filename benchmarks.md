@@ -44,8 +44,10 @@ The list of selected benchmarks is available [here]({{ sel_bm.url }}).
         {%- for track in benchmark.tracks -%}
             {%- if track.name == track_descr.raw_name -%}
                 {%- if track.n_insts > 0 -%}
-<tr>
-<td><a href="{{ benchmark.url }}">{{ benchmark.division }}</a></td>
+<tr {% if track.status == "non-competitive" %} class = "noncompeting" {% endif %}>
+<td><a href="{{ benchmark.url }}">{{ benchmark.division }}</a>{%- if
+track.status == "non-competitive" -%}<sup><a href="#nc">n</a></sup>{%-
+endif -%}</td>
 <td>{{ track.n_insts }}
                     {%- assign total = total | plus: track.n_insts -%}
                     {% if track.n_excluded > 0 %}
@@ -68,4 +70,10 @@ The list of selected benchmarks is available [here]({{ sel_bm.url }}).
 </table>
 
 {% endfor %}
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+</p>
 

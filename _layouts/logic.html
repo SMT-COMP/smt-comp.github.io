@@ -12,19 +12,25 @@ Track name
 <th>
 Number of benchmarks
 </th>
+<th>
+Status
+</th>
 </tr>
 {% for track_descr in site.data.tracks %}
 <tr>
 <td>
 {{ track_descr.pretty_name }}
 </td>
-<td>
     {%- for ltrack in page.tracks -%}
         {%- if ltrack.name == track_descr.raw_name -%}
+<td>
 {{ ltrack.n_insts }}
+</td>
+<td>
+{{ ltrack.status }}
+</td>
         {%- endif -%}
     {%- endfor -%}
-</td>
 </tr>
 {% endfor %}
 </table>
