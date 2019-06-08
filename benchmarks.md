@@ -1,3 +1,13 @@
+{%- assign track_single_query_challenge_note = "The Industry-Challenge
+Track (single query) contains new challenging SMT-LIB benchmarks (with
+an emphasis on industrial applications) that were nominated by the
+community as challenging and of interest." %}
+
+{%- assign track_incremental_challenge_note = "The Industry-Challenge
+Track (incremental) contains new challenging SMT-LIB benchmarks (with an
+emphasis on industrial applications) that were nominated by the
+community as challenging and of interest." %}
+
 ## Benchmarks
 SMT-COMP 2019 will use a large subset of the benchmarks available within
 the 2019-05-20 release of SMT-LIB, as described in the competition
@@ -17,6 +27,12 @@ rules.
     {% endfor %}
 
 ### {{ track_descr.pretty_name }}
+
+{% if track_descr.raw_name == "track_single_query_challenge" %}
+{{ track_single_query_challenge_note }}
+{% elsif track_descr.raw_name == "track_incremental_challenge" %}
+{{ track_incremental_challenge_note }}
+{% endif %}
 
     {% if n_divisions == 0 %}
 The {{ track_descr.pretty_name }} divisions are not yet available.
