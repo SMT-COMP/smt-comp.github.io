@@ -4,7 +4,7 @@ division: QF_UFLRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_UFLRA
 tracks:
 - name: track_single_query
-  n_insts: 631
+  n_insts: 541
   n_excluded: 0
   status: competitive
 - name: track_incremental

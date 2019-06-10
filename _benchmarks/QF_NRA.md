@@ -4,7 +4,7 @@ division: QF_NRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_NRA
 tracks:
 - name: track_single_query
-  n_insts: 5048
+  n_insts: 2842
   n_excluded: 0
   status: competitive
 - name: track_incremental

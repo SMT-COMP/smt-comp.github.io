@@ -4,7 +4,7 @@ division: UFDT
 description: http://smtlib.cs.uiowa.edu/logics.shtml#UFDT
 tracks:
 - name: track_single_query
-  n_insts: 1056
+  n_insts: 1547
   n_excluded: 0
   status: competitive
 - name: track_incremental

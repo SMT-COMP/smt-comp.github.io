@@ -4,7 +4,7 @@ division: LRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#LRA
 tracks:
 - name: track_single_query
-  n_insts: 965
+  n_insts: 1003
   n_excluded: 0
   status: competitive
 - name: track_incremental

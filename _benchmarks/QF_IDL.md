@@ -4,7 +4,7 @@ division: QF_IDL
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_IDL
 tracks:
 - name: track_single_query
-  n_insts: 691
+  n_insts: 1042
   n_excluded: 0
   status: competitive
 - name: track_incremental

@@ -4,7 +4,7 @@ division: NIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#NIA
 tracks:
 - name: track_single_query
-  n_insts: 13
+  n_insts: 11
   n_excluded: 0
   status: competitive
 - name: track_incremental

@@ -4,7 +4,7 @@ division: UFIDL
 description: http://smtlib.cs.uiowa.edu/logics.shtml#UFIDL
 tracks:
 - name: track_single_query
-  n_insts: 59
+  n_insts: 20
   n_excluded: 0
   status: competitive
 - name: track_incremental

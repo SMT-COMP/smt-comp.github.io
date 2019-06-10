@@ -4,7 +4,7 @@ division: QF_AUFBV
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_AUFBV
 tracks:
 - name: track_single_query
-  n_insts: 31
+  n_insts: 41
   n_excluded: 0
   status: competitive
 - name: track_incremental

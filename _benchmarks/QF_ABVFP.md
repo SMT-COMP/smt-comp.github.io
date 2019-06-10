@@ -4,7 +4,7 @@ division: QF_ABVFP
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_ABVFP
 tracks:
 - name: track_single_query
-  n_insts: 8835
+  n_insts: 630
   n_excluded: 0
   status: non-competitive
 - name: track_incremental

@@ -4,7 +4,7 @@ division: QF_AUFNIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_AUFNIA
 tracks:
 - name: track_single_query
-  n_insts: 16
+  n_insts: 9
   n_excluded: 0
   status: competitive
 - name: track_incremental

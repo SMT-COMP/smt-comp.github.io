@@ -4,7 +4,7 @@ division: QF_ANIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_ANIA
 tracks:
 - name: track_single_query
-  n_insts: 4
+  n_insts: 7
   n_excluded: 0
   status: competitive
 - name: track_incremental

@@ -4,7 +4,7 @@ division: BV
 description: http://smtlib.cs.uiowa.edu/logics.shtml#BV
 tracks:
 - name: track_single_query
-  n_insts: 2742
+  n_insts: 823
   n_excluded: 0
   status: competitive
 - name: track_incremental

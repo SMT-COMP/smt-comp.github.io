@@ -4,7 +4,7 @@ division: QF_BVFP
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_BVFP
 tracks:
 - name: track_single_query
-  n_insts: 8548
+  n_insts: 516
   n_excluded: 0
   status: competitive
 - name: track_incremental

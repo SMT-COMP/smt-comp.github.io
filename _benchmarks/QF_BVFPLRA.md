@@ -4,7 +4,7 @@ division: QF_BVFPLRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_BVFPLRA
 tracks:
 - name: track_single_query
-  n_insts: 0
+  n_insts: 1
   n_excluded: 0
   status: non-competitive
 - name: track_incremental

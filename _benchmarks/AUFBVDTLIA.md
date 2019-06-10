@@ -4,7 +4,7 @@ division: AUFBVDTLIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBVDTLIA
 tracks:
 - name: track_single_query
-  n_insts: 300
+  n_insts: 854
   n_excluded: 0
   status: non-competitive
 - name: track_incremental

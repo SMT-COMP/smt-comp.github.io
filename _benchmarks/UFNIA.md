@@ -4,7 +4,7 @@ division: UFNIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#UFNIA
 tracks:
 - name: track_single_query
-  n_insts: 1002
+  n_insts: 6253
   n_excluded: 0
   status: competitive
 - name: track_incremental

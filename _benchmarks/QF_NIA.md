@@ -4,7 +4,7 @@ division: QF_NIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_NIA
 tracks:
 - name: track_single_query
-  n_insts: 5306
+  n_insts: 11494
   n_excluded: 0
   status: competitive
 - name: track_incremental
