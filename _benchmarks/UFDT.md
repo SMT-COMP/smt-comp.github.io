@@ -22,7 +22,7 @@ tracks:
 - name: track_unsat_core
   n_insts: 0
   n_excluded: 0
-  status: non-competitive
+  status: competitive
 - name: track_model_validation
   n_insts: 0
   n_excluded: 0

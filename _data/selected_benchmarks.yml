@@ -4,5 +4,5 @@
   url: 2019/selected_benchmarks/challenge_nonincremental_2019.tar.xz
 - raw_name: track_incremental_challenge
   url: 2019/selected_benchmarks/challenge_incremental_2019.tar.xz
-- raw_name: track_unsat_core
-  url: 2019/selected_benchmarks/unsat_core_2019.tar.xz
+  #- raw_name: track_unsat_core
+  #  url: 2019/selected_benchmarks/unsat_core_2019.tar.xz
