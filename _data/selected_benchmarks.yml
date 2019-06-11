@@ -1,8 +1,8 @@
 - raw_name: track_single_query
-  url: 2019/selected_benchmarks/single_query_2019.tar.xz
+  url: 2019/selected_benchmarks/bechmark_selection_single_query_2019.tar.xz
 - raw_name: track_single_query_challenge
-  url: 2019/selected_benchmarks/challenge_nonincremental_2019.tar.xz
+  url: 2019/selected_benchmarks/benchmark_selection_challenge_non_incremental_2019.tar.xz
 - raw_name: track_incremental_challenge
-  url: 2019/selected_benchmarks/challenge_incremental_2019.tar.xz
+  url: 2019/selected_benchmarks/benchmark_selection_challenge_incremental_2019.tar.xz
   #- raw_name: track_unsat_core
   #  url: 2019/selected_benchmarks/unsat_core_2019.tar.xz
