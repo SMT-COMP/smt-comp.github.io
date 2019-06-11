@@ -156,6 +156,32 @@ X
         {%- endfor -%}
 </tr>
     {%- endfor -%}
+<tr>
+<td><b>Total</b></td>
+    {%- for track_descr in site.data.tracks -%}
+        {%- assign num_p = 0 -%}
+        {%- for solver in site.participants -%}
+            {%- assign this_logic_found = false -%}
+            {%- for slogic in solver.logics -%}
+                {%- if this_logic_found == true -%}
+                    {%- break -%}
+                {%- endif -%}
+                {%- if slogic.name == logic.name -%}
+                    {%- assign this_logic_found = true -%}
+                    {%- for strack in slogic.tracks -%}
+                        {%- if strack == track_descr.raw_name -%}
+                            {% assign num_p = num_p |plus: 1 -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+            {%- endfor -%}
+        {%- endfor -%}
+        {%- if num_p > 0 -%}
+<td><b>{{num_p}}</b></td>
+        {%- endif -%}
+    {%- endfor -%}
+</tr>
 </table>
 {% endfor %}
 
