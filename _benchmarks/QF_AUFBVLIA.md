@@ -8,9 +8,9 @@ tracks:
   n_excluded: 0
   status: competitive
 - name: track_incremental
-  n_insts: 0
+  n_insts: 300
   n_excluded: 0
-  status: competitive
+  status: non-competitive
 - name: track_single_query_challenge
   n_insts: 0
   n_excluded: 0
@@ -28,3 +28,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
+QF_AUFBVLIA Incremental Track track participated only by Z3, CVC4.

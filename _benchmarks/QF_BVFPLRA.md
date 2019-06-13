@@ -28,3 +28,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
+QF_BVFPLRA Single Query Track track participated only by Z3, CVC4.

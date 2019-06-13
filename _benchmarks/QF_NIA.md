@@ -8,7 +8,7 @@ tracks:
   n_excluded: 0
   status: competitive
 - name: track_incremental
-  n_insts: 0
+  n_insts: 10
   n_excluded: 0
   status: competitive
 - name: track_single_query_challenge
@@ -28,3 +28,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
+
