@@ -22,10 +22,10 @@ tracks:
 - name: track_unsat_core
   n_insts: 0
   n_excluded: 0
-  status: competitive
+  status: non-competitive
 - name: track_model_validation
   n_insts: 0
   n_excluded: 0
   status: competitive
 ---
-
+AUFDTLIA Unsat Core Track track participated only by CVC4.

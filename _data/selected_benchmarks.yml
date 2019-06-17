@@ -8,5 +8,5 @@
   url: 2019/selected_benchmarks/benchmark_selection_model_validation_2019.tar.xz
 - raw_name: track_incremental
   url: 2019/selected_benchmarks/benchmark_selection_incremental_2019.tar.xz
-  #- raw_name: track_unsat_core
-  #  url: 2019/selected_benchmarks/benchmark_selection_unsat_core_2019.tar.xz
+- raw_name: track_unsat_core
+  url: 2019/selected_benchmarks/benchmark_selection_unsat_core_2019.tar.xz

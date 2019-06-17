@@ -20,9 +20,9 @@ tracks:
   n_excluded: 0
   status: competitive
 - name: track_unsat_core
-  n_insts: 0
+  n_insts: 1965
   n_excluded: 0
-  status: competitive
+  status: non-competitive
 - name: track_model_validation
   n_insts: 0
   n_excluded: 0
@@ -30,3 +30,4 @@ tracks:
 ---
 QF_ABVFP Single Query Track track participated only by Z3, CVC4.
 QF_ABVFP Incremental Track track participated only by Z3, CVC4.
+QF_ABVFP Unsat Core Track track participated only by Z3, CVC4.
