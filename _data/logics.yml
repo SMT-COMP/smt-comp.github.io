@@ -8,6 +8,9 @@
   - track_single_query
   - track_incremental
   - track_unsat_core
+- name: ANIA
+  tracks:
+  - track_incremental
 - name: AUFBVDTLIA
   tracks:
   - track_single_query
@@ -94,6 +97,12 @@
   - track_single_query_challenge
   - track_incremental_challenge
   - track_unsat_core
+- name: QF_AUFBVLIA
+  tracks:
+  - track_incremental
+- name: QF_AUFBVNIA
+  tracks:
+  - track_incremental
 - name: QF_AUFLIA
   tracks:
   - track_single_query
@@ -190,6 +199,9 @@
   - track_single_query
   - track_incremental
   - track_unsat_core
+- name: QF_UFBVLIA
+  tracks:
+  - track_incremental
 - name: QF_UFIDL
   tracks:
   - track_single_query
@@ -250,15 +262,3 @@
   tracks:
   - track_single_query
   - track_unsat_core
-- name: ANIA
-  tracks:
-  - track_incremental
-- name: QF_AUFBVLIA
-  tracks:
-  - track_incremental
-- name: QF_AUFBVNIA
-  tracks:
-  - track_incremental
-- name: QF_UFBVLIA
-  tracks:
-  - track_incremental
