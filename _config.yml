@@ -16,7 +16,11 @@ collections:
         output: true
     incremental-results:
         output: true
-    unsatcore-results:
+    unsat_core-results:
         output: true
-    challenge-results:
+    single_query_challenge-results:
+        output: true
+    incremental_challenge-results:
+        output: true
+    model_validation-results:
         output: true
