@@ -1,51 +1,55 @@
 
+- name: UFNRANIAFPBVLIADTUF
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/UFNRANIAFPBVLIADTUF.html
+    - name: Challenge Track (incremental)
+      results: incremental_challenge-results/UFNRANIAFPBVLIADTUF.html
+    - name: Single Query Track
+      results: single_query-results/UFNRANIAFPBVLIADTUF.html
+    - name: Challenge Track (single query)
+      results: single_query_challenge-results/UFNRANIAFPBVLIADTUF.html
+    - name: Unsat Core Track
+      results: unsat_core-results/UFNRANIAFPBVLIADTUF.html
+
 - name: QF_NRARDLIDLNRALIAUFLIANIA
   tracks:
     - name: Incremental Track
       results: incremental-results/QF_NRARDLIDLNRALIAUFLIANIA.html
     - name: Challenge Track (incremental)
       results: incremental_challenge-results/QF_NRARDLIDLNRALIAUFLIANIA.html
+    - name: Challenge Track (single query)
+      results: single_query_challenge-results/QF_NRARDLIDLNRALIAUFLIANIA.html
+
+- name: RDLARDLNRANRARDLAIDLFP
+  tracks:
+    - name: Incremental Track
+      results: incremental-results/RDLARDLNRANRARDLAIDLFP.html
+    - name: Challenge Track (incremental)
+      results: incremental_challenge-results/RDLARDLNRANRARDLAIDLFP.html
+    - name: Single Query Track
+      results: single_query-results/RDLARDLNRANRARDLAIDLFP.html
+    - name: Challenge Track (single query)
+      results: single_query_challenge-results/RDLARDLNRANRARDLAIDLFP.html
+    - name: Unsat Core Track
+      results: unsat_core-results/RDLARDLNRANRARDLAIDLFP.html
 
 - name: NRAUFRDLBVNIAANIADTIDL
   tracks:
     - name: Incremental Track
       results: incremental-results/NRAUFRDLBVNIAANIADTIDL.html
     - name: Unsat Core Track
-      results: unsat_core-results/NRAUFRDLBVNIAANIADTIDL.html
-    - name: Model Validation Track
       results: model_validation-results/NRAUFRDLBVNIAANIADTIDL.html
-
-- name: UFNRANIAFPBVLIADTUF
-  tracks:
-    - name: Single Query Track
-      results: single_query-results/UFNRANIAFPBVLIADTUF.html
-    - name: Incremental Track
-      results: incremental-results/UFNRANIAFPBVLIADTUF.html
     - name: Unsat Core Track
-      results: unsat_core-results/UFNRANIAFPBVLIADTUF.html
-    - name: Challenge Track (single query)
-      results: single_query_challenge-results/UFNRANIAFPBVLIADTUF.html
-    - name: Challenge Track (incremental)
-      results: incremental_challenge-results/UFNRANIAFPBVLIADTUF.html
+      results: unsat_core-results/NRAUFRDLBVNIAANIADTIDL.html
 
 - name: NRARDLLIANRANIAIDLNRALIAFPIDL
   tracks:
-    - name: Single Query Track
-      results: single_query-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
-    - name: Unsat Core Track
-      results: unsat_core-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
-    - name: Challenge Track (single query)
-      results: single_query_challenge-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
     - name: Challenge Track (incremental)
       results: incremental_challenge-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
-
-- name: RDLARDLNRANRARDLAIDLFP
-  tracks:
     - name: Single Query Track
-      results: single_query-results/RDLARDLNRANRARDLAIDLFP.html
-    - name: Incremental Track
-      results: incremental-results/RDLARDLNRANRARDLAIDLFP.html
-    - name: Unsat Core Track
-      results: unsat_core-results/RDLARDLNRANRARDLAIDLFP.html
+      results: single_query-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
     - name: Challenge Track (single query)
-      results: single_query_challenge-results/RDLARDLNRANRARDLAIDLFP.html
+      results: single_query_challenge-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
+    - name: Unsat Core Track
+      results: unsat_core-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html

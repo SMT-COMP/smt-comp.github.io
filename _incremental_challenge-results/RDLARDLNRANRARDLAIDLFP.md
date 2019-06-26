@@ -2,7 +2,7 @@
 layout: result
 resultdate: 2019-01-29 12:04:45.863652
 division: RDLARDLNRANRARDLAIDLFP
-track: Challenge Track
+track: Challenge Track (incremental)
 n_benchmarks: 27171
 time_limit: 2400
 

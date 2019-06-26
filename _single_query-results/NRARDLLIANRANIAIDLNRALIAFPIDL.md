@@ -2,7 +2,7 @@
 layout: result
 resultdate: 2019-01-29 12:04:45.861247
 division: NRARDLLIANRANIAIDLNRALIAFPIDL
-track: Single Problem Track
+track: Single Query Track
 n_benchmarks: 7832
 time_limit: 2400
 

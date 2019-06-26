@@ -2,7 +2,7 @@
 layout: result
 resultdate: 2019-01-29 12:04:45.860855
 division: UFNRANIAFPBVLIADTUF
-track: Challenge Track
+track: Challenge Track (incremental)
 n_benchmarks: 28255
 time_limit: 2400
 

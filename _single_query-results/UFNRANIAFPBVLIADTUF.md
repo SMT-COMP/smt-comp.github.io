@@ -2,7 +2,7 @@
 layout: result
 resultdate: 2019-01-29 12:04:45.859530
 division: UFNRANIAFPBVLIADTUF
-track: Single Problem Track
+track: Single Query Track
 n_benchmarks: 30211
 time_limit: 2400
 

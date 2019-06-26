@@ -2,7 +2,7 @@
 layout: result
 resultdate: 2019-01-29 12:04:45.858258
 division: QF_NRARDLIDLNRALIAUFLIANIA
-track: Challenge Track
+track: Challenge Track (single query)
 n_benchmarks: 43190
 time_limit: 2400
 

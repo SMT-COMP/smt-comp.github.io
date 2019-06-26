@@ -12,7 +12,7 @@ collections:
         output: false
     news:
         output: true
-    single-results:
+    single_query-results:
         output: true
     incremental-results:
         output: true
