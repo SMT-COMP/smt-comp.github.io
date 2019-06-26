@@ -2,7 +2,7 @@
 layout: result_uc
 resultdate: 2019-01-29 12:04:45.858907
 division: NRAUFRDLBVNIAANIADTIDL
-track: Unsat Core Track
+track: Model Validation Track
 n_benchmarks: 48397
 time_limit: 2400
 

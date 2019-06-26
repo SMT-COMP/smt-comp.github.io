@@ -38,7 +38,7 @@
   tracks:
     - name: Incremental Track
       results: incremental-results/NRAUFRDLBVNIAANIADTIDL.html
-    - name: Unsat Core Track
+    - name: Model Validation Track
       results: model_validation-results/NRAUFRDLBVNIAANIADTIDL.html
     - name: Unsat Core Track
       results: unsat_core-results/NRAUFRDLBVNIAANIADTIDL.html
