@@ -1,9 +1,9 @@
 ---
 layout: participant
 contact: 
-name: 2018-MathSAT
+name: 2018-Vampire
 preliminaryID: 
-finalID: 19993
+finalID: 19788
 team: 
 variantOf: 
 wrapperTool: 
@@ -14,11 +14,13 @@ solverHomePage:
 sysDescrUrl: 
 sysDescrName: 
 logics:
-- name: QF_BV
+- name: NRA
   tracks:
-  - track_incremental
-  - track_incremental_challenge
-- name: QF_LRA
+  - track_single_query
+- name: UF
   tracks:
-  - track_incremental
+  - track_single_query
+- name: UFNIA
+  tracks:
+  - track_single_query
 ---

@@ -1,9 +1,9 @@
 ---
 layout: participant
 contact: 
-name: 2018-SMTInterpol
+name: 2018-MathSAT (incremental)
 preliminaryID: 
-finalID: 19795
+finalID: 19993
 team: 
 variantOf: 
 wrapperTool: 
@@ -14,10 +14,11 @@ solverHomePage:
 sysDescrUrl: 
 sysDescrName: 
 logics:
-- name: QF_LIA
+- name: QF_BV
   tracks:
-  - track_unsat_core
+  - track_incremental
+  - track_incremental_challenge
 - name: QF_LRA
   tracks:
-  - track_unsat_core
+  - track_incremental
 ---

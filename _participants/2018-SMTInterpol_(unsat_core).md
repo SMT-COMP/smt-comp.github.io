@@ -1,9 +1,9 @@
 ---
 layout: participant
 contact: 
-name: 2018-vampire
+name: 2018-SMTInterpol (unsat core)
 preliminaryID: 
-finalID: 19788
+finalID: 19795
 team: 
 variantOf: 
 wrapperTool: 
@@ -14,13 +14,10 @@ solverHomePage:
 sysDescrUrl: 
 sysDescrName: 
 logics:
-- name: NRA
+- name: QF_LIA
   tracks:
-  - track_single_query
-- name: UF
+  - track_unsat_core
+- name: QF_LRA
   tracks:
-  - track_single_query
-- name: UFNIA
-  tracks:
-  - track_single_query
+  - track_unsat_core
 ---
