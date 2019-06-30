@@ -34,7 +34,7 @@ QF_FP Unsat Core Track track participated only by Z3, CVC4.
 We encountered issues with the
 [benchmark scrambler](https://github.com/smt-comp/scrambler) on two benchmarks
 in this division
-(fixed in [053bb79](https://github.com/SMT-COMP/scrambler/commit/053bb79a79b39749284e4bef31ffc6438a52adf8)).  
+(fixed in [053bb79](https://github.com/SMT-COMP/scrambler/commit/053bb79a79b39749284e4bef31ffc6438a52adf8)).
 An expression `(fp.leq a x b)` was scrambled to `(fp.gt x a b)` instead of
 `(fp.gt b a x)`, which resulted in a flipped result in the following two
 benchmarks:
