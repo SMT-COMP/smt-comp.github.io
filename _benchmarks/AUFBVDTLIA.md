@@ -28,5 +28,5 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-AUFBVDTLIA Single Query Track track participated only by CVC4.
+AUFBVDTLIA Single Query Track track participated only by CVC4.  
 AUFBVDTLIA Unsat Core Track track participated only by CVC4.

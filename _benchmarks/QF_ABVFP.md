@@ -28,6 +28,6 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_ABVFP Single Query Track track participated only by Z3, CVC4.
-QF_ABVFP Incremental Track track participated only by Z3, CVC4.
+QF_ABVFP Single Query Track track participated only by Z3, CVC4.  
+QF_ABVFP Incremental Track track participated only by Z3, CVC4.  
 QF_ABVFP Unsat Core Track track participated only by Z3, CVC4.

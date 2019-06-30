@@ -28,5 +28,5 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_SLIA Single Query Track track participated only by CVC4.
+QF_SLIA Single Query Track track participated only by CVC4.  
 QF_SLIA Unsat Core Track track participated only by CVC4.
