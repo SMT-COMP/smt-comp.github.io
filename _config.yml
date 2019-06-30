@@ -6,8 +6,6 @@ collections:
         output: true
     participants:
         output: true
-    participants_split:
-        output: true
     results:
         output: false
     news:
