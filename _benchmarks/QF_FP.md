@@ -35,8 +35,8 @@ We encountered issues with the
 [benchmark scrambler](https://github.com/smt-comp/scrambler) on two benchmarks
 in this division
 (fixed in [053bb79](https://github.com/SMT-COMP/scrambler/commit/053bb79a79b39749284e4bef31ffc6438a52adf8)).
-An expression `(fp.leq a x b)` was scrambled to `(fp.gt x a b)` instead of
-`(fp.gt b a x)`, which resulted in a flipped result in the following two
+An expression `(fp.leq a x b)` was scrambled to `(fp.geq x a b)` instead of
+`(fp.geq b a x)`, which resulted in a flipped result in the following two
 benchmarks:
 - non-incremental/QF_FP/schanda/spark/guarded_div_1.smt2
 - non-incremental/QF_FP/schanda/spark/average_2.smt2
