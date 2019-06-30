@@ -28,5 +28,6 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_FPLRA Single Query Track track participated only by Z3, CVC4.  
-QF_FPLRA Unsat Core Track track participated only by Z3, CVC4.
+Single Query Track track participated only by CVC4, Z3.
+
+Unsat Core Track track participated only by CVC4, Z3.

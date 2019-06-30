@@ -28,4 +28,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_AUFBVLIA Incremental Track track participated only by Z3, CVC4.
+Incremental Track track participated only by CVC4, Z3.

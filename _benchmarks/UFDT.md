@@ -28,4 +28,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-UFDT Unsat Core Track track participated only by CVC4.
+Unsat Core Track track participated only by 2018-CVC4, CVC4.
