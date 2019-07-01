@@ -53,3 +53,8 @@
       results: single_query_challenge-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
     - name: Unsat Core Track
       results: unsat_core-results/NRARDLLIANRANIAIDLNRALIAFPIDL.html
+
+- name: QF_BV
+  tracks:
+    - name: Challenge Track (non-incremental)
+      results: single_query_challenge-results/QF_BV.html
