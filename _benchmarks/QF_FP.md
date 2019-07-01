@@ -35,6 +35,7 @@ We encountered issues with the [benchmark scrambler](https://github.com/smt-comp
 
 These two benchmarks are thus **excluded** from this division.
 
-Incremental Track track participated only by 2018-Z3, CVC4, Z3.
+*Incremental Track* participated only by 2018-Z3, CVC4, Z3<sup>n</sup>.  
+*Unsat Core Track* participated only by 2018-CVC4, CVC4, Z3<sup>n</sup>.
 
-Unsat Core Track track participated only by 2018-CVC4, CVC4, Z3.
+n Non-competing.

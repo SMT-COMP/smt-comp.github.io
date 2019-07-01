@@ -28,6 +28,7 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-Incremental Track track participated only by 2018-CVC4, CVC4, Z3.
+*Incremental Track* participated only by 2018-CVC4<sup>n</sup>, CVC4, Z3<sup>n</sup>.  
+*Unsat Core Track* participated only by 2018-CVC4<sup>n</sup>, CVC4, Z3<sup>n</sup>.
 
-Unsat Core Track track participated only by 2018-CVC4, CVC4, Z3.
+n Non-competing.

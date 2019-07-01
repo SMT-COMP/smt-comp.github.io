@@ -28,4 +28,6 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-Unsat Core Track track participated only by 2018-CVC4, CVC4.
+*Unsat Core Track* participated only by 2018-CVC4<sup>n</sup>, CVC4.
+
+n Non-competing.

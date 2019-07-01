@@ -28,6 +28,7 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-Single Query Track track participated only by 2018-CVC4, CVC4.
+*Single Query Track* participated only by 2018-CVC4<sup>n</sup>, CVC4.  
+*Unsat Core Track* participated only by 2018-CVC4<sup>n</sup>, CVC4.
 
-Unsat Core Track track participated only by 2018-CVC4, CVC4.
+n Non-competing.

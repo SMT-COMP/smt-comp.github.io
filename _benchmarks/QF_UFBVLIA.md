@@ -28,4 +28,6 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-Incremental Track track participated only by CVC4, Z3.
+*Incremental Track* participated only by CVC4, Z3<sup>n</sup>.
+
+n Non-competing.
