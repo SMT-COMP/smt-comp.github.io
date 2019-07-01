@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-01 00:00:1561964400
+resultdate: 2019-07-01 00:00:15.61964400
 division: QF_BV
 track: single_query_challenge
 n_benchmarks: 7
@@ -11,6 +11,7 @@ winner_par: MinkeyRink MT-wrapped-sq
 winner_sat: MinkeyRink MT-wrapped-sq
 winner_unsat: MinkeyRink MT-wrapped-sq
 winner_24s: MinkeyRink MT-wrapped-sq
+
 sequential:
 - name: Boolector
   errorScore: 0
@@ -191,7 +192,8 @@ sequential:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 7parallel:
+  unsolved: 7
+parallel:
 - name: MinkeyRink MT-wrapped-sq
   errorScore: 0
   correctScore: 7
@@ -912,3 +914,4 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+---

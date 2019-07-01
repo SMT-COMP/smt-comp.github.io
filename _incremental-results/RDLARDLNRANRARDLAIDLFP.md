@@ -6,12 +6,11 @@ track: Incremental Track
 n_benchmarks: 59646
 time_limit: 2400
 
-seq_winner: YIi
-seq_sat_winner: YIi
-seq_unsat_winner: bYdjqRYITAQNF
-par_winner: YIi
-par_sat_winner: YIi
-par_unsat_winner: bYdjqRYITAQNF
+winner_seq: YIi
+winner_sat: YIi
+winner_unsat: bYdjqRYITAQNF
+winner_par: YIi
+winner_24s: YIi
 
 sequential:
 - name: YIi
