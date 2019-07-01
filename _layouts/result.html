@@ -6,41 +6,40 @@ layout: default
 <p>
 Competition results for the {{ page.division }} division as of
 {{ page.resultdate | time_to_string }}
+</p>
+
 <p>
 Benchmarks in this division: {{ page.n_benchmarks }}
-<p>
+</br>
 Time limit: {{ page.time_limit }}
-<p>
+</p>
+
 <h3>Winners</h3>
 <table>
     <thead>
         <tr>
             <th>Sequential Performance</th>
-            <th>Sequential SAT Performance</th>
-            <th>Sequential UNSAT Performance</th>
             <th>Parallel Performance</th>
-            <th>Parallel SAT Performance</th>
-            <th>Parallel UNSAT Performance</th>
+            <th>SAT Performance (parallel)</th>
+            <th>UNSAT Performance (parallel)</th>
+            <th>24 seconds Performance (parallel)</th>
         </tr>
     </thead>
     <tr>
         <td>
-            {{ page.seq_winner }}
+            {{ page.winner_seq }}
         </td>
         <td>
-            {{ page.seq_sat_winner }}
+            {{ page.winner_par }}
         </td>
         <td>
-            {{ page.seq_unsat_winner }}
+            {{ page.winner_sat }}
         </td>
         <td>
-            {{ page.par_winner }}
+            {{ page.winner_unsat }}
         </td>
         <td>
-            {{ page.par_sat_winner }}
-        </td>
-        <td>
-            {{ page.par_unsat_winner }}
+            {{ page.winner_24s }}
         </td>
     </tr>
 </table>
@@ -52,7 +51,8 @@ Time limit: {{ page.time_limit }}
         <th>Solver</th>
         <th>Error Score</th>
         <th>Correctly Solved Score</th>
-        <th>CPU time Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
         <th>Solved</th>
         <th>Solved SAT</th>
         <th>Solved UNSAT</th>
@@ -65,6 +65,7 @@ Time limit: {{ page.time_limit }}
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
     <td>{{ solver.solved }}</td>
     <td>{{ solver.solved_sat }}</td>
     <td>{{ solver.solved_unsat }}</td>
@@ -80,7 +81,8 @@ Time limit: {{ page.time_limit }}
         <th>Solver</th>
         <th>Error Score</th>
         <th>Correctly Solved Score</th>
-        <th>CPU time Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
         <th>Solved</th>
         <th>Solved SAT</th>
         <th>Solved UNSAT</th>
@@ -93,6 +95,7 @@ Time limit: {{ page.time_limit }}
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
     <td>{{ solver.solved }}</td>
     <td>{{ solver.solved_sat }}</td>
     <td>{{ solver.solved_unsat }}</td>
