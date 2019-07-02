@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% include tablesorter.html %}
+<h2>{{ page.division }} ({{ page.track }})</h2>
+<p>
+Competition results for the {{ page.division }} division
+in the {{ page.track }}. 
+</p>
+
+<p>
+Page generated on {{ page.resultdate | time_to_string }}
+</p>
+
+<p>
+<b>Benchmarks</b>: {{ page.n_benchmarks }}
+</br>
+<b>Time Limit:</b> {{ page.time_limit }} seconds
+</p>
+
+<h3>Winners</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Parallel Performance</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            {{ page.winner_par }}
+        </td>
+    </tr>
+</table>
+
+<h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correctly Solved Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+    </tr>
+</thead>
+{% for solver in page.parallel %}
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+</p>

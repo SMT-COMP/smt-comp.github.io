@@ -4,14 +4,18 @@ layout: default
 {% include tablesorter.html %}
 <h2>{{ page.division }} ({{ page.track }})</h2>
 <p>
-Competition results for the {{ page.division }} division as of
-{{ page.resultdate | time_to_string }}
+Competition results for the {{ page.division }} division
+in the {{ page.track }}. 
 </p>
 
 <p>
-Benchmarks in this division: {{ page.n_benchmarks }}
+Page generated on {{ page.resultdate | time_to_string }}
+</p>
+
+<p>
+<b>Benchmarks</b>: {{ page.n_benchmarks }}
 </br>
-Time limit: {{ page.time_limit }}
+<b>Time Limit:</b> {{ page.time_limit }} seconds
 </p>
 
 <h3>Winners</h3>
@@ -44,7 +48,7 @@ Time limit: {{ page.time_limit }}
     </tr>
 </table>
 
-<h3>Sequential performance</h3>
+<h3>Sequential Performance</h3>
 <table id="sequential" class="result sorted">
 <thead>
     <tr>
@@ -76,7 +80,7 @@ Time limit: {{ page.time_limit }}
 {% endfor %}
 </table>
 
-<h3>Parallel performance</h3>
+<h3>Parallel Performance</h3>
 <table id="parallel" class="result sorted">
 <thead>
     <tr>
@@ -108,7 +112,7 @@ Time limit: {{ page.time_limit }}
 {% endfor %}
 </table>
 
-<h3>SAT performance</h3>
+<h3>SAT Performance</h3>
 <table id="sat" class="result sorted">
 <thead>
     <tr>
@@ -140,7 +144,7 @@ Time limit: {{ page.time_limit }}
 {% endfor %}
 </table>
 
-<h3>UNSAT performance</h3>
+<h3>UNSAT Performance</h3>
 <table id="unsat" class="result sorted">
 <thead>
     <tr>
@@ -172,7 +176,7 @@ Time limit: {{ page.time_limit }}
 {% endfor %}
 </table>
 
-<h3>24s performance</h3>
+<h3>24s Performance</h3>
 <table id="twentyfour" class="result sorted">
 <thead>
     <tr>

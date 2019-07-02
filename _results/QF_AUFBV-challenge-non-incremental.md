@@ -1,8 +1,8 @@
 ---
 layout: result
-resultdate: 2019-07-02 09:03:41
+resultdate: 2019-07-02 09:49:33
 division: QF_AUFBV
-track: chall_sq
+track: Challenge Track (non-incremental)
 n_benchmarks: 15
 time_limit: 43200
 

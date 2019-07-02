@@ -1,3 +1,15 @@
+- name: QF_ABV
+  tracks:
+    - name: Challenge Track (non-incremental)
+      results: QF_ABV-challenge-non-incremental.html
+    - name: Challenge Track (incremental)
+      results: QF_ABV-challenge-incremental.html
+- name: QF_AUFBV
+  tracks:
+    - name: Challenge Track (non-incremental)
+      results: QF_AUFBV-challenge-non-incremental.html
+    - name: Challenge Track (incremental)
+      results: QF_AUFBV-challenge-incremental.html
 - name: QF_BV
   tracks:
     - name: Challenge Track (non-incremental)
