@@ -3,11 +3,14 @@ layout: default
 ---
 ## SMT-COMP 2019 Results
 
-{% for logic in site.data.results_index %}
-  {%- assign logic_str = "" -%}
-  {% for track in logic.tracks %}
-        {%- assign logic_str = logic_str |append: "[" |append: track.name |append: "](" |append: track.results |append: ")" |append: ":" -%}
+
+{% assign results = site.results |group_by: 'division' %}
+{% for result in results %}
+  {%- assign track_str = "" -%}
+  {% for item in result.items %}
+    {% assign track = item.track %}
+    {%- assign track_str = track_str |append: "[" |append: track |append: "](" |append: item.url |append: ")" |append: ":" -%}
   {% endfor %}
-  {%- assign logic_str = logic_str | split: ":" -%}
-  - {{ logic.name }} ({{ logic_str |join: ", " }})
+  {%- assign track_str = track_str | split: ":" -%}
+  - {{ result.name }} ({{ track_str |join: ", " }})
 {% endfor %}
