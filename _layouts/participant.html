@@ -64,7 +64,12 @@
       <td><a href="mailto:{{ page.contact }}">{{ page.contact }}</a></td>
   </tr>
 </table>
+
+{% assign content_test = content | strip %}
+{% if content_test != empty %}
 <h2>Notes</h2>
 {{ content }}
+{% endif %}
+
 {% include tail.html %}
 
