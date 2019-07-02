@@ -1,18 +1,20 @@
 ---
 layout: result
-resultdate: 2019-07-01 00:00:1561964400
+resultdate: 2019-07-02 06:09:48
 division: QF_ABV
 track: single_query_challenge
 n_benchmarks: 7
 time_limit: 43200
 
-winner_seq: Boolector-wrapped-sq
-winner_par: Boolector-wrapped-sq
-winner_sat: Boolector-wrapped-sq
+winner_seq: Boolector
+winner_par: Boolector
+winner_sat: Boolector
 winner_unsat: Boolector
-winner_24s: Poolector-wrapped-sq
+winner_24s: Poolector
+
 sequential:
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 258.31820000000005
@@ -21,7 +23,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 970.7202
@@ -30,7 +33,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 4255.126
@@ -39,7 +43,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 5
   CPUScore: 151567.622
@@ -48,7 +53,8 @@ sequential:
   solved_sat: 5
   solved_unsat: 0
   unsolved: 2
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 1
   CPUScore: 106.09972
@@ -57,7 +63,8 @@ sequential:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 302255.10000000003
@@ -65,8 +72,10 @@ sequential:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 7parallel:
-- name: Boolector-wrapped-sq
+  unsolved: 7
+parallel:
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 258.31820000000005
@@ -75,7 +84,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 970.7202
@@ -84,7 +94,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 4255.126
@@ -93,7 +104,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 5
   CPUScore: 151567.622
@@ -102,7 +114,8 @@ sequential:
   solved_sat: 5
   solved_unsat: 0
   unsolved: 2
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 1
   CPUScore: 106.09972
@@ -111,7 +124,8 @@ sequential:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 302255.10000000003
@@ -119,8 +133,10 @@ sequential:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 7sat:
-- name: Boolector-wrapped-sq
+  unsolved: 7
+sat:
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 258.31820000000005
@@ -129,7 +145,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 970.7202
@@ -138,7 +155,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 4255.126
@@ -147,7 +165,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 5
   CPUScore: 151567.622
@@ -156,7 +175,8 @@ sequential:
   solved_sat: 5
   solved_unsat: 0
   unsolved: 2
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 1
   CPUScore: 106.09972
@@ -165,7 +185,8 @@ sequential:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 302255.10000000003
@@ -173,8 +194,10 @@ sequential:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 7unsat:
-- name: Boolector
+  unsolved: 7
+unsat:
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 106.09972
@@ -183,7 +206,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 258.31820000000005
@@ -192,7 +216,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 970.7202
@@ -201,7 +226,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 4255.126
@@ -210,7 +236,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 151567.622
@@ -219,7 +246,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 302255.10000000003
@@ -227,8 +255,10 @@ sequential:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 724s:
-- name: Poolector-wrapped-sq
+  unsolved: 7
+twentyfour:
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 4
   CPUScore: 970.7202
@@ -237,7 +267,8 @@ sequential:
   solved_sat: 4
   solved_unsat: 0
   unsolved: 3
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 3
   CPUScore: 258.31820000000005
@@ -246,7 +277,8 @@ sequential:
   solved_sat: 3
   solved_unsat: 0
   unsolved: 4
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 106.09972
@@ -255,7 +287,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 4255.126
@@ -264,7 +297,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 151567.622
@@ -273,7 +307,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 302255.10000000003
@@ -282,3 +317,4 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+---

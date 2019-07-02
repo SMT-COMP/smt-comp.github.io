@@ -1,19 +1,20 @@
 ---
 layout: result
-resultdate: 2019-07-01 00:00:15.61964400
+resultdate: 2019-07-02 06:09:48
 division: QF_BV
 track: single_query_challenge
 n_benchmarks: 7
 time_limit: 43200
 
 winner_seq: Boolector
-winner_par: MinkeyRink MT-wrapped-sq
-winner_sat: MinkeyRink MT-wrapped-sq
-winner_unsat: MinkeyRink MT-wrapped-sq
-winner_24s: MinkeyRink MT-wrapped-sq
+winner_par: Minkeyrink Solver MT
+winner_sat: Minkeyrink Solver MT
+winner_unsat: Minkeyrink Solver MT
+winner_24s: Minkeyrink Solver MT
 
 sequential:
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 607.6731
@@ -22,7 +23,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 708.9119000000001
@@ -31,7 +33,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 Cadical-wrapped-sq
+- name: Yices 2.6.2 CaDiCal
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 716.1806
@@ -40,7 +43,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: MinkeyRink MT-wrapped-sq
+- name: Minkeyrink Solver MT
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 767.5924
@@ -49,7 +53,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 new bvsolver-wrapped-sq
+- name: Yices 2.6.2 New Bvsolver
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 1111.0138
@@ -58,7 +63,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: MinkeyRink ST-wrapped-sq
+- name: Minkeyrink Solver
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 1150.6533100000001
@@ -67,7 +73,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Minkeyrink MT
+- name: 2018-Minkeyrink MT
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 1324.0145
@@ -76,7 +83,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 2367.8287
@@ -85,7 +93,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 Cryptominisat-wrapped-sq
+- name: Yices 2.6.2 Cryptominisat
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 8453.778
@@ -94,7 +103,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 12696.426
@@ -103,7 +113,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 31544.22612
@@ -112,7 +123,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: stp-minisat-wrapped-sq
+- name: STP-minisat
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 43053.7719
@@ -121,7 +133,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: STP-2019-wrapped-sq
+- name: STP
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 43468.136320000005
@@ -130,7 +143,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: stp-mergesat-fixed-wrapped-sq
+- name: STP-mergesat-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 6
   CPUScore: 8134.530000000001
@@ -139,7 +153,8 @@ sequential:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-portfolio-fixed-wrapped-sq
+- name: STP-portfolio-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 6
   CPUScore: 10278.826
@@ -148,7 +163,8 @@ sequential:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 6
   CPUScore: 44063.068999999996
@@ -157,7 +173,8 @@ sequential:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-mt-wrapped-sq
+- name: STP-mt
+  competing: "yes"
   errorScore: 0
   correctScore: 6
   CPUScore: 44113.040799999995
@@ -166,7 +183,8 @@ sequential:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-mergesat-wrapped-sq
+- name: STP-mergesat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42262.97345
@@ -175,7 +193,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-riss-wrapped-sq
+- name: STP-riss
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42962.67346
@@ -184,7 +203,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-portfolio-wrapped-sq
+- name: STP-portfolio
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44986.465399999994
@@ -194,7 +214,8 @@ sequential:
   solved_unsat: 0
   unsolved: 7
 parallel:
-- name: MinkeyRink MT-wrapped-sq
+- name: Minkeyrink Solver MT
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 767.5924
@@ -203,7 +224,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Minkeyrink MT
+- name: 2018-Minkeyrink MT
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 1324.0145
@@ -212,7 +234,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 607.6731
@@ -221,7 +244,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 2367.8287
@@ -230,7 +254,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 708.9119000000001
@@ -239,7 +264,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 Cadical-wrapped-sq
+- name: Yices 2.6.2 CaDiCal
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 716.1806
@@ -248,7 +274,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 new bvsolver-wrapped-sq
+- name: Yices 2.6.2 New Bvsolver
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 1111.0138
@@ -257,7 +284,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: MinkeyRink ST-wrapped-sq
+- name: Minkeyrink Solver
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 1150.6533100000001
@@ -266,7 +294,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 Cryptominisat-wrapped-sq
+- name: Yices 2.6.2 Cryptominisat
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 8453.778
@@ -275,7 +304,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 12696.426
@@ -284,7 +314,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 31544.22612
@@ -293,7 +324,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: stp-minisat-wrapped-sq
+- name: STP-minisat
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 43053.7719
@@ -302,7 +334,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: STP-2019-wrapped-sq
+- name: STP
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 43468.136320000005
@@ -311,7 +344,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: stp-mergesat-fixed-wrapped-sq
+- name: STP-mergesat-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 6
   CPUScore: 8134.530000000001
@@ -320,7 +354,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-portfolio-fixed-wrapped-sq
+- name: STP-portfolio-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 6
   CPUScore: 10278.826
@@ -329,7 +364,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-mt-wrapped-sq
+- name: STP-mt
+  competing: "yes"
   errorScore: 0
   correctScore: 6
   CPUScore: 44113.040799999995
@@ -338,7 +374,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 6
   CPUScore: 44063.068999999996
@@ -347,7 +384,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-mergesat-wrapped-sq
+- name: STP-mergesat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42262.97345
@@ -356,7 +394,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-riss-wrapped-sq
+- name: STP-riss
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42962.67346
@@ -365,7 +404,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-portfolio-wrapped-sq
+- name: STP-portfolio
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44986.465399999994
@@ -373,8 +413,10 @@ parallel:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 7sat:
-- name: MinkeyRink MT-wrapped-sq
+  unsolved: 7
+sat:
+- name: Minkeyrink Solver MT
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 767.5924
@@ -383,7 +425,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Minkeyrink MT
+- name: 2018-Minkeyrink MT
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 1324.0145
@@ -392,7 +435,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 607.6731
@@ -401,7 +445,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 2367.8287
@@ -410,7 +455,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 708.9119000000001
@@ -419,7 +465,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 Cadical-wrapped-sq
+- name: Yices 2.6.2 CaDiCal
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 716.1806
@@ -428,7 +475,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 new bvsolver-wrapped-sq
+- name: Yices 2.6.2 New Bvsolver
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 1111.0138
@@ -437,7 +485,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: MinkeyRink ST-wrapped-sq
+- name: Minkeyrink Solver
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 1150.6533100000001
@@ -446,7 +495,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2 Cryptominisat-wrapped-sq
+- name: Yices 2.6.2 Cryptominisat
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 8453.778
@@ -455,7 +505,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 12696.426
@@ -464,7 +515,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 7
   CPUScore: 31544.22612
@@ -473,7 +525,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: stp-minisat-wrapped-sq
+- name: STP-minisat
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 43053.7719
@@ -482,7 +535,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: STP-2019-wrapped-sq
+- name: STP
+  competing: "yes"
   errorScore: 0
   correctScore: 7
   CPUScore: 43468.136320000005
@@ -491,7 +545,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
-- name: stp-mergesat-fixed-wrapped-sq
+- name: STP-mergesat-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 6
   CPUScore: 8134.530000000001
@@ -500,7 +555,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-portfolio-fixed-wrapped-sq
+- name: STP-portfolio-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 6
   CPUScore: 10278.826
@@ -509,7 +565,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-mt-wrapped-sq
+- name: STP-mt
+  competing: "yes"
   errorScore: 0
   correctScore: 6
   CPUScore: 44113.040799999995
@@ -518,7 +575,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 6
   CPUScore: 44063.068999999996
@@ -527,7 +585,8 @@ parallel:
   solved_sat: 6
   solved_unsat: 0
   unsolved: 1
-- name: stp-mergesat-wrapped-sq
+- name: STP-mergesat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42262.97345
@@ -536,7 +595,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-riss-wrapped-sq
+- name: STP-riss
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42962.67346
@@ -545,7 +605,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-portfolio-wrapped-sq
+- name: STP-portfolio
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44986.465399999994
@@ -553,8 +614,10 @@ parallel:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 7unsat:
-- name: MinkeyRink MT-wrapped-sq
+  unsolved: 7
+unsat:
+- name: Minkeyrink Solver MT
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 767.5924
@@ -563,7 +626,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Minkeyrink MT
+- name: 2018-Minkeyrink MT
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 1324.0145
@@ -572,7 +636,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 607.6731
@@ -581,7 +646,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 2367.8287
@@ -590,7 +656,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 708.9119000000001
@@ -599,7 +666,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2 Cadical-wrapped-sq
+- name: Yices 2.6.2 CaDiCal
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 716.1806
@@ -608,7 +676,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2 new bvsolver-wrapped-sq
+- name: Yices 2.6.2 New Bvsolver
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 1111.0138
@@ -617,7 +686,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: MinkeyRink ST-wrapped-sq
+- name: Minkeyrink Solver
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 1150.6533100000001
@@ -626,7 +696,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-mergesat-fixed-wrapped-sq
+- name: STP-mergesat-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 8134.530000000001
@@ -635,7 +706,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-portfolio-fixed-wrapped-sq
+- name: STP-portfolio-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 10278.826
@@ -644,7 +716,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2 Cryptominisat-wrapped-sq
+- name: Yices 2.6.2 Cryptominisat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 8453.778
@@ -653,7 +726,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 12696.426
@@ -662,7 +736,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 31544.22612
@@ -671,7 +746,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-mergesat-wrapped-sq
+- name: STP-mergesat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42262.97345
@@ -680,7 +756,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-riss-wrapped-sq
+- name: STP-riss
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42962.67346
@@ -689,7 +766,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-minisat-wrapped-sq
+- name: STP-minisat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 43053.7719
@@ -698,7 +776,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: STP-2019-wrapped-sq
+- name: STP
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 43468.136320000005
@@ -707,7 +786,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-mt-wrapped-sq
+- name: STP-mt
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44113.040799999995
@@ -716,7 +796,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44063.068999999996
@@ -725,7 +806,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-portfolio-wrapped-sq
+- name: STP-portfolio
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44986.465399999994
@@ -733,8 +815,10 @@ parallel:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 724s:
-- name: MinkeyRink MT-wrapped-sq
+  unsolved: 7
+twentyfour:
+- name: Minkeyrink Solver MT
+  competing: "yes"
   errorScore: 0
   correctScore: 4
   CPUScore: 767.5924
@@ -743,7 +827,8 @@ parallel:
   solved_sat: 4
   solved_unsat: 0
   unsolved: 3
-- name: Minkeyrink MT
+- name: 2018-Minkeyrink MT
+  competing: "no"
   errorScore: 0
   correctScore: 3
   CPUScore: 1324.0145
@@ -752,7 +837,8 @@ parallel:
   solved_sat: 3
   solved_unsat: 0
   unsolved: 4
-- name: stp-mt-wrapped-sq
+- name: STP-mt
+  competing: "yes"
   errorScore: 0
   correctScore: 3
   CPUScore: 44113.040799999995
@@ -761,7 +847,8 @@ parallel:
   solved_sat: 3
   solved_unsat: 0
   unsolved: 4
-- name: Boolector
+- name: 2018-Boolector
+  competing: "no"
   errorScore: 0
   correctScore: 2
   CPUScore: 607.6731
@@ -770,7 +857,8 @@ parallel:
   solved_sat: 2
   solved_unsat: 0
   unsolved: 5
-- name: Poolector-wrapped-sq
+- name: Poolector
+  competing: "yes"
   errorScore: 0
   correctScore: 2
   CPUScore: 2367.8287
@@ -779,7 +867,8 @@ parallel:
   solved_sat: 2
   solved_unsat: 0
   unsolved: 5
-- name: MinkeyRink ST-wrapped-sq
+- name: Minkeyrink Solver
+  competing: "yes"
   errorScore: 0
   correctScore: 2
   CPUScore: 1150.6533100000001
@@ -788,7 +877,8 @@ parallel:
   solved_sat: 2
   solved_unsat: 0
   unsolved: 5
-- name: z3-4.8.4-d6df51951f4c-wrapped-sq
+- name: Z3
+  competing: "no"
   errorScore: 0
   correctScore: 2
   CPUScore: 31544.22612
@@ -797,7 +887,8 @@ parallel:
   solved_sat: 2
   solved_unsat: 0
   unsolved: 5
-- name: Boolector-wrapped-sq
+- name: Boolector
+  competing: "yes"
   errorScore: 0
   correctScore: 1
   CPUScore: 708.9119000000001
@@ -806,7 +897,8 @@ parallel:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
-- name: Yices 2.6.2 Cadical-wrapped-sq
+- name: Yices 2.6.2 CaDiCal
+  competing: "yes"
   errorScore: 0
   correctScore: 1
   CPUScore: 716.1806
@@ -815,7 +907,8 @@ parallel:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
-- name: stp-minisat-wrapped-sq
+- name: STP-minisat
+  competing: "yes"
   errorScore: 0
   correctScore: 1
   CPUScore: 43053.7719
@@ -824,7 +917,8 @@ parallel:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
-- name: STP-2019-wrapped-sq
+- name: STP
+  competing: "yes"
   errorScore: 0
   correctScore: 1
   CPUScore: 43468.136320000005
@@ -833,7 +927,8 @@ parallel:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
-- name: Yices 2.6.2 new bvsolver-wrapped-sq
+- name: Yices 2.6.2 New Bvsolver
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 1111.0138
@@ -842,7 +937,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-mergesat-fixed-wrapped-sq
+- name: STP-mergesat-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 8134.530000000001
@@ -851,7 +947,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-portfolio-fixed-wrapped-sq
+- name: STP-portfolio-fixed
+  competing: "no"
   errorScore: 0
   correctScore: 0
   CPUScore: 10278.826
@@ -860,7 +957,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2 Cryptominisat-wrapped-sq
+- name: Yices 2.6.2 Cryptominisat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 8453.778
@@ -869,7 +967,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: Yices 2.6.2-wrapped-sq
+- name: Yices 2.6.2
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 12696.426
@@ -878,7 +977,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-mergesat-wrapped-sq
+- name: STP-mergesat
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42262.97345
@@ -887,7 +987,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-riss-wrapped-sq
+- name: STP-riss
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 42962.67346
@@ -896,7 +997,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: CVC4-2019-06-03-d350fe1-wrapped-sq
+- name: CVC4
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44063.068999999996
@@ -905,7 +1007,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
-- name: stp-portfolio-wrapped-sq
+- name: STP-portfolio
+  competing: "yes"
   errorScore: 0
   correctScore: 0
   CPUScore: 44986.465399999994

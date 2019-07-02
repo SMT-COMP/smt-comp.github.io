@@ -60,8 +60,10 @@ Time limit: {{ page.time_limit }}
     </tr>
 </thead>
 {% for solver in page.sequential %}
-<tr>
-    <td>{{ solver.name }}</td>
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
@@ -90,8 +92,10 @@ Time limit: {{ page.time_limit }}
     </tr>
 </thead>
 {% for solver in page.parallel %}
-<tr>
-    <td>{{ solver.name }}</td>
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
@@ -103,3 +107,105 @@ Time limit: {{ page.time_limit }}
 </tr>
 {% endfor %}
 </table>
+
+<h3>SAT performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correctly Solved Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+        <th>Solved</th>
+        <th>Solved SAT</th>
+        <th>Solved UNSAT</th>
+        <th>Unsolved</th>
+    </tr>
+</thead>
+{% for solver in page.sat %}
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.solved }}</td>
+    <td>{{ solver.solved_sat }}</td>
+    <td>{{ solver.solved_unsat }}</td>
+    <td>{{ solver.unsolved }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>UNSAT performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correctly Solved Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+        <th>Solved</th>
+        <th>Solved SAT</th>
+        <th>Solved UNSAT</th>
+        <th>Unsolved</th>
+    </tr>
+</thead>
+{% for solver in page.unsat %}
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.solved }}</td>
+    <td>{{ solver.solved_sat }}</td>
+    <td>{{ solver.solved_unsat }}</td>
+    <td>{{ solver.unsolved }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>24s performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correctly Solved Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+        <th>Solved</th>
+        <th>Solved SAT</th>
+        <th>Solved UNSAT</th>
+        <th>Unsolved</th>
+    </tr>
+</thead>
+{% for solver in page.twentyfour %}
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.solved }}</td>
+    <td>{{ solver.solved_sat }}</td>
+    <td>{{ solver.solved_unsat }}</td>
+    <td>{{ solver.unsolved }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+</p>
