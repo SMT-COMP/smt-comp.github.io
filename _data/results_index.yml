@@ -2,3 +2,5 @@
   tracks:
     - name: Challenge Track (non-incremental)
       results: QF_BV-challenge-non-incremental.html
+    - name: Challenge Track (incremental)
+      results: QF_BV-challenge-incremental.html
