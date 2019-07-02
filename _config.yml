@@ -7,7 +7,7 @@ collections:
     participants:
         output: true
     results:
-        output: false
+        output: true
     news:
         output: true
     single_query-results:
