@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-02 10:31:27
+resultdate: 2019-07-02 12:09:11
 division: QF_ABV
 track: Challenge Track (incremental)
 n_benchmarks: 9
@@ -25,18 +25,18 @@ parallel:
   competing: "yes"
   errorScore: 0
   correctScore: 130
-  CPUScore: 147863.87
-  WallScore: 147872.82
+  CPUScore: 147867.07
+  WallScore: 147872.72
 - name: Z3
   competing: "no"
   errorScore: 0
   correctScore: 119
-  CPUScore: 332359.6
-  WallScore: 332380.7
+  CPUScore: 332366.8
+  WallScore: 332380.4
 - name: CVC4-inc
   competing: "yes"
   errorScore: 0
   correctScore: 89
-  CPUScore: 388783.2
-  WallScore: 388800.2
+  CPUScore: 388787.5
+  WallScore: 388800.0
 ---

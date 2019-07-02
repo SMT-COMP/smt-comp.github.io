@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-02 09:49:33
+resultdate: 2019-07-02 12:09:02
 division: QF_AUFBV
 track: Challenge Track (non-incremental)
 n_benchmarks: 15
@@ -17,8 +17,8 @@ sequential:
   competing: "yes"
   errorScore: 0
   correctScore: 10
-  CPUScore: 226777.786
-  WallScore: 226787.381
+  CPUScore: 226776.086
+  WallScore: 226787.281
   solved: 10
   solved_sat: 9
   solved_unsat: 1
@@ -27,7 +27,7 @@ sequential:
   competing: "no"
   errorScore: 0
   correctScore: 8
-  CPUScore: 259238.316
+  CPUScore: 259238.116
   WallScore: 259268.178
   solved: 8
   solved_sat: 7
@@ -47,8 +47,8 @@ sequential:
   competing: "yes"
   errorScore: 0
   correctScore: 4
-  CPUScore: 685925.307
-  WallScore: 173051.89
+  CPUScore: 216680.247
+  WallScore: 216173.112
   solved: 4
   solved_sat: 3
   solved_unsat: 1
@@ -78,8 +78,8 @@ parallel:
   competing: "yes"
   errorScore: 0
   correctScore: 10
-  CPUScore: 226777.786
-  WallScore: 226787.381
+  CPUScore: 226782.286
+  WallScore: 226787.081
   solved: 10
   solved_sat: 9
   solved_unsat: 1
@@ -88,8 +88,8 @@ parallel:
   competing: "no"
   errorScore: 0
   correctScore: 8
-  CPUScore: 259238.316
-  WallScore: 259268.178
+  CPUScore: 259256.016
+  WallScore: 259267.978
   solved: 8
   solved_sat: 7
   solved_unsat: 1
@@ -98,8 +98,8 @@ parallel:
   competing: "yes"
   errorScore: 0
   correctScore: 5
-  CPUScore: 173174.008
-  WallScore: 173186.179
+  CPUScore: 173182.008
+  WallScore: 173185.979
   solved: 5
   solved_sat: 4
   solved_unsat: 1
@@ -108,8 +108,8 @@ parallel:
   competing: "yes"
   errorScore: 0
   correctScore: 4
-  CPUScore: 685925.307
-  WallScore: 173051.89
+  CPUScore: 216680.247
+  WallScore: 216173.112
   solved: 4
   solved_sat: 3
   solved_unsat: 1
@@ -118,8 +118,8 @@ parallel:
   competing: "no"
   errorScore: 0
   correctScore: 3
-  CPUScore: 239216.642
-  WallScore: 240991.473
+  CPUScore: 239236.442
+  WallScore: 240991.273
   solved: 3
   solved_sat: 2
   solved_unsat: 1
@@ -128,8 +128,8 @@ parallel:
   competing: "yes"
   errorScore: 0
   correctScore: 3
-  CPUScore: 354363.865
-  WallScore: 356633.43
+  CPUScore: 354389.765
+  WallScore: 356633.23
   solved: 3
   solved_sat: 2
   solved_unsat: 1
@@ -139,8 +139,8 @@ sat:
   competing: "yes"
   errorScore: 0
   correctScore: 9
-  CPUScore: 226777.786
-  WallScore: 226787.381
+  CPUScore: 53963.205
+  WallScore: 53969.5
   solved: 9
   solved_sat: 9
   solved_unsat: 0
@@ -149,8 +149,8 @@ sat:
   competing: "no"
   errorScore: 0
   correctScore: 7
-  CPUScore: 259238.316
-  WallScore: 259268.178
+  CPUScore: 124712.244
+  WallScore: 124716.154
   solved: 7
   solved_sat: 7
   solved_unsat: 0
@@ -159,8 +159,8 @@ sat:
   competing: "yes"
   errorScore: 0
   correctScore: 4
-  CPUScore: 173174.008
-  WallScore: 173186.179
+  CPUScore: 351.731
+  WallScore: 351.797
   solved: 4
   solved_sat: 4
   solved_unsat: 0
@@ -169,8 +169,8 @@ sat:
   competing: "yes"
   errorScore: 0
   correctScore: 3
-  CPUScore: 685925.307
-  WallScore: 173051.89
+  CPUScore: 43820.627
+  WallScore: 43357.957
   solved: 3
   solved_sat: 3
   solved_unsat: 0
@@ -179,8 +179,8 @@ sat:
   competing: "no"
   errorScore: 0
   correctScore: 2
-  CPUScore: 239216.642
-  WallScore: 240991.473
+  CPUScore: 209777.33
+  WallScore: 210433.897
   solved: 2
   solved_sat: 2
   solved_unsat: 0
@@ -189,8 +189,8 @@ sat:
   competing: "yes"
   errorScore: 0
   correctScore: 2
-  CPUScore: 354363.865
-  WallScore: 356633.43
+  CPUScore: 316357.17
+  WallScore: 317437.836
   solved: 2
   solved_sat: 2
   solved_unsat: 0
@@ -200,18 +200,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 1
-  CPUScore: 685925.307
-  WallScore: 173051.89
-  solved: 1
-  solved_sat: 0
-  solved_unsat: 1
-  unsolved: 14
-- name: Boolector
-  competing: "yes"
-  errorScore: 0
-  correctScore: 1
-  CPUScore: 173174.008
-  WallScore: 173186.179
+  CPUScore: 59.62
+  WallScore: 15.156
   solved: 1
   solved_sat: 0
   solved_unsat: 1
@@ -220,8 +210,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 1
-  CPUScore: 226777.786
-  WallScore: 226787.381
+  CPUScore: 17.582
+  WallScore: 17.581
   solved: 1
   solved_sat: 0
   solved_unsat: 1
@@ -230,18 +220,8 @@ unsat:
   competing: "no"
   errorScore: 0
   correctScore: 1
-  CPUScore: 239216.642
-  WallScore: 240991.473
-  solved: 1
-  solved_sat: 0
-  solved_unsat: 1
-  unsolved: 14
-- name: Z3
-  competing: "no"
-  errorScore: 0
-  correctScore: 1
-  CPUScore: 259238.316
-  WallScore: 259268.178
+  CPUScore: 18.142
+  WallScore: 18.146
   solved: 1
   solved_sat: 0
   solved_unsat: 1
@@ -250,8 +230,28 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 1
-  CPUScore: 354363.865
-  WallScore: 356633.43
+  CPUScore: 18.645
+  WallScore: 18.644
+  solved: 1
+  solved_sat: 0
+  solved_unsat: 1
+  unsolved: 14
+- name: Z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 1
+  CPUScore: 19.292
+  WallScore: 19.293
+  solved: 1
+  solved_sat: 0
+  solved_unsat: 1
+  unsolved: 14
+- name: Boolector
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1
+  CPUScore: 34.177
+  WallScore: 34.182
   solved: 1
   solved_sat: 0
   solved_unsat: 1
@@ -261,8 +261,8 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 3
-  CPUScore: 226777.786
-  WallScore: 226787.381
+  CPUScore: 305.966
+  WallScore: 305.966
   solved: 3
   solved_sat: 2
   solved_unsat: 1
@@ -271,8 +271,8 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 2
-  CPUScore: 685925.307
-  WallScore: 173051.89
+  CPUScore: 229.367
+  WallScore: 184.573
   solved: 2
   solved_sat: 1
   solved_unsat: 1
@@ -281,8 +281,8 @@ twentyfour:
   competing: "no"
   errorScore: 0
   correctScore: 2
-  CPUScore: 259238.316
-  WallScore: 259268.178
+  CPUScore: 331.916
+  WallScore: 331.918
   solved: 2
   solved_sat: 1
   solved_unsat: 1
@@ -291,8 +291,8 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 1
-  CPUScore: 173174.008
-  WallScore: 173186.179
+  CPUScore: 192.31
+  WallScore: 192.31
   solved: 1
   solved_sat: 1
   solved_unsat: 0
@@ -301,8 +301,8 @@ twentyfour:
   competing: "no"
   errorScore: 0
   correctScore: 1
-  CPUScore: 239216.642
-  WallScore: 240991.473
+  CPUScore: 354.142
+  WallScore: 354.146
   solved: 1
   solved_sat: 0
   solved_unsat: 1
@@ -311,8 +311,8 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 1
-  CPUScore: 354363.865
-  WallScore: 356633.43
+  CPUScore: 354.645
+  WallScore: 354.644
   solved: 1
   solved_sat: 0
   solved_unsat: 1

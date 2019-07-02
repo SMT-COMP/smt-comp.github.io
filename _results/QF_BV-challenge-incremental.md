@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-02 10:31:27
+resultdate: 2019-07-02 12:09:11
 division: QF_BV
 track: Challenge Track (incremental)
 n_benchmarks: 7
@@ -31,20 +31,20 @@ parallel:
   competing: "yes"
   errorScore: 0
   correctScore: 99
-  CPUScore: 54908.268
-  WallScore: 54913.222
+  CPUScore: 54913.168
+  WallScore: 54913.122
 - name: CVC4-inc-fixed
   competing: "no"
   errorScore: 0
   correctScore: 98
-  CPUScore: 92344.29
-  WallScore: 92352.31
+  CPUScore: 92348.09
+  WallScore: 92352.21
 - name: Z3
   competing: "no"
   errorScore: 0
   correctScore: 97
-  CPUScore: 248933.37
-  WallScore: 248937.03
+  CPUScore: 248932.47
+  WallScore: 248936.83
 - name: Minkeyrink Solver
   competing: "yes"
   errorScore: 0

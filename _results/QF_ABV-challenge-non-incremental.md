@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-02 09:49:33
+resultdate: 2019-07-02 12:09:02
 division: QF_ABV
 track: Challenge Track (non-incremental)
 n_benchmarks: 7
@@ -108,8 +108,8 @@ parallel:
   competing: "no"
   errorScore: 0
   correctScore: 5
-  CPUScore: 151567.622
-  WallScore: 151576.42
+  CPUScore: 151572.322
+  WallScore: 151576.22
   solved: 5
   solved_sat: 5
   solved_unsat: 0
@@ -128,8 +128,8 @@ parallel:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 302255.1
-  WallScore: 302400.2
+  CPUScore: 302306.4
+  WallScore: 302400.0
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -169,8 +169,8 @@ sat:
   competing: "no"
   errorScore: 0
   correctScore: 5
-  CPUScore: 151567.622
-  WallScore: 151576.42
+  CPUScore: 151572.322
+  WallScore: 151576.22
   solved: 5
   solved_sat: 5
   solved_unsat: 0
@@ -189,8 +189,8 @@ sat:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 302255.1
-  WallScore: 302400.2
+  CPUScore: 302306.4
+  WallScore: 302400.0
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -200,8 +200,8 @@ unsat:
   competing: "no"
   errorScore: 0
   correctScore: 0
-  CPUScore: 106.1
-  WallScore: 107.157
+  CPUScore: 0.0
+  WallScore: 0.0
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -210,38 +210,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 258.318
-  WallScore: 258.33
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 7
-- name: Poolector
-  competing: "yes"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 970.72
-  WallScore: 270.965
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 7
-- name: Yices 2.6.2
-  competing: "yes"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 4255.126
-  WallScore: 4255.697
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 7
-- name: Z3
-  competing: "no"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 151567.622
-  WallScore: 151576.42
+  CPUScore: 0.0
+  WallScore: 0.0
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -250,8 +220,38 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 302255.1
-  WallScore: 302400.2
+  CPUScore: 0.0
+  WallScore: 0.0
+  solved: 0
+  solved_sat: 0
+  solved_unsat: 0
+  unsolved: 7
+- name: Poolector
+  competing: "yes"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 0.0
+  WallScore: 0.0
+  solved: 0
+  solved_sat: 0
+  solved_unsat: 0
+  unsolved: 7
+- name: Yices 2.6.2
+  competing: "yes"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 0.0
+  WallScore: 0.0
+  solved: 0
+  solved_sat: 0
+  solved_unsat: 0
+  unsolved: 7
+- name: Z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 0.0
+  WallScore: 0.0
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -261,8 +261,8 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 4
-  CPUScore: 970.72
-  WallScore: 270.965
+  CPUScore: 313.123
+  WallScore: 144.972
   solved: 4
   solved_sat: 4
   solved_unsat: 0
@@ -271,8 +271,8 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 3
-  CPUScore: 258.318
-  WallScore: 258.33
+  CPUScore: 143.778
+  WallScore: 143.781
   solved: 3
   solved_sat: 3
   solved_unsat: 0
@@ -281,28 +281,8 @@ twentyfour:
   competing: "no"
   errorScore: 0
   correctScore: 0
-  CPUScore: 106.1
-  WallScore: 107.157
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 7
-- name: Yices 2.6.2
-  competing: "yes"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 4255.126
-  WallScore: 4255.697
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 7
-- name: Z3
-  competing: "no"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 151567.622
-  WallScore: 151576.42
+  CPUScore: 37.269
+  WallScore: 38.322
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -311,8 +291,28 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 302255.1
-  WallScore: 302400.2
+  CPUScore: 168.0
+  WallScore: 168.0
+  solved: 0
+  solved_sat: 0
+  solved_unsat: 0
+  unsolved: 7
+- name: Yices 2.6.2
+  competing: "yes"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 168.0
+  WallScore: 168.0
+  solved: 0
+  solved_sat: 0
+  solved_unsat: 0
+  unsolved: 7
+- name: Z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 168.0
+  WallScore: 168.0
   solved: 0
   solved_sat: 0
   solved_unsat: 0

@@ -1,18 +1,108 @@
+- name: ABVFP
+  tracks:
+    - name: Incremental Track
+      results: ABVFP-incremental.html
+- name: ALIA
+  tracks:
+    - name: Incremental Track
+      results: ALIA-incremental.html
+- name: ANIA
+  tracks:
+    - name: Incremental Track
+      results: ANIA-incremental.html
+- name: AUFNIRA
+  tracks:
+    - name: Incremental Track
+      results: AUFNIRA-incremental.html
+- name: BVFP
+  tracks:
+    - name: Incremental Track
+      results: BVFP-incremental.html
+- name: BV
+  tracks:
+    - name: Incremental Track
+      results: BV-incremental.html
+- name: LIA
+  tracks:
+    - name: Incremental Track
+      results: LIA-incremental.html
+- name: LRA
+  tracks:
+    - name: Incremental Track
+      results: LRA-incremental.html
 - name: QF_ABV
   tracks:
+    - name: Incremental Track
+      results: QF_ABV-incremental.html
     - name: Challenge Track (non-incremental)
       results: QF_ABV-challenge-non-incremental.html
     - name: Challenge Track (incremental)
       results: QF_ABV-challenge-incremental.html
+- name: QF_ALIA
+  tracks:
+    - name: Incremental Track
+      results: QF_ALIA-incremental.html
+- name: QF_ANIA
+  tracks:
+    - name: Incremental Track
+      results: QF_ANIA-incremental.html
 - name: QF_AUFBV
   tracks:
+    - name: Incremental Track
+      results: QF_AUFBV-incremental.html
     - name: Challenge Track (non-incremental)
       results: QF_AUFBV-challenge-non-incremental.html
     - name: Challenge Track (incremental)
       results: QF_AUFBV-challenge-incremental.html
+- name: QF_AUFBVNIA
+  tracks:
+    - name: Incremental Track
+      results: QF_AUFBVNIA-incremental.html
+- name: QF_AUFLIA
+  tracks:
+    - name: Incremental Track
+      results: QF_AUFLIA-incremental.html
 - name: QF_BV
   tracks:
+    - name: Incremental Track
+      results: QF_BV-incremental.html
     - name: Challenge Track (non-incremental)
       results: QF_BV-challenge-non-incremental.html
     - name: Challenge Track (incremental)
       results: QF_BV-challenge-incremental.html
+- name: QF_LIA
+  tracks:
+    - name: Incremental Track
+      results: QF_LIA-incremental.html
+- name: QF_LRA
+  tracks:
+    - name: Incremental Track
+      results: QF_LRA-incremental.html
+- name: QF_NIA
+  tracks:
+    - name: Incremental Track
+      results: QF_NIA-incremental.html
+- name: QF_UFBV
+  tracks:
+    - name: Incremental Track
+      results: QF_UFBV-incremental.html
+- name: QF_UF
+  tracks:
+    - name: Incremental Track
+      results: QF_UF-incremental.html
+- name: QF_UFLIA
+  tracks:
+    - name: Incremental Track
+      results: QF_UF-LIAincremental.html
+- name: QF_UFLRA
+  tracks:
+    - name: Incremental Track
+      results: QF_UF-LRAincremental.html
+- name: QF_UFNIA
+  tracks:
+    - name: Incremental Track
+      results: QF_UF-NIAincremental.html
+- name: UFLRA
+  tracks:
+    - name: Incremental Track
+      results: UFLRA-incremental.html

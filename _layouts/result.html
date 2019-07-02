@@ -66,7 +66,8 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.sequential %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+      {% assign participant = site.participants | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
@@ -98,7 +99,8 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.parallel %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+      {% assign participant = site.participants | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
@@ -130,7 +132,8 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.sat %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+      {% assign participant = site.participants | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
@@ -162,7 +165,8 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.unsat %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+      {% assign participant = site.participants | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
@@ -194,7 +198,8 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.twentyfour %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+      {% assign participant = site.participants | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>

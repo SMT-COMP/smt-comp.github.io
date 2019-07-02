@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-02 10:31:27
+resultdate: 2019-07-02 12:09:11
 division: QF_AUFBV
 track: Challenge Track (incremental)
 n_benchmarks: 6
@@ -25,14 +25,14 @@ parallel:
   competing: "no"
   errorScore: 0
   correctScore: 77
-  CPUScore: 199783.5
-  WallScore: 199791.2
+  CPUScore: 199789.4
+  WallScore: 199791.0
 - name: CVC4-inc
   competing: "yes"
   errorScore: 0
   correctScore: 45
-  CPUScore: 259174.0
-  WallScore: 259200.3
+  CPUScore: 259186.2
+  WallScore: 259200.0
 - name: Boolector (incremental)
   competing: "yes"
   errorScore: 0
