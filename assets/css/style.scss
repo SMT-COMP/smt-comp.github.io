@@ -39,7 +39,12 @@ table {
   border-spacing: 0px;
 }
 
+th {
+  white-space: nowrap;
+}
+
 td {
+  white-space: nowrap;
   background: none;
   padding: 4px;
   border: 1px solid #ccc;
