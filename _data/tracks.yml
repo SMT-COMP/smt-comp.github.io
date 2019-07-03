@@ -3,7 +3,7 @@
 - raw_name: track_incremental
   pretty_name: Incremental Track
 - raw_name: track_single_query_challenge
-  pretty_name: Challenge Track (single query)
+  pretty_name: Challenge Track (non-incremental)
 - raw_name: track_incremental_challenge
   pretty_name: Challenge Track (incremental)
 - raw_name: track_unsat_core

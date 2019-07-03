@@ -25,8 +25,6 @@ non-competing solvers by the organizers for comparison.
 <th>Final Solver ID</th>
 <th>Seed</th>
 <th>System Description</th>
-<th>Solver Homepage</th>
-<th>Contact</th>
 </tr>
 {%- for solver in site.participants_2019 -%}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
@@ -34,7 +32,7 @@ non-competing solvers by the organizers for comparison.
 <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
 </td>
     {%- for track_descr in site.data.tracks -%}
-<td>
+<td class="center">
         {%- assign this_track_found = false -%}
         {%- for slogic in solver.logics -%}
             {% if this_track_found == true -%}
@@ -50,12 +48,10 @@ X
         {%- endfor -%}
 </td>
     {%- endfor -%}
-<td>{{- solver.preliminaryID -}}</td>
-<td>{{- solver.finalID -}}</td>
-<td>{{- solver.seed -}}</td>
-<td><a href="/2019/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
-<td><a href="{{ solver.solverHomePage }}">{{ solver.solverHomePage }}</a></td>
-<td><a href="mailto:{{ solver.contact }}"> {{ solver.contact }}</a></td>
+<td class="right">{{- solver.preliminaryID -}}</td>
+<td class="right">{{- solver.finalID -}}</td>
+<td class="right">{{- solver.seed -}}</td>
+<td class="right"><a href="/2019/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
 </tr>
 {% endfor %}
 <tr>
@@ -82,8 +78,6 @@ X
 <td></td>
 <td></td>
 <td><b>{{ sum_of_seeds }} </b> (mod 2<sup>30</sup>)</td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
 </table>

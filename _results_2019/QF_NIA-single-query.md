@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:19
+resultdate: 2019-07-03 05:51:35
 division: QF_NIA
 track: Single Query Track
 n_benchmarks: 11494
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 5101
   solved_unsat: 2286
   unsolved: 4107
+  timeout: 4019
+  memout: 59
 - name: Par4
   competing: "yes"
   errorScore: 1
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 6141
   solved_unsat: 2829
   unsolved: 2524
+  timeout: 2368
+  memout: 155
 - name: CVC4
   competing: "yes"
   errorScore: 1
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 5785
   solved_unsat: 2503
   unsolved: 3206
+  timeout: 3145
+  memout: 60
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 5541
   solved_unsat: 2394
   unsolved: 3559
+  timeout: 3526
+  memout: 11
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 1
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 5106
   solved_unsat: 2536
   unsolved: 3852
+  timeout: 3851
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 3
@@ -73,6 +83,8 @@ sequential:
   solved_sat: 5564
   solved_unsat: 2544
   unsolved: 3386
+  timeout: 3382
+  memout: 1
 - name: AProVE
   competing: "yes"
   errorScore: 4
@@ -83,6 +95,8 @@ sequential:
   solved_sat: 4165
   solved_unsat: 0
   unsolved: 7329
+  timeout: 7230
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 5
@@ -93,6 +107,8 @@ sequential:
   solved_sat: 3343
   solved_unsat: 1932
   unsolved: 6219
+  timeout: 6008
+  memout: 2
 - name: ProB
   competing: "yes"
   errorScore: 5
@@ -103,6 +119,8 @@ sequential:
   solved_sat: 264
   solved_unsat: 84
   unsolved: 11146
+  timeout: 7819
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 7
@@ -113,6 +131,8 @@ sequential:
   solved_sat: 5381
   solved_unsat: 2510
   unsolved: 3603
+  timeout: 3596
+  memout: 0
 - name: SMT-RAT
   competing: "yes"
   errorScore: 8
@@ -123,6 +143,8 @@ sequential:
   solved_sat: 764
   solved_unsat: 277
   unsolved: 10453
+  timeout: 10421
+  memout: 1
 parallel:
 - name: 2018-CVC4
   competing: "no"
@@ -134,6 +156,8 @@ parallel:
   solved_sat: 5101
   solved_unsat: 2286
   unsolved: 4107
+  timeout: 4019
+  memout: 59
 - name: Par4
   competing: "yes"
   errorScore: 1
@@ -144,6 +168,8 @@ parallel:
   solved_sat: 6228
   solved_unsat: 2855
   unsolved: 2411
+  timeout: 2255
+  memout: 155
 - name: CVC4
   competing: "yes"
   errorScore: 1
@@ -154,6 +180,8 @@ parallel:
   solved_sat: 5785
   solved_unsat: 2503
   unsolved: 3206
+  timeout: 3145
+  memout: 60
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -164,6 +192,8 @@ parallel:
   solved_sat: 5541
   solved_unsat: 2394
   unsolved: 3559
+  timeout: 3526
+  memout: 11
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 1
@@ -174,6 +204,8 @@ parallel:
   solved_sat: 5106
   solved_unsat: 2536
   unsolved: 3852
+  timeout: 3851
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 3
@@ -184,6 +216,8 @@ parallel:
   solved_sat: 5564
   solved_unsat: 2544
   unsolved: 3386
+  timeout: 3382
+  memout: 1
 - name: AProVE
   competing: "yes"
   errorScore: 4
@@ -194,6 +228,8 @@ parallel:
   solved_sat: 4168
   solved_unsat: 0
   unsolved: 7326
+  timeout: 7227
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 5
@@ -204,6 +240,8 @@ parallel:
   solved_sat: 3343
   solved_unsat: 1932
   unsolved: 6219
+  timeout: 6008
+  memout: 2
 - name: ProB
   competing: "yes"
   errorScore: 5
@@ -214,6 +252,8 @@ parallel:
   solved_sat: 264
   solved_unsat: 84
   unsolved: 11146
+  timeout: 7819
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 7
@@ -224,6 +264,8 @@ parallel:
   solved_sat: 5381
   solved_unsat: 2510
   unsolved: 3603
+  timeout: 3596
+  memout: 0
 - name: SMT-RAT
   competing: "yes"
   errorScore: 8
@@ -234,6 +276,8 @@ parallel:
   solved_sat: 764
   solved_unsat: 277
   unsolved: 10453
+  timeout: 10421
+  memout: 1
 sat:
 - name: CVC4
   competing: "yes"
@@ -245,6 +289,8 @@ sat:
   solved_sat: 5785
   solved_unsat: 0
   unsolved: 5709
+  timeout: 3145
+  memout: 60
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -255,6 +301,8 @@ sat:
   solved_sat: 5101
   solved_unsat: 0
   unsolved: 6393
+  timeout: 4019
+  memout: 59
 - name: AProVE
   competing: "yes"
   errorScore: 0
@@ -265,6 +313,8 @@ sat:
   solved_sat: 4168
   solved_unsat: 0
   unsolved: 7326
+  timeout: 7227
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 1
@@ -275,6 +325,8 @@ sat:
   solved_sat: 6228
   solved_unsat: 0
   unsolved: 5266
+  timeout: 2255
+  memout: 155
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -285,6 +337,8 @@ sat:
   solved_sat: 5541
   solved_unsat: 0
   unsolved: 5953
+  timeout: 3526
+  memout: 11
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 1
@@ -295,6 +349,8 @@ sat:
   solved_sat: 5106
   solved_unsat: 0
   unsolved: 6388
+  timeout: 3851
+  memout: 0
 - name: ProB
   competing: "yes"
   errorScore: 1
@@ -305,6 +361,8 @@ sat:
   solved_sat: 264
   solved_unsat: 0
   unsolved: 11230
+  timeout: 7819
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 2
@@ -315,6 +373,8 @@ sat:
   solved_sat: 5564
   solved_unsat: 0
   unsolved: 5930
+  timeout: 3382
+  memout: 1
 - name: Z3
   competing: "no"
   errorScore: 2
@@ -325,6 +385,8 @@ sat:
   solved_sat: 3343
   solved_unsat: 0
   unsolved: 8151
+  timeout: 6008
+  memout: 2
 - name: SMT-RAT
   competing: "yes"
   errorScore: 3
@@ -335,6 +397,8 @@ sat:
   solved_sat: 764
   solved_unsat: 0
   unsolved: 10730
+  timeout: 10421
+  memout: 1
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 7
@@ -345,6 +409,8 @@ sat:
   solved_sat: 5381
   solved_unsat: 0
   unsolved: 6113
+  timeout: 3596
+  memout: 0
 unsat:
 - name: Par4
   competing: "yes"
@@ -356,6 +422,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2855
   unsolved: 8639
+  timeout: 2255
+  memout: 155
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -366,6 +434,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2536
   unsolved: 8958
+  timeout: 3851
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 0
@@ -376,6 +446,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2510
   unsolved: 8984
+  timeout: 3596
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
@@ -386,6 +458,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2394
   unsolved: 9100
+  timeout: 3526
+  memout: 11
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -396,6 +470,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2286
   unsolved: 9208
+  timeout: 4019
+  memout: 59
 - name: MathSAT-default
   competing: "yes"
   errorScore: 1
@@ -406,6 +482,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2544
   unsolved: 8950
+  timeout: 3382
+  memout: 1
 - name: CVC4
   competing: "yes"
   errorScore: 1
@@ -416,6 +494,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2503
   unsolved: 8991
+  timeout: 3145
+  memout: 60
 - name: Z3
   competing: "no"
   errorScore: 3
@@ -426,6 +506,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1932
   unsolved: 9562
+  timeout: 6008
+  memout: 2
 - name: ProB
   competing: "yes"
   errorScore: 4
@@ -436,6 +518,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 84
   unsolved: 11410
+  timeout: 7819
+  memout: 0
 - name: AProVE
   competing: "yes"
   errorScore: 4
@@ -446,6 +530,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 11494
+  timeout: 7227
+  memout: 0
 - name: SMT-RAT
   competing: "yes"
   errorScore: 5
@@ -456,6 +542,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 277
   unsolved: 11217
+  timeout: 10421
+  memout: 1
 twentyfour:
 - name: 2018-CVC4
   competing: "no"
@@ -467,6 +555,8 @@ twentyfour:
   solved_sat: 3182
   solved_unsat: 1800
   unsolved: 6512
+  timeout: 6453
+  memout: 59
 - name: Par4
   competing: "yes"
   errorScore: 1
@@ -477,6 +567,8 @@ twentyfour:
   solved_sat: 5373
   solved_unsat: 2620
   unsolved: 3501
+  timeout: 3345
+  memout: 155
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 1
@@ -487,6 +579,8 @@ twentyfour:
   solved_sat: 4209
   solved_unsat: 2330
   unsolved: 4955
+  timeout: 4954
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 1
@@ -497,6 +591,8 @@ twentyfour:
   solved_sat: 3226
   solved_unsat: 1817
   unsolved: 6451
+  timeout: 6390
+  memout: 60
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -507,6 +603,8 @@ twentyfour:
   solved_sat: 3046
   solved_unsat: 1715
   unsolved: 6733
+  timeout: 6721
+  memout: 11
 - name: MathSAT-default
   competing: "yes"
   errorScore: 2
@@ -517,6 +615,8 @@ twentyfour:
   solved_sat: 3916
   solved_unsat: 2015
   unsolved: 5563
+  timeout: 5560
+  memout: 1
 - name: AProVE
   competing: "yes"
   errorScore: 4
@@ -527,6 +627,8 @@ twentyfour:
   solved_sat: 3003
   solved_unsat: 0
   unsolved: 8491
+  timeout: 8392
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 5
@@ -537,6 +639,8 @@ twentyfour:
   solved_sat: 3868
   solved_unsat: 1987
   unsolved: 5639
+  timeout: 5634
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 5
@@ -547,6 +651,8 @@ twentyfour:
   solved_sat: 1824
   solved_unsat: 1264
   unsolved: 8406
+  timeout: 8395
+  memout: 2
 - name: ProB
   competing: "yes"
   errorScore: 5
@@ -557,6 +663,8 @@ twentyfour:
   solved_sat: 233
   solved_unsat: 57
   unsolved: 11204
+  timeout: 8490
+  memout: 0
 - name: SMT-RAT
   competing: "yes"
   errorScore: 8
@@ -567,4 +675,6 @@ twentyfour:
   solved_sat: 583
   solved_unsat: 245
   unsolved: 10666
+  timeout: 10658
+  memout: 1
 ---

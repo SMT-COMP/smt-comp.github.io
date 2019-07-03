@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:20
+resultdate: 2019-07-03 05:51:35
 division: UFBV
 track: Single Query Track
 n_benchmarks: 72
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 18
   solved_unsat: 33
   unsolved: 21
+  timeout: 21
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 18
   solved_unsat: 33
   unsolved: 21
+  timeout: 21
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 18
   solved_unsat: 31
   unsolved: 23
+  timeout: 23
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 28
   unsolved: 44
+  timeout: 34
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 6
   unsolved: 66
+  timeout: 3
+  memout: 0
 parallel:
 - name: Par4
   competing: "yes"
@@ -74,6 +84,8 @@ parallel:
   solved_sat: 18
   solved_unsat: 33
   unsolved: 21
+  timeout: 21
+  memout: 0
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -84,6 +96,8 @@ parallel:
   solved_sat: 18
   solved_unsat: 33
   unsolved: 21
+  timeout: 21
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -94,6 +108,8 @@ parallel:
   solved_sat: 18
   solved_unsat: 31
   unsolved: 23
+  timeout: 23
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -104,6 +120,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 28
   unsolved: 44
+  timeout: 34
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -114,6 +132,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 6
   unsolved: 66
+  timeout: 3
+  memout: 0
 sat:
 - name: Par4
   competing: "yes"
@@ -125,6 +145,8 @@ sat:
   solved_sat: 18
   solved_unsat: 0
   unsolved: 54
+  timeout: 21
+  memout: 0
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -135,6 +157,8 @@ sat:
   solved_sat: 18
   solved_unsat: 0
   unsolved: 54
+  timeout: 21
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -145,6 +169,8 @@ sat:
   solved_sat: 18
   solved_unsat: 0
   unsolved: 54
+  timeout: 23
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -155,6 +181,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 72
+  timeout: 3
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -165,6 +193,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 72
+  timeout: 34
+  memout: 0
 unsat:
 - name: Par4
   competing: "yes"
@@ -176,6 +206,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 33
   unsolved: 39
+  timeout: 21
+  memout: 0
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -186,6 +218,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 33
   unsolved: 39
+  timeout: 21
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -196,6 +230,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 31
   unsolved: 41
+  timeout: 23
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -206,6 +242,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 28
   unsolved: 44
+  timeout: 34
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -216,6 +254,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 6
   unsolved: 66
+  timeout: 3
+  memout: 0
 twentyfour:
 - name: Par4
   competing: "yes"
@@ -227,6 +267,8 @@ twentyfour:
   solved_sat: 18
   solved_unsat: 33
   unsolved: 21
+  timeout: 21
+  memout: 0
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -237,6 +279,8 @@ twentyfour:
   solved_sat: 18
   solved_unsat: 33
   unsolved: 21
+  timeout: 21
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -247,6 +291,8 @@ twentyfour:
   solved_sat: 18
   solved_unsat: 31
   unsolved: 23
+  timeout: 23
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -257,6 +303,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 13
   unsolved: 59
+  timeout: 49
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -267,4 +315,6 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 6
   unsolved: 66
+  timeout: 6
+  memout: 0
 ---

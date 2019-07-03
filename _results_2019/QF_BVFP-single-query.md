@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:19
+resultdate: 2019-07-03 05:51:35
 division: QF_BVFP
 track: Single Query Track
 n_benchmarks: 516
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 228
   solved_unsat: 288
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 228
   solved_unsat: 287
   unsolved: 1
+  timeout: 1
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 228
   solved_unsat: 287
   unsolved: 1
+  timeout: 1
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 228
   solved_unsat: 283
   unsolved: 5
+  timeout: 5
+  memout: 0
 parallel:
 - name: Par4
   competing: "yes"
@@ -64,6 +72,8 @@ parallel:
   solved_sat: 228
   solved_unsat: 288
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -74,6 +84,8 @@ parallel:
   solved_sat: 228
   solved_unsat: 287
   unsolved: 1
+  timeout: 1
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -84,6 +96,8 @@ parallel:
   solved_sat: 228
   solved_unsat: 287
   unsolved: 1
+  timeout: 1
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -94,6 +108,8 @@ parallel:
   solved_sat: 228
   solved_unsat: 283
   unsolved: 5
+  timeout: 5
+  memout: 0
 sat:
 - name: Par4
   competing: "yes"
@@ -105,6 +121,8 @@ sat:
   solved_sat: 228
   solved_unsat: 0
   unsolved: 288
+  timeout: 0
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -115,6 +133,8 @@ sat:
   solved_sat: 228
   solved_unsat: 0
   unsolved: 288
+  timeout: 1
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -125,6 +145,8 @@ sat:
   solved_sat: 228
   solved_unsat: 0
   unsolved: 288
+  timeout: 1
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -135,6 +157,8 @@ sat:
   solved_sat: 228
   solved_unsat: 0
   unsolved: 288
+  timeout: 5
+  memout: 0
 unsat:
 - name: Par4
   competing: "yes"
@@ -146,6 +170,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 288
   unsolved: 228
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -156,6 +182,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 287
   unsolved: 229
+  timeout: 1
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -166,6 +194,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 287
   unsolved: 229
+  timeout: 1
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -176,6 +206,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 283
   unsolved: 233
+  timeout: 5
+  memout: 0
 twentyfour:
 - name: Par4
   competing: "yes"
@@ -187,6 +219,8 @@ twentyfour:
   solved_sat: 225
   solved_unsat: 275
   unsolved: 16
+  timeout: 16
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -197,6 +231,8 @@ twentyfour:
   solved_sat: 224
   solved_unsat: 274
   unsolved: 18
+  timeout: 18
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -207,6 +243,8 @@ twentyfour:
   solved_sat: 225
   solved_unsat: 273
   unsolved: 18
+  timeout: 18
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -217,4 +255,6 @@ twentyfour:
   solved_sat: 211
   solved_unsat: 210
   unsolved: 95
+  timeout: 95
+  memout: 0
 ---

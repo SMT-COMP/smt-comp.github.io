@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:19
+resultdate: 2019-07-03 05:51:35
 division: AUFLIRA
 track: Single Query Track
 n_benchmarks: 1683
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 54
   solved_unsat: 1547
   unsolved: 82
+  timeout: 72
+  memout: 10
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 54
   solved_unsat: 1546
   unsolved: 83
+  timeout: 27
+  memout: 7
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 54
   solved_unsat: 1546
   unsolved: 83
+  timeout: 47
+  memout: 2
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 1560
   unsolved: 123
+  timeout: 121
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 1560
   unsolved: 123
+  timeout: 123
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
@@ -73,6 +83,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 1559
   unsolved: 124
+  timeout: 122
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -83,6 +95,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 1506
   unsolved: 177
+  timeout: 177
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -93,6 +107,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 1323
   unsolved: 360
+  timeout: 289
+  memout: 5
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -103,6 +119,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 157
   unsolved: 1526
+  timeout: 1468
+  memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
@@ -113,6 +131,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 23
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -123,6 +143,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 - name: UltimateEliminator+SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -133,6 +155,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 parallel:
 - name: Par4
   competing: "yes"
@@ -144,6 +168,8 @@ parallel:
   solved_sat: 54
   solved_unsat: 1547
   unsolved: 82
+  timeout: 72
+  memout: 10
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -154,6 +180,8 @@ parallel:
   solved_sat: 54
   solved_unsat: 1546
   unsolved: 83
+  timeout: 27
+  memout: 7
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -164,6 +192,8 @@ parallel:
   solved_sat: 54
   solved_unsat: 1546
   unsolved: 83
+  timeout: 47
+  memout: 2
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -174,6 +204,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 1563
   unsolved: 120
+  timeout: 120
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -184,6 +216,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 1560
   unsolved: 123
+  timeout: 121
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
@@ -194,6 +228,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 1559
   unsolved: 124
+  timeout: 122
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -204,6 +240,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 1519
   unsolved: 164
+  timeout: 161
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -214,6 +252,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 1323
   unsolved: 360
+  timeout: 289
+  memout: 5
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -224,6 +264,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 157
   unsolved: 1526
+  timeout: 1315
+  memout: 0
 - name: UltimateEliminator+SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -234,6 +276,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -244,6 +288,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
@@ -254,6 +300,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 23
+  memout: 0
 sat:
 - name: Par4
   competing: "yes"
@@ -265,6 +313,8 @@ sat:
   solved_sat: 54
   solved_unsat: 0
   unsolved: 1629
+  timeout: 72
+  memout: 10
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -275,6 +325,8 @@ sat:
   solved_sat: 54
   solved_unsat: 0
   unsolved: 1629
+  timeout: 47
+  memout: 2
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -285,6 +337,8 @@ sat:
   solved_sat: 54
   solved_unsat: 0
   unsolved: 1629
+  timeout: 27
+  memout: 7
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
@@ -295,6 +349,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 23
+  memout: 0
 - name: UltimateEliminator+SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -305,6 +361,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -315,6 +373,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -325,6 +385,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 121
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
@@ -335,6 +397,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 122
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -345,6 +409,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 289
+  memout: 5
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -355,6 +421,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 161
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -365,6 +433,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 120
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -375,6 +445,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 1315
+  memout: 0
 unsat:
 - name: Vampire
   competing: "yes"
@@ -386,6 +458,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1563
   unsolved: 120
+  timeout: 120
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -396,6 +470,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1560
   unsolved: 123
+  timeout: 121
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
@@ -406,6 +482,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1559
   unsolved: 124
+  timeout: 122
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -416,6 +494,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1547
   unsolved: 136
+  timeout: 72
+  memout: 10
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -426,6 +506,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1546
   unsolved: 137
+  timeout: 27
+  memout: 7
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -436,6 +518,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1546
   unsolved: 137
+  timeout: 47
+  memout: 2
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -446,6 +530,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1519
   unsolved: 164
+  timeout: 161
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -456,6 +542,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1323
   unsolved: 360
+  timeout: 289
+  memout: 5
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -466,6 +554,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 157
   unsolved: 1526
+  timeout: 1315
+  memout: 0
 - name: UltimateEliminator+SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -476,6 +566,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -486,6 +578,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 22
+  memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
@@ -496,6 +590,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 23
+  memout: 0
 twentyfour:
 - name: Par4
   competing: "yes"
@@ -507,6 +603,8 @@ twentyfour:
   solved_sat: 54
   solved_unsat: 1547
   unsolved: 82
+  timeout: 72
+  memout: 10
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -517,6 +615,8 @@ twentyfour:
   solved_sat: 54
   solved_unsat: 1546
   unsolved: 83
+  timeout: 65
+  memout: 7
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
@@ -527,6 +627,8 @@ twentyfour:
   solved_sat: 54
   solved_unsat: 1546
   unsolved: 83
+  timeout: 81
+  memout: 2
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -537,6 +639,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 1516
   unsolved: 167
+  timeout: 167
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
@@ -547,6 +651,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 1490
   unsolved: 193
+  timeout: 193
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -557,6 +663,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 1489
   unsolved: 194
+  timeout: 194
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -567,6 +675,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 1483
   unsolved: 200
+  timeout: 200
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -577,6 +687,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 1301
   unsolved: 382
+  timeout: 377
+  memout: 5
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -587,6 +699,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 138
   unsolved: 1545
+  timeout: 1545
+  memout: 0
 - name: UltimateEliminator+SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -597,6 +711,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 27
+  memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
@@ -607,6 +723,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 28
+  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
@@ -617,4 +735,6 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 1683
+  timeout: 27
+  memout: 0
 ---

@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:20
+resultdate: 2019-07-03 05:51:35
 division: QF_UF
 track: Single Query Track
 n_benchmarks: 3512
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 1452
   solved_unsat: 2058
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: OpenSMT2
   competing: "yes"
   errorScore: 0
@@ -73,6 +83,8 @@ sequential:
   solved_sat: 1451
   solved_unsat: 2059
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -83,6 +95,8 @@ sequential:
   solved_sat: 1452
   solved_unsat: 2024
   unsolved: 36
+  timeout: 36
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -93,6 +107,8 @@ sequential:
   solved_sat: 1452
   solved_unsat: 2022
   unsolved: 38
+  timeout: 38
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -103,6 +119,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 1606
   unsolved: 1906
+  timeout: 667
+  memout: 21
 parallel:
 - name: Par4
   competing: "yes"
@@ -114,6 +132,8 @@ parallel:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -124,6 +144,8 @@ parallel:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -134,6 +156,8 @@ parallel:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -144,6 +168,8 @@ parallel:
   solved_sat: 1452
   solved_unsat: 2060
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -154,6 +180,8 @@ parallel:
   solved_sat: 1452
   solved_unsat: 2058
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: OpenSMT2
   competing: "yes"
   errorScore: 0
@@ -164,6 +192,8 @@ parallel:
   solved_sat: 1451
   solved_unsat: 2059
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -174,6 +204,8 @@ parallel:
   solved_sat: 1452
   solved_unsat: 2024
   unsolved: 36
+  timeout: 36
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -184,6 +216,8 @@ parallel:
   solved_sat: 1452
   solved_unsat: 2022
   unsolved: 38
+  timeout: 38
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -194,6 +228,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 1883
   unsolved: 1629
+  timeout: 371
+  memout: 21
 sat:
 - name: Yices 2.6.2
   competing: "yes"
@@ -205,6 +241,8 @@ sat:
   solved_sat: 1452
   solved_unsat: 0
   unsolved: 2060
+  timeout: 0
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -215,6 +253,8 @@ sat:
   solved_sat: 1452
   solved_unsat: 0
   unsolved: 2060
+  timeout: 0
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -225,6 +265,8 @@ sat:
   solved_sat: 1452
   solved_unsat: 0
   unsolved: 2060
+  timeout: 0
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -235,6 +277,8 @@ sat:
   solved_sat: 1452
   solved_unsat: 0
   unsolved: 2060
+  timeout: 0
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -245,6 +289,8 @@ sat:
   solved_sat: 1452
   solved_unsat: 0
   unsolved: 2060
+  timeout: 36
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -255,6 +301,8 @@ sat:
   solved_sat: 1452
   solved_unsat: 0
   unsolved: 2060
+  timeout: 38
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -265,6 +313,8 @@ sat:
   solved_sat: 1452
   solved_unsat: 0
   unsolved: 2060
+  timeout: 2
+  memout: 0
 - name: OpenSMT2
   competing: "yes"
   errorScore: 0
@@ -275,6 +325,8 @@ sat:
   solved_sat: 1451
   solved_unsat: 0
   unsolved: 2061
+  timeout: 2
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -285,6 +337,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 3512
+  timeout: 371
+  memout: 21
 unsat:
 - name: Par4
   competing: "yes"
@@ -296,6 +350,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2060
   unsolved: 1452
+  timeout: 0
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -306,6 +362,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2060
   unsolved: 1452
+  timeout: 0
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -316,6 +374,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2060
   unsolved: 1452
+  timeout: 0
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -326,6 +386,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2060
   unsolved: 1452
+  timeout: 0
+  memout: 0
 - name: OpenSMT2
   competing: "yes"
   errorScore: 0
@@ -336,6 +398,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2059
   unsolved: 1453
+  timeout: 2
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -346,6 +410,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2058
   unsolved: 1454
+  timeout: 2
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -356,6 +422,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2024
   unsolved: 1488
+  timeout: 36
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -366,6 +434,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2022
   unsolved: 1490
+  timeout: 38
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -376,6 +446,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 1883
   unsolved: 1629
+  timeout: 371
+  memout: 21
 twentyfour:
 - name: Par4
   competing: "yes"
@@ -387,6 +459,8 @@ twentyfour:
   solved_sat: 1452
   solved_unsat: 2058
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -397,6 +471,8 @@ twentyfour:
   solved_sat: 1452
   solved_unsat: 2057
   unsolved: 3
+  timeout: 3
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -407,6 +483,8 @@ twentyfour:
   solved_sat: 1452
   solved_unsat: 2057
   unsolved: 3
+  timeout: 3
+  memout: 0
 - name: veriT
   competing: "yes"
   errorScore: 0
@@ -417,6 +495,8 @@ twentyfour:
   solved_sat: 1452
   solved_unsat: 2056
   unsolved: 4
+  timeout: 4
+  memout: 0
 - name: OpenSMT2
   competing: "yes"
   errorScore: 0
@@ -427,6 +507,8 @@ twentyfour:
   solved_sat: 1441
   solved_unsat: 2016
   unsolved: 55
+  timeout: 55
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -437,6 +519,8 @@ twentyfour:
   solved_sat: 1446
   solved_unsat: 2009
   unsolved: 57
+  timeout: 57
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -447,6 +531,8 @@ twentyfour:
   solved_sat: 1448
   solved_unsat: 1980
   unsolved: 84
+  timeout: 84
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -457,6 +543,8 @@ twentyfour:
   solved_sat: 1451
   solved_unsat: 1961
   unsolved: 100
+  timeout: 100
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -467,4 +555,6 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 959
   unsolved: 2553
+  timeout: 2311
+  memout: 21
 ---

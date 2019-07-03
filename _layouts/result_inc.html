@@ -38,9 +38,11 @@ Page generated on {{ page.resultdate | time_to_string }}
     <tr>
         <th>Solver</th>
         <th>Error Score</th>
-        <th>Correctly Solved Score</th>
+        <th>Correct Score</th>
         <th>CPU Time Score</th>
         <th>Wall Time Score</th>
+        <th>Timeout</th>
+        <th>Memout</th>
     </tr>
 </thead>
 {% for solver in page.parallel %}
@@ -53,6 +55,8 @@ Page generated on {{ page.resultdate | time_to_string }}
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.timeout }}</td>
+    <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>

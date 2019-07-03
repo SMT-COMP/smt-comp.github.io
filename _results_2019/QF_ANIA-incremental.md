@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-02 12:09:22
+resultdate: 2019-07-03 06:39:16
 division: QF_ANIA
 track: Incremental Track
 n_benchmarks: 5
@@ -15,28 +15,38 @@ parallel:
   correctScore: 51724
   CPUScore: 56.624
   WallScore: 53.178
+  timeout: 0
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
   correctScore: 51724
   CPUScore: 59.406
   WallScore: 56.028
+  timeout: 0
+  memout: 0
 - name: CVC4-inc
   competing: "yes"
   errorScore: 0
   correctScore: 48503
   CPUScore: 2822.621
   WallScore: 2818.974
+  timeout: 1
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 0
   correctScore: 12101
   CPUScore: 12.547
   WallScore: 12.005
+  timeout: 0
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 0
   correctScore: 12101
   CPUScore: 14.018
   WallScore: 13.442
+  timeout: 0
+  memout: 0
 ---

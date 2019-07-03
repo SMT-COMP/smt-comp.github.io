@@ -6,7 +6,9 @@
 table.sorted thead tr th, table.sorted tfoot tr th {
  /* background-color: #e6EEEE; */
  padding: 4px;
+ padding-right: 40px;
  border: 1px solid black;
+ vertical-align: middle;
 }
 table.sorted thead tr .header {
  background-image: url(https://smt-comp.github.io/img/bg.gif);
@@ -40,7 +42,7 @@ table {
 }
 
 th {
-  white-space: nowrap;
+  font-size: 1em;
 }
 
 td {
@@ -48,6 +50,14 @@ td {
   background: none;
   padding: 4px;
   border: 1px solid #ccc;
+}
+
+td.center {
+  text-align: center;
+}
+
+td.right {
+  text-align: right;
 }
 
 tr.noncompeting {

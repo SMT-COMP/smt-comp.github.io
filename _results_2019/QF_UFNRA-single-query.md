@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:20
+resultdate: 2019-07-03 05:51:35
 division: QF_UFNRA
 track: Single Query Track
 n_benchmarks: 26
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 23
   solved_unsat: 2
   unsolved: 1
+  timeout: 1
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 23
   solved_unsat: 2
   unsolved: 1
+  timeout: 1
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 22
   solved_unsat: 2
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 18
   solved_unsat: 2
   unsolved: 6
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 10
   solved_unsat: 2
   unsolved: 14
+  timeout: 14
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 0
@@ -73,6 +83,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 2
   unsolved: 17
+  timeout: 17
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 0
@@ -83,6 +95,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 2
   unsolved: 17
+  timeout: 17
+  memout: 0
 - name: veriT+raSAT+Redlog
   competing: "yes"
   errorScore: 0
@@ -93,6 +107,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -103,6 +119,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 parallel:
 - name: Par4
   competing: "yes"
@@ -114,6 +132,8 @@ parallel:
   solved_sat: 24
   solved_unsat: 2
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -124,6 +144,8 @@ parallel:
   solved_sat: 23
   solved_unsat: 2
   unsolved: 1
+  timeout: 1
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -134,6 +156,8 @@ parallel:
   solved_sat: 22
   solved_unsat: 2
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -144,6 +168,8 @@ parallel:
   solved_sat: 18
   solved_unsat: 2
   unsolved: 6
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -154,6 +180,8 @@ parallel:
   solved_sat: 10
   solved_unsat: 2
   unsolved: 14
+  timeout: 14
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 0
@@ -164,6 +192,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 2
   unsolved: 17
+  timeout: 17
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 0
@@ -174,6 +204,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 2
   unsolved: 17
+  timeout: 17
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -184,6 +216,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 - name: veriT+raSAT+Redlog
   competing: "yes"
   errorScore: 0
@@ -194,6 +228,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 sat:
 - name: Par4
   competing: "yes"
@@ -205,6 +241,8 @@ sat:
   solved_sat: 24
   solved_unsat: 0
   unsolved: 2
+  timeout: 0
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -215,6 +253,8 @@ sat:
   solved_sat: 23
   solved_unsat: 0
   unsolved: 3
+  timeout: 1
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -225,6 +265,8 @@ sat:
   solved_sat: 22
   solved_unsat: 0
   unsolved: 4
+  timeout: 2
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -235,6 +277,8 @@ sat:
   solved_sat: 18
   solved_unsat: 0
   unsolved: 8
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -245,6 +289,8 @@ sat:
   solved_sat: 10
   solved_unsat: 0
   unsolved: 16
+  timeout: 14
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 0
@@ -255,6 +301,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 19
+  timeout: 17
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 0
@@ -265,6 +313,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 19
+  timeout: 17
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -275,6 +325,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 - name: veriT+raSAT+Redlog
   competing: "yes"
   errorScore: 0
@@ -285,6 +337,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 unsat:
 - name: MathSAT-default
   competing: "yes"
@@ -296,6 +350,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 17
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 0
@@ -306,6 +362,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 17
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -316,6 +374,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 0
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -326,6 +386,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 0
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -336,6 +398,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 1
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -346,6 +410,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 2
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -356,6 +422,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 14
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -366,6 +434,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 - name: veriT+raSAT+Redlog
   competing: "yes"
   errorScore: 0
@@ -376,6 +446,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 twentyfour:
 - name: Z3
   competing: "no"
@@ -387,6 +459,8 @@ twentyfour:
   solved_sat: 17
   solved_unsat: 2
   unsolved: 7
+  timeout: 3
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -397,6 +471,8 @@ twentyfour:
   solved_sat: 16
   solved_unsat: 2
   unsolved: 8
+  timeout: 8
+  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 0
@@ -407,6 +483,8 @@ twentyfour:
   solved_sat: 7
   solved_unsat: 2
   unsolved: 17
+  timeout: 17
+  memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
   errorScore: 0
@@ -417,6 +495,8 @@ twentyfour:
   solved_sat: 3
   solved_unsat: 2
   unsolved: 21
+  timeout: 21
+  memout: 0
 - name: 2018-Yices
   competing: "no"
   errorScore: 0
@@ -427,6 +507,8 @@ twentyfour:
   solved_sat: 2
   solved_unsat: 2
   unsolved: 22
+  timeout: 22
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -437,6 +519,8 @@ twentyfour:
   solved_sat: 2
   solved_unsat: 2
   unsolved: 22
+  timeout: 22
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -447,6 +531,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 2
   unsolved: 24
+  timeout: 24
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -457,6 +543,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 - name: veriT+raSAT+Redlog
   competing: "yes"
   errorScore: 0
@@ -467,4 +555,6 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 26
+  timeout: 26
+  memout: 0
 ---

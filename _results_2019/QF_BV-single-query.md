@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:19
+resultdate: 2019-07-03 05:51:35
 division: QF_BV
 track: Single Query Track
 n_benchmarks: 8909
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 3071
   solved_unsat: 5680
   unsolved: 158
+  timeout: 158
+  memout: 0
 - name: Yices 2.6.2 CaDiCal
   competing: "yes"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 3053
   solved_unsat: 5665
   unsolved: 191
+  timeout: 191
+  memout: 0
 - name: Poolector
   competing: "yes"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 3033
   solved_unsat: 5652
   unsolved: 224
+  timeout: 224
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 3045
   solved_unsat: 5639
   unsolved: 225
+  timeout: 225
+  memout: 0
 - name: Yices 2.6.2 New Bvsolver
   competing: "yes"
   errorScore: 0
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 3034
   solved_unsat: 5648
   unsolved: 227
+  timeout: 227
+  memout: 0
 - name: Minkeyrink Solver
   competing: "yes"
   errorScore: 0
@@ -73,6 +83,8 @@ sequential:
   solved_sat: 3047
   solved_unsat: 5618
   unsolved: 244
+  timeout: 244
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -83,6 +95,8 @@ sequential:
   solved_sat: 2996
   solved_unsat: 5647
   unsolved: 266
+  timeout: 266
+  memout: 0
 - name: Yices 2.6.2 Cryptominisat
   competing: "yes"
   errorScore: 0
@@ -93,6 +107,8 @@ sequential:
   solved_sat: 2996
   solved_unsat: 5642
   unsolved: 271
+  timeout: 270
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -103,6 +119,8 @@ sequential:
   solved_sat: 3060
   solved_unsat: 5526
   unsolved: 323
+  timeout: 312
+  memout: 4
 - name: Minkeyrink Solver MT
   competing: "yes"
   errorScore: 0
@@ -113,6 +131,8 @@ sequential:
   solved_sat: 3015
   solved_unsat: 5566
   unsolved: 328
+  timeout: 320
+  memout: 0
 - name: 2018-Minkeyrink MT
   competing: "no"
   errorScore: 0
@@ -123,6 +143,8 @@ sequential:
   solved_sat: 3002
   solved_unsat: 5563
   unsolved: 344
+  timeout: 337
+  memout: 0
 - name: Boolector-ReasonLS
   competing: "no"
   errorScore: 0
@@ -133,6 +155,8 @@ sequential:
   solved_sat: 2903
   solved_unsat: 5614
   unsolved: 392
+  timeout: 391
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -143,6 +167,8 @@ sequential:
   solved_sat: 3035
   solved_unsat: 5403
   unsolved: 471
+  timeout: 471
+  memout: 0
 - name: STP-incremental
   competing: "yes"
   errorScore: 0
@@ -153,6 +179,8 @@ sequential:
   solved_sat: 2915
   solved_unsat: 5429
   unsolved: 565
+  timeout: 562
+  memout: 0
 - name: STP
   competing: "yes"
   errorScore: 0
@@ -163,6 +191,8 @@ sequential:
   solved_sat: 2911
   solved_unsat: 5426
   unsolved: 572
+  timeout: 569
+  memout: 0
 - name: STP-mergesat-fixed
   competing: "no"
   errorScore: 0
@@ -173,6 +203,8 @@ sequential:
   solved_sat: 2908
   solved_unsat: 5346
   unsolved: 655
+  timeout: 652
+  memout: 0
 - name: STP-mt
   competing: "yes"
   errorScore: 0
@@ -183,6 +215,8 @@ sequential:
   solved_sat: 2849
   solved_unsat: 5312
   unsolved: 748
+  timeout: 738
+  memout: 0
 - name: STP-minisat
   competing: "yes"
   errorScore: 0
@@ -193,6 +227,8 @@ sequential:
   solved_sat: 2826
   solved_unsat: 4954
   unsolved: 1129
+  timeout: 1126
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -203,6 +239,8 @@ sequential:
   solved_sat: 2790
   solved_unsat: 4904
   unsolved: 1215
+  timeout: 1215
+  memout: 0
 - name: STP-portfolio-fixed
   competing: "no"
   errorScore: 0
@@ -213,6 +251,8 @@ sequential:
   solved_sat: 2766
   solved_unsat: 4718
   unsolved: 1425
+  timeout: 1259
+  memout: 0
 - name: Yices 2.6.2 mcsat-bv
   competing: "yes"
   errorScore: 0
@@ -223,6 +263,8 @@ sequential:
   solved_sat: 1641
   solved_unsat: 3540
   unsolved: 3728
+  timeout: 3593
+  memout: 134
 - name: STP-riss
   competing: "yes"
   errorScore: 0
@@ -233,6 +275,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 2675
   unsolved: 6227
+  timeout: 13
+  memout: 0
 - name: STP-mergesat
   competing: "yes"
   errorScore: 0
@@ -243,6 +287,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 2541
   unsolved: 6361
+  timeout: 13
+  memout: 0
 - name: STP-portfolio
   competing: "yes"
   errorScore: 0
@@ -253,6 +299,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 2541
   unsolved: 6361
+  timeout: 1181
+  memout: 0
 parallel:
 - name: Poolector
   competing: "yes"
@@ -264,6 +312,8 @@ parallel:
   solved_sat: 3078
   solved_unsat: 5690
   unsolved: 141
+  timeout: 141
+  memout: 0
 - name: Boolector
   competing: "yes"
   errorScore: 0
@@ -274,6 +324,8 @@ parallel:
   solved_sat: 3071
   solved_unsat: 5680
   unsolved: 158
+  timeout: 158
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -284,6 +336,8 @@ parallel:
   solved_sat: 3061
   solved_unsat: 5669
   unsolved: 179
+  timeout: 179
+  memout: 0
 - name: Yices 2.6.2 CaDiCal
   competing: "yes"
   errorScore: 0
@@ -294,6 +348,8 @@ parallel:
   solved_sat: 3053
   solved_unsat: 5665
   unsolved: 191
+  timeout: 191
+  memout: 0
 - name: Yices 2.6.2 New Bvsolver
   competing: "yes"
   errorScore: 0
@@ -304,6 +360,8 @@ parallel:
   solved_sat: 3034
   solved_unsat: 5648
   unsolved: 227
+  timeout: 227
+  memout: 0
 - name: Minkeyrink Solver MT
   competing: "yes"
   errorScore: 0
@@ -314,6 +372,8 @@ parallel:
   solved_sat: 3047
   solved_unsat: 5620
   unsolved: 242
+  timeout: 234
+  memout: 0
 - name: Minkeyrink Solver
   competing: "yes"
   errorScore: 0
@@ -324,6 +384,8 @@ parallel:
   solved_sat: 3047
   solved_unsat: 5618
   unsolved: 244
+  timeout: 244
+  memout: 0
 - name: 2018-Minkeyrink MT
   competing: "no"
   errorScore: 0
@@ -334,6 +396,8 @@ parallel:
   solved_sat: 3032
   solved_unsat: 5614
   unsolved: 263
+  timeout: 256
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -344,6 +408,8 @@ parallel:
   solved_sat: 2996
   solved_unsat: 5647
   unsolved: 266
+  timeout: 266
+  memout: 0
 - name: Yices 2.6.2 Cryptominisat
   competing: "yes"
   errorScore: 0
@@ -354,6 +420,8 @@ parallel:
   solved_sat: 2996
   solved_unsat: 5642
   unsolved: 271
+  timeout: 270
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -364,6 +432,8 @@ parallel:
   solved_sat: 3060
   solved_unsat: 5526
   unsolved: 323
+  timeout: 312
+  memout: 4
 - name: Boolector-ReasonLS
   competing: "no"
   errorScore: 0
@@ -374,6 +444,8 @@ parallel:
   solved_sat: 2903
   solved_unsat: 5614
   unsolved: 392
+  timeout: 391
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -384,6 +456,8 @@ parallel:
   solved_sat: 3035
   solved_unsat: 5403
   unsolved: 471
+  timeout: 471
+  memout: 0
 - name: STP-mt
   competing: "yes"
   errorScore: 0
@@ -394,6 +468,8 @@ parallel:
   solved_sat: 2934
   solved_unsat: 5431
   unsolved: 544
+  timeout: 534
+  memout: 0
 - name: STP-incremental
   competing: "yes"
   errorScore: 0
@@ -404,6 +480,8 @@ parallel:
   solved_sat: 2915
   solved_unsat: 5429
   unsolved: 565
+  timeout: 562
+  memout: 0
 - name: STP
   competing: "yes"
   errorScore: 0
@@ -414,6 +492,8 @@ parallel:
   solved_sat: 2911
   solved_unsat: 5426
   unsolved: 572
+  timeout: 569
+  memout: 0
 - name: STP-mergesat-fixed
   competing: "no"
   errorScore: 0
@@ -424,6 +504,8 @@ parallel:
   solved_sat: 2908
   solved_unsat: 5346
   unsolved: 655
+  timeout: 652
+  memout: 0
 - name: STP-minisat
   competing: "yes"
   errorScore: 0
@@ -434,6 +516,8 @@ parallel:
   solved_sat: 2826
   solved_unsat: 4954
   unsolved: 1129
+  timeout: 1126
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -444,6 +528,8 @@ parallel:
   solved_sat: 2790
   solved_unsat: 4904
   unsolved: 1215
+  timeout: 1215
+  memout: 0
 - name: STP-portfolio-fixed
   competing: "no"
   errorScore: 0
@@ -454,6 +540,8 @@ parallel:
   solved_sat: 2798
   solved_unsat: 4753
   unsolved: 1358
+  timeout: 1191
+  memout: 0
 - name: Yices 2.6.2 mcsat-bv
   competing: "yes"
   errorScore: 0
@@ -464,6 +552,8 @@ parallel:
   solved_sat: 1641
   solved_unsat: 3540
   unsolved: 3728
+  timeout: 3593
+  memout: 134
 - name: STP-riss
   competing: "yes"
   errorScore: 0
@@ -474,6 +564,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 2675
   unsolved: 6227
+  timeout: 13
+  memout: 0
 - name: STP-mergesat
   competing: "yes"
   errorScore: 0
@@ -484,6 +576,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 2541
   unsolved: 6361
+  timeout: 13
+  memout: 0
 - name: STP-portfolio
   competing: "yes"
   errorScore: 0
@@ -494,6 +588,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 2541
   unsolved: 6361
+  timeout: 1146
+  memout: 0
 sat:
 - name: Poolector
   competing: "yes"
@@ -505,6 +601,8 @@ sat:
   solved_sat: 3078
   solved_unsat: 0
   unsolved: 5831
+  timeout: 141
+  memout: 0
 - name: Boolector
   competing: "yes"
   errorScore: 0
@@ -515,6 +613,8 @@ sat:
   solved_sat: 3071
   solved_unsat: 0
   unsolved: 5838
+  timeout: 158
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -525,6 +625,8 @@ sat:
   solved_sat: 3061
   solved_unsat: 0
   unsolved: 5848
+  timeout: 179
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -535,6 +637,8 @@ sat:
   solved_sat: 3060
   solved_unsat: 0
   unsolved: 5849
+  timeout: 312
+  memout: 4
 - name: Yices 2.6.2 CaDiCal
   competing: "yes"
   errorScore: 0
@@ -545,6 +649,8 @@ sat:
   solved_sat: 3053
   solved_unsat: 0
   unsolved: 5856
+  timeout: 191
+  memout: 0
 - name: Minkeyrink Solver MT
   competing: "yes"
   errorScore: 0
@@ -555,6 +661,8 @@ sat:
   solved_sat: 3047
   solved_unsat: 0
   unsolved: 5862
+  timeout: 234
+  memout: 0
 - name: Minkeyrink Solver
   competing: "yes"
   errorScore: 0
@@ -565,6 +673,8 @@ sat:
   solved_sat: 3047
   solved_unsat: 0
   unsolved: 5862
+  timeout: 244
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -575,6 +685,8 @@ sat:
   solved_sat: 3035
   solved_unsat: 0
   unsolved: 5874
+  timeout: 471
+  memout: 0
 - name: Yices 2.6.2 New Bvsolver
   competing: "yes"
   errorScore: 0
@@ -585,6 +697,8 @@ sat:
   solved_sat: 3034
   solved_unsat: 0
   unsolved: 5875
+  timeout: 227
+  memout: 0
 - name: 2018-Minkeyrink MT
   competing: "no"
   errorScore: 0
@@ -595,6 +709,8 @@ sat:
   solved_sat: 3032
   solved_unsat: 0
   unsolved: 5877
+  timeout: 256
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -605,6 +721,8 @@ sat:
   solved_sat: 2996
   solved_unsat: 0
   unsolved: 5913
+  timeout: 266
+  memout: 0
 - name: Yices 2.6.2 Cryptominisat
   competing: "yes"
   errorScore: 0
@@ -615,6 +733,8 @@ sat:
   solved_sat: 2996
   solved_unsat: 0
   unsolved: 5913
+  timeout: 270
+  memout: 0
 - name: STP-mt
   competing: "yes"
   errorScore: 0
@@ -625,6 +745,8 @@ sat:
   solved_sat: 2934
   solved_unsat: 0
   unsolved: 5975
+  timeout: 534
+  memout: 0
 - name: STP-incremental
   competing: "yes"
   errorScore: 0
@@ -635,6 +757,8 @@ sat:
   solved_sat: 2915
   solved_unsat: 0
   unsolved: 5994
+  timeout: 562
+  memout: 0
 - name: STP
   competing: "yes"
   errorScore: 0
@@ -645,6 +769,8 @@ sat:
   solved_sat: 2911
   solved_unsat: 0
   unsolved: 5998
+  timeout: 569
+  memout: 0
 - name: STP-mergesat-fixed
   competing: "no"
   errorScore: 0
@@ -655,6 +781,8 @@ sat:
   solved_sat: 2908
   solved_unsat: 0
   unsolved: 6001
+  timeout: 652
+  memout: 0
 - name: Boolector-ReasonLS
   competing: "no"
   errorScore: 0
@@ -665,6 +793,8 @@ sat:
   solved_sat: 2903
   solved_unsat: 0
   unsolved: 6006
+  timeout: 391
+  memout: 0
 - name: STP-minisat
   competing: "yes"
   errorScore: 0
@@ -675,6 +805,8 @@ sat:
   solved_sat: 2826
   solved_unsat: 0
   unsolved: 6083
+  timeout: 1126
+  memout: 0
 - name: STP-portfolio-fixed
   competing: "no"
   errorScore: 0
@@ -685,6 +817,8 @@ sat:
   solved_sat: 2798
   solved_unsat: 0
   unsolved: 6111
+  timeout: 1191
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -695,6 +829,8 @@ sat:
   solved_sat: 2790
   solved_unsat: 0
   unsolved: 6119
+  timeout: 1215
+  memout: 0
 - name: Yices 2.6.2 mcsat-bv
   competing: "yes"
   errorScore: 0
@@ -705,6 +841,8 @@ sat:
   solved_sat: 1641
   solved_unsat: 0
   unsolved: 7268
+  timeout: 3593
+  memout: 134
 - name: STP-mergesat
   competing: "yes"
   errorScore: 0
@@ -715,6 +853,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 8902
+  timeout: 13
+  memout: 0
 - name: STP-riss
   competing: "yes"
   errorScore: 0
@@ -725,6 +865,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 8902
+  timeout: 13
+  memout: 0
 - name: STP-portfolio
   competing: "yes"
   errorScore: 0
@@ -735,6 +877,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 8902
+  timeout: 1146
+  memout: 0
 unsat:
 - name: Poolector
   competing: "yes"
@@ -746,6 +890,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5690
   unsolved: 3219
+  timeout: 141
+  memout: 0
 - name: Boolector
   competing: "yes"
   errorScore: 0
@@ -756,6 +902,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5680
   unsolved: 3229
+  timeout: 158
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
@@ -766,6 +914,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5669
   unsolved: 3240
+  timeout: 179
+  memout: 0
 - name: Yices 2.6.2 CaDiCal
   competing: "yes"
   errorScore: 0
@@ -776,6 +926,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5665
   unsolved: 3244
+  timeout: 191
+  memout: 0
 - name: Yices 2.6.2 New Bvsolver
   competing: "yes"
   errorScore: 0
@@ -786,6 +938,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5648
   unsolved: 3261
+  timeout: 227
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -796,6 +950,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5647
   unsolved: 3262
+  timeout: 266
+  memout: 0
 - name: Yices 2.6.2 Cryptominisat
   competing: "yes"
   errorScore: 0
@@ -806,6 +962,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5642
   unsolved: 3267
+  timeout: 270
+  memout: 0
 - name: Minkeyrink Solver MT
   competing: "yes"
   errorScore: 0
@@ -816,6 +974,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5620
   unsolved: 3289
+  timeout: 234
+  memout: 0
 - name: Minkeyrink Solver
   competing: "yes"
   errorScore: 0
@@ -826,6 +986,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5618
   unsolved: 3291
+  timeout: 244
+  memout: 0
 - name: 2018-Minkeyrink MT
   competing: "no"
   errorScore: 0
@@ -836,6 +998,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5614
   unsolved: 3295
+  timeout: 256
+  memout: 0
 - name: Boolector-ReasonLS
   competing: "no"
   errorScore: 0
@@ -846,6 +1010,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5614
   unsolved: 3295
+  timeout: 391
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -856,6 +1022,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5526
   unsolved: 3383
+  timeout: 312
+  memout: 4
 - name: STP-mt
   competing: "yes"
   errorScore: 0
@@ -866,6 +1034,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5431
   unsolved: 3478
+  timeout: 534
+  memout: 0
 - name: STP-incremental
   competing: "yes"
   errorScore: 0
@@ -876,6 +1046,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5429
   unsolved: 3480
+  timeout: 562
+  memout: 0
 - name: STP
   competing: "yes"
   errorScore: 0
@@ -886,6 +1058,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5426
   unsolved: 3483
+  timeout: 569
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -896,6 +1070,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5403
   unsolved: 3506
+  timeout: 471
+  memout: 0
 - name: STP-mergesat-fixed
   competing: "no"
   errorScore: 0
@@ -906,6 +1082,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 5346
   unsolved: 3563
+  timeout: 652
+  memout: 0
 - name: STP-minisat
   competing: "yes"
   errorScore: 0
@@ -916,6 +1094,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 4954
   unsolved: 3955
+  timeout: 1126
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -926,6 +1106,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 4904
   unsolved: 4005
+  timeout: 1215
+  memout: 0
 - name: STP-portfolio-fixed
   competing: "no"
   errorScore: 0
@@ -936,6 +1118,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 4753
   unsolved: 4156
+  timeout: 1191
+  memout: 0
 - name: Yices 2.6.2 mcsat-bv
   competing: "yes"
   errorScore: 0
@@ -946,6 +1130,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 3540
   unsolved: 5369
+  timeout: 3593
+  memout: 134
 - name: STP-riss
   competing: "yes"
   errorScore: 0
@@ -956,6 +1142,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2675
   unsolved: 6234
+  timeout: 13
+  memout: 0
 - name: STP-mergesat
   competing: "yes"
   errorScore: 0
@@ -966,6 +1154,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2541
   unsolved: 6368
+  timeout: 13
+  memout: 0
 - name: STP-portfolio
   competing: "yes"
   errorScore: 0
@@ -976,6 +1166,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 2541
   unsolved: 6368
+  timeout: 1146
+  memout: 0
 twentyfour:
 - name: Par4
   competing: "yes"
@@ -987,6 +1179,8 @@ twentyfour:
   solved_sat: 2727
   solved_unsat: 5467
   unsolved: 715
+  timeout: 715
+  memout: 0
 - name: Poolector
   competing: "yes"
   errorScore: 0
@@ -997,6 +1191,8 @@ twentyfour:
   solved_sat: 2744
   solved_unsat: 5380
   unsolved: 785
+  timeout: 785
+  memout: 0
 - name: Yices 2.6.2 New Bvsolver
   competing: "yes"
   errorScore: 0
@@ -1007,6 +1203,8 @@ twentyfour:
   solved_sat: 2675
   solved_unsat: 5425
   unsolved: 809
+  timeout: 809
+  memout: 0
 - name: Boolector
   competing: "yes"
   errorScore: 0
@@ -1017,6 +1215,8 @@ twentyfour:
   solved_sat: 2706
   solved_unsat: 5371
   unsolved: 832
+  timeout: 832
+  memout: 0
 - name: Yices 2.6.2 CaDiCal
   competing: "yes"
   errorScore: 0
@@ -1027,6 +1227,8 @@ twentyfour:
   solved_sat: 2684
   solved_unsat: 5368
   unsolved: 857
+  timeout: 857
+  memout: 0
 - name: Minkeyrink Solver MT
   competing: "yes"
   errorScore: 0
@@ -1037,6 +1239,8 @@ twentyfour:
   solved_sat: 2727
   solved_unsat: 5311
   unsolved: 871
+  timeout: 871
+  memout: 0
 - name: 2018-Minkeyrink MT
   competing: "no"
   errorScore: 0
@@ -1047,6 +1251,8 @@ twentyfour:
   solved_sat: 2706
   solved_unsat: 5312
   unsolved: 891
+  timeout: 891
+  memout: 0
 - name: Minkeyrink Solver
   competing: "yes"
   errorScore: 0
@@ -1057,6 +1263,8 @@ twentyfour:
   solved_sat: 2673
   solved_unsat: 5312
   unsolved: 924
+  timeout: 924
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -1067,6 +1275,8 @@ twentyfour:
   solved_sat: 2344
   solved_unsat: 5361
   unsolved: 1204
+  timeout: 1204
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -1077,6 +1287,8 @@ twentyfour:
   solved_sat: 2542
   solved_unsat: 5126
   unsolved: 1241
+  timeout: 1241
+  memout: 0
 - name: Yices 2.6.2 Cryptominisat
   competing: "yes"
   errorScore: 0
@@ -1087,6 +1299,8 @@ twentyfour:
   solved_sat: 2279
   solved_unsat: 5354
   unsolved: 1276
+  timeout: 1276
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -1097,6 +1311,8 @@ twentyfour:
   solved_sat: 2178
   solved_unsat: 4946
   unsolved: 1785
+  timeout: 1779
+  memout: 4
 - name: STP-mt
   competing: "yes"
   errorScore: 0
@@ -1107,6 +1323,8 @@ twentyfour:
   solved_sat: 2382
   solved_unsat: 4604
   unsolved: 1923
+  timeout: 1923
+  memout: 0
 - name: Boolector-ReasonLS
   competing: "no"
   errorScore: 0
@@ -1117,6 +1335,8 @@ twentyfour:
   solved_sat: 1697
   solved_unsat: 5265
   unsolved: 1947
+  timeout: 1947
+  memout: 0
 - name: STP
   competing: "yes"
   errorScore: 0
@@ -1127,6 +1347,8 @@ twentyfour:
   solved_sat: 2318
   solved_unsat: 4593
   unsolved: 1998
+  timeout: 1998
+  memout: 0
 - name: STP-incremental
   competing: "yes"
   errorScore: 0
@@ -1137,6 +1359,8 @@ twentyfour:
   solved_sat: 2319
   solved_unsat: 4591
   unsolved: 1999
+  timeout: 1999
+  memout: 0
 - name: STP-minisat
   competing: "yes"
   errorScore: 0
@@ -1147,6 +1371,8 @@ twentyfour:
   solved_sat: 2370
   solved_unsat: 4307
   unsolved: 2232
+  timeout: 2232
+  memout: 0
 - name: STP-mergesat-fixed
   competing: "no"
   errorScore: 0
@@ -1157,6 +1383,8 @@ twentyfour:
   solved_sat: 2209
   solved_unsat: 4431
   unsolved: 2269
+  timeout: 2269
+  memout: 0
 - name: STP-portfolio-fixed
   competing: "no"
   errorScore: 0
@@ -1167,6 +1395,8 @@ twentyfour:
   solved_sat: 2050
   solved_unsat: 4069
   unsolved: 2790
+  timeout: 2626
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -1177,6 +1407,8 @@ twentyfour:
   solved_sat: 1727
   solved_unsat: 4132
   unsolved: 3050
+  timeout: 3050
+  memout: 0
 - name: Yices 2.6.2 mcsat-bv
   competing: "yes"
   errorScore: 0
@@ -1187,6 +1419,8 @@ twentyfour:
   solved_sat: 1214
   solved_unsat: 3174
   unsolved: 4521
+  timeout: 4387
+  memout: 134
 - name: STP-riss
   competing: "yes"
   errorScore: 0
@@ -1197,6 +1431,8 @@ twentyfour:
   solved_sat: 7
   solved_unsat: 2595
   unsolved: 6307
+  timeout: 169
+  memout: 0
 - name: STP-mergesat
   competing: "yes"
   errorScore: 0
@@ -1207,6 +1443,8 @@ twentyfour:
   solved_sat: 7
   solved_unsat: 2461
   unsolved: 6441
+  timeout: 154
+  memout: 0
 - name: STP-portfolio
   competing: "yes"
   errorScore: 0
@@ -1217,4 +1455,6 @@ twentyfour:
   solved_sat: 7
   solved_unsat: 2461
   unsolved: 6441
+  timeout: 2410
+  memout: 0
 ---

@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:20
+resultdate: 2019-07-03 05:51:35
 division: UFDTLIA
 track: Single Query Track
 n_benchmarks: 299
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 218
   unsolved: 81
+  timeout: 81
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 216
   unsolved: 83
+  timeout: 80
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 69
   unsolved: 230
+  timeout: 230
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 55
   unsolved: 244
+  timeout: 241
+  memout: 3
 parallel:
 - name: CVC4
   competing: "yes"
@@ -64,6 +72,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 218
   unsolved: 81
+  timeout: 81
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -74,6 +84,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 216
   unsolved: 83
+  timeout: 80
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -84,6 +96,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 69
   unsolved: 230
+  timeout: 230
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -94,6 +108,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 58
   unsolved: 241
+  timeout: 238
+  memout: 3
 sat:
 - name: 2018-CVC4
   competing: "no"
@@ -105,6 +121,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 299
+  timeout: 80
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -115,6 +133,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 299
+  timeout: 238
+  memout: 3
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -125,6 +145,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 299
+  timeout: 81
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -135,6 +157,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 299
+  timeout: 230
+  memout: 0
 unsat:
 - name: CVC4
   competing: "yes"
@@ -146,6 +170,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 218
   unsolved: 81
+  timeout: 81
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -156,6 +182,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 216
   unsolved: 83
+  timeout: 80
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -166,6 +194,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 69
   unsolved: 230
+  timeout: 230
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -176,6 +206,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 58
   unsolved: 241
+  timeout: 238
+  memout: 3
 twentyfour:
 - name: Vampire
   competing: "yes"
@@ -187,6 +219,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 58
   unsolved: 241
+  timeout: 241
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -197,6 +231,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 53
   unsolved: 246
+  timeout: 243
+  memout: 3
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -207,6 +243,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 48
   unsolved: 251
+  timeout: 251
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -217,4 +255,6 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 46
   unsolved: 253
+  timeout: 253
+  memout: 0
 ---

@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-02 12:09:02
+resultdate: 2019-07-03 05:57:43
 division: QF_ABV
 track: Challenge Track (non-incremental)
 n_benchmarks: 7
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Poolector
   competing: "yes"
   errorScore: 0
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 5
   solved_unsat: 0
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -73,6 +83,8 @@ sequential:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 7
+  memout: 0
 parallel:
 - name: Boolector
   competing: "yes"
@@ -84,6 +96,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Poolector
   competing: "yes"
   errorScore: 0
@@ -94,6 +108,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -104,6 +120,8 @@ parallel:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -114,6 +132,8 @@ parallel:
   solved_sat: 5
   solved_unsat: 0
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -124,6 +144,8 @@ parallel:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -134,6 +156,8 @@ parallel:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 7
+  memout: 0
 sat:
 - name: Boolector
   competing: "yes"
@@ -145,6 +169,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Poolector
   competing: "yes"
   errorScore: 0
@@ -155,6 +181,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -165,6 +193,8 @@ sat:
   solved_sat: 7
   solved_unsat: 0
   unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -175,6 +205,8 @@ sat:
   solved_sat: 5
   solved_unsat: 0
   unsolved: 2
+  timeout: 2
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -185,6 +217,8 @@ sat:
   solved_sat: 1
   solved_unsat: 0
   unsolved: 6
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -195,6 +229,8 @@ sat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 7
+  memout: 0
 unsat:
 - name: 2018-Boolector
   competing: "no"
@@ -206,6 +242,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 0
+  memout: 0
 - name: Boolector
   competing: "yes"
   errorScore: 0
@@ -216,6 +254,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 0
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -226,6 +266,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 7
+  memout: 0
 - name: Poolector
   competing: "yes"
   errorScore: 0
@@ -236,6 +278,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 0
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -246,6 +290,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 0
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -256,6 +302,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 2
+  memout: 0
 twentyfour:
 - name: Poolector
   competing: "yes"
@@ -267,6 +315,8 @@ twentyfour:
   solved_sat: 4
   solved_unsat: 0
   unsolved: 3
+  timeout: 3
+  memout: 0
 - name: Boolector
   competing: "yes"
   errorScore: 0
@@ -277,6 +327,8 @@ twentyfour:
   solved_sat: 3
   solved_unsat: 0
   unsolved: 4
+  timeout: 4
+  memout: 0
 - name: 2018-Boolector
   competing: "no"
   errorScore: 0
@@ -287,6 +339,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 1
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -297,6 +351,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 7
+  memout: 0
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -307,6 +363,8 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 7
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -317,4 +375,6 @@ twentyfour:
   solved_sat: 0
   solved_unsat: 0
   unsolved: 7
+  timeout: 7
+  memout: 0
 ---

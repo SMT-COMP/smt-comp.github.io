@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:03:19
+resultdate: 2019-07-03 05:51:35
 division: QF_FP
 track: Single Query Track
 n_benchmarks: 250
@@ -23,6 +23,8 @@ sequential:
   solved_sat: 105
   solved_unsat: 97
   unsolved: 48
+  timeout: 46
+  memout: 0
 - name: COLIBRI
   competing: "yes"
   errorScore: 2
@@ -33,6 +35,8 @@ sequential:
   solved_sat: 99
   solved_unsat: 97
   unsolved: 54
+  timeout: 52
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 2
@@ -43,6 +47,8 @@ sequential:
   solved_sat: 100
   solved_unsat: 80
   unsolved: 70
+  timeout: 68
+  memout: 0
 - name: 2018-COLIBRI
   competing: "no"
   errorScore: 2
@@ -53,6 +59,8 @@ sequential:
   solved_sat: 87
   solved_unsat: 88
   unsolved: 75
+  timeout: 65
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 2
@@ -63,6 +71,8 @@ sequential:
   solved_sat: 83
   solved_unsat: 77
   unsolved: 90
+  timeout: 88
+  memout: 0
 parallel:
 - name: Par4
   competing: "yes"
@@ -74,6 +84,8 @@ parallel:
   solved_sat: 109
   solved_unsat: 100
   unsolved: 41
+  timeout: 39
+  memout: 0
 - name: COLIBRI
   competing: "yes"
   errorScore: 2
@@ -84,6 +96,8 @@ parallel:
   solved_sat: 99
   solved_unsat: 97
   unsolved: 54
+  timeout: 52
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 2
@@ -94,6 +108,8 @@ parallel:
   solved_sat: 100
   solved_unsat: 80
   unsolved: 70
+  timeout: 68
+  memout: 0
 - name: 2018-COLIBRI
   competing: "no"
   errorScore: 2
@@ -104,6 +120,8 @@ parallel:
   solved_sat: 87
   solved_unsat: 88
   unsolved: 75
+  timeout: 65
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 2
@@ -114,6 +132,8 @@ parallel:
   solved_sat: 83
   solved_unsat: 77
   unsolved: 90
+  timeout: 88
+  memout: 0
 sat:
 - name: Par4
   competing: "yes"
@@ -125,6 +145,8 @@ sat:
   solved_sat: 109
   solved_unsat: 0
   unsolved: 141
+  timeout: 39
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 1
@@ -135,6 +157,8 @@ sat:
   solved_sat: 100
   solved_unsat: 0
   unsolved: 150
+  timeout: 68
+  memout: 0
 - name: COLIBRI
   competing: "yes"
   errorScore: 1
@@ -145,6 +169,8 @@ sat:
   solved_sat: 99
   solved_unsat: 0
   unsolved: 151
+  timeout: 52
+  memout: 0
 - name: 2018-COLIBRI
   competing: "no"
   errorScore: 1
@@ -155,6 +181,8 @@ sat:
   solved_sat: 87
   solved_unsat: 0
   unsolved: 163
+  timeout: 65
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 1
@@ -165,6 +193,8 @@ sat:
   solved_sat: 83
   solved_unsat: 0
   unsolved: 167
+  timeout: 88
+  memout: 0
 unsat:
 - name: Par4
   competing: "yes"
@@ -176,6 +206,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 100
   unsolved: 150
+  timeout: 39
+  memout: 0
 - name: COLIBRI
   competing: "yes"
   errorScore: 1
@@ -186,6 +218,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 97
   unsolved: 153
+  timeout: 52
+  memout: 0
 - name: 2018-COLIBRI
   competing: "no"
   errorScore: 1
@@ -196,6 +230,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 88
   unsolved: 162
+  timeout: 65
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 1
@@ -206,6 +242,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 80
   unsolved: 170
+  timeout: 68
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 1
@@ -216,6 +254,8 @@ unsat:
   solved_sat: 0
   solved_unsat: 77
   unsolved: 173
+  timeout: 88
+  memout: 0
 twentyfour:
 - name: COLIBRI
   competing: "yes"
@@ -227,6 +267,8 @@ twentyfour:
   solved_sat: 93
   solved_unsat: 86
   unsolved: 71
+  timeout: 69
+  memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 2
@@ -237,6 +279,8 @@ twentyfour:
   solved_sat: 87
   solved_unsat: 82
   unsolved: 81
+  timeout: 79
+  memout: 0
 - name: 2018-COLIBRI
   competing: "no"
   errorScore: 2
@@ -247,6 +291,8 @@ twentyfour:
   solved_sat: 80
   solved_unsat: 74
   unsolved: 96
+  timeout: 88
+  memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 2
@@ -257,6 +303,8 @@ twentyfour:
   solved_sat: 64
   solved_unsat: 49
   unsolved: 137
+  timeout: 135
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 2
@@ -267,4 +315,6 @@ twentyfour:
   solved_sat: 24
   solved_unsat: 19
   unsolved: 207
+  timeout: 205
+  memout: 0
 ---
