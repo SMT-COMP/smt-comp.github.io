@@ -9,7 +9,12 @@ layout: default
   {%- assign track_str = "" -%}
   {% for item in result.items %}
     {% assign track = item.track %}
-    {%- assign track_str = track_str |append: "[" |append: track |append: "](" |append: item.url |append: ")" |append: ":" -%}
+    {%- assign track_str = track_str |append: "["
+                                     |append: track
+                                     |append: "]("
+                                     |append: item.url
+                                     |append: ")"
+                                     |append: ":" -%}
   {% endfor %}
   {%- assign track_str = track_str | split: ":" -%}
   - {{ result.name }} ({{ track_str |join: ", " }})
