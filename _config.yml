@@ -10,15 +10,3 @@ collections:
         output: true
     news:
         output: true
-    single_query-results:
-        output: true
-    incremental-results:
-        output: true
-    unsat_core-results:
-        output: true
-    single_query_challenge-results:
-        output: true
-    incremental_challenge-results:
-        output: true
-    model_validation-results:
-        output: true
