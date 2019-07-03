@@ -4,7 +4,7 @@ layout: default
 ## SMT-COMP 2019 Results
 
 
-{% assign results = site.results |group_by: 'division' %}
+{% assign results = site.results_2019 |group_by: 'division' %}
 {% for result in results %}
   {%- assign track_str = "" -%}
   {% for item in result.items %}

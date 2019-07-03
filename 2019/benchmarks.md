@@ -16,7 +16,7 @@ rules.
 {% for track_descr in site.data.tracks %}
 
     {% assign n_divisions = 0 %}
-    {%-for benchmark in site.benchmarks %}
+    {%-for benchmark in site.benchmarks_2019 %}
         {%- for track in benchmark.tracks -%}
             {%- if track.name == track_descr.raw_name -%}
                 {%- if track.n_insts > 0 -%}
@@ -56,7 +56,7 @@ The list of selected benchmarks is available [here]({{ sel_bm.url }}).
 <th>Number of Included Benchmarks</th>
 </tr>
     {% assign total = 0 %}
-    {%- for benchmark in site.benchmarks -%}
+    {%- for benchmark in site.benchmarks_2019 -%}
         {%- for track in benchmark.tracks -%}
             {%- if track.name == track_descr.raw_name -%}
                 {%- if track.n_insts > 0 -%}

@@ -1,5 +1,5 @@
 {%- assign sum_of_seeds = 0 -%}
-{%- for solver in site.participants -%}
+{%- for solver in site.participants_2019 -%}
     {%- assign sum_of_seeds = sum_of_seeds | plus: solver.seed -%}
 {%- endfor -%}
 {%- assign sum_of_seeds = sum_of_seeds | modulo: 1073741824 -%}
@@ -28,7 +28,7 @@ non-competing solvers by the organizers for comparison.
 <th>Solver Homepage</th>
 <th>Contact</th>
 </tr>
-{%- for solver in site.participants -%}
+{%- for solver in site.participants_2019 -%}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
 <td>
 <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
@@ -62,7 +62,7 @@ X
 <td><b>Total</b></td>
 {%- for track_descr in site.data.tracks -%}
     {%- assign num_p = 0 -%}
-    {%- for solver in site.participants -%}
+    {%- for solver in site.participants_2019 -%}
         {%- assign this_track_found = false -%}
         {%- for slogic in solver.logics -%}
             {%- if this_track_found == true -%}
@@ -117,7 +117,7 @@ These are the logic divisions in which each solver is participating.
 </th>
     {%- endfor -%}
 </tr>
-    {%- for solver in site.participants -%}
+    {%- for solver in site.participants_2019 -%}
         {%- assign participates_in_logic = false -%}
         {%- for s_logic in solver.logics -%}
             {%- if s_logic.name == logic.name -%}
@@ -160,7 +160,7 @@ X
 <td><b>Total</b></td>
     {%- for track_descr in site.data.tracks -%}
         {%- assign num_p = 0 -%}
-        {%- for solver in site.participants -%}
+        {%- for solver in site.participants_2019 -%}
             {%- assign this_logic_found = false -%}
             {%- for slogic in solver.logics -%}
                 {%- if this_logic_found == true -%}

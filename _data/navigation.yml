@@ -5,13 +5,13 @@
 - name: Rules
   link: 2019/rules19.pdf
 - name: Benchmarks
-  link: benchmarks.html
+  link: 2019/benchmarks.html
 - name: Tools
   link: tools.html
 - name: Specs
   link: specs.html
 - name: Participants
-  link: participants.html
+  link: 2019/participants.html
   #- name: Results
   #  link: results.html
 - name: Benchmark submission

@@ -8,7 +8,7 @@ and results of the competition.
 
 ### News
 <ul>
-{% assign newsList = site.news | reverse %}
+{% assign newsList = site.news_2019 | reverse %}
 {% for news in newsList %}
   <li> {{ news.newsdate | date_to_string }} <a href="{{ news.url }}">{{ news.title }}</a> </li>
 {% endfor %}
