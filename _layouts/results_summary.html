@@ -23,7 +23,7 @@ layout: default
       {%- assign division_score = division.sat -%}
       {%- assign score_str = "SAT Performance" -%}
     {% elsif score == "unsat" %}
-      {%- assign division_score = division.sat -%}
+      {%- assign division_score = division.unsat -%}
       {%- assign score_str = "UNSAT Performance" -%}
     {% elsif score == "twentyfour" %}
       {%- assign division_score = division.twentyfour -%}
