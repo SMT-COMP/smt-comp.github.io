@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<h2>SMT-COMP 2019 Results - {{ page.track }} (Summary)</h2>
+
+<!-- Note: we assume that the order of solvers in the .md files is according
+           to the ranking in the respective category! -->
+
+{%- assign scores = page.scores |split: "," -%}
+{% assign results = site.results_2019 |group_by: "track" |where: "name", page.track |first %}
+{% for division in results.items %}
+<h3>{{ division.division }}</h3>
+  <table>
+  {% for score in scores %}
+    <tr>
+    {% if score == "sequential" %}
+      {%- assign division_score = division.sequential -%}
+      {%- assign score_str = "Sequential Performance" -%}
+    {% elsif score == "parallel" %}
+      {%- assign division_score = division.parallel -%}
+      {%- assign score_str = "Parallel Performance" -%}
+    {% elsif score == "sat" %}
+      {%- assign division_score = division.sat -%}
+      {%- assign score_str = "SAT Performance" -%}
+    {% elsif score == "unsat" %}
+      {%- assign division_score = division.sat -%}
+      {%- assign score_str = "UNSAT Performance" -%}
+    {% elsif score == "twentyfour" %}
+      {%- assign division_score = division.twentyfour -%}
+      {%- assign score_str = "24s Performance" -%}
+    {% endif %}
+    {%- assign winners_str = "" -%}
+    {% for solver in division_score %}
+      {%- assign participant = site.participants_2019 |where:"name", solver.name | first -%}
+      {%- assign nc_str = "" -%}
+      {%- assign nc_td_str = "" -%}
+      {%- if solver.competing == "no" -%}
+        {%- assign nc_str = '<sup><a href="#nc">n</a></sup>' -%}
+        {%- assign nc_td_str = ' class = "noncompeting"' -%}
+      {%- endif -%}
+      {%- assign winners_str = winners_str
+        |append: '<td'
+        |append: nc_td_str
+        |append: '><a href="'
+        |append: participant.url
+        |append: '">'
+        |append: solver.name
+        |append: '</a>'
+        |append: nc_str
+        |append: '</td>'
+        |append: ":" -%}
+    {% endfor %}
+    {%- assign winners_str = winners_str |split: ":" -%}
+      <td>{{ score_str }}</td>
+      {% for winner in winners_str %}
+        {{ winner }}
+      {% endfor %}
+    </tr>
+  {% endfor %}
+  </table>
+{% endfor %}
+

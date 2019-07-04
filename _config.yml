@@ -11,6 +11,9 @@ collections:
     results_2019:
         output: true
         permalink: /2019/results/:name
+    results_summary_2019:
+        output: true
+        permalink: /2019/results/:name
     news_2019:
         output: true
         permalink: /2019/news/:name

@@ -3,7 +3,12 @@ layout: default
 ---
 ## SMT-COMP 2019 Results
 
+### Summary
+{% for summary in site.results_summary_2019 %}
+- [{{ summary.track }}]({{ summary.url }})
+{% endfor %}
 
+### Divisions
 {% assign results = site.results_2019 |group_by: 'division' %}
 {% for result in results %}
   {%- assign track_str = "" -%}
