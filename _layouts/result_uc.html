@@ -4,13 +4,20 @@ layout: default
 {% include tablesorter.html %}
 <h2>{{ page.division }} ({{ page.track }})</h2>
 <p>
-Competition results for the {{ page.division }} division as of
-{{ page.resultdate | time_to_string }}
+Competition results for the {{ page.division }} division
+in the {{ page.track }}. 
+</p>
+
 <p>
-Benchmarks in this division: {{ page.n_benchmarks }}
+Page generated on {{ page.resultdate | time_to_string }}
+</p>
+
 <p>
-Time limit: {{ page.time_limit }}
-<p>
+<b>Benchmarks</b>: {{ page.n_benchmarks }}
+</br>
+<b>Time Limit:</b> {{ page.time_limit }} seconds
+</p>
+
 <h3>Winners</h3>
 <table>
     <thead>
@@ -21,58 +28,74 @@ Time limit: {{ page.time_limit }}
     </thead>
     <tr>
         <td>
-            {{ page.seq_winner }}
+            {{ page.winner_seq }}
         </td>
         <td>
-            {{ page.par_winner }}
+            {{ page.winner_par }}
         </td>
     </tr>
 </table>
 
-<h3>Sequential performance</h3>
+<h3>Sequential Performance</h3>
 <table id="sequential" class="result sorted">
 <thead>
     <tr>
         <th>Solver</th>
         <th>Error Score</th>
-        <th>Correctly Solved Score</th>
-        <th>CPU time Score</th>
-        <th>Solved</th>
-        <th>Unsolved</th>
+        <th>Correct Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+        <th>Timeout</th>
+        <th>Memout</th>
     </tr>
 </thead>
 {% for solver in page.sequential %}
-<tr>
-    <td>{{ solver.name }}</td>
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
-    <td>{{ solver.solved }}</td>
-    <td>{{ solver.unsolved }}</td>
+    <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.timeout }}</td>
+    <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
 
-<h3>Parallel performance</h3>
+<h3>Parallel Performance</h3>
 <table id="parallel" class="result sorted">
 <thead>
     <tr>
         <th>Solver</th>
         <th>Error Score</th>
-        <th>Correctly Solved Score</th>
-        <th>CPU time Score</th>
-        <th>Solved</th>
-        <th>Unsolved</th>
+        <th>Correct Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+        <th>Timeout</th>
+        <th>Memout</th>
     </tr>
 </thead>
 {% for solver in page.parallel %}
-<tr>
-    <td>{{ solver.name }}</td>
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
-    <td>{{ solver.solved }}</td>
-    <td>{{ solver.unsolved }}</td>
+    <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.timeout }}</td>
+    <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+</p>
