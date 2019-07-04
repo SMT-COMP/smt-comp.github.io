@@ -1,5 +1,5 @@
 ---
-layout: result_uc
+layout: result_others
 resultdate: 2019-07-04 11:58:51
 division: QF_NIRA
 track: track_unsat_core
