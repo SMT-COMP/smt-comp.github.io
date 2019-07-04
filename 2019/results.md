@@ -17,5 +17,8 @@ layout: default
                                      |append: ":" -%}
   {% endfor %}
   {%- assign track_str = track_str | split: ":" -%}
-  - {{ result.name }} ({{ track_str |join: ", " }})
+  - **{{ result.name }}**
+    {% for ts in track_str %}
+    - {{ ts -}}
+    {% endfor %}
 {% endfor %}

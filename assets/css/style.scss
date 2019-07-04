@@ -84,3 +84,11 @@ sub {
 b {
   font-weight: bold;
 }
+
+ul li ul {
+  list-style-type: circle;
+}
+
+ul li p {
+  margin: 0;
+}
