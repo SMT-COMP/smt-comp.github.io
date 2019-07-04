@@ -9,6 +9,13 @@ layout: default
 <!-- Note: we assume that the order of solvers in the .md files is according
            to the ranking in the respective category! -->
 
+<p>
+Summary of all competition results for the {{ track }}.
+<br/>
+Results are given ranked by performance for each scoring scheme
+(best solver is given as left-most solver).
+</p>
+
 {%- assign scores = page.scores |split: "," -%}
 {% assign results = site.results_2019 |group_by: "track" |where: "name", page.track |first %}
 {% for division in results.items %}
@@ -54,7 +61,7 @@ layout: default
         |append: ":" -%}
     {% endfor %}
     {%- assign winners_str = winners_str |split: ":" -%}
-      <td>{{ score_str }}</td>
+      <td><b>{{ score_str }}</b></td>
       {% for winner in winners_str %}
         {{ winner }}
       {% endfor %}
