@@ -1,12 +1,12 @@
 ---
 layout: result_inc
-resultdate: 2019-07-03 06:39:16
+resultdate: 2019-07-04 07:03:26
 division: LRA
 track: Incremental Track
 n_benchmarks: 5
 time_limit: 2400
 
-winner_par: CVC4-inc
+winner_par: 
 
 parallel:
 - name: CVC4-inc

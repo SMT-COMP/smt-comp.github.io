@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-03 06:39:24
+resultdate: 2019-07-04 07:03:27
 division: QF_AUFBV
 track: Challenge Track (incremental)
 n_benchmarks: 6

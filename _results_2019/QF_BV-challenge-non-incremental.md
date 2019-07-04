@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:57:43
+resultdate: 2019-07-04 07:03:27
 division: QF_BV
 track: Challenge Track (non-incremental)
 n_benchmarks: 7
@@ -9,7 +9,7 @@ time_limit: 43200
 winner_seq: Boolector
 winner_par: Minkeyrink Solver MT
 winner_sat: Minkeyrink Solver MT
-winner_unsat: Boolector
+winner_unsat: 
 winner_24s: Minkeyrink Solver MT
 
 sequential:

@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:00
 division: QF_NIRA
 track: Single Query Track
 n_benchmarks: 2
@@ -8,9 +8,9 @@ time_limit: 2400
 
 winner_seq: SMT-RAT
 winner_par: SMT-RAT
-winner_sat: CVC4
+winner_sat: 
 winner_unsat: SMT-RAT
-winner_24s: CVC4
+winner_24s: 
 
 sequential:
 - name: 2018-SMTRAT-Rat

@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:01
 division: UFDT
 track: Single Query Track
 n_benchmarks: 1547

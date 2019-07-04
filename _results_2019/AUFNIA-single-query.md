@@ -1,16 +1,16 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:00
 division: AUFNIA
 track: Single Query Track
 n_benchmarks: 3
 time_limit: 2400
 
-winner_seq: UltimateEliminator+Yices-2.6.1
-winner_par: UltimateEliminator+Yices-2.6.1
-winner_sat: Alt-Ergo
-winner_unsat: UltimateEliminator+Yices-2.6.1
-winner_24s: UltimateEliminator+Yices-2.6.1
+winner_seq: 
+winner_par: 
+winner_sat: 
+winner_unsat: 
+winner_24s: 
 
 sequential:
 - name: CVC4-SymBreak

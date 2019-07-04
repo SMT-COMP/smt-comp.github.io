@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:01
 division: UFDTNIA
 track: Single Query Track
 n_benchmarks: 1
@@ -8,7 +8,7 @@ time_limit: 2400
 
 winner_seq: Vampire
 winner_par: Vampire
-winner_sat: Alt-Ergo
+winner_sat: 
 winner_unsat: Vampire
 winner_24s: Vampire
 

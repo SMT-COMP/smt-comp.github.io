@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:01
 division: UFLRA
 track: Single Query Track
 n_benchmarks: 7
@@ -8,7 +8,7 @@ time_limit: 2400
 
 winner_seq: Alt-Ergo
 winner_par: Alt-Ergo
-winner_sat: UltimateEliminator+SMTInterpol
+winner_sat: 
 winner_unsat: veriT
 winner_24s: Alt-Ergo
 

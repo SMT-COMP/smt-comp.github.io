@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:00
 division: QF_LIRA
 track: Single Query Track
 n_benchmarks: 7

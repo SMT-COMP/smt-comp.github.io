@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:00
 division: QF_ANIA
 track: Single Query Track
 n_benchmarks: 7
@@ -8,7 +8,7 @@ time_limit: 2400
 
 winner_seq: CVC4
 winner_par: CVC4
-winner_sat: Alt-Ergo
+winner_sat: 
 winner_unsat: CVC4
 winner_24s: MathSAT-na-ext
 

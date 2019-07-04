@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:00
 division: ABVFP
 track: Single Query Track
 n_benchmarks: 1
@@ -9,7 +9,7 @@ time_limit: 2400
 winner_seq: CVC4
 winner_par: CVC4
 winner_sat: CVC4
-winner_unsat: CVC4
+winner_unsat: 
 winner_24s: CVC4
 
 sequential:

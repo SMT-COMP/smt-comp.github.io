@@ -1,18 +1,66 @@
 ---
 layout: result
-resultdate: 2019-07-03 05:51:35
+resultdate: 2019-07-04 06:56:00
 division: AUFLIA
 track: Single Query Track
 n_benchmarks: 1638
 time_limit: 2400
 
-winner_seq: Alt-Ergo
-winner_par: Alt-Ergo
+winner_seq: CVC4
+winner_par: Vampire
 winner_sat: CVC4
 winner_unsat: Vampire
-winner_24s: Alt-Ergo
+winner_24s: Vampire
 
 sequential:
+- name: 2018-CVC4
+  competing: "no"
+  errorScore: 0
+  correctScore: 1383
+  CPUScore: 581043.979
+  WallScore: 587924.149
+  solved: 1383
+  solved_sat: 137
+  solved_unsat: 1246
+  unsolved: 255
+  timeout: 231
+  memout: 0
+- name: CVC4-SymBreak
+  competing: "no"
+  errorScore: 0
+  correctScore: 1381
+  CPUScore: 596278.608
+  WallScore: 607017.882
+  solved: 1381
+  solved_sat: 137
+  solved_unsat: 1244
+  unsolved: 257
+  timeout: 231
+  memout: 0
+- name: CVC4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1381
+  CPUScore: 604438.313
+  WallScore: 617291.032
+  solved: 1381
+  solved_sat: 137
+  solved_unsat: 1244
+  unsolved: 257
+  timeout: 231
+  memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1375
+  CPUScore: 640132.477
+  WallScore: 624671.324
+  solved: 1375
+  solved_sat: 99
+  solved_unsat: 1276
+  unsolved: 263
+  timeout: 258
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -37,6 +85,18 @@ sequential:
   unsolved: 421
   timeout: 265
   memout: 38
+- name: veriT
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1169
+  CPUScore: 766139.798
+  WallScore: 766183.373
+  solved: 1169
+  solved_sat: 0
+  solved_unsat: 1169
+  unsolved: 469
+  timeout: 287
+  memout: 15
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -85,67 +145,55 @@ sequential:
   unsolved: 1631
   timeout: 65
   memout: 0
+parallel:
 - name: 2018-CVC4
   competing: "no"
-  errorScore: 1
-  correctScore: 1382
-  CPUScore: 581043.979
-  WallScore: 587924.149
-  solved: 1382
+  errorScore: 0
+  correctScore: 1383
+  CPUScore: 587410.849
+  WallScore: 587913.969
+  solved: 1383
   solved_sat: 137
-  solved_unsat: 1245
-  unsolved: 256
-  timeout: 231
-  memout: 0
-- name: CVC4-SymBreak
-  competing: "no"
-  errorScore: 1
-  correctScore: 1380
-  CPUScore: 596278.608
-  WallScore: 607017.882
-  solved: 1380
-  solved_sat: 137
-  solved_unsat: 1243
-  unsolved: 258
-  timeout: 231
-  memout: 0
-- name: CVC4
-  competing: "yes"
-  errorScore: 1
-  correctScore: 1380
-  CPUScore: 604438.313
-  WallScore: 617291.032
-  solved: 1380
-  solved_sat: 137
-  solved_unsat: 1243
-  unsolved: 258
+  solved_unsat: 1246
+  unsolved: 255
   timeout: 231
   memout: 0
 - name: Vampire
   competing: "yes"
-  errorScore: 1
-  correctScore: 1374
-  CPUScore: 640132.477
-  WallScore: 624671.324
-  solved: 1374
+  errorScore: 0
+  correctScore: 1382
+  CPUScore: 687185.437
+  WallScore: 616673.981
+  solved: 1382
   solved_sat: 99
-  solved_unsat: 1275
-  unsolved: 264
-  timeout: 258
+  solved_unsat: 1283
+  unsolved: 256
+  timeout: 251
   memout: 0
-- name: veriT
+- name: CVC4-SymBreak
+  competing: "no"
+  errorScore: 0
+  correctScore: 1381
+  CPUScore: 606248.838
+  WallScore: 607006.612
+  solved: 1381
+  solved_sat: 137
+  solved_unsat: 1244
+  unsolved: 257
+  timeout: 231
+  memout: 0
+- name: CVC4
   competing: "yes"
-  errorScore: 1
-  correctScore: 1168
-  CPUScore: 766139.798
-  WallScore: 766183.373
-  solved: 1168
-  solved_sat: 0
-  solved_unsat: 1168
-  unsolved: 470
-  timeout: 287
-  memout: 15
-parallel:
+  errorScore: 0
+  correctScore: 1381
+  CPUScore: 616468.103
+  WallScore: 617280.482
+  solved: 1381
+  solved_sat: 137
+  solved_unsat: 1244
+  unsolved: 257
+  timeout: 231
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -170,6 +218,18 @@ parallel:
   unsolved: 409
   timeout: 253
   memout: 38
+- name: veriT
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1169
+  CPUScore: 766211.978
+  WallScore: 766171.143
+  solved: 1169
+  solved_sat: 0
+  solved_unsat: 1169
+  unsolved: 469
+  timeout: 287
+  memout: 15
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -218,66 +278,6 @@ parallel:
   unsolved: 1631
   timeout: 61
   memout: 0
-- name: 2018-CVC4
-  competing: "no"
-  errorScore: 1
-  correctScore: 1382
-  CPUScore: 587410.849
-  WallScore: 587913.969
-  solved: 1382
-  solved_sat: 137
-  solved_unsat: 1245
-  unsolved: 256
-  timeout: 231
-  memout: 0
-- name: Vampire
-  competing: "yes"
-  errorScore: 1
-  correctScore: 1381
-  CPUScore: 687185.437
-  WallScore: 616673.981
-  solved: 1381
-  solved_sat: 99
-  solved_unsat: 1282
-  unsolved: 257
-  timeout: 251
-  memout: 0
-- name: CVC4-SymBreak
-  competing: "no"
-  errorScore: 1
-  correctScore: 1380
-  CPUScore: 606248.838
-  WallScore: 607006.612
-  solved: 1380
-  solved_sat: 137
-  solved_unsat: 1243
-  unsolved: 258
-  timeout: 231
-  memout: 0
-- name: CVC4
-  competing: "yes"
-  errorScore: 1
-  correctScore: 1380
-  CPUScore: 616468.103
-  WallScore: 617280.482
-  solved: 1380
-  solved_sat: 137
-  solved_unsat: 1243
-  unsolved: 258
-  timeout: 231
-  memout: 0
-- name: veriT
-  competing: "yes"
-  errorScore: 1
-  correctScore: 1168
-  CPUScore: 766211.978
-  WallScore: 766171.143
-  solved: 1168
-  solved_sat: 0
-  solved_unsat: 1168
-  unsolved: 470
-  timeout: 287
-  memout: 15
 sat:
 - name: Z3
   competing: "no"
@@ -415,57 +415,57 @@ unsat:
 - name: Vampire
   competing: "yes"
   errorScore: 0
-  correctScore: 1282
-  CPUScore: 86188.186
-  WallScore: 46990.116
-  solved: 1282
+  correctScore: 1283
+  CPUScore: 86193.496
+  WallScore: 46991.541
+  solved: 1283
   solved_sat: 0
-  solved_unsat: 1282
-  unsolved: 356
+  solved_unsat: 1283
+  unsolved: 355
   timeout: 251
   memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
-  correctScore: 1245
-  CPUScore: 138434.039
-  WallScore: 138748.49
-  solved: 1245
+  correctScore: 1246
+  CPUScore: 138434.195
+  WallScore: 138748.646
+  solved: 1246
   solved_sat: 0
-  solved_unsat: 1245
-  unsolved: 393
+  solved_unsat: 1246
+  unsolved: 392
   timeout: 231
   memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
-  correctScore: 1243
-  CPUScore: 150692.575
-  WallScore: 151147.178
-  solved: 1243
+  correctScore: 1244
+  CPUScore: 150692.748
+  WallScore: 151147.351
+  solved: 1244
   solved_sat: 0
-  solved_unsat: 1243
-  unsolved: 395
+  solved_unsat: 1244
+  unsolved: 394
   timeout: 231
   memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 1243
-  CPUScore: 152707.329
-  WallScore: 153128.813
-  solved: 1243
+  correctScore: 1244
+  CPUScore: 152707.489
+  WallScore: 153128.973
+  solved: 1244
   solved_sat: 0
-  solved_unsat: 1243
-  unsolved: 395
+  solved_unsat: 1244
+  unsolved: 394
   timeout: 231
   memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
   correctScore: 1229
-  CPUScore: 246056.484
-  WallScore: 180414.691
+  CPUScore: 248456.484
+  WallScore: 182814.691
   solved: 1229
   solved_sat: 0
   solved_unsat: 1229
@@ -475,21 +475,21 @@ unsat:
 - name: veriT
   competing: "yes"
   errorScore: 0
-  correctScore: 1168
-  CPUScore: 310292.85
-  WallScore: 310255.423
-  solved: 1168
+  correctScore: 1169
+  CPUScore: 310293.021
+  WallScore: 310255.595
+  solved: 1169
   solved_sat: 0
-  solved_unsat: 1168
-  unsolved: 470
+  solved_unsat: 1169
+  unsolved: 469
   timeout: 287
   memout: 15
 - name: Z3
   competing: "no"
   errorScore: 0
   correctScore: 1145
-  CPUScore: 288172.637
-  WallScore: 290056.469
+  CPUScore: 290572.637
+  WallScore: 292456.469
   solved: 1145
   solved_sat: 0
   solved_unsat: 1145
@@ -500,8 +500,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 802
-  CPUScore: 1265318.696
-  WallScore: 1179093.656
+  CPUScore: 1267718.696
+  WallScore: 1181493.656
   solved: 802
   solved_sat: 0
   solved_unsat: 802
@@ -512,8 +512,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 9
-  CPUScore: 108574.643
-  WallScore: 88419.391
+  CPUScore: 108577.91
+  WallScore: 88421.65
   solved: 9
   solved_sat: 0
   solved_unsat: 9
@@ -524,8 +524,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 9
-  CPUScore: 97066.075
-  WallScore: 88806.511
+  CPUScore: 97069.412
+  WallScore: 88808.782
   solved: 9
   solved_sat: 0
   solved_unsat: 9
@@ -536,8 +536,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 4
-  CPUScore: 97288.969
-  WallScore: 88765.318
+  CPUScore: 97292.151
+  WallScore: 88767.632
   solved: 4
   solved_sat: 0
   solved_unsat: 4
@@ -545,6 +545,18 @@ unsat:
   timeout: 61
   memout: 0
 twentyfour:
+- name: Vampire
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1351
+  CPUScore: 9527.331
+  WallScore: 7707.288
+  solved: 1351
+  solved_sat: 99
+  solved_unsat: 1252
+  unsolved: 287
+  timeout: 287
+  memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
@@ -557,6 +569,42 @@ twentyfour:
   unsolved: 367
   timeout: 342
   memout: 24
+- name: 2018-CVC4
+  competing: "no"
+  errorScore: 0
+  correctScore: 1239
+  CPUScore: 9636.401
+  WallScore: 9635.936
+  solved: 1239
+  solved_sat: 87
+  solved_unsat: 1152
+  unsolved: 399
+  timeout: 391
+  memout: 0
+- name: CVC4-SymBreak
+  competing: "no"
+  errorScore: 0
+  correctScore: 1236
+  CPUScore: 9695.328
+  WallScore: 9694.848
+  solved: 1236
+  solved_sat: 88
+  solved_unsat: 1148
+  unsolved: 402
+  timeout: 394
+  memout: 0
+- name: CVC4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1235
+  CPUScore: 9705.25
+  WallScore: 9704.786
+  solved: 1235
+  solved_sat: 88
+  solved_unsat: 1147
+  unsolved: 403
+  timeout: 395
+  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -569,6 +617,18 @@ twentyfour:
   unsolved: 473
   timeout: 322
   memout: 38
+- name: veriT
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1108
+  CPUScore: 10066.745
+  WallScore: 10049.121
+  solved: 1108
+  solved_sat: 0
+  solved_unsat: 1108
+  unsolved: 530
+  timeout: 365
+  memout: 15
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -617,64 +677,4 @@ twentyfour:
   unsolved: 1631
   timeout: 81
   memout: 0
-- name: Vampire
-  competing: "yes"
-  errorScore: 1
-  correctScore: 1350
-  CPUScore: 9527.331
-  WallScore: 7707.288
-  solved: 1350
-  solved_sat: 99
-  solved_unsat: 1251
-  unsolved: 288
-  timeout: 287
-  memout: 0
-- name: 2018-CVC4
-  competing: "no"
-  errorScore: 1
-  correctScore: 1238
-  CPUScore: 9636.401
-  WallScore: 9635.936
-  solved: 1238
-  solved_sat: 87
-  solved_unsat: 1151
-  unsolved: 400
-  timeout: 391
-  memout: 0
-- name: CVC4-SymBreak
-  competing: "no"
-  errorScore: 1
-  correctScore: 1235
-  CPUScore: 9695.328
-  WallScore: 9694.848
-  solved: 1235
-  solved_sat: 88
-  solved_unsat: 1147
-  unsolved: 403
-  timeout: 394
-  memout: 0
-- name: CVC4
-  competing: "yes"
-  errorScore: 1
-  correctScore: 1234
-  CPUScore: 9705.25
-  WallScore: 9704.786
-  solved: 1234
-  solved_sat: 88
-  solved_unsat: 1146
-  unsolved: 404
-  timeout: 395
-  memout: 0
-- name: veriT
-  competing: "yes"
-  errorScore: 1
-  correctScore: 1107
-  CPUScore: 10066.745
-  WallScore: 10049.121
-  solved: 1107
-  solved_sat: 0
-  solved_unsat: 1107
-  unsolved: 531
-  timeout: 365
-  memout: 15
 ---
