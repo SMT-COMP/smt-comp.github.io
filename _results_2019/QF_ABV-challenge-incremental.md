@@ -1,8 +1,8 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 07:03:27
+resultdate: 2019-07-04 11:58:37
 division: QF_ABV
-track: Challenge Track (incremental)
+track: track_incremental_challenge
 n_benchmarks: 9
 time_limit: 43200
 

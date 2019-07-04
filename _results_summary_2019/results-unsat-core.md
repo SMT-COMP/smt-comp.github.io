@@ -1,6 +1,6 @@
 ---
 layout: results_summary
-track: Unsat Core Track
+track: track_unsat_core
 scores: sequential,parallel
 ---
 

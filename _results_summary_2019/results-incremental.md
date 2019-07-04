@@ -1,5 +1,5 @@
 ---
 layout: results_summary
-track: Incremental Track
+track: track_incremental
 scores: parallel
 ---

@@ -1,8 +1,8 @@
 ---
 layout: result_uc
-resultdate: 2019-07-04 08:10:15
+resultdate: 2019-07-04 11:58:51
 division: BV
-track: Unsat Core Track
+track: track_unsat_core
 n_benchmarks: 233
 time_limit: 2400
 

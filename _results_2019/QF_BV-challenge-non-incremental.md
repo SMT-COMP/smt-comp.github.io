@@ -1,8 +1,8 @@
 ---
 layout: result
-resultdate: 2019-07-04 07:03:27
+resultdate: 2019-07-04 11:58:37
 division: QF_BV
-track: Challenge Track (non-incremental)
+track: track_single_query_challenge
 n_benchmarks: 7
 time_limit: 43200
 

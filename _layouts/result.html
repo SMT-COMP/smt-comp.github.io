@@ -2,10 +2,13 @@
 layout: default
 ---
 {% include tablesorter.html %}
-<h2>{{ page.division }} ({{ page.track }})</h2>
+{% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
+{% assign track = track.pretty_name %}
+
+<h2>{{ page.division }} ({{ track }})</h2>
 <p>
 Competition results for the {{ page.division }} division
-in the {{ page.track }}. 
+in the {{ track }}.
 </p>
 
 <p>

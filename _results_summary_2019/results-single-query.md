@@ -1,6 +1,6 @@
 ---
 layout: results_summary
-track: Single Query Track
+track: track_single_query
 scores: sequential,parallel,sat,unsat,twentyfour
 ---
 

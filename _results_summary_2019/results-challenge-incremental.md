@@ -1,6 +1,6 @@
 ---
 layout: results_summary
-track: Challenge Track (incremental)
+track: track_incremental_challenge
 scores: parallel
 ---
 

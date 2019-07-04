@@ -9,4 +9,4 @@
 - raw_name: track_unsat_core
   pretty_name: Unsat Core Track
 - raw_name: track_model_validation
-  pretty_name: Model Validation Track
+  pretty_name: Model Validation Track (experimental)

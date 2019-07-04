@@ -1,8 +1,8 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 07:03:26
+resultdate: 2019-07-04 11:58:36
 division: QF_UF
-track: Incremental Track
+track: track_incremental
 n_benchmarks: 383
 time_limit: 2400
 

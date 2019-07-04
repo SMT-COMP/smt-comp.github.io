@@ -1,8 +1,8 @@
 ---
 layout: result
-resultdate: 2019-07-04 06:56:00
+resultdate: 2019-07-04 11:58:30
 division: AUFNIRA
-track: Single Query Track
+track: track_single_query
 n_benchmarks: 300
 time_limit: 2400
 

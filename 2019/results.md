@@ -5,7 +5,9 @@ layout: default
 
 ### Summary
 {% for summary in site.results_summary_2019 %}
-- [{{ summary.track }}]({{ summary.url }})
+{% assign track = site.data.tracks |where: "raw_name", summary.track  |first %}
+{% assign track = track.pretty_name %}
+- [{{ track }}]({{ summary.url }})
 {% endfor %}
 
 ### Divisions
@@ -13,7 +15,8 @@ layout: default
 {% for result in results %}
   {%- assign track_str = "" -%}
   {% for item in result.items %}
-    {% assign track = item.track %}
+    {% assign track = site.data.tracks |where: "raw_name", item.track  |first %}
+    {% assign track = track.pretty_name %}
     {%- assign track_str = track_str |append: "["
                                      |append: track
                                      |append: "]("

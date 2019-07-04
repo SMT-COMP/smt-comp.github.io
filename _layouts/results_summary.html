@@ -1,7 +1,10 @@
 ---
 layout: default
 ---
-<h2>SMT-COMP 2019 Results - {{ page.track }} (Summary)</h2>
+{% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
+{% assign track = track.pretty_name %}
+
+<h2>SMT-COMP 2019 Results - {{ track }} (Summary)</h2>
 
 <!-- Note: we assume that the order of solvers in the .md files is according
            to the ranking in the respective category! -->

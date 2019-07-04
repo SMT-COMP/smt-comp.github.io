@@ -1,8 +1,8 @@
 ---
 layout: result
-resultdate: 2019-07-04 06:56:01
+resultdate: 2019-07-04 11:58:31
 division: UFDTLIA
-track: Single Query Track
+track: track_single_query
 n_benchmarks: 299
 time_limit: 2400
 
