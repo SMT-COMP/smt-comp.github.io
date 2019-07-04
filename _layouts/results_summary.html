@@ -12,7 +12,7 @@ layout: default
 {%- assign scores = page.scores |split: "," -%}
 {% assign results = site.results_2019 |group_by: "track" |where: "name", page.track |first %}
 {% for division in results.items %}
-<h3>{{ division.division }}</h3>
+<h3><a href="{{ division.url }}">{{ division.division }}</a></h3>
   <table>
   {% for score in scores %}
     <tr>
