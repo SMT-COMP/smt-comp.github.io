@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{% include tablesorter.html %}
+{% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
+{% assign track = track.pretty_name %}
+
+<h2>{{ page.division }} ({{ track }})</h2>
+<p>
+Competition results for the {{ page.division }} division
+in the {{ track }}. 
+</p>
+
+<p>
+Page generated on {{ page.resultdate | time_to_string }}
+</p>
+
+<p>
+<b>Benchmarks</b>: {{ page.n_benchmarks }}
+</br>
+<b>Time Limit:</b> {{ page.time_limit }} seconds
+</p>
+
+<p>
+This track is experimental. Solvers are only ranked by performance, but no
+winner is selected.
+</p>
+
+<h3>Sequential Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correct Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+        <th>Timeout</th>
+        <th>Memout</th>
+    </tr>
+</thead>
+{% for solver in page.sequential %}
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.timeout }}</td>
+    <td>{{ solver.memout }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Error Score</th>
+        <th>Correct Score</th>
+        <th>CPU Time Score</th>
+        <th>Wall Time Score</th>
+        <th>Timeout</th>
+        <th>Memout</th>
+    </tr>
+</thead>
+{% for solver in page.parallel %}
+<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+    </td>
+    <td>{{ solver.errorScore }}</td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.CPUScore }}</td>
+    <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.timeout }}</td>
+    <td>{{ solver.memout }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+</p>
