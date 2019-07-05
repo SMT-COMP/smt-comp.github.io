@@ -21,50 +21,58 @@ Results are given ranked by performance for each scoring scheme
 {% for division in results.items %}
 <h3><a href="{{ division.url }}">{{ division.division }}</a></h3>
   <table>
+    <thead>
+    <th>Scoring Scheme</th><th>Winner</th><th>Ranking</th>
+    </thead>
   {% for score in scores %}
     <tr>
     {% if score == "sequential" %}
       {%- assign division_score = division.sequential -%}
       {%- assign score_str = "Sequential Performance" -%}
+      {%- assign winner = division.winner_seq -%}
     {% elsif score == "parallel" %}
       {%- assign division_score = division.parallel -%}
       {%- assign score_str = "Parallel Performance" -%}
+      {%- assign winner = division.winner_par -%}
     {% elsif score == "sat" %}
       {%- assign division_score = division.sat -%}
       {%- assign score_str = "SAT Performance" -%}
+      {%- assign winner = division.winner_sat -%}
     {% elsif score == "unsat" %}
       {%- assign division_score = division.unsat -%}
       {%- assign score_str = "UNSAT Performance" -%}
+      {%- assign winner = division.winner_unsat -%}
     {% elsif score == "twentyfour" %}
       {%- assign division_score = division.twentyfour -%}
       {%- assign score_str = "24s Performance" -%}
+      {%- assign winner = division.winner_24s -%}
     {% endif %}
-    {%- assign winners_str = "" -%}
+    {%- assign ranking = "" -%}
     {% for solver in division_score %}
       {%- assign participant = site.participants_2019 |where:"name", solver.name | first -%}
       {%- assign nc_str = "" -%}
-      {%- assign nc_td_str = "" -%}
+      {%- assign nc_class_str = "" -%}
       {%- if solver.competing == "no" -%}
         {%- assign nc_str = '<sup><a href="#nc">n</a></sup>' -%}
-        {%- assign nc_td_str = ' class = "noncompeting"' -%}
+        {%- assign nc_class_str = ' class = "noncompeting"' -%}
       {%- endif -%}
-      {%- assign winners_str = winners_str
-        |append: '<td'
-        |append: nc_td_str
+      {%- assign ranking = ranking
+        |append: '<span'
+        |append: nc_class_str
         |append: '><a href="'
         |append: participant.url
         |append: '">'
         |append: solver.name
         |append: '</a>'
         |append: nc_str
-        |append: '</td>'
+        |append: '</span>'
         |append: ":" -%}
     {% endfor %}
-    {%- assign winners_str = winners_str |split: ":" -%}
+    {%- assign ranking = ranking |split: ":" -%}
+    {%- assign ranking = ranking |join: ", " -%}
       <td><b>{{ score_str }}</b></td>
-      {% for winner in winners_str %}
-        {{ winner }}
-      {% endfor %}
+      <td>{{ winner }}</td>
+      <td>{{ ranking }}</td>
     </tr>
   {% endfor %}
   </table>
