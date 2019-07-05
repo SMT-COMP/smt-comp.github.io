@@ -31,10 +31,18 @@ Page generated on {{ page.resultdate | time_to_string }}
     </thead>
     <tr>
         <td>
+          {% if page.winner_seq %}
             {{ page.winner_seq }}
+          {% else %}
+            &mdash;
+          {% endif %}
         </td>
         <td>
+          {% if page.winner_par %}
             {{ page.winner_par }}
+          {% else %}
+            &mdash;
+          {% endif %}
         </td>
     </tr>
 </table>
