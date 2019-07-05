@@ -48,28 +48,30 @@ Results are given ranked by performance for each scoring scheme
       {%- assign winner = division.winner_24s -%}
     {% endif %}
     {%- assign ranking = "" -%}
-    {% for solver in division_score %}
-      {%- assign participant = site.participants_2019 |where:"name", solver.name | first -%}
-      {%- assign nc_str = "" -%}
-      {%- assign nc_class_str = "" -%}
-      {%- if solver.competing == "no" -%}
-        {%- assign nc_str = '<sup><a href="#nc">n</a></sup>' -%}
-        {%- assign nc_class_str = ' class = "noncompeting"' -%}
-      {%- endif -%}
-      {%- assign ranking = ranking
-        |append: '<span'
-        |append: nc_class_str
-        |append: '><a href="'
-        |append: participant.url
-        |append: '">'
-        |append: solver.name
-        |append: '</a>'
-        |append: nc_str
-        |append: '</span>'
-        |append: ":" -%}
-    {% endfor %}
-    {%- assign ranking = ranking |split: ":" -%}
-    {%- assign ranking = ranking |join: ", " -%}
+    {% if winner %}
+      {% for solver in division_score %}
+        {%- assign participant = site.participants_2019 |where:"name", solver.name | first -%}
+        {%- assign nc_str = "" -%}
+        {%- assign nc_class_str = "" -%}
+        {%- if solver.competing == "no" -%}
+          {%- assign nc_str = '<sup><a href="#nc">n</a></sup>' -%}
+          {%- assign nc_class_str = ' class = "noncompeting"' -%}
+        {%- endif -%}
+        {%- assign ranking = ranking
+          |append: '<span'
+          |append: nc_class_str
+          |append: '><a href="'
+          |append: participant.url
+          |append: '">'
+          |append: solver.name
+          |append: '</a>'
+          |append: nc_str
+          |append: '</span>'
+          |append: ":" -%}
+      {% endfor %}
+      {%- assign ranking = ranking |split: ":" -%}
+      {%- assign ranking = ranking |join: ", " -%}
+    {% endif %}
       <td><b>{{ score_str }}</b></td>
       <td>{{ winner }}</td>
       <td>{{ ranking }}</td>
