@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-04 11:58:31
+resultdate: 2019-07-05 03:18:52
 division: QF_NIA
 track: track_single_query
 n_benchmarks: 11494
@@ -8,11 +8,47 @@ time_limit: 2400
 
 winner_seq: Par4
 winner_par: Par4
-winner_sat: CVC4
+winner_sat: Par4
 winner_unsat: Par4
 winner_24s: Par4
 
 sequential:
+- name: Par4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 8971
+  CPUScore: 6669100.357
+  WallScore: 6217845.833
+  solved: 8971
+  solved_sat: 6142
+  solved_unsat: 2829
+  unsolved: 2523
+  timeout: 2368
+  memout: 155
+- name: CVC4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 8289
+  CPUScore: 9049915.549
+  WallScore: 9312701.246
+  solved: 8289
+  solved_sat: 5785
+  solved_unsat: 2504
+  unsolved: 3205
+  timeout: 3145
+  memout: 60
+- name: Yices 2.6.2
+  competing: "yes"
+  errorScore: 0
+  correctScore: 7642
+  CPUScore: 9539458.61
+  WallScore: 9542887.595
+  solved: 7642
+  solved_sat: 5106
+  solved_unsat: 2536
+  unsolved: 3852
+  timeout: 3852
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -25,30 +61,30 @@ sequential:
   unsolved: 4107
   timeout: 4019
   memout: 59
-- name: Par4
+- name: Z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 5276
+  CPUScore: 15583575.037
+  WallScore: 15590828.09
+  solved: 5276
+  solved_sat: 3344
+  solved_unsat: 1932
+  unsolved: 6218
+  timeout: 6010
+  memout: 2
+- name: AProVE
   competing: "yes"
-  errorScore: 1
-  correctScore: 8970
-  CPUScore: 6669072.587
-  WallScore: 6217838.772
-  solved: 8970
-  solved_sat: 6141
-  solved_unsat: 2829
-  unsolved: 2524
-  timeout: 2368
-  memout: 155
-- name: CVC4
-  competing: "yes"
-  errorScore: 1
-  correctScore: 8288
-  CPUScore: 9049311.992
-  WallScore: 9312094.271
-  solved: 8288
-  solved_sat: 5785
-  solved_unsat: 2503
-  unsolved: 3206
-  timeout: 3145
-  memout: 60
+  errorScore: 0
+  correctScore: 4165
+  CPUScore: 14649432.473
+  WallScore: 17992548.137
+  solved: 4165
+  solved_sat: 4165
+  solved_unsat: 0
+  unsolved: 7329
+  timeout: 7233
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -61,91 +97,91 @@ sequential:
   unsolved: 3559
   timeout: 3526
   memout: 11
-- name: Yices 2.6.2
-  competing: "yes"
-  errorScore: 1
-  correctScore: 7642
-  CPUScore: 9537058.8
-  WallScore: 9540487.505
-  solved: 7642
-  solved_sat: 5106
-  solved_unsat: 2536
-  unsolved: 3852
-  timeout: 3851
-  memout: 0
-- name: MathSAT-default
-  competing: "yes"
-  errorScore: 3
-  correctScore: 8108
-  CPUScore: 8843149.122
-  WallScore: 8847789.645
-  solved: 8108
-  solved_sat: 5564
-  solved_unsat: 2544
-  unsolved: 3386
-  timeout: 3382
-  memout: 1
-- name: AProVE
-  competing: "yes"
-  errorScore: 4
-  correctScore: 4165
-  CPUScore: 14639832.473
-  WallScore: 17982948.137
-  solved: 4165
-  solved_sat: 4165
-  solved_unsat: 0
-  unsolved: 7329
-  timeout: 7230
-  memout: 0
-- name: Z3
-  competing: "no"
-  errorScore: 5
-  correctScore: 5275
-  CPUScore: 15573696.937
-  WallScore: 15580949.097
-  solved: 5275
-  solved_sat: 3343
-  solved_unsat: 1932
-  unsolved: 6219
-  timeout: 6008
-  memout: 2
-- name: ProB
-  competing: "yes"
-  errorScore: 5
-  correctScore: 348
-  CPUScore: 19333371.275
-  WallScore: 19446761.407
-  solved: 348
-  solved_sat: 264
-  solved_unsat: 84
-  unsolved: 11146
-  timeout: 7819
-  memout: 0
-- name: MathSAT-na-ext
-  competing: "yes"
-  errorScore: 7
-  correctScore: 7891
-  CPUScore: 9205250.196
-  WallScore: 9210891.152
-  solved: 7891
-  solved_sat: 5381
-  solved_unsat: 2510
-  unsolved: 3603
-  timeout: 3596
-  memout: 0
 - name: SMT-RAT
   competing: "yes"
-  errorScore: 8
+  errorScore: 1
   correctScore: 1041
-  CPUScore: 25092499.975
-  WallScore: 25107444.412
+  CPUScore: 25109297.915
+  WallScore: 25124244.802
   solved: 1041
   solved_sat: 764
   solved_unsat: 277
   unsolved: 10453
-  timeout: 10421
+  timeout: 10426
   memout: 1
+- name: MathSAT-default
+  competing: "yes"
+  errorScore: 2
+  correctScore: 8109
+  CPUScore: 8843151.29
+  WallScore: 8847791.813
+  solved: 8109
+  solved_sat: 5564
+  solved_unsat: 2545
+  unsolved: 3385
+  timeout: 3382
+  memout: 1
+- name: ProB
+  competing: "yes"
+  errorScore: 2
+  correctScore: 348
+  CPUScore: 19342971.005
+  WallScore: 19456361.587
+  solved: 348
+  solved_sat: 264
+  solved_unsat: 84
+  unsolved: 11146
+  timeout: 7822
+  memout: 0
+- name: MathSAT-na-ext
+  competing: "yes"
+  errorScore: 5
+  correctScore: 7892
+  CPUScore: 9207941.341
+  WallScore: 9213582.627
+  solved: 7892
+  solved_sat: 5382
+  solved_unsat: 2510
+  unsolved: 3602
+  timeout: 3597
+  memout: 0
 parallel:
+- name: Par4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 9084
+  CPUScore: 7001271.317
+  WallScore: 6089981.497
+  solved: 9084
+  solved_sat: 6229
+  solved_unsat: 2855
+  unsolved: 2410
+  timeout: 2255
+  memout: 155
+- name: CVC4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 8289
+  CPUScore: 9304966.749
+  WallScore: 9312543.256
+  solved: 8289
+  solved_sat: 5785
+  solved_unsat: 2504
+  unsolved: 3205
+  timeout: 3145
+  memout: 60
+- name: Yices 2.6.2
+  competing: "yes"
+  errorScore: 0
+  correctScore: 7642
+  CPUScore: 9542876.64
+  WallScore: 9542746.005
+  solved: 7642
+  solved_sat: 5106
+  solved_unsat: 2536
+  unsolved: 3852
+  timeout: 3852
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -158,30 +194,30 @@ parallel:
   unsolved: 4107
   timeout: 4019
   memout: 59
-- name: Par4
+- name: Z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 5276
+  CPUScore: 15590372.767
+  WallScore: 15590570.77
+  solved: 5276
+  solved_sat: 3344
+  solved_unsat: 1932
+  unsolved: 6218
+  timeout: 6010
+  memout: 2
+- name: AProVE
   competing: "yes"
-  errorScore: 1
-  correctScore: 9083
-  CPUScore: 7001243.547
-  WallScore: 6089974.436
-  solved: 9083
-  solved_sat: 6228
-  solved_unsat: 2855
-  unsolved: 2411
-  timeout: 2255
-  memout: 155
-- name: CVC4
-  competing: "yes"
-  errorScore: 1
-  correctScore: 8288
-  CPUScore: 9304363.192
-  WallScore: 9311936.281
-  solved: 8288
-  solved_sat: 5785
-  solved_unsat: 2503
-  unsolved: 3206
-  timeout: 3145
-  memout: 60
+  errorScore: 0
+  correctScore: 4168
+  CPUScore: 18008043.77
+  WallScore: 17992440.437
+  solved: 4168
+  solved_sat: 4168
+  solved_unsat: 0
+  unsolved: 7326
+  timeout: 7230
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -194,91 +230,67 @@ parallel:
   unsolved: 3559
   timeout: 3526
   memout: 11
-- name: Yices 2.6.2
-  competing: "yes"
-  errorScore: 1
-  correctScore: 7642
-  CPUScore: 9540476.64
-  WallScore: 9540346.005
-  solved: 7642
-  solved_sat: 5106
-  solved_unsat: 2536
-  unsolved: 3852
-  timeout: 3851
-  memout: 0
-- name: MathSAT-default
-  competing: "yes"
-  errorScore: 3
-  correctScore: 8108
-  CPUScore: 8847363.132
-  WallScore: 8847649.695
-  solved: 8108
-  solved_sat: 5564
-  solved_unsat: 2544
-  unsolved: 3386
-  timeout: 3382
-  memout: 1
-- name: AProVE
-  competing: "yes"
-  errorScore: 4
-  correctScore: 4168
-  CPUScore: 17998443.77
-  WallScore: 17982840.437
-  solved: 4168
-  solved_sat: 4168
-  solved_unsat: 0
-  unsolved: 7326
-  timeout: 7227
-  memout: 0
-- name: Z3
-  competing: "no"
-  errorScore: 5
-  correctScore: 5275
-  CPUScore: 15580494.147
-  WallScore: 15580692.137
-  solved: 5275
-  solved_sat: 3343
-  solved_unsat: 1932
-  unsolved: 6219
-  timeout: 6008
-  memout: 2
-- name: ProB
-  competing: "yes"
-  errorScore: 5
-  correctScore: 348
-  CPUScore: 19355642.845
-  WallScore: 19446528.287
-  solved: 348
-  solved_sat: 264
-  solved_unsat: 84
-  unsolved: 11146
-  timeout: 7819
-  memout: 0
-- name: MathSAT-na-ext
-  competing: "yes"
-  errorScore: 7
-  correctScore: 7891
-  CPUScore: 9210775.056
-  WallScore: 9210735.622
-  solved: 7891
-  solved_sat: 5381
-  solved_unsat: 2510
-  unsolved: 3603
-  timeout: 3596
-  memout: 0
 - name: SMT-RAT
   competing: "yes"
-  errorScore: 8
+  errorScore: 1
   correctScore: 1041
-  CPUScore: 25106365.855
-  WallScore: 25106987.322
+  CPUScore: 25123165.855
+  WallScore: 25123787.322
   solved: 1041
   solved_sat: 764
   solved_unsat: 277
   unsolved: 10453
-  timeout: 10421
+  timeout: 10426
   memout: 1
+- name: MathSAT-default
+  competing: "yes"
+  errorScore: 2
+  correctScore: 8109
+  CPUScore: 8847365.3
+  WallScore: 8847651.863
+  solved: 8109
+  solved_sat: 5564
+  solved_unsat: 2545
+  unsolved: 3385
+  timeout: 3382
+  memout: 1
+- name: ProB
+  competing: "yes"
+  errorScore: 2
+  correctScore: 348
+  CPUScore: 19365242.845
+  WallScore: 19456128.287
+  solved: 348
+  solved_sat: 264
+  solved_unsat: 84
+  unsolved: 11146
+  timeout: 7822
+  memout: 0
+- name: MathSAT-na-ext
+  competing: "yes"
+  errorScore: 5
+  correctScore: 7892
+  CPUScore: 9213466.411
+  WallScore: 9213426.977
+  solved: 7892
+  solved_sat: 5382
+  solved_unsat: 2510
+  unsolved: 3602
+  timeout: 3597
+  memout: 0
 sat:
+- name: Par4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 6229
+  CPUScore: 2107070.975
+  WallScore: 1402095.521
+  solved: 6229
+  solved_sat: 6229
+  solved_unsat: 0
+  unsolved: 5265
+  timeout: 2255
+  memout: 155
 - name: CVC4
   competing: "yes"
   errorScore: 0
@@ -291,6 +303,18 @@ sat:
   unsolved: 5709
   timeout: 3145
   memout: 60
+- name: Yices 2.6.2
+  competing: "yes"
+  errorScore: 0
+  correctScore: 5106
+  CPUScore: 4089051.978
+  WallScore: 4088940.878
+  solved: 5106
+  solved_sat: 5106
+  solved_unsat: 0
+  unsolved: 6388
+  timeout: 3852
+  memout: 0
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -313,20 +337,44 @@ sat:
   solved_sat: 4168
   solved_unsat: 0
   unsolved: 7326
-  timeout: 7227
+  timeout: 7230
   memout: 0
-- name: Par4
-  competing: "yes"
-  errorScore: 1
-  correctScore: 6228
-  CPUScore: 2107043.205
-  WallScore: 1402088.46
-  solved: 6228
-  solved_sat: 6228
+- name: Z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 3344
+  CPUScore: 8761977.162
+  WallScore: 8762119.984
+  solved: 3344
+  solved_sat: 3344
   solved_unsat: 0
-  unsolved: 5266
-  timeout: 2255
-  memout: 155
+  unsolved: 8150
+  timeout: 6010
+  memout: 2
+- name: SMT-RAT
+  competing: "yes"
+  errorScore: 0
+  correctScore: 764
+  CPUScore: 14340413.557
+  WallScore: 14340552.449
+  solved: 764
+  solved_sat: 764
+  solved_unsat: 0
+  unsolved: 10730
+  timeout: 10426
+  memout: 1
+- name: ProB
+  competing: "yes"
+  errorScore: 0
+  correctScore: 264
+  CPUScore: 11344334.432
+  WallScore: 11378531.281
+  solved: 264
+  solved_sat: 264
+  solved_unsat: 0
+  unsolved: 11230
+  timeout: 7822
+  memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -339,30 +387,6 @@ sat:
   unsolved: 5953
   timeout: 3526
   memout: 11
-- name: Yices 2.6.2
-  competing: "yes"
-  errorScore: 1
-  correctScore: 5106
-  CPUScore: 4086651.978
-  WallScore: 4086540.878
-  solved: 5106
-  solved_sat: 5106
-  solved_unsat: 0
-  unsolved: 6388
-  timeout: 3851
-  memout: 0
-- name: ProB
-  competing: "yes"
-  errorScore: 1
-  correctScore: 264
-  CPUScore: 11341934.432
-  WallScore: 11376131.281
-  solved: 264
-  solved_sat: 264
-  solved_unsat: 0
-  unsolved: 11230
-  timeout: 7819
-  memout: 0
 - name: MathSAT-default
   competing: "yes"
   errorScore: 2
@@ -375,41 +399,17 @@ sat:
   unsolved: 5930
   timeout: 3382
   memout: 1
-- name: Z3
-  competing: "no"
-  errorScore: 2
-  correctScore: 3343
-  CPUScore: 8759298.542
-  WallScore: 8759441.351
-  solved: 3343
-  solved_sat: 3343
-  solved_unsat: 0
-  unsolved: 8151
-  timeout: 6008
-  memout: 2
-- name: SMT-RAT
-  competing: "yes"
-  errorScore: 3
-  correctScore: 764
-  CPUScore: 14333213.557
-  WallScore: 14333352.449
-  solved: 764
-  solved_sat: 764
-  solved_unsat: 0
-  unsolved: 10730
-  timeout: 10421
-  memout: 1
 - name: MathSAT-na-ext
   competing: "yes"
-  errorScore: 7
-  correctScore: 5381
-  CPUScore: 3645326.007
-  WallScore: 3645355.066
-  solved: 5381
-  solved_sat: 5381
+  errorScore: 5
+  correctScore: 5382
+  CPUScore: 3648017.362
+  WallScore: 3648046.421
+  solved: 5382
+  solved_sat: 5382
   solved_unsat: 0
-  unsolved: 6113
-  timeout: 3596
+  unsolved: 6112
+  timeout: 3597
   memout: 0
 unsat:
 - name: Par4
@@ -424,6 +424,18 @@ unsat:
   unsolved: 8639
   timeout: 2255
   memout: 155
+- name: MathSAT-default
+  competing: "yes"
+  errorScore: 0
+  correctScore: 2545
+  CPUScore: 1152698.199
+  WallScore: 1152687.719
+  solved: 2545
+  solved_sat: 0
+  solved_unsat: 2545
+  unsolved: 8949
+  timeout: 3382
+  memout: 1
 - name: Yices 2.6.2
   competing: "yes"
   errorScore: 0
@@ -434,7 +446,7 @@ unsat:
   solved_sat: 0
   solved_unsat: 2536
   unsolved: 8958
-  timeout: 3851
+  timeout: 3852
   memout: 0
 - name: MathSAT-na-ext
   competing: "yes"
@@ -446,8 +458,20 @@ unsat:
   solved_sat: 0
   solved_unsat: 2510
   unsolved: 8984
-  timeout: 3596
+  timeout: 3597
   memout: 0
+- name: CVC4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 2504
+  CPUScore: 1308504.602
+  WallScore: 1309405.771
+  solved: 2504
+  solved_sat: 0
+  solved_unsat: 2504
+  unsolved: 8990
+  timeout: 3145
+  memout: 60
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
@@ -472,79 +496,91 @@ unsat:
   unsolved: 9208
   timeout: 4019
   memout: 59
-- name: MathSAT-default
-  competing: "yes"
-  errorScore: 1
-  correctScore: 2544
-  CPUScore: 1152696.031
-  WallScore: 1152685.551
-  solved: 2544
-  solved_sat: 0
-  solved_unsat: 2544
-  unsolved: 8950
-  timeout: 3382
-  memout: 1
-- name: CVC4
-  competing: "yes"
-  errorScore: 1
-  correctScore: 2503
-  CPUScore: 1307901.045
-  WallScore: 1308798.796
-  solved: 2503
-  solved_sat: 0
-  solved_unsat: 2503
-  unsolved: 8991
-  timeout: 3145
-  memout: 60
 - name: Z3
   competing: "no"
-  errorScore: 3
+  errorScore: 0
   correctScore: 1932
-  CPUScore: 2686539.823
-  WallScore: 2686533.161
+  CPUScore: 2693739.823
+  WallScore: 2693733.161
   solved: 1932
   solved_sat: 0
   solved_unsat: 1932
   unsolved: 9562
-  timeout: 6008
+  timeout: 6010
   memout: 2
-- name: ProB
-  competing: "yes"
-  errorScore: 4
-  correctScore: 84
-  CPUScore: 4802905.199
-  WallScore: 4836172.492
-  solved: 84
-  solved_sat: 0
-  solved_unsat: 84
-  unsolved: 11410
-  timeout: 7819
-  memout: 0
 - name: AProVE
   competing: "yes"
-  errorScore: 4
+  errorScore: 0
   correctScore: 0
-  CPUScore: 7077604.385
-  WallScore: 7077603.018
+  CPUScore: 7087204.385
+  WallScore: 7087203.018
   solved: 0
   solved_sat: 0
   solved_unsat: 0
   unsolved: 11494
-  timeout: 7227
+  timeout: 7230
   memout: 0
 - name: SMT-RAT
   competing: "yes"
-  errorScore: 5
+  errorScore: 1
   correctScore: 277
-  CPUScore: 6426298.149
-  WallScore: 6426758.956
+  CPUScore: 6435898.149
+  WallScore: 6436358.956
   solved: 277
   solved_sat: 0
   solved_unsat: 277
   unsolved: 11217
-  timeout: 10421
+  timeout: 10426
   memout: 1
+- name: ProB
+  competing: "yes"
+  errorScore: 2
+  correctScore: 84
+  CPUScore: 4807705.199
+  WallScore: 4840972.492
+  solved: 84
+  solved_sat: 0
+  solved_unsat: 84
+  unsolved: 11410
+  timeout: 7822
+  memout: 0
 twentyfour:
+- name: Par4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 7994
+  CPUScore: 159469.142
+  WallScore: 104683.853
+  solved: 7994
+  solved_sat: 5374
+  solved_unsat: 2620
+  unsolved: 3500
+  timeout: 3345
+  memout: 155
+- name: Yices 2.6.2
+  competing: "yes"
+  errorScore: 0
+  correctScore: 6539
+  CPUScore: 134264.703
+  WallScore: 134175.099
+  solved: 6539
+  solved_sat: 4209
+  solved_unsat: 2330
+  unsolved: 4955
+  timeout: 4955
+  memout: 0
+- name: CVC4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 5043
+  CPUScore: 174751.229
+  WallScore: 174566.816
+  solved: 5043
+  solved_sat: 3226
+  solved_unsat: 1817
+  unsolved: 6451
+  timeout: 6391
+  memout: 60
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
@@ -557,42 +593,42 @@ twentyfour:
   unsolved: 6512
   timeout: 6453
   memout: 59
-- name: Par4
+- name: Z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 3088
+  CPUScore: 219342.011
+  WallScore: 219160.752
+  solved: 3088
+  solved_sat: 1824
+  solved_unsat: 1264
+  unsolved: 8406
+  timeout: 8398
+  memout: 2
+- name: AProVE
   competing: "yes"
-  errorScore: 1
-  correctScore: 7993
-  CPUScore: 159441.372
-  WallScore: 104676.792
-  solved: 7993
-  solved_sat: 5373
-  solved_unsat: 2620
-  unsolved: 3501
-  timeout: 3345
-  memout: 155
-- name: Yices 2.6.2
-  competing: "yes"
-  errorScore: 1
-  correctScore: 6539
-  CPUScore: 134240.703
-  WallScore: 134151.099
-  solved: 6539
-  solved_sat: 4209
-  solved_unsat: 2330
-  unsolved: 4955
-  timeout: 4954
+  errorScore: 0
+  correctScore: 3003
+  CPUScore: 219126.35
+  WallScore: 211881.334
+  solved: 3003
+  solved_sat: 3003
+  solved_unsat: 0
+  unsolved: 8491
+  timeout: 8395
   memout: 0
-- name: CVC4
+- name: MathSAT-default
   competing: "yes"
   errorScore: 1
-  correctScore: 5043
-  CPUScore: 174727.229
-  WallScore: 174542.816
-  solved: 5043
-  solved_sat: 3226
-  solved_unsat: 1817
-  unsolved: 6451
-  timeout: 6390
-  memout: 60
+  correctScore: 5932
+  CPUScore: 159519.94
+  WallScore: 159330.214
+  solved: 5932
+  solved_sat: 3916
+  solved_unsat: 2016
+  unsolved: 5562
+  timeout: 5560
+  memout: 1
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 1
@@ -605,76 +641,40 @@ twentyfour:
   unsolved: 6733
   timeout: 6721
   memout: 11
-- name: MathSAT-default
-  competing: "yes"
-  errorScore: 2
-  correctScore: 5931
-  CPUScore: 159517.772
-  WallScore: 159328.045
-  solved: 5931
-  solved_sat: 3916
-  solved_unsat: 2015
-  unsolved: 5563
-  timeout: 5560
-  memout: 1
-- name: AProVE
-  competing: "yes"
-  errorScore: 4
-  correctScore: 3003
-  CPUScore: 219030.35
-  WallScore: 211785.334
-  solved: 3003
-  solved_sat: 3003
-  solved_unsat: 0
-  unsolved: 8491
-  timeout: 8392
-  memout: 0
-- name: MathSAT-na-ext
-  competing: "yes"
-  errorScore: 5
-  correctScore: 5855
-  CPUScore: 160021.328
-  WallScore: 159849.909
-  solved: 5855
-  solved_sat: 3868
-  solved_unsat: 1987
-  unsolved: 5639
-  timeout: 5634
-  memout: 0
-- name: Z3
-  competing: "no"
-  errorScore: 5
-  correctScore: 3088
-  CPUScore: 219222.011
-  WallScore: 219040.752
-  solved: 3088
-  solved_sat: 1824
-  solved_unsat: 1264
-  unsolved: 8406
-  timeout: 8395
-  memout: 2
-- name: ProB
-  competing: "yes"
-  errorScore: 5
-  correctScore: 290
-  CPUScore: 212805.663
-  WallScore: 212872.727
-  solved: 290
-  solved_sat: 233
-  solved_unsat: 57
-  unsolved: 11204
-  timeout: 8490
-  memout: 0
 - name: SMT-RAT
   competing: "yes"
-  errorScore: 8
+  errorScore: 1
   correctScore: 828
-  CPUScore: 257535.345
-  WallScore: 257542.041
+  CPUScore: 257703.345
+  WallScore: 257710.041
   solved: 828
   solved_sat: 583
   solved_unsat: 245
   unsolved: 10666
-  timeout: 10658
+  timeout: 10663
   memout: 1
+- name: ProB
+  competing: "yes"
+  errorScore: 2
+  correctScore: 290
+  CPUScore: 212901.663
+  WallScore: 212968.727
+  solved: 290
+  solved_sat: 233
+  solved_unsat: 57
+  unsolved: 11204
+  timeout: 8493
+  memout: 0
+- name: MathSAT-na-ext
+  competing: "yes"
+  errorScore: 3
+  correctScore: 5855
+  CPUScore: 160069.328
+  WallScore: 159897.909
+  solved: 5855
+  solved_sat: 3868
+  solved_unsat: 1987
+  unsolved: 5639
+  timeout: 5636
+  memout: 0
 ---

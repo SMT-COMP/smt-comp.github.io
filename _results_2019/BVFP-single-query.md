@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-04 11:58:30
+resultdate: 2019-07-05 03:18:51
 division: BVFP
 track: track_single_query
 n_benchmarks: 24
