@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-05 03:18:52
+resultdate: 2019-07-05 04:56:49
 division: QF_BV
 track: track_single_query
 n_benchmarks: 8909
