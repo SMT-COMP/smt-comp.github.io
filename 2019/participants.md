@@ -54,10 +54,14 @@ X
 <td class="right"><a href="/2019/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
 </tr>
 {% endfor %}
-<tr>
-<td><b>Total</b></td>
-{%- for track_descr in site.data.tracks -%}
-    {%- assign num_p = 0 -%}
+
+{%- assign num_solvers_list = "" -%}
+{%- assign num_solvers_comp_list = "" -%}
+{%- assign num_solvers_non_comp_list = "" -%}
+{%- for track in site.data.tracks -%}
+    {%- assign num_solvers = 0 -%}
+    {%- assign num_solvers_comp = 0 -%}
+    {%- assign num_solvers_non_comp = 0 -%}
     {%- for solver in site.participants_2019 -%}
         {%- assign this_track_found = false -%}
         {%- for slogic in solver.logics -%}
@@ -65,16 +69,58 @@ X
                 {%- break -%}
             {%- endif -%}
             {%- for strack in slogic.tracks -%}
-                {%- if strack == track_descr.raw_name -%}
-                    {%- assign num_p = num_p |plus: 1 -%}
+                {%- if strack == track.raw_name -%}
+                    {%- assign num_solvers = num_solvers |plus: 1 -%}
                     {%- assign this_track_found = true -%}
+                    {% if solver.competing == "yes" %}
+                      {% assign num_solvers_comp = num_solvers_comp |plus: 1 -%}
+                    {% else %}
+                      {% assign num_solvers_non_comp = num_solvers_non_comp |plus: 1 -%}
+                    {% endif %}
                     {%- break -%}
                 {%- endif -%}
             {%- endfor -%}
         {%- endfor -%}
     {%- endfor -%}
-<td><b>{{num_p}}</b></td>
+    {%- assign num_solvers_list = num_solvers_list
+                                  |append: num_solvers
+                                  |append: ":" -%}
+    {%- assign num_solvers_comp_list = num_solvers_comp_list
+                                      |append: num_solvers_comp
+                                      |append: ":" -%}
+    {%- assign num_solvers_non_comp_list = num_solvers_non_comp_list
+                                      |append: num_solvers_non_comp
+                                      |append: ":" -%}
 {%- endfor -%}
+{%- assign num_solvers_list = num_solvers_list |split: ":" -%}
+{%- assign num_solvers_comp_list = num_solvers_comp_list |split: ":" -%}
+{%- assign num_solvers_non_comp_list = num_solvers_non_comp_list |split: ":" -%}
+
+<tr class="total">
+<td>Total - competing</td>
+{% for num in num_solvers_comp_list %}
+<td class="center">{{ num }}</td>
+{% endfor %}
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total - non-competing</td>
+{% for num in num_solvers_non_comp_list %}
+<td class="center">{{ num }}</td>
+{% endfor %}
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><b>Total</b></td>
+{% for num in num_solvers_list %}
+<td class="center"><b>{{ num }}</b></td>
+{% endfor %}
 <td></td>
 <td></td>
 <td><b>{{ sum_of_seeds }} </b> (mod 2<sup>30</sup>)</td>
@@ -150,7 +196,7 @@ X
         {%- endfor -%}
 </tr>
     {%- endfor -%}
-<tr>
+<tr class="total">
 <td><b>Total</b></td>
     {%- for track_descr in site.data.tracks -%}
         {%- assign num_p = 0 -%}
