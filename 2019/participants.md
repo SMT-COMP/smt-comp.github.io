@@ -138,7 +138,7 @@ These are the logic divisions in which each solver is participating.
 <tr>
 <th>Solver</th>
 {%- for track in logic.tracks -%}
-<th>
+<th class="center">
   {% assign tt = site.data.tracks |where: "raw_name", track  |first %}
   {{ tt.pretty_name }}
 </th>
@@ -165,7 +165,7 @@ These are the logic divisions in which each solver is participating.
         {%- for track in site.data.tracks -%}
             {%- for l_track in logic.tracks -%}
                 {%- if l_track == track.raw_name -%}
-<td>
+<td class="center">
                     {%- for s_logic in solver.logics -%}
                         {%- if s_logic.name == logic.name -%}
                             {%- for s_track in s_logic.tracks -%}
@@ -183,31 +183,58 @@ X
         {%- endfor -%}
 </tr>
     {%- endfor -%}
-<tr class="total">
-<td><b>Total</b></td>
-    {%- for track in site.data.tracks -%}
-        {%- assign num_p = 0 -%}
-        {%- for solver in site.participants_2019 -%}
-            {%- assign this_logic_found = false -%}
-            {%- for slogic in solver.logics -%}
-                {%- if this_logic_found == true -%}
-                    {%- break -%}
-                {%- endif -%}
-                {%- if slogic.name == logic.name -%}
-                    {%- assign this_logic_found = true -%}
-                    {%- for strack in slogic.tracks -%}
-                        {%- if strack == track.raw_name -%}
-                            {% assign num_p = num_p |plus: 1 -%}
-                            {%- break -%}
-                        {%- endif -%}
-                    {%- endfor -%}
-                {%- endif -%}
-            {%- endfor -%}
-        {%- endfor -%}
-        {%- if num_p > 0 -%}
-<td><b>{{num_p}}</b></td>
+
+
+{%- assign num_solvers_list = "" -%}
+{%- assign num_solvers_comp_list = "" -%}
+{%- assign num_solvers_non_comp_list = "" -%}
+{%- for track in site.data.tracks -%}
+    {%- assign num_solvers = 0 -%}
+    {%- assign num_solvers_comp = 0 -%}
+    {%- assign num_solvers_non_comp = 0 -%}
+    {%- for solver in site.participants_2019 -%}
+        {%- assign in_track = solver.logics |where: "name", logic.name |where: "tracks", track.raw_name |first -%}
+        {% if in_track %}
+          {%- assign num_solvers = num_solvers |plus: 1 -%}
+          {% if solver.competing == "yes" %}
+            {% assign num_solvers_comp = num_solvers_comp |plus: 1 -%}
+          {% else %}
+            {% assign num_solvers_non_comp = num_solvers_non_comp |plus: 1 -%}
+          {% endif %}
         {%- endif -%}
     {%- endfor -%}
+    {%- if num_solvers > 0 -%}
+      {%- assign num_solvers_list = num_solvers_list
+                                    |append: num_solvers
+                                    |append: ":" -%}
+      {%- assign num_solvers_comp_list = num_solvers_comp_list
+                                        |append: num_solvers_comp
+                                        |append: ":" -%}
+      {%- assign num_solvers_non_comp_list = num_solvers_non_comp_list
+                                        |append: num_solvers_non_comp
+                                        |append: ":" -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- assign num_solvers_list = num_solvers_list |split: ":" -%}
+{%- assign num_solvers_comp_list = num_solvers_comp_list |split: ":" -%}
+{%- assign num_solvers_non_comp_list = num_solvers_non_comp_list |split: ":" -%}
+<tr class="total">
+<td>Total - competing</td>
+{% for num in num_solvers_comp_list %}
+<td class="center">{{ num }}</td>
+{% endfor %}
+</tr>
+<tr>
+<td>Total - non-competing</td>
+{% for num in num_solvers_non_comp_list %}
+<td class="center">{{ num }}</td>
+{% endfor %}
+</tr>
+<tr>
+<td><b>Total</b></td>
+{% for num in num_solvers_list %}
+<td class="center"><b>{{ num }}</b></td>
+{% endfor %}
 </tr>
 </table>
 {% endfor %}
