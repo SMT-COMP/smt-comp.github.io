@@ -31,21 +31,21 @@ non-competing solvers by the organizers for comparison.
 <td>
 <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
 </td>
-    {%- for track_descr in site.data.tracks -%}
+{%- for track in site.data.tracks -%}
 <td class="center">
-        {%- assign this_track_found = false -%}
-        {%- for slogic in solver.logics -%}
-            {% if this_track_found == true -%}
-                {%- break -%}
-            {% endif %}
-            {%- for strack in slogic.tracks -%}
-                {%- if strack == track_descr.raw_name -%}
+  {%- assign this_track_found = false -%}
+  {%- for slogic in solver.logics -%}
+      {% if this_track_found == true -%}
+          {%- break -%}
+      {% endif %}
+      {%- for strack in slogic.tracks -%}
+          {%- if strack == track.raw_name -%}
 X
-                    {%- assign this_track_found = true -%}
-                    {%- break -%}
-                {%- endif -%}
-            {%- endfor -%}
-        {%- endfor -%}
+            {%- assign this_track_found = true -%}
+            {%- break -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
 </td>
     {%- endfor -%}
 <td class="right">{{- solver.preliminaryID -}}</td>
@@ -63,24 +63,15 @@ X
     {%- assign num_solvers_comp = 0 -%}
     {%- assign num_solvers_non_comp = 0 -%}
     {%- for solver in site.participants_2019 -%}
-        {%- assign this_track_found = false -%}
-        {%- for slogic in solver.logics -%}
-            {%- if this_track_found == true -%}
-                {%- break -%}
-            {%- endif -%}
-            {%- for strack in slogic.tracks -%}
-                {%- if strack == track.raw_name -%}
-                    {%- assign num_solvers = num_solvers |plus: 1 -%}
-                    {%- assign this_track_found = true -%}
-                    {% if solver.competing == "yes" %}
-                      {% assign num_solvers_comp = num_solvers_comp |plus: 1 -%}
-                    {% else %}
-                      {% assign num_solvers_non_comp = num_solvers_non_comp |plus: 1 -%}
-                    {% endif %}
-                    {%- break -%}
-                {%- endif -%}
-            {%- endfor -%}
-        {%- endfor -%}
+        {%- assign in_track = solver.logics |where: "tracks", track.raw_name |first -%}
+        {% if in_track %}
+          {%- assign num_solvers = num_solvers |plus: 1 -%}
+          {% if solver.competing == "yes" %}
+            {% assign num_solvers_comp = num_solvers_comp |plus: 1 -%}
+          {% else %}
+            {% assign num_solvers_non_comp = num_solvers_non_comp |plus: 1 -%}
+          {% endif %}
+        {%- endif -%}
     {%- endfor -%}
     {%- assign num_solvers_list = num_solvers_list
                                   |append: num_solvers
@@ -146,16 +137,12 @@ These are the logic divisions in which each solver is participating.
 <table>
 <tr>
 <th>Solver</th>
-    {%- for track in logic.tracks -%}
+{%- for track in logic.tracks -%}
 <th>
-        {%- for track_descr in site.data.tracks -%}
-            {%- if track == track_descr.raw_name -%}
-                {{- track_descr.pretty_name -}}
-                {%- break -%}
-            {%- endif -%}
-        {%- endfor -%}
+  {% assign tt = site.data.tracks |where: "raw_name", track  |first %}
+  {{ tt.pretty_name }}
 </th>
-    {%- endfor -%}
+{%- endfor -%}
 </tr>
     {%- for solver in site.participants_2019 -%}
         {%- assign participates_in_logic = false -%}
@@ -175,14 +162,14 @@ These are the logic divisions in which each solver is participating.
 <sup><a href="#nc">n</a></sup>
         {%- endif -%}
 </td>
-        {%- for track_descr in site.data.tracks -%}
-            {%- for track in logic.tracks -%}
-                {%- if track == track_descr.raw_name -%}
+        {%- for track in site.data.tracks -%}
+            {%- for l_track in logic.tracks -%}
+                {%- if l_track == track.raw_name -%}
 <td>
                     {%- for s_logic in solver.logics -%}
                         {%- if s_logic.name == logic.name -%}
                             {%- for s_track in s_logic.tracks -%}
-                                {%- if track == s_track -%}
+                                {%- if l_track == s_track -%}
 X
                                     {%- break -%}
                                 {%- endif -%}
@@ -198,7 +185,7 @@ X
     {%- endfor -%}
 <tr class="total">
 <td><b>Total</b></td>
-    {%- for track_descr in site.data.tracks -%}
+    {%- for track in site.data.tracks -%}
         {%- assign num_p = 0 -%}
         {%- for solver in site.participants_2019 -%}
             {%- assign this_logic_found = false -%}
@@ -209,7 +196,7 @@ X
                 {%- if slogic.name == logic.name -%}
                     {%- assign this_logic_found = true -%}
                     {%- for strack in slogic.tracks -%}
-                        {%- if strack == track_descr.raw_name -%}
+                        {%- if strack == track.raw_name -%}
                             {% assign num_p = num_p |plus: 1 -%}
                             {%- break -%}
                         {%- endif -%}
