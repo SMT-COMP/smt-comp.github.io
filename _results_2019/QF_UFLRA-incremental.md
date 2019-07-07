@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 11:58:36
+resultdate: 2019-07-07 03:09:42
 division: QF_UFLRA
 track: track_incremental
 n_benchmarks: 1529
@@ -15,6 +15,7 @@ parallel:
   correctScore: 8351
   CPUScore: 12199.05
   WallScore: 11937.682
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: 2018-Z3 (incremental)
@@ -23,6 +24,7 @@ parallel:
   correctScore: 8351
   CPUScore: 15174.152
   WallScore: 14906.169
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: Yices 2.6.2 Incremental
@@ -31,6 +33,7 @@ parallel:
   correctScore: 8347
   CPUScore: 22895.649
   WallScore: 22654.767
+  unsolved: 4
   timeout: 2
   memout: 0
 - name: CVC4-inc
@@ -39,6 +42,7 @@ parallel:
   correctScore: 8341
   CPUScore: 58141.839
   WallScore: 57724.599
+  unsolved: 10
   timeout: 4
   memout: 0
 - name: SMTInterpol
@@ -47,6 +51,7 @@ parallel:
   correctScore: 8330
   CPUScore: 66045.196
   WallScore: 58093.398
+  unsolved: 21
   timeout: 9
   memout: 0
 ---

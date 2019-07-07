@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 11:58:36
+resultdate: 2019-07-07 03:09:42
 division: QF_UF
 track: track_incremental
 n_benchmarks: 383
@@ -15,6 +15,7 @@ parallel:
   correctScore: 766
   CPUScore: 95.395
   WallScore: 78.235
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: Z3
@@ -23,6 +24,7 @@ parallel:
   correctScore: 766
   CPUScore: 255.207
   WallScore: 238.729
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: CVC4-inc
@@ -31,6 +33,7 @@ parallel:
   correctScore: 766
   CPUScore: 453.169
   WallScore: 422.817
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: SMTInterpol
@@ -39,6 +42,7 @@ parallel:
   correctScore: 766
   CPUScore: 1562.596
   WallScore: 599.677
+  unsolved: 0
   timeout: 0
   memout: 0
 ---

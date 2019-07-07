@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 11:58:36
+resultdate: 2019-07-07 03:09:42
 division: BVFP
 track: track_incremental
 n_benchmarks: 10
@@ -15,6 +15,7 @@ parallel:
   correctScore: 3224
   CPUScore: 16839.111
   WallScore: 16838.965
+  unsolved: 2831
   timeout: 7
   memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
@@ -23,6 +24,7 @@ parallel:
   correctScore: 2378
   CPUScore: 82.06
   WallScore: 52.79
+  unsolved: 3677
   timeout: 0
   memout: 0
 - name: Z3
@@ -31,6 +33,7 @@ parallel:
   correctScore: 0
   CPUScore: 0.03
   WallScore: 0.106
+  unsolved: 6055
   timeout: 0
   memout: 0
 ---

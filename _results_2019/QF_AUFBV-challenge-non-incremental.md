@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-04 11:58:37
+resultdate: 2019-07-07 03:09:48
 division: QF_AUFBV
 track: track_single_query_challenge
 n_benchmarks: 15

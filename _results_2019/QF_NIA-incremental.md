@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 11:58:36
+resultdate: 2019-07-07 03:09:42
 division: QF_NIA
 track: track_incremental
 n_benchmarks: 10
@@ -15,6 +15,7 @@ parallel:
   correctScore: 4181657
   CPUScore: 1765.619
   WallScore: 1548.162
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: MathSAT-na-ext
@@ -23,6 +24,7 @@ parallel:
   correctScore: 4181657
   CPUScore: 1798.052
   WallScore: 1583.038
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: 2018-CVC4 (incremental)
@@ -31,6 +33,7 @@ parallel:
   correctScore: 4165515
   CPUScore: 9395.719
   WallScore: 9121.03
+  unsolved: 16142
   timeout: 1
   memout: 0
 - name: CVC4-inc
@@ -39,6 +42,7 @@ parallel:
   correctScore: 3635509
   CPUScore: 14554.658
   WallScore: 14363.525
+  unsolved: 546148
   timeout: 3
   memout: 0
 - name: Z3
@@ -47,6 +51,7 @@ parallel:
   correctScore: 3250402
   CPUScore: 6375.376
   WallScore: 6233.953
+  unsolved: 931255
   timeout: 2
   memout: 0
 - name: Yices 2.6.2 Incremental
@@ -55,6 +60,7 @@ parallel:
   correctScore: 37804
   CPUScore: 24000.0
   WallScore: 24000.0
+  unsolved: 4143853
   timeout: 10
   memout: 0
 ---

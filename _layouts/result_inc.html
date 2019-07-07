@@ -48,6 +48,7 @@ Page generated on {{ page.resultdate | time_to_string }}
         <th>Correct Score</th>
         <th>CPU Time Score</th>
         <th>Wall Time Score</th>
+        <th>Unsolved</th>
         <th>Timeout</th>
         <th>Memout</th>
     </tr>
@@ -62,6 +63,7 @@ Page generated on {{ page.resultdate | time_to_string }}
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.WallScore }}</td>
+    <td>{{ solver.unsolved}}</td>
     <td>{{ solver.timeout }}</td>
     <td>{{ solver.memout }}</td>
 </tr>

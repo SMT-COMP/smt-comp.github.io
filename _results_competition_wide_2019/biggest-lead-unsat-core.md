@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 01:44:58
+resultdate: 2019-07-07 03:10:03
 track: track_unsat_core
 recognition: biggest_lead
 

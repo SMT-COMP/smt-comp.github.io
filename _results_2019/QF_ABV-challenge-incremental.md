@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 11:58:37
+resultdate: 2019-07-07 03:09:49
 division: QF_ABV
 track: track_incremental_challenge
 n_benchmarks: 9
@@ -15,6 +15,7 @@ parallel:
   correctScore: 135
   CPUScore: 10299.752
   WallScore: 10298.927
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: 2018-Boolector (incremental)
@@ -23,6 +24,7 @@ parallel:
   correctScore: 133
   CPUScore: 55370.94
   WallScore: 55373.66
+  unsolved: 2
   timeout: 0
   memout: 0
 - name: Yices 2.6.2 Incremental
@@ -31,6 +33,7 @@ parallel:
   correctScore: 130
   CPUScore: 147867.07
   WallScore: 147872.72
+  unsolved: 5
   timeout: 2
   memout: 0
 - name: Z3
@@ -39,6 +42,7 @@ parallel:
   correctScore: 119
   CPUScore: 332366.8
   WallScore: 332380.4
+  unsolved: 16
   timeout: 7
   memout: 0
 - name: CVC4-inc
@@ -47,6 +51,7 @@ parallel:
   correctScore: 89
   CPUScore: 388787.5
   WallScore: 388800.0
+  unsolved: 46
   timeout: 9
   memout: 0
 ---

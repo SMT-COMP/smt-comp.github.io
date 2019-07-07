@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-05 04:56:49
+resultdate: 2019-07-07 03:08:37
 division: QF_ALIA
 track: track_single_query
 n_benchmarks: 139

@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 11:58:36
+resultdate: 2019-07-07 03:09:42
 division: QF_UFLIA
 track: track_incremental
 n_benchmarks: 386
@@ -15,6 +15,7 @@ parallel:
   correctScore: 762722
   CPUScore: 175266.991
   WallScore: 175209.006
+  unsolved: 3872
   timeout: 58
   memout: 0
 - name: Z3
@@ -23,6 +24,7 @@ parallel:
   correctScore: 759715
   CPUScore: 198487.166
   WallScore: 198467.982
+  unsolved: 6879
   timeout: 79
   memout: 0
 - name: SMTInterpol
@@ -31,6 +33,7 @@ parallel:
   correctScore: 757451
   CPUScore: 242787.652
   WallScore: 241991.895
+  unsolved: 9143
   timeout: 95
   memout: 0
 - name: CVC4-inc
@@ -39,6 +42,7 @@ parallel:
   correctScore: 756992
   CPUScore: 210123.105
   WallScore: 210094.716
+  unsolved: 9602
   timeout: 78
   memout: 0
 - name: Yices 2.6.2 Incremental
@@ -47,6 +51,7 @@ parallel:
   correctScore: 756304
   CPUScore: 192201.894
   WallScore: 192186.035
+  unsolved: 10290
   timeout: 77
   memout: 0
 ---

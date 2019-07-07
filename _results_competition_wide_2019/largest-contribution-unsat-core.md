@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 01:45:03
+resultdate: 2019-07-07 03:10:08
 track: track_unsat_core
 recognition: largest_contribution
 

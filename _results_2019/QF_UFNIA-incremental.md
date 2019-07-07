@@ -1,6 +1,6 @@
 ---
 layout: result_inc
-resultdate: 2019-07-04 11:58:36
+resultdate: 2019-07-07 03:09:42
 division: QF_UFNIA
 track: track_incremental
 n_benchmarks: 1
@@ -15,6 +15,7 @@ parallel:
   correctScore: 84573
   CPUScore: 39.347
   WallScore: 34.324
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: MathSAT-na-ext
@@ -23,6 +24,7 @@ parallel:
   correctScore: 84573
   CPUScore: 40.409
   WallScore: 35.394
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: Z3
@@ -31,6 +33,7 @@ parallel:
   correctScore: 84573
   CPUScore: 54.544
   WallScore: 50.258
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: 2018-Z3 (incremental)
@@ -39,6 +42,7 @@ parallel:
   correctScore: 84573
   CPUScore: 61.195
   WallScore: 56.702
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: CVC4-inc
@@ -47,6 +51,7 @@ parallel:
   correctScore: 84573
   CPUScore: 259.433
   WallScore: 253.015
+  unsolved: 0
   timeout: 0
   memout: 0
 - name: Yices 2.6.2 Incremental
@@ -55,6 +60,7 @@ parallel:
   correctScore: 39
   CPUScore: 2400.0
   WallScore: 2400.0
+  unsolved: 84534
   timeout: 1
   memout: 0
 ---
