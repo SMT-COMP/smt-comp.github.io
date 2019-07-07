@@ -12,8 +12,8 @@
   link: 2019/specs.html
 - name: Participants
   link: 2019/participants.html
-  #- name: Results
-  #  link: results.html
+- name: Results
+  link: 2019/results.html
 - name: Benchmark submission
   link: benchmark_submission.html
 - name: Solver submission
