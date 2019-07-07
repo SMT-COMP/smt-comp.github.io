@@ -1,0 +1,213 @@
+---
+layout: default
+---
+{% include tablesorter.html %}
+{% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
+{% assign track = track.pretty_name %}
+
+{% if page.recognition == "biggest_lead" %}
+<h2>Biggest Lead Ranking- {{ track }}</h2>
+{% else %}
+<h2>Largest Contribution Ranking - {{ track }}</h2>
+{% endif %}
+
+<p>
+Page generated on {{ page.resultdate | time_to_string }}
+</p>
+
+{% assign divisions = site.results_2019 |group_by: "track" |where: "name", page.track |first %}
+<h3>Winners</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Sequential Performance</th>
+            <th>Parallel Performance</th>
+            <th>SAT Performance (parallel)</th>
+            <th>UNSAT Performance (parallel)</th>
+            <th>24 seconds Performance (parallel)</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+          {% if page.winner_seq %}
+            {{ page.winner_seq }}
+          {% else %}
+            &mdash;
+          {% endif %}
+        </td>
+        <td>
+          {% if page.winner_par %}
+            {{ page.winner_par }}
+          {% else %}
+            &mdash;
+          {% endif %}
+        </td>
+        <td>
+          {% if page.winner_sat %}
+            {{ page.winner_sat }}
+          {% else %}
+            &mdash;
+          {% endif %}
+        </td>
+        <td>
+          {% if page.winner_unsat %}
+            {{ page.winner_unsat }}
+          {% else %}
+            &mdash;
+          {% endif %}
+        </td>
+        <td>
+          {% if page.winner_24s %}
+            {{ page.winner_24s }}
+          {% else %}
+            &mdash;
+          {% endif %}
+        </td>
+    </tr>
+</table>
+
+{% if page.winner_seq %}
+<h3>Sequential Performance</h3>
+<table id="sequential-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+{% for solver in page.sequential %}
+<tr>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>
+    </td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.timeScore }}</td>
+    <td>
+      {% assign div = divisions.items |where: "division", solver.division |first -%}
+      <a href="{{ div.url }}">{{ solver.division }}</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+{% if page.winner_par %}
+<h3>Parallel Performance</h3>
+<table id="parallel-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+{% for solver in page.parallel %}
+<tr>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>
+    </td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.timeScore }}</td>
+    <td>
+      {% assign div = divisions.items |where: "division", solver.division |first -%}
+      <a href="{{ div.url }}">{{ solver.division }}</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+{% if page.winner_sat %}
+<h3>SAT Performance</h3>
+<table id="sat-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+{% for solver in page.sat %}
+<tr>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>
+    </td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.timeScore }}</td>
+    <td>
+      {% assign div = divisions.items |where: "division", solver.division |first -%}
+      <a href="{{ div.url }}">{{ solver.division }}</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+{% if page.winner_unsat %}
+<h3>UNSAT Performance</h3>
+<table id="unsat-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+{% for solver in page.unsat %}
+<tr>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>
+    </td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.timeScore }}</td>
+    <td>
+      {% assign div = divisions.items |where: "division", solver.division |first -%}
+      <a href="{{ div.url }}">{{ solver.division }}</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+{% if page.winner_24s %}
+<h3>24s Performance</h3>
+<table id="twentyfour-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+{% for solver in page.twentyfour %}
+<tr>
+    <td>
+      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      <a href="{{ participant.url }}">{{ solver.name }}</a>
+    </td>
+    <td>{{ solver.correctScore }}</td>
+    <td>{{ solver.timeScore }}</td>
+    <td>
+      {% assign div = divisions.items |where: "division", solver.division |first -%}
+      <a href="{{ div.url }}">{{ solver.division }}</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+</p>

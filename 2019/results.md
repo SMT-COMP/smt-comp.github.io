@@ -3,7 +3,27 @@ layout: default
 ---
 ## SMT-COMP 2019 Results
 
-### Summary
+### Competition-Wide Recognitions
+
+#### Largest Contribution Ranking
+{% assign contribs = site.results_competition_wide_2019
+   | where: "recognition", "largest_contribution" %}
+{% for comp in contribs %}
+{% assign track = site.data.tracks |where: "raw_name", comp.track  |first %}
+{% assign track = track.pretty_name %}
+- [{{ track }}]({{ comp.url }})
+{% endfor %}
+
+#### Biggest Lead Ranking
+{% assign contribs = site.results_competition_wide_2019
+   | where: "recognition", "biggest_lead" %}
+{% for comp in contribs %}
+{% assign track = site.data.tracks |where: "raw_name", comp.track  |first %}
+{% assign track = track.pretty_name %}
+- [{{ track }}]({{ comp.url }})
+{% endfor %}
+
+### Tracks Summary
 {% for summary in site.results_summary_2019 %}
 {% assign track = site.data.tracks |where: "raw_name", summary.track  |first %}
 {% assign track = track.pretty_name %}
