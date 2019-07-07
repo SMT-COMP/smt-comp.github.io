@@ -63,6 +63,7 @@ The list of selected benchmarks is available [here]({{ sel_bm.url }}).
 <tr {% if track.status == "non-competitive" %} class = "noncompeting" {% endif %}>
 <td><a href="{{ benchmark.url }}">{{ benchmark.division }}</a>{%- if
 track.status == "non-competitive" -%}<sup><a href="#nc">n</a></sup>{%-
+elsif track.status == "experimental" -%}<sup><a href="#ec">e</a></sup>{%-
 endif -%}</td>
 <td>{{ track.n_insts }}
                     {%- assign total = total | plus: track.n_insts -%}
@@ -90,6 +91,9 @@ endif -%}</td>
 <p>
   <span id="nc">
     n Non-competing.
+  </span><br/>
+  <span id="ec">
+    e Experimental.
   </span><br/>
 </p>
 
