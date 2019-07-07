@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 07:11:52
+resultdate: 2019-07-07 12:15:24
 track: track_single_query
 recognition: largest_contribution
 

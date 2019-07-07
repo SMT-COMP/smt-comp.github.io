@@ -1,10 +1,11 @@
 ---
 layout: result_inc
-resultdate: 2019-07-07 03:09:42
+resultdate: 2019-07-07 12:15:37
 division: QF_AUFLIA
 track: track_incremental
 n_benchmarks: 72
 time_limit: 2400
+mem_limit: 60
 
 winner_par: Yices 2.6.2 Incremental
 

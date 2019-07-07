@@ -1,10 +1,11 @@
 ---
 layout: result_others
-resultdate: 2019-07-07 03:10:02
+resultdate: 2019-07-07 12:15:57
 division: AUFNIA
 track: track_unsat_core
 n_benchmarks: 3
 time_limit: 2400
+mem_limit: 60
 
 winner_seq: 
 winner_par: 

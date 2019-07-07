@@ -1,10 +1,11 @@
 ---
 layout: result
-resultdate: 2019-07-07 08:47:50
+resultdate: 2019-07-07 12:15:27
 division: QF_S
 track: track_single_query
 n_benchmarks: 988
 time_limit: 2400
+mem_limit: 60
 
 winner_seq: CVC4
 winner_par: CVC4

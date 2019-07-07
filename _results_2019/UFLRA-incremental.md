@@ -1,10 +1,11 @@
 ---
 layout: result_inc
-resultdate: 2019-07-07 03:09:42
+resultdate: 2019-07-07 12:15:37
 division: UFLRA
 track: track_incremental
 n_benchmarks: 935
 time_limit: 2400
+mem_limit: 60
 
 winner_par: CVC4-inc
 

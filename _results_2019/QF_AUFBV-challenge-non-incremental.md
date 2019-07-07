@@ -1,10 +1,11 @@
 ---
 layout: result
-resultdate: 2019-07-07 03:09:48
+resultdate: 2019-07-07 12:15:42
 division: QF_AUFBV
 track: track_single_query_challenge
 n_benchmarks: 15
 time_limit: 43200
+mem_limit: 60
 
 winner_seq: Yices 2.6.2
 winner_par: Yices 2.6.2

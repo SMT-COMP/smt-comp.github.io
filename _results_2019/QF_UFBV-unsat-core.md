@@ -1,10 +1,11 @@
 ---
 layout: result_others
-resultdate: 2019-07-07 03:10:02
+resultdate: 2019-07-07 12:15:57
 division: QF_UFBV
 track: track_unsat_core
 n_benchmarks: 300
 time_limit: 2400
+mem_limit: 60
 
 winner_seq: Yices 2.6.2
 winner_par: Yices 2.6.2

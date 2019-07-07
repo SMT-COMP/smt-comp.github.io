@@ -1,10 +1,11 @@
 ---
 layout: result_inc
-resultdate: 2019-07-07 03:09:49
+resultdate: 2019-07-07 12:15:43
 division: QF_ABV
 track: track_incremental_challenge
 n_benchmarks: 9
 time_limit: 43200
+mem_limit: 60
 
 winner_par: Boolector (incremental)
 

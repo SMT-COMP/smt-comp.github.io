@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 03:09:48
+resultdate: 2019-07-07 12:15:42
 track: track_single_query_challenge
 recognition: biggest_lead
 

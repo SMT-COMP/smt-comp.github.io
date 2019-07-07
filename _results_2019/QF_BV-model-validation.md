@@ -1,10 +1,11 @@
 ---
 layout: result_exp
-resultdate: 2019-07-07 03:10:12
+resultdate: 2019-07-07 12:16:07
 division: QF_BV
 track: track_model_validation
 n_benchmarks: 7191
 time_limit: 2400
+mem_limit: 60
 
 winner_seq: Boolector
 winner_par: Boolector

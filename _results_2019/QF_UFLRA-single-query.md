@@ -1,10 +1,11 @@
 ---
 layout: result
-resultdate: 2019-07-07 07:10:58
+resultdate: 2019-07-07 12:14:30
 division: QF_UFLRA
 track: track_single_query
 n_benchmarks: 541
 time_limit: 2400
+mem_limit: 60
 
 winner_seq: SMTInterpol
 winner_par: SMTInterpol

@@ -1,10 +1,11 @@
 ---
 layout: result_others
-resultdate: 2019-07-07 03:10:02
+resultdate: 2019-07-07 12:15:57
 division: QF_UFNRA
 track: track_unsat_core
 n_benchmarks: 11
 time_limit: 2400
+mem_limit: 60
 
 winner_seq: MathSAT-default
 winner_par: MathSAT-default
