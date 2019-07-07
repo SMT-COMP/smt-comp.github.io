@@ -21,6 +21,9 @@ Page generated on {{ page.resultdate | time_to_string }}
 <b>Time Limit:</b> {{ page.time_limit }} seconds
 </p>
 
+{%- assign division = site.benchmarks_2019 | where: "division", page.division |first -%}
+{%- assign division = division.tracks | where: "name", page.track |first -%}
+{%- if division.status == "competitive" %}
 <h3>Winners</h3>
 <table>
     <thead>
@@ -70,6 +73,10 @@ Page generated on {{ page.resultdate | time_to_string }}
         </td>
     </tr>
 </table>
+{%- else -%}
+This division is experimental. Solvers are only ranked by performance, but no
+winner is selected.
+{%- endif %}
 
 <h3>Sequential Performance</h3>
 <table id="sequential" class="result sorted">
