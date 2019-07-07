@@ -1,9 +1,9 @@
 ---
 layout: result
-resultdate: 2019-07-07 03:08:37
+resultdate: 2019-07-07 07:10:58
 division: FP
 track: track_single_query
-n_benchmarks: 1238
+n_benchmarks: 1234
 time_limit: 2400
 
 winner_seq: CVC4
@@ -16,245 +16,245 @@ sequential:
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 1041
-  CPUScore: 506948.933
-  WallScore: 506921.776
-  solved: 1041
-  solved_sat: 21
-  solved_unsat: 1020
+  correctScore: 1037
+  CPUScore: 506948.197
+  WallScore: 506921.04
+  solved: 1037
+  solved_sat: 20
+  solved_unsat: 1017
   unsolved: 197
   timeout: 137
   memout: 48
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
-  correctScore: 884
-  CPUScore: 723785.956
-  WallScore: 723856.11
-  solved: 884
-  solved_sat: 13
-  solved_unsat: 871
+  correctScore: 880
+  CPUScore: 722150.807
+  WallScore: 722220.702
+  solved: 880
+  solved_sat: 10
+  solved_unsat: 870
   unsolved: 354
   timeout: 260
   memout: 4
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 868
-  CPUScore: 646229.36
-  WallScore: 646280.204
-  solved: 868
+  correctScore: 865
+  CPUScore: 643828.961
+  WallScore: 643879.555
+  solved: 865
   solved_sat: 10
-  solved_unsat: 858
-  unsolved: 370
-  timeout: 255
+  solved_unsat: 855
+  unsolved: 369
+  timeout: 254
   memout: 9
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 179
-  CPUScore: 4142.467
-  WallScore: 2887.9
+  CPUScore: 4129.212
+  WallScore: 2878.785
   solved: 179
   solved_sat: 0
   solved_unsat: 179
-  unsolved: 1059
+  unsolved: 1055
   timeout: 0
   memout: 0
 parallel:
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 1041
-  CPUScore: 506988.493
-  WallScore: 506915.366
-  solved: 1041
-  solved_sat: 21
-  solved_unsat: 1020
+  correctScore: 1037
+  CPUScore: 506987.757
+  WallScore: 506914.63
+  solved: 1037
+  solved_sat: 20
+  solved_unsat: 1017
   unsolved: 197
   timeout: 137
   memout: 48
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
-  correctScore: 884
-  CPUScore: 723868.476
-  WallScore: 723845.75
-  solved: 884
-  solved_sat: 13
-  solved_unsat: 871
+  correctScore: 880
+  CPUScore: 722233.327
+  WallScore: 722210.342
+  solved: 880
+  solved_sat: 10
+  solved_unsat: 870
   unsolved: 354
   timeout: 260
   memout: 4
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 868
-  CPUScore: 646310.75
-  WallScore: 646267.974
-  solved: 868
+  correctScore: 865
+  CPUScore: 643910.121
+  WallScore: 643867.345
+  solved: 865
   solved_sat: 10
-  solved_unsat: 858
-  unsolved: 370
-  timeout: 255
+  solved_unsat: 855
+  unsolved: 369
+  timeout: 254
   memout: 9
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 179
-  CPUScore: 4142.467
-  WallScore: 2887.9
+  CPUScore: 4129.212
+  WallScore: 2878.785
   solved: 179
   solved_sat: 0
   solved_unsat: 179
-  unsolved: 1059
+  unsolved: 1055
   timeout: 0
   memout: 0
 sat:
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 24
-  CPUScore: 1517.155
-  WallScore: 1517.472
-  solved: 24
-  solved_sat: 21
-  solved_unsat: 3
+  correctScore: 20
+  CPUScore: 1516.418
+  WallScore: 1516.735
+  solved: 20
+  solved_sat: 20
+  solved_unsat: 0
   unsolved: 1214
   timeout: 137
   memout: 48
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
-  correctScore: 14
-  CPUScore: 25655.205
-  WallScore: 25655.463
-  solved: 14
-  solved_sat: 13
-  solved_unsat: 1
+  correctScore: 10
+  CPUScore: 24020.056
+  WallScore: 24020.054
+  solved: 10
+  solved_sat: 10
+  solved_unsat: 0
   unsolved: 1224
   timeout: 260
   memout: 4
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 13
-  CPUScore: 26423.318
-  WallScore: 26423.317
-  solved: 13
+  correctScore: 10
+  CPUScore: 24022.688
+  WallScore: 24022.688
+  solved: 10
   solved_sat: 10
-  solved_unsat: 3
-  unsolved: 1225
-  timeout: 255
+  solved_unsat: 0
+  unsolved: 1224
+  timeout: 254
   memout: 9
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 80.204
-  WallScore: 56.79
+  CPUScore: 66.95
+  WallScore: 47.676
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 1238
+  unsolved: 1234
   timeout: 0
   memout: 0
 unsat:
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 1021
-  CPUScore: 176652.489
-  WallScore: 176578.694
-  solved: 1021
-  solved_sat: 1
-  solved_unsat: 1020
+  correctScore: 1017
+  CPUScore: 176651.752
+  WallScore: 176577.957
+  solved: 1017
+  solved_sat: 0
+  solved_unsat: 1017
   unsolved: 217
   timeout: 137
   memout: 48
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
-  correctScore: 874
-  CPUScore: 359048.421
-  WallScore: 359025.696
-  solved: 874
-  solved_sat: 3
-  solved_unsat: 871
+  correctScore: 870
+  CPUScore: 357413.271
+  WallScore: 357390.287
+  solved: 870
+  solved_sat: 0
+  solved_unsat: 870
   unsolved: 364
   timeout: 260
   memout: 4
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 858
-  CPUScore: 281488.062
-  WallScore: 281445.286
-  solved: 858
+  correctScore: 855
+  CPUScore: 279087.432
+  WallScore: 279044.657
+  solved: 855
   solved_sat: 0
-  solved_unsat: 858
-  unsolved: 380
-  timeout: 255
+  solved_unsat: 855
+  unsolved: 379
+  timeout: 254
   memout: 9
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 179
-  CPUScore: 3602.339
-  WallScore: 2510.296
+  CPUScore: 3589.085
+  WallScore: 2501.181
   solved: 179
   solved_sat: 0
   solved_unsat: 179
-  unsolved: 1059
+  unsolved: 1055
   timeout: 0
   memout: 0
 twentyfour:
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 874
-  CPUScore: 10131.089
-  WallScore: 10084.959
-  solved: 874
-  solved_sat: 18
-  solved_unsat: 856
+  correctScore: 870
+  CPUScore: 10130.353
+  WallScore: 10084.222
+  solved: 870
+  solved_sat: 17
+  solved_unsat: 853
   unsolved: 364
   timeout: 305
   memout: 48
 - name: 2018-CVC4
   competing: "no"
   errorScore: 0
-  correctScore: 797
-  CPUScore: 12040.476
-  WallScore: 12011.451
-  solved: 797
-  solved_sat: 13
+  correctScore: 794
+  CPUScore: 12016.346
+  WallScore: 11987.323
+  solved: 794
+  solved_sat: 10
   solved_unsat: 784
-  unsolved: 441
-  timeout: 437
+  unsolved: 440
+  timeout: 436
   memout: 4
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 789
-  CPUScore: 9690.79
-  WallScore: 9689.89
-  solved: 789
+  correctScore: 786
+  CPUScore: 9666.161
+  WallScore: 9665.26
+  solved: 786
   solved_sat: 10
-  solved_unsat: 779
-  unsolved: 449
-  timeout: 334
+  solved_unsat: 776
+  unsolved: 448
+  timeout: 333
   memout: 9
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 179
-  CPUScore: 4142.467
-  WallScore: 2887.9
+  CPUScore: 4129.212
+  WallScore: 2878.785
   solved: 179
   solved_sat: 0
   solved_unsat: 179
-  unsolved: 1059
+  unsolved: 1055
   timeout: 0
   memout: 0
 ---

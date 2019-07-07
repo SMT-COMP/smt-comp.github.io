@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 03:08:39
+resultdate: 2019-07-07 07:10:59
 track: track_single_query
 recognition: biggest_lead
 
@@ -14,8 +14,8 @@ winner_24s: CVC4
 sequential:
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
-  correctScore: 4.82777778
-  timeScore: 0.00641175
+  correctScore: 4.81111111
+  timeScore: 0.00641507
   division: FP
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
@@ -104,8 +104,8 @@ sequential:
   division: AUFNIRA
 - name: Par4
   second: CVC4
-  correctScore: 1.05724616
-  timeScore: 1.05013253
+  correctScore: 1.05728068
+  timeScore: 1.05005047
   division: UFNIA
 - name: CVC4
   second: MathSAT-default
@@ -140,7 +140,7 @@ sequential:
 - name: Par4
   second: COLIBRI
   correctScore: 1.03045685
-  timeScore: 0.98626346
+  timeScore: 0.98625872
   division: QF_FP
 - name: Par4
   second: CVC4
@@ -255,8 +255,8 @@ sequential:
 parallel:
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
-  correctScore: 4.82777778
-  timeScore: 0.00447012
+  correctScore: 4.81111111
+  timeScore: 0.00447263
   division: FP
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
@@ -351,7 +351,7 @@ parallel:
 - name: Par4
   second: COLIBRI
   correctScore: 1.06598985
-  timeScore: 1.14984676
+  timeScore: 1.14984214
   division: QF_FP
 - name: Par4
   second: Vampire
@@ -360,8 +360,8 @@ parallel:
   division: NRA
 - name: Par4
   second: CVC4
-  correctScore: 1.05935523
-  timeScore: 1.12267615
+  correctScore: 1.05939102
+  timeScore: 1.12243517
   division: UFNIA
 - name: CVC4
   second: MathSAT-default
@@ -511,8 +511,8 @@ sat:
   division: UFBV
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
-  correctScore: 14.00000000
-  timeScore: 0.00218701
+  correctScore: 11.00000000
+  timeScore: 0.00202615
   division: FP
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
@@ -597,7 +597,7 @@ sat:
 - name: Par4
   second: CVC4
   correctScore: 1.08910891
-  timeScore: 1.71929527
+  timeScore: 1.71929576
   division: QF_FP
 - name: Par4
   second: Yices 2.6.2
@@ -692,7 +692,7 @@ sat:
 - name: Par4
   second: CVC4
   correctScore: 1.00000000
-  timeScore: 1.76077711
+  timeScore: 1.78576496
   division: UFNIA
 - name: Yices 2.6.2
   second: Par4
@@ -717,8 +717,8 @@ unsat:
   division: BVFP
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
-  correctScore: 4.77222222
-  timeScore: 0.00892283
+  correctScore: 4.75555556
+  timeScore: 0.00896692
   division: FP
 - name: CVC4
   second: Vampire
@@ -772,8 +772,8 @@ unsat:
   division: UFDT
 - name: Par4
   second: CVC4
-  correctScore: 1.06878492
-  timeScore: 1.25600654
+  correctScore: 1.06883298
+  timeScore: 1.25565582
   division: UFNIA
 - name: Yices 2.6.2
   second: SMTInterpol
@@ -803,7 +803,7 @@ unsat:
 - name: Par4
   second: COLIBRI
   correctScore: 1.03061224
-  timeScore: 1.04893304
+  timeScore: 1.04892613
   division: QF_FP
 - name: Yices 2.6.2
   second: Poolector
@@ -953,8 +953,8 @@ twentyfour:
   division: BVFP
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4
-  correctScore: 4.38888889
-  timeScore: 0.29810468
+  correctScore: 4.37222222
+  timeScore: 0.29792131
   division: FP
 - name: CVC4
   second: Alt-Ergo
@@ -1014,7 +1014,7 @@ twentyfour:
 - name: Par4
   second: CVC4
   correctScore: 1.19621555
-  timeScore: 1.16301226
+  timeScore: 1.16316342
   division: UFNIA
 - name: Par4
   second: SPASS-SATT
@@ -1074,7 +1074,7 @@ twentyfour:
 - name: COLIBRI
   second: Par4
   correctScore: 1.05882353
-  timeScore: 1.10513789
+  timeScore: 1.10541645
   division: QF_FP
 - name: Par4
   second: Vampire

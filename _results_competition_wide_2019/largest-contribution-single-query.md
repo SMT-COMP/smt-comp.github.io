@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 03:09:33
+resultdate: 2019-07-07 07:11:52
 track: track_single_query
 recognition: largest_contribution
 
@@ -13,164 +13,168 @@ winner_24s: Vampire
 
 sequential:
 - name: CVC4
-  correctScore: 0.00428000
-  timeScore: 0.01573208
+  correctScore: 0.00427411
+  timeScore: 0.01571041
   division: QF_NIA
 - name: Vampire
-  correctScore: 0.00336618
-  timeScore: 0.00538011
+  correctScore: 0.00336154
+  timeScore: 0.00537270
   division: UF
 - name: Par4
-  correctScore: 0.00315404
-  timeScore: 0.00522924
+  correctScore: 0.00314984
+  timeScore: 0.00521575
   division: UFNIA
 - name: CVC4
-  correctScore: 0.00197623
-  timeScore: 0.00456000
+  correctScore: 0.00197351
+  timeScore: 0.00455372
   division: LIA
 - name: CVC4
-  correctScore: 0.00193694
-  timeScore: 0.00079687
+  correctScore: 0.00193427
+  timeScore: 0.00079577
   division: UFDT
 - name: Par4
-  correctScore: 0.00124238
-  timeScore: 0.00758046
+  correctScore: 0.00124067
+  timeScore: 0.00757001
   division: LRA
 - name: CVC4
-  correctScore: 0.00115190
-  timeScore: 0.00080192
+  correctScore: 0.00115031
+  timeScore: 0.00080082
   division: UFDTLIA
 - name: Par4
-  correctScore: 0.00096120
-  timeScore: 0.01317635
+  correctScore: 0.00095988
+  timeScore: 0.01315820
   division: AUFLIRA
 - name: Vampire
-  correctScore: 0.00056834
-  timeScore: 0.00092750
+  correctScore: 0.00056755
+  timeScore: 0.00092622
   division: UFLIA
 - name: CVC4
-  correctScore: 0.00053016
-  timeScore: 0.00124320
+  correctScore: 0.00052943
+  timeScore: 0.00124149
   division: AUFDTLIA
 - name: Vampire
-  correctScore: 0.00046527
-  timeScore: 0.00337194
+  correctScore: 0.00046463
+  timeScore: 0.00336730
   division: AUFLIA
 - name: Par4
-  correctScore: 0.00042246
-  timeScore: 0.00475193
+  correctScore: 0.00042188
+  timeScore: 0.00474538
   division: QF_NRA
 - name: Par4
-  correctScore: 0.00029743
-  timeScore: 0.00009510
+  correctScore: 0.00029702
+  timeScore: 0.00009497
   division: AUFNIRA
 - name: Boolector
-  correctScore: 0.00027677
-  timeScore: 0.02396611
+  correctScore: 0.00027639
+  timeScore: 0.02393309
   division: QF_BV
 - name: Par4
-  correctScore: 0.00018510
-  timeScore: 0.00021975
+  correctScore: 0.00018485
+  timeScore: 0.00021945
   division: UFBV
 - name: Q3B
-  correctScore: 0.00014163
-  timeScore: 0.00286087
+  correctScore: 0.00014144
+  timeScore: 0.00285693
   division: BV
 - name: Ctrl-Ergo
-  correctScore: 0.00012299
-  timeScore: 0.00601398
+  correctScore: 0.00012282
+  timeScore: 0.00600570
   division: QF_LIA
 - name: Yices 2.6.2
-  correctScore: 0.00009947
-  timeScore: 0.00200842
+  correctScore: 0.00009934
+  timeScore: 0.00200565
   division: QF_UFIDL
 - name: Par4
-  correctScore: 0.00008644
-  timeScore: 0.00078395
+  correctScore: 0.00008632
+  timeScore: 0.00078287
   division: NRA
 - name: Yices 2.6.2
-  correctScore: 0.00007599
-  timeScore: 0.00079699
+  correctScore: 0.00007589
+  timeScore: 0.00079589
   division: QF_IDL
+- name: COLIBRI
+  correctScore: 0.00007563
+  timeScore: 0.00054526
+  division: QF_FP
 - name: CVC4
-  correctScore: 0.00004815
-  timeScore: 0.00158480
+  correctScore: 0.00004808
+  timeScore: 0.00158262
   division: QF_UFNIA
 - name: Yices 2.6.2
-  correctScore: 0.00004100
-  timeScore: 0.00020011
+  correctScore: 0.00004095
+  timeScore: 0.00019983
   division: QF_AUFBV
 - name: CVC4
-  correctScore: 0.00002850
-  timeScore: 0.00010067
+  correctScore: 0.00002846
+  timeScore: 0.00010053
   division: NIA
 - name: Par4
-  correctScore: 0.00002534
-  timeScore: 0.00003235
+  correctScore: 0.00002530
+  timeScore: 0.00003230
   division: UFIDL
 - name: SPASS-SATT
-  correctScore: 0.00001546
-  timeScore: 0.00191869
+  correctScore: 0.00001544
+  timeScore: 0.00191605
   division: QF_LRA
 - name: SMTInterpol
-  correctScore: 0.00001520
-  timeScore: 0.00028825
+  correctScore: 0.00001518
+  timeScore: 0.00028785
   division: ALIA
 - name: Boolector
-  correctScore: 0.00000952
-  timeScore: 0.00888046
+  correctScore: 0.00000951
+  timeScore: 0.00886823
   division: QF_ABV
 - name: SMTInterpol
-  correctScore: 0.00000950
-  timeScore: 0.00100159
+  correctScore: 0.00000949
+  timeScore: 0.00100021
   division: QF_UFLRA
 - name: SMT-RAT
-  correctScore: 0.00000950
-  timeScore: 0.00001785
+  correctScore: 0.00000949
+  timeScore: 0.00001782
   division: QF_NIRA
 - name: Yices 2.6.2
-  correctScore: 0.00000877
-  timeScore: 0.00014929
+  correctScore: 0.00000876
+  timeScore: 0.00014908
   division: QF_RDL
 - name: Par4
-  correctScore: 0.00000760
-  timeScore: 0.00004891
+  correctScore: 0.00000759
+  timeScore: 0.00004884
   division: QF_LIRA
 - name: Par4
   correctScore: 0.00000000
-  timeScore: 0.01549009
+  timeScore: 0.01546875
   division: QF_UF
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00583417
+  timeScore: 0.00582613
   division: QF_AUFLIA
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00245708
+  timeScore: 0.00245370
   division: QF_UFLIA
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00214072
+  timeScore: 0.00213777
   division: QF_AX
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00119895
+  timeScore: 0.00119730
   division: QF_ALIA
 - name: CVC4
   correctScore: 0.00000000
-  timeScore: 0.00057179
+  timeScore: 0.00057100
   division: QF_UFBV
 - name: Par4
   correctScore: 0.00000000
-  timeScore: 0.00012784
+  timeScore: 0.00012766
   division: QF_UFNRA
 - name: CVC4
   correctScore: 0.00000000
-  timeScore: 0.00000794
+  timeScore: 0.00000793
   division: QF_ANIA
 - name: Vampire
   correctScore: 0.00000000
-  timeScore: 0.00000557
+  timeScore: 0.00000556
   division: UFDTNIA
 - name: MathSAT-default
   correctScore: 0.00000000
@@ -182,160 +186,164 @@ sequential:
   division: UFLRA
 parallel:
 - name: CVC4
-  correctScore: 0.00401159
-  timeScore: 0.01292393
+  correctScore: 0.00400607
+  timeScore: 0.01290612
   division: QF_NIA
 - name: Vampire
-  correctScore: 0.00355894
-  timeScore: 0.00444174
+  correctScore: 0.00355404
+  timeScore: 0.00443562
   division: UF
 - name: Par4
-  correctScore: 0.00308972
-  timeScore: 0.00570205
+  correctScore: 0.00308559
+  timeScore: 0.00567552
   division: UFNIA
 - name: CVC4
-  correctScore: 0.00196103
-  timeScore: 0.00456000
+  correctScore: 0.00195833
+  timeScore: 0.00455371
   division: LIA
 - name: CVC4
-  correctScore: 0.00183117
-  timeScore: 0.00074573
+  correctScore: 0.00182865
+  timeScore: 0.00074470
   division: UFDT
 - name: Par4
-  correctScore: 0.00141901
-  timeScore: 0.00840130
+  correctScore: 0.00141705
+  timeScore: 0.00838973
   division: LRA
 - name: CVC4
-  correctScore: 0.00115190
-  timeScore: 0.00079590
+  correctScore: 0.00115031
+  timeScore: 0.00079480
   division: UFDTLIA
 - name: Par4
-  correctScore: 0.00096120
-  timeScore: 0.01309474
+  correctScore: 0.00095988
+  timeScore: 0.01307670
   division: AUFLIRA
 - name: Vampire
-  correctScore: 0.00073370
-  timeScore: 0.00098951
+  correctScore: 0.00073269
+  timeScore: 0.00098814
   division: UFLIA
 - name: CVC4
-  correctScore: 0.00053016
-  timeScore: 0.00124017
+  correctScore: 0.00052943
+  timeScore: 0.00123847
   division: AUFDTLIA
 - name: Vampire
-  correctScore: 0.00046366
-  timeScore: 0.00365903
+  correctScore: 0.00046303
+  timeScore: 0.00365399
   division: AUFLIA
 - name: Par4
-  correctScore: 0.00042246
-  timeScore: 0.00559142
+  correctScore: 0.00042188
+  timeScore: 0.00558371
   division: QF_NRA
 - name: Par4
-  correctScore: 0.00019828
-  timeScore: 0.00008029
+  correctScore: 0.00019801
+  timeScore: 0.00008018
   division: AUFNIRA
 - name: Par4
-  correctScore: 0.00018510
-  timeScore: 0.00021987
+  correctScore: 0.00018485
+  timeScore: 0.00021957
   division: UFBV
 - name: Par4
-  correctScore: 0.00016291
-  timeScore: 0.00105008
+  correctScore: 0.00016269
+  timeScore: 0.00104863
   division: QF_IDL
 - name: Poolector
-  correctScore: 0.00013832
-  timeScore: 0.00611308
+  correctScore: 0.00013813
+  timeScore: 0.00610465
   division: QF_BV
 - name: Ctrl-Ergo
-  correctScore: 0.00013823
-  timeScore: 0.00853085
+  correctScore: 0.00013804
+  timeScore: 0.00851910
   division: QF_LIA
 - name: Q3B
-  correctScore: 0.00012918
-  timeScore: 0.00284850
+  correctScore: 0.00012900
+  timeScore: 0.00284458
   division: BV
 - name: Yices 2.6.2
-  correctScore: 0.00009947
-  timeScore: 0.00200644
+  correctScore: 0.00009934
+  timeScore: 0.00200368
   division: QF_UFIDL
 - name: Par4
-  correctScore: 0.00008644
-  timeScore: 0.00079223
+  correctScore: 0.00008632
+  timeScore: 0.00079113
   division: NRA
+- name: COLIBRI
+  correctScore: 0.00007496
+  timeScore: 0.00048183
+  division: QF_FP
 - name: CVC4
-  correctScore: 0.00004815
-  timeScore: 0.00158477
+  correctScore: 0.00004808
+  timeScore: 0.00158258
   division: QF_UFNIA
 - name: Yices 2.6.2
-  correctScore: 0.00004100
-  timeScore: 0.00020014
+  correctScore: 0.00004095
+  timeScore: 0.00019986
   division: QF_AUFBV
 - name: CVC4
-  correctScore: 0.00002850
-  timeScore: 0.00010184
+  correctScore: 0.00002846
+  timeScore: 0.00010170
   division: NIA
 - name: Par4
-  correctScore: 0.00002534
-  timeScore: 0.00003928
+  correctScore: 0.00002530
+  timeScore: 0.00003922
   division: UFIDL
 - name: SPASS-SATT
-  correctScore: 0.00001546
-  timeScore: 0.00113596
+  correctScore: 0.00001544
+  timeScore: 0.00113440
   division: QF_LRA
 - name: SMTInterpol
-  correctScore: 0.00001520
-  timeScore: 0.00028838
+  correctScore: 0.00001518
+  timeScore: 0.00028799
   division: ALIA
 - name: Par4
-  correctScore: 0.00001330
-  timeScore: 0.00014934
+  correctScore: 0.00001328
+  timeScore: 0.00014913
   division: QF_UFNRA
 - name: Par4
-  correctScore: 0.00000952
-  timeScore: 0.00796009
+  correctScore: 0.00000951
+  timeScore: 0.00794912
   division: QF_ABV
 - name: SMTInterpol
-  correctScore: 0.00000950
-  timeScore: 0.00118740
+  correctScore: 0.00000949
+  timeScore: 0.00118576
   division: QF_UFLRA
 - name: SMT-RAT
-  correctScore: 0.00000950
-  timeScore: 0.00001785
+  correctScore: 0.00000949
+  timeScore: 0.00001782
   division: QF_NIRA
 - name: Yices 2.6.2
-  correctScore: 0.00000877
-  timeScore: 0.00014769
+  correctScore: 0.00000876
+  timeScore: 0.00014749
   division: QF_RDL
 - name: Par4
-  correctScore: 0.00000760
-  timeScore: 0.00005084
+  correctScore: 0.00000759
+  timeScore: 0.00005077
   division: QF_LIRA
 - name: veriT
   correctScore: 0.00000000
-  timeScore: 0.00892994
+  timeScore: 0.00891763
   division: QF_UF
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00565799
+  timeScore: 0.00565019
   division: QF_AUFLIA
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00236940
+  timeScore: 0.00236614
   division: QF_UFLIA
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00208691
+  timeScore: 0.00208404
   division: QF_AX
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00110543
+  timeScore: 0.00110391
   division: QF_ALIA
 - name: CVC4
   correctScore: 0.00000000
-  timeScore: 0.00057095
+  timeScore: 0.00057017
   division: QF_UFBV
 - name: CVC4
   correctScore: 0.00000000
-  timeScore: 0.00000788
+  timeScore: 0.00000787
   division: QF_ANIA
 - name: Vampire
   correctScore: 0.00000000
@@ -351,112 +359,116 @@ parallel:
   division: UFLRA
 sat:
 - name: Par4
-  correctScore: 0.02878268
-  timeScore: 0.00092308
+  correctScore: 0.02874303
+  timeScore: 0.00092181
   division: AUFLIRA
 - name: SMTInterpol
-  correctScore: 0.00974130
-  timeScore: 0.00003428
+  correctScore: 0.00972788
+  timeScore: 0.00003424
   division: UFLIA
 - name: Vampire
-  correctScore: 0.00669478
-  timeScore: 0.00243561
+  correctScore: 0.00668556
+  timeScore: 0.00243225
   division: UF
 - name: CVC4
-  correctScore: 0.00551895
-  timeScore: 0.00037302
+  correctScore: 0.00551134
+  timeScore: 0.00037250
   division: UFDT
 - name: CVC4
-  correctScore: 0.00414788
-  timeScore: 0.00428054
+  correctScore: 0.00414216
+  timeScore: 0.00427465
   division: QF_NIA
 - name: CVC4
-  correctScore: 0.00355048
-  timeScore: 0.00198549
+  correctScore: 0.00354559
+  timeScore: 0.00198276
   division: LIA
 - name: SMTInterpol
-  correctScore: 0.00242538
-  timeScore: 0.00025030
+  correctScore: 0.00242203
+  timeScore: 0.00024995
   division: AUFLIA
 - name: Par4
-  correctScore: 0.00228027
-  timeScore: 0.00002763
+  correctScore: 0.00227713
+  timeScore: 0.00002759
   division: AUFNIRA
 - name: Par4
-  correctScore: 0.00214034
-  timeScore: 0.00121786
+  correctScore: 0.00213739
+  timeScore: 0.00121619
   division: LRA
 - name: CVC4
-  correctScore: 0.00156768
-  timeScore: 0.00041941
+  correctScore: 0.00156552
+  timeScore: 0.00041883
   division: AUFDTLIA
 - name: Par4
-  correctScore: 0.00088591
-  timeScore: 0.00020375
+  correctScore: 0.00088808
+  timeScore: 0.00019367
   division: UFNIA
 - name: Par4
-  correctScore: 0.00088360
-  timeScore: 0.00000950
+  correctScore: 0.00088239
+  timeScore: 0.00000949
   division: NRA
 - name: Par4
-  correctScore: 0.00086032
-  timeScore: 0.00074541
+  correctScore: 0.00085914
+  timeScore: 0.00074438
   division: QF_NRA
 - name: Par4
-  correctScore: 0.00041045
-  timeScore: 0.00010261
+  correctScore: 0.00040988
+  timeScore: 0.00010246
   division: UFBV
 - name: SMTInterpol
-  correctScore: 0.00028883
-  timeScore: 0.00001520
+  correctScore: 0.00028844
+  timeScore: 0.00001518
   division: ALIA
 - name: Ctrl-Ergo
-  correctScore: 0.00024448
-  timeScore: 0.00032328
+  correctScore: 0.00024414
+  timeScore: 0.00032283
   division: QF_LIA
 - name: Q3B
-  correctScore: 0.00019713
-  timeScore: 0.00008749
+  correctScore: 0.00019686
+  timeScore: 0.00008737
   division: BV
 - name: Poolector
-  correctScore: 0.00019698
-  timeScore: 0.00011113
+  correctScore: 0.00019671
+  timeScore: 0.00011098
   division: QF_BV
 - name: Par4
-  correctScore: 0.00013655
-  timeScore: 0.00014898
+  correctScore: 0.00013637
+  timeScore: 0.00014877
   division: QF_IDL
 - name: Par4
-  correctScore: 0.00010135
-  timeScore: 0.00002011
+  correctScore: 0.00010121
+  timeScore: 0.00002009
   division: UFIDL
+- name: COLIBRI
+  correctScore: 0.00009412
+  timeScore: 0.00010418
+  division: QF_FP
 - name: Yices 2.6.2
-  correctScore: 0.00004452
-  timeScore: 0.00000803
+  correctScore: 0.00004446
+  timeScore: 0.00000802
   division: QF_AUFBV
 - name: CVC4
-  correctScore: 0.00003185
-  timeScore: 0.00004656
+  correctScore: 0.00003180
+  timeScore: 0.00004649
   division: QF_UFNIA
 - name: Par4
-  correctScore: 0.00002804
-  timeScore: 0.00003952
+  correctScore: 0.00002800
+  timeScore: 0.00003947
   division: QF_LRA
 - name: CVC4
-  correctScore: 0.00002322
-  timeScore: 0.00005151
+  correctScore: 0.00002319
+  timeScore: 0.00005144
   division: NIA
 - name: SMTInterpol
-  correctScore: 0.00001558
-  timeScore: 0.00000597
+  correctScore: 0.00001555
+  timeScore: 0.00000596
   division: QF_UFLRA
 - name: Par4
-  correctScore: 0.00001441
-  timeScore: 0.00009907
+  correctScore: 0.00001439
+  timeScore: 0.00009893
   division: QF_UFNRA
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00002425
+  timeScore: 0.00002422
   division: QF_RDL
 - name: Poolector
   correctScore: 0.00000000
@@ -500,120 +512,124 @@ sat:
   division: QF_AUFNIA
 unsat:
 - name: Par4
-  correctScore: 0.00340332
-  timeScore: 0.00452952
+  correctScore: 0.00339904
+  timeScore: 0.00450658
   division: UFNIA
 - name: Par4
-  correctScore: 0.00302177
-  timeScore: 0.00103741
+  correctScore: 0.00301761
+  timeScore: 0.00103598
   division: QF_NIA
 - name: Vampire
-  correctScore: 0.00186573
-  timeScore: 0.00076600
+  correctScore: 0.00186316
+  timeScore: 0.00076494
   division: UF
 - name: CVC4
-  correctScore: 0.00115190
-  timeScore: 0.00079590
+  correctScore: 0.00115031
+  timeScore: 0.00079480
   division: UFDTLIA
 - name: Par4
-  correctScore: 0.00095785
-  timeScore: 0.00117859
+  correctScore: 0.00095653
+  timeScore: 0.00117697
   division: LRA
 - name: Vampire
-  correctScore: 0.00073798
-  timeScore: 0.00098159
+  correctScore: 0.00073696
+  timeScore: 0.00098024
   division: UFLIA
 - name: CVC4
-  correctScore: 0.00055242
-  timeScore: 0.00021974
+  correctScore: 0.00055166
+  timeScore: 0.00021944
   division: UFDT
 - name: Vampire
-  correctScore: 0.00051876
-  timeScore: 0.00187253
+  correctScore: 0.00051805
+  timeScore: 0.00186995
   division: AUFLIA
 - name: CVC4
-  correctScore: 0.00039263
-  timeScore: 0.00039078
+  correctScore: 0.00039209
+  timeScore: 0.00039025
   division: LIA
 - name: CVC4
-  correctScore: 0.00030783
-  timeScore: 0.00031054
+  correctScore: 0.00030740
+  timeScore: 0.00031012
   division: QF_NRA
 - name: Par4
-  correctScore: 0.00021027
-  timeScore: 0.00008680
+  correctScore: 0.00020998
+  timeScore: 0.00008668
   division: QF_IDL
 - name: Vampire
-  correctScore: 0.00015547
-  timeScore: 0.00006382
+  correctScore: 0.00015526
+  timeScore: 0.00006373
   division: AUFNIRA
 - name: Yices 2.6.2
-  correctScore: 0.00013353
-  timeScore: 0.00039680
+  correctScore: 0.00013335
+  timeScore: 0.00039625
   division: QF_UFIDL
 - name: Poolector
-  correctScore: 0.00010658
-  timeScore: 0.00006510
+  correctScore: 0.00010644
+  timeScore: 0.00006501
   division: QF_BV
 - name: Par4
-  correctScore: 0.00010602
-  timeScore: 0.00009291
+  correctScore: 0.00010587
+  timeScore: 0.00009278
   division: QF_LIA
 - name: Q3B
-  correctScore: 0.00010036
-  timeScore: 0.00022987
+  correctScore: 0.00010022
+  timeScore: 0.00022956
   division: BV
 - name: Par4
-  correctScore: 0.00007768
-  timeScore: 0.00070424
+  correctScore: 0.00007757
+  timeScore: 0.00070327
   division: NRA
 - name: CVC4
-  correctScore: 0.00007309
-  timeScore: 0.00004604
+  correctScore: 0.00007298
+  timeScore: 0.00004597
   division: QF_UFNIA
 - name: Par4
-  correctScore: 0.00006219
-  timeScore: 0.00005664
+  correctScore: 0.00006210
+  timeScore: 0.00005657
   division: UFBV
+- name: COLIBRI
+  correctScore: 0.00005328
+  timeScore: 0.00003889
+  division: QF_FP
 - name: CVC4
-  correctScore: 0.00005226
-  timeScore: 0.00001043
+  correctScore: 0.00005218
+  timeScore: 0.00001042
   division: NIA
 - name: Yices 2.6.2
-  correctScore: 0.00004021
-  timeScore: 0.00010038
+  correctScore: 0.00004016
+  timeScore: 0.00010024
   division: QF_AUFBV
 - name: SPASS-SATT
-  correctScore: 0.00003444
-  timeScore: 0.00002358
+  correctScore: 0.00003439
+  timeScore: 0.00002355
   division: QF_LRA
 - name: Par4
-  correctScore: 0.00003032
-  timeScore: 0.00003264
+  correctScore: 0.00003028
+  timeScore: 0.00003260
   division: QF_ABV
 - name: Vampire
-  correctScore: 0.00001842
-  timeScore: 0.00032974
+  correctScore: 0.00001839
+  timeScore: 0.00032928
   division: AUFLIRA
 - name: Yices 2.6.2
-  correctScore: 0.00001722
-  timeScore: 0.00001473
+  correctScore: 0.00001720
+  timeScore: 0.00001471
   division: QF_RDL
 - name: SMT-RAT
-  correctScore: 0.00000950
-  timeScore: 0.00001785
+  correctScore: 0.00000949
+  timeScore: 0.00001782
   division: QF_NIRA
 - name: Par4
-  correctScore: 0.00000887
-  timeScore: 0.00002596
+  correctScore: 0.00000886
+  timeScore: 0.00002593
   division: QF_LIRA
 - name: CVC4
   correctScore: 0.00000000
-  timeScore: 0.00001688
+  timeScore: 0.00001685
   division: QF_UFBV
 - name: CVC4
   correctScore: 0.00000000
-  timeScore: 0.00000788
+  timeScore: 0.00000787
   division: QF_ANIA
 - name: Vampire
   correctScore: 0.00000000
@@ -625,7 +641,7 @@ unsat:
   division: QF_ALIA
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00000126
+  timeScore: 0.00000125
   division: QF_AUFLIA
 - name: veriT
   correctScore: 0.00000000
@@ -669,148 +685,152 @@ unsat:
   division: QF_UFNRA
 twentyfour:
 - name: Vampire
-  correctScore: 0.01248748
-  timeScore: 0.00619529
+  correctScore: 0.01247027
+  timeScore: 0.00618675
   division: UF
 - name: Par4
-  correctScore: 0.00614115
-  timeScore: 0.00578748
+  correctScore: 0.00612962
+  timeScore: 0.00578198
   division: UFNIA
 - name: Par4
-  correctScore: 0.00384349
-  timeScore: 0.00897541
+  correctScore: 0.00383819
+  timeScore: 0.00896305
   division: QF_NIA
 - name: CVC4
-  correctScore: 0.00208264
-  timeScore: 0.00456002
+  correctScore: 0.00207978
+  timeScore: 0.00455374
   division: LIA
 - name: Par4
-  correctScore: 0.00151300
-  timeScore: 0.01619793
+  correctScore: 0.00151092
+  timeScore: 0.01617561
   division: AUFLIRA
 - name: Par4
-  correctScore: 0.00141407
-  timeScore: 0.00539464
+  correctScore: 0.00141212
+  timeScore: 0.00538720
   division: LRA
 - name: Vampire
-  correctScore: 0.00127318
-  timeScore: 0.00167967
+  correctScore: 0.00127143
+  timeScore: 0.00167736
   division: UFLIA
 - name: Vampire
-  correctScore: 0.00125832
-  timeScore: 0.00580997
+  correctScore: 0.00125658
+  timeScore: 0.00580196
   division: AUFLIA
 - name: Vampire
-  correctScore: 0.00084093
-  timeScore: 0.00029187
+  correctScore: 0.00083977
+  timeScore: 0.00029147
   division: UFDT
 - name: Par4
-  correctScore: 0.00067883
-  timeScore: 0.01440036
+  correctScore: 0.00067790
+  timeScore: 0.01438052
   division: QF_BV
 - name: Par4
-  correctScore: 0.00056895
-  timeScore: 0.00385536
+  correctScore: 0.00056816
+  timeScore: 0.00385004
   division: QF_NRA
 - name: Vampire
-  correctScore: 0.00050465
-  timeScore: 0.00012352
+  correctScore: 0.00050395
+  timeScore: 0.00012335
   division: AUFNIRA
 - name: Yices 2.6.2
-  correctScore: 0.00032289
-  timeScore: 0.00111911
+  correctScore: 0.00032245
+  timeScore: 0.00111757
   division: QF_LRA
 - name: CVC4
-  correctScore: 0.00031077
-  timeScore: 0.00075851
+  correctScore: 0.00031035
+  timeScore: 0.00075746
   division: AUFDTLIA
 - name: Par4
-  correctScore: 0.00030582
-  timeScore: 0.00026433
+  correctScore: 0.00030540
+  timeScore: 0.00026397
   division: UFBV
 - name: Vampire
-  correctScore: 0.00030079
-  timeScore: 0.00008407
+  correctScore: 0.00030038
+  timeScore: 0.00008395
   division: UFDTLIA
 - name: Yices 2.6.2
-  correctScore: 0.00022492
-  timeScore: 0.00188727
+  correctScore: 0.00022461
+  timeScore: 0.00188467
   division: QF_UFIDL
+- name: COLIBRI
+  correctScore: 0.00021667
+  timeScore: 0.00056579
+  division: QF_FP
 - name: Q3B
-  correctScore: 0.00021654
-  timeScore: 0.00277344
+  correctScore: 0.00021624
+  timeScore: 0.00276962
   division: BV
 - name: Par4
-  correctScore: 0.00021291
-  timeScore: 0.00080622
+  correctScore: 0.00021261
+  timeScore: 0.00080511
   division: QF_IDL
 - name: Yices 2.6.2
-  correctScore: 0.00018199
-  timeScore: 0.00050965
+  correctScore: 0.00018174
+  timeScore: 0.00050895
   division: QF_RDL
 - name: Ctrl-Ergo
-  correctScore: 0.00017382
-  timeScore: 0.00400349
+  correctScore: 0.00017358
+  timeScore: 0.00399797
   division: QF_LIA
 - name: Par4
-  correctScore: 0.00015371
-  timeScore: 0.00017259
+  correctScore: 0.00015350
+  timeScore: 0.00017235
   division: QF_UFNRA
 - name: Par4
-  correctScore: 0.00008739
-  timeScore: 0.00072259
+  correctScore: 0.00008727
+  timeScore: 0.00072159
   division: NRA
 - name: CVC4
-  correctScore: 0.00004815
-  timeScore: 0.00158477
+  correctScore: 0.00004808
+  timeScore: 0.00158258
   division: QF_UFNIA
 - name: CVC4
-  correctScore: 0.00003484
-  timeScore: 0.00006274
+  correctScore: 0.00003479
+  timeScore: 0.00006265
   division: NIA
 - name: Yices 2.6.2
-  correctScore: 0.00002850
-  timeScore: 0.00131153
+  correctScore: 0.00002846
+  timeScore: 0.00130973
   division: QF_ALIA
 - name: Par4
-  correctScore: 0.00002764
-  timeScore: 0.00003041
+  correctScore: 0.00002760
+  timeScore: 0.00003037
   division: UFIDL
 - name: Yices 2.6.2
-  correctScore: 0.00002671
-  timeScore: 0.00010376
+  correctScore: 0.00002667
+  timeScore: 0.00010362
   division: QF_AUFBV
 - name: Poolector
-  correctScore: 0.00001913
-  timeScore: 0.00274664
+  correctScore: 0.00001910
+  timeScore: 0.00274286
   division: QF_ABV
 - name: Yices 2.6.2
-  correctScore: 0.00001900
-  timeScore: 0.00283194
+  correctScore: 0.00001898
+  timeScore: 0.00282803
   division: QF_UFLIA
 - name: SMTInterpol
-  correctScore: 0.00001520
-  timeScore: 0.00028838
+  correctScore: 0.00001518
+  timeScore: 0.00028799
   division: ALIA
 - name: veriT
-  correctScore: 0.00001331
-  timeScore: 0.02242309
+  correctScore: 0.00001329
+  timeScore: 0.02239220
   division: QF_UF
 - name: Yices 2.6.2
-  correctScore: 0.00000954
-  timeScore: 0.00173290
+  correctScore: 0.00000952
+  timeScore: 0.00173051
   division: QF_UFLRA
 - name: Yices 2.6.2
-  correctScore: 0.00000950
-  timeScore: 0.00614811
+  correctScore: 0.00000949
+  timeScore: 0.00613964
   division: QF_AUFLIA
 - name: Boolector
-  correctScore: 0.00000865
-  timeScore: 0.00006014
+  correctScore: 0.00000864
+  timeScore: 0.00006006
   division: QF_UFBV
 - name: Yices 2.6.2
   correctScore: 0.00000000
-  timeScore: 0.00208691
+  timeScore: 0.00208404
   division: QF_AX
 - name: Vampire
   correctScore: 0.00000000

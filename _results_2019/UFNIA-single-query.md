@@ -1,9 +1,9 @@
 ---
 layout: result
-resultdate: 2019-07-07 03:08:38
+resultdate: 2019-07-07 07:10:58
 division: UFNIA
 track: track_single_query
-n_benchmarks: 5996
+n_benchmarks: 5993
 time_limit: 2400
 
 winner_seq: Par4
@@ -16,484 +16,484 @@ sequential:
 - name: Par4
   competing: "yes"
   errorScore: 0
-  correctScore: 3508
-  CPUScore: 6235469.845
-  WallScore: 6107356.237
-  solved: 3508
-  solved_sat: 457
+  correctScore: 3506
+  CPUScore: 6230692.435
+  WallScore: 6103765.261
+  solved: 3506
+  solved_sat: 455
   solved_unsat: 3051
-  unsolved: 2488
-  timeout: 2478
+  unsolved: 2487
+  timeout: 2477
   memout: 10
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
   correctScore: 3325
-  CPUScore: 6620614.994
-  WallScore: 6898206.98
+  CPUScore: 6613445.664
+  WallScore: 6891006.83
   solved: 3325
   solved_sat: 453
   solved_unsat: 2872
-  unsolved: 2671
-  timeout: 2669
+  unsolved: 2668
+  timeout: 2666
   memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 3318
-  CPUScore: 6548069.797
-  WallScore: 6849600.983
-  solved: 3318
-  solved_sat: 457
+  correctScore: 3316
+  CPUScore: 6542541.597
+  WallScore: 6844099.983
+  solved: 3316
+  solved_sat: 455
   solved_unsat: 2861
-  unsolved: 2678
-  timeout: 2675
+  unsolved: 2677
+  timeout: 2674
   memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 2497
-  CPUScore: 6532102.471
-  WallScore: 6537035.971
-  solved: 2497
-  solved_sat: 356
+  correctScore: 2496
+  CPUScore: 6527302.798
+  WallScore: 6532235.778
+  solved: 2496
+  solved_sat: 355
   solved_unsat: 2141
-  unsolved: 3499
-  timeout: 2468
+  unsolved: 3497
+  timeout: 2466
   memout: 12
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
   correctScore: 2462
-  CPUScore: 6573905.567
-  WallScore: 6578848.463
+  CPUScore: 6566706.847
+  WallScore: 6571648.333
   solved: 2462
   solved_sat: 347
   solved_unsat: 2115
-  unsolved: 3534
-  timeout: 2484
+  unsolved: 3531
+  timeout: 2481
   memout: 7
 - name: Vampire
   competing: "yes"
   errorScore: 0
   correctScore: 2352
-  CPUScore: 9380092.581
-  WallScore: 8908245.119
+  CPUScore: 9372892.581
+  WallScore: 8901045.119
   solved: 2352
   solved_sat: 0
   solved_unsat: 2352
-  unsolved: 3644
-  timeout: 3644
+  unsolved: 3641
+  timeout: 3641
   memout: 0
 - name: 2018-Vampire
   competing: "no"
   errorScore: 0
   correctScore: 2137
-  CPUScore: 9917877.307
-  WallScore: 9430060.859
+  CPUScore: 9910677.307
+  WallScore: 9422860.859
   solved: 2137
   solved_sat: 0
   solved_unsat: 2137
-  unsolved: 3859
-  timeout: 3859
+  unsolved: 3856
+  timeout: 3856
   memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
   correctScore: 1001
-  CPUScore: 8322162.019
-  WallScore: 7565428.524
+  CPUScore: 8314962.019
+  WallScore: 7558228.524
   solved: 1001
   solved_sat: 0
   solved_unsat: 1001
-  unsolved: 4995
-  timeout: 2797
+  unsolved: 4992
+  timeout: 2794
   memout: 177
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 20
-  CPUScore: 589394.659
-  WallScore: 583039.654
+  CPUScore: 589384.757
+  WallScore: 583032.793
   solved: 20
   solved_sat: 0
   solved_unsat: 20
-  unsolved: 5976
+  unsolved: 5973
   timeout: 236
   memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 550613.585
-  WallScore: 606092.233
+  CPUScore: 550604.062
+  WallScore: 606084.406
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
+  unsolved: 5993
   timeout: 245
   memout: 0
 parallel:
 - name: 2018-Vampire
   competing: "no"
   errorScore: 0
-  correctScore: 3777
-  CPUScore: 16132869.677
-  WallScore: 7412272.677
-  solved: 3777
+  correctScore: 3774
+  CPUScore: 16115465.297
+  WallScore: 7407890.407
+  solved: 3774
   solved_sat: 0
-  solved_unsat: 3777
+  solved_unsat: 3774
   unsolved: 2219
   timeout: 2219
   memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
-  correctScore: 3515
-  CPUScore: 6239277.505
-  WallScore: 6101019.747
-  solved: 3515
-  solved_sat: 457
+  correctScore: 3513
+  CPUScore: 6234500.095
+  WallScore: 6097428.771
+  solved: 3513
+  solved_sat: 455
   solved_unsat: 3058
-  unsolved: 2481
-  timeout: 2471
+  unsolved: 2480
+  timeout: 2470
   memout: 10
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
   correctScore: 3325
-  CPUScore: 6864734.154
-  WallScore: 6898065.67
+  CPUScore: 6857534.154
+  WallScore: 6890865.67
   solved: 3325
   solved_sat: 453
   solved_unsat: 2872
-  unsolved: 2671
-  timeout: 2669
+  unsolved: 2668
+  timeout: 2666
   memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 3318
-  CPUScore: 6834156.034
-  WallScore: 6849469.503
-  solved: 3318
-  solved_sat: 457
+  correctScore: 3316
+  CPUScore: 6828611.544
+  WallScore: 6843968.593
+  solved: 3316
+  solved_sat: 455
   solved_unsat: 2861
-  unsolved: 2678
-  timeout: 2676
+  unsolved: 2677
+  timeout: 2675
   memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
   correctScore: 2510
-  CPUScore: 10621612.931
-  WallScore: 8769518.366
+  CPUScore: 10614412.931
+  WallScore: 8762318.366
   solved: 2510
   solved_sat: 0
   solved_unsat: 2510
-  unsolved: 3486
-  timeout: 3486
+  unsolved: 3483
+  timeout: 3483
   memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 2497
-  CPUScore: 6533791.441
-  WallScore: 6536928.491
-  solved: 2497
-  solved_sat: 356
+  correctScore: 2496
+  CPUScore: 6528991.378
+  WallScore: 6532128.428
+  solved: 2496
+  solved_sat: 355
   solved_unsat: 2141
-  unsolved: 3499
-  timeout: 2468
+  unsolved: 3497
+  timeout: 2466
   memout: 12
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
   correctScore: 2462
-  CPUScore: 6576387.697
-  WallScore: 6578743.013
+  CPUScore: 6569187.697
+  WallScore: 6571543.013
   solved: 2462
   solved_sat: 347
   solved_unsat: 2115
-  unsolved: 3534
-  timeout: 2484
+  unsolved: 3531
+  timeout: 2481
   memout: 7
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
   correctScore: 1041
-  CPUScore: 8888564.949
-  WallScore: 7092048.122
+  CPUScore: 8881364.949
+  WallScore: 7084848.122
   solved: 1041
   solved_sat: 0
   solved_unsat: 1041
-  unsolved: 4955
-  timeout: 2395
+  unsolved: 4952
+  timeout: 2392
   memout: 177
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 20
-  CPUScore: 965066.429
-  WallScore: 507417.494
+  CPUScore: 965056.527
+  WallScore: 507410.633
   solved: 20
   solved_sat: 0
   solved_unsat: 20
-  unsolved: 5976
+  unsolved: 5973
   timeout: 128
   memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 985248.646
-  WallScore: 541745.603
+  CPUScore: 985239.123
+  WallScore: 541737.776
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
+  unsolved: 5993
   timeout: 145
   memout: 0
 sat:
 - name: Par4
   competing: "yes"
   errorScore: 0
-  correctScore: 457
-  CPUScore: 50936.27
-  WallScore: 36485.9
-  solved: 457
-  solved_sat: 457
+  correctScore: 455
+  CPUScore: 46158.86
+  WallScore: 32894.924
+  solved: 455
+  solved_sat: 455
   solved_unsat: 0
-  unsolved: 5539
-  timeout: 2471
+  unsolved: 5538
+  timeout: 2470
   memout: 10
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 457
-  CPUScore: 62973.422
-  WallScore: 64244.299
-  solved: 457
-  solved_sat: 457
+  correctScore: 455
+  CPUScore: 57428.932
+  WallScore: 58743.389
+  solved: 455
+  solved_sat: 455
   solved_unsat: 0
-  unsolved: 5539
-  timeout: 2676
+  unsolved: 5538
+  timeout: 2675
   memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
   correctScore: 453
-  CPUScore: 67283.228
-  WallScore: 68234.461
+  CPUScore: 60083.228
+  WallScore: 61034.461
   solved: 453
   solved_sat: 453
   solved_unsat: 0
-  unsolved: 5543
-  timeout: 2669
+  unsolved: 5540
+  timeout: 2666
   memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 356
-  CPUScore: 247662.119
-  WallScore: 247821.492
-  solved: 356
-  solved_sat: 356
+  correctScore: 355
+  CPUScore: 242862.056
+  WallScore: 243021.43
+  solved: 355
+  solved_sat: 355
   solved_unsat: 0
-  unsolved: 5640
-  timeout: 2468
+  unsolved: 5638
+  timeout: 2466
   memout: 12
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
   correctScore: 347
-  CPUScore: 272097.996
-  WallScore: 272100.095
+  CPUScore: 264897.996
+  WallScore: 264900.095
   solved: 347
   solved_sat: 347
   solved_unsat: 0
-  unsolved: 5649
-  timeout: 2484
+  unsolved: 5646
+  timeout: 2481
   memout: 7
-- name: 2018-Vampire
-  competing: "no"
-  errorScore: 0
-  correctScore: 3
-  CPUScore: 1690217.23
-  WallScore: 1114788.18
-  solved: 3
-  solved_sat: 0
-  solved_unsat: 3
-  unsolved: 5993
-  timeout: 2219
-  memout: 0
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 1591.195
-  WallScore: 1118.062
+  CPUScore: 1581.293
+  WallScore: 1111.201
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
+  unsolved: 5993
   timeout: 128
   memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 8682.014
-  WallScore: 8221.122
+  CPUScore: 8672.491
+  WallScore: 8213.296
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
+  unsolved: 5993
   timeout: 145
   memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 181839.733
-  WallScore: 180727.261
+  CPUScore: 174639.733
+  WallScore: 173527.261
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
-  timeout: 2395
+  unsolved: 5993
+  timeout: 2392
   memout: 177
+- name: 2018-Vampire
+  competing: "no"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 1672812.85
+  WallScore: 1110405.91
+  solved: 0
+  solved_sat: 0
+  solved_unsat: 0
+  unsolved: 5993
+  timeout: 2219
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 1161601.18
-  WallScore: 1118285.27
+  CPUScore: 1154401.18
+  WallScore: 1111085.27
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
-  timeout: 3486
+  unsolved: 5993
+  timeout: 3483
   memout: 0
 unsat:
 - name: 2018-Vampire
   competing: "no"
   errorScore: 0
-  correctScore: 3777
-  CPUScore: 9664739.527
-  WallScore: 3063845.057
-  solved: 3777
+  correctScore: 3774
+  CPUScore: 9647335.147
+  WallScore: 3059462.787
+  solved: 3774
   solved_sat: 0
-  solved_unsat: 3777
+  solved_unsat: 3774
   unsolved: 2219
   timeout: 2219
   memout: 0
 - name: Par4
   competing: "yes"
   errorScore: 0
-  correctScore: 3060
-  CPUScore: 2953118.644
-  WallScore: 2828124.823
-  solved: 3060
-  solved_sat: 2
+  correctScore: 3058
+  CPUScore: 2948341.234
+  WallScore: 2824533.847
+  solved: 3058
+  solved_sat: 0
   solved_unsat: 3058
-  unsolved: 2936
-  timeout: 2471
+  unsolved: 2935
+  timeout: 2470
   memout: 10
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
   correctScore: 2872
-  CPUScore: 3566568.223
-  WallScore: 3598940.131
+  CPUScore: 3559368.223
+  WallScore: 3591740.131
   solved: 2872
   solved_sat: 0
   solved_unsat: 2872
-  unsolved: 3124
-  timeout: 2669
+  unsolved: 3121
+  timeout: 2666
   memout: 0
 - name: CVC4
   competing: "yes"
   errorScore: 0
-  correctScore: 2863
-  CPUScore: 3538164.048
-  WallScore: 3552143.538
-  solved: 2863
-  solved_sat: 2
+  correctScore: 2861
+  CPUScore: 3532619.558
+  WallScore: 3546642.628
+  solved: 2861
+  solved_sat: 0
   solved_unsat: 2861
-  unsolved: 3133
-  timeout: 2676
+  unsolved: 3132
+  timeout: 2675
   memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
   correctScore: 2510
-  CPUScore: 5960804.971
-  WallScore: 4419052.076
+  CPUScore: 5953604.971
+  WallScore: 4411852.076
   solved: 2510
   solved_sat: 0
   solved_unsat: 2510
-  unsolved: 3486
-  timeout: 3486
+  unsolved: 3483
+  timeout: 3483
   memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 2142
-  CPUScore: 3641361.125
-  WallScore: 3642607.731
-  solved: 2142
-  solved_sat: 1
+  correctScore: 2141
+  CPUScore: 3636561.063
+  WallScore: 3637807.669
+  solved: 2141
+  solved_sat: 0
   solved_unsat: 2141
-  unsolved: 3854
-  timeout: 2468
+  unsolved: 3852
+  timeout: 2466
   memout: 12
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
   correctScore: 2115
-  CPUScore: 3658982.274
-  WallScore: 3659319.15
+  CPUScore: 3651782.274
+  WallScore: 3652119.15
   solved: 2115
   solved_sat: 0
   solved_unsat: 2115
-  unsolved: 3881
-  timeout: 2484
+  unsolved: 3878
+  timeout: 2481
   memout: 7
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
   correctScore: 1041
-  CPUScore: 6590649.735
-  WallScore: 5046640.002
+  CPUScore: 6583449.735
+  WallScore: 5039440.002
   solved: 1041
   solved_sat: 0
   solved_unsat: 1041
-  unsolved: 4955
-  timeout: 2395
+  unsolved: 4952
+  timeout: 2392
   memout: 177
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 20
-  CPUScore: 958932.792
-  WallScore: 502901.777
+  CPUScore: 958922.89
+  WallScore: 502894.916
   solved: 20
   solved_sat: 0
   solved_unsat: 20
-  unsolved: 5976
+  unsolved: 5973
   timeout: 128
   memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 955365.629
-  WallScore: 513615.854
+  CPUScore: 955356.106
+  WallScore: 513608.027
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
+  unsolved: 5993
   timeout: 145
   memout: 0
 twentyfour:
@@ -501,120 +501,120 @@ twentyfour:
   competing: "yes"
   errorScore: 0
   correctScore: 2907
-  CPUScore: 80737.317
-  WallScore: 77715.12
+  CPUScore: 80665.317
+  WallScore: 77643.12
   solved: 2907
   solved_sat: 410
   solved_unsat: 2497
-  unsolved: 3089
-  timeout: 3079
+  unsolved: 3086
+  timeout: 3076
   memout: 10
 - name: CVC4
   competing: "yes"
   errorScore: 0
   correctScore: 2430
-  CPUScore: 90431.415
-  WallScore: 90383.8
+  CPUScore: 90359.415
+  WallScore: 90311.8
   solved: 2430
   solved_sat: 393
   solved_unsat: 2037
-  unsolved: 3566
-  timeout: 3565
+  unsolved: 3563
+  timeout: 3562
   memout: 0
 - name: CVC4-SymBreak
   competing: "no"
   errorScore: 0
   correctScore: 2398
-  CPUScore: 91461.83
-  WallScore: 91416.793
+  CPUScore: 91389.83
+  WallScore: 91344.793
   solved: 2398
   solved_sat: 390
   solved_unsat: 2008
-  unsolved: 3598
-  timeout: 3597
+  unsolved: 3595
+  timeout: 3594
   memout: 0
 - name: Z3
   competing: "no"
   errorScore: 0
-  correctScore: 2300
-  CPUScore: 89009.444
-  WallScore: 88973.065
-  solved: 2300
-  solved_sat: 330
+  correctScore: 2299
+  CPUScore: 88961.382
+  WallScore: 88925.002
+  solved: 2299
+  solved_sat: 329
   solved_unsat: 1970
-  unsolved: 3696
-  timeout: 3538
+  unsolved: 3694
+  timeout: 3536
   memout: 12
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
   correctScore: 2245
-  CPUScore: 89905.519
-  WallScore: 89883.581
+  CPUScore: 89833.519
+  WallScore: 89811.581
   solved: 2245
   solved_sat: 315
   solved_unsat: 1930
-  unsolved: 3751
-  timeout: 3588
+  unsolved: 3748
+  timeout: 3585
   memout: 7
 - name: 2018-Vampire
   competing: "no"
   errorScore: 0
   correctScore: 1521
-  CPUScore: 116130.676
-  WallScore: 109761.503
+  CPUScore: 116058.676
+  WallScore: 109689.503
   solved: 1521
   solved_sat: 0
   solved_unsat: 1521
-  unsolved: 4475
-  timeout: 4475
+  unsolved: 4472
+  timeout: 4472
   memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
   correctScore: 1455
-  CPUScore: 125436.932
-  WallScore: 113377.256
+  CPUScore: 125364.932
+  WallScore: 113305.256
   solved: 1455
   solved_sat: 0
   solved_unsat: 1455
-  unsolved: 4541
-  timeout: 4541
+  unsolved: 4538
+  timeout: 4538
   memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
   correctScore: 841
-  CPUScore: 101516.895
-  WallScore: 95476.638
+  CPUScore: 101444.895
+  WallScore: 95404.638
   solved: 841
   solved_sat: 0
   solved_unsat: 841
-  unsolved: 5155
-  timeout: 3698
+  unsolved: 5152
+  timeout: 3695
   memout: 177
 - name: UltimateEliminator+MathSAT-5.5.4
   competing: "yes"
   errorScore: 0
   correctScore: 20
-  CPUScore: 25744.22
-  WallScore: 19998.805
+  CPUScore: 25734.318
+  WallScore: 19991.943
   solved: 20
   solved_sat: 0
   solved_unsat: 20
-  unsolved: 5976
+  unsolved: 5973
   timeout: 257
   memout: 0
 - name: UltimateEliminator+Yices-2.6.1
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 25424.507
-  WallScore: 19710.386
+  CPUScore: 25414.984
+  WallScore: 19702.56
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 5996
+  unsolved: 5993
   timeout: 270
   memout: 0
 ---

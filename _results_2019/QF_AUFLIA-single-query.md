@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2019-07-07 03:08:37
+resultdate: 2019-07-07 07:10:58
 division: QF_AUFLIA
 track: track_single_query
 n_benchmarks: 651
