@@ -43,12 +43,8 @@ The {{ track_descr.pretty_name }} divisions are not yet available.
 In total there are
 {{ n_divisions }} divisions in the {{ track_descr.pretty_name }}.
 
-{% for sel_bm in site.data.selected_benchmarks %}
-    {%- if sel_bm.raw_name == track_descr.raw_name -%}
+{%- assign sel_bm = site.data.selected_benchmarks |where: "raw_name", track_descr.raw_name |first -%}
 The list of selected benchmarks is available [here]({{ sel_bm.url }}).
-        {%- break -%}
-    {%- endif -%}
-{% endfor %}
 
 <table>
 <tr>
