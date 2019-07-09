@@ -14,6 +14,8 @@
   link: 2019/participants.html
 - name: Results
   link: 2019/results.html
+- name: Slides
+  link: 2019/SMT-COMP-2019-slides.pdf
 - name: Benchmark submission
   link: benchmark_submission.html
 - name: Solver submission
