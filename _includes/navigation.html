@@ -1,5 +1,21 @@
+{%- assign year = '' -%}
+{%- assign menu_items = '' |split: ',' -%}
+{%- for item in site.data.navigation -%}
+  {%- assign menu_items = menu_items |push: item -%}
+  {%- if item.sublinks and page.url contains item.url -%}
+    {%- assign year = page.url |replace: '/', ' ' |truncatewords: 1 |remove: '...' -%}
+    {%- for subitem in item.sublinks -%}
+      {%- assign menu_items = menu_items |push: subitem -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+
 <header>
-  <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+  <h1>
+		<a href="{{ "/" | absolute_url }}">
+      {{ site.title | default: site.github.repository_name }} {{ year }}
+    </a>
+  </h1>
 
   {% if site.logo %}
     <img src="{{site.logo | relative_url}}" alt="Logo" />
@@ -9,7 +25,7 @@
 
   <p class="view"><a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a></p>
   <p class="view">
-    {% for item in site.data.navigation %}
+    {% for item in menu_items %}
     <a href="{{ item.link | relative_url }}"><b>{{ item.name }}</b></a><br/>
     {% endfor %}
   </p>

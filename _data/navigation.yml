@@ -2,23 +2,25 @@
   link: index.html
 - name: Introduction
   link: introduction.html
-- name: Rules
-  link: 2019/rules19.pdf
-- name: Benchmarks
-  link: 2019/benchmarks.html
-- name: Tools
-  link: tools.html
-- name: Specs
-  link: 2019/specs.html
-- name: Participants
-  link: 2019/participants.html
-- name: Results
-  link: 2019/results.html
-- name: Slides
-  link: 2019/SMT-COMP-2019-slides.pdf
 - name: Benchmark submission
   link: benchmark_submission.html
-- name: Solver submission
-  link: https://forms.gle/y8xB4C8TB2WkdKPx9
-- name: Previous
-  link: previous.html
+  url: 2019
+  sublinks:
+  - name: Rules
+    link: 2019/rules19.pdf
+  - name: Benchmarks
+    link: 2019/benchmarks.html
+  - name: Tools
+    link: 2019/tools.html
+  - name: Specs
+    link: 2019/specs.html
+  - name: Participants
+    link: 2019/participants.html
+  - name: Results
+    link: 2019/results.html
+  - name: Slides
+    link: 2019/SMT-COMP-2019-slides.pdf
+#  - name: Solver submission
+#    link: https://forms.gle/y8xB4C8TB2WkdKPx9
+  - name: Previous
+    link: previous.html
