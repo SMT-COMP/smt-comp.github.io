@@ -26,3 +26,13 @@ and results of the competition.
 - [Antti Hyvarinen](https://www.inf.usi.ch/postdoc/hyvarinen/) - Universita della Svizzera italiana, CH
 - [Aina Niemetz](https://cs.stanford.edu/people/niemetz) (co-chair) - Stanford University, USA
 - [Giles Reger](http://www.cs.man.ac.uk/~regerg/) (co-chair) - University of Manchester, UK
+
+The competition is run on [StarExec](https://www.starexec.org),
+a service that is hosted at the University of Iowa.
+
+### Acknowledgment
+- [Mathias Preiner](https://cs.stanford.edu/people/preiner) (benchmark selection and scoring scripts)
+- [Aaron Stump](http://homepage.divms.uiowa.edu/~astump/) (StarExec)
+- [Andres N&ouml;tzli](https://cs.stanford.edu/people/noetzli/) (trace executor extension)
+- Marco Gario and Andrea Micheli ([pySMT](https://github.com/pysmt/pysmt))
+- [Martin Riener](https://www.logic.at/staff/riener/) (logistics for certificates and trophies)
