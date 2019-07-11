@@ -2,8 +2,13 @@
   link: index.html
 - name: Introduction
   link: introduction.html
+- name: Papers
+  link: papers.html
 - name: Benchmark submission
   link: benchmark_submission.html
+
+- name: 2019
+  link: 2018/index.html
   url: 2019
   sublinks:
   - name: Rules
@@ -22,5 +27,16 @@
     link: 2019/SMT-COMP-2019-slides.pdf
 #  - name: Solver submission
 #    link: https://forms.gle/y8xB4C8TB2WkdKPx9
-  - name: Previous
-    link: previous.html
+
+- name: 2018
+  link: 2018/index.html
+  url: 2018
+  sublinks:
+  - name: Rules
+    link: 2018/rules18.pdf
+  - name: Benchmarks
+    link: 2018/benchmarks.html
+- name: 2017
+  link: 2018/index.html
+  url: 2017
+  sublinks:

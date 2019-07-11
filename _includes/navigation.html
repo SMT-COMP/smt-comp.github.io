@@ -26,9 +26,15 @@
   <p class="view"><a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a></p>
   <p class="view">
     {% for item in menu_items %}
+      {%- assign i = item.name |split: '20' |first -%}
+      {%- unless page.url contains item.url -%}
+        {%- if i == item.name -%}
     <a href="{{ item.link | relative_url }}"><b>{{ item.name }}</b></a><br/>
+        {%- endif -%}
+      {%- endunless -%}
     {% endfor %}
   </p>
+  <p class="view"><a class="hl" href="/previous.html"><b>Previous</b></a></p>
   <p class="view"><a class="hl" href="http://www.smt-lib.org"><b>SMT-LIB</b></a></p>
 
   {% if site.show_downloads %}

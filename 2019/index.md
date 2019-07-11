@@ -1,8 +1,8 @@
 ## SMT-COMP 2019
 
-The 14th International Satisfiability Modulo Theories Competition
-(SMT-COMP 2019) is part of the SMT Workshop 2019, affiliated with
-[SAT 2019](http://sat2019.tecnico.ulisboa.pt).
+The *14th International Satisfiability Modulo Theories Competition
+(SMT-COMP 2019)* is part of the [SMT Workshop 2019](http://smt2019.galois.com/),
+affiliated with [SAT 2019](http://sat2019.tecnico.ulisboa.pt).
 The SMT Workshop will include a block of time to present the competitors
 and results of the competition.
 
@@ -23,10 +23,13 @@ and results of the competition.
 
 ### Organizers
 - Liana Hadarean - Amazon, USA
-- [Antti Hyvarinen](https://www.inf.usi.ch/postdoc/hyvarinen/) - Universita della Svizzera italiana, CH
+- [Antti Hyvarinen](https://www.inf.usi.ch/postdoc/hyvarinen/) - Universita della Svizzera italiana, Switzerland
 - [Aina Niemetz](https://cs.stanford.edu/people/niemetz) (co-chair) - Stanford University, USA
 - [Giles Reger](http://www.cs.man.ac.uk/~regerg/) (co-chair) - University of Manchester, UK
 
+SMT-COMP 2019 is organized under the direction of the SMT Steering
+Committee.
+<br/>
 The competition is run on [StarExec](https://www.starexec.org),
 a service that is hosted at the University of Iowa.
 
