@@ -13,7 +13,7 @@ seed: 568
 solverHomePage: http://verify.inf.usi.ch/opensmt
 sysDescrUrl: OpenSMT2.pdf
 sysDescrName: OpenSMT2
-logics:
+divisions:
 - name: QF_LRA
   tracks:
   - track_single_query

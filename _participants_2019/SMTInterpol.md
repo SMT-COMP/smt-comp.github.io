@@ -13,7 +13,7 @@ seed: 983571724
 solverHomePage: http://ultimate.informatik.uni-freiburg.de/smtinterpol/
 sysDescrUrl: smtinterpol.pdf
 sysDescrName: SMTInterpol
-logics:
+divisions:
 - name: ALIA
   tracks:
   - track_single_query

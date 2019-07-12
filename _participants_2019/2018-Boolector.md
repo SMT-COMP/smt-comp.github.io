@@ -13,7 +13,7 @@ seed:
 solverHomePage: 
 sysDescrUrl: 
 sysDescrName: 
-logics:
+divisions:
 - name: QF_ABV
   tracks:
   - track_single_query

@@ -13,7 +13,7 @@ seed: 0
 solverHomePage: 
 sysDescrUrl: Par4.pdf
 sysDescrName: Par4
-logics:
+divisions:
 - name: AUFLIRA
   tracks:
   - track_single_query

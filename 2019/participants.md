@@ -1,3 +1,273 @@
+---
+layout: default
+
+divisions:
+- name: ABVFP
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: ALIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: ANIA
+  tracks:
+  - track_incremental
+- name: AUFBVDTLIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFDTLIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFLIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFLIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFNIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFNIRA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: BV
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: BVFP
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: FP
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: LIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: LRA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: NIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: NRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_ABV
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_single_query_challenge
+  - track_incremental_challenge
+  - track_unsat_core
+- name: QF_ABVFP
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_ALIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_ANIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_AUFBV
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_single_query_challenge
+  - track_incremental_challenge
+  - track_unsat_core
+- name: QF_AUFBVLIA
+  tracks:
+  - track_incremental
+- name: QF_AUFBVNIA
+  tracks:
+  - track_incremental
+- name: QF_AUFLIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_AUFNIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_AX
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_BV
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_single_query_challenge
+  - track_incremental_challenge
+  - track_unsat_core
+  - track_model_validation
+- name: QF_BVFP
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_BVFPLRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_DT
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_FP
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_FPLRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_IDL
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_LIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_LIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_LRA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_NIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_NIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_NRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_RDL
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_S
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_SLIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_UF
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFBV
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFBVLIA
+  tracks:
+  - track_incremental
+- name: QF_UFIDL
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: QF_UFLIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFLRA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFNIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_UFNRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UF
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFBV
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFDT
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFDTLIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFDTNIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFIDL
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFLIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFLRA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: UFNIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+---
+
 {%- assign sum_of_seeds = 0 -%}
 {%- for solver in site.participants_2019 -%}
     {%- assign sum_of_seeds = sum_of_seeds | plus: solver.seed -%}
@@ -18,7 +288,7 @@
     {%- assign nsolvers_track_comp = 0 -%}
     {%- assign nsolvers_track_non_comp = 0 -%}
     {%- for solver in site.participants_2019 -%}
-        {%- assign in_track = solver.logics |where: "tracks", track.raw_name |first -%}
+        {%- assign in_track = solver.divisions |where: "tracks", track.raw_name |first -%}
         {% if in_track %}
           {%- assign nsolvers_track = nsolvers_track |plus: 1 -%}
           {% if solver.competing == "yes" %}
@@ -65,7 +335,7 @@ non-competing solvers by the organizers for comparison.
 </td>
 {%- for track in site.data.tracks -%}
 <td class="center">
-  {%- assign in_track = solver.logics |where: "tracks", track.raw_name |first -%}
+  {%- assign in_track = solver.divisions |where: "tracks", track.raw_name |first -%}
   {% if in_track %}
   X
   {% endif %}
@@ -123,7 +393,7 @@ nyse_round }} = <b>{{ comp_seed }}</b>.
 
 These are the logic divisions in which each solver is participating.
 
-{% for logic in site.data.logics %}
+{% for division in page.divisions %}
 
   {%- assign nsolvers_logic_list = "" -%}
   {%- assign nsolvers_logic_comp_list = "" -%}
@@ -133,7 +403,7 @@ These are the logic divisions in which each solver is participating.
       {%- assign nsolvers_logic_comp = 0 -%}
       {%- assign nsolvers_logic_non_comp = 0 -%}
       {%- for solver in site.participants_2019 -%}
-          {%- assign in_logic = solver.logics |where: "name", logic.name |where: "tracks", track.raw_name |first -%}
+          {%- assign in_logic = solver.divisions |where: "name", division.name |where: "tracks", track.raw_name |first -%}
           {% if in_logic %}
             {%- assign nsolvers_logic = nsolvers_logic |plus: 1 -%}
             {% if solver.competing == "yes" %}
@@ -159,11 +429,11 @@ These are the logic divisions in which each solver is participating.
   {%- assign nsolvers_logic_comp_list = nsolvers_logic_comp_list |split: ":" -%}
   {%- assign nsolvers_logic_non_comp_list = nsolvers_logic_non_comp_list |split: ":" -%}
 
-### {{ logic.name }}
+### {{ division.name }}
 <table>
 <tr>
 <th>Solver</th>
-  {%- for track in logic.tracks -%}
+  {%- for track in division.tracks -%}
 <th class="center">
     {% assign tt = site.data.tracks |where: "raw_name", track  |first %}
     {{ tt.pretty_name }}
@@ -171,7 +441,7 @@ These are the logic divisions in which each solver is participating.
   {%- endfor -%}
 </tr>
   {%- for solver in site.participants_2019 -%}
-    {%- assign in_logic = solver.logics |where: "name", logic.name |first -%}
+    {%- assign in_logic = solver.divisions |where: "name", division.name |first -%}
     {% unless in_logic %}{% continue %}{% endunless %}
 <tr {% if solver.competing == "no" %} class = "noncompeting" {%- endif -%}>
 <td>
@@ -180,9 +450,9 @@ These are the logic divisions in which each solver is participating.
 <sup><a href="#nc">n</a></sup>
     {%- endif -%}
 </td>
-    {%- for track in logic.tracks -%}
+    {%- for track in division.tracks -%}
 <td class="center">
-      {%- assign in_logic = solver.logics |where: "name", logic.name |where: "tracks", track |first -%}
+      {%- assign in_logic = solver.divisions |where: "name", division.name |where: "tracks", track |first -%}
         {% if in_logic %}
 X
         {%- endif -%}
@@ -190,8 +460,6 @@ X
     {%- endfor -%}
 </tr>
   {%- endfor -%}
-
-
 <tr class="total">
 <td>Total - competing</td>
   {% for num in nsolvers_logic_comp_list %}

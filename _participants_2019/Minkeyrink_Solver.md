@@ -13,7 +13,7 @@ seed:
 solverHomePage: 
 sysDescrUrl: minkeyrink.pdf
 sysDescrName: Minkeyrink Solver
-logics:
+divisions:
 - name: QF_BV
   tracks:
   - track_single_query

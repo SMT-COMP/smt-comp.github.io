@@ -13,7 +13,7 @@ seed: 9247
 solverHomePage: http://www.prob2.de
 sysDescrUrl: proB.pdf
 sysDescrName: proB
-logics:
+divisions:
 - name: LIA
   tracks:
   - track_single_query

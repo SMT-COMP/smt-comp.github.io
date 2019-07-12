@@ -13,7 +13,7 @@ seed:
 solverHomePage: 
 sysDescrUrl: 
 sysDescrName: 
-logics:
+divisions:
 - name: NRA
   tracks:
   - track_single_query

@@ -9,16 +9,16 @@
 <tr>
 <td><b>{{ track_descr.pretty_name }}</b></td>
 <td>
-    {%- assign logic_str = "" -%}
-    {%- for slogic in page.logics -%}
-        {%- for strack in slogic.tracks -%}
-            {%- if strack == track_descr.raw_name -%}
-                {%- assign logic_str = logic_str |append: slogic.name |append: ":" -%}
+    {%- assign division_str = "" -%}
+    {%- for division in page.divisions -%}
+        {%- for track in division.tracks -%}
+            {%- if track == track_descr.raw_name -%}
+                {%- assign division_str = division_str |append: division.name |append: ":" -%}
             {%- endif -%}
         {%- endfor -%}
     {%- endfor -%}
-    {%- assign logic_str = logic_str | split: ":" -%}
-{{ logic_str |join: ", " }}
+    {%- assign division_str = division_str | split: ":" -%}
+{{ division_str |join: ", " }}
 </td>
 </tr>
 {%- endfor -%}

@@ -13,7 +13,7 @@ seed: 12019
 solverHomePage: https://alt-ergo.ocamlpro.com/
 sysDescrUrl: Ctrl-Ergo.pdf
 sysDescrName: Ctrl-Ergo
-logics:
+divisions:
 - name: QF_LIA
   tracks:
   - track_single_query

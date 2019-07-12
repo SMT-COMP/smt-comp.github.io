@@ -13,7 +13,7 @@ seed:
 solverHomePage: 
 sysDescrUrl: cvc4-symbreak.pdf
 sysDescrName: CVC4-SymBreak
-logics:
+divisions:
 - name: AUFLIA
   tracks:
   - track_single_query

@@ -13,7 +13,7 @@ seed: 13
 solverHomePage: http://www.verit-solver.org
 sysDescrUrl: veriT+raSAT+Redlog.pdf
 sysDescrName: veriT+raSAT+Redlog
-logics:
+divisions:
 - name: QF_NRA
   tracks:
   - track_single_query

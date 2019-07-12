@@ -13,7 +13,7 @@ seed:
 solverHomePage: http://cvc4.cs.stanford.edu
 sysDescrUrl: cvc4.pdf
 sysDescrName: CVC4
-logics:
+divisions:
 - name: QF_BV
   tracks:
   - track_incremental

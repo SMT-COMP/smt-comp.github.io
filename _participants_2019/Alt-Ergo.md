@@ -13,7 +13,7 @@ seed: 42
 solverHomePage: https://alt-ergo.ocamlpro.com/
 sysDescrUrl: Alt-Ergo.pdf
 sysDescrName: Alt-Ergo
-logics:
+divisions:
 - name: ALIA
   tracks:
   - track_single_query

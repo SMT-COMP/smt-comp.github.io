@@ -13,7 +13,7 @@ seed: 42
 solverHomePage: https://boolector.github.io
 sysDescrUrl: boolector.pdf
 sysDescrName: Boolector
-logics:
+divisions:
 - name: QF_ABV
   tracks:
   - track_incremental

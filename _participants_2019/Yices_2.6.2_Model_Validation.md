@@ -13,7 +13,7 @@ seed: 255
 solverHomePage: http://yices.csl.sri.com
 sysDescrUrl: yices.pdf
 sysDescrName: Yices
-logics:
+divisions:
 - name: QF_BV
   tracks:
   - track_model_validation

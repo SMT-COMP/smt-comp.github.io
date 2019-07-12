@@ -13,7 +13,7 @@ seed: 7800
 solverHomePage: http://www.verit-solver.org
 sysDescrUrl: veriT.pdf
 sysDescrName: veriT
-logics:
+divisions:
 - name: ALIA
   tracks:
   - track_single_query

@@ -13,7 +13,7 @@ seed: 896120349
 solverHomePage: http://aprove.informatik.rwth-aachen.de/
 sysDescrUrl: AProVE19.pdf
 sysDescrName: AProVE
-logics:
+divisions:
 - name: QF_NIA
   tracks:
   - track_single_query

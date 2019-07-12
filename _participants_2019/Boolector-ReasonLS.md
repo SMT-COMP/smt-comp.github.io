@@ -13,7 +13,7 @@ seed:
 solverHomePage: 
 sysDescrUrl: boolector-ReasonLS.pdf
 sysDescrName: Boolector-ReasonLS
-logics:
+divisions:
 - name: QF_BV
   tracks:
   - track_single_query

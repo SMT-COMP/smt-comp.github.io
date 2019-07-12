@@ -13,7 +13,7 @@ seed: 1094795585
 solverHomePage: https://github.com/stp/stp
 sysDescrUrl: STP.pdf
 sysDescrName: STP
-logics:
+divisions:
 - name: QF_BV
   tracks:
   - track_single_query

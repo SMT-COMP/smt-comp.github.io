@@ -13,7 +13,7 @@ seed: 512
 solverHomePage: 
 sysDescrUrl: mathsat5.pdf
 sysDescrName: MathSAT5
-logics:
+divisions:
 - name: QF_ANIA
   tracks:
   - track_single_query

@@ -13,7 +13,7 @@ seed: 0
 solverHomePage: https://ultimate.informatik.uni-freiburg.de/
 sysDescrUrl: 2019UltimateEliminator.pdf
 sysDescrName: UltimateEliminator
-logics:
+divisions:
 - name: ABVFP
   tracks:
   - track_single_query

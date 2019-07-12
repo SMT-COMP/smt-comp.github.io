@@ -13,7 +13,7 @@ seed: 439
 solverHomePage: http://cvc4.cs.stanford.edu
 sysDescrUrl: cvc4.pdf
 sysDescrName: CVC4
-logics:
+divisions:
 - name: ABVFP
   tracks:
   - track_unsat_core

@@ -13,7 +13,7 @@ seed: 73
 solverHomePage: https://www.spass-prover.org/
 sysDescrUrl: SPASS-SATT.pdf
 sysDescrName: SPASS-SATT
-logics:
+divisions:
 - name: QF_LIA
   tracks:
   - track_single_query

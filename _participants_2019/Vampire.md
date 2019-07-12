@@ -13,7 +13,7 @@ seed: 4051
 solverHomePage: https://vprover.github.io
 sysDescrUrl: vampire.pdf
 sysDescrName: Vampire
-logics:
+divisions:
 - name: ALIA
   tracks:
   - track_single_query

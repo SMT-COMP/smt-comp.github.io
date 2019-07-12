@@ -13,7 +13,7 @@ seed:
 solverHomePage: https://github.com/smtrat/smtrat/wiki
 sysDescrUrl: smtrat.pdf
 sysDescrName: SMT-RAT
-logics:
+divisions:
 - name: QF_NIA
   tracks:
   - track_single_query

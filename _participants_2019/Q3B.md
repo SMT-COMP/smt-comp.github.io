@@ -13,7 +13,7 @@ seed: 93629305
 solverHomePage: https://github.com/martinjonas/Q3B/releases/tag/smtcomp2019
 sysDescrUrl: q3b.pdf
 sysDescrName: Q3B
-logics:
+divisions:
 - name: BV
   tracks:
   - track_single_query

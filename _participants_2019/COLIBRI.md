@@ -13,7 +13,7 @@ seed: 614823377508390721
 solverHomePage: 
 sysDescrUrl: colibri.pdf
 sysDescrName: COLIBRI
-logics:
+divisions:
 - name: QF_FP
   tracks:
   - track_single_query
