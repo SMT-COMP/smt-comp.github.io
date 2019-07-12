@@ -1,6 +1,10 @@
 ---
 layout: default
 
+nyse:
+  date: 2019-06-03
+  value: 12888.51
+
 divisions:
 - name: ABVFP
   tracks:
@@ -274,7 +278,7 @@ divisions:
 {%- endfor -%}
 {%- assign sum_of_seeds = sum_of_seeds | modulo: 1073741824 -%}
 
-{%- assign nyse_info = site.data.nyse_composite_index -%}
+{%- assign nyse_info = page.nyse -%}
 {%- assign nyse_date = nyse_info.date -%}
 {%- assign nyse_value = nyse_info.value -%}
 {%- assign nyse_round = nyse_value | round -%}
