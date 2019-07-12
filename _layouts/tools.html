@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<h2>Tools</h2>
+
+{% for tool in page.tools %}
+<h3>{{ tool.name }}</h3>
+
+<a href="{{ tool.repo }}"><b>GitHub Repository</b></a><br/> 
+<a href="{{ tool.sources }}"><b>Sources</b></a><br/><br/>
+
+  {% if tool.tracks %}
+<b>SMT-COMP 2019 {{ tool.name }} Releases</b>
+<ul>
+    {% for track in tool.tracks %}
+      {% assign track_data = site.data.tracks |where: "raw_name", track.name |first %}
+  <li><a href="{{ track.release.url }}">{{ track_data.pretty_name }}</a></li>
+    {% endfor %}
+  {% endif %}
+</ul>
+{% endfor %}
