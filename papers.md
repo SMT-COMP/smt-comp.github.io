@@ -1,6 +1,6 @@
 ## SMT-COMP Papers
 
-- [**The 2014 SMT Competition.**](https://satassociation.org/jsat/index.php/jsat/article/view/122)  
+- [**The 2014 SMT Competition.**](https://satassociation.org/jsat/index.php/jsat/article/view/122)
   David R. Cok, David D&eacute;harbe, and Tjark Weber.
   ```
   @article{CDW14,
@@ -13,7 +13,7 @@
     url      = {https://satassociation.org/jsat/index.php/jsat/article/view/122}
   }
   ```
-- [**The 2013 Evaluation of SMT-COMP and SMT-LIB.**](http://dx.doi.org/10.1007/s10817-015-9328-2)  
+- [**The 2013 Evaluation of SMT-COMP and SMT-LIB.**](http://dx.doi.org/10.1007/s10817-015-9328-2)
   David R. Cok, Aaron Stump, and Tjark Weber.
   ```
   @article{CSW15,
@@ -29,7 +29,7 @@
   }
   ```
 
-- [**The 2012 SMT Competition.**](/2012/report/SMTCOMP2012.pdf)  
+- [**The 2012 SMT Competition.**](/2012/report/SMTCOMP2012.pdf)
   David R. Cok, Alberto Griggio, Roberto Bruttomesso, and Morgan Deters.
   ```
   @misc{CGBD12,
@@ -40,7 +40,7 @@
   }
   ```
 
-- [**6 Years of SMT-COMP.**](http://dx.doi.org/10.1007/s10817-012-9246-5)  
+- [**6 Years of SMT-COMP.**](http://dx.doi.org/10.1007/s10817-012-9246-5)
   Clark Barrett, Morgan Deters, Leonardo de Moura, Albert Oliveras, and Aaron Stump.
   ```
   @article{BDdMOS13,
@@ -56,7 +56,7 @@
   }
   ```
 
-- [**Design and Results of the 4th Annual Satisfiability Modulo Theories Competition (SMT-COMP 2008).**](/2008/report/SMTCOMP2008.pdf)  
+- [**Design and Results of the 4th Annual Satisfiability Modulo Theories Competition (SMT-COMP 2008).**](/2008/report/SMTCOMP2008.pdf)
    Clark Barrett, Morgan Deters, Albert Oliveras, and Aaron Stump.
    ```
   @techreport{BDOS10,
@@ -69,7 +69,7 @@
   }
   ```
 
-- [**Design and Results of the 3rd Annual Satisfiability Modulo Theories Competition (SMT-COMP 2007).**](http://www.worldscinet.com/cgi-bin/details.cgi?id=pii:S0218213008004060&amp;type=html)  
+- [**Design and Results of the 3rd Annual Satisfiability Modulo Theories Competition (SMT-COMP 2007).**](http://www.worldscinet.com/cgi-bin/details.cgi?id=pii:S0218213008004060&amp;type=html)
   Clark Barrett, Morgan Deters, Albert Oliveras, and Aaron Stump.
   ```
   @article{BDOS08,
@@ -83,7 +83,7 @@
   }
   ```
 
-- [**Design and Results of the 2nd Annual Satisfiability Modulo Theories Competition (SMT-COMP 2006).**](http://www.cs.stanford.edu/~barrett/pubs/BdMS07.pdf)  
+- [**Design and Results of the 2nd Annual Satisfiability Modulo Theories Competition (SMT-COMP 2006).**](http://www.cs.stanford.edu/~barrett/pubs/BdMS07.pdf)
   Clark Barrett, Leonardo de Moura, and Aaron Stump.
   ```
   @article{BdMS07,
@@ -95,7 +95,7 @@
   }
   ```
 
-- [**Design and Results of the 1st Satisfiability Modulo Theories Competition (SMT-COMP 2005).**](http://www.cs.stanford.edu/~barrett/pubs/BdMS05-JAR.pdf)  
+- [**Design and Results of the 1st Satisfiability Modulo Theories Competition (SMT-COMP 2005).**](http://www.cs.stanford.edu/~barrett/pubs/BdMS05-JAR.pdf)
   Clark Barrett, Leonardo de Moura, and Aaron Stump.
   ```
   @article{BdMS05,
