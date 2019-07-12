@@ -23,7 +23,7 @@ Page generated on {{ page.resultdate | time_to_string }}
 <b> Memory Limit:</b> {{ page.mem_limit }} GB
 </p>
 
-{%- assign division = site.benchmarks_2019 | where: "division", page.division |first -%}
+{%- assign division = site.divisions_2019 | where: "division", page.division |first -%}
 {%- assign division = division.tracks | where: "name", page.track |first -%}
 {%- if division.status == "competitive" %}
 <h3>Winners</h3>

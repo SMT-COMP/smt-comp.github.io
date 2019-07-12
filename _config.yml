@@ -2,7 +2,7 @@ theme: jekyll-theme-dinky
 title: SMT-COMP
 description: The International Satisfiability Modulo Theories (SMT) Competition.
 collections:
-    benchmarks_2019:
+    divisions_2019:
         output: true
         permalink: /2019/divisions/:name
     participants_2019:
