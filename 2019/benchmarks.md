@@ -1,3 +1,21 @@
+---
+layout: default
+
+tracks:
+- name: track_single_query
+  url: selected_benchmarks/benchmark_selection_single_query_2019.tar.xz
+- name: track_single_query_challenge
+  url: selected_benchmarks/benchmark_selection_challenge_non_incremental_2019.tar.xz
+- name: track_incremental_challenge
+  url: selected_benchmarks/benchmark_selection_challenge_incremental_2019.tar.xz
+- name: track_model_validation
+  url: selected_benchmarks/benchmark_selection_model_validation_2019.tar.xz
+- name: track_incremental
+  url: selected_benchmarks/benchmark_selection_incremental_2019.tar.xz
+- name: track_unsat_core
+  url: selected_benchmarks/benchmark_selection_unsat_core_2019.tar.xz
+---
+
 {%- assign track_single_query_challenge_note = "The Industry-Challenge
 Track (single query) contains new challenging SMT-LIB benchmarks (with
 an emphasis on industrial applications) that were nominated by the
@@ -43,8 +61,8 @@ The {{ track_descr.pretty_name }} divisions are not yet available.
 In total there are
 {{ n_divisions }} divisions in the {{ track_descr.pretty_name }}.
 
-{%- assign sel_bm = site.data.selected_benchmarks |where: "raw_name", track_descr.raw_name |first -%}
-The list of selected benchmarks is available [here]({{ sel_bm.url }}).
+{%- assign selection = page.tracks |where: "name", track_descr.raw_name |first -%}
+The list of selected benchmarks is available [here]({{ selection.url }}).
 
 <table>
 <tr>
