@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+{%- assign divisions = site[page.divisions] -%}
+
+<h2>Benchmarks</h2>
+
+{{ page.note }}
+
+{% for track_descr in site.data.tracks %}
+
+  {% assign n_divisions = 0 %}
+  {%-for benchmark in divisions %}
+      {%- for track in benchmark.tracks -%}
+            {%- if track.name == track_descr.raw_name -%}
+                {%- if track.n_insts > 0 -%}
+                    {%- assign n_divisions = n_divisions | plus:1 -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {% endfor %}
+
+<h3>{{ track_descr.pretty_name }}</h3>
+
+  {% if track_descr.raw_name == "track_single_query_challenge" %}
+    {{ chall_sq_note }}
+  {% elsif track_descr.raw_name == "track_incremental_challenge" %}
+    {{ chall_inc_note }}
+  {% endif %}
+
+    {% if n_divisions == 0 %}
+The {{ track_descr.pretty_name }} divisions are not yet available.
+        {% continue %}
+    {% endif %}
+
+
+<p>
+In total there are
+{{ n_divisions }} divisions in the {{ track_descr.pretty_name }}.
+</br>
+{%- assign selection = page.tracks |where: "name", track_descr.raw_name |first -%}
+The list of selected benchmarks is available
+<a href="{{ selection.url }}">here</a>.
+</p>
+
+<table>
+<tr>
+<th>Division</th>
+<th>Number of Included Benchmarks</th>
+</tr>
+    {% assign total = 0 %}
+    {%- for benchmark in divisions -%}
+        {%- for track in benchmark.tracks -%}
+            {%- if track.name == track_descr.raw_name -%}
+                {%- if track.n_insts > 0 -%}
+<tr {% if track.status == "non-competitive" %} class = "noncompeting" {% endif %}>
+<td><a href="{{ benchmark.url }}">{{ benchmark.division }}</a>{%- if
+track.status == "non-competitive" -%}<sup><a href="#nc">n</a></sup>{%-
+elsif track.status == "experimental" -%}<sup><a href="#ec">e</a></sup>{%-
+endif -%}</td>
+<td>{{ track.n_insts }}
+                    {%- assign total = total | plus: track.n_insts -%}
+                    {% if track.n_excluded > 0 %}
+({{ track.n_excluded }} excluded)
+                    {% endif %}
+</td>
+</tr>
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endfor -%}
+<tr class="total">
+<td>
+<b>Total</b>
+</td>
+<td>
+<b>{{ total }}</b>
+</td>
+</tr>
+</table>
+
+{% endfor %}
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+  <span id="ec">
+    e Experimental.
+  </span><br/>
+</p>
+
