@@ -2,8 +2,15 @@
 layout: default
 ---
 {% include tablesorter.html %}
+
 {% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
 {% assign track = track.pretty_name %}
+
+{%- assign divisions = site[page.divisions] -%}
+{%- assign participants = site[page.participants] -%}
+
+{%- assign division = divisions | where: "division", page.division |first -%}
+{%- assign division = division.tracks | where: "name", page.track |first -%}
 
 <h2>{{ page.division }} ({{ track }})</h2>
 <p>
@@ -23,56 +30,74 @@ Page generated on {{ page.resultdate | time_to_string }}
 <b> Memory Limit:</b> {{ page.mem_limit }} GB
 </p>
 
-{%- assign division = site.divisions_2019 | where: "division", page.division |first -%}
-{%- assign division = division.tracks | where: "name", page.track |first -%}
 {%- if division.status == "competitive" %}
 <h3>Winners</h3>
 <table>
     <thead>
         <tr>
+   {%- if page.winner_seq -%}
             <th>Sequential Performance</th>
+   {%- endif -%}
+   {%- if page.winner_par -%}
             <th>Parallel Performance</th>
+   {%- endif -%}
+   {%- if page.winner_sat -%}
             <th>SAT Performance (parallel)</th>
+   {%- endif -%}
+   {%- if page.winner_unsat -%}
             <th>UNSAT Performance (parallel)</th>
+   {%- endif -%}
+   {%- if page.winner_unsat -%}
             <th>24 seconds Performance (parallel)</th>
+   {%- endif -%}
         </tr>
     </thead>
     <tr>
+   {%- if page.winner_seq -%}
         <td>
-          {% if page.winner_seq %}
+     {%- if page.winner_seq == '-' -%}
+            &mdash;
+     {%- else -%}
             {{ page.winner_seq }}
-          {% else %}
-            &mdash;
-          {% endif %}
+     {%- endif -%}
         </td>
+   {%- endif -%}
+   {%- if page.winner_par -%}
         <td>
-          {% if page.winner_par %}
+     {%- if page.winner_par == '-' -%}
+            &mdash;
+     {%- else -%}
             {{ page.winner_par }}
-          {% else %}
-            &mdash;
-          {% endif %}
+     {%- endif -%}
         </td>
+   {%- endif -%}
+   {%- if page.winner_sat -%}
         <td>
-          {% if page.winner_sat %}
-            {{ page.winner_sat }}
-          {% else %}
+     {%- if page.winner_sat == '-' -%}
             &mdash;
-          {% endif %}
+     {%- else -%}
+          {{ page.winner_sat }}
+     {%- endif -%}
         </td>
+   {% endif %}
+   {% if page.winner_unsat %}
         <td>
-          {% if page.winner_unsat %}
+     {%- if page.winner_unsat == '-' -%}
+            &mdash;
+     {%- else -%}
             {{ page.winner_unsat }}
-          {% else %}
-            &mdash;
-          {% endif %}
+     {%- endif -%}
         </td>
+   {% endif %}
+   {% if page.winner_24s %}
         <td>
-          {% if page.winner_24s %}
-            {{ page.winner_24s }}
-          {% else %}
+     {%- if page.winner_24s == '-' -%}
             &mdash;
-          {% endif %}
+     {%- else -%}
+            {{ page.winner_24s }}
+     {%- endif -%}
         </td>
+   {% endif %}
     </tr>
 </table>
 {%- else -%}
@@ -80,6 +105,13 @@ This division is experimental. Solvers are only ranked by performance, but no
 winner is selected.
 {%- endif %}
 
+<!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+{%- if page.sequential -%}
+  {%- assign has_solved = page.sequential |map: "solved" |first -%}
+  {%- assign has_solved_sat = page.sequential |map: "solved_sat" |first -%}
+  {%- assign has_solved_unsat = page.sequential |map: "solved_unsat" |first -%}
+  {%- assign has_unsolved = page.sequential |map: "unsolved" |first -%}
 <h3>Sequential Performance</h3>
 <table id="sequential" class="result sorted">
 <thead>
@@ -89,10 +121,18 @@ winner is selected.
         <th>Correct Score</th>
         <th>CPU Time Score</th>
         <th>Wall Time Score</th>
+  {%- if has_solved -%}
         <th>Solved</th>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
         <th>Solved SAT</th>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
         <th>Solved UNSAT</th>
+  {%- endif -%}
+  {%- if has_unsolved -%}
         <th>Unsolved</th>
+  {%- endif -%}
         <th>Timeout</th>
         <th>Memout</th>
     </tr>
@@ -100,23 +140,39 @@ winner is selected.
 {% for solver in page.sequential %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+  {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.WallScore }}</td>
+  {%- if has_solved -%}
     <td>{{ solver.solved }}</td>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
     <td>{{ solver.solved_sat }}</td>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
     <td>{{ solver.solved_unsat }}</td>
+  {%- endif -%}
+  {%- if has_unsolved -%}
     <td>{{ solver.unsolved }}</td>
+  {%- endif -%}
     <td>{{ solver.timeout }}</td>
     <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
+{%- endif -%}
 
+<!-- PARALLEL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+{%- if page.parallel -%}
+  {%- assign has_solved = page.parallel |map: "solved" |first -%}
+  {%- assign has_solved_sat = page.parallel |map: "solved_sat" |first -%}
+  {%- assign has_solved_unsat = page.parallel |map: "solved_unsat" |first -%}
+  {%- assign has_unsolved = page.parallel |map: "unsolved" |first -%}
 <h3>Parallel Performance</h3>
 <table id="parallel" class="result sorted">
 <thead>
@@ -126,10 +182,18 @@ winner is selected.
         <th>Correct Score</th>
         <th>CPU Time Score</th>
         <th>Wall Time Score</th>
+  {%- if has_solved -%}
         <th>Solved</th>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
         <th>Solved SAT</th>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
         <th>Solved UNSAT</th>
+  {%- endif -%}
+  {%- if has_unsolved -%}
         <th>Unsolved</th>
+  {%- endif -%}
         <th>Timeout</th>
         <th>Memout</th>
     </tr>
@@ -137,23 +201,39 @@ winner is selected.
 {% for solver in page.parallel %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.WallScore }}</td>
+  {%- if has_solved -%}
     <td>{{ solver.solved }}</td>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
     <td>{{ solver.solved_sat }}</td>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
     <td>{{ solver.solved_unsat }}</td>
+  {%- endif -%}
+  {%- if has_unsolved -%}
     <td>{{ solver.unsolved }}</td>
+  {%- endif -%}
     <td>{{ solver.timeout }}</td>
     <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
+{%- endif -%}
 
+<!-- SAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+{%- if page.sat -%}
+  {%- assign has_solved = page.sat |map: "solved" |first -%}
+  {%- assign has_solved_sat = page.sat |map: "solved_sat" |first -%}
+  {%- assign has_solved_unsat = page.sat |map: "solved_unsat" |first -%}
+  {%- assign has_unsolved = page.sat |map: "unsolved" |first -%}
 <h3>SAT Performance</h3>
 <table id="sat" class="result sorted">
 <thead>
@@ -163,10 +243,18 @@ winner is selected.
         <th>Correct Score</th>
         <th>CPU Time Score</th>
         <th>Wall Time Score</th>
+  {%- if has_solved -%}
         <th>Solved</th>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
         <th>Solved SAT</th>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
         <th>Solved UNSAT</th>
+  {%- endif -%}
+  {%- if has_unsolved -%}
         <th>Unsolved</th>
+  {%- endif -%}
         <th>Timeout</th>
         <th>Memout</th>
     </tr>
@@ -174,23 +262,39 @@ winner is selected.
 {% for solver in page.sat %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.WallScore }}</td>
+  {%- if has_solved -%}
     <td>{{ solver.solved }}</td>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
     <td>{{ solver.solved_sat }}</td>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
     <td>{{ solver.solved_unsat }}</td>
+  {%- endif -%}
+  {%- if has_unsolved -%}
     <td>{{ solver.unsolved }}</td>
+  {%- endif -%}
     <td>{{ solver.timeout }}</td>
     <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
+{%- endif -%}
 
+<!-- UNSAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+{%- if page.unsat -%}
+  {%- assign has_solved = page.unsat |map: "solved" |first -%}
+  {%- assign has_solved_sat = page.unsat |map: "solved_sat" |first -%}
+  {%- assign has_solved_unsat = page.unsat |map: "solved_unsat" |first -%}
+  {%- assign has_unsolved = page.unsat |map: "unsolved" |first -%}
 <h3>UNSAT Performance</h3>
 <table id="unsat" class="result sorted">
 <thead>
@@ -200,10 +304,18 @@ winner is selected.
         <th>Correct Score</th>
         <th>CPU Time Score</th>
         <th>Wall Time Score</th>
+  {%- if has_solved -%}
         <th>Solved</th>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
         <th>Solved SAT</th>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
         <th>Solved UNSAT</th>
+  {%- endif -%}
+  {%- if has_unsolved -%}
         <th>Unsolved</th>
+  {%- endif -%}
         <th>Timeout</th>
         <th>Memout</th>
     </tr>
@@ -211,23 +323,39 @@ winner is selected.
 {% for solver in page.unsat %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.WallScore }}</td>
+  {%- if has_solved -%}
     <td>{{ solver.solved }}</td>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
     <td>{{ solver.solved_sat }}</td>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
     <td>{{ solver.solved_unsat }}</td>
+  {%- endif -%}
+  {%- if has_unsolved -%}
     <td>{{ solver.unsolved }}</td>
+  {%- endif -%}
     <td>{{ solver.timeout }}</td>
     <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
+{%- endif -%}
 
+<!-- 24s PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+{%- if page.twentyfour -%}
+  {%- assign has_solved = page.twentyfour |map: "solved" |first -%}
+  {%- assign has_solved_sat = page.twentyfour |map: "solved_sat" |first -%}
+  {%- assign has_solved_unsat = page.twentyfour |map: "solved_unsat" |first -%}
+  {%- assign has_unsolved = page.twentyfour |map: "unsolved" |first -%}
 <h3>24s Performance</h3>
 <table id="twentyfour" class="result sorted">
 <thead>
@@ -237,10 +365,18 @@ winner is selected.
         <th>Correct Score</th>
         <th>CPU Time Score</th>
         <th>Wall Time Score</th>
+  {%- if has_solved -%}
         <th>Solved</th>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
         <th>Solved SAT</th>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
         <th>Solved UNSAT</th>
+  {%- endif -%}
+  {%- if has_unsolved -%}
         <th>Unsolved</th>
+  {%- endif -%}
         <th>Timeout</th>
         <th>Memout</th>
     </tr>
@@ -248,22 +384,31 @@ winner is selected.
 {% for solver in page.twentyfour %}
 <tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
     <td>{{ solver.errorScore }}</td>
     <td>{{ solver.correctScore }}</td>
     <td>{{ solver.CPUScore }}</td>
     <td>{{ solver.WallScore }}</td>
+  {%- if has_solved -%}
     <td>{{ solver.solved }}</td>
+  {%- endif -%}
+  {%- if has_solved_sat -%}
     <td>{{ solver.solved_sat }}</td>
+  {%- endif -%}
+  {%- if has_solved_unsat -%}
     <td>{{ solver.solved_unsat }}</td>
+  {%- endif -%}
+  {%- if has_unsolved -%}
     <td>{{ solver.unsolved }}</td>
+  {%- endif -%}
     <td>{{ solver.timeout }}</td>
     <td>{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
+{%- endif -%}
 
 <p>
   <span id="nc">

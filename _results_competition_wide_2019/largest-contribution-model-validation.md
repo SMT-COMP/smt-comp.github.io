@@ -1,12 +1,16 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 12:16:13
+resultdate: 2019-07-23 17:13:13
+
+results: results_2019
+participants: participants_2019
+
 track: track_model_validation
 recognition: largest_contribution
 
 winner_seq: Boolector
-winner_par: Boolector
 
+winner_par: Boolector
 
 sequential:
 - name: Boolector
@@ -17,17 +21,5 @@ parallel:
 - name: Boolector
   correctScore: 0.00166922
   timeScore: 0.23680591
-  division: QF_BV
-sat:
-- name: Boolector
-  correctScore: 0.00166922
-  timeScore: 0.23680591
-  division: QF_BV
-unsat:
-
-twentyfour:
-- name: Boolector
-  correctScore: 0.00254958
-  timeScore: 0.11993467
   division: QF_BV
 ---

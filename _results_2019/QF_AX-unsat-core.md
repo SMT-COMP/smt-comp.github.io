@@ -1,6 +1,10 @@
 ---
-layout: result_others
-resultdate: 2019-07-07 12:15:57
+layout: result
+resultdate: 2019-07-23 17:12:58
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_AX
 track: track_unsat_core
 n_benchmarks: 202
@@ -9,7 +13,6 @@ mem_limit: 60
 
 winner_seq: Yices 2.6.2
 winner_par: Yices 2.6.2
-
 sequential:
 - name: 2018-Yices (unsat core)
   competing: "no"

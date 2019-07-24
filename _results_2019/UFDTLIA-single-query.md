@@ -1,6 +1,10 @@
 ---
 layout: result
-resultdate: 2019-07-07 12:14:30
+resultdate: 2019-07-23 17:11:35
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: UFDTLIA
 track: track_single_query
 n_benchmarks: 299
@@ -9,7 +13,7 @@ mem_limit: 60
 
 winner_seq: CVC4
 winner_par: CVC4
-winner_sat: 
+winner_sat: "-"
 winner_unsat: CVC4
 winner_24s: Vampire
 

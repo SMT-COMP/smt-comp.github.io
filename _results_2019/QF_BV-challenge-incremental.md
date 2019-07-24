@@ -1,6 +1,10 @@
 ---
-layout: result_inc
-resultdate: 2019-07-07 12:15:43
+layout: result
+resultdate: 2019-07-23 17:12:46
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_BV
 track: track_incremental_challenge
 n_benchmarks: 7
@@ -8,7 +12,6 @@ time_limit: 43200
 mem_limit: 60
 
 winner_par: Boolector (incremental)
-
 parallel:
 - name: Boolector (incremental)
   competing: "yes"

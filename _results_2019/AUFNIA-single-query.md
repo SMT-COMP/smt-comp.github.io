@@ -1,17 +1,21 @@
 ---
 layout: result
-resultdate: 2019-07-07 12:14:30
+resultdate: 2019-07-23 17:11:34
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: AUFNIA
 track: track_single_query
 n_benchmarks: 3
 time_limit: 2400
 mem_limit: 60
 
-winner_seq: 
-winner_par: 
-winner_sat: 
-winner_unsat: 
-winner_24s: 
+winner_seq: "-"
+winner_par: "-"
+winner_sat: "-"
+winner_unsat: "-"
+winner_24s: "-"
 
 sequential:
 - name: CVC4-SymBreak

@@ -1,6 +1,10 @@
 ---
-layout: result_inc
-resultdate: 2019-07-07 12:15:37
+layout: result
+resultdate: 2019-07-23 17:12:39
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_UFBV
 track: track_incremental
 n_benchmarks: 1165
@@ -8,7 +12,6 @@ time_limit: 2400
 mem_limit: 60
 
 winner_par: Yices 2.6.2 Incremental
-
 parallel:
 - name: 2018-Boolector (incremental)
   competing: "no"

@@ -1,6 +1,10 @@
 ---
 layout: result
-resultdate: 2019-07-07 12:15:42
+resultdate: 2019-07-23 17:12:44
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_AUFBV
 track: track_single_query_challenge
 n_benchmarks: 15

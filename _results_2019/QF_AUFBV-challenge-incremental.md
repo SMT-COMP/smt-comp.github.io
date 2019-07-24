@@ -1,6 +1,10 @@
 ---
-layout: result_inc
-resultdate: 2019-07-07 12:15:43
+layout: result
+resultdate: 2019-07-23 17:12:46
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_AUFBV
 track: track_incremental_challenge
 n_benchmarks: 6
@@ -8,7 +12,6 @@ time_limit: 43200
 mem_limit: 60
 
 winner_par: Yices 2.6.2 Incremental
-
 parallel:
 - name: 2018-Yices (incremental)
   competing: "no"

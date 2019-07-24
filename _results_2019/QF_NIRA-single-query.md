@@ -1,6 +1,10 @@
 ---
 layout: result
-resultdate: 2019-07-07 12:14:30
+resultdate: 2019-07-23 17:11:34
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_NIRA
 track: track_single_query
 n_benchmarks: 2
@@ -9,9 +13,9 @@ mem_limit: 60
 
 winner_seq: SMT-RAT
 winner_par: SMT-RAT
-winner_sat: 
+winner_sat: "-"
 winner_unsat: SMT-RAT
-winner_24s: 
+winner_24s: "-"
 
 sequential:
 - name: 2018-SMTRAT-Rat

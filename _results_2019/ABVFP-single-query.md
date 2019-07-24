@@ -1,6 +1,10 @@
 ---
 layout: result
-resultdate: 2019-07-07 12:14:30
+resultdate: 2019-07-23 17:11:34
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: ABVFP
 track: track_single_query
 n_benchmarks: 1
@@ -10,7 +14,7 @@ mem_limit: 60
 winner_seq: CVC4
 winner_par: CVC4
 winner_sat: CVC4
-winner_unsat: 
+winner_unsat: "-"
 winner_24s: CVC4
 
 sequential:

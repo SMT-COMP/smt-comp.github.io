@@ -1,6 +1,10 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 12:14:31
+resultdate: 2019-07-23 17:11:36
+
+results: results_2019
+participants: participants_2019
+
 track: track_single_query
 recognition: biggest_lead
 
@@ -9,8 +13,6 @@ winner_par: CVC4
 winner_sat: CVC4
 winner_unsat: CVC4
 winner_24s: CVC4
-
-
 sequential:
 - name: CVC4
   second: UltimateEliminator+MathSAT-5.5.4

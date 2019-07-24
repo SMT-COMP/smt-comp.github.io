@@ -1,15 +1,20 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 12:15:24
+resultdate: 2019-07-23 17:12:27
+
+results: results_2019
+participants: participants_2019
+
 track: track_single_query
 recognition: largest_contribution
 
 winner_seq: CVC4
+
 winner_par: CVC4
+
 winner_sat: Par4
 winner_unsat: Par4
 winner_24s: Vampire
-
 
 sequential:
 - name: CVC4

@@ -5,6 +5,9 @@ layout: default
 {% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
 {% assign track = track.pretty_name %}
 
+{%- assign results = site[page.results] -%}
+{%- assign participants = site[page.participants] -%}
+
 {% if page.recognition == "biggest_lead" %}
 <h2>Biggest Lead Ranking- {{ track }}</h2>
 {% else %}
@@ -15,54 +18,74 @@ layout: default
 Page generated on {{ page.resultdate | time_to_string }}
 </p>
 
-{% assign divisions = site.results_2019 |group_by: "track" |where: "name", page.track |first %}
+{% assign divisions = results |group_by: "track" |where: "name", page.track |first %}
 <h3>Winners</h3>
 <table>
     <thead>
         <tr>
+        {% if page.winner_seq %}
             <th>Sequential Performance</th>
+        {% endif %}
+        {% if page.winner_par %}
             <th>Parallel Performance</th>
+        {% endif %}
+        {% if page.winner_sat %}
             <th>SAT Performance (parallel)</th>
+        {% endif %}
+        {% if page.winner_unsat %}
             <th>UNSAT Performance (parallel)</th>
+        {% endif %}
+        {% if page.winner_24s %}
             <th>24 seconds Performance (parallel)</th>
+        {% endif %}
         </tr>
     </thead>
     <tr>
+        {% if page.winner_seq %}
         <td>
-          {% if page.winner_seq %}
+          {% if page.winner_seq == '-' %}
+            &mdash;
+          {% else %}
             {{ page.winner_seq }}
-          {% else %}
-            &mdash;
           {% endif %}
         </td>
+        {% endif %}
+        {% if page.winner_par %}
         <td>
-          {% if page.winner_par %}
+          {% if page.winner_par == '-'  %}
+            &mdash;
+          {% else %}
             {{ page.winner_par }}
-          {% else %}
-            &mdash;
           {% endif %}
         </td>
+        {% endif %}
+        {% if page.winner_sat %}
         <td>
-          {% if page.winner_sat %}
+          {% if page.winner_sat == '-'  %}
+            &mdash;
+          {% else %}
             {{ page.winner_sat }}
-          {% else %}
-            &mdash;
           {% endif %}
         </td>
+        {% endif %}
+        {% if page.winner_unsat %}
         <td>
-          {% if page.winner_unsat %}
+          {% if page.winner_unsat == '-'  %}
+            &mdash;
+          {% else %}
             {{ page.winner_unsat }}
-          {% else %}
-            &mdash;
           {% endif %}
         </td>
+        {% endif %}
+        {% if page.winner_24s %}
         <td>
-          {% if page.winner_24s %}
-            {{ page.winner_24s }}
-          {% else %}
+          {% if page.winner_24s == '-'  %}
             &mdash;
+          {% else %}
+            {{ page.winner_24s }}
           {% endif %}
         </td>
+        {% endif %}
     </tr>
 </table>
 
@@ -80,7 +103,7 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.sequential %}
 <tr>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
     </td>
     <td>{{ solver.correctScore }}</td>
@@ -108,7 +131,7 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.parallel %}
 <tr>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
     </td>
     <td>{{ solver.correctScore }}</td>
@@ -136,7 +159,7 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.sat %}
 <tr>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
     </td>
     <td>{{ solver.correctScore }}</td>
@@ -164,7 +187,7 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.unsat %}
 <tr>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
     </td>
     <td>{{ solver.correctScore }}</td>
@@ -192,7 +215,7 @@ Page generated on {{ page.resultdate | time_to_string }}
 {% for solver in page.twentyfour %}
 <tr>
     <td>
-      {% assign participant = site.participants_2019 | where:"name", solver.name | first %}
+      {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
     </td>
     <td>{{ solver.correctScore }}</td>

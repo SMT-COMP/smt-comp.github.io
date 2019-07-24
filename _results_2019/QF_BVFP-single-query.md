@@ -1,6 +1,10 @@
 ---
 layout: result
-resultdate: 2019-07-07 12:14:30
+resultdate: 2019-07-23 17:11:34
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_BVFP
 track: track_single_query
 n_benchmarks: 516

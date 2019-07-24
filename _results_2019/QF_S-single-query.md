@@ -1,6 +1,10 @@
 ---
 layout: result
-resultdate: 2019-07-07 12:15:27
+resultdate: 2019-07-23 17:12:30
+
+divisions: divisions_2019
+participants: participants_2019
+
 division: QF_S
 track: track_single_query
 n_benchmarks: 988

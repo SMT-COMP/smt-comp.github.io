@@ -1,6 +1,10 @@
 ---
 layout: result_comp
-resultdate: 2019-07-07 12:15:42
+resultdate: 2019-07-23 17:12:44
+
+results: results_2019
+participants: participants_2019
+
 track: track_single_query_challenge
 recognition: biggest_lead
 
@@ -9,8 +13,6 @@ winner_par: Yices 2.6.2
 winner_sat: Yices 2.6.2
 winner_unsat: Poolector
 winner_24s: Yices 2.6.2
-
-
 sequential:
 - name: Yices 2.6.2
   second: Boolector
