@@ -35,6 +35,7 @@ tools:
 
 - name: Post-Processor
   repo: https://github.com/SMT-COMP/postprocessors
+  sources: https://github.com/SMT-COMP/postprocessors/archive/smtcomp2019.tar.gz
   tracks:
     - name: track_single_query
       repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track

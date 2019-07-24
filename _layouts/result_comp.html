@@ -2,7 +2,11 @@
 layout: default
 ---
 {% include tablesorter.html %}
-{% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
+
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
+{% assign track = tracks |where: "raw_name", page.track  |first %}
 {% assign track = track.pretty_name %}
 
 {%- assign results = site[page.results] -%}

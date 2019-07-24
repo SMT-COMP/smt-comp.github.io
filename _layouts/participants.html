@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
 {%- assign participants = site[page.participants] -%}
 
 {%- assign sum_of_seeds = 0 -%}
@@ -19,7 +22,7 @@ layout: default
 {%- assign nsolvers_track_list = "" -%}
 {%- assign nsolvers_track_comp_list = "" -%}
 {%- assign nsolvers_track_non_comp_list = "" -%}
-{%- for track in site.data.tracks -%}
+{%- for track in tracks -%}
     {%- assign nsolvers_track = 0 -%}
     {%- assign nsolvers_track_comp = 0 -%}
     {%- assign nsolvers_track_non_comp = 0 -%}
@@ -57,7 +60,7 @@ entered as non-competing solvers by the organizers for comparison.
 <table>
 <tr>
 <th>Solver</th>
-{% for track in site.data.tracks %}
+{% for track in tracks %}
 <th>{{ track.pretty_name }}</th>
 {% endfor %}
 <th>Preliminary Solver ID</th>
@@ -70,7 +73,7 @@ entered as non-competing solvers by the organizers for comparison.
 <td>
 <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
 </td>
-{%- for track in site.data.tracks -%}
+{%- for track in tracks -%}
 <td class="center">
   {%- assign in_track = solver.divisions |where: "tracks", track.raw_name |first -%}
   {% if in_track %}
@@ -135,7 +138,7 @@ These are the logic divisions in which each solver is participating.
   {%- assign nsolvers_logic_list = "" -%}
   {%- assign nsolvers_logic_comp_list = "" -%}
   {%- assign nsolvers_logic_non_comp_list = "" -%}
-  {%- for track in site.data.tracks -%}
+  {%- for track in tracks -%}
       {%- assign nsolvers_logic = 0 -%}
       {%- assign nsolvers_logic_comp = 0 -%}
       {%- assign nsolvers_logic_non_comp = 0 -%}
@@ -172,7 +175,7 @@ These are the logic divisions in which each solver is participating.
 <th>Solver</th>
   {%- for track in division.tracks -%}
 <th class="center">
-    {% assign tt = site.data.tracks |where: "raw_name", track  |first %}
+    {% assign tt = tracks |where: "raw_name", track  |first %}
     {{ tt.pretty_name }}
 </th>
   {%- endfor -%}

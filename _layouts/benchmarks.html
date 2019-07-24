@@ -2,13 +2,16 @@
 layout: default
 ---
 
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
 {%- assign divisions = site[page.divisions] -%}
 
 <h2>Benchmarks</h2>
 
 {{ page.note }}
 
-{% for track_descr in site.data.tracks %}
+{% for track_descr in tracks %}
 
   {% assign n_divisions = 0 %}
   {%-for benchmark in divisions %}

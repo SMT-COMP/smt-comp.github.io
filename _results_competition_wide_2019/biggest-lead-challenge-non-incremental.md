@@ -1,6 +1,8 @@
 ---
 layout: result_comp
-resultdate: 2019-07-23 17:12:44
+resultdate: 2019-07-23 17:57:30
+
+year: 2019
 
 results: results_2019
 participants: participants_2019

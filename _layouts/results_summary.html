@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
-{% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
+
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
+{% assign track = tracks |where: "raw_name", page.track  |first %}
 {% assign track = track.pretty_name %}
 
 <h2>SMT-COMP 2019 Results - {{ track }} (Summary)</h2>

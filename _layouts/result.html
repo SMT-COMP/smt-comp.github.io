@@ -3,8 +3,12 @@ layout: default
 ---
 {% include tablesorter.html %}
 
-{% assign track = site.data.tracks |where: "raw_name", page.track  |first %}
-{% assign track = track.pretty_name %}
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
+{%- assign track = tracks |where: "raw_name", page.track  |first -%}
+{%- assign track_status = track.status -%}
+{%- assign track = track.pretty_name -%}
 
 {%- assign divisions = site[page.divisions] -%}
 {%- assign participants = site[page.participants] -%}
@@ -13,6 +17,7 @@ layout: default
 {%- assign division = division.tracks | where: "name", page.track |first -%}
 
 <h2>{{ page.division }} ({{ track }})</h2>
+
 <p>
 Competition results for the {{ page.division }} division
 in the {{ track }}.
@@ -30,79 +35,84 @@ Page generated on {{ page.resultdate | time_to_string }}
 <b> Memory Limit:</b> {{ page.mem_limit }} GB
 </p>
 
-{%- if division.status == "competitive" %}
+{%- if track_status == "experimental" -%}
+This track is experimental. Solvers are only ranked by performance, but no
+winner is selected.
+{%- else -%}
+  {%- if division.status == "competitive" %}
 <h3>Winners</h3>
 <table>
     <thead>
         <tr>
-   {%- if page.winner_seq -%}
-            <th>Sequential Performance</th>
-   {%- endif -%}
-   {%- if page.winner_par -%}
-            <th>Parallel Performance</th>
-   {%- endif -%}
-   {%- if page.winner_sat -%}
-            <th>SAT Performance (parallel)</th>
-   {%- endif -%}
-   {%- if page.winner_unsat -%}
-            <th>UNSAT Performance (parallel)</th>
-   {%- endif -%}
-   {%- if page.winner_unsat -%}
-            <th>24 seconds Performance (parallel)</th>
-   {%- endif -%}
+     {%- if page.winner_seq -%}
+            <th class="center">Sequential Performance</th>
+     {%- endif -%}
+     {%- if page.winner_par -%}
+            <th class="center">Parallel Performance</th>
+     {%- endif -%}
+     {%- if page.winner_sat -%}
+            <th class="center">SAT Performance (parallel)</th>
+     {%- endif -%}
+     {%- if page.winner_unsat -%}
+            <th class="center">UNSAT Performance (parallel)</th>
+     {%- endif -%}
+     {%- if page.winner_unsat -%}
+            <th class="center">24s Performance (parallel)</th>
+     {%- endif -%}
         </tr>
     </thead>
     <tr>
-   {%- if page.winner_seq -%}
-        <td>
-     {%- if page.winner_seq == '-' -%}
+     {%- if page.winner_seq -%}
+        <td class="center">
+       {%- if page.winner_seq == '-' -%}
             &mdash;
-     {%- else -%}
+       {%- else -%}
             {{ page.winner_seq }}
-     {%- endif -%}
+       {%- endif -%}
         </td>
-   {%- endif -%}
-   {%- if page.winner_par -%}
-        <td>
-     {%- if page.winner_par == '-' -%}
+     {%- endif -%}
+     {%- if page.winner_par -%}
+        <td class="center">
+       {%- if page.winner_par == '-' -%}
             &mdash;
-     {%- else -%}
+       {%- else -%}
             {{ page.winner_par }}
-     {%- endif -%}
+       {%- endif -%}
         </td>
-   {%- endif -%}
-   {%- if page.winner_sat -%}
-        <td>
-     {%- if page.winner_sat == '-' -%}
+     {%- endif -%}
+     {%- if page.winner_sat -%}
+        <td class="center">
+       {%- if page.winner_sat == '-' -%}
             &mdash;
-     {%- else -%}
+       {%- else -%}
           {{ page.winner_sat }}
-     {%- endif -%}
+       {%- endif -%}
         </td>
-   {% endif %}
-   {% if page.winner_unsat %}
-        <td>
-     {%- if page.winner_unsat == '-' -%}
+     {% endif %}
+     {% if page.winner_unsat %}
+        <td class="center">
+       {%- if page.winner_unsat == '-' -%}
             &mdash;
-     {%- else -%}
+       {%- else -%}
             {{ page.winner_unsat }}
-     {%- endif -%}
+       {%- endif -%}
         </td>
-   {% endif %}
-   {% if page.winner_24s %}
-        <td>
-     {%- if page.winner_24s == '-' -%}
+     {% endif %}
+     {% if page.winner_24s %}
+        <td class="center">
+       {%- if page.winner_24s == '-' -%}
             &mdash;
-     {%- else -%}
+       {%- else -%}
             {{ page.winner_24s }}
-     {%- endif -%}
+       {%- endif -%}
         </td>
-   {% endif %}
+     {% endif %}
     </tr>
 </table>
-{%- else -%}
+  {%- else -%}
 This division is experimental. Solvers are only ranked by performance, but no
 winner is selected.
+  {%- endif %}
 {%- endif %}
 
 <!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -116,25 +126,25 @@ winner is selected.
 <table id="sequential" class="result sorted">
 <thead>
     <tr>
-        <th>Solver</th>
-        <th>Error Score</th>
-        <th>Correct Score</th>
-        <th>CPU Time Score</th>
-        <th>Wall Time Score</th>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
-        <th>Solved</th>
+        <th class="center">Solved</th>
   {%- endif -%}
   {%- if has_solved_sat -%}
-        <th>Solved SAT</th>
+        <th class="center">Solved SAT</th>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-        <th>Solved UNSAT</th>
+        <th class="center">Solved UNSAT</th>
   {%- endif -%}
   {%- if has_unsolved -%}
-        <th>Unsolved</th>
+        <th class="center">Unsolved</th>
   {%- endif -%}
-        <th>Timeout</th>
-        <th>Memout</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
     </tr>
 </thead>
 {% for solver in page.sequential %}
@@ -143,24 +153,24 @@ winner is selected.
   {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td>{{ solver.errorScore }}</td>
-    <td>{{ solver.correctScore }}</td>
-    <td>{{ solver.CPUScore }}</td>
-    <td>{{ solver.WallScore }}</td>
+    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.correctScore }}</td>
+    <td class="right">{{ solver.CPUScore }}</td>
+    <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
-    <td>{{ solver.solved }}</td>
+    <td class="right">{{ solver.solved }}</td>
   {%- endif -%}
   {%- if has_solved_sat -%}
-    <td>{{ solver.solved_sat }}</td>
+    <td class="right">{{ solver.solved_sat }}</td>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-    <td>{{ solver.solved_unsat }}</td>
+    <td class="right">{{ solver.solved_unsat }}</td>
   {%- endif -%}
   {%- if has_unsolved -%}
-    <td>{{ solver.unsolved }}</td>
+    <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
-    <td>{{ solver.timeout }}</td>
-    <td>{{ solver.memout }}</td>
+    <td class="right">{{ solver.timeout }}</td>
+    <td class="right">{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
@@ -177,25 +187,25 @@ winner is selected.
 <table id="parallel" class="result sorted">
 <thead>
     <tr>
-        <th>Solver</th>
-        <th>Error Score</th>
-        <th>Correct Score</th>
-        <th>CPU Time Score</th>
-        <th>Wall Time Score</th>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
-        <th>Solved</th>
+        <th class="center">Solved</th>
   {%- endif -%}
   {%- if has_solved_sat -%}
-        <th>Solved SAT</th>
+        <th class="center">Solved SAT</th>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-        <th>Solved UNSAT</th>
+        <th class="center">Solved UNSAT</th>
   {%- endif -%}
   {%- if has_unsolved -%}
-        <th>Unsolved</th>
+        <th class="center">Unsolved</th>
   {%- endif -%}
-        <th>Timeout</th>
-        <th>Memout</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
     </tr>
 </thead>
 {% for solver in page.parallel %}
@@ -204,24 +214,24 @@ winner is selected.
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td>{{ solver.errorScore }}</td>
-    <td>{{ solver.correctScore }}</td>
-    <td>{{ solver.CPUScore }}</td>
-    <td>{{ solver.WallScore }}</td>
+    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.correctScore }}</td>
+    <td class="right">{{ solver.CPUScore }}</td>
+    <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
-    <td>{{ solver.solved }}</td>
+    <td class="right">{{ solver.solved }}</td>
   {%- endif -%}
   {%- if has_solved_sat -%}
-    <td>{{ solver.solved_sat }}</td>
+    <td class="right">{{ solver.solved_sat }}</td>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-    <td>{{ solver.solved_unsat }}</td>
+    <td class="right">{{ solver.solved_unsat }}</td>
   {%- endif -%}
   {%- if has_unsolved -%}
-    <td>{{ solver.unsolved }}</td>
+    <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
-    <td>{{ solver.timeout }}</td>
-    <td>{{ solver.memout }}</td>
+    <td class="right">{{ solver.timeout }}</td>
+    <td class="right">{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
@@ -238,25 +248,25 @@ winner is selected.
 <table id="sat" class="result sorted">
 <thead>
     <tr>
-        <th>Solver</th>
-        <th>Error Score</th>
-        <th>Correct Score</th>
-        <th>CPU Time Score</th>
-        <th>Wall Time Score</th>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
-        <th>Solved</th>
+        <th class="center">Solved</th>
   {%- endif -%}
   {%- if has_solved_sat -%}
-        <th>Solved SAT</th>
+        <th class="center">Solved SAT</th>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-        <th>Solved UNSAT</th>
+        <th class="center">Solved UNSAT</th>
   {%- endif -%}
   {%- if has_unsolved -%}
-        <th>Unsolved</th>
+        <th class="center">Unsolved</th>
   {%- endif -%}
-        <th>Timeout</th>
-        <th>Memout</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
     </tr>
 </thead>
 {% for solver in page.sat %}
@@ -265,24 +275,24 @@ winner is selected.
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td>{{ solver.errorScore }}</td>
-    <td>{{ solver.correctScore }}</td>
-    <td>{{ solver.CPUScore }}</td>
-    <td>{{ solver.WallScore }}</td>
+    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.correctScore }}</td>
+    <td class="right">{{ solver.CPUScore }}</td>
+    <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
-    <td>{{ solver.solved }}</td>
+    <td class="right">{{ solver.solved }}</td>
   {%- endif -%}
   {%- if has_solved_sat -%}
-    <td>{{ solver.solved_sat }}</td>
+    <td class="right">{{ solver.solved_sat }}</td>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-    <td>{{ solver.solved_unsat }}</td>
+    <td class="right">{{ solver.solved_unsat }}</td>
   {%- endif -%}
   {%- if has_unsolved -%}
-    <td>{{ solver.unsolved }}</td>
+    <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
-    <td>{{ solver.timeout }}</td>
-    <td>{{ solver.memout }}</td>
+    <td class="right">{{ solver.timeout }}</td>
+    <td class="right">{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
@@ -299,25 +309,25 @@ winner is selected.
 <table id="unsat" class="result sorted">
 <thead>
     <tr>
-        <th>Solver</th>
-        <th>Error Score</th>
-        <th>Correct Score</th>
-        <th>CPU Time Score</th>
-        <th>Wall Time Score</th>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
-        <th>Solved</th>
+        <th class="center">Solved</th>
   {%- endif -%}
   {%- if has_solved_sat -%}
-        <th>Solved SAT</th>
+        <th class="center">Solved SAT</th>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-        <th>Solved UNSAT</th>
+        <th class="center">Solved UNSAT</th>
   {%- endif -%}
   {%- if has_unsolved -%}
-        <th>Unsolved</th>
+        <th class="center">Unsolved</th>
   {%- endif -%}
-        <th>Timeout</th>
-        <th>Memout</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
     </tr>
 </thead>
 {% for solver in page.unsat %}
@@ -326,24 +336,24 @@ winner is selected.
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td>{{ solver.errorScore }}</td>
-    <td>{{ solver.correctScore }}</td>
-    <td>{{ solver.CPUScore }}</td>
-    <td>{{ solver.WallScore }}</td>
+    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.correctScore }}</td>
+    <td class="right">{{ solver.CPUScore }}</td>
+    <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
-    <td>{{ solver.solved }}</td>
+    <td class="right">{{ solver.solved }}</td>
   {%- endif -%}
   {%- if has_solved_sat -%}
-    <td>{{ solver.solved_sat }}</td>
+    <td class="right">{{ solver.solved_sat }}</td>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-    <td>{{ solver.solved_unsat }}</td>
+    <td class="right">{{ solver.solved_unsat }}</td>
   {%- endif -%}
   {%- if has_unsolved -%}
-    <td>{{ solver.unsolved }}</td>
+    <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
-    <td>{{ solver.timeout }}</td>
-    <td>{{ solver.memout }}</td>
+    <td class="right">{{ solver.timeout }}</td>
+    <td class="right">{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>
@@ -356,29 +366,29 @@ winner is selected.
   {%- assign has_solved_sat = page.twentyfour |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.twentyfour |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.twentyfour |map: "unsolved" |first -%}
-<h3>24s Performance</h3>
+<h3>24 seconds Performance</h3>
 <table id="twentyfour" class="result sorted">
 <thead>
     <tr>
-        <th>Solver</th>
-        <th>Error Score</th>
-        <th>Correct Score</th>
-        <th>CPU Time Score</th>
-        <th>Wall Time Score</th>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
-        <th>Solved</th>
+        <th class="center">Solved</th>
   {%- endif -%}
   {%- if has_solved_sat -%}
-        <th>Solved SAT</th>
+        <th class="center">Solved SAT</th>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-        <th>Solved UNSAT</th>
+        <th class="center">Solved UNSAT</th>
   {%- endif -%}
   {%- if has_unsolved -%}
-        <th>Unsolved</th>
+        <th class="center">Unsolved</th>
   {%- endif -%}
-        <th>Timeout</th>
-        <th>Memout</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
     </tr>
 </thead>
 {% for solver in page.twentyfour %}
@@ -387,24 +397,24 @@ winner is selected.
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td>{{ solver.errorScore }}</td>
-    <td>{{ solver.correctScore }}</td>
-    <td>{{ solver.CPUScore }}</td>
-    <td>{{ solver.WallScore }}</td>
+    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.correctScore }}</td>
+    <td class="right">{{ solver.CPUScore }}</td>
+    <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
-    <td>{{ solver.solved }}</td>
+    <td class="right">{{ solver.solved }}</td>
   {%- endif -%}
   {%- if has_solved_sat -%}
-    <td>{{ solver.solved_sat }}</td>
+    <td class="right">{{ solver.solved_sat }}</td>
   {%- endif -%}
   {%- if has_solved_unsat -%}
-    <td>{{ solver.solved_unsat }}</td>
+    <td class="right">{{ solver.solved_unsat }}</td>
   {%- endif -%}
   {%- if has_unsolved -%}
-    <td>{{ solver.unsolved }}</td>
+    <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
-    <td>{{ solver.timeout }}</td>
-    <td>{{ solver.memout }}</td>
+    <td class="right">{{ solver.timeout }}</td>
+    <td class="right">{{ solver.memout }}</td>
 </tr>
 {% endfor %}
 </table>

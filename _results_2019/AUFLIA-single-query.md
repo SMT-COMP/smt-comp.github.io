@@ -1,6 +1,8 @@
 ---
 layout: result
-resultdate: 2019-07-23 17:11:34
+resultdate: 2019-07-23 17:56:09
+
+year: 2019
 
 divisions: divisions_2019
 participants: participants_2019

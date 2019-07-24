@@ -1,11 +1,14 @@
 {% include head.html %}
 
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
 <h2>{{ page.name }} </h2>
 <table>
     <tr>
       <td><b>Competing</b></td>
       <td>{{ page.competing }}</td>
-{%- for track_descr in site.data.tracks -%}
+{%- for track_descr in tracks -%}
 <tr>
 <td><b>{{ track_descr.pretty_name }}</b></td>
 <td>
