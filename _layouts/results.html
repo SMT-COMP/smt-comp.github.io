@@ -1,0 +1,67 @@
+---
+layout: default
+---
+{%- assign results = site[page.results] -%}
+{%- assign results_competition_wide = site[page.results_competition_wide] -%}
+{%- assign results_summary = site[page.results_summary] -%}
+
+<h2>SMT-COMP {{ page.year }} Results</h2>
+
+<h3>Competition-Wide Recognitions</h3>
+
+<h4>Largest Contribution Ranking</h4>
+{% assign contribs = results_competition_wide
+   | where: "recognition", "largest_contribution" %}
+<ul>
+{% for comp in contribs %}
+{% assign track = site.data.tracks |where: "raw_name", comp.track  |first %}
+{% assign track = track.pretty_name %}
+<li><a href="{{ comp.url }}">{{ track }}</a></li>
+{% endfor %}
+</ul>
+
+<h4>Biggest Lead Ranking</h4>
+{% assign contribs = results_competition_wide
+   | where: "recognition", "biggest_lead" %}
+<ul>
+{% for comp in contribs %}
+{% assign track = site.data.tracks |where: "raw_name", comp.track  |first %}
+{% assign track = track.pretty_name %}
+<li><a href="{{ comp.url }}">{{ track }}</a></li>
+{% endfor %}
+</ul>
+
+<h3>Tracks Summary</h3>
+<ul>
+{% for summary in results_summary %}
+{% assign track = site.data.tracks |where: "raw_name", summary.track  |first %}
+{% assign track = track.pretty_name %}
+<li><a href="{{ summary.url }}">{{ track }}</a></li>
+{% endfor %}
+</ul>
+
+<h3>Divisions</h3>
+{% assign results = results |group_by: 'division' %}
+<ul>
+{% for result in results %}
+  {%- assign track_str = "" -%}
+  {% for item in result.items %}
+    {% assign track = site.data.tracks |where: "raw_name", item.track  |first %}
+    {% assign track = track.pretty_name %}
+    {%- assign track_str = track_str |append: '<a href="'
+                                     |append: item.url
+                                     |append: '">'
+                                     |append: track
+                                     |append: '</a>'
+                                     |append: ':' -%}
+  {% endfor %}
+  {%- assign track_str = track_str | split: ":" -%}
+  <li><b>{{ result.name }}</b></li>
+  <ul>
+    {% for ts in track_str %}
+    <li>{{ ts }}</li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+</ul>
+
