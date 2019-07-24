@@ -57,7 +57,7 @@ The list of selected benchmarks is available
         {%- for track in benchmark.tracks -%}
             {%- if track.name == track_descr.raw_name -%}
                 {%- if track.n_insts > 0 -%}
-<tr {% if track.status == "non-competitive" %} class = "noncompeting" {% endif %}>
+<tr {% if track.status == "non-competitive" %} class = "non-competing" {% endif %}>
 <td><a href="{{ benchmark.url }}">{{ benchmark.division }}</a>{%- if
 track.status == "non-competitive" -%}<sup><a href="#nc">n</a></sup>{%-
 elsif track.status == "experimental" -%}<sup><a href="#ec">e</a></sup>{%-

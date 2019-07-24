@@ -148,7 +148,7 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.sequential %}
-<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+<tr {% if solver.competing == "no" %}class = "non-competing" {% endif %}>
     <td>
   {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
@@ -209,7 +209,7 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.parallel %}
-<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+<tr {% if solver.competing == "no" %}class = "non-competing" {% endif %}>
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
@@ -270,7 +270,7 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.sat %}
-<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+<tr {% if solver.competing == "no" %}class = "non-competing" {% endif %}>
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
@@ -331,7 +331,7 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.unsat %}
-<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+<tr {% if solver.competing == "no" %}class = "non-competing" {% endif %}>
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
@@ -392,7 +392,7 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.twentyfour %}
-<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+<tr {% if solver.competing == "no" %}class = "non-competing" {% endif %}>
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}

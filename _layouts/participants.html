@@ -69,7 +69,7 @@ entered as non-competing solvers by the organizers for comparison.
 <th>System Description</th>
 </tr>
 {%- for solver in participants -%}
-<tr {% if solver.competing == "no" %}class = "noncompeting" {% endif %}>
+<tr {% if solver.competing == "no" %}class = "non-competing" {% endif %}>
 <td>
 <a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
 </td>
@@ -183,7 +183,7 @@ These are the logic divisions in which each solver is participating.
   {%- for solver in participants -%}
     {%- assign in_logic = solver.divisions |where: "name", division.name |first -%}
     {% unless in_logic %}{% continue %}{% endunless %}
-<tr {% if solver.competing == "no" %} class = "noncompeting" {%- endif -%}>
+<tr {% if solver.competing == "no" %} class = "non-competing" {%- endif -%}>
 <td>
 <a href="{{ solver.url }}">{{ solver.name }}</a>
     {%- if solver.competing == "no" -%}
