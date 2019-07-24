@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: preiner@cs.stanford.edu
 name: Boolector (incremental)
 preliminaryID: 23381

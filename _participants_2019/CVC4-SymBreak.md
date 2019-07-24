@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: cs1150254@iitd.ac.in
 name: CVC4-SymBreak
 preliminaryID: 

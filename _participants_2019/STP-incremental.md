@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: soos.mate@gmail.com
 name: STP-incremental
 preliminaryID: 23396

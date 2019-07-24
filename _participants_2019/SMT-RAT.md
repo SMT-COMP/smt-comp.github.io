@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: gereon.kremer@cs.rwth-aachen.de
 name: SMT-RAT
 preliminaryID: 23327

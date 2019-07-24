@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: trev_abroad@yahoo.com
 name: Minkeyrink Solver
 preliminaryID: 23392

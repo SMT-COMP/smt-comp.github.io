@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: nmanthey@conp-solutions.com
 name: STP-portfolio
 preliminaryID: 23403

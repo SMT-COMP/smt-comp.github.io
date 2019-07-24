@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: sebastian.krings@uni-duesseldorf.de
 name: ProB
 preliminaryID: 22647

@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: heizmann@informatik.uni-freiburg.de
 name: UltimateEliminator+SMTInterpol
 preliminaryID: 23426

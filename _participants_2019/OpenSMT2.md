@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: antti.hyvarinen@gmail.com
 name: OpenSMT2
 preliminaryID: 23354

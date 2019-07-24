@@ -1,5 +1,6 @@
 ---
 layout: participant
+year: 2019
 contact: hans-jorg.schurr@inria.fr
 name: veriT
 preliminaryID: 23406
