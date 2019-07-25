@@ -36,6 +36,15 @@
     link: 2018/rules18.pdf
   - name: Benchmarks
     link: 2018/benchmarks.html
+  - name: Tools
+    link: 2018/tools.html
+  - name: Specs
+    link: 2018/specs.html
+  - name: Participants
+    link: 2018/participants.html
+  - name: Results
+    link: 2018/results/results-toc.html
+
 - name: 2017
   link: 2018/index.html
   url: 2017

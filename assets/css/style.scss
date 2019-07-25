@@ -64,9 +64,39 @@ td.right {
   text-align: right;
 }
 
+td.left {
+  text-align: left;
+}
+
 tr.non-competing {
   a {
     color: #000;
+  }
+}
+
+tr.center td {
+  text-align: center;
+}
+
+tr.center th {
+  text-align: center;
+}
+
+tr.right td {
+  text-align: right;
+}
+
+tr.non-competing-grey {
+  color: #707070;
+  a {
+    color: #808080;
+  }
+}
+
+span.non-competing-grey {
+  color: #707070;
+  a {
+    color: #808080;
   }
 }
 

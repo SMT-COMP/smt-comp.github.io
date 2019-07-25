@@ -1,3 +1,5 @@
+{%- assign year = '' -%}
+{%- assign year = page.url |replace: '/', ' ' |truncatewords: 1 |remove: '...' -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -10,6 +12,9 @@
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+    {%- if year == "2018" -%}
+    <style> a { color: #2a971e; } </style>
+    {%- endif -%}
   </head>
   <body>
     <div class="wrapper">
