@@ -12,9 +12,9 @@
 
 <header>
   <h1>
-		<a href="{{ "/" | absolute_url }}">
-      {{ site.title | default: site.github.repository_name }} {{ year }}
-    </a>
+    {%- assign link = "/" -%}
+    {%- if year != '' -%}{%- assign link = link |append: year |append: '/' -%}{%- endif -%} 
+    <a href="{{ link }}">SMT-COMP {{ year }}</a>
   </h1>
 
   {% if site.logo %}
