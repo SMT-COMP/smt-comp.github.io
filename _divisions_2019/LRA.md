@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: LRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#LRA
 tracks:

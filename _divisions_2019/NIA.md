@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: NIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#NIA
 tracks:

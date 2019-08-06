@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: QF_ANIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_ANIA
 tracks:

@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: QF_BVFPLRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_BVFPLRA
 tracks:

@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: QF_NIRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#QF_NIRA
 tracks:

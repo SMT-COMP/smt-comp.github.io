@@ -1,33 +1,24 @@
 ---
 layout: default
 ---
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
 <h2><a href="{{ page.description }}">{{ page.division }}</a></h2>
 <h3>Tracks</h3>
 <table>
 <tr>
-<th>
-Track name
-</th>
-<th>
-Number of benchmarks
-</th>
-<th>
-Status
-</th>
+<th>Track</th>
+<th>Number of Benchmarks</th>
+<th>Status</th>
 </tr>
-{% for track_descr in site.data.tracks %}
+{%- for track in tracks -%}
 <tr>
-<td>
-{{ track_descr.pretty_name }}
-</td>
-    {%- for ltrack in page.tracks -%}
-        {%- if ltrack.name == track_descr.raw_name -%}
-<td>
-{{ ltrack.n_insts }}
-</td>
-<td>
-{{ ltrack.status }}
-</td>
+<td>{{ track.pretty_name }}</td>
+    {%- for div_track in page.tracks -%}
+        {%- if div_track.name == track.raw_name -%}
+<td>{{ div_track.n_insts }}</td>
+<td>{{ div_track.status }}</td>
         {%- endif -%}
     {%- endfor -%}
 </tr>

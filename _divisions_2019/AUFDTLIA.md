@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: AUFDTLIA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#AUFDTLIA
 tracks:

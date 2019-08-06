@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: UFIDL
 description: http://smtlib.cs.uiowa.edu/logics.shtml#UFIDL
 tracks:

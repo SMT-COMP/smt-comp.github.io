@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: UFDT
 description: http://smtlib.cs.uiowa.edu/logics.shtml#UFDT
 tracks:

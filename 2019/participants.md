@@ -8,7 +8,6 @@ nyse:
   date: 2019-06-03
   value: 12888.51
 
-
 divisions:
 - name: ABVFP
   tracks:

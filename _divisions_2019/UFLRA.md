@@ -1,5 +1,6 @@
 ---
 layout: division
+year: 2019
 division: UFLRA
 description: http://smtlib.cs.uiowa.edu/logics.shtml#UFLRA
 tracks:
