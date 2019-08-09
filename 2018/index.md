@@ -8,12 +8,10 @@ The SMT Workshop will include a block of time to present
 the competitors and results of the competition.
 
 ### News
-<ul>
 {% assign newsList = site.news_2018 | reverse %}
 {% for news in newsList %}
-  <li> {{ news.newsdate | date_to_string }} <a href="{{ news.url }}">{{ news.title }}</a> </li>
+- {{ news.newsdate | date_to_string }} [{{ news.title }}]({{ news.url }})
 {% endfor %}
-</ul>
 
 ### Key dates
  - **April 8**    &nbsp; Deadline for new benchmark contributions
