@@ -18,6 +18,9 @@ chall_inc_note: "The Industry-Challenge Track (incremental) contains new
                  applications) that were nominated by the community as
                  challenging and of interest."
 
+smtlib_space: "https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=336504"
+smtlib_path: "root/SMT/SMT-LIB benchmarks/2019-05-06"
+
 tracks:
 - name: track_single_query
   url: selected_benchmarks/benchmark_selection_single_query_2019.tar.xz

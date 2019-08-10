@@ -9,12 +9,18 @@ layout: default
 
 <h2>Benchmarks</h2>
 
-{{ page.note }}
+<p>{{ page.note }}</p>
 
-{% for track_descr in tracks %}
+<p>
+The SMT-LIB benchmarks are available in space
+<a href="{{ page.smtlib_space}}">{{ page.smtlib_path}}</a>
+on <a href="https://www.starexec.org">StarExec</a>.
+</p>
 
-  {% assign n_divisions = 0 %}
-  {%-for benchmark in divisions %}
+{%- for track_descr in tracks -%}
+
+  {%- assign n_divisions = 0 -%}
+  {%-for benchmark in divisions -%}
       {%- for track in benchmark.tracks -%}
             {%- if track.name == track_descr.raw_name -%}
                 {%- if track.n_insts > 0 -%}
@@ -22,20 +28,20 @@ layout: default
                 {%- endif -%}
             {%- endif -%}
         {%- endfor -%}
-    {% endfor %}
+    {%- endfor -%}
 
 <h3>{{ track_descr.pretty_name }}</h3>
 
-  {% if track_descr.raw_name == "track_single_query_challenge" %}
+  {%- if track_descr.raw_name == "track_single_query_challenge" -%}
     {{ chall_sq_note }}
-  {% elsif track_descr.raw_name == "track_incremental_challenge" %}
+  {%- elsif track_descr.raw_name == "track_incremental_challenge" -%}
     {{ chall_inc_note }}
-  {% endif %}
+  {%- endif -%}
 
-    {% if n_divisions == 0 %}
+    {%- if n_divisions == 0 -%}
 The {{ track_descr.pretty_name }} divisions are not yet available.
-        {% continue %}
-    {% endif %}
+        {%- continue -%}
+    {%- endif -%}
 
 
 <p>
@@ -52,21 +58,21 @@ The list of selected benchmarks is available
 <th>Division</th>
 <th>Number of Included Benchmarks</th>
 </tr>
-    {% assign total = 0 %}
+    {%- assign total = 0 -%}
     {%- for benchmark in divisions -%}
         {%- for track in benchmark.tracks -%}
             {%- if track.name == track_descr.raw_name -%}
                 {%- if track.n_insts > 0 -%}
-<tr {% if track.status == "non-competitive" %} class = "non-competing" {% endif %}>
+<tr {%- if track.status == "non-competitive" -%} class = "non-competing" {%- endif -%}>
 <td><a href="{{ benchmark.url }}">{{ benchmark.division }}</a>{%- if
 track.status == "non-competitive" -%}<sup><a href="#nc">n</a></sup>{%-
 elsif track.status == "experimental" -%}<sup><a href="#ec">e</a></sup>{%-
 endif -%}</td>
 <td>{{ track.n_insts }}
                     {%- assign total = total | plus: track.n_insts -%}
-                    {% if track.n_excluded > 0 %}
+                    {%- if track.n_excluded > 0 -%}
 ({{ track.n_excluded }} excluded)
-                    {% endif %}
+                    {%- endif -%}
 </td>
 </tr>
                 {%- endif -%}
@@ -83,7 +89,7 @@ endif -%}</td>
 </tr>
 </table>
 
-{% endfor %}
+{%- endfor -%}
 
 <p>
   <span id="nc">
