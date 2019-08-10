@@ -32,19 +32,20 @@ tool), common output formats for objects like proofs and models are also
 necessary for the adoption of SMT.
 
 ### Competition.
- The Satisfiability Modulo Theories Competition (SMT-COMP) arose from
-the SMT-LIB (Satisfiability Modulo Theories Library) initiative to spur
-adoption of the common, community-designed SMT-LIB formats, and to spark
-further advances in SMT, especially for verification. Competitions in
-other automated reasoning fields, such as CASC and the SAT competition,
-have helped inspire continuing improvements in tools from year to year.
-The first SMT-COMP was held in 2005 as a satellite event of the 17th
-International Conference on Computer-Aided Verification (CAV). The
-experience with SMT-COMP 2005 confirmed the community's expectations
-that a public competition would indeed motivate implementors of SMT
-solvers to adopt the common SMT-LIB input format. Subsequent SMT-COMPs
-have provided further evidence that such a competition can stimulate
-improvement in solver implementations: solvers entered in each
-competition have improved significantly over those in previous
-competitions.
+The Satisfiability Modulo Theories Competition (SMT-COMP) arose from the
+[SMT-LIB](http://www.smt-lib.org/) (Satisfiability Modulo Theories Library)
+initiative to spur adoption of the common, community-designed SMT-LIB formats,
+and to spark further advances in SMT, especially for verification. Competitions
+in other automated reasoning fields, such as
+[CASC competition](http://www.tptp.org/CASC/) and the
+[SAT competition](http://www.satcompetition.org/),
+have helped inspire continuing improvements in tools from year to year.  
+The first SMT-COMP was held in 2005 as a satellite event of the
+[17th International Conference on Computer-Aided Verification (CAV 2005)](http://www.cav2005.inf.ed.ac.uk/).
+The experience with SMT-COMP 2005 confirmed the community's expectations that a
+public competition would indeed motivate implementors of SMT solvers to adopt
+the common SMT-LIB input format.  [Subsequent SMT-COMPs](previous.html) have
+provided further evidence that such a competition can stimulate improvement in
+solver implementations: solvers entered in each competition have improved
+significantly over those in previous competitions.
 
