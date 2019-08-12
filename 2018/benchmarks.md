@@ -274,7 +274,7 @@ QF_SLIA, which contains strings, is experimental in 2018.
     <td class="right">3308</td>
     <td></td>
   </tr>
-  <tr>
+  <tr class="total">
     <td><b>Total</b></td>
     <td class="right"><b>333241</b></td>
     <td class="right"><b>3603</b></td>
@@ -298,7 +298,7 @@ QF_SLIA, which contains strings, is experimental in 2018.
   In total, there are 21 application track divisions.
 </p>
 
-<table class="benchmarks">
+<table>
   <tr class="center">
     <th>Logic</th>
     <th>Eligible Benchmarks</th>
@@ -488,7 +488,7 @@ QF_SLIA, which contains strings, is experimental in 2018.
     <td>0</td>
     <td>1870</td>
   </tr>
-  <tr class="right">
+  <tr class="right total">
     <td class="left"><b>Total</b></td>
     <td><b>9257</b></td>
     <td><b>5</b></td>
@@ -524,8 +524,8 @@ QF_SLIA, which contains strings, is experimental in 2018.
   In total, there are 44 unsat-core track divisions.
 </p>
 
-<table class="benchmarks">
-  <tr class="right">
+<table>
+  <tr class="center">
     <th>Logic</th>
     <th>Eligible Benchmarks</th>
     <th>All main track benchmarks</th>
@@ -785,7 +785,7 @@ QF_SLIA, which contains strings, is experimental in 2018.
     <td>2457</td>
     <td>3308</td>
   </tr>
-  <tr class="right">
+  <tr class="right total">
     <td class="left"><b>Total</b></td>
     <td><b>130705</b></td>
     <td><b>333241</b></td>
