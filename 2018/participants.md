@@ -3,7 +3,7 @@
 <p>These solvers have been submitted to SMT-COMP 2018 or were entered
   as non-competing solvers by the organizers for comparison.</p>
 
-<table class="participants">
+<table>
   <tr>
    <th class="center">Solver</th>
    <th class="center">Main Track</th>
@@ -381,7 +381,7 @@
 
 <p>These are the logic divisions in which each solver is participating.</p>
 
-<table class="participants divisions">
+<table>
   <tr class="center">
     <th>Solver</th>
     <th>ABVFP<sup><a href="#fn1">1</a></sup></th>
