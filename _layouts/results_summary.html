@@ -5,8 +5,9 @@ layout: default
 {%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
 {%- assign tracks = tracks.tracks -%}
 
-{% assign track = tracks |where: "raw_name", page.track  |first %}
-{% assign track = track.pretty_name %}
+{%- assign track = tracks |where: "raw_name", page.track  |first -%}
+{%- assign track_status = track.status -%}
+{%- assign track = track.pretty_name -%}
 
 <h2>SMT-COMP 2019 Results - {{ track }} (Summary)</h2>
 
@@ -18,42 +19,58 @@ Summary of all competition results for the {{ track }}.
 <br/>
 Results are given ranked by performance for each scoring scheme
 (best solver is given as left-most solver).
+{%- if track_status == "experimental" -%}
+<br/>
+This track is experimental. Solvers are only ranked by performance, but no
+winner is selected.
+{%- endif -%}
 </p>
 
 {%- assign scores = page.scores |split: "," -%}
-{% assign results = site.results_2019 |group_by: "track" |where: "name", page.track |first %}
-{% for division in results.items %}
+{%- assign results = site.results_2019 |group_by: "track" |where: "name", page.track |first -%}
+{%- for division in results.items -%}
+{%- assign division_data = site.divisions_2019 |where: "division", division.division |first -%}
+{%- assign division_data = division_data.tracks |where: "name", page.track |first -%}
+
 <h3><a href="{{ division.url }}">{{ division.division }}</a></h3>
+{%- if division_data.status == "experimental" -%}
+<p>
+This division is experimental. Solvers are only ranked by performance, but no
+winner is selected.
+</p>
+{%- endif -%}
   <table>
     <thead>
-    <th>Scoring Scheme</th><th>Winner</th><th>Ranking</th>
+    <th>Scoring Scheme</th>
+    {%- if track_status == "competitive" and division_data.status == "competitive" -%}<th>Winner</th>{%- endif -%}
+    <th>Ranking</th>
     </thead>
-  {% for score in scores %}
+  {%- for score in scores -%}
     <tr>
-    {% if score == "sequential" %}
+    {%- if score == "sequential" -%}
       {%- assign division_score = division.sequential -%}
       {%- assign score_str = "Sequential Performance" -%}
       {%- assign winner = division.winner_seq -%}
-    {% elsif score == "parallel" %}
+    {%- elsif score == "parallel" -%}
       {%- assign division_score = division.parallel -%}
       {%- assign score_str = "Parallel Performance" -%}
       {%- assign winner = division.winner_par -%}
-    {% elsif score == "sat" %}
+    {%- elsif score == "sat" -%}
       {%- assign division_score = division.sat -%}
       {%- assign score_str = "SAT Performance" -%}
       {%- assign winner = division.winner_sat -%}
-    {% elsif score == "unsat" %}
+    {%- elsif score == "unsat" -%}
       {%- assign division_score = division.unsat -%}
       {%- assign score_str = "UNSAT Performance" -%}
       {%- assign winner = division.winner_unsat -%}
-    {% elsif score == "twentyfour" %}
+    {%- elsif score == "twentyfour" -%}
       {%- assign division_score = division.twentyfour -%}
       {%- assign score_str = "24s Performance" -%}
       {%- assign winner = division.winner_24s -%}
-    {% endif %}
+    {%- endif -%}
     {%- assign ranking = "" -%}
-    {% if winner %}
-      {% for solver in division_score %}
+    {%- if winner -%}
+      {%- for solver in division_score -%}
         {%- assign participant = site.participants_2019 |where:"name", solver.name | first -%}
         {%- assign nc_str = "" -%}
         {%- assign nc_class_str = "" -%}
@@ -72,15 +89,15 @@ Results are given ranked by performance for each scoring scheme
           |append: nc_str
           |append: '</span>'
           |append: ":" -%}
-      {% endfor %}
+      {%- endfor -%}
       {%- assign ranking = ranking |split: ":" -%}
       {%- assign ranking = ranking |join: ", " -%}
-    {% endif %}
+    {%- endif -%}
       <td><b>{{ score_str }}</b></td>
-      <td>{{ winner }}</td>
+    {%- if track_status == "competitive" and division_data.status == "competitive" -%}<td>{{ winner }}</td>{%- endif -%}
       <td>{{ ranking }}</td>
     </tr>
-  {% endfor %}
+  {%- endfor -%}
   </table>
-{% endfor %}
+{%- endfor -%}
 
