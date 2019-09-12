@@ -7,6 +7,7 @@ layout: default
 {%- assign tracks = tracks.tracks -%}
 
 {% assign track = tracks |where: "raw_name", page.track  |first %}
+{%- assign track_status = track.status -%}
 {% assign track = track.pretty_name %}
 
 {%- assign results = site[page.results] -%}
@@ -23,6 +24,11 @@ Page generated on {{ page.resultdate | time_to_string }}
 </p>
 
 {% assign divisions = results |group_by: "track" |where: "name", page.track |first %}
+
+{%- if track_status == "experimental" -%}
+This track is experimental. Solvers are only ranked by performance, but no
+winner is selected.
+{%- else -%}
 <h3>Winners</h3>
 <table>
     <thead>
@@ -92,6 +98,7 @@ Page generated on {{ page.resultdate | time_to_string }}
         {% endif %}
     </tr>
 </table>
+{%- endif -%}
 
 {% if page.winner_seq %}
 <h3>Sequential Performance</h3>
