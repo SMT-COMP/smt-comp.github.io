@@ -3,6 +3,8 @@
 
 @import "{{ site.theme }}";
 
+h4 { margin-top: 20px; }
+
 table.sorted thead tr th, table.sorted tfoot tr th {
  /* background-color: #e6EEEE; */
  padding: 4px;
@@ -84,6 +86,10 @@ tr.center th {
 
 tr.right td {
   text-align: right;
+}
+
+tr.center td.left {
+  text-align: left;
 }
 
 tr.right td.left {
