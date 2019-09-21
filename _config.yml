@@ -24,3 +24,7 @@ collections:
     news_2018:
         output: true
         permalink: /2018/news/:name
+
+    news_2017:
+        output: true
+        permalink: /2017/news/:name

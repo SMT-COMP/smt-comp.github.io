@@ -44,8 +44,24 @@
     link: 2018/participants.html
   - name: Results
     link: 2018/results.html
+  - name: Slides
+    link: 2018/slides.html
 
 - name: 2017
-  link: 2018/index.html
+  link: 2017/index.html
   url: 2017
   sublinks:
+  - name: Rules
+    link: 2017/rules17.pdf
+  - name: Benchmarks
+    link: 2017/benchmarks.html
+  - name: Tools
+    link: 2017/tools.html
+  - name: Specs
+    link: 2017/specs.html
+  - name: Participants
+    link: 2017/participants.html
+  - name: Results
+    link: 2017/results.html
+  - name: Slides
+    link: 2017/SMT-COMP-2017-slides.pdf

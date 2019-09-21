@@ -31,7 +31,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4</td>
 </tr>
-<tr><td>CVC4</td>
+<tr>
+<td>CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -43,10 +44,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">42</td>
 <td rowspan="4">210</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Alt-Ergo; veriT; Vampire 4.3</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Alt-Ergo; veriT; Vampire 4.3</td>
 </tr>
 <tr>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Alt-Ergo; Vampire 4.3; veriT</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Alt-Ergo; Vampire 4.3; veriT</td>
 </tr>
 <tr>
 </tr>
@@ -60,7 +63,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4</td>
 </tr>
-<tr><td>CVC4</td>
+<tr>
+<td>CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -74,7 +78,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Vampire 4.3</td>
 </tr>
-<tr><td>CVC4; Vampire 4.3</td>
+<tr>
+<td>CVC4; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -88,7 +93,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Alt-Ergo; Vampire 4.3</td>
 </tr>
-<tr><td>CVC4; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Alt-Ergo; Vampire 4.3</td>
+<tr>
+<td>CVC4; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Alt-Ergo; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -100,10 +106,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">20011</td>
 <td rowspan="4">100055</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Alt-Ergo; Vampire 4.3; veriT</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Alt-Ergo; Vampire 4.3; veriT</td>
 </tr>
 <tr>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3; Alt-Ergo; veriT</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3; Alt-Ergo; veriT</td>
 </tr>
 <tr>
 </tr>
@@ -117,7 +125,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Vampire 4.3; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Alt-Ergo</td>
 </tr>
-<tr><td>CVC4; Vampire 4.3; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Alt-Ergo</td>
+<tr>
+<td>CVC4; Vampire 4.3; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Alt-Ergo</td>
 </tr>
 <tr>
 </tr>
@@ -131,7 +140,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Boolector; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Q3B</td>
 </tr>
-<tr><td>CVC4; Boolector; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Q3B</td>
+<tr>
+<td>CVC4; Boolector; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Q3B</td>
 </tr>
 <tr>
 </tr>
@@ -145,7 +155,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4</td>
 </tr>
-<tr><td>CVC4</td>
+<tr>
+<td>CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -159,7 +170,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4</td>
 </tr>
-<tr><td>CVC4</td>
+<tr>
+<td>CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -171,10 +183,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">388</td>
 <td rowspan="4">1552</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3; veriT</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3; veriT</td>
 </tr>
 <tr>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3; veriT</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3; veriT</td>
 </tr>
 <tr>
 </tr>
@@ -186,9 +200,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">2419</td>
 <td rowspan="4">7257</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
 </tr>
-<tr><td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
+<tr>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -200,10 +217,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">14</td>
 <td rowspan="4">42</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
 </tr>
 <tr>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -215,7 +234,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">3813</td>
 <td rowspan="4">11439</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Vampire 4.3; CVC4</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Vampire 4.3; CVC4</td>
 </tr>
 <tr>
 <td>Vampire 4.3; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
@@ -232,7 +252,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Boolector; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Boolector; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>
+<tr>
+<td>Boolector; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>
 </td>
 </tr>
 <tr>
@@ -247,7 +268,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; COLIBRI</td>
 </tr>
-<tr><td>CVC4; COLIBRI</td>
+<tr>
+<td>CVC4; COLIBRI</td>
 </tr>
 <tr>
 </tr>
@@ -261,7 +283,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; SMTInterpol; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Yices 2.6.0; SMTInterpol; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Yices 2.6.0; SMTInterpol; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -273,10 +296,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">8</td>
 <td rowspan="4">16</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
 </tr>
 <tr>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -290,7 +315,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Yices 2.6.0; Boolector; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Boolector; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Boolector; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -304,7 +330,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; CVC4; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; CVC4; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; CVC4; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -316,9 +343,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">17</td>
 <td rowspan="4">34</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
 </tr>
-<tr><td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
+<tr>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -332,7 +362,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; SMTInterpol;<span class="non-competing-grey"> MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -346,7 +377,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Boolector; Minkeyrink-ST; CVC4; STP-CMS-st-2018; Minkeyrink-MT; STP-Riss-st-2018; STP-CMS-mt-2018; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Minkeyrink-MT; Boolector; Minkeyrink-ST; STP-CMS-mt-2018; CVC4; STP-CMS-st-2018; STP-Riss-st-2018; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Minkeyrink-MT; Boolector; Minkeyrink-ST; STP-CMS-mt-2018; CVC4; STP-CMS-st-2018; STP-Riss-st-2018; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -360,7 +392,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; COLIBRI</td>
 </tr>
-<tr><td>CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; COLIBRI</td>
+<tr>
+<td>CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; COLIBRI</td>
 </tr>
 <tr>
 </tr>
@@ -374,7 +407,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -388,7 +422,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>COLIBRI; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>COLIBRI; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>COLIBRI; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -402,7 +437,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTRAT-Rat; CVC4-experimental-idl-2</td>
 </tr>
-<tr><td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTRAT-Rat; CVC4-experimental-idl-2</td>
+<tr>
+<td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTRAT-Rat; CVC4-experimental-idl-2</td>
 </tr>
 <tr>
 </tr>
@@ -416,7 +452,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>SPASS-SATT; Ctrl-Ergo; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTInterpol; CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTRAT-Rat; veriT</td>
 </tr>
-<tr><td>SPASS-SATT; Ctrl-Ergo; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTInterpol; CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTRAT-Rat; veriT</td>
+<tr>
+<td>SPASS-SATT; Ctrl-Ergo; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTInterpol; CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTRAT-Rat; veriT</td>
 </tr>
 <tr>
 </tr>
@@ -428,9 +465,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">7</td>
 <td rowspan="4">35</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; CVC4; SMTRAT-Rat; SMTInterpol</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; CVC4; SMTRAT-Rat; SMTInterpol</td>
 </tr>
-<tr><td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; CVC4; SMTRAT-Rat; SMTInterpol</td>
+<tr>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; CVC4; SMTRAT-Rat; SMTInterpol</td>
 </tr>
 <tr>
 </tr>
@@ -444,7 +484,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; SPASS-SATT; Yices 2.6.0; veriT; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; opensmt2; Ctrl-Ergo; SMTRAT-Rat; SMTRAT-MCSAT</td>
 </tr>
-<tr><td>CVC4; SPASS-SATT; Yices 2.6.0; veriT; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; opensmt2; Ctrl-Ergo; SMTRAT-Rat; SMTRAT-MCSAT</td>
+<tr>
+<td>CVC4; SPASS-SATT; Yices 2.6.0; veriT; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; opensmt2; Ctrl-Ergo; SMTRAT-Rat; SMTRAT-MCSAT</td>
 </tr>
 <tr>
 </tr>
@@ -458,7 +499,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; AProVE; SMTRAT-Rat</td>
 </tr>
-<tr><td>CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; AProVE; SMTRAT-Rat</td>
+<tr>
+<td>CVC4; Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; AProVE; SMTRAT-Rat</td>
 </tr>
 <tr>
 </tr>
@@ -472,7 +514,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>SMTRAT-Rat; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Yices 2.6.0</td>
 </tr>
-<tr><td>SMTRAT-Rat; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Yices 2.6.0</td>
+<tr>
+<td>SMTRAT-Rat; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; Yices 2.6.0</td>
 </tr>
 <tr>
 </tr>
@@ -484,9 +527,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">11489</td>
 <td rowspan="4">68934</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; veriT+raSAT+Reduce; SMTRAT-MCSAT; CVC4; SMTRAT-Rat</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; veriT+raSAT+Reduce; SMTRAT-MCSAT; CVC4; SMTRAT-Rat</td>
 </tr>
-<tr><td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; veriT+raSAT+Reduce; SMTRAT-MCSAT; CVC4; SMTRAT-Rat</td>
+<tr>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Yices 2.6.0; veriT+raSAT+Reduce; SMTRAT-MCSAT; CVC4; SMTRAT-Rat</td>
 </tr>
 <tr>
 </tr>
@@ -500,7 +546,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTInterpol; opensmt2; SMTRAT-Rat</td>
 </tr>
-<tr><td>Yices 2.6.0; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTInterpol; opensmt2; SMTRAT-Rat</td>
+<tr>
+<td>Yices 2.6.0; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; veriT; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; SMTInterpol; opensmt2; SMTRAT-Rat</td>
 </tr>
 <tr>
 </tr>
@@ -514,7 +561,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4</td>
 </tr>
-<tr><td>CVC4</td>
+<tr>
+<td>CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -528,7 +576,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; veriT; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; opensmt2</td>
 </tr>
-<tr><td>Yices 2.6.0; veriT; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; opensmt2</td>
+<tr>
+<td>Yices 2.6.0; veriT; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; opensmt2</td>
 </tr>
 <tr>
 </tr>
@@ -542,7 +591,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Boolector; CVC4; Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Boolector; CVC4; Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Boolector; CVC4; Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -556,7 +606,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT; CVC4</td>
 </tr>
-<tr><td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT; CVC4</td>
+<tr>
+<td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT; CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -570,7 +621,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT</td>
 </tr>
-<tr><td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT</td>
+<tr>
+<td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; SMTInterpol; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT</td>
 </tr>
 <tr>
 </tr>
@@ -584,7 +636,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT; CVC4; SMTInterpol; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT; CVC4; SMTInterpol; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Yices 2.6.0; <span class="non-competing-grey">MathSAT<sup><a href="#fn">n</a></sup></span>; veriT; CVC4; SMTInterpol; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -598,7 +651,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Yices 2.6.0; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Yices 2.6.0; CVC4; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -612,7 +666,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT+raSAT+Reduce</td>
 </tr>
-<tr><td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT+raSAT+Reduce</td>
+<tr>
+<td>Yices 2.6.0; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT+raSAT+Reduce</td>
 </tr>
 <tr>
 </tr>
@@ -626,7 +681,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Vampire 4.3; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
-<tr><td>Vampire 4.3; CVC4; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>Vampire 4.3; CVC4; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -638,9 +694,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">200</td>
 <td rowspan="4">400</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
 </tr>
-<tr><td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
+<tr>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
 </tr>
 <tr>
 </tr>
@@ -654,7 +713,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Vampire 4.3</td>
 </tr>
-<tr><td>CVC4; Vampire 4.3</td>
+<tr>
+<td>CVC4; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -668,7 +728,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; Vampire 4.3</td>
 </tr>
-<tr><td>CVC4; Vampire 4.3</td>
+<tr>
+<td>CVC4; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -680,9 +741,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">68</td>
 <td rowspan="4">272</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
 </tr>
-<tr><td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
+<tr>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -696,7 +760,8 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">100</td>
 <td>CVC4; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Vampire 4.3</td>
 </tr>
-<tr><td>CVC4; Vampire 4.3; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
+<tr>
+<td>CVC4; Vampire 4.3; veriT; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span></td>
 </tr>
 <tr>
 </tr>
@@ -708,9 +773,12 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">15</td>
 <td rowspan="4">60</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
 </tr>
-<tr><td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
+<tr>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4; veriT; Vampire 4.3</td>
 </tr>
 <tr>
 </tr>
@@ -722,9 +790,11 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <td rowspan="4">3308</td>
 <td rowspan="4">9924</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Vampire 4.3; CVC4</td>
+<td>
+<span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; Vampire 4.3; CVC4</td>
 </tr>
-<tr><td>Vampire 4.3; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
+<tr>
+<td>Vampire 4.3; <span class="non-competing-grey">z3-4.7.1<sup><a href="#fn">n</a></sup></span>; CVC4</td>
 </tr>
 <tr>
 </tr>

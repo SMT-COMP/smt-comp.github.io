@@ -10,6 +10,12 @@ layout: default
 {% for tool in page.tools %}
 <h3>{{ tool.name }}</h3>
 
+{%- if tool.note -%}
+<p>
+{{ tool.note }}
+</p>
+{%- endif -%}
+
 <a href="{{ tool.repo }}"><b>GitHub Repository</b></a><br/>
 <a href="{{ tool.sources }}"><b>Sources</b></a>
   {%- if tool.release -%}
@@ -24,6 +30,10 @@ layout: default
       {% assign track_data = tracks |where: "raw_name", track.name |first %}
   <li>
     <b>{{ track_data.pretty_name }}</b>
+    {%- if track.note -%}
+    <br/>
+    {{ track.note }}
+    {%- endif -%}
   <ul>
     <li>
       <a href="{{ track.release }}">Binary</a>
