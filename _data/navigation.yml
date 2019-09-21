@@ -1,12 +1,3 @@
-- name: Home
-  link: index.html
-- name: Introduction
-  link: introduction.html
-- name: Papers
-  link: papers.html
-- name: Benchmark Submission
-  link: benchmark_submission.html
-
 - name: 2019
   link: 2018/index.html
   url: 2019
