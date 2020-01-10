@@ -22,7 +22,7 @@ and results of the competition.
 ### Organizers
 - [Haniel Barbosa](http://homepages.dcc.ufmg.br/~hbarbosa/) - Universidade Federal de Minas Gerais, Brazil
 - [Antti Hyvarinen](https://www.inf.usi.ch/postdoc/hyvarinen/) (chair) - Universita della Svizzera italiana, Switzerland
-- [Jochen Hoenicke](https://jochen-hoenicke.de/) (co-chair) - Albert-Ludwigs-Universität Freiburg, Germany
+- [Jochen Hoenicke](https://jochen-hoenicke.de/) - Albert-Ludwigs-Universität Freiburg, Germany
 
 SMT-COMP 2020 is organized under the direction of the SMT Steering
 Committee.
