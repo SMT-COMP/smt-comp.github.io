@@ -1,5 +1,26 @@
+- name: 2020
+  link: 2020/index.html
+  url: 2020
+  sublinks:
+  # - name: Rules
+  #   link: 2020/rules20.pdf
+  # - name: Benchmarks
+  #   link: 2020/benchmarks.html
+  # - name: Tools
+  #   link: 2020/tools.html
+  - name: Specs
+    link: 2020/specs.html
+  # - name: Participants
+  #   link: 2020/participants.html
+  # - name: Results
+  #   link: 2020/results.html
+  # - name: Slides
+  #   link: 2020/SMT-COMP-2020-slides.pdf
+#  - name: Solver submission
+#    link: https://forms.gle/y8xB4C8TB2WkdKPx9
+
 - name: 2019
-  link: 2018/index.html
+  link: 2019/index.html
   url: 2019
   sublinks:
   - name: Rules
