@@ -13,7 +13,7 @@ and results of the competition.
 {% endfor %}
 
 ### Key dates
- - **Mar 1**  &nbsp; Deadline for new benchmark contributions
+ - **March 1**  &nbsp; Deadline for new benchmark contributions
  - **April 20**    &nbsp; Final versions of competition tools
  - **May 4**   &nbsp; Deadline for first versions of solvers (for all tracks)
  - **May 18**   &nbsp; Deadline for final versions of solvers, including system descriptions
