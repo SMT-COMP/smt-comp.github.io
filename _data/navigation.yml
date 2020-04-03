@@ -2,8 +2,8 @@
   link: 2020/index.html
   url: 2020
   sublinks:
-  # - name: Rules
-  #   link: 2020/rules20.pdf
+  - name: Rules
+    link: 2020/rules20.pdf
   # - name: Benchmarks
   #   link: 2020/benchmarks.html
   # - name: Tools
