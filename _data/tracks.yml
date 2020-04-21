@@ -6,14 +6,12 @@
   - raw_name: track_incremental
     pretty_name: Incremental Track
     status: competitive
-    status: competitive
-    status: competitive
   - raw_name: track_unsat_core
     pretty_name: Unsat Core Track
     status: competitive
   - raw_name: track_model_validation
-    pretty_name: Model Validation Track (experimental)
-    status: experimental
+    pretty_name: Model Validation Track
+    status: competitive
 - year: 2019
   tracks:
   - raw_name: track_single_query
