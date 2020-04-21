@@ -11,53 +11,43 @@ tools:
   tracks:
     - name: track_single_query
       starexec: SMT-COMP 2020 Non-Incremental Scrambler
-      starexecid:
+      starexecid: 611
       release:
     - name: track_incremental
       starexec: SMT-COMP 2020 Incremental Scrambler
-      starexecid:
+      starexecid: 609
       release:
     - name: track_unsat_core
       starexec: SMT-COMP 2020 Unsat-Core Scrambler
-      starexecid:
+      starexecid: 607
       release:
     - name: track_model_validation
       starexec: SMT-COMP 2020 Model-Validation Scrambler
-      starexecid:
+      starexecid: 610
       release:
 
 - name: Post-Processor
   repo: https://github.com/SMT-COMP/postprocessors
-  sources: https://github.com/SMT-COMP/postprocessors/archive/smtcomp2020.tar.gz
+  sources:
   tracks:
     - name: track_single_query
       starexec: SMT-COMP 2020 Non-Incremental
-      starexecid:
+      starexecid: 616
       repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
       release:
     - name: track_incremental
       starexec: SMT-COMP 2020 Incremental
-      starexecid:
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/incremental-track
-      release:
-    - name: track_single_query_challenge
-      starexec: SMT-COMP 2020 Non-Incremental
-      starexecid:
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
-      release:
-    - name: track_incremental_challenge
-      starexec: SMT-COMP 2020 Incremental
-      starexecid:
+      starexecid: 615
       repo: https://github.com/SMT-COMP/postprocessors/tree/master/incremental-track
       release:
     - name: track_unsat_core
       starexec: SMT-COMP 2020 Unsat-Core
-      starexecid:
+      starexecid: 613
       repo: https://github.com/SMT-COMP/postprocessors/tree/master/unsat-core-track
       release:
     - name: track_model_validation
       starexec: SMT-COMP 2020 Model-Validation
-      starexecid:
+      starexecid: 614
       repo: https://github.com/SMT-COMP/postprocessors/tree/master/model-validation-track
       release:
 

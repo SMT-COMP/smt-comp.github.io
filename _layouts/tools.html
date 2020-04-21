@@ -19,8 +19,10 @@ layout: default
 <a href="{{ tool.repo }}"><b>GitHub Repository</b></a><br/>
 {%- if tool.sources -%}
   <a href="{{ tool.sources }}"><b>Sources</b></a>
-  <br/>
-  <a href="{{ tool.release }}"><b>Binary</b></a>
+  {%- if tool.release -%}
+    <br/>
+    <a href="{{ tool.release }}"><b>Binary</b></a>
+  {%- endif -%}
 {%- endif -%}
 
 
