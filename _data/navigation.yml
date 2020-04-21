@@ -6,8 +6,8 @@
     link: 2020/rules20.pdf
   # - name: Benchmarks
   #   link: 2020/benchmarks.html
-  # - name: Tools
-  #   link: 2020/tools.html
+  - name: Tools
+    link: 2020/tools.html
   - name: Specs
     link: 2020/specs.html
   # - name: Participants
