@@ -12,16 +12,17 @@ layout: default
 
 {%- if tool.note -%}
 <p>
-{{ tool.note }}
+    {{ tool.note }}
 </p>
 {%- endif -%}
 
 <a href="{{ tool.repo }}"><b>GitHub Repository</b></a><br/>
-<a href="{{ tool.sources }}"><b>Sources</b></a>
-  {%- if tool.release -%}
-<br/>
-<a href="{{ tool.release }}"><b>Binary</b></a>
-  {%- endif -%}
+{%- if tool.sources -%}
+  <a href="{{ tool.sources }}"><b>Sources</b></a>
+  <br/>
+  <a href="{{ tool.release }}"><b>Binary</b></a>
+{%- endif -%}
+
 
   {% if tool.tracks %}
 <h4>SMT-COMP {{ page.year }} Releases</h4>
@@ -35,9 +36,11 @@ layout: default
     {{ track.note }}
     {%- endif -%}
   <ul>
-    <li>
-      <a href="{{ track.release }}">Binary</a>
-    </li>
+    {%- if track.release -%}
+      <li>
+        <a href="{{ track.release }}">Binary</a>
+      </li>
+    {%- endif -%}
       {%- if track.starexec -%}
     <li>
         available on <a href="http://www.starexec.org">StarExec</a> as
