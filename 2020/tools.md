@@ -51,4 +51,7 @@ tools:
       repo: https://github.com/SMT-COMP/postprocessors/tree/master/model-validation-track
       release:
 
+- name: Trace executor
+  repo: https://github.com/SMT-COMP/trace-executor
+
 ---
