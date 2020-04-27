@@ -1,12 +1,12 @@
 ---
-layout: participants
+layout: participants_2020
 
 year: 2020
 participants: participants_2020
 
 nyse:
-  date: 2019-06-03
-  value: 12888.51
+  date: 2020-05-19
+  value: 0.00
 
 divisions:
 - name: ABVFP
@@ -155,20 +155,24 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_model_validation
 - name: QF_LIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_LIRA
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_model_validation
 - name: QF_LRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_NIA
   tracks:
   - track_single_query
@@ -186,6 +190,7 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_model_validation
 - name: QF_S
   tracks:
   - track_single_query
