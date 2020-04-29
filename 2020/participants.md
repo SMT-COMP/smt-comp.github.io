@@ -5,14 +5,22 @@ year: 2020
 participants: participants_2020
 
 nyse:
-  date: 2020-05-19
-  value: 0.00
+  date: 2020-04-29
+  value: 0
 
 divisions:
+- name: ABV
+  tracks:
+  - track_single_query
+  - track_unsat_core
 - name: ABVFP
   tracks:
   - track_single_query
   - track_incremental
+  - track_unsat_core
+- name: ABVFPLRA
+  tracks:
+  - track_single_query
   - track_unsat_core
 - name: ALIA
   tracks:
@@ -27,6 +35,18 @@ divisions:
   - track_single_query
   - track_unsat_core
 - name: AUFDTLIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFDTLIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFDTNIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFFPDTLIRA
   tracks:
   - track_single_query
   - track_unsat_core
@@ -57,7 +77,15 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+- name: BVFPLRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
 - name: FP
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: FPLRA
   tracks:
   - track_single_query
   - track_unsat_core
@@ -88,6 +116,10 @@ divisions:
   tracks:
   - track_single_query
   - track_incremental
+  - track_unsat_core
+- name: QF_ABVFPLRA
+  tracks:
+  - track_single_query
   - track_unsat_core
 - name: QF_ALIA
   tracks:
@@ -212,6 +244,11 @@ divisions:
 - name: QF_UFBVLIA
   tracks:
   - track_incremental
+- name: QF_UFFP
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
 - name: QF_UFIDL
   tracks:
   - track_single_query
@@ -238,6 +275,7 @@ divisions:
 - name: UF
   tracks:
   - track_single_query
+  - track_incremental
   - track_unsat_core
 - name: UFBV
   tracks:
@@ -251,7 +289,23 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+- name: UFDTLIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
 - name: UFDTNIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFDTNIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFFPDTLIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: UFFPDTNIRA
   tracks:
   - track_single_query
   - track_unsat_core
@@ -271,5 +325,9 @@ divisions:
 - name: UFNIA
   tracks:
   - track_single_query
+  - track_incremental
   - track_unsat_core
+- name: UFNRA
+  tracks:
+  - track_incremental
 ---
