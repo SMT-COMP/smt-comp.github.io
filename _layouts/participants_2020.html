@@ -87,7 +87,10 @@ entered as non-competing solvers by the organizers for comparison.
 <td class="right">{{- solver.preliminaryID -}}</td>
 <td class="right">{{- solver.finalID -}}</td>
 <td class="right">{{- solver.seed -}}</td>
+<!--
 <td class="right"><a href="/{{ page.year }}/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
+-->
+<td class="right"><a href="{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
 </tr>
 {% endfor %}
 
