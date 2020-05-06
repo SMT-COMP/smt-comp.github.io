@@ -52,9 +52,12 @@ layout: default
 {%- assign nsolvers_track_non_comp_list = nsolvers_track_non_comp_list |split: ":" -%}
 
 <h2>Participants</h2>
+The following solvers have been submitted to SMT-COMP {{ page.year }}.
 
+<!--
 The following solvers have been submitted to SMT-COMP {{ page.year }} or were
 entered as non-competing solvers by the organizers for comparison.
+-->
 <br/><br/>
 
 <table>
@@ -124,11 +127,11 @@ entered as non-competing solvers by the organizers for comparison.
     n Non-competing.
   </span><br/>
 </p>
-
+<!--
 The opening value of the NYSE Composite Index on {{ nyse_date }} was
 {{ nyse_value }}, resulting in a competition seed of {{ sum_of_seeds }} + {{
 nyse_round }} = <b>{{ comp_seed }}</b>.
-
+-->
 <h2>Divisions</h2>
 
 These are the logic divisions in which each solver is participating.
