@@ -1,10 +1,10 @@
 ## SMT-COMP 2020
 
-The *15th International Satisfiability Modulo Theories Competition
-(SMT-COMP 2020)* is part of the SMT Workshop 2020,
-affiliated with [IJCAR 2020](https://ijcar2020.org/).
-The SMT Workshop will include a block of time to present the competitors
-and results of the competition.
+The *15th International Satisfiability Modulo Theories Competition (SMT-COMP
+2020)* is part of the [SMT Workshop
+2020](http://smt-workshop.cs.uiowa.edu/2020/), affiliated with [IJCAR
+2020](https://ijcar2020.org/).  The SMT Workshop will include a block of time to
+present the competitors and results of the competition.
 
 ### News
 {% assign newsList = site.news_2020 | reverse %}
