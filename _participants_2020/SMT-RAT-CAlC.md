@@ -2,7 +2,7 @@
 layout: participant
 year: 2020
 contact: "nalbach@cs.rwth-aachen.de"
-name: "SMT-RAT-CDCAC"
+name: "SMT-RAT-CAlC"
 preliminaryID: "28001"
 finalID: "-1"
 team: "Erika Ábrahám, Gereon Kremer, Jasper Nalbach, Rebecca Haehn, Florian Corzilius, Sebastian Junges, Stefan Schupp."
