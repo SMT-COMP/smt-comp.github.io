@@ -16,7 +16,7 @@ layout: default
 {%- assign nyse_info = page.nyse -%}
 {%- assign nyse_date = nyse_info.date -%}
 {%- assign nyse_value = nyse_info.value -%}
-{%- assign nyse_round = nyse_value | round -%}
+{%- assign nyse_round = nyse_value | times: 100 | floor -%}
 {%- assign comp_seed = sum_of_seeds | plus: nyse_round %}
 
 {%- assign nsolvers_track_list = "" -%}
