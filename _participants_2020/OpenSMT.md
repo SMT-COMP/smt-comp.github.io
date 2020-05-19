@@ -3,7 +3,7 @@ layout: participant
 year: 2020
 contact: "antti.hyvarinen@gmail.com"
 name: "OpenSMT"
-preliminaryID: "28337"
+preliminaryID: "28564"
 finalID: "-1"
 team: "Leonardo Alt, Sepideh Asadi, Martin Blicha, Roberto Bruttomesso, Antti E. J. Hyvarinen, Matteo Marescotti, Edgar Pek, Simone Fulvio Rollini, Parvin Sadigova, Natasha Sharygina, and Aliaksei Tsitovich"
 variantOf: ""

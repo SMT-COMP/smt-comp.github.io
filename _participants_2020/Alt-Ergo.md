@@ -15,6 +15,9 @@ solverHomePage: "https://alt-ergo.ocamlpro.com/"
 sysDescrUrl: "https://alt-ergo.ocamlpro.com/Alt-Ergo-SMTCOMP-description.pdf"
 sysDescrName: "Alt-Ergo"
 divisions:
+- name: ALIA
+  tracks:
+  - track_single_query
 - name: AUFDTLIA
   tracks:
   - track_single_query
@@ -94,9 +97,6 @@ divisions:
   tracks:
   - track_single_query
 - name: UFNIA
-  tracks:
-  - track_single_query
-- name: ALIA
   tracks:
   - track_single_query
 ---
