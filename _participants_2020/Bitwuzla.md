@@ -18,8 +18,6 @@ divisions:
 - name: BV
   tracks:
   - track_single_query
-  - track_incremental
-  - track_unsat_core
 - name: QF_ABV
   tracks:
   - track_single_query
