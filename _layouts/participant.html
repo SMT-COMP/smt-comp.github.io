@@ -2,6 +2,11 @@
 
 {%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
 {%- assign tracks = tracks.tracks -%}
+{% comment %} Generate URL for system description.
+If page.sysDescrUrl looks like an URL, i.e., it contains "://",
+it is used unchanged. Otherwise, it is assumed to be a file name
+located in year/system-description/.
+{% endcomment %}
 {%- if page.sysDescrUrl contains "://" -%}
     {%- assign sysDescrUrl = page.sysDescrUrl -%}
 {%- else -%}
