@@ -2,6 +2,11 @@
 
 {%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
 {%- assign tracks = tracks.tracks -%}
+{%- if page.sysDescrUrl contains "://" -%}
+    {%- assign sysDescrUrl = page.sysDescrUrl -%}
+{%- else -%}
+    {%- assign sysDescrUrl = "../system-descriptions/" | append: page.sysDescrUrl -%}
+{%- endif -%}
 
 <h2>{{ page.name }} </h2>
 <table>
@@ -39,8 +44,7 @@
   </tr>
   <tr>
       <td><b>System Description</b></td>
-      <td><a href="/2019/system-descriptions/{{ page.sysDescrUrl }}">{{
-              page.sysDescrName }}</a></td>
+      <td><a href="{{ sysDescrUrl }}">{{ page.sysDescrName }}</a></td>
   </tr>
   <tr>
       <td><b>Variant of Submission ID</b></td>
