@@ -52,12 +52,8 @@ layout: default
 {%- assign nsolvers_track_non_comp_list = nsolvers_track_non_comp_list |split: ":" -%}
 
 <h2>Participants</h2>
-The following solvers have been submitted to SMT-COMP {{ page.year }}.
-
-<!--
 The following solvers have been submitted to SMT-COMP {{ page.year }} or were
 entered as non-competing solvers by the organizers for comparison.
--->
 <br/><br/>
 
 <table>
@@ -87,10 +83,18 @@ entered as non-competing solvers by the organizers for comparison.
 <td class="right">{{- solver.preliminaryID -}}</td>
 <td class="right">{{- solver.finalID -}}</td>
 <td class="right">{{- solver.seed -}}</td>
-<!--
-<td class="right"><a href="/{{ page.year }}/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
--->
-<td class="right"><a href="{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
+<td class="right">
+{%- comment %} Generate URL for system description.
+If page.sysDescrUrl looks like an URL, i.e., it contains "://",
+it is used unchanged. Otherwise, it is assumed to be a file name
+located in year/system-description/.
+{% endcomment -%}
+{%- if solver.sysDescrUrl contains "://" -%}
+    {%- assign sysDescrUrl = solver.sysDescrUrl -%}
+{%- else -%}
+    {%- assign sysDescrUrl = "system-descriptions/" | append: solver.sysDescrUrl -%}
+{%- endif -%}
+<a href="{{ sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
 </tr>
 {% endfor %}
 

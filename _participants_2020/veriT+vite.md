@@ -2,14 +2,14 @@
 layout: participant
 year: 2020
 contact: "hans-jorg.schurr@inria.fr"
-name: "veriT"
-preliminaryID: "28338"
-finalID: "28741"
+name: "veriT+vite"
+preliminaryID: "28742"
+finalID: "28742"
 team: "Haniel Barbosa, Daniel El Ouraoui, Pascal Fontaine, Hans-Jörg Schurr"
 variantOf: ""
 wrapperTool: ""
 derivedTool: ""
-competing: "yes"
+competing: "no"
 seed: "153"
 solverHomePage: "https://verit.loria.fr/"
 sysDescrUrl: "http://verit.loria.fr/description/veriT2020.pdf"
@@ -25,36 +25,6 @@ divisions:
   tracks:
   - track_single_query
 - name: LIA
-  tracks:
-  - track_single_query
-- name: QF_ALIA
-  tracks:
-  - track_single_query
-- name: QF_AUFLIA
-  tracks:
-  - track_single_query
-- name: QF_IDL
-  tracks:
-  - track_single_query
-- name: QF_LIA
-  tracks:
-  - track_single_query
-- name: QF_LRA
-  tracks:
-  - track_single_query
-- name: QF_RDL
-  tracks:
-  - track_single_query
-- name: QF_UF
-  tracks:
-  - track_single_query
-- name: QF_UFIDL
-  tracks:
-  - track_single_query
-- name: QF_UFLIA
-  tracks:
-  - track_single_query
-- name: QF_UFLRA
   tracks:
   - track_single_query
 - name: UF

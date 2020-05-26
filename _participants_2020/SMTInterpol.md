@@ -4,7 +4,7 @@ year: 2020
 contact: "hoenicke@informatik.uni-freiburg.de"
 name: "SMTInterpol"
 preliminaryID: "28544"
-finalID: "-1"
+finalID: "28784"
 team: "Jürgen Christ, Jochen Hoenicke, Tanja Schindler"
 variantOf: ""
 wrapperTool: ""

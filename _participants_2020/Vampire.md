@@ -4,7 +4,7 @@ year: 2020
 contact: "giles.reger@manchester.ac.uk"
 name: "Vampire"
 preliminaryID: "28324"
-finalID: "-1"
+finalID: "28782"
 team: "Giles Reger, Martin Suda, Andrei Voronkov, Evgeny Kotelnikov, Simon Robillard, Laura Kovacs, Martin Riener, Michael Rawson, Bernhard Gleiss, Jakob Rath, Petra Hozzova, and Johannes Schoisswohl"
 variantOf: ""
 wrapperTool: "Z3 (4.8.7, this commit: 5a1003f6ed10fc65a1cbcd2554f183714c413c7c)"

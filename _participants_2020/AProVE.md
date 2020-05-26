@@ -4,7 +4,7 @@ year: 2020
 contact: "carsten@dcs.bbk.ac.uk"
 name: "AProVE"
 preliminaryID: "1229"
-finalID: "-1"
+finalID: "1229"
 team: "Marc Brockschmidt, Florian Frohn, Carsten Fuhs, Jürgen Giesl, Jera Hensel, Peter Schneider-Kamp, Thomas Ströder, René Thiemann"
 variantOf: ""
 wrapperTool: ""

@@ -4,7 +4,7 @@ year: 2020
 contact: "bruno.dutertre@sri.com"
 name: "Yices2 Model Validation"
 preliminaryID: "28464"
-finalID: "-1"
+finalID: "28794"
 team: "Dejan Jovanović, Stéphane Graham-Lengrand, Ian A. Mason"
 variantOf: ""
 wrapperTool: ""
@@ -12,8 +12,8 @@ derivedTool: ""
 competing: "yes"
 seed: "98765"
 solverHomePage: "https://yices.csl.sri.com"
-sysDescrUrl: "https://yices.csl.sri.com"
-sysDescrName: "TBD"
+sysDescrUrl: "Yices2.pdf"
+sysDescrName: "Yices 2 in SMT-COMP 2020"
 divisions:
 - name: QF_BV
   tracks:

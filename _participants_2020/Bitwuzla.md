@@ -4,7 +4,7 @@ year: 2020
 contact: "preiner@cs.stanford.edu"
 name: "Bitwuzla"
 preliminaryID: "28351"
-finalID: "-1"
+finalID: "28792"
 team: "Aina Niemetz, Mathias Preiner"
 variantOf: ""
 wrapperTool: ""

@@ -5,7 +5,7 @@ year: 2020
 participants: participants_2020
 
 nyse:
-  date: 2020-04-29
+  date: 2020-05-26
   value: 0
 
 divisions:
