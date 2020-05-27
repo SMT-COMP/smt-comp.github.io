@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "110594628"
 solverHomePage: "https://smtrat.github.io/"
-sysDescrUrl: "https://github.com/smtrat/smtrat/raw/master/doc/smtcomp-description/smtcomp-2020.pdf"
+sysDescrUrl: "SMT-RAT.pdf"
 sysDescrName: "SMT-RAT 20.04"
 divisions:
 - name: QF_NRA

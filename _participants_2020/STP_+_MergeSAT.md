@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "11111111"
 solverHomePage: "https://github.com/stp/stp"
-sysDescrUrl: "https://github.com/stp/docs/raw/master/smt2020-descr/descr.pdf"
+sysDescrUrl: "STP.pdf"
 sysDescrName: "STP in the SMTCOMP 2020"
 divisions:
 - name: QF_BV

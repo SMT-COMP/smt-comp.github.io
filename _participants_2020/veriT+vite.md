@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "no"
 seed: "0"
 solverHomePage: "https://verit.loria.fr/"
-sysDescrUrl: "http://verit.loria.fr/description/veriT2020.pdf"
+sysDescrUrl: "veriT.pdf"
 sysDescrName: "veriT at SMT-COMP 2020"
 divisions:
 - name: ALIA

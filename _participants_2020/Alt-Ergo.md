@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "42"
 solverHomePage: "https://alt-ergo.ocamlpro.com/"
-sysDescrUrl: "https://alt-ergo.ocamlpro.com/Alt-Ergo-SMTCOMP-description.pdf"
+sysDescrUrl: "Alt-Ergo.pdf"
 sysDescrName: "Alt-Ergo"
 divisions:
 - name: ALIA

@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "101"
 solverHomePage: "http://soprano-project.fr/software.html"
-sysDescrUrl: "http://soprano-project.fr/colibri_system_description.pdf"
+sysDescrUrl: "COLIBRI.pdf"
 sysDescrName: "COLIBRI"
 divisions:
 - name: QF_ABVFP

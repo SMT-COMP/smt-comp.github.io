@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "9595959"
 solverHomePage: "https://minkeyrink.com"
-sysDescrUrl: "https://minkeyrink.com/smtcomp2020.pdf"
+sysDescrUrl: "MinkeyRink.pdf"
 sysDescrName: "MinkeyRink 2020.0"
 divisions:
 - name: QF_BV

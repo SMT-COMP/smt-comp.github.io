@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "39"
 solverHomePage: "http://verit.loria.fr"
-sysDescrUrl: "http://verit.loria.fr/description/veriTraSATRedlog2020.pdf"
+sysDescrUrl: "veriT+raSAT+Redlog.pdf"
 sysDescrName: "veriT+raSAT+Redlog at SMT-COMP 2020"
 divisions:
 - name: QF_NRA

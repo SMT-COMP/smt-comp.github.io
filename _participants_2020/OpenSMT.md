@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "24131"
 solverHomePage: "http://verify.inf.usi.ch/opensmt"
-sysDescrUrl: "https://usi-verification-and-security.github.io/opensmt-doc/abstract-2020.pdf"
+sysDescrUrl: "OpenSMT.pdf"
 sysDescrName: "OpenSMT in SMT-COMP 2020"
 divisions:
 - name: QF_LRA
