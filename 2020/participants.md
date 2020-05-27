@@ -1,5 +1,5 @@
 ---
-layout: participants_2020
+layout: participants
 
 year: 2020
 participants: participants_2020

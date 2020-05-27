@@ -16,7 +16,11 @@ layout: default
 {%- assign nyse_info = page.nyse -%}
 {%- assign nyse_date = nyse_info.date -%}
 {%- assign nyse_value = nyse_info.value -%}
-{%- assign nyse_round = nyse_value | round -%}
+{%- if page.year >= 2020 -%}
+  {%- assign nyse_round = nyse_value | times:100 | floor -%}
+{%- else -%}
+  {%- assign nyse_round = nyse_value | round -%}
+{%- endif -%}
 {%- assign comp_seed = sum_of_seeds | plus: nyse_round %}
 
 {%- assign nsolvers_track_list = "" -%}
@@ -69,30 +73,42 @@ entered as non-competing solvers by the organizers for comparison.
 <th>System Description</th>
 </tr>
 {%- for solver in participants -%}
-<tr {% if solver.competing == "no" %}class = "non-competing" {% endif %}>
-<td>
-<a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
+<tr{% if solver.competing == "no" %} class="non-competing"{% endif %}>
+<td><a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
 </td>
-{%- for track in tracks -%}
+{% for track in tracks -%}
 <td class="center">
   {%- assign in_track = solver.divisions |where: "tracks", track.raw_name |first -%}
-  {% if in_track %}
+  {%- if in_track -%}
   X
-  {% endif %}
+  {%- endif -%}
 </td>
-{%- endfor -%}
+{% endfor -%}
 <td class="right">{{- solver.preliminaryID -}}</td>
 <td class="right">{{- solver.finalID -}}</td>
 <td class="right">{{- solver.seed -}}</td>
-<td class="right"><a href="/{{ page.year }}/system-descriptions/{{ solver.sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
+<td class="right">
+{%- if solver.sysDescrUrl != "" -%}
+{%- comment %} Generate URL for system description.
+If page.sysDescrUrl looks like an URL, i.e., it contains "://",
+it is used unchanged. Otherwise, it is assumed to be a file name
+located in year/system-description/.
+{% endcomment -%}
+{%- if solver.sysDescrUrl contains "://" -%}
+    {%- assign sysDescrUrl = solver.sysDescrUrl -%}
+{%- else -%}
+    {%- assign sysDescrUrl = "system-descriptions/" | append: solver.sysDescrUrl -%}
+{%- endif -%}
+<a href="{{ sysDescrUrl }}">{{ solver.sysDescrName }}</a></td>
+{%- endif -%}
 </tr>
 {% endfor %}
 
 <tr class="total">
 <td>Total - competing</td>
-{% for num in nsolvers_track_comp_list %}
+{% for num in nsolvers_track_comp_list -%}
 <td class="center">{{ num }}</td>
-{% endfor %}
+{% endfor -%}
 <td></td>
 <td></td>
 <td></td>
@@ -100,9 +116,9 @@ entered as non-competing solvers by the organizers for comparison.
 </tr>
 <tr>
 <td>Total - non-competing</td>
-{% for num in nsolvers_track_non_comp_list %}
+{% for num in nsolvers_track_non_comp_list -%}
 <td class="center">{{ num }}</td>
-{% endfor %}
+{% endfor -%}
 <td></td>
 <td></td>
 <td></td>
@@ -110,9 +126,9 @@ entered as non-competing solvers by the organizers for comparison.
 </tr>
 <tr>
 <td><b>Total</b></td>
-{% for num in nsolvers_track_list %}
+{% for num in nsolvers_track_list -%}
 <td class="center"><b>{{ num }}</b></td>
-{% endfor %}
+{% endfor -%}
 <td></td>
 <td></td>
 <td><b>{{ sum_of_seeds }} </b> (mod 2<sup>30</sup>)</td>
@@ -125,9 +141,11 @@ entered as non-competing solvers by the organizers for comparison.
   </span><br/>
 </p>
 
+{% if nyse_value > 0 -%}
 The opening value of the NYSE Composite Index on {{ nyse_date }} was
 {{ nyse_value }}, resulting in a competition seed of {{ sum_of_seeds }} + {{
 nyse_round }} = <b>{{ comp_seed }}</b>.
+{%- endif %}
 
 <h2>Divisions</h2>
 
@@ -138,12 +156,12 @@ These are the logic divisions in which each solver is participating.
   {%- assign nsolvers_logic_list = "" -%}
   {%- assign nsolvers_logic_comp_list = "" -%}
   {%- assign nsolvers_logic_non_comp_list = "" -%}
-  {%- for track in tracks -%}
+  {%- for track in division.tracks -%}
       {%- assign nsolvers_logic = 0 -%}
       {%- assign nsolvers_logic_comp = 0 -%}
       {%- assign nsolvers_logic_non_comp = 0 -%}
       {%- for solver in participants -%}
-          {%- assign in_logic = solver.divisions |where: "name", division.name |where: "tracks", track.raw_name |first -%}
+          {%- assign in_logic = solver.divisions |where: "name", division.name |where: "tracks", track |first -%}
           {% if in_logic %}
             {%- assign nsolvers_logic = nsolvers_logic |plus: 1 -%}
             {% if solver.competing == "yes" %}
@@ -153,17 +171,15 @@ These are the logic divisions in which each solver is participating.
             {% endif %}
           {%- endif -%}
       {%- endfor -%}
-      {%- if nsolvers_logic > 0 -%}
-        {%- assign nsolvers_logic_list = nsolvers_logic_list
-                                      |append: nsolvers_logic
-                                      |append: ":" -%}
-        {%- assign nsolvers_logic_comp_list = nsolvers_logic_comp_list
-                                          |append: nsolvers_logic_comp
-                                          |append: ":" -%}
-        {%- assign nsolvers_logic_non_comp_list = nsolvers_logic_non_comp_list
-                                          |append: nsolvers_logic_non_comp
-                                          |append: ":" -%}
-      {%- endif -%}
+      {%- assign nsolvers_logic_list = nsolvers_logic_list
+                                    |append: nsolvers_logic
+                                    |append: ":" -%}
+      {%- assign nsolvers_logic_comp_list = nsolvers_logic_comp_list
+                                        |append: nsolvers_logic_comp
+                                        |append: ":" -%}
+      {%- assign nsolvers_logic_non_comp_list = nsolvers_logic_non_comp_list
+                                        |append: nsolvers_logic_non_comp
+                                        |append: ":" -%}
   {%- endfor -%}
   {%- assign nsolvers_logic_list = nsolvers_logic_list |split: ":" -%}
   {%- assign nsolvers_logic_comp_list = nsolvers_logic_comp_list |split: ":" -%}
@@ -173,9 +189,9 @@ These are the logic divisions in which each solver is participating.
 <table>
 <tr>
 <th>Solver</th>
-  {%- for track in division.tracks -%}
+  {%- for track in division.tracks %}
 <th class="center">
-    {% assign tt = tracks |where: "raw_name", track  |first %}
+    {%- assign tt = tracks |where: "raw_name", track  |first %}
     {{ tt.pretty_name }}
 </th>
   {%- endfor -%}
@@ -183,40 +199,39 @@ These are the logic divisions in which each solver is participating.
   {%- for solver in participants -%}
     {%- assign in_logic = solver.divisions |where: "name", division.name |first -%}
     {% unless in_logic %}{% continue %}{% endunless %}
-<tr {% if solver.competing == "no" %} class = "non-competing" {%- endif -%}>
-<td>
-<a href="{{ solver.url }}">{{ solver.name }}</a>
+<tr{% if solver.competing == "no" %} class="non-competing"{% endif %}>
+<td><a href="{{ solver.url }}">{{ solver.name }}</a>
     {%- if solver.competing == "no" -%}
 <sup><a href="#nc">n</a></sup>
     {%- endif -%}
 </td>
-    {%- for track in division.tracks -%}
+{%- for track in division.tracks %}
 <td class="center">
       {%- assign in_logic = solver.divisions |where: "name", division.name |where: "tracks", track |first -%}
-        {% if in_logic %}
+        {%- if in_logic -%}
 X
         {%- endif -%}
 </td>
-    {%- endfor -%}
+    {%- endfor %}
 </tr>
   {%- endfor -%}
 <tr class="total">
 <td>Total - competing</td>
-  {% for num in nsolvers_logic_comp_list %}
+{% for num in nsolvers_logic_comp_list -%}
 <td class="center">{{ num }}</td>
-  {% endfor %}
+{% endfor -%}
 </tr>
 <tr>
 <td>Total - non-competing</td>
-  {% for num in nsolvers_logic_non_comp_list %}
+{% for num in nsolvers_logic_non_comp_list -%}
 <td class="center">{{ num }}</td>
-  {% endfor %}
+{% endfor -%}
 </tr>
 <tr>
 <td><b>Total</b></td>
-  {% for num in nsolvers_logic_list %}
+{% for num in nsolvers_logic_list -%}
 <td class="center"><b>{{ num }}</b></td>
-  {% endfor %}
+{% endfor -%}
 </tr>
 </table>
 {% endfor %}
