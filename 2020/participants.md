@@ -5,8 +5,8 @@ year: 2020
 participants: participants_2020
 
 nyse:
-  date: 2020-05-26
-  value: 0
+  date: 2020-05-27
+  value: 11787.5646
 
 divisions:
 - name: ABV
