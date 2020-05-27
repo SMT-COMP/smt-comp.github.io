@@ -11,8 +11,8 @@ wrapperTool: ""
 derivedTool: ""
 competing: "yes"
 seed: "9595959"
-solverHomePage: "https://www.minkeyrink.com"
-sysDescrUrl: "https://www.minkeyrink.com/smtcomp2020.pdf"
+solverHomePage: "https://minkeyrink.com"
+sysDescrUrl: "https://minkeyrink.com/smtcomp2020.pdf"
 sysDescrName: "MinkeyRink 2020.0"
 divisions:
 - name: QF_BV
