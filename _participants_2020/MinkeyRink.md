@@ -4,7 +4,7 @@ year: 2020
 contact: "trev_abroad@yahoo.com"
 name: "MinkeyRink"
 preliminaryID: "23719"
-finalID: "28765"
+finalID: "28838"
 team: "Various"
 variantOf: ""
 wrapperTool: ""
@@ -18,6 +18,4 @@ divisions:
 - name: QF_BV
   tracks:
   - track_single_query
-  - track_incremental
-  - track_model_validation
 ---

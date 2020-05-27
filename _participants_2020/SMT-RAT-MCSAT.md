@@ -4,7 +4,7 @@ year: 2020
 contact: "nalbach@cs.rwth-aachen.de"
 name: "SMT-RAT-MCSAT"
 preliminaryID: "28002"
-finalID: "-1"
+finalID: "28002"
 team: "Erika Ábrahám, Gereon Kremer, Jasper Nalbach, Rebecca Haehn, Florian Corzilius, Sebastian Junges, Stefan Schupp."
 variantOf: "28075"
 wrapperTool: ""

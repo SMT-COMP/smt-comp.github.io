@@ -4,7 +4,7 @@ year: 2020
 contact: "heizmann@informatik.uni-freiburg.de"
 name: "UltimateEliminator+MathSAT"
 preliminaryID: "28584"
-finalID: "28804"
+finalID: "28846"
 team: "Max Barth, Daniel Dietsch, Leonard Fichtner, Matthias Heizmann, Andreas Podelski"
 variantOf: ""
 wrapperTool: "MathSAT 5.6.3"
