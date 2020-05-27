@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://ultimate.informatik.uni-freiburg.de/eliminator/"
-sysDescrUrl: "http://swt.informatik.uni-freiburg.de/staff/heizmann"
+sysDescrUrl: "UltimateEliminator.pdf"
 sysDescrName: "UltimateEliminator"
 divisions:
 - name: ABV
