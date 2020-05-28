@@ -9,7 +9,7 @@ tracks:
   n_excluded: 0
   status: competitive
 - name: track_incremental
-  n_insts: 2508
+  n_insts: 69
   n_excluded: 0
   status: competitive
 - name: track_unsat_core

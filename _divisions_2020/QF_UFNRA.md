@@ -9,7 +9,7 @@ tracks:
   n_excluded: 0
   status: competitive
 - name: track_incremental
-  n_insts: 27
+  n_insts: 0
   n_excluded: 0
   status: competitive
 - name: track_unsat_core
@@ -21,4 +21,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_UFNRA Unsat Core Track participated only by MathSAT5, z3, CVC4.
+QF_UFNRA Unsat Core Track participated only by CVC4, z3, MathSAT5.
