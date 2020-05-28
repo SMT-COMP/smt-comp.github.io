@@ -5,11 +5,11 @@ year: 2020
 divisions: divisions_2020
 
 note: "SMT-COMP 2020 will use a large subset of the benchmarks available within
-       the 2020-XX-XX release of SMT-LIB, as described in the competition
+       the 2020-04-25 release of SMT-LIB, as described in the competition
        rules."
 
-smtlib_space: "TBA"
-smtlib_path: "TBA"
+smtlib_space: "https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=399901"
+smtlib_path: "root/SMT/SMT-LIB benchmarks/2020-04-25"
 
 tracks:
 - name: track_single_query
