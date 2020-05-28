@@ -34,6 +34,10 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+- name: AUFBVDTNIA
+  tracks:
+  - track_single_query
+  - track_unsat_core
 - name: AUFDTLIA
   tracks:
   - track_single_query
@@ -47,6 +51,10 @@ divisions:
   - track_single_query
   - track_unsat_core
 - name: AUFFPDTLIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
+- name: AUFFPDTNIRA
   tracks:
   - track_single_query
   - track_unsat_core
