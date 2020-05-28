@@ -18,6 +18,5 @@ divisions:
 - name: QF_BV
   tracks:
   - track_single_query
-  - track_incremental
   - track_model_validation
 ---
