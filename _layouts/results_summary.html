@@ -27,7 +27,7 @@ winner is selected.
 </p>
 
 {%- assign scores = page.scores |split: "," -%}
-{%- assign results = site.results_2019 |group_by: "track" |where: "name", page.track |first -%}
+{%- assign results = site.results_2019 |where: "layout", "result" |group_by: "track" |where: "name", page.track |first -%}
 {%- for division in results.items -%}
 {%- assign division_data = site.divisions_2019 |where: "division", division.division |first -%}
 {%- assign division_data = division_data.tracks |where: "name", page.track |first -%}
