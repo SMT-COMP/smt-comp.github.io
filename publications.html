@@ -4,7 +4,11 @@ layout: default
 
 <h2>Publications</h2>
 {% for post in site.bibtex reversed %}
-  <h3>{{ post.title }}</h3>
+  <h3>{% if post.web -%}
+	  <a href="{{ post.web }}">{{ post.title }}</a>
+      {%- else -%}
+	  {{ post.title }}
+      {%- endif %}</h3>
   {{ post.authors }}
   {{ post.excerpt }}
 {% endfor %}

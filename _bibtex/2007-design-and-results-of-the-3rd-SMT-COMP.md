@@ -2,6 +2,7 @@
 layout: default
 title: Design and Results of the 3rd Annual Satisfiability Modulo Theories Competition (SMT-COMP 2007)
 authors: Clark Barrett, Morgan Deters, Albert Oliveras, and Aaron Stump
+web: https://dx.doi.org/10.1142/S0218213008004060
 ---
 ```bibtex
 @article{BDOS08,
@@ -11,6 +12,7 @@ authors: Clark Barrett, Morgan Deters, Albert Oliveras, and Aaron Stump
   volume  = {17},
   number  = {4},
   pages   = {569-606},
-  year    = {2008}
+  year    = {2008},
+  url     = {https://dx.doi.org/10.1142/S0218213008004060}
 }
 ```

@@ -2,6 +2,7 @@
 layout: default
 title: The SMT Competition 2015&ndash;2018
 authors: Tjark Weber, Sylvain Conchon, David Déharbe, Matthias Heizmann, Aina Niemetz, and Giles Reger
+web: https://doi.org/10.3233/SAT190123
 ---
 ```bibtex
 @article{WCDHNR19,
