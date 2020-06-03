@@ -6,18 +6,21 @@ layout: default
 {%- assign tracks = tracks.tracks -%}
 
 {%- assign results = site[page.results] -%}
-{%- assign results_competition_wide = site[page.results_competition_wide] -%}
-{%- assign results_summary = site[page.results_summary] -%}
+{%- assign results_summary = results | where: "layout", "results_summary" -%}
+{%- assign largest_contribs = results
+   | where: "recognition", "largest_contribution" -%}
+{%- assign biggest_lead = results
+   | where: "recognition", "biggest_lead" -%}
+{% assign divisions = results
+   | where: "layout", "result" | group_by: 'division' %}
 
 <h2>SMT-COMP {{ page.year }} Results</h2>
 
 <h3>Competition-Wide Recognitions</h3>
 
 <h4>Largest Contribution Ranking</h4>
-{% assign contribs = results_competition_wide
-   | where: "recognition", "largest_contribution" %}
 <ul>
-{% for comp in contribs %}
+{% for comp in largest_contribs %}
 {% assign track = tracks |where: "raw_name", comp.track  |first %}
 {% assign track = track.pretty_name %}
 <li><a href="{{ comp.url }}">{{ track }}</a></li>
@@ -25,10 +28,8 @@ layout: default
 </ul>
 
 <h4>Biggest Lead Ranking</h4>
-{% assign contribs = results_competition_wide
-   | where: "recognition", "biggest_lead" %}
 <ul>
-{% for comp in contribs %}
+{% for comp in biggest_lead %}
 {% assign track = tracks |where: "raw_name", comp.track  |first %}
 {% assign track = track.pretty_name %}
 <li><a href="{{ comp.url }}">{{ track }}</a></li>
@@ -45,9 +46,8 @@ layout: default
 </ul>
 
 <h3>Divisions</h3>
-{% assign results = results |group_by: 'division' %}
 <ul>
-{% for result in results %}
+{% for result in divisions %}
   {%- assign track_str = "" -%}
   {% for item in result.items %}
     {% assign track = tracks |where: "raw_name", item.track  |first %}

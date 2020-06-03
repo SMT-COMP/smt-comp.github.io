@@ -9,7 +9,7 @@ layout: default
 {%- assign track_status = track.status -%}
 {%- assign track = track.pretty_name -%}
 
-<h2>SMT-COMP 2019 Results - {{ track }} (Summary)</h2>
+<h2>SMT-COMP {{ page.year }} Results - {{ track }} (Summary)</h2>
 
 <!-- Note: we assume that the order of solvers in the .md files is according
            to the ranking in the respective category! -->
@@ -27,9 +27,9 @@ winner is selected.
 </p>
 
 {%- assign scores = page.scores |split: "," -%}
-{%- assign results = site.results_2019 |group_by: "track" |where: "name", page.track |first -%}
+{%- assign results = site[page.results] |where: "layout", "result" | group_by: "track" |where: "name", page.track |first -%}
 {%- for division in results.items -%}
-{%- assign division_data = site.divisions_2019 |where: "division", division.division |first -%}
+{%- assign division_data = site[page.divisions] |where: "division", division.division |first -%}
 {%- assign division_data = division_data.tracks |where: "name", page.track |first -%}
 
 <h3><a href="{{ division.url }}">{{ division.division }}</a></h3>
@@ -71,7 +71,7 @@ winner is selected.
     {%- assign ranking = "" -%}
     {%- if winner -%}
       {%- for solver in division_score -%}
-        {%- assign participant = site.participants_2019 |where:"name", solver.name | first -%}
+        {%- assign participant = site[page.participants] |where:"name", solver.name | first -%}
         {%- assign nc_str = "" -%}
         {%- assign nc_class_str = "" -%}
         {%- if solver.competing == "no" -%}
