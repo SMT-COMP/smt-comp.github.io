@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<h2>Publications</h2>
+{% for post in site.bibtex reversed %}
+  <h3>{{ post.title }}</h3>
+  {{ post.authors }}
+  {{ post.excerpt }}
+{% endfor %}

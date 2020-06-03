@@ -38,3 +38,5 @@ collections:
     news_2017:
         output: true
         permalink: /2017/news/:name
+
+    bibtex:
