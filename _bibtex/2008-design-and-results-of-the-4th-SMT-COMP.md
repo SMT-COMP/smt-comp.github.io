@@ -1,3 +1,4 @@
+---
 layout: default
 title: Design and Results of the 4th Annual Satisfiability Modulo Theories Competition (SMT-COMP 2008)
 authors: Clark Barrett, Morgan Deters, Albert Oliveras, and Aaron Stump
