@@ -12,9 +12,14 @@ layout: default
 
 {%- assign divisions = site[page.divisions] -%}
 {%- assign participants = site[page.participants] -%}
+{%- assign disagreements = site[page.disagreements] -%}
 
 {%- assign division = divisions | where: "division", page.division |first -%}
 {%- assign division = division.tracks | where: "name", page.track |first -%}
+
+{%- assign disagreement = disagreements | where: "division", page.division | where: "track", page.track |first -%}
+
+
 
 <h2>{{ page.division }} ({{ track }})</h2>
 
@@ -425,3 +430,8 @@ winner is selected.
     n Non-competing.
   </span><br/>
 </p>
+
+{%- if disagreement -%}
+Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
+{%- endif -%}
+

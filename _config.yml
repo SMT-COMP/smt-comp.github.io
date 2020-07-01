@@ -11,6 +11,12 @@ collections:
     participants_2020:
         output: true
         permalink: /2020/participants/:name
+    results_2020:
+        output: true
+        permalink: /2020/results/:name
+    disagreements_2020:
+        output: true
+        permalink: /2020/disagreements/:name
 
     divisions_2019:
         output: true
