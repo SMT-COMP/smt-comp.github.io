@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
+{%- assign tracks = tracks.tracks -%}
+
+{%- assign participants = site[page.participants] -%}
+
+{%- assign track = tracks |where: "raw_name", page.track  |first -%}
+
+<h2>Solver Disgreements on {{ page.division }} ({{ track.pretty_name }}) </h2>
+
+Page generated on {{ page.gendate | time_to_string }}
+<p>
+
+{% for benchmark in page.benchmarks %}
+<p>
+{{ benchmark.name }}
+<ul>
+  {% for pair in benchmark.jobs %}
+  {% assign participant = participants | where:"name", pair.name | first %}
+   <li>
+        <a href="{{ participant.url }}">{{ pair.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}: {{ pair.result }}
+    </li>
+  {% endfor %}
+</ul>
+{% endfor %}
