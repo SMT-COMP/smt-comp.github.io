@@ -1,0 +1,27 @@
+---
+layout: participant
+year: 2020
+contact: "noetzli@cs.stanford.edu"
+name: "2019-CVC4-inc"
+preliminaryID: "23417"
+finalID: "23733"
+team: "Clark Barrett, Haniel Barbosa, Martin Brain, Tim King, Makai Mann, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Cesare Tinelli, Yoni Zohar"
+variantOf: "CVC4, 23420"
+wrapperTool: ""
+derivedTool: ""
+competing: "no"
+seed: ""
+solverHomePage: "http://cvc4.cs.stanford.edu"
+sysDescrUrl: "cvc4.pdf"
+sysDescrName: "CVC4"
+divisions:
+- name: ABVFP
+  tracks:
+  - track_incremental
+- name: AUFNIRA
+  tracks:
+  - track_incremental
+- name: BVFP
+  tracks:
+  - track_incremental
+---
