@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_LRA
 track: track_incremental
 n_benchmarks: 10
@@ -33,6 +34,15 @@ parallel:
   unsolved: 537
   timeout: 9
   memout: 0
+- name: Yices2-fixed incremental
+  competing: "no"
+  errorScore: 0
+  correctScore: 913
+  CPUScore: 12000.0
+  WallScore: 12000.0
+  unsolved: 602
+  timeout: 10
+  memout: 0
 - name: Yices2 incremental
   competing: "yes"
   errorScore: 0
@@ -58,6 +68,15 @@ parallel:
   CPUScore: 10263.431
   WallScore: 10202.764
   unsolved: 858
+  timeout: 8
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 656
+  CPUScore: 10264.963
+  WallScore: 10201.607
+  unsolved: 859
   timeout: 8
   memout: 0
 - name: CVC4-inc

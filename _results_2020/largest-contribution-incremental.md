@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-06-25 16:44:31
+resultdate: 2020-07-02 00:01:29
 
 year: 2020
 
@@ -14,67 +14,59 @@ winner_par: CVC4-inc
 
 parallel:
 - name: CVC4-inc
-  correctScore: 0.06524294
-  timeScore: 0.00003992
+  correctScore: 0.06594954
+  timeScore: 0.00004036
   division: UF
 - name: CVC4-inc
-  correctScore: 0.00474948
+  correctScore: 0.00480092
   timeScore: 0.00000000
   division: UFLRA
 - name: Yices2 incremental
-  correctScore: 0.00453013
-  timeScore: 0.00575637
+  correctScore: 0.00457920
+  timeScore: 0.00581871
   division: QF_UFLIA
 - name: Yices2 incremental
-  correctScore: 0.00094415
-  timeScore: 0.00625050
+  correctScore: 0.00209716
+  timeScore: 0.00380876
   division: QF_AUFLIA
 - name: Bitwuzla
-  correctScore: 0.00090407
-  timeScore: 0.02878501
+  correctScore: 0.00091387
+  timeScore: 0.02909676
   division: QF_ABV
 - name: Yices2 incremental
-  correctScore: 0.00077977
-  timeScore: 0.00215441
+  correctScore: 0.00078822
+  timeScore: 0.00217774
   division: QF_LIA
 - name: Yices2 incremental
-  correctScore: 0.00062504
-  timeScore: 0.00161284
+  correctScore: 0.00063181
+  timeScore: 0.00163031
   division: QF_AUFBV
 - name: CVC4-inc
-  correctScore: 0.00031236
-  timeScore: 0.00367645
+  correctScore: 0.00031575
+  timeScore: 0.00371626
   division: QF_BV
 - name: Bitwuzla
-  correctScore: 0.00019604
-  timeScore: 0.07551094
+  correctScore: 0.00019816
+  timeScore: 0.07632875
   division: QF_UFBV
 - name: Yices2 incremental
-  correctScore: 0.00016993
+  correctScore: 0.00017177
   timeScore: 0.00000000
   division: QF_LRA
 - name: SMTInterpol
-  correctScore: 0.00008823
-  timeScore: 0.02075476
+  correctScore: 0.00008919
+  timeScore: 0.02097954
   division: QF_UFLRA
 - name: CVC4-inc
-  correctScore: 0.00007915
-  timeScore: 0.00053855
+  correctScore: 0.00008001
+  timeScore: 0.00054438
   division: LRA
-- name: SMTInterpol
-  correctScore: 0.00000016
-  timeScore: 0.00336683
-  division: QF_ALIA
-- name: CVC4-inc
-  correctScore: 0.00000001
-  timeScore: 0.00176021
-  division: ALIA
 - name: Yices2 incremental
   correctScore: 0.00000000
-  timeScore: 0.03606091
+  timeScore: 0.03645146
   division: QF_UF
 - name: SMTInterpol
   correctScore: 0.00000000
-  timeScore: 0.00032924
+  timeScore: 0.00033280
   division: LIA
 ---

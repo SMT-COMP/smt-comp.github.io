@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_AUFBV
 track: track_unsat_core
 n_benchmarks: 34
@@ -24,12 +25,12 @@ sequential:
   WallScore: 4600.158
   timeout: 3
   memout: 0
-- name: 2019-Yices 2.6.2
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
   correctScore: 18131
-  CPUScore: 4644.379
-  WallScore: 4645.233
+  CPUScore: 4606.823
+  WallScore: 4607.686
   timeout: 3
   memout: 0
 - name: z3
@@ -46,6 +47,14 @@ sequential:
   correctScore: 15283
   CPUScore: 248.481
   WallScore: 248.683
+  timeout: 0
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 15283
+  CPUScore: 255.862
+  WallScore: 249.5
   timeout: 0
   memout: 0
 - name: CVC4-uc
@@ -73,12 +82,12 @@ parallel:
   WallScore: 4599.948
   timeout: 3
   memout: 0
-- name: 2019-Yices 2.6.2
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
   correctScore: 18131
-  CPUScore: 4644.899
-  WallScore: 4645.133
+  CPUScore: 4607.353
+  WallScore: 4607.586
   timeout: 3
   memout: 0
 - name: z3
@@ -95,6 +104,14 @@ parallel:
   correctScore: 15283
   CPUScore: 248.481
   WallScore: 248.683
+  timeout: 0
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 15283
+  CPUScore: 255.862
+  WallScore: 249.5
   timeout: 0
   memout: 0
 - name: CVC4-uc

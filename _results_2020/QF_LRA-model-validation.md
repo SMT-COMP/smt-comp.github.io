@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:41:04
+resultdate: 2020-07-02 00:04:16
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_LRA
 track: track_model_validation
 n_benchmarks: 378
@@ -32,6 +33,14 @@ sequential:
   WallScore: 27220.592
   timeout: 17
   memout: 0
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 361
+  CPUScore: 27293.683
+  WallScore: 27273.164
+  timeout: 17
+  memout: 0
 - name: z3
   competing: "no"
   errorScore: 0
@@ -48,9 +57,17 @@ sequential:
   WallScore: 36183.088
   timeout: 18
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 351
+  CPUScore: 54948.511
+  WallScore: 52217.779
+  timeout: 27
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
-  errorScore: 0
+  errorScore: 2
   correctScore: 350
   CPUScore: 54559.699
   WallScore: 51766.013
@@ -58,7 +75,7 @@ sequential:
   memout: 0
 - name: MathSAT5-mv
   competing: "no"
-  errorScore: 0
+  errorScore: 2
   correctScore: 345
   CPUScore: 53776.173
   WallScore: 53764.771
@@ -81,6 +98,14 @@ parallel:
   WallScore: 27220.212
   timeout: 17
   memout: 0
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 361
+  CPUScore: 27294.953
+  WallScore: 27272.744
+  timeout: 17
+  memout: 0
 - name: z3
   competing: "no"
   errorScore: 0
@@ -97,9 +122,17 @@ parallel:
   WallScore: 36182.578
   timeout: 18
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 351
+  CPUScore: 54948.511
+  WallScore: 52217.779
+  timeout: 27
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
-  errorScore: 0
+  errorScore: 2
   correctScore: 350
   CPUScore: 54559.699
   WallScore: 51766.013
@@ -107,7 +140,7 @@ parallel:
   memout: 0
 - name: MathSAT5-mv
   competing: "no"
-  errorScore: 0
+  errorScore: 2
   correctScore: 345
   CPUScore: 53783.173
   WallScore: 53763.351

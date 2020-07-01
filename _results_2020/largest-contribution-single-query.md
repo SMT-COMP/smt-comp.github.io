@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-07-01 15:34:45
+resultdate: 2020-07-02 00:00:42
 
 year: 2020
 
@@ -535,8 +535,8 @@ unsat:
   timeScore: 0.00898651
   division: QF_NIA
 - name: CVC4
-  correctScore: 0.01183777
-  timeScore: 0.01735826
+  correctScore: 0.01303120
+  timeScore: 0.01389215
   division: UFNIA
 - name: Vampire
   correctScore: 0.00504379
@@ -630,6 +630,10 @@ unsat:
   correctScore: 0.00010866
   timeScore: 0.00014407
   division: QF_ABV
+- name: Vampire
+  correctScore: 0.00009632
+  timeScore: 0.00002570
+  division: NIA
 - name: CVC4
   correctScore: 0.00008394
   timeScore: 0.00005808
@@ -638,10 +642,6 @@ unsat:
   correctScore: 0.00008383
   timeScore: 0.00011364
   division: QF_UFBV
-- name: CVC4
-  correctScore: 0.00008256
-  timeScore: 0.00003687
-  division: NIA
 - name: CVC4
   correctScore: 0.00004877
   timeScore: 0.00262108

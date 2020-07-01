@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: AUFLIRA
 track: track_unsat_core
 n_benchmarks: 7908
@@ -32,14 +33,6 @@ sequential:
   WallScore: 49848.032
   timeout: 41
   memout: 0
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 142200
-  CPUScore: 64234.342
-  WallScore: 64245.532
-  timeout: 53
-  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -47,6 +40,14 @@ sequential:
   CPUScore: 425388.723
   WallScore: 422775.926
   timeout: 345
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 120065
+  CPUScore: 425393.475
+  WallScore: 422118.316
+  timeout: 344
   memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
@@ -73,13 +74,13 @@ parallel:
   WallScore: 49846.492
   timeout: 41
   memout: 0
-- name: 2018-CVC4 (unsat core)
+- name: SMTInterpol-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 142200
-  CPUScore: 64243.892
-  WallScore: 64243.442
-  timeout: 53
+  correctScore: 120065
+  CPUScore: 446317.495
+  WallScore: 415463.492
+  timeout: 327
   memout: 0
 - name: SMTInterpol
   competing: "yes"

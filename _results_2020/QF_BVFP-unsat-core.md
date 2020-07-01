@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_BVFP
 track: track_unsat_core
 n_benchmarks: 1269
@@ -22,6 +23,14 @@ sequential:
   correctScore: 11663
   CPUScore: 2386.139
   WallScore: 2386.924
+  timeout: 1
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 11653
+  CPUScore: 2396.133
+  WallScore: 2396.703
   timeout: 1
   memout: 0
 - name: z3
@@ -55,6 +64,14 @@ parallel:
   correctScore: 11663
   CPUScore: 2386.309
   WallScore: 2386.894
+  timeout: 1
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 11653
+  CPUScore: 2396.243
+  WallScore: 2396.653
   timeout: 1
   memout: 0
 - name: z3

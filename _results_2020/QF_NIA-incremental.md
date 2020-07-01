@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_NIA
 track: track_incremental
 n_benchmarks: 10
@@ -50,6 +51,15 @@ parallel:
   WallScore: 4724.22
   unsolved: 1273752
   timeout: 3
+  memout: 0
+- name: Yices2-fixed incremental
+  competing: "no"
+  errorScore: 0
+  correctScore: 198160
+  CPUScore: 12000.0
+  WallScore: 12000.0
+  unsolved: 3983497
+  timeout: 10
   memout: 0
 - name: Yices2 incremental
   competing: "yes"

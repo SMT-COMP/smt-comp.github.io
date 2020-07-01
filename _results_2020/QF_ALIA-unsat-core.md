@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_ALIA
 track: track_unsat_core
 n_benchmarks: 30
@@ -24,20 +25,20 @@ sequential:
   WallScore: 1.241
   timeout: 0
   memout: 0
-- name: 2018-Z3 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 720
-  CPUScore: 1.398
-  WallScore: 1.525
-  timeout: 0
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
   correctScore: 677
   CPUScore: 1.17
   WallScore: 1.182
+  timeout: 0
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 644
+  CPUScore: 21.245
+  WallScore: 12.564
   timeout: 0
   memout: 0
 - name: SMTInterpol
@@ -54,6 +55,14 @@ sequential:
   correctScore: 583
   CPUScore: 0.789
   WallScore: 0.823
+  timeout: 0
+  memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 564
+  CPUScore: 0.155
+  WallScore: 0.38
   timeout: 0
   memout: 0
 - name: Yices2
@@ -73,20 +82,20 @@ parallel:
   WallScore: 1.241
   timeout: 0
   memout: 0
-- name: 2018-Z3 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 720
-  CPUScore: 1.398
-  WallScore: 1.525
-  timeout: 0
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
   correctScore: 677
   CPUScore: 1.17
   WallScore: 1.182
+  timeout: 0
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 644
+  CPUScore: 21.245
+  WallScore: 12.564
   timeout: 0
   memout: 0
 - name: SMTInterpol
@@ -103,6 +112,14 @@ parallel:
   correctScore: 583
   CPUScore: 0.789
   WallScore: 0.823
+  timeout: 0
+  memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 564
+  CPUScore: 0.155
+  WallScore: 0.38
   timeout: 0
   memout: 0
 - name: Yices2

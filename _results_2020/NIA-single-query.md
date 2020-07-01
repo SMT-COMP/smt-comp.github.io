@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-01 15:34:20
+resultdate: 2020-07-02 00:00:12
 
 year: 2020
 
@@ -17,7 +17,7 @@ mem_limit: 60
 winner_seq: CVC4
 winner_par: CVC4
 winner_sat: CVC4
-winner_unsat: CVC4
+winner_unsat: Vampire
 winner_24s: CVC4
 
 sequential:
@@ -68,18 +68,6 @@ sequential:
   solved_unsat: 1
   unsolved: 9
   timeout: 0
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 8
-  CPUScore: 12808.678
-  WallScore: 11303.679
-  solved: 8
-  solved_sat: 0
-  solved_unsat: 8
-  unsolved: 9
-  timeout: 9
   memout: 0
 - name: Vampire
   competing: "yes"
@@ -142,18 +130,6 @@ parallel:
   unsolved: 9
   timeout: 0
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 8
-  CPUScore: 12808.678
-  WallScore: 11303.679
-  solved: 8
-  solved_sat: 0
-  solved_unsat: 8
-  unsolved: 9
-  timeout: 9
-  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -215,18 +191,6 @@ sat:
   unsolved: 10
   timeout: 0
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 3
-  CPUScore: 11910.15
-  WallScore: 11074.885
-  solved: 3
-  solved_sat: 0
-  solved_unsat: 3
-  unsolved: 14
-  timeout: 9
-  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -240,77 +204,65 @@ sat:
   timeout: 13
   memout: 0
 unsat:
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 8
-  CPUScore: 2008.678
-  WallScore: 503.679
-  solved: 8
-  solved_sat: 0
-  solved_unsat: 8
-  unsolved: 9
-  timeout: 9
-  memout: 0
 - name: 2018-Z3
   competing: "no"
   errorScore: 0
-  correctScore: 7
-  CPUScore: 391.379
-  WallScore: 391.414
-  solved: 7
-  solved_sat: 3
-  solved_unsat: 4
-  unsolved: 10
-  timeout: 0
-  memout: 0
-- name: z3
-  competing: "no"
-  errorScore: 0
-  correctScore: 6
-  CPUScore: 578.182
-  WallScore: 578.398
-  solved: 6
-  solved_sat: 3
-  solved_unsat: 3
-  unsolved: 11
-  timeout: 0
-  memout: 0
-- name: CVC4
-  competing: "yes"
-  errorScore: 0
   correctScore: 4
-  CPUScore: 3124.511
-  WallScore: 3124.611
+  CPUScore: 391.206
+  WallScore: 391.24
   solved: 4
-  solved_sat: 3
-  solved_unsat: 1
+  solved_sat: 0
+  solved_unsat: 4
   unsolved: 13
-  timeout: 2
+  timeout: 0
   memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
   correctScore: 4
-  CPUScore: 5193.967
-  WallScore: 4901.64
+  CPUScore: 1593.967
+  WallScore: 1301.64
   solved: 4
   solved_sat: 0
   solved_unsat: 4
   unsolved: 13
   timeout: 13
   memout: 0
+- name: z3
+  competing: "no"
+  errorScore: 0
+  correctScore: 3
+  CPUScore: 577.928
+  WallScore: 578.144
+  solved: 3
+  solved_sat: 0
+  solved_unsat: 3
+  unsolved: 14
+  timeout: 0
+  memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
   errorScore: 0
   correctScore: 1
-  CPUScore: 37.476
-  WallScore: 21.351
+  CPUScore: 27.302
+  WallScore: 14.209
   solved: 1
   solved_sat: 0
   solved_unsat: 1
   unsolved: 16
   timeout: 0
+  memout: 0
+- name: CVC4
+  competing: "yes"
+  errorScore: 0
+  correctScore: 1
+  CPUScore: 2431.266
+  WallScore: 2431.337
+  solved: 1
+  solved_sat: 0
+  solved_unsat: 1
+  unsolved: 16
+  timeout: 2
   memout: 0
 twentyfour:
 - name: 2018-Z3
@@ -372,17 +324,5 @@ twentyfour:
   solved_unsat: 3
   unsolved: 14
   timeout: 14
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 2
-  CPUScore: 361.388
-  WallScore: 361.263
-  solved: 2
-  solved_sat: 0
-  solved_unsat: 2
-  unsolved: 15
-  timeout: 15
   memout: 0
 ---

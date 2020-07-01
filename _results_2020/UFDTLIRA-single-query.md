@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-01 15:34:21
+resultdate: 2020-07-02 00:00:13
 
 year: 2020
 
@@ -45,18 +45,6 @@ sequential:
   unsolved: 812
   timeout: 101
   memout: 4
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 2455
-  CPUScore: 1126184.848
-  WallScore: 1026261.923
-  solved: 2455
-  solved_sat: 18
-  solved_unsat: 2437
-  unsolved: 819
-  timeout: 819
-  memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
   errorScore: 0
@@ -93,18 +81,6 @@ parallel:
   solved_unsat: 2464
   unsolved: 741
   timeout: 4
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 2472
-  CPUScore: 1158088.988
-  WallScore: 1016505.273
-  solved: 2472
-  solved_sat: 18
-  solved_unsat: 2454
-  unsolved: 802
-  timeout: 802
   memout: 0
 - name: Alt-Ergo
   competing: "yes"
@@ -147,32 +123,20 @@ sat:
   competing: "yes"
   errorScore: 0
   correctScore: 69
-  CPUScore: 1.302
-  WallScore: 1.294
+  CPUScore: 1.285
+  WallScore: 1.277
   solved: 69
   solved_sat: 69
   solved_unsat: 0
   unsolved: 3205
   timeout: 4
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 18
-  CPUScore: 67941.3
-  WallScore: 65756.48
-  solved: 18
-  solved_sat: 18
-  solved_unsat: 0
-  unsolved: 3256
-  timeout: 802
-  memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 251.682
-  WallScore: 162.499
+  CPUScore: 248.52
+  WallScore: 160.34
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -183,8 +147,8 @@ sat:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 1209.592
-  WallScore: 1203.564
+  CPUScore: 1209.459
+  WallScore: 1203.516
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -194,13 +158,13 @@ sat:
 - name: Vampire
   competing: "yes"
   errorScore: 29
-  correctScore: 11
-  CPUScore: 40913.615
-  WallScore: 39393.105
-  solved: 11
+  correctScore: 10
+  CPUScore: 40901.659
+  WallScore: 39381.417
+  solved: 10
   solved_sat: 10
-  solved_unsat: 1
-  unsolved: 3263
+  solved_unsat: 0
+  unsolved: 3264
   timeout: 494
   memout: 0
 unsat:
@@ -240,18 +204,6 @@ unsat:
   unsolved: 811
   timeout: 100
   memout: 4
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 2455
-  CPUScore: 534704.798
-  WallScore: 402408.375
-  solved: 2455
-  solved_sat: 1
-  solved_unsat: 2454
-  unsolved: 819
-  timeout: 802
-  memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
   errorScore: 0
@@ -289,18 +241,6 @@ twentyfour:
   unsolved: 812
   timeout: 133
   memout: 4
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 1944
-  CPUScore: 33751.975
-  WallScore: 32958.597
-  solved: 1944
-  solved_sat: 0
-  solved_unsat: 1944
-  unsolved: 1330
-  timeout: 1330
-  memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
   errorScore: 0

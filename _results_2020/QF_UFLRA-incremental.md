@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_UFLRA
 track: track_incremental
 n_benchmarks: 1223
@@ -51,12 +52,30 @@ parallel:
   unsolved: 13
   timeout: 4
   memout: 0
+- name: Yices2-fixed incremental
+  competing: "no"
+  errorScore: 0
+  correctScore: 9780
+  CPUScore: 11995.881
+  WallScore: 11804.362
+  unsolved: 13
+  timeout: 4
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
   correctScore: 9777
   CPUScore: 34926.137
   WallScore: 28766.239
+  unsolved: 16
+  timeout: 8
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 9777
+  CPUScore: 35175.429
+  WallScore: 29015.765
   unsolved: 16
   timeout: 8
   memout: 0

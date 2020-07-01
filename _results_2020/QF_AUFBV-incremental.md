@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_AUFBV
 track: track_incremental
 n_benchmarks: 31
@@ -21,6 +22,15 @@ parallel:
   correctScore: 946
   CPUScore: 11073.673
   WallScore: 11073.482
+  unsolved: 21
+  timeout: 8
+  memout: 0
+- name: Yices2-fixed incremental
+  competing: "no"
+  errorScore: 0
+  correctScore: 946
+  CPUScore: 11087.596
+  WallScore: 11087.459
   unsolved: 21
   timeout: 8
   memout: 0
@@ -66,6 +76,15 @@ parallel:
   correctScore: 123
   CPUScore: 168.504
   WallScore: 168.642
+  unsolved: 844
+  timeout: 0
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 123
+  CPUScore: 186.519
+  WallScore: 186.65
   unsolved: 844
   timeout: 0
   memout: 0

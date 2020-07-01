@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_UFBV
 track: track_unsat_core
 n_benchmarks: 300
@@ -24,14 +25,6 @@ sequential:
   WallScore: 3874.215
   timeout: 3
   memout: 0
-- name: 2018-Z3 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 615140
-  CPUScore: 3997.26
-  WallScore: 3998.052
-  timeout: 3
-  memout: 0
 - name: Yices2
   competing: "yes"
   errorScore: 0
@@ -39,6 +32,22 @@ sequential:
   CPUScore: 2769.94
   WallScore: 2771.073
   timeout: 2
+  memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 610474
+  CPUScore: 2772.005
+  WallScore: 2773.189
+  timeout: 2
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 609598
+  CPUScore: 34.901
+  WallScore: 35.305
+  timeout: 0
   memout: 0
 - name: Bitwuzla
   competing: "yes"
@@ -73,14 +82,6 @@ parallel:
   WallScore: 3874.075
   timeout: 3
   memout: 0
-- name: 2018-Z3 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 615140
-  CPUScore: 3997.68
-  WallScore: 3997.842
-  timeout: 3
-  memout: 0
 - name: Yices2
   competing: "yes"
   errorScore: 0
@@ -88,6 +89,22 @@ parallel:
   CPUScore: 2770.12
   WallScore: 2771.013
   timeout: 2
+  memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 610474
+  CPUScore: 2772.395
+  WallScore: 2772.979
+  timeout: 2
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 609598
+  CPUScore: 34.901
+  WallScore: 35.305
+  timeout: 0
   memout: 0
 - name: Bitwuzla
   competing: "yes"

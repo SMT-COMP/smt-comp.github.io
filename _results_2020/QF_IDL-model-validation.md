@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:41:04
+resultdate: 2020-07-02 00:04:16
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_IDL
 track: track_model_validation
 n_benchmarks: 512
@@ -22,6 +23,14 @@ sequential:
   correctScore: 487
   CPUScore: 35389.528
   WallScore: 35376.161
+  timeout: 25
+  memout: 0
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 487
+  CPUScore: 35405.088
+  WallScore: 35393.349
   timeout: 25
   memout: 0
 - name: z3
@@ -40,13 +49,13 @@ sequential:
   WallScore: 130542.963
   timeout: 71
   memout: 0
-- name: MathSAT5-mv
+- name: SMTInterpol-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 334
-  CPUScore: 238095.162
-  WallScore: 238118.56
-  timeout: 173
+  correctScore: 320
+  CPUScore: 268434.789
+  WallScore: 264935.925
+  timeout: 192
   memout: 0
 - name: SMTInterpol
   competing: "yes"
@@ -56,6 +65,14 @@ sequential:
   WallScore: 265253.85
   timeout: 193
   memout: 0
+- name: MathSAT5-mv
+  competing: "no"
+  errorScore: 5
+  correctScore: 334
+  CPUScore: 238095.162
+  WallScore: 238118.56
+  timeout: 173
+  memout: 0
 parallel:
 - name: Yices2 Model Validation
   competing: "yes"
@@ -63,6 +80,14 @@ parallel:
   correctScore: 487
   CPUScore: 35391.708
   WallScore: 35375.521
+  timeout: 25
+  memout: 0
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 487
+  CPUScore: 35407.618
+  WallScore: 35392.469
   timeout: 25
   memout: 0
 - name: z3
@@ -81,13 +106,13 @@ parallel:
   WallScore: 130540.473
   timeout: 71
   memout: 0
-- name: MathSAT5-mv
+- name: SMTInterpol-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 334
-  CPUScore: 238118.942
-  WallScore: 238111.74
-  timeout: 173
+  correctScore: 321
+  CPUScore: 268441.109
+  WallScore: 264925.145
+  timeout: 191
   memout: 0
 - name: SMTInterpol
   competing: "yes"
@@ -96,5 +121,13 @@ parallel:
   CPUScore: 268671.694
   WallScore: 265242.24
   timeout: 192
+  memout: 0
+- name: MathSAT5-mv
+  competing: "no"
+  errorScore: 5
+  correctScore: 334
+  CPUScore: 238118.942
+  WallScore: 238111.74
+  timeout: 173
   memout: 0
 ---

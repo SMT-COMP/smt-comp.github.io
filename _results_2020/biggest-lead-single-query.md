@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-07-01 15:34:23
+resultdate: 2020-07-02 00:00:15
 
 year: 2020
 
@@ -701,7 +701,7 @@ sat:
 - name: CVC4
   second: UltimateEliminator+MathSAT
   correctScore: 70.00000000
-  timeScore: 71.28417251
+  timeScore: 70.84800187
   division: UFDTLIRA
 - name: CVC4
   second: UltimateEliminator+MathSAT
@@ -984,6 +984,11 @@ unsat:
   correctScore: 3.00000000
   timeScore: 1.05164331
   division: ABVFPLRA
+- name: Vampire
+  second: UltimateEliminator+MathSAT
+  correctScore: 2.50000000
+  timeScore: 0.01167528
+  division: NIA
 - name: CVC4
   second: UltimateEliminator+MathSAT
   correctScore: 2.07441860
@@ -1002,7 +1007,7 @@ unsat:
 - name: CVC4
   second: Vampire
   correctScore: 1.53125000
-  timeScore: 1.47907419
+  timeScore: 1.48827467
   division: UFDTLIA
 - name: SMT-RAT
   second: CVC4
@@ -1034,11 +1039,6 @@ unsat:
   correctScore: 1.31746032
   timeScore: 2.97665841
   division: NRA
-- name: CVC4
-  second: Vampire
-  correctScore: 1.28226555
-  timeScore: 1.42455716
-  division: UFNIA
 - name: CVC4
   second: UltimateEliminator+MathSAT
   correctScore: 1.26644737
@@ -1084,6 +1084,11 @@ unsat:
   correctScore: 1.06603774
   timeScore: 9.30643059
   division: QF_UFIDL
+- name: CVC4
+  second: Vampire
+  correctScore: 1.04874652
+  timeScore: 1.32497584
+  division: UFNIA
 - name: SMTInterpol
   second: CVC4
   correctScore: 1.03768116
@@ -1107,7 +1112,7 @@ unsat:
 - name: CVC4
   second: veriT
   correctScore: 1.03322785
-  timeScore: 1.44059410
+  timeScore: 1.44845865
   division: UFLIA
 - name: OpenSMT
   second: CVC4
@@ -1117,12 +1122,12 @@ unsat:
 - name: CVC4
   second: Vampire
   correctScore: 1.02622951
-  timeScore: 1.28786380
+  timeScore: 1.29167157
   division: UF
 - name: Vampire
   second: CVC4
   correctScore: 1.02121212
-  timeScore: 0.14892791
+  timeScore: 0.15901200
   division: UFDTNIRA
 - name: CVC4
   second: Vampire
@@ -1234,11 +1239,6 @@ unsat:
   correctScore: 1.00000000
   timeScore: 2.05871132
   division: QF_UF
-- name: CVC4
-  second: Vampire
-  correctScore: 1.00000000
-  timeScore: 1.56853828
-  division: NIA
 - name: Bitwuzla
   second: COLIBRI
   correctScore: 1.00000000

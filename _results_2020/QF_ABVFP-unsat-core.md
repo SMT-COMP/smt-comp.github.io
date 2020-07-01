@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_ABVFP
 track: track_unsat_core
 n_benchmarks: 1572
@@ -22,6 +23,14 @@ sequential:
   correctScore: 13685
   CPUScore: 3529.263
   WallScore: 3495.347
+  timeout: 1
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 13680
+  CPUScore: 3534.794
+  WallScore: 3514.648
   timeout: 1
   memout: 0
 - name: CVC4-uc
@@ -47,6 +56,14 @@ parallel:
   correctScore: 13685
   CPUScore: 3529.263
   WallScore: 3495.347
+  timeout: 1
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 13680
+  CPUScore: 3534.884
+  WallScore: 3514.588
   timeout: 1
   memout: 0
 - name: CVC4-uc

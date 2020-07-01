@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_FP
 track: track_unsat_core
 n_benchmarks: 8024
@@ -16,6 +17,14 @@ mem_limit: 60
 winner_seq: Bitwuzla
 winner_par: Bitwuzla
 sequential:
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 105
+  CPUScore: 7666.883
+  WallScore: 7603.799
+  timeout: 2
+  memout: 0
 - name: Bitwuzla
   competing: "yes"
   errorScore: 0
@@ -49,6 +58,14 @@ sequential:
   timeout: 0
   memout: 0
 parallel:
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 105
+  CPUScore: 7667.093
+  WallScore: 7603.699
+  timeout: 2
+  memout: 0
 - name: Bitwuzla
   competing: "yes"
   errorScore: 0

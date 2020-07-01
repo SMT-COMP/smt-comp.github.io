@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: AUFNIRA
 track: track_unsat_core
 n_benchmarks: 421
@@ -23,14 +24,6 @@ sequential:
   CPUScore: 6090.592
   WallScore: 6092.24
   timeout: 5
-  memout: 0
-- name: 2019-CVC4-uc
-  competing: "no"
-  errorScore: 0
-  correctScore: 13114
-  CPUScore: 8485.116
-  WallScore: 8487.602
-  timeout: 7
   memout: 0
 - name: z3
   competing: "no"
@@ -56,14 +49,6 @@ parallel:
   CPUScore: 6091.942
   WallScore: 6091.95
   timeout: 5
-  memout: 0
-- name: 2019-CVC4-uc
-  competing: "no"
-  errorScore: 0
-  correctScore: 13114
-  CPUScore: 8487.426
-  WallScore: 8487.352
-  timeout: 7
   memout: 0
 - name: z3
   competing: "no"

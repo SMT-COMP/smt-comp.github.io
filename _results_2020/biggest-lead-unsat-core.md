@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-06-25 16:48:45
+resultdate: 2020-07-02 00:03:23
 
 year: 2020
 
@@ -20,19 +20,19 @@ sequential:
   division: UFDT
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 174467.00000000
-  timeScore: 2.71991945
+  correctScore: 155823.00000000
+  timeScore: 2.49714256
   division: AUFDTLIRA
-- name: CVC4-uc
-  second: UltimateEliminator+MathSAT
-  correctScore: 97736.00000000
-  timeScore: 57.86284958
-  division: UFDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
   correctScore: 78597.00000000
   timeScore: 1.48452665
   division: UFNIA
+- name: CVC4-uc
+  second: UltimateEliminator+MathSAT
+  correctScore: 61865.00000000
+  timeScore: 64.82360420
+  division: UFDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
   correctScore: 13142.00000000
@@ -45,13 +45,13 @@ sequential:
   division: UFDTNIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 5865.00000000
-  timeScore: 1.76587076
+  correctScore: 5541.00000000
+  timeScore: 1.71089994
   division: UFFPDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 4527.00000000
-  timeScore: 31.01723147
+  correctScore: 3668.00000000
+  timeScore: 29.18300987
   division: AUFFPDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
@@ -75,13 +75,8 @@ sequential:
   division: UFFPDTNIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 4.00000000
-  timeScore: 7.34364698
-  division: ABV
-- name: CVC4-uc
-  second: UltimateEliminator+MathSAT
-  correctScore: 3.00000000
-  timeScore: 1727.45775523
+  correctScore: 5.00000000
+  timeScore: 1757.07174120
   division: LIA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
@@ -206,19 +201,19 @@ parallel:
   division: UFDT
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 174467.00000000
-  timeScore: 1.96543978
+  correctScore: 155823.00000000
+  timeScore: 1.80658887
   division: AUFDTLIRA
-- name: CVC4-uc
-  second: UltimateEliminator+MathSAT
-  correctScore: 97736.00000000
-  timeScore: 39.29121958
-  division: UFDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
   correctScore: 78597.00000000
   timeScore: 1.47679218
   division: UFNIA
+- name: CVC4-uc
+  second: UltimateEliminator+MathSAT
+  correctScore: 61865.00000000
+  timeScore: 43.87664683
+  division: UFDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
   correctScore: 13142.00000000
@@ -231,13 +226,13 @@ parallel:
   division: UFDTNIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 5865.00000000
-  timeScore: 1.21684864
+  correctScore: 5541.00000000
+  timeScore: 1.18241409
   division: UFFPDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 4527.00000000
-  timeScore: 22.54528823
+  correctScore: 3668.00000000
+  timeScore: 21.35954590
   division: AUFFPDTLIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
@@ -261,13 +256,8 @@ parallel:
   division: UFFPDTNIRA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT
-  correctScore: 4.00000000
-  timeScore: 5.57082395
-  division: ABV
-- name: CVC4-uc
-  second: UltimateEliminator+MathSAT
-  correctScore: 3.00000000
-  timeScore: 1673.61371081
+  correctScore: 5.00000000
+  timeScore: 1702.21472126
   division: LIA
 - name: CVC4-uc
   second: UltimateEliminator+MathSAT

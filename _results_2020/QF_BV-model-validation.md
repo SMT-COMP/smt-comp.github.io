@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:41:04
+resultdate: 2020-07-02 00:04:16
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_BV
 track: track_model_validation
 n_benchmarks: 5752
@@ -23,6 +24,22 @@ sequential:
   CPUScore: 83067.669
   WallScore: 82945.701
   timeout: 21
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 5730
+  CPUScore: 82743.866
+  WallScore: 82630.755
+  timeout: 22
+  memout: 0
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 5728
+  CPUScore: 83587.749
+  WallScore: 83460.74
+  timeout: 24
   memout: 0
 - name: 2019-Boolector
   competing: "no"
@@ -56,25 +73,25 @@ sequential:
   WallScore: 175332.376
   timeout: 116
   memout: 0
-- name: Yices2 Model Validation
-  competing: "yes"
-  errorScore: 0
-  correctScore: 5600
-  CPUScore: 178499.348
-  WallScore: 178415.635
-  timeout: 109
-  memout: 0
 - name: z3
   competing: "no"
-  errorScore: 0
+  errorScore: 1
   correctScore: 5552
   CPUScore: 443696.534
   WallScore: 443476.345
   timeout: 199
   memout: 0
+- name: Yices2 Model Validation
+  competing: "yes"
+  errorScore: 43
+  correctScore: 5600
+  CPUScore: 178499.348
+  WallScore: 178415.635
+  timeout: 109
+  memout: 0
 - name: MathSAT5-mv
   competing: "no"
-  errorScore: 0
+  errorScore: 104
   correctScore: 5321
   CPUScore: 545033.862
   WallScore: 544920.002
@@ -88,6 +105,22 @@ parallel:
   CPUScore: 83070.369
   WallScore: 82945.121
   timeout: 21
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 5730
+  CPUScore: 82748.286
+  WallScore: 82629.745
+  timeout: 22
+  memout: 0
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 5728
+  CPUScore: 83591.029
+  WallScore: 83459.79
+  timeout: 24
   memout: 0
 - name: 2019-Boolector
   competing: "no"
@@ -121,25 +154,25 @@ parallel:
   WallScore: 181942.903
   timeout: 75
   memout: 0
-- name: Yices2 Model Validation
-  competing: "yes"
-  errorScore: 0
-  correctScore: 5600
-  CPUScore: 178503.118
-  WallScore: 178412.985
-  timeout: 109
-  memout: 0
 - name: z3
   competing: "no"
-  errorScore: 0
+  errorScore: 1
   correctScore: 5552
   CPUScore: 443732.334
   WallScore: 443467.755
   timeout: 199
   memout: 0
+- name: Yices2 Model Validation
+  competing: "yes"
+  errorScore: 43
+  correctScore: 5600
+  CPUScore: 178503.118
+  WallScore: 178412.985
+  timeout: 109
+  memout: 0
 - name: MathSAT5-mv
   competing: "no"
-  errorScore: 0
+  errorScore: 104
   correctScore: 5321
   CPUScore: 545105.872
   WallScore: 544905.352

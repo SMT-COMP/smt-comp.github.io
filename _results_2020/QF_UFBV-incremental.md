@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_UFBV
 track: track_incremental
 n_benchmarks: 932
@@ -15,6 +16,15 @@ mem_limit: 60
 
 winner_par: Bitwuzla
 parallel:
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 2239
+  CPUScore: 1848.876
+  WallScore: 1831.508
+  unsolved: 0
+  timeout: 0
+  memout: 0
 - name: Bitwuzla
   competing: "yes"
   errorScore: 0
@@ -39,6 +49,15 @@ parallel:
   correctScore: 2235
   CPUScore: 2934.641
   WallScore: 2913.271
+  unsolved: 4
+  timeout: 2
+  memout: 0
+- name: Yices2-fixed incremental
+  competing: "no"
+  errorScore: 0
+  correctScore: 2235
+  CPUScore: 2941.809
+  WallScore: 2915.252
   unsolved: 4
   timeout: 2
   memout: 0

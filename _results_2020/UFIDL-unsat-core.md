@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:45
+resultdate: 2020-07-02 00:03:23
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: UFIDL
 track: track_unsat_core
 n_benchmarks: 30
@@ -24,22 +25,6 @@ sequential:
   WallScore: 1.418
   timeout: 0
   memout: 0
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 1914
-  CPUScore: 2.046
-  WallScore: 2.055
-  timeout: 0
-  memout: 0
-- name: 2019-CVC4-uc
-  competing: "no"
-  errorScore: 0
-  correctScore: 1914
-  CPUScore: 2.055
-  WallScore: 2.052
-  timeout: 0
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
@@ -54,6 +39,14 @@ sequential:
   correctScore: 982
   CPUScore: 3631.867
   WallScore: 3615.745
+  timeout: 3
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 982
+  CPUScore: 3641.027
+  WallScore: 3615.929
   timeout: 3
   memout: 0
 - name: UltimateEliminator+MathSAT
@@ -73,22 +66,6 @@ parallel:
   WallScore: 1.418
   timeout: 0
   memout: 0
-- name: 2019-CVC4-uc
-  competing: "no"
-  errorScore: 0
-  correctScore: 1914
-  CPUScore: 2.055
-  WallScore: 2.052
-  timeout: 0
-  memout: 0
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 1914
-  CPUScore: 2.046
-  WallScore: 2.055
-  timeout: 0
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
@@ -103,6 +80,14 @@ parallel:
   correctScore: 982
   CPUScore: 3631.867
   WallScore: 3615.745
+  timeout: 3
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 982
+  CPUScore: 3641.027
+  WallScore: 3615.929
   timeout: 3
   memout: 0
 - name: UltimateEliminator+MathSAT

@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: BV
 track: track_unsat_core
 n_benchmarks: 255
@@ -23,14 +24,6 @@ sequential:
   CPUScore: 7507.84
   WallScore: 7509.502
   timeout: 4
-  memout: 0
-- name: 2019-CVC4-uc
-  competing: "no"
-  errorScore: 0
-  correctScore: 47
-  CPUScore: 8802.883
-  WallScore: 8820.205
-  timeout: 6
   memout: 0
 - name: z3
   competing: "no"
@@ -56,14 +49,6 @@ parallel:
   CPUScore: 7508.58
   WallScore: 7509.312
   timeout: 4
-  memout: 0
-- name: 2019-CVC4-uc
-  competing: "no"
-  errorScore: 0
-  correctScore: 47
-  CPUScore: 8804.503
-  WallScore: 8819.905
-  timeout: 6
   memout: 0
 - name: z3
   competing: "no"

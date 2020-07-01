@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_LIA
 track: track_incremental
 n_benchmarks: 69
@@ -15,6 +16,15 @@ mem_limit: 60
 
 winner_par: Yices2 incremental
 parallel:
+- name: Yices2-fixed incremental
+  competing: "no"
+  errorScore: 0
+  correctScore: 20040344
+  CPUScore: 32239.057
+  WallScore: 31776.046
+  unsolved: 870
+  timeout: 20
+  memout: 0
 - name: 2018-Yices (incremental)
   competing: "no"
   errorScore: 0
@@ -40,6 +50,15 @@ parallel:
   CPUScore: 53008.018
   WallScore: 51411.234
   unsolved: 1925137
+  timeout: 36
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 18092895
+  CPUScore: 53028.053
+  WallScore: 51425.701
+  unsolved: 1948319
   timeout: 36
   memout: 0
 - name: MathSAT5

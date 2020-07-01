@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_AUFLIA
 track: track_unsat_core
 n_benchmarks: 300
@@ -16,14 +17,6 @@ mem_limit: 60
 winner_seq: CVC4-uc
 winner_par: CVC4-uc
 sequential:
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 21515
-  CPUScore: 321.252
-  WallScore: 320.39
-  timeout: 0
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
@@ -38,6 +31,14 @@ sequential:
   correctScore: 21159
   CPUScore: 18.784
   WallScore: 18.833
+  timeout: 0
+  memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 16040
+  CPUScore: 15.727
+  WallScore: 17.462
   timeout: 0
   memout: 0
 - name: Yices2
@@ -56,6 +57,14 @@ sequential:
   WallScore: 196.332
   timeout: 0
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 1265
+  CPUScore: 439.067
+  WallScore: 195.976
+  timeout: 0
+  memout: 0
 - name: MathSAT5
   competing: "no"
   errorScore: 82
@@ -65,14 +74,6 @@ sequential:
   timeout: 0
   memout: 0
 parallel:
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 21515
-  CPUScore: 321.252
-  WallScore: 320.39
-  timeout: 0
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
@@ -89,12 +90,28 @@ parallel:
   WallScore: 18.833
   timeout: 0
   memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 16040
+  CPUScore: 15.727
+  WallScore: 17.462
+  timeout: 0
+  memout: 0
 - name: Yices2
   competing: "yes"
   errorScore: 0
   correctScore: 16040
   CPUScore: 15.843
   WallScore: 18.102
+  timeout: 0
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 1265
+  CPUScore: 439.067
+  WallScore: 195.976
   timeout: 0
   memout: 0
 - name: SMTInterpol
