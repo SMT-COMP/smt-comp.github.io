@@ -8,6 +8,7 @@ layout: default
 {%- assign track = tracks |where: "raw_name", page.track  |first -%}
 {%- assign track_status = track.status -%}
 {%- assign track = track.pretty_name -%}
+{%- assign disagreements = site[page.disagreements] -%}
 
 <h2>SMT-COMP {{ page.year }} Results - {{ track }} (Summary)</h2>
 
@@ -38,6 +39,14 @@ winner is selected.
 This division is experimental. Solvers are only ranked by performance, but no
 winner is selected.
 </p>
+{%- endif -%}
+{%- if disagreements -%}
+  {%- assign div_disagr = disagreements |where: "division", division.division |where: "track", page.track |first -%}
+  {%- if div_disagr -%}
+<p>
+The division has <a href="{{ div_disagr.url }}">disagreements</a>
+</p>
+  {%- endif -%}
 {%- endif -%}
   <table>
     <thead>

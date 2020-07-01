@@ -120,6 +120,12 @@ winner is selected.
   {%- endif %}
 {%- endif %}
 
+<p>
+{%- if disagreement -%}
+Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
+{%- endif -%}
+<p>
+
 <!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 {%- if page.sequential -%}
@@ -431,7 +437,4 @@ winner is selected.
   </span><br/>
 </p>
 
-{%- if disagreement -%}
-Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
-{%- endif -%}
 
