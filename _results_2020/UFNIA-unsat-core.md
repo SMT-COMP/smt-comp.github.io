@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:45
+resultdate: 2020-07-02 00:03:23
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: UFNIA
 track: track_unsat_core
 n_benchmarks: 1276
@@ -16,14 +17,6 @@ mem_limit: 60
 winner_seq: CVC4-uc
 winner_par: CVC4-uc
 sequential:
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 79052
-  CPUScore: 244139.237
-  WallScore: 244189.291
-  timeout: 180
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
@@ -49,14 +42,6 @@ sequential:
   timeout: 282
   memout: 0
 parallel:
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 79052
-  CPUScore: 244190.187
-  WallScore: 244181.981
-  timeout: 180
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0

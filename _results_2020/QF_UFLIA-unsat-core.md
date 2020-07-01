@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:23
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_UFLIA
 track: track_unsat_core
 n_benchmarks: 16
@@ -16,20 +17,20 @@ mem_limit: 60
 winner_seq: Yices2
 winner_par: Yices2
 sequential:
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 21
+  CPUScore: 0.061
+  WallScore: 0.235
+  timeout: 0
+  memout: 0
 - name: Yices2
   competing: "yes"
   errorScore: 0
   correctScore: 21
   CPUScore: 0.065
   WallScore: 0.272
-  timeout: 0
-  memout: 0
-- name: 2019-Yices 2.6.2
-  competing: "no"
-  errorScore: 0
-  correctScore: 21
-  CPUScore: 0.108
-  WallScore: 0.257
   timeout: 0
   memout: 0
 - name: MathSAT5
@@ -46,6 +47,14 @@ sequential:
   correctScore: 21
   CPUScore: 0.63
   WallScore: 0.632
+  timeout: 0
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 21
+  CPUScore: 6.3
+  WallScore: 4.835
   timeout: 0
   memout: 0
 - name: SMTInterpol
@@ -65,12 +74,12 @@ sequential:
   timeout: 0
   memout: 0
 parallel:
-- name: 2019-Yices 2.6.2
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
   correctScore: 21
-  CPUScore: 0.108
-  WallScore: 0.257
+  CPUScore: 0.061
+  WallScore: 0.235
   timeout: 0
   memout: 0
 - name: Yices2
@@ -103,6 +112,14 @@ parallel:
   correctScore: 21
   CPUScore: 6.315
   WallScore: 4.737
+  timeout: 0
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 21
+  CPUScore: 6.3
+  WallScore: 4.835
   timeout: 0
   memout: 0
 - name: CVC4-uc

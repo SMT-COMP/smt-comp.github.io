@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_LIRA
 track: track_unsat_core
 n_benchmarks: 5
@@ -22,6 +23,14 @@ sequential:
   correctScore: 0
   CPUScore: 627.076
   WallScore: 627.221
+  timeout: 0
+  memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 1198.247
+  WallScore: 1198.668
   timeout: 0
   memout: 0
 - name: Yices2
@@ -56,6 +65,14 @@ sequential:
   WallScore: 2461.294
   timeout: 2
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 2489.202
+  WallScore: 2460.854
+  timeout: 2
+  memout: 0
 parallel:
 - name: z3
   competing: "no"
@@ -63,6 +80,14 @@ parallel:
   correctScore: 0
   CPUScore: 627.076
   WallScore: 627.221
+  timeout: 0
+  memout: 0
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 1198.247
+  WallScore: 1198.668
   timeout: 0
   memout: 0
 - name: Yices2
@@ -89,6 +114,14 @@ parallel:
   WallScore: 1263.703
   timeout: 0
   memout: 1
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 2489.202
+  WallScore: 2460.854
+  timeout: 2
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0

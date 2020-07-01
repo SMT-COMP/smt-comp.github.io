@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: UFLRA
 track: track_incremental
 n_benchmarks: 748
@@ -41,6 +42,15 @@ parallel:
   WallScore: 34426.728
   unsolved: 454101
   timeout: 5
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 107995
+  CPUScore: 308557.774
+  WallScore: 303038.54
+  unsolved: 460256
+  timeout: 179
   memout: 0
 - name: SMTInterpol
   competing: "yes"

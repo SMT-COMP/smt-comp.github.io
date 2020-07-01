@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-01 15:34:21
+resultdate: 2020-07-02 00:00:13
 
 year: 2020
 
@@ -57,18 +57,6 @@ sequential:
   unsolved: 151
   timeout: 151
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 125
-  CPUScore: 188308.865
-  WallScore: 184919.858
-  solved: 125
-  solved_sat: 0
-  solved_unsat: 125
-  unsolved: 152
-  timeout: 152
-  memout: 0
 - name: Alt-Ergo
   competing: "yes"
   errorScore: 0
@@ -124,18 +112,6 @@ parallel:
   correctScore: 127
   CPUScore: 187798.802
   WallScore: 182993.415
-  solved: 127
-  solved_sat: 0
-  solved_unsat: 127
-  unsolved: 150
-  timeout: 150
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 127
-  CPUScore: 193306.485
-  WallScore: 183496.935
   solved: 127
   solved_sat: 0
   solved_unsat: 127
@@ -227,25 +203,13 @@ sat:
   unsolved: 277
   timeout: 0
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 0.0
-  WallScore: 0.0
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 277
-  timeout: 150
-  memout: 0
 unsat:
 - name: 2019-CVC4
   competing: "no"
   errorScore: 0
   correctScore: 196
-  CPUScore: 114361.694
-  WallScore: 116330.979
+  CPUScore: 113161.694
+  WallScore: 115130.979
   solved: 196
   solved_sat: 0
   solved_unsat: 196
@@ -256,8 +220,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 195
-  CPUScore: 62504.678
-  WallScore: 63683.712
+  CPUScore: 61304.678
+  WallScore: 62483.712
   solved: 195
   solved_sat: 0
   solved_unsat: 195
@@ -268,20 +232,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 127
-  CPUScore: 98998.802
-  WallScore: 94193.415
-  solved: 127
-  solved_sat: 0
-  solved_unsat: 127
-  unsolved: 150
-  timeout: 150
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 127
-  CPUScore: 104506.485
-  WallScore: 94696.935
+  CPUScore: 97798.802
+  WallScore: 92993.415
   solved: 127
   solved_sat: 0
   solved_unsat: 127
@@ -292,8 +244,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 36
-  CPUScore: 220933.045
-  WallScore: 201751.208
+  CPUScore: 219733.045
+  WallScore: 200551.208
   solved: 36
   solved_sat: 0
   solved_unsat: 36
@@ -304,8 +256,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 661.424
-  WallScore: 471.963
+  CPUScore: 658.145
+  WallScore: 469.765
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -324,18 +276,6 @@ twentyfour:
   solved_unsat: 113
   unsolved: 164
   timeout: 164
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 111
-  CPUScore: 6823.985
-  WallScore: 5567.378
-  solved: 111
-  solved_sat: 0
-  solved_unsat: 111
-  unsolved: 166
-  timeout: 166
   memout: 0
 - name: Alt-Ergo
   competing: "yes"

@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:41:04
+resultdate: 2020-07-02 00:04:16
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_RDL
 track: track_model_validation
 n_benchmarks: 109
@@ -16,6 +17,14 @@ mem_limit: 60
 winner_seq: Yices2 Model Validation
 winner_par: Yices2 Model Validation
 sequential:
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 109
+  CPUScore: 495.298
+  WallScore: 495.402
+  timeout: 0
+  memout: 0
 - name: Yices2 Model Validation
   competing: "yes"
   errorScore: 0
@@ -56,7 +65,23 @@ sequential:
   WallScore: 14813.807
   timeout: 8
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 101
+  CPUScore: 15653.703
+  WallScore: 14841.791
+  timeout: 8
+  memout: 0
 parallel:
+- name: Yices2-fixed Model Validation
+  competing: "no"
+  errorScore: 0
+  correctScore: 109
+  CPUScore: 495.298
+  WallScore: 495.402
+  timeout: 0
+  memout: 0
 - name: Yices2 Model Validation
   competing: "yes"
   errorScore: 0
@@ -95,6 +120,14 @@ parallel:
   correctScore: 101
   CPUScore: 15635.556
   WallScore: 14813.807
+  timeout: 8
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 101
+  CPUScore: 15653.703
+  WallScore: 14841.791
   timeout: 8
   memout: 0
 ---

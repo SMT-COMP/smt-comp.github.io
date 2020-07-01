@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-01 15:34:20
+resultdate: 2020-07-02 00:00:12
 
 year: 2020
 
@@ -21,18 +21,6 @@ winner_unsat: Vampire
 winner_24s: CVC4
 
 sequential:
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 290
-  CPUScore: 38662.675
-  WallScore: 20609.481
-  solved: 290
-  solved_sat: 0
-  solved_unsat: 290
-  unsolved: 10
-  timeout: 10
-  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -93,18 +81,6 @@ parallel:
   solved_unsat: 296
   unsolved: 4
   timeout: 4
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 295
-  CPUScore: 44474.795
-  WallScore: 17710.563
-  solved: 295
-  solved_sat: 0
-  solved_unsat: 295
-  unsolved: 5
-  timeout: 5
   memout: 0
 - name: Alt-Ergo
   competing: "yes"
@@ -191,18 +167,6 @@ sat:
   unsolved: 300
   timeout: 0
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 0.0
-  WallScore: 0.0
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 300
-  timeout: 5
-  memout: 0
 unsat:
 - name: Vampire
   competing: "yes"
@@ -215,18 +179,6 @@ unsat:
   solved_unsat: 296
   unsolved: 4
   timeout: 4
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 295
-  CPUScore: 44474.795
-  WallScore: 17710.563
-  solved: 295
-  solved_sat: 0
-  solved_unsat: 295
-  unsolved: 5
-  timeout: 5
   memout: 0
 - name: Alt-Ergo
   competing: "yes"
@@ -289,18 +241,6 @@ twentyfour:
   unsolved: 98
   timeout: 77
   memout: 20
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 193
-  CPUScore: 3369.184
-  WallScore: 2954.16
-  solved: 193
-  solved_sat: 0
-  solved_unsat: 193
-  unsolved: 107
-  timeout: 107
-  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0

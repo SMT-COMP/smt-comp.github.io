@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-06-25 16:48:52
+resultdate: 2020-07-02 00:03:29
 
 year: 2020
 
@@ -16,164 +16,164 @@ winner_par: CVC4-uc
 
 sequential:
 - name: CVC4-uc
-  correctScore: 0.06081100
-  timeScore: 0.34065923
+  correctScore: 0.06083489
+  timeScore: 0.34079307
   division: AUFLIRA
 - name: CVC4-uc
-  correctScore: 0.05825633
-  timeScore: 0.13382102
+  correctScore: 0.05827922
+  timeScore: 0.13387360
   division: UFLIA
 - name: CVC4-uc
-  correctScore: 0.04003672
-  timeScore: 0.05762032
+  correctScore: 0.04005245
+  timeScore: 0.05764296
   division: UF
 - name: CVC4-uc
-  correctScore: 0.01516078
-  timeScore: 0.03248667
+  correctScore: 0.01516674
+  timeScore: 0.03249943
   division: AUFLIA
 - name: CVC4-uc
-  correctScore: 0.00814386
-  timeScore: 0.00049784
+  correctScore: 0.00991001
+  timeScore: 0.00039505
   division: LIA
 - name: CVC4-uc
-  correctScore: 0.00376741
+  correctScore: 0.00376889
   timeScore: 0.00000025
   division: QF_AUFLIA
 - name: Yices2
-  correctScore: 0.00275952
-  timeScore: 0.00019697
+  correctScore: 0.00276060
+  timeScore: 0.00019705
   division: QF_AX
 - name: Bitwuzla
-  correctScore: 0.00165527
-  timeScore: 0.03002262
+  correctScore: 0.00165592
+  timeScore: 0.03003442
   division: QF_BV
 - name: Yices2
-  correctScore: 0.00162133
-  timeScore: 0.00108482
+  correctScore: 0.00162197
+  timeScore: 0.00108525
   division: QF_LIA
 - name: Bitwuzla
-  correctScore: 0.00131854
-  timeScore: 0.01474808
+  correctScore: 0.00131906
+  timeScore: 0.01475387
   division: QF_ABV
 - name: Yices2
-  correctScore: 0.00101550
-  timeScore: 0.00139467
+  correctScore: 0.00101590
+  timeScore: 0.00139522
   division: QF_LRA
 - name: CVC4-uc
-  correctScore: 0.00071718
-  timeScore: 0.00147194
+  correctScore: 0.00071746
+  timeScore: 0.00147252
   division: UFIDL
 - name: SMTInterpol
-  correctScore: 0.00067809
-  timeScore: 0.00383983
+  correctScore: 0.00067835
+  timeScore: 0.00384134
   division: QF_UF
 - name: Yices2
-  correctScore: 0.00025848
-  timeScore: 0.00101791
+  correctScore: 0.00025858
+  timeScore: 0.00101831
   division: QF_AUFBV
 - name: CVC4-uc
-  correctScore: 0.00016528
-  timeScore: 0.00021089
+  correctScore: 0.00016535
+  timeScore: 0.00021098
   division: QF_UFLRA
 - name: CVC4-uc
-  correctScore: 0.00014080
-  timeScore: 0.00334086
+  correctScore: 0.00014086
+  timeScore: 0.00334217
   division: QF_UFBV
 - name: SMTInterpol
-  correctScore: 0.00006137
-  timeScore: -0.00348792
+  correctScore: 0.00006139
+  timeScore: -0.00348929
   division: UFLRA
 - name: CVC4-uc
-  correctScore: 0.00004791
-  timeScore: 0.00102430
+  correctScore: 0.00004793
+  timeScore: 0.00102471
   division: QF_ALIA
 - name: Yices2
   correctScore: 0.00000000
-  timeScore: 0.00074840
+  timeScore: 0.00074869
   division: QF_UFLIA
 - name: Yices2
   correctScore: 0.00000000
-  timeScore: 0.00045622
+  timeScore: 0.00045640
   division: QF_UFIDL
 parallel:
 - name: CVC4-uc
-  correctScore: 0.06081100
-  timeScore: 0.34042511
+  correctScore: 0.06083489
+  timeScore: 0.34055887
   division: AUFLIRA
 - name: CVC4-uc
-  correctScore: 0.05825633
-  timeScore: 0.13384086
+  correctScore: 0.05827922
+  timeScore: 0.13389345
   division: UFLIA
 - name: CVC4-uc
-  correctScore: 0.04003672
-  timeScore: 0.05760759
+  correctScore: 0.04005245
+  timeScore: 0.05763022
   division: UF
 - name: CVC4-uc
-  correctScore: 0.01516078
-  timeScore: 0.03243623
+  correctScore: 0.01516674
+  timeScore: 0.03244898
   division: AUFLIA
 - name: CVC4-uc
-  correctScore: 0.00814386
-  timeScore: 0.00049748
+  correctScore: 0.00991001
+  timeScore: 0.00039473
   division: LIA
 - name: CVC4-uc
-  correctScore: 0.00376741
+  correctScore: 0.00376889
   timeScore: 0.00000028
   division: QF_AUFLIA
 - name: Yices2
-  correctScore: 0.00275952
-  timeScore: 0.00019588
+  correctScore: 0.00276060
+  timeScore: 0.00019596
   division: QF_AX
 - name: Bitwuzla
-  correctScore: 0.00165527
-  timeScore: 0.03003298
+  correctScore: 0.00165592
+  timeScore: 0.03004478
   division: QF_BV
 - name: Yices2
-  correctScore: 0.00162133
-  timeScore: 0.00099519
+  correctScore: 0.00162197
+  timeScore: 0.00099558
   division: QF_LIA
 - name: Bitwuzla
-  correctScore: 0.00131854
-  timeScore: 0.01474562
+  correctScore: 0.00131906
+  timeScore: 0.01475142
   division: QF_ABV
 - name: Yices2
-  correctScore: 0.00101550
-  timeScore: 0.00127891
+  correctScore: 0.00101590
+  timeScore: 0.00127942
   division: QF_LRA
 - name: CVC4-uc
-  correctScore: 0.00071718
-  timeScore: 0.00147194
+  correctScore: 0.00071746
+  timeScore: 0.00147252
   division: UFIDL
 - name: SMTInterpol
-  correctScore: 0.00067809
-  timeScore: 0.00393891
+  correctScore: 0.00067835
+  timeScore: 0.00394046
   division: QF_UF
 - name: Yices2
-  correctScore: 0.00025848
-  timeScore: 0.00101789
+  correctScore: 0.00025858
+  timeScore: 0.00101829
   division: QF_AUFBV
 - name: CVC4-uc
-  correctScore: 0.00016528
-  timeScore: 0.00021090
+  correctScore: 0.00016535
+  timeScore: 0.00021098
   division: QF_UFLRA
 - name: CVC4-uc
-  correctScore: 0.00014080
-  timeScore: 0.00334081
+  correctScore: 0.00014086
+  timeScore: 0.00334212
   division: QF_UFBV
 - name: SMTInterpol
-  correctScore: 0.00006137
-  timeScore: -0.00151117
+  correctScore: 0.00006139
+  timeScore: -0.00151176
   division: UFLRA
 - name: CVC4-uc
-  correctScore: 0.00004791
-  timeScore: 0.00093184
+  correctScore: 0.00004793
+  timeScore: 0.00093220
   division: QF_ALIA
 - name: Yices2
   correctScore: 0.00000000
-  timeScore: 0.00060750
+  timeScore: 0.00060774
   division: QF_UFLIA
 - name: Yices2
   correctScore: 0.00000000
-  timeScore: 0.00010899
+  timeScore: 0.00010903
   division: QF_UFIDL
 ---

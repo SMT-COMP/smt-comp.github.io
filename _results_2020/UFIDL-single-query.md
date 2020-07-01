@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-01 15:34:21
+resultdate: 2020-07-02 00:00:13
 
 year: 2020
 
@@ -117,18 +117,6 @@ sequential:
   unsolved: 13
   timeout: 13
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 7
-  CPUScore: 15600.75
-  WallScore: 15600.746
-  solved: 7
-  solved_sat: 0
-  solved_unsat: 7
-  unsolved: 13
-  timeout: 13
-  memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
   errorScore: 0
@@ -214,18 +202,6 @@ parallel:
   unsolved: 13
   timeout: 9
   memout: 1
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 7
-  CPUScore: 19200.99
-  WallScore: 15598.586
-  solved: 7
-  solved_sat: 0
-  solved_unsat: 7
-  unsolved: 13
-  timeout: 13
-  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -371,18 +347,6 @@ sat:
   unsolved: 20
   timeout: 13
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 3600.0
-  WallScore: 3600.0
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 20
-  timeout: 13
-  memout: 0
 unsat:
 - name: 2019-Par4
   competing: "no"
@@ -419,18 +383,6 @@ unsat:
   solved_unsat: 9
   unsolved: 11
   timeout: 8
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 7
-  CPUScore: 6000.99
-  WallScore: 2398.586
-  solved: 7
-  solved_sat: 0
-  solved_unsat: 7
-  unsolved: 13
-  timeout: 13
   memout: 0
 - name: veriT
   competing: "yes"
@@ -595,18 +547,6 @@ twentyfour:
   correctScore: 7
   CPUScore: 312.743
   WallScore: 312.738
-  solved: 7
-  solved_sat: 0
-  solved_unsat: 7
-  unsolved: 13
-  timeout: 13
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 7
-  CPUScore: 312.75
-  WallScore: 312.746
   solved: 7
   solved_sat: 0
   solved_unsat: 7

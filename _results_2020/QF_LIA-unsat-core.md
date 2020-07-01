@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_LIA
 track: track_unsat_core
 n_benchmarks: 271
@@ -16,12 +17,12 @@ mem_limit: 60
 winner_seq: Yices2
 winner_par: Yices2
 sequential:
-- name: 2019-Yices 2.6.2
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
   correctScore: 945496
-  CPUScore: 30758.163
-  WallScore: 31234.109
+  CPUScore: 30877.88
+  WallScore: 30874.544
   timeout: 23
   memout: 0
 - name: Yices2
@@ -64,21 +65,29 @@ sequential:
   WallScore: 37100.768
   timeout: 22
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 811054
+  CPUScore: 38199.89
+  WallScore: 37220.581
+  timeout: 22
+  memout: 0
 parallel:
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 945496
+  CPUScore: 30883.82
+  WallScore: 30873.914
+  timeout: 23
+  memout: 0
 - name: Yices2
   competing: "yes"
   errorScore: 0
   correctScore: 945496
   CPUScore: 30887.091
   WallScore: 30888.317
-  timeout: 23
-  memout: 0
-- name: 2019-Yices 2.6.2
-  competing: "no"
-  errorScore: 0
-  correctScore: 945496
-  CPUScore: 31227.803
-  WallScore: 31233.069
   timeout: 23
   memout: 0
 - name: z3
@@ -111,6 +120,14 @@ parallel:
   correctScore: 811054
   CPUScore: 38135.709
   WallScore: 37100.768
+  timeout: 22
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 811054
+  CPUScore: 38199.89
+  WallScore: 37220.581
   timeout: 22
   memout: 0
 ---

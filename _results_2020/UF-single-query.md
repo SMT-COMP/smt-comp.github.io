@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-01 15:34:21
+resultdate: 2020-07-02 00:00:13
 
 year: 2020
 
@@ -32,18 +32,6 @@ sequential:
   solved_unsat: 578
   unsolved: 1318
   timeout: 1318
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 972
-  CPUScore: 1644576.114
-  WallScore: 1598717.022
-  solved: 972
-  solved_sat: 395
-  solved_unsat: 577
-  unsolved: 1319
-  timeout: 1319
   memout: 0
 - name: CVC4
   competing: "yes"
@@ -172,18 +160,6 @@ parallel:
   correctScore: 1008
   CPUScore: 1702696.105
   WallScore: 1580071.11
-  solved: 1008
-  solved_sat: 399
-  solved_unsat: 609
-  unsolved: 1283
-  timeout: 1283
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 1008
-  CPUScore: 1704895.174
-  WallScore: 1582546.807
   solved: 1008
   solved_sat: 399
   solved_unsat: 609
@@ -323,18 +299,6 @@ sat:
   unsolved: 1892
   timeout: 1283
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 399
-  CPUScore: 48708.101
-  WallScore: 20542.665
-  solved: 399
-  solved_sat: 399
-  solved_unsat: 0
-  unsolved: 1892
-  timeout: 1283
-  memout: 0
 - name: 2018-Vampire
   competing: "no"
   errorScore: 0
@@ -460,8 +424,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 625
-  CPUScore: 91700.69
-  WallScore: 91917.8
+  CPUScore: 90500.69
+  WallScore: 90717.8
   solved: 625
   solved_sat: 0
   solved_unsat: 625
@@ -472,8 +436,8 @@ unsat:
   competing: "no"
   errorScore: 0
   correctScore: 622
-  CPUScore: 105727.798
-  WallScore: 105953.386
+  CPUScore: 104527.798
+  WallScore: 104753.386
   solved: 622
   solved_sat: 0
   solved_unsat: 622
@@ -484,20 +448,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 609
-  CPUScore: 205695.741
-  WallScore: 118377.895
-  solved: 609
-  solved_sat: 0
-  solved_unsat: 609
-  unsolved: 1682
-  timeout: 1283
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 609
-  CPUScore: 214987.073
-  WallScore: 120804.142
+  CPUScore: 204495.741
+  WallScore: 117177.895
   solved: 609
   solved_sat: 0
   solved_unsat: 609
@@ -508,8 +460,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 588
-  CPUScore: 147360.29
-  WallScore: 147364.41
+  CPUScore: 146160.29
+  WallScore: 146164.41
   solved: 588
   solved_sat: 0
   solved_unsat: 588
@@ -520,8 +472,8 @@ unsat:
   competing: "no"
   errorScore: 0
   correctScore: 583
-  CPUScore: 477447.331
-  WallScore: 204568.288
+  CPUScore: 476247.331
+  WallScore: 203368.288
   solved: 583
   solved_sat: 0
   solved_unsat: 583
@@ -532,8 +484,8 @@ unsat:
   competing: "no"
   errorScore: 0
   correctScore: 548
-  CPUScore: 163887.138
-  WallScore: 163871.795
+  CPUScore: 162687.138
+  WallScore: 162671.795
   solved: 548
   solved_sat: 0
   solved_unsat: 548
@@ -544,8 +496,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 531
-  CPUScore: 263474.905
-  WallScore: 201006.169
+  CPUScore: 262274.905
+  WallScore: 199806.169
   solved: 531
   solved_sat: 0
   solved_unsat: 531
@@ -556,8 +508,8 @@ unsat:
   competing: "no"
   errorScore: 0
   correctScore: 350
-  CPUScore: 312002.587
-  WallScore: 312012.89
+  CPUScore: 311738.15
+  WallScore: 311748.339
   solved: 350
   solved_sat: 0
   solved_unsat: 350
@@ -568,8 +520,8 @@ unsat:
   competing: "no"
   errorScore: 0
   correctScore: 80
-  CPUScore: 730856.704
-  WallScore: 721618.588
+  CPUScore: 729656.704
+  WallScore: 720418.588
   solved: 80
   solved_sat: 0
   solved_unsat: 80
@@ -580,8 +532,8 @@ unsat:
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 2481.001
-  WallScore: 1639.124
+  CPUScore: 2477.378
+  WallScore: 1636.732
   solved: 0
   solved_sat: 0
   solved_unsat: 0
@@ -592,8 +544,8 @@ unsat:
   competing: "yes"
   errorScore: 1
   correctScore: 79
-  CPUScore: 728204.724
-  WallScore: 721815.347
+  CPUScore: 727004.724
+  WallScore: 720615.347
   solved: 79
   solved_sat: 0
   solved_unsat: 79
@@ -612,18 +564,6 @@ twentyfour:
   solved_unsat: 470
   unsolved: 1498
   timeout: 1498
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 792
-  CPUScore: 41222.887
-  WallScore: 37401.939
-  solved: 792
-  solved_sat: 322
-  solved_unsat: 470
-  unsolved: 1499
-  timeout: 1499
   memout: 0
 - name: 2018-Vampire
   competing: "no"

@@ -1,11 +1,23 @@
 ---
 layout: disagreements
 year: 2020
-gendate: 2020-07-01 09:37:39.271384
+gendate: 2020-07-01 23:33:08.962899
 track: track_single_query
 participants: participants_2020
 division: QF_SLIA
 benchmarks:
+- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-addStrings/397.smt2
+- jobs:
+  - name: Z3str4
+    result: sat
+  - name: CVC4
+    result: unsat
+- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-addStrings/463.smt2
+- jobs:
+  - name: Z3str4
+    result: sat
+  - name: CVC4
+    result: unsat
 - name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/103.smt2
 - jobs:
   - name: Z3str4
@@ -78,6 +90,12 @@ benchmarks:
     result: sat
   - name: CVC4
     result: unsat
+- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/3.smt2
+- jobs:
+  - name: Z3str4
+    result: sat
+  - name: CVC4
+    result: unsat
 - name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/304.smt2
 - jobs:
   - name: Z3str4
@@ -103,12 +121,6 @@ benchmarks:
   - name: CVC4
     result: unsat
 - name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/363.smt2
-- jobs:
-  - name: Z3str4
-    result: sat
-  - name: CVC4
-    result: unsat
-- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/3.smt2
 - jobs:
   - name: Z3str4
     result: sat
@@ -162,31 +174,19 @@ benchmarks:
     result: sat
   - name: CVC4
     result: unsat
-- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/89.smt2
-- jobs:
-  - name: Z3str4
-    result: sat
-  - name: CVC4
-    result: unsat
 - name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/8.smt2
 - jobs:
   - name: Z3str4
     result: sat
   - name: CVC4
     result: unsat
+- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/89.smt2
+- jobs:
+  - name: Z3str4
+    result: sat
+  - name: CVC4
+    result: unsat
 - name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-add_binary/93.smt2
-- jobs:
-  - name: Z3str4
-    result: sat
-  - name: CVC4
-    result: unsat
-- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-addStrings/397.smt2
-- jobs:
-  - name: Z3str4
-    result: sat
-  - name: CVC4
-    result: unsat
-- name: QF_SLIA/2019-full_str_int/py-conbyte_cvc4/leetcode_int-addStrings/463.smt2
 - jobs:
   - name: Z3str4
     result: sat

@@ -1,15 +1,16 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_AUFLIA
 track: track_incremental
-n_benchmarks: 72
+n_benchmarks: 49
 time_limit: 1200
 mem_limit: 60
 
@@ -18,55 +19,73 @@ parallel:
 - name: 2018-Yices (incremental)
   competing: "no"
   errorScore: 0
-  correctScore: 4699864
-  CPUScore: 3089.813
-  WallScore: 2924.793
+  correctScore: 1455587
+  CPUScore: 1219.622
+  WallScore: 1124.07
   unsolved: 0
   timeout: 0
   memout: 0
 - name: Yices2 incremental
   competing: "yes"
   errorScore: 0
-  correctScore: 4699864
-  CPUScore: 3496.584
-  WallScore: 3309.245
+  correctScore: 1455587
+  CPUScore: 1374.283
+  WallScore: 1270.854
+  unsolved: 0
+  timeout: 0
+  memout: 0
+- name: Yices2-fixed incremental
+  competing: "no"
+  errorScore: 0
+  correctScore: 1455587
+  CPUScore: 1372.997
+  WallScore: 1271.143
   unsolved: 0
   timeout: 0
   memout: 0
 - name: z3
   competing: "no"
   errorScore: 0
-  correctScore: 4672842
-  CPUScore: 4776.876
-  WallScore: 4573.293
+  correctScore: 1428565
+  CPUScore: 2345.58
+  WallScore: 2228.202
   unsolved: 27022
+  timeout: 1
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 932446
+  CPUScore: 4171.482
+  WallScore: 3686.384
+  unsolved: 523141
   timeout: 1
   memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
-  correctScore: 4176416
-  CPUScore: 13977.439
-  WallScore: 12602.623
+  correctScore: 932139
+  CPUScore: 4147.248
+  WallScore: 3667.816
   unsolved: 523448
   timeout: 1
   memout: 0
 - name: MathSAT5
   competing: "no"
   errorScore: 0
-  correctScore: 2036379
-  CPUScore: 5274.943
-  WallScore: 5157.285
-  unsolved: 2663485
+  correctScore: 642413
+  CPUScore: 3353.185
+  WallScore: 3277.72
+  unsolved: 813174
   timeout: 1
   memout: 0
 - name: CVC4-inc
   competing: "yes"
   errorScore: 0
-  correctScore: 1114753
-  CPUScore: 26011.007
-  WallScore: 26000.972
-  unsolved: 3585111
-  timeout: 20
+  correctScore: 295671
+  CPUScore: 6395.206
+  WallScore: 6386.471
+  unsolved: 1159916
+  timeout: 4
   memout: 0
 ---

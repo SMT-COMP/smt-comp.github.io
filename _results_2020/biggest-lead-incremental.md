@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:26
 
 year: 2020
 
@@ -48,6 +48,11 @@ parallel:
   timeScore: 0.00567185
   division: BV
 - name: Yices2 incremental
+  second: SMTInterpol
+  correctScore: 1.56155513
+  timeScore: 2.88462114
+  division: QF_AUFLIA
+- name: Yices2 incremental
   second: CVC4-inc
   correctScore: 1.36455331
   timeScore: 1.87312874
@@ -57,11 +62,6 @@ parallel:
   correctScore: 1.15532084
   timeScore: 0.23350567
   division: LRA
-- name: Yices2 incremental
-  second: SMTInterpol
-  correctScore: 1.12533423
-  timeScore: 3.80745912
-  division: QF_AUFLIA
 - name: CVC4-inc
   second: UltimateEliminator+MathSAT
   correctScore: 1.12500000
@@ -122,16 +122,6 @@ parallel:
   correctScore: 1.00030681
   timeScore: 2.44723634
   division: QF_UFLRA
-- name: CVC4-inc
-  second: SMTInterpol
-  correctScore: 1.00007406
-  timeScore: 0.06517896
-  division: ALIA
-- name: SMTInterpol
-  second: Yices2 incremental
-  correctScore: 1.00003017
-  timeScore: 0.87353989
-  division: QF_ALIA
 - name: Yices2 incremental
   second: CVC4-inc
   correctScore: 1.00000000

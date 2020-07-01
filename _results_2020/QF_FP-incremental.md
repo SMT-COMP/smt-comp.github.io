@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_FP
 track: track_incremental
 n_benchmarks: 1
@@ -30,6 +31,15 @@ parallel:
   correctScore: 4
   CPUScore: 0.019
   WallScore: 0.019
+  unsolved: 0
+  timeout: 0
+  memout: 0
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 4
+  CPUScore: 0.02
+  WallScore: 0.02
   unsolved: 0
   timeout: 0
   memout: 0

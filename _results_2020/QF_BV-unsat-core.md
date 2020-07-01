@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_BV
 track: track_unsat_core
 n_benchmarks: 2119
@@ -16,6 +17,14 @@ mem_limit: 60
 winner_seq: Bitwuzla
 winner_par: Bitwuzla
 sequential:
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 1435217
+  CPUScore: 177595.695
+  WallScore: 177535.357
+  timeout: 100
+  memout: 0
 - name: Bitwuzla
   competing: "yes"
   errorScore: 0
@@ -24,13 +33,13 @@ sequential:
   WallScore: 177644.93
   timeout: 99
   memout: 0
-- name: 2018-Yices (unsat core)
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 1420526
-  CPUScore: 246897.907
-  WallScore: 248264.786
-  timeout: 190
+  correctScore: 1420381
+  CPUScore: 244479.393
+  WallScore: 244421.686
+  timeout: 189
   memout: 0
 - name: Yices2
   competing: "yes"
@@ -65,6 +74,14 @@ sequential:
   timeout: 0
   memout: 0
 parallel:
+- name: Bitwuzla-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 1435217
+  CPUScore: 177602.435
+  WallScore: 177532.027
+  timeout: 100
+  memout: 0
 - name: Bitwuzla
   competing: "yes"
   errorScore: 0
@@ -73,13 +90,13 @@ parallel:
   WallScore: 177641.85
   timeout: 99
   memout: 0
-- name: 2018-Yices (unsat core)
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 1420526
-  CPUScore: 247976.447
-  WallScore: 248257.036
-  timeout: 190
+  correctScore: 1420381
+  CPUScore: 244499.083
+  WallScore: 244413.936
+  timeout: 189
   memout: 0
 - name: Yices2
   competing: "yes"

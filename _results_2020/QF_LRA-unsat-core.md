@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_LRA
 track: track_unsat_core
 n_benchmarks: 196
@@ -24,13 +25,13 @@ sequential:
   WallScore: 71277.725
   timeout: 39
   memout: 0
-- name: 2019-Yices 2.6.2
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 144463
-  CPUScore: 73133.32
-  WallScore: 73314.073
-  timeout: 42
+  correctScore: 146931
+  CPUScore: 71327.145
+  WallScore: 71324.87
+  timeout: 39
   memout: 0
 - name: CVC4-uc
   competing: "yes"
@@ -56,6 +57,14 @@ sequential:
   WallScore: 146682.987
   timeout: 103
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 95849
+  CPUScore: 111449.826
+  WallScore: 108323.251
+  timeout: 61
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -73,13 +82,13 @@ parallel:
   WallScore: 71276.605
   timeout: 39
   memout: 0
-- name: 2019-Yices 2.6.2
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 144463
-  CPUScore: 73322.98
-  WallScore: 73313.113
-  timeout: 42
+  correctScore: 146931
+  CPUScore: 71328.635
+  WallScore: 71323.8
+  timeout: 39
   memout: 0
 - name: CVC4-uc
   competing: "yes"
@@ -104,6 +113,14 @@ parallel:
   CPUScore: 146673.732
   WallScore: 146677.817
   timeout: 103
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 95904
+  CPUScore: 111463.026
+  WallScore: 108293.901
+  timeout: 60
   memout: 0
 - name: SMTInterpol
   competing: "yes"

@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:44:26
+resultdate: 2020-07-02 00:01:25
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: UF
 track: track_incremental
 n_benchmarks: 2031
@@ -41,6 +42,15 @@ parallel:
   WallScore: 1639999.69
   unsolved: 276225
   timeout: 1341
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 29764
+  CPUScore: 1647222.421
+  WallScore: 1639843.907
+  unsolved: 276242
+  timeout: 1340
   memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"

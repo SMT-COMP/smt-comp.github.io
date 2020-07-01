@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:45
+resultdate: 2020-07-02 00:03:23
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: UFDT
 track: track_unsat_core
 n_benchmarks: 745

@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-01 15:34:20
+resultdate: 2020-07-02 00:00:12
 
 year: 2020
 
@@ -63,18 +63,6 @@ sequential:
   correctScore: 1225
   CPUScore: 149640.278
   WallScore: 146519.88
-  solved: 1225
-  solved_sat: 0
-  solved_unsat: 1225
-  unsolved: 121
-  timeout: 121
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 1225
-  CPUScore: 150273.721
-  WallScore: 146691.34
   solved: 1225
   solved_sat: 0
   solved_unsat: 1225
@@ -172,18 +160,6 @@ parallel:
   correctScore: 1248
   CPUScore: 166260.748
   WallScore: 129581.665
-  solved: 1248
-  solved_sat: 0
-  solved_unsat: 1248
-  unsolved: 98
-  timeout: 98
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 1248
-  CPUScore: 163326.591
-  WallScore: 129781.759
   solved: 1248
   solved_sat: 0
   solved_unsat: 1248
@@ -407,18 +383,6 @@ sat:
   unsolved: 1346
   timeout: 98
   memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 0
-  CPUScore: 50400.0
-  WallScore: 50400.0
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 1346
-  timeout: 98
-  memout: 0
 unsat:
 - name: Vampire
   competing: "yes"
@@ -426,18 +390,6 @@ unsat:
   correctScore: 1248
   CPUScore: 48660.408
   WallScore: 15585.495
-  solved: 1248
-  solved_sat: 0
-  solved_unsat: 1248
-  unsolved: 98
-  timeout: 98
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 1248
-  CPUScore: 49326.591
-  WallScore: 15781.759
   solved: 1248
   solved_sat: 0
   solved_unsat: 1248
@@ -588,18 +540,6 @@ twentyfour:
   solved_unsat: 1214
   unsolved: 132
   timeout: 132
-  memout: 0
-- name: Vampire-fixed
-  competing: "no"
-  errorScore: 0
-  correctScore: 1212
-  CPUScore: 4344.964
-  WallScore: 3621.236
-  solved: 1212
-  solved_sat: 0
-  solved_unsat: 1212
-  unsolved: 134
-  timeout: 134
   memout: 0
 - name: CVC4
   competing: "yes"

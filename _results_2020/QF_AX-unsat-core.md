@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:22
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: QF_AX
 track: track_unsat_core
 n_benchmarks: 202
@@ -16,20 +17,20 @@ mem_limit: 60
 winner_seq: Yices2
 winner_par: Yices2
 sequential:
+- name: Yices2-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 38650
+  CPUScore: 5.56
+  WallScore: 6.351
+  timeout: 0
+  memout: 0
 - name: Yices2
   competing: "yes"
   errorScore: 0
   correctScore: 38650
   CPUScore: 5.646
   WallScore: 6.857
-  timeout: 0
-  memout: 0
-- name: 2018-Yices (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 38650
-  CPUScore: 5.767
-  WallScore: 6.626
   timeout: 0
   memout: 0
 - name: z3
@@ -64,13 +65,21 @@ sequential:
   WallScore: 163.336
   timeout: 0
   memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 471
+  CPUScore: 400.656
+  WallScore: 166.494
+  timeout: 0
+  memout: 0
 parallel:
-- name: 2018-Yices (unsat core)
+- name: Yices2-fixed
   competing: "no"
   errorScore: 0
   correctScore: 38650
-  CPUScore: 5.767
-  WallScore: 6.626
+  CPUScore: 5.56
+  WallScore: 6.351
   timeout: 0
   memout: 0
 - name: Yices2
@@ -111,6 +120,14 @@ parallel:
   correctScore: 471
   CPUScore: 384.201
   WallScore: 163.336
+  timeout: 0
+  memout: 0
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 471
+  CPUScore: 400.656
+  WallScore: 166.494
   timeout: 0
   memout: 0
 ---

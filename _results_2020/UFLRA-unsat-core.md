@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:45
+resultdate: 2020-07-02 00:03:23
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: UFLRA
 track: track_unsat_core
 n_benchmarks: 10
@@ -24,12 +25,12 @@ sequential:
   WallScore: 0.348
   timeout: 0
   memout: 0
-- name: 2018-Z3 (unsat core)
+- name: SMTInterpol-fixed
   competing: "no"
   errorScore: 0
   correctScore: 16
-  CPUScore: 0.357
-  WallScore: 0.358
+  CPUScore: 6.026
+  WallScore: 4.051
   timeout: 0
   memout: 0
 - name: SMTInterpol
@@ -65,12 +66,12 @@ parallel:
   WallScore: 0.348
   timeout: 0
   memout: 0
-- name: 2018-Z3 (unsat core)
+- name: SMTInterpol-fixed
   competing: "no"
   errorScore: 0
   correctScore: 16
-  CPUScore: 0.357
-  WallScore: 0.358
+  CPUScore: 6.026
+  WallScore: 4.051
   timeout: 0
   memout: 0
 - name: SMTInterpol

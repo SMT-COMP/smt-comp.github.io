@@ -1,12 +1,13 @@
 ---
 layout: result
-resultdate: 2020-06-25 16:48:44
+resultdate: 2020-07-02 00:03:23
 
 year: 2020
 
 divisions: divisions_2020
 participants: participants_2020
 
+disagreements: disagreements_2020
 division: UF
 track: track_unsat_core
 n_benchmarks: 1374
@@ -16,14 +17,6 @@ mem_limit: 60
 winner_seq: CVC4-uc
 winner_par: CVC4-uc
 sequential:
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 379750
-  CPUScore: 148357.491
-  WallScore: 148376.369
-  timeout: 120
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
@@ -40,6 +33,14 @@ sequential:
   WallScore: 280192.389
   timeout: 178
   memout: 10
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 154255
+  CPUScore: 1028532.089
+  WallScore: 1026151.29
+  timeout: 851
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
@@ -57,14 +58,6 @@ sequential:
   timeout: 1
   memout: 0
 parallel:
-- name: 2018-CVC4 (unsat core)
-  competing: "no"
-  errorScore: 0
-  correctScore: 379750
-  CPUScore: 148374.741
-  WallScore: 148371.989
-  timeout: 120
-  memout: 0
 - name: CVC4-uc
   competing: "yes"
   errorScore: 0
@@ -81,6 +74,14 @@ parallel:
   WallScore: 280185.209
   timeout: 178
   memout: 10
+- name: SMTInterpol-fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 154255
+  CPUScore: 1038770.929
+  WallScore: 1024673.76
+  timeout: 845
+  memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0

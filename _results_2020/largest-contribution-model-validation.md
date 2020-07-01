@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-06-25 16:41:07
+resultdate: 2020-07-02 00:04:19
 
 year: 2020
 
@@ -24,12 +24,12 @@ sequential:
   timeScore: 0.03188941
   division: QF_IDL
 - name: Bitwuzla
-  correctScore: 0.00177102
-  timeScore: 0.20041417
+  correctScore: 0.00258886
+  timeScore: 0.30106396
   division: QF_BV
 - name: CVC4-mv
   correctScore: 0.00033284
-  timeScore: 0.00770595
+  timeScore: 0.01005156
   division: QF_LRA
 - name: Yices2 Model Validation
   correctScore: 0.00024500
@@ -49,12 +49,12 @@ parallel:
   timeScore: 0.03189110
   division: QF_IDL
 - name: Bitwuzla
-  correctScore: 0.00163479
-  timeScore: 0.18912752
+  correctScore: 0.00245218
+  timeScore: 0.29354561
   division: QF_BV
 - name: CVC4-mv
   correctScore: 0.00033284
-  timeScore: 0.00758822
+  timeScore: 0.01000434
   division: QF_LRA
 - name: Yices2 Model Validation
   correctScore: 0.00024500
