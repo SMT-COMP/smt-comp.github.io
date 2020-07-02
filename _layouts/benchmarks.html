@@ -51,6 +51,12 @@ In total there are
 {%- assign selection = page.tracks |where: "name", track_descr.raw_name |first -%}
 The list of selected benchmarks is available
 <a href="{{ selection.url }}">here</a>.
+{% if selection.exclurl -%}
+Some benchmarks were excluded from scoring after running the competition,
+because they were not well-formed.  The list of excluded benchmark is available
+<a href="{{ selection.exclurl }}">here</a>.
+Note that not all of them were selected in the first place.
+{%- endif %}
 </p>
 
 <table>
