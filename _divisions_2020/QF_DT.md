@@ -21,4 +21,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_DT Unsat Core Track participated only by CVC4, z3.
+QF_DT Unsat Core Track participated only by z3, CVC4.

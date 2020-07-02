@@ -21,4 +21,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_AUFNIA Unsat Core Track participated only by CVC4, z3, MathSAT5.
+QF_AUFNIA Unsat Core Track participated only by MathSAT5, 2018-Z3 (unsat core), z3, CVC4.
