@@ -7,21 +7,46 @@ layout: default
 {%- assign participants = site[page.participants] -%}
 
 {%- assign track = tracks |where: "raw_name", page.track  |first -%}
+{%- assign result_page = "results_" | append: page.year -%}
+{%- assign result = site[result_page] | where: "division", page.division | where: "track", page.track | first -%}
+
+{%- assign soundsolvers = result.parallel | where: "errorScore", 0 -%}
 
 <h2>Solver Disagreements on {{ page.division }} ({{ track.pretty_name }}) </h2>
 
-Page generated on {{ page.gendate | time_to_string }}
 <p>
+  Page generated on {{ page.gendate | time_to_string }}
+</p>
 
 {% for benchmark in page.benchmarks %}
 <p>
 {{ benchmark.name }}
 <ul>
-  {% for pair in benchmark.jobs %}
-  {% assign participant = participants | where:"name", pair.name | first %}
-   <li>
-        <a href="{{ participant.url }}">{{ pair.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}: {{ pair.result }}
-    </li>
+  {%- for pair in benchmark.jobs -%}
+  {%- assign participant = participants | where:"name", pair.name | first -%}
+  {%- assign issound = soundsolvers | where:"name", pair.name | first -%}
+  <li>
+    <span{%- if participant.competing == "no" %} class="non-competing"{%- endif -%}>
+     <a href="{{ participant.url }}">{{ pair.name }}</a>
+     {%- if participant.competing == "no" -%}
+       <sup><a href="#nc">n</a></sup>
+     {%- endif -%}
+    </span>: {{ pair.result }}
+    {%- if issound -%}
+    {%- else -%}
+      <sup><a href="#unsound">u</a></sup>
+    {%- endif -%}
+  </li>
   {% endfor %}
 </ul>
+</p>
 {% endfor %}
+
+<p>
+  <span id="nc">
+    <sup>n</sup> Non-competing.
+  </span><br/>
+  <span id="unsound">
+    <sup>u</sup> Solver is unsound in this division.
+  </span><br/>
+</p>
