@@ -49,12 +49,12 @@ In total there are
 {{ n_divisions }} divisions in the {{ track_descr.pretty_name }}.
 </br>
 {%- assign selection = page.tracks |where: "name", track_descr.raw_name |first -%}
-The list of selected benchmarks is available
-<a href="{{ selection.url }}">here</a>.
+You can download the
+<a href="{{ selection.url }}">list of selected benchmarks</a>.
 {% if selection.exclurl -%}
 Some benchmarks were excluded from scoring after running the competition,
-because they were not well-formed.  The list of excluded benchmark is available
-<a href="{{ selection.exclurl }}">here</a>.
+because they were not well-formed.  Here is the
+<a href="{{ selection.exclurl }}">list of excluded benchmarks</a>.
 Note that not all of them were selected in the first place.
 {%- endif %}
 </p>
