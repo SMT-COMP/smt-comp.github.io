@@ -21,5 +21,5 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_ANIA Incremental Track participated only by CVC4, z3, MathSAT5.
-QF_ANIA Unsat Core Track participated only by CVC4, z3, MathSAT5.
+QF_ANIA Incremental Track participated only by MathSAT5, z3, CVC4, 2018-Z3 (incremental).
+QF_ANIA Unsat Core Track participated only by 2018-CVC4 (unsat core), MathSAT5, z3, CVC4.

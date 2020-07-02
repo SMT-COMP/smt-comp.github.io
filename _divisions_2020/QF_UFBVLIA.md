@@ -21,4 +21,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_UFBVLIA Incremental Track participated only by CVC4, MathSAT5.
+QF_UFBVLIA Incremental Track participated only by MathSAT5, CVC4.

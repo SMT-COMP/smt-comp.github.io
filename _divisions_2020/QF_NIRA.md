@@ -21,4 +21,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_NIRA Unsat Core Track participated only by CVC4, z3, MathSAT5.
+QF_NIRA Unsat Core Track participated only by 2019-MathSAT-na-ext, MathSAT5, z3, CVC4.

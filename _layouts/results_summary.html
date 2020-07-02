@@ -20,9 +20,9 @@ Summary of all competition results for the {{ track }}.
 <br/>
 Results are given ranked by performance for each scoring scheme
 (best solver is given as left-most solver).
-{%- if track_status == "experimental" -%}
+{%- if track_status != "competitive" -%}
 <br/>
-This track is experimental. Solvers are only ranked by performance, but no
+This track is {{ track_status }}. Solvers are only ranked by performance, but no
 winner is selected.
 {%- endif -%}
 </p>
@@ -34,9 +34,9 @@ winner is selected.
 {%- assign division_data = division_data.tracks |where: "name", page.track |first -%}
 
 <h3><a href="{{ division.url }}">{{ division.division }}</a></h3>
-{%- if division_data.status == "experimental" -%}
+{%- if division_data.status != "competitive" -%}
 <p>
-This division is experimental. Solvers are only ranked by performance, but no
+This division is {{ division_data.status }}. Solvers are only ranked by performance, but no
 winner is selected.
 </p>
 {%- endif -%}

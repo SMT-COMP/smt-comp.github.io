@@ -40,11 +40,14 @@ Page generated on {{ page.resultdate | time_to_string }}
 <b> Memory Limit:</b> {{ page.mem_limit }} GB
 </p>
 
-{%- if track_status == "experimental" -%}
-This track is experimental. Solvers are only ranked by performance, but no
+{%- if track_status != "competitive" -%}
+This track is {{ track_status }}.
+Solvers are only ranked by performance, but no
 winner is selected.
+{%- elsif division.status != "competitive" %}
+This division is {{ division.status }}.
+Solvers are only ranked by performance, but no winner is selected.
 {%- else -%}
-  {%- if division.status == "competitive" %}
 <h3>Winners</h3>
 <table>
     <thead>
@@ -114,10 +117,6 @@ winner is selected.
      {% endif %}
     </tr>
 </table>
-  {%- else -%}
-This division is experimental. Solvers are only ranked by performance, but no
-winner is selected.
-  {%- endif %}
 {%- endif %}
 
 <p>

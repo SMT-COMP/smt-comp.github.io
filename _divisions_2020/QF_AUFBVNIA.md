@@ -21,4 +21,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_AUFBVNIA Incremental Track participated only by CVC4, MathSAT5.
+QF_AUFBVNIA Incremental Track participated only by 2019-MathSAT-na-ext, MathSAT5, CVC4.

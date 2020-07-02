@@ -21,4 +21,4 @@ tracks:
   n_excluded: 0
   status: competitive
 ---
-QF_FPLRA Unsat Core Track participated only by CVC4, z3, MathSAT5.
+QF_FPLRA Unsat Core Track participated only by MathSAT5, z3, CVC4.

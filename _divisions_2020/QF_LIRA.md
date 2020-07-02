@@ -19,6 +19,6 @@ tracks:
 - name: track_model_validation
   n_insts: 1
   n_excluded: 0
-  status: competitive
+  status: experimental
 ---
 
