@@ -12,13 +12,15 @@
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    {%- if year == "2020" -%}
-    <style> a { color: #3361FF; } </style>
+    {% if year == "2017" -%}
+    <style> a { color: #ff6600; } </style>
     {%- elsif year == "2018" -%}
     <style> a { color: #2a971e; } </style>
-    {%- elsif year == "2017" -%}
-    <style> a { color: #ff6600; } </style>
-    {%- endif -%}
+    {%- elsif year == "2019" -%}
+    <style> a { color: #c30000; } </style>
+    {%- else -%}
+    <style> a { color: #3361FF; } </style>
+    {%- endif %}
   </head>
   <body>
     <div class="wrapper">
