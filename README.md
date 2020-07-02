@@ -20,7 +20,5 @@ This is the repository for the SMT-COMP website on GitHub Pages.
    - `_news_yyyy`
    - `_participants_yyyy`
    - `_results_yyyy`
-   - `_results_competition_wide_yyyy`
-   - `_results_summary_yyyy`
 
 
