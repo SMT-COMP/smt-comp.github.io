@@ -68,6 +68,7 @@ sequential:
 - name: MathSAT5
   competing: "no"
   errorScore: 82
+  errorFootnote: "The error score is caused by MathSAT using the wrong names in the unsat core output (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 1282
   CPUScore: 83.487
   WallScore: 83.791
@@ -125,6 +126,7 @@ parallel:
 - name: MathSAT5
   competing: "no"
   errorScore: 82
+  errorFootnote: "The error score is caused by MathSAT using the wrong names in the unsat core output (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 1282
   CPUScore: 83.487
   WallScore: 83.791

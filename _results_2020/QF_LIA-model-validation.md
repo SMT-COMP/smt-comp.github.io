@@ -68,6 +68,7 @@ sequential:
 - name: MathSAT5-mv
   competing: "no"
   errorScore: 14
+  errorFootnote: "The error score is caused by MathSAT not giving full models (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 1440
   CPUScore: 176506.816
   WallScore: 176433.952
@@ -125,6 +126,7 @@ parallel:
 - name: MathSAT5-mv
   competing: "no"
   errorScore: 14
+  errorFootnote: "The error score is caused by MathSAT not giving full models (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 1440
   CPUScore: 176516.546
   WallScore: 176431.022

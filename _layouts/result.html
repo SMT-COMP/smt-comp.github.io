@@ -163,7 +163,11 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.errorScore }}
+      {%- if solver.errorFootnote -%}
+         <a href="#error{{solver.name}}">*</a>
+      {%- endif -%}
+    </td>
     <td class="right">{{ solver.correctScore }}</td>
     <td class="right">{{ solver.CPUScore }}</td>
     <td class="right">{{ solver.WallScore }}</td>
@@ -224,7 +228,11 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.errorScore }}
+      {%- if solver.errorFootnote -%}
+         <a href="#error{{solver.name}}">*</a>
+      {%- endif -%}
+    </td>
     <td class="right">{{ solver.correctScore }}</td>
     <td class="right">{{ solver.CPUScore }}</td>
     <td class="right">{{ solver.WallScore }}</td>
@@ -285,7 +293,11 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.errorScore }}
+      {%- if solver.errorFootnote -%}
+         <a href="#error{{solver.name}}">*</a>
+      {%- endif -%}
+    </td>
     <td class="right">{{ solver.correctScore }}</td>
     <td class="right">{{ solver.CPUScore }}</td>
     <td class="right">{{ solver.WallScore }}</td>
@@ -346,7 +358,11 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.errorScore }}
+      {%- if solver.errorFootnote -%}
+         <a href="#error{{solver.name}}">*</a>
+      {%- endif -%}
+    </td>
     <td class="right">{{ solver.correctScore }}</td>
     <td class="right">{{ solver.CPUScore }}</td>
     <td class="right">{{ solver.WallScore }}</td>
@@ -407,7 +423,11 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
     </td>
-    <td class="right">{{ solver.errorScore }}</td>
+    <td class="right">{{ solver.errorScore }}
+      {%- if solver.errorFootnote -%}
+         <a href="#error{{solver.name}}">*</a>
+      {%- endif -%}
+    </td>
     <td class="right">{{ solver.correctScore }}</td>
     <td class="right">{{ solver.CPUScore }}</td>
     <td class="right">{{ solver.WallScore }}</td>
@@ -434,6 +454,13 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   <span id="nc">
     n Non-competing.
   </span><br/>
+{%- for solver in page.parallel %}
+  {%- if solver.errorFootnote %}
+  <span id="error{{solver.name}}">
+    * {{ solver.errorFootnote }}
+  </span><br/>
+  {%- endif -%}
+{%- endfor -%}
 </p>
 
 
