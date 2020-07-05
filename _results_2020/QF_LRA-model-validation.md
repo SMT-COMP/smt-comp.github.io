@@ -68,6 +68,7 @@ sequential:
 - name: SMTInterpol
   competing: "yes"
   errorScore: 2
+  errorFootnote: "The error score is caused by SMTInterpol giving values to defined functions (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 350
   CPUScore: 54559.699
   WallScore: 51766.013
@@ -76,6 +77,7 @@ sequential:
 - name: MathSAT5-mv
   competing: "no"
   errorScore: 2
+  errorFootnote: "The error score is caused by MathSAT not giving full models (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 345
   CPUScore: 53776.173
   WallScore: 53764.771
@@ -133,6 +135,7 @@ parallel:
 - name: SMTInterpol
   competing: "yes"
   errorScore: 2
+  errorFootnote: "The error score is caused by SMTInterpol giving values to defined functions (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 350
   CPUScore: 54559.699
   WallScore: 51766.013
@@ -141,6 +144,7 @@ parallel:
 - name: MathSAT5-mv
   competing: "no"
   errorScore: 2
+  errorFootnote: "The error score is caused by MathSAT not giving full models (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 345
   CPUScore: 53783.173
   WallScore: 53763.351
