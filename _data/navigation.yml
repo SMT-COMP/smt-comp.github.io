@@ -14,8 +14,8 @@
     link: 2020/participants.html
   - name: Results
     link: 2020/results.html
-  # - name: Slides
-  #   link: 2020/SMT-COMP-2020-slides.pdf
+  - name: Slides
+    link: 2020/SMT-COMP-2020-slides.pdf
 #  - name: Solver submission
 #    link: https://forms.gle/y8xB4C8TB2WkdKPx9
 
