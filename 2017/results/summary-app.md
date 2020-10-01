@@ -15,7 +15,7 @@ layout: default
 <th>Order (parallel performance)</th>
 </tr>
 <tr>
-<td rowspan="2"><a href="ANIA-app.shtml">ANIA</a>
+<td rowspan="2"><a href="ANIA-app.html">ANIA</a>
 </td>
 <td rowspan="2">2</td>
 <td rowspan="2">3</td>
@@ -25,7 +25,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_ANIA-app.shtml">QF_ANIA</a>
+<td rowspan="2"><a href="QF_ANIA-app.html">QF_ANIA</a>
 </td>
 <td rowspan="2">2</td>
 <td rowspan="2">5</td>
@@ -34,7 +34,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_ALIA-app.shtml">QF_ALIA</a>
+<td rowspan="2"><a href="QF_ALIA-app.html">QF_ALIA</a>
 </td>
 <td rowspan="2">5</td>
 <td rowspan="2">44</td>
@@ -43,7 +43,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_UFNIA-app.shtml">QF_UFNIA</a>
+<td rowspan="2"><a href="QF_UFNIA-app.html">QF_UFNIA</a>
 </td>
 <td rowspan="2">2</td>
 <td rowspan="2">1</td>
@@ -52,7 +52,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_BVFP-app.shtml">QF_BVFP</a>
+<td rowspan="2"><a href="QF_BVFP-app.html">QF_BVFP</a>
 </td>
 <td rowspan="2">1</td>
 <td rowspan="2">2</td>
@@ -62,7 +62,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="LIA-app.shtml">LIA</a>
+<td rowspan="2"><a href="LIA-app.html">LIA</a>
 </td>
 <td rowspan="2">2</td>
 <td rowspan="2">6</td>
@@ -71,7 +71,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="ALIA-app.shtml">ALIA</a>
+<td rowspan="2"><a href="ALIA-app.html">ALIA</a>
 </td>
 <td rowspan="2">2</td>
 <td rowspan="2">24</td>
@@ -80,7 +80,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_UFLRA-app.shtml">QF_UFLRA</a>
+<td rowspan="2"><a href="QF_UFLRA-app.html">QF_UFLRA</a>
 </td>
 <td rowspan="2">5</td>
 <td rowspan="2">3056</td>
@@ -90,7 +90,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="UFLRA-app.shtml">UFLRA</a>
+<td rowspan="2"><a href="UFLRA-app.html">UFLRA</a>
 </td>
 <td rowspan="2">2</td>
 <td rowspan="2">1870</td>
@@ -99,7 +99,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_UFLIA-app.shtml">QF_UFLIA</a>
+<td rowspan="2"><a href="QF_UFLIA-app.html">QF_UFLIA</a>
 </td>
 <td rowspan="2">5</td>
 <td rowspan="2">780</td>
@@ -109,7 +109,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_NIA-app.shtml">QF_NIA</a>
+<td rowspan="2"><a href="QF_NIA-app.html">QF_NIA</a>
 </td>
 <td rowspan="2">2</td>
 <td rowspan="2">10</td>
@@ -119,7 +119,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_FP-app.shtml">QF_FP</a>
+<td rowspan="2"><a href="QF_FP-app.html">QF_FP</a>
 </td>
 <td rowspan="2">1</td>
 <td rowspan="2">2</td>
@@ -129,7 +129,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_BV-app.shtml">QF_BV</a>
+<td rowspan="2"><a href="QF_BV-app.html">QF_BV</a>
 </td>
 <td rowspan="2">4</td>
 <td rowspan="2">18</td>
@@ -139,7 +139,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_LRA-app.shtml">QF_LRA</a>
+<td rowspan="2"><a href="QF_LRA-app.html">QF_LRA</a>
 </td>
 <td rowspan="2">6</td>
 <td rowspan="2">10</td>
@@ -148,7 +148,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_LIA-app.shtml">QF_LIA</a>
+<td rowspan="2"><a href="QF_LIA-app.html">QF_LIA</a>
 </td>
 <td rowspan="2">5</td>
 <td rowspan="2">68</td>
@@ -157,7 +157,7 @@ layout: default
 <tr>
 </tr>
 <tr>
-<td rowspan="2"><a href="QF_AUFLIA-app.shtml">QF_AUFLIA</a>
+<td rowspan="2"><a href="QF_AUFLIA-app.html">QF_AUFLIA</a>
 </td>
 <td rowspan="2">5</td>
 <td rowspan="2">72</td>
