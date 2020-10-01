@@ -24,7 +24,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 
 </tr>
 <tr>
-<td rowspan="4"><a href="results-ABVFP.html">ABVFP</a></td>
+<td rowspan="4"><a href="ABVFP.html">ABVFP</a></td>
 <td rowspan="4">1</td>
 <td rowspan="4">1</td>
 <td rowspan="4">1</td>
@@ -39,7 +39,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-ALIA.html">ALIA</a></td>
+<td rowspan="4"><a href="ALIA.html">ALIA</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">42</td>
 <td rowspan="4">210</td>
@@ -56,7 +56,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-AUFBVDTLIA.html">AUFBVDTLIA</a></td>
+<td rowspan="4"><a href="AUFBVDTLIA.html">AUFBVDTLIA</a></td>
 <td rowspan="4">1</td>
 <td rowspan="4">1709</td>
 <td rowspan="4">1709</td>
@@ -71,7 +71,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-AUFDTLIA.html">AUFDTLIA</a></td>
+<td rowspan="4"><a href="AUFDTLIA.html">AUFDTLIA</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">728</td>
 <td rowspan="4">1456</td>
@@ -86,7 +86,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-AUFLIA.html">AUFLIA</a></td>
+<td rowspan="4"><a href="AUFLIA.html">AUFLIA</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">4</td>
 <td rowspan="4">20</td>
@@ -101,7 +101,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-AUFLIRA.html">AUFLIRA</a></td>
+<td rowspan="4"><a href="AUFLIRA.html">AUFLIRA</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">20011</td>
 <td rowspan="4">100055</td>
@@ -118,7 +118,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-AUFNIRA.html">AUFNIRA</a></td>
+<td rowspan="4"><a href="AUFNIRA.html">AUFNIRA</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">1480</td>
 <td rowspan="4">5920</td>
@@ -133,7 +133,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-BV.html">BV</a></td>
+<td rowspan="4"><a href="BV.html">BV</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">5751</td>
 <td rowspan="4">23004</td>
@@ -148,7 +148,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-BVFP.html">BVFP</a></td>
+<td rowspan="4"><a href="BVFP.html">BVFP</a></td>
 <td rowspan="4">1</td>
 <td rowspan="4">24</td>
 <td rowspan="4">24</td>
@@ -163,7 +163,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-FP.html">FP</a></td>
+<td rowspan="4"><a href="FP.html">FP</a></td>
 <td rowspan="4">1</td>
 <td rowspan="4">61</td>
 <td rowspan="4">61</td>
@@ -178,7 +178,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-LIA.html">LIA</a></td>
+<td rowspan="4"><a href="LIA.html">LIA</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">388</td>
 <td rowspan="4">1552</td>
@@ -195,7 +195,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-LRA.html">LRA</a></td>
+<td rowspan="4"><a href="LRA.html">LRA</a></td>
 <td rowspan="4">3</td>
 <td rowspan="4">2419</td>
 <td rowspan="4">7257</td>
@@ -212,7 +212,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-NIA.html">NIA</a></td>
+<td rowspan="4"><a href="NIA.html">NIA</a></td>
 <td rowspan="4">3</td>
 <td rowspan="4">14</td>
 <td rowspan="4">42</td>
@@ -229,7 +229,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-NRA.html">NRA</a></td>
+<td rowspan="4"><a href="NRA.html">NRA</a></td>
 <td rowspan="4">3</td>
 <td rowspan="4">3813</td>
 <td rowspan="4">11439</td>
@@ -245,7 +245,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_ABV.html">QF_ABV</a></td>
+<td rowspan="4"><a href="QF_ABV.html">QF_ABV</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">15066</td>
 <td rowspan="4">75330</td>
@@ -261,7 +261,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_ABVFP.html">QF_ABVFP</a></td>
+<td rowspan="4"><a href="QF_ABVFP.html">QF_ABVFP</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">18129</td>
 <td rowspan="4">36258</td>
@@ -276,7 +276,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_ALIA.html">QF_ALIA</a></td>
+<td rowspan="4"><a href="QF_ALIA.html">QF_ALIA</a></td>
 <td rowspan="4">6</td>
 <td rowspan="4">139</td>
 <td rowspan="4">834</td>
@@ -291,7 +291,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_ANIA.html">QF_ANIA</a></td>
+<td rowspan="4"><a href="QF_ANIA.html">QF_ANIA</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">8</td>
 <td rowspan="4">16</td>
@@ -308,7 +308,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_AUFBV.html">QF_AUFBV</a></td>
+<td rowspan="4"><a href="QF_AUFBV.html">QF_AUFBV</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">31</td>
 <td rowspan="4">155</td>
@@ -323,7 +323,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_AUFLIA.html">QF_AUFLIA</a></td>
+<td rowspan="4"><a href="QF_AUFLIA.html">QF_AUFLIA</a></td>
 <td rowspan="4">6</td>
 <td rowspan="4">1009</td>
 <td rowspan="4">6054</td>
@@ -338,7 +338,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_AUFNIA.html">QF_AUFNIA</a></td>
+<td rowspan="4"><a href="QF_AUFNIA.html">QF_AUFNIA</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">17</td>
 <td rowspan="4">34</td>
@@ -355,7 +355,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_AX.html">QF_AX</a></td>
+<td rowspan="4"><a href="QF_AX.html">QF_AX</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">551</td>
 <td rowspan="4">2755</td>
@@ -370,7 +370,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_BV.html">QF_BV</a></td>
+<td rowspan="4"><a href="QF_BV.html">QF_BV</a></td>
 <td rowspan="4">10</td>
 <td rowspan="4">40102</td>
 <td rowspan="4">401020</td>
@@ -385,7 +385,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_BVFP.html">QF_BVFP</a></td>
+<td rowspan="4"><a href="QF_BVFP.html">QF_BVFP</a></td>
 <td rowspan="4">3</td>
 <td rowspan="4">17215</td>
 <td rowspan="4">51645</td>
@@ -400,7 +400,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_DT.html">QF_DT</a></td>
+<td rowspan="4"><a href="QF_DT.html">QF_DT</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">8000</td>
 <td rowspan="4">16000</td>
@@ -415,7 +415,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_FP.html">QF_FP</a></td>
+<td rowspan="4"><a href="QF_FP.html">QF_FP</a></td>
 <td rowspan="4">3</td>
 <td rowspan="4">40300</td>
 <td rowspan="4">120900</td>
@@ -430,7 +430,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_IDL.html">QF_IDL</a></td>
+<td rowspan="4"><a href="QF_IDL.html">QF_IDL</a></td>
 <td rowspan="4">8</td>
 <td rowspan="4">2193</td>
 <td rowspan="4">17544</td>
@@ -445,7 +445,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_LIA.html">QF_LIA</a></td>
+<td rowspan="4"><a href="QF_LIA.html">QF_LIA</a></td>
 <td rowspan="4">9</td>
 <td rowspan="4">6947</td>
 <td rowspan="4">62523</td>
@@ -460,7 +460,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_LIRA.html">QF_LIRA</a></td>
+<td rowspan="4"><a href="QF_LIRA.html">QF_LIRA</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">7</td>
 <td rowspan="4">35</td>
@@ -477,7 +477,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_LRA.html">QF_LRA</a></td>
+<td rowspan="4"><a href="QF_LRA.html">QF_LRA</a></td>
 <td rowspan="4">11</td>
 <td rowspan="4">1649</td>
 <td rowspan="4">18139</td>
@@ -492,7 +492,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_NIA.html">QF_NIA</a></td>
+<td rowspan="4"><a href="QF_NIA.html">QF_NIA</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">23876</td>
 <td rowspan="4">119380</td>
@@ -507,7 +507,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_NIRA.html">QF_NIRA</a></td>
+<td rowspan="4"><a href="QF_NIRA.html">QF_NIRA</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">3</td>
 <td rowspan="4">12</td>
@@ -522,7 +522,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_NRA.html">QF_NRA</a></td>
+<td rowspan="4"><a href="QF_NRA.html">QF_NRA</a></td>
 <td rowspan="4">6</td>
 <td rowspan="4">11489</td>
 <td rowspan="4">68934</td>
@@ -539,7 +539,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_RDL.html">QF_RDL</a></td>
+<td rowspan="4"><a href="QF_RDL.html">QF_RDL</a></td>
 <td rowspan="4">8</td>
 <td rowspan="4">255</td>
 <td rowspan="4">2040</td>
@@ -554,7 +554,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_SLIA.html">QF_SLIA</a></td>
+<td rowspan="4"><a href="QF_SLIA.html">QF_SLIA</a></td>
 <td rowspan="4">1</td>
 <td rowspan="4">72705</td>
 <td rowspan="4">72705</td>
@@ -569,7 +569,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_UF.html">QF_UF</a></td>
+<td rowspan="4"><a href="QF_UF.html">QF_UF</a></td>
 <td rowspan="4">7</td>
 <td rowspan="4">7423</td>
 <td rowspan="4">51961</td>
@@ -584,7 +584,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_UFBV.html">QF_UFBV</a></td>
+<td rowspan="4"><a href="QF_UFBV.html">QF_UFBV</a></td>
 <td rowspan="4">5</td>
 <td rowspan="4">1224</td>
 <td rowspan="4">6120</td>
@@ -599,7 +599,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_UFIDL.html">QF_UFIDL</a></td>
+<td rowspan="4"><a href="QF_UFIDL.html">QF_UFIDL</a></td>
 <td rowspan="4">6</td>
 <td rowspan="4">428</td>
 <td rowspan="4">2568</td>
@@ -614,7 +614,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_UFLIA.html">QF_UFLIA</a></td>
+<td rowspan="4"><a href="QF_UFLIA.html">QF_UFLIA</a></td>
 <td rowspan="4">6</td>
 <td rowspan="4">583</td>
 <td rowspan="4">3498</td>
@@ -629,7 +629,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_UFLRA.html">QF_UFLRA</a></td>
+<td rowspan="4"><a href="QF_UFLRA.html">QF_UFLRA</a></td>
 <td rowspan="4">6</td>
 <td rowspan="4">1284</td>
 <td rowspan="4">7704</td>
@@ -644,7 +644,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_UFNIA.html">QF_UFNIA</a></td>
+<td rowspan="4"><a href="QF_UFNIA.html">QF_UFNIA</a></td>
 <td rowspan="4">3</td>
 <td rowspan="4">7</td>
 <td rowspan="4">21</td>
@@ -659,7 +659,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-QF_UFNRA.html">QF_UFNRA</a></td>
+<td rowspan="4"><a href="QF_UFNRA.html">QF_UFNRA</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">36</td>
 <td rowspan="4">144</td>
@@ -674,7 +674,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UF.html">UF</a></td>
+<td rowspan="4"><a href="UF.html">UF</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">7562</td>
 <td rowspan="4">30248</td>
@@ -689,7 +689,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UFBV.html">UFBV</a></td>
+<td rowspan="4"><a href="UFBV.html">UFBV</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">200</td>
 <td rowspan="4">400</td>
@@ -706,7 +706,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UFDT.html">UFDT</a></td>
+<td rowspan="4"><a href="UFDT.html">UFDT</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">4527</td>
 <td rowspan="4">9054</td>
@@ -721,7 +721,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UFDTLIA.html">UFDTLIA</a></td>
+<td rowspan="4"><a href="UFDTLIA.html">UFDTLIA</a></td>
 <td rowspan="4">2</td>
 <td rowspan="4">303</td>
 <td rowspan="4">606</td>
@@ -736,7 +736,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UFIDL.html">UFIDL</a></td>
+<td rowspan="4"><a href="UFIDL.html">UFIDL</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">68</td>
 <td rowspan="4">272</td>
@@ -753,7 +753,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UFLIA.html">UFLIA</a></td>
+<td rowspan="4"><a href="UFLIA.html">UFLIA</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">10137</td>
 <td rowspan="4">40548</td>
@@ -768,7 +768,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UFLRA.html">UFLRA</a></td>
+<td rowspan="4"><a href="UFLRA.html">UFLRA</a></td>
 <td rowspan="4">4</td>
 <td rowspan="4">15</td>
 <td rowspan="4">60</td>
@@ -785,7 +785,7 @@ Competition results as of Fri Jul 13 00:02:11 GMT
 <tr>
 </tr>
 <tr>
-<td rowspan="4"><a href="results-UFNIA.html">UFNIA</a></td>
+<td rowspan="4"><a href="UFNIA.html">UFNIA</a></td>
 <td rowspan="4">3</td>
 <td rowspan="4">3308</td>
 <td rowspan="4">9924</td>
