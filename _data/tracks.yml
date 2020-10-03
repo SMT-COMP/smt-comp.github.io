@@ -54,3 +54,14 @@
   - raw_name: track_unsat_core
     pretty_name: Unsat Core Track
     status: competitive
+- year: 2016
+  tracks:
+  - raw_name: track_main
+    pretty_name: Main Track
+    status: competitive
+  - raw_name: track_application
+    pretty_name: Application Track
+    status: competitive
+  - raw_name: track_unsat_core
+    pretty_name: Unsat Core Track
+    status: competitive

@@ -28,17 +28,14 @@ tools:
     - name: track_main
       starexec: SMT-COMP 2018
       starexecid: 376
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2018/SMT-COMP-2018-Main-Track-Postprocessor.tgz
     - name: track_application
       starexec: SMT-COMP 2018 Application Track
       starexecid: 377
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/incremental-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2018/SMT-COMP-2018-Application-Track-Postprocessor.tgz
     - name: track_unsat_core
       starexec: SMT-COMP 2018 Unsat-Core Track
       starexecid: 389
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/unsat-core-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2018/SMT-COMP-2018-Unsat-Core-Track-Postprocessor.tgz
 
 - name: Trace executor

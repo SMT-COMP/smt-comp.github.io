@@ -1,0 +1,624 @@
+<h2>Benchmarks</h2>
+
+SMT-COMP 2016 will use a subset of the benchmarks available within the
+2016-05-23 release of <a href="http://smtlib.cs.uiowa.edu/">SMT-LIB</a>,
+as described in the competition rules.  Specifically, benchmarks with
+unknown status, bit-vector benchmarks that contain partial operations
+(i.e., <tt>bvudiv</tt>, <tt>bvurem</tt>, <tt>bvsdiv</tt>, <tt>bvsrem</tt>
+or <tt>bvsmod</tt>), and floating-point benchmarks that contain
+underspecified operations
+(i.e., <tt>fp.min</tt>, <tt>fp.max</tt>, <tt>fp.to_ubv</tt>,
+<tt>fp.to_sbv</tt> or <tt>fp.to_real</tt>) will not be used.
+
+The SMT-LIB benchmarks are available in space
+<a href="https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=161238"><tt>root/SMT/SMT-LIB
+benchmarks/2016-05-23</tt></a> on StarExec.
+
+<h2>Main Track</h2>
+
+<table class="benchmarks">
+  <tr>
+    <th>Logic</th>
+    <th>Benchmarks eligible for SMT-COMP</th>
+    <th>Benchmarks with unknown status</th>
+    <th>Benchmarks in SMT-LIB</th>
+  </tr>
+  <tr>
+    <td>ALIA</td>
+    <td>42</td>
+    <td>0</td>
+    <td>42</td>
+  </tr>
+  <tr>
+    <td>AUFLIA</td>
+    <td>4</td>
+    <td>0</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>AUFLIRA</td>
+    <td>19849</td>
+    <td>165</td>
+    <td>20014</td>
+  </tr>
+  <tr>
+    <td>AUFNIRA</td>
+    <td>1050</td>
+    <td>445</td>
+    <td>1495</td>
+  </tr>
+  <tr>
+    <td>BV</td>
+    <td>85</td>
+    <td>106</td>
+    <td>191</td>
+  </tr>
+  <tr>
+    <td>LIA</td>
+    <td>201</td>
+    <td>189</td>
+    <td>390</td>
+  </tr>
+  <tr>
+    <td>LRA</td>
+    <td>339</td>
+    <td>282</td>
+    <td>621</td>
+  </tr>
+  <tr>
+    <td>NIA</td>
+    <td>9</td>
+    <td>5</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>NRA</td>
+    <td>3788</td>
+    <td>25</td>
+    <td>3813</td>
+  </tr>
+  <tr>
+    <td>QF_ABV</td>
+    <td>14720 (197 excluded<sup><a href="#fn1">1</a></sup>)</td>
+    <td>174</td>
+    <td>15091</td>
+  </tr>
+  <tr>
+    <td>QF_ALIA</td>
+    <td>139</td>
+    <td>0</td>
+    <td>139</td>
+  </tr>
+  <tr>
+    <td>QF_ANIA</td>
+    <td>8</td>
+    <td>0</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>QF_AUFBV</td>
+    <td>37</td>
+    <td>0</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>QF_AUFLIA</td>
+    <td>1009</td>
+    <td>0</td>
+    <td>1009</td>
+  </tr>
+  <tr>
+    <td>QF_AUFNIA</td>
+    <td>21</td>
+    <td>0</td>
+    <td>21</td>
+  </tr>
+  <tr>
+    <td>QF_AX</td>
+    <td>551</td>
+    <td>0</td>
+    <td>551</td>
+  </tr>
+  <tr>
+    <td>QF_BV</td>
+    <td>26414 (6062 excluded<sup><a href="#fn1">1</a></sup>)</td>
+    <td>17504</td>
+    <td>49980</td>
+  </tr>
+  <tr>
+    <td>QF_BVFP</td>
+    <td>7 (1 excluded<sup><a href="#fn1">1</a></sup>)</td>
+    <td>0</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>QF_FP</td>
+    <td>34413 (5706 excluded<sup><a href="#fn1">1</a></sup>)</td>
+    <td>215</td>
+    <td>40334</td>
+  </tr>
+  <tr>
+    <td>QF_IDL</td>
+    <td>2094</td>
+    <td>104</td>
+    <td>2198</td>
+  </tr>
+  <tr>
+    <td>QF_LIA</td>
+    <td>5839</td>
+    <td>302</td>
+    <td>6141</td>
+  </tr>
+  <tr>
+    <td>QF_LIRA</td>
+    <td>6</td>
+    <td>1</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>QF_LRA</td>
+    <td>1626</td>
+    <td>56</td>
+    <td>1682</td>
+  </tr>
+  <tr>
+    <td>QF_NIA</td>
+    <td>8593</td>
+    <td>927</td>
+    <td>9520</td>
+  </tr>
+  <tr>
+    <td>QF_NIRA</td>
+    <td>2</td>
+    <td>1</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>QF_NRA</td>
+    <td>10245</td>
+    <td>1356</td>
+    <td>11601</td>
+  </tr>
+  <tr>
+    <td>QF_RDL</td>
+    <td>220</td>
+    <td>35</td>
+    <td>255</td>
+  </tr>
+  <tr>
+    <td>QF_UF</td>
+    <td>6649</td>
+    <td>1</td>
+    <td>6650</td>
+  </tr>
+  <tr>
+    <td>QF_UFBV</td>
+    <td>31</td>
+    <td>0</td>
+    <td>31</td>
+  </tr>
+  <tr>
+    <td>QF_UFIDL</td>
+    <td>441</td>
+    <td>0</td>
+    <td>441</td>
+  </tr>
+  <tr>
+    <td>QF_UFLIA</td>
+    <td>598</td>
+    <td>0</td>
+    <td>598</td>
+  </tr>
+  <tr>
+    <td>QF_UFLRA</td>
+    <td>1627</td>
+    <td>3</td>
+    <td>1630</td>
+  </tr>
+  <tr>
+    <td>QF_UFNIA</td>
+    <td>7</td>
+    <td>0</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>QF_UFNRA</td>
+    <td>34</td>
+    <td>9</td>
+    <td>43</td>
+  </tr>
+  <tr>
+    <td>UF</td>
+    <td>2839</td>
+    <td>2909</td>
+    <td>5748</td>
+  </tr>
+  <tr>
+    <td>UFBV</td>
+    <td>71</td>
+    <td>129</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td>UFIDL</td>
+    <td>68</td>
+    <td>12</td>
+    <td>80</td>
+  </tr>
+  <tr>
+    <td>UFLIA</td>
+    <td>8404</td>
+    <td>3736</td>
+    <td>12140</td>
+  </tr>
+  <tr>
+    <td>UFLRA</td>
+    <td>25</td>
+    <td>0</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>UFNIA</td>
+    <td>2319</td>
+    <td>1033</td>
+    <td>3352</td>
+  </tr>
+  <tr>
+    <td><b>Total</b></td>
+    <td><b>154424 (11966 excluded<sup><a href="#fn1">1</a></sup>)</b></td>
+    <td><b>29724</b></td>
+    <td><b>196114</b></td>
+  </tr>
+</table>
+
+<p>
+  <span id="fn1">
+    1. Excluded because they contain partial or underspecified
+    operations (e.g., bit-vector division, <tt>fp.min</tt>).
+  </span>
+</p>
+
+<h2>Application Track</h2>
+
+<table class="benchmarks">
+  <tr>
+    <th>Logic</th>
+    <th>Benchmarks eligible for SMT-COMP</th>
+    <th>Benchmarks with unknown status<sup><a href="#fn2">2</a></sup></th>
+    <th>Benchmarks in SMT-LIB</th>
+  </tr>
+  <tr>
+    <td>ALIA</td>
+    <td>24</td>
+    <td>0</td>
+    <td>24</td>
+  </tr>
+  <tr>
+    <td>ANIA</td>
+    <td>3</td>
+    <td>0</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>AUFNIRA<sup><a href="#fn3">3</a></sup></td>
+    <td>0</td>
+    <td>165</td>
+    <td>165</td>
+  </tr>
+  <tr>
+    <td>LIA</td>
+    <td>6</td>
+    <td>0</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>QF_ALIA</td>
+    <td>44</td>
+    <td>0</td>
+    <td>44</td>
+  </tr>
+  <tr>
+    <td>QF_ANIA</td>
+    <td>5</td>
+    <td>0</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>QF_AUFLIA</td>
+    <td>72</td>
+    <td>0</td>
+    <td>72</td>
+  </tr>
+  <tr>
+    <td>QF_BV</td>
+    <td>18</td>
+    <td>0</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>QF_LIA</td>
+    <td>69 (1 excluded<sup><a href="#fn4">4</a></sup>)</td>
+    <td>0</td>
+    <td>70</td>
+  </tr>
+  <tr>
+    <td>QF_LRA</td>
+    <td>10</td>
+    <td>0</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>QF_NIA</td>
+    <td>10</td>
+    <td>0</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>QF_UFLIA</td>
+    <td>905</td>
+    <td>0</td>
+    <td>905</td>
+  </tr>
+  <tr>
+    <td>QF_UFLRA</td>
+    <td>3331</td>
+    <td>2</td>
+    <td>3333</td>
+  </tr>
+  <tr>
+    <td>QF_UFNIA</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>UFLRA</td>
+    <td>5358</td>
+    <td>0</td>
+    <td>5358</td>
+  </tr>
+  <tr>
+    <td><b>Total</b></td>
+    <td><b>9856 (1 excluded<sup><a href="#fn4">4</a></sup>)</b></td>
+    <td><b>167</b></td>
+    <td><b>10024</b></td>
+  </tr>
+</table>
+
+<p>
+  <span id="fn2">
+    2. For the application track, a benchmark is ineligible if its
+    <u>first</u> <tt>check-sat</tt> command has unknown status.
+    Otherwise, (some non-empty prefix of) the benchmark is eligible.
+  </span><br/>
+  <span id="fn3">
+    3. As there are no eligible benchmarks in SMT-LIB, AUFNIRA is not
+    actually an application track division in SMT-COMP 2016.
+  </span><br/>
+  <span id="fn4">
+    4. Benchmark <tt>incremental/QF_LIA/UltimateBuchiAutomizer/AliasDarteFeautrierGonnord-SAS2010-loops_true-termination.c.smt2</tt>
+    was excluded because it contained incorrect <tt>:status</tt>
+    information.
+  </span>
+</p>
+
+<h2>Unsat-Core Track</h2>
+
+<p>
+All <u>unsatisfiable</u> main track benchmarks are eligible for the
+unsat-core track (with minor modifications, e.g., named assertions).
+The unsat-core track is experimental in 2016.
+</p>
+
+<table class="benchmarks">
+  <tr>
+    <th>Logic</th>
+    <th>Benchmarks eligible for the unsat-core track</th>
+    <th>All main track benchmarks</th>
+  </tr>
+  <tr>
+    <td>ALIA</td>
+    <td>41</td>
+    <td>42</td>
+  </tr>
+  <tr>
+    <td>AUFLIA</td>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>AUFLIRA</td>
+    <td>19749</td>
+    <td>19849</td>
+  </tr>
+  <tr>
+    <td>AUFNIRA</td>
+    <td>1046</td>
+    <td>1050</td>
+  </tr>
+  <tr>
+    <td>BV</td>
+    <td>56</td>
+    <td>85</td>
+  </tr>
+  <tr>
+    <td>LIA</td>
+    <td>191</td>
+    <td>201</td>
+  </tr>
+  <tr>
+    <td>LRA</td>
+    <td>319</td>
+    <td>339</td>
+  </tr>
+  <tr>
+    <td>NIA</td>
+    <td>3</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>NRA</td>
+    <td>3788</td>
+    <td>3788</td>
+  </tr>
+  <tr>
+    <td>QF_ABV</td>
+    <td>4644</td>
+    <td>14720</td>
+  </tr>
+  <tr>
+    <td>QF_ALIA</td>
+    <td>80</td>
+    <td>139</td>
+  </tr>
+  <tr>
+    <td>QF_ANIA</td>
+    <td>8</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>QF_AUFBV</td>
+    <td>31</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>QF_AUFLIA</td>
+    <td>516</td>
+    <td>1009</td>
+  </tr>
+  <tr>
+    <td>QF_AUFNIA</td>
+    <td>15</td>
+    <td>21</td>
+  </tr>
+  <tr>
+    <td>QF_AX</td>
+    <td>279</td>
+    <td>551</td>
+  </tr>
+  <tr>
+    <td>QF_BV</td>
+    <td>17172</td>
+    <td>26414</td>
+  </tr>
+  <tr>
+    <td>QF_BVFP</td>
+    <td>6</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>QF_FP</td>
+    <td>17213</td>
+    <td>34413</td>
+  </tr>
+  <tr>
+    <td>QF_IDL</td>
+    <td>816</td>
+    <td>2094</td>
+  </tr>
+  <tr>
+    <td>QF_LIA</td>
+    <td>2840</td>
+    <td>5839</td>
+  </tr>
+  <tr>
+    <td>QF_LIRA</td>
+    <td>5</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>QF_LRA</td>
+    <td>633</td>
+    <td>1626</td>
+  </tr>
+  <tr>
+    <td>QF_NIA</td>
+    <td>316</td>
+    <td>8593</td>
+  </tr>
+  <tr>
+    <td>QF_NIRA</td>
+    <td>2</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>QF_NRA</td>
+    <td>4948</td>
+    <td>10245</td>
+  </tr>
+  <tr>
+    <td>QF_RDL</td>
+    <td>113</td>
+    <td>220</td>
+  </tr>
+  <tr>
+    <td>QF_UF</td>
+    <td>4100</td>
+    <td>6649</td>
+  </tr>
+  <tr>
+    <td>QF_UFBV</td>
+    <td>31</td>
+    <td>31</td>
+  </tr>
+  <tr>
+    <td>QF_UFIDL</td>
+    <td>335</td>
+    <td>441</td>
+  </tr>
+  <tr>
+    <td>QF_UFLIA</td>
+    <td>195</td>
+    <td>598</td>
+  </tr>
+  <tr>
+    <td>QF_UFLRA</td>
+    <td>853</td>
+    <td>1627</td>
+  </tr>
+  <tr>
+    <td>QF_UFNIA</td>
+    <td>7</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>QF_UFNRA</td>
+    <td>18</td>
+    <td>34</td>
+  </tr>
+  <tr>
+    <td>UF</td>
+    <td>2039</td>
+    <td>2839</td>
+  </tr>
+  <tr>
+    <td>UFBV</td>
+    <td>53</td>
+    <td>71</td>
+  </tr>
+  <tr>
+    <td>UFIDL</td>
+    <td>62</td>
+    <td>68</td>
+  </tr>
+  <tr>
+    <td>UFLIA</td>
+    <td>8377</td>
+    <td>8404</td>
+  </tr>
+  <tr>
+    <td>UFLRA</td>
+    <td>20</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>UFNIA</td>
+    <td>2318</td>
+    <td>2319</td>
+  </tr>
+  <tr>
+    <td><b>Total</b></td>
+    <td><b>93241</b></td>
+    <td><b>154424</b></td>
+  </tr>
+</table>

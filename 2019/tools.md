@@ -40,32 +40,26 @@ tools:
     - name: track_single_query
       starexec: SMT-COMP 2019 Non-Incremental
       starexecid: 555
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2019/SMT-COMP-2019-non-incremental-post-processor.tar.xz
     - name: track_incremental
       starexec: SMT-COMP 2019 Incremental
       starexecid: 556
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/incremental-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2019/SMT-COMP-2019-incremental-post-processor.tar.xz
     - name: track_single_query_challenge
       starexec: SMT-COMP 2019 Non-Incremental
       starexecid: 555
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2019/SMT-COMP-2019-non-incremental-post-processor.tar.xz
     - name: track_incremental_challenge
       starexec: SMT-COMP 2019 Incremental
       starexecid: 556
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/incremental-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2019/SMT-COMP-2019-incremental-post-processor.tar.xz
     - name: track_unsat_core
       starexec: SMT-COMP 2019 Unsat-Core
       starexecid: 594
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/unsat-core-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2019/SMT-COMP-2019-unsat-core-post-processor.tar.xz
     - name: track_model_validation
       starexec: SMT-COMP 2019 Model-Validation
       starexecid: 587
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/model-validation-track
       release: https://github.com/SMT-COMP/postprocessors/releases/download/smtcomp2019/SMT-COMP-2019-model-validation-post-processor.tar.xz
 
 - name: Trace executor

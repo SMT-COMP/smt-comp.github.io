@@ -1,0 +1,99 @@
+======================================================================
+
+    11th International Satisfiability Modulo Theories Competition
+                            (SMT-COMP'16)
+
+                            July 2, 2016
+                          Coimbra, Portugal
+
+                          CALL FOR COMMENTS
+                         CALL FOR BENCHMARKS
+                     PRELIMINARY CALL FOR SOLVERS
+
+======================================================================
+
+SMT-COMP is the annual competition among Satisfiability Modulo Theories
+(SMT) solvers. The goals of SMT-COMP are to spur solver advances,
+collect benchmarks, and encourage adoption of the SMT-LIB standard,
+through friendly competition.
+
+SMT-COMP'16 will end in time to be described and the results announced
+at the SMT Workshop (July 1-2), which is affiliated with the
+International Joint Conference on Automated Reasoning (IJCAR 2016).
+
+SMT-COMP'16 is organized under the direction of the SMT Steering
+committee. The organizing team for SMT-COMP'16 is
+
+    . Sylvain Conchon - Paris-Sud University, France
+    . David Deharbe   - Clearsy, France & Federal University of Rio
+                        Grande do Norte, Brazil
+    . Tjark Weber     - Uppsala University, Sweden
+
+This is a call for three things:
+
+CALL FOR COMMENTS: 
+
+The organizing team is preparing the schedule and rules for 2016.
+Any comments you may have to improve the competition over past years
+or to redirect its focus are welcome and will be considered by the
+team. We particularly appreciate comments received until
+
+    *** February 29, 2016. ***
+
+For SMT-COMP'16, we are especially interested in comments regarding:
+
+- Sequential vs. parallel performance: As in 2015, we plan to measure
+  both CPU time and wall time. Solver developers are encouraged to
+  prepare both sequential and parallel versions of their solvers.
+
+- Benchmark selection: We will likely have sufficient computational
+  resources to run all solvers on all eligible benchmarks. Therefore,
+  we are interested in proposals for weighing the results so as to
+  avoid over-representation of certain (large) benchmark families.
+
+- Scope: We are considering to broaden the scope of SMT-COMP again. We
+  might reinstate additional tracks, e.g., for unsat core extraction
+  and proof-producing solvers. We are also considering a track that
+  emphasizes fast answers, and would appreciate related scoring
+  suggestions.
+
+CALL FOR BENCHMARKS:
+
+The competition is enhanced by new sets of benchmarks to add to those
+already in use (and used in past competitions). A selection of
+benchmarks in various categories is used for the competition (according
+to rules that are currently being revised).
+
+If you have benchmarks that you think would be useful to SMT-LIB and
+SMT-COMP (and may be made public), please let us know as soon as
+possible, even if the material is not quite ready. We will work in
+close cooperation with the SMT-LIB maintainers to include such
+benchmarks in the SMT-LIB in time to be taken into account for the
+competition. The deadline for benchmarks to be used in the 2016
+competition will be announced when the schedule and rules are
+finalized.
+
+PRELIMINARY CALL FOR SOLVERS:
+
+A submission deadline for solvers will be announced along with the
+rules. However, it is useful to the organizing team to know in advance
+which and how many solvers may be entering. Thus we request that you
+let us know at your earliest convenience if you think you may be
+submitting one or more solvers to SMT-COMP'16, particularly if you
+think there may be unusual circumstances.
+
+COMMUNICATION:
+
+The competition web-site will be at www.smtcomp.org.
+
+Public email regarding the competition may be sent to
+smt-comp@cs.nyu.edu.
+
+Announcements will be sent on both smt-comp@cs.nyu.edu and
+smt-lib@cs.nyu.edu.
+
+Non-confidential email to the organizers may be sent to
+smtcomp-discussion@lists.sourceforge.net.
+
+Sincerely,
+The organizing team

@@ -33,22 +33,18 @@ tools:
     - name: track_single_query
       starexec: SMT-COMP 2020 Non-Incremental
       starexecid: 616
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/single-problem-challenge-track
       release:
     - name: track_incremental
       starexec: SMT-COMP 2020 Incremental
       starexecid: 615
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/incremental-track
       release:
     - name: track_unsat_core
       starexec: SMT-COMP 2020 Unsat-Core
       starexecid: 613
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/unsat-core-track
       release:
     - name: track_model_validation
       starexec: SMT-COMP 2020 Model-Validation
       starexecid: 614
-      repo: https://github.com/SMT-COMP/postprocessors/tree/master/model-validation-track
       release:
 
 - name: Trace executor
