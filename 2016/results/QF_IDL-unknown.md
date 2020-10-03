@@ -17,7 +17,7 @@ Competition results for the QF_IDL division as of Thu Jul 7 07:28:02 GMT
 
 
 #### Sequential Performance
-<table id="sequential" class="result sorted">
+<table id="unknown" class="result sorted">
 <thead>
 <tr>
 <th class="center">Solver</th>
