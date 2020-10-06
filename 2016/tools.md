@@ -11,7 +11,7 @@ tools:
     - name: track_main
       starexec: SMT-COMP 2016 Scrambler
       starexecid: 349
-      release: https://github.com/SMT-COMP/scrambler/releases/download/smtcomp2016/SMT-COMP-2016-Application-Scrambler.tar.xz
+      release: https://github.com/SMT-COMP/scrambler/releases/download/smtcomp2016/SMT-COMP-2016-Main-Scrambler.tar.xz
     - name: track_application
       starexec: SMT-COMP 2016 Application Scrambler
       starexecid: 285

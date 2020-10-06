@@ -16,7 +16,7 @@ benchmarks/2016-05-23</tt></a> on StarExec.
 
 <h2>Main Track</h2>
 
-<table class="benchmarks">
+<table>
   <tr>
     <th>Logic</th>
     <th>Benchmarks eligible for SMT-COMP</th>
@@ -410,7 +410,7 @@ unsat-core track (with minor modifications, e.g., named assertions).
 The unsat-core track is experimental in 2016.
 </p>
 
-<table class="benchmarks">
+<table>
   <tr>
     <th>Logic</th>
     <th>Benchmarks eligible for the unsat-core track</th>
