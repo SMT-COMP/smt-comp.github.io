@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-07-04 11:50:14
+resultdate: 2020-10-05 13:57:10
 
 year: 2020
 
@@ -10,8 +10,8 @@ participants: participants_2020
 track: track_model_validation
 recognition: biggest_lead
 
-winner_seq: Yices2 Model Validation
-winner_par: Yices2 Model Validation
+winner_seq: "-"
+winner_par: "-"
 sequential:
 - name: Yices2 Model Validation
   second: CVC4-mv

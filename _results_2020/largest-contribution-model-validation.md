@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-07-04 11:50:16
+resultdate: 2020-10-05 13:57:13
 
 year: 2020
 
@@ -10,9 +10,9 @@ participants: participants_2020
 track: track_model_validation
 recognition: largest_contribution
 
-winner_seq: CVC4-mv
+winner_seq: "-"
 
-winner_par: CVC4-mv
+winner_par: "-"
 
 sequential:
 - name: CVC4-mv
