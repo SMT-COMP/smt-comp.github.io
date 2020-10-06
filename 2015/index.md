@@ -22,10 +22,7 @@ to present the competitors and results of the competition.
 ### Organizers
 - <a href="https://www.lri.fr/~conchon/">Sylvain Conchon</a> - Paris-Sud University, France
 - <a href="https://www.sites.google.com/site/deharbe/">David D&eacute;harbe</a> - Federal University of Rio Grande do Norte, Brazil
-- <a href="http://user.it.uu.se/~tjawe125/">Tjark Weber</a> - Uppsala University, Sweden (chair) </li>
-
-SMT-COMP 2015 is organized under the direction of the SMT Steering
-Committee.  The organizing team is
+- <a href="http://user.it.uu.se/~tjawe125/">Tjark Weber</a> - Uppsala University, Sweden (chair)
 
 The competition uses the
 <a href="https://www.starexec.org">StarExec</a> service, which is
