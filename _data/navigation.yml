@@ -96,3 +96,22 @@
     link: 2016/results.html
   - name: Slides
     link: 2016/SMT-COMP-2016-slides.pdf
+
+- name: 2015
+  link: 2015/index.html
+  url: 2015
+  sublinks:
+  - name: Rules
+    link: 2015/rules15.pdf
+  - name: Benchmarks
+    link: 2015/benchmarks.html
+  - name: Tools
+    link: 2015/tools.html
+  - name: Specs
+    link: 2015/specs.html
+  - name: Participants
+    link: 2015/participants.html
+  - name: Results
+    link: 2015/results.html
+  - name: Slides
+    link: 2015/SMT-COMP-2015-slides.pdf
