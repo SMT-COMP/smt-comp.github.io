@@ -11,7 +11,7 @@ to present the competitors and results of the competition.
 - 8 Feb&nbsp;2015 <a href="call-for-comments.txt">Call for Comments</a> issued
 - 11 May&nbsp;11 Revised rules posted
 - 15 June&nbsp;2015 Competition jobs started
-- 19 July&nbsp;2015 Results <a href="SMT-COMP-2015.pdf">presented</a>
+- 19 July&nbsp;2015 Results <a href="SMT-COMP-2015-slides.pdf">presented</a>
 
 ### Key dates
 - **May&nbsp;1** Deadline for new benchmark contributions
