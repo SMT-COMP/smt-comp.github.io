@@ -10,7 +10,24 @@ located in year/system-description/.
 {%- if page.sysDescrUrl contains "://" -%}
     {%- assign sysDescrUrl = page.sysDescrUrl -%}
 {%- else -%}
-    {%- assign sysDescrUrl = "../system-descriptions/" | append: page.sysDescrUrl -%}
+
+    {%- comment -%}
+    This is a trick from
+    https://maedi.com/code/jekyll-check-if-string-number/ to figure out
+    if string represents a number.
+    {%- endcomment -%}
+
+    {%- assign toolYear = page.name | slice: 0, 4 -%}
+    {%- assign addition = toolYear | plus: 0 %}
+    {% capture addition %}{{addition}}{% endcapture %}
+    {% if toolYear != addition %}
+        {% assign toolYear = page.year %}
+    {%- endif -%}
+
+    {%- assign sysDescrUrl = "../../"
+        |append: toolYear
+        |append: "/system-descriptions/"
+        |append: page.sysDescrUrl -%}
 {%- endif -%}
 
 <h2>{{ page.name }} </h2>
