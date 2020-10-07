@@ -13,7 +13,7 @@ competing: "no"
 seed: ""
 solverHomePage: "https://vprover.github.io"
 sysDescrUrl: "vampire.pdf"
-sysDescrName: "Vampire"
+sysDescrName: "Vampire 4.4-SMT System Description"
 divisions:
 - name: UFDTNIA
   tracks:

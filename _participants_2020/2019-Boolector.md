@@ -13,7 +13,7 @@ competing: "no"
 seed: ""
 solverHomePage: "https://boolector.github.io"
 sysDescrUrl: "boolector.pdf"
-sysDescrName: "Boolector"
+sysDescrName: "Boolector at the SMT Competition 2019"
 divisions:
 - name: QF_ABV
   tracks:

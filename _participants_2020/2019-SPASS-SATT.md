@@ -13,7 +13,7 @@ competing: "no"
 seed: ""
 solverHomePage: "https://www.spass-prover.org/"
 sysDescrUrl: "SPASS-SATT.pdf"
-sysDescrName: "SPASS-SATT"
+sysDescrName: "SPASS-SATT v1.1"
 divisions:
 - name: QF_LRA
   tracks:
