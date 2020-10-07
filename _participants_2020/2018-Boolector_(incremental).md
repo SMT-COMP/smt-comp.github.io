@@ -12,8 +12,8 @@ derivedTool: ""
 competing: "no"
 seed: ""
 solverHomePage: ""
-sysDescrUrl: ""
-sysDescrName: ""
+sysDescrUrl: "Boolector.pdf"
+sysDescrName: "Boolector at the SMT Competition 2018"
 divisions:
 - name: QF_ABV
   tracks:

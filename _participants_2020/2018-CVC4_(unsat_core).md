@@ -12,8 +12,8 @@ derivedTool: ""
 competing: "no"
 seed: ""
 solverHomePage: ""
-sysDescrUrl: ""
-sysDescrName: ""
+sysDescrUrl: "CVC4.pdf"
+sysDescrName: "CVC4 at the SMT Competition 2018"
 divisions:
 - name: AUFLIA
   tracks:
