@@ -61,6 +61,9 @@ The following solvers have been submitted to SMT-COMP {{ page.year }} or were
 entered as non-competing solvers by the organizers for comparison.
 <br/><br/>
 
+{%- assign competing_solvers = participants |where: "competing", "yes" -%}
+{%- assign non_competing_solvers = participants |where: "competing", "no" -%}
+{%- assign all_solvers = competing_solvers |concat: non_competing_solvers -%}
 <table>
 <tr>
 <th>Solver</th>
@@ -72,7 +75,7 @@ entered as non-competing solvers by the organizers for comparison.
 <th>Seed</th>
 <th>System Description</th>
 </tr>
-{%- for solver in participants -%}
+{%- for solver in all_solvers -%}
 <tr{% if solver.competing == "no" %} class="non-competing"{% endif %}>
 <td><a href="{{ solver.url }}">{{ solver.name }}</a>{%- if solver.competing == "no" -%}<sup><a href="#nc">n</a></sup>{%- endif -%}
 </td>
@@ -211,7 +214,7 @@ These are the logic divisions in which each solver is participating.
 </th>
   {%- endfor -%}
 </tr>
-  {%- for solver in participants -%}
+  {%- for solver in all_solvers -%}
     {%- assign in_logic = solver.divisions |where: "name", division.name |first -%}
     {% unless in_logic %}{% continue %}{% endunless %}
 <tr{% if solver.competing == "no" %} class="non-competing"{% endif %}>
