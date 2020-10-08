@@ -18,13 +18,14 @@ layout: default
 
 <a href="{{ tool.repo }}"><b>GitHub Repository</b></a><br/>
 {%- if tool.sources -%}
-  <a href="{{ tool.sources }}"><b>Sources</b></a>
+<a href="{{ tool.sources }}"><b>Sources</b></a><br/>
   {%- if tool.release -%}
-    <br/>
-    <a href="{{ tool.release }}"><b>Binary</b></a>
+    <a href="{{ tool.release }}"><b>Binary</b></a><br/>
   {%- endif -%}
 {%- endif -%}
-
+{%- if tool.tag -%}
+<a href="{{ tool.tag }}"><b>Tag</b></a><br/>
+{%- endif -%}
 
   {% if tool.tracks %}
 <h4>SMT-COMP {{ page.year }} Releases</h4>
