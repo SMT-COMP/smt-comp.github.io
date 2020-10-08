@@ -30,9 +30,8 @@ Committee.
 The competition is run on [StarExec](https://www.starexec.org),
 a service that is hosted at the University of Iowa.
 
-<!-- ### Acknowledgment -->
-<!-- - [Mathias Preiner](https://cs.stanford.edu/people/preiner) (benchmark selection and scoring scripts) -->
-<!-- - [Aaron Stump](http://homepage.divms.uiowa.edu/~astump/) (StarExec) -->
-<!-- - [Andres N&ouml;tzli](https://cs.stanford.edu/people/noetzli/) (trace executor extension) -->
-<!-- - Marco Gario and Andrea Micheli ([pySMT](https://github.com/pysmt/pysmt)) -->
-<!-- - [Martin Riener](https://www.logic.at/staff/riener/) (logistics for certificates and trophies) -->
+### Acknowledgment
+- [Aina Niemetz](https://cs.stanford.edu/people/niemetz) (Insights and support)
+- [Andres N&ouml;tzli](https://cs.stanford.edu/people/noetzli/) (String benchmarks)
+- [Mathias Preiner](https://cs.stanford.edu/people/preiner) (StarExec benchmark uploading, insights and support)
+- [Aaron Stump](http://homepage.divms.uiowa.edu/~astump/) (StarExec)
