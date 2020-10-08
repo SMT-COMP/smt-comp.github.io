@@ -55,5 +55,7 @@ tools:
 
 - name: Competition scripts
   repo: https://github.com/SMT-COMP/smt-comp
+  sources: https://github.com/SMT-COMP/smt-comp/archive/smtcomp2020.tar.gz
+  tag: https://github.com/SMT-COMP/smt-comp/releases/tag/smtcomp2020
 
 ---
