@@ -12,8 +12,8 @@ derivedTool: ""
 competing: "no"
 seed: ""
 solverHomePage: ""
-sysDescrUrl: ""
-sysDescrName: ""
+sysDescrUrl: "SMTRAT.pdf"
+sysDescrName: "SMT-RAT 2.2"
 divisions:
 - name: QF_NIRA
   tracks:

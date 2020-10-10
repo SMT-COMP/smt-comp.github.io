@@ -13,7 +13,7 @@ competing: "no"
 seed: ""
 solverHomePage: ""
 sysDescrUrl: "mathsat5.pdf"
-sysDescrName: "MathSAT5"
+sysDescrName: "MathSAT5 (Nonlinear) at the SMT Competition 2019"
 divisions:
 - name: QF_AUFNIA
   tracks:
