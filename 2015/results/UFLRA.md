@@ -60,7 +60,7 @@ Competition results for the UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">12000.16</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">20</td>
 <td class="right">12000.60</td>
@@ -100,7 +100,7 @@ Competition results for the UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.16</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">20</td>
 <td class="right">0.60</td>
@@ -144,7 +144,7 @@ Competition results for the UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">12000.26</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">20</td>
 <td class="right">12005.24</td>
@@ -191,7 +191,7 @@ Competition results for the UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.21</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">20</td>
 <td class="right">0.60</td>
@@ -229,7 +229,7 @@ Competition results for the UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">5</td>
 <td class="right">0</td>
 </tr>
@@ -240,3 +240,4 @@ Competition results for the UFLRA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

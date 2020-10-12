@@ -43,7 +43,7 @@ Competition results for the NIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.20</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">9</td>
 <td class="right">0.33</td>
@@ -77,7 +77,7 @@ Competition results for the NIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.20</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">9</td>
 <td class="right">0.33</td>
@@ -115,7 +115,7 @@ Competition results for the NIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.25</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">9</td>
 <td class="right">0.33</td>
@@ -154,7 +154,7 @@ Competition results for the NIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.25</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">9</td>
 <td class="right">0.33</td>
@@ -185,9 +185,10 @@ Competition results for the NIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

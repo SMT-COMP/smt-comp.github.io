@@ -60,7 +60,7 @@ Competition results for the AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2400.71</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">2</td>
 <td class="right">4800.07</td>
@@ -101,7 +101,7 @@ Competition results for the AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.03</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1</td>
 <td class="right">0.03</td>
@@ -145,7 +145,7 @@ Competition results for the AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2400.73</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">2</td>
 <td class="right">4801.99</td>
@@ -192,7 +192,7 @@ Competition results for the AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.03</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1</td>
 <td class="right">0.03</td>
@@ -231,7 +231,7 @@ Competition results for the AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">2</td>
 <td class="right">0</td>
 </tr>
@@ -242,3 +242,4 @@ Competition results for the AUFLIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

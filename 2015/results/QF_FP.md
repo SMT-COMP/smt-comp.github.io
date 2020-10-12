@@ -37,7 +37,7 @@ Competition results for the QF_FP division as of Fri Oct 30 12:49:29 GMT
 <td class="right">9812.71</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">28739</td>
 <td class="right">7562.76</td>
@@ -65,7 +65,7 @@ Competition results for the QF_FP division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.00</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 <td class="right">0.00</td>
@@ -96,7 +96,7 @@ Competition results for the QF_FP division as of Fri Oct 30 12:49:29 GMT
 <td class="right">9908.95</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">28739</td>
 <td class="right">7564.08</td>
@@ -128,7 +128,7 @@ Competition results for the QF_FP division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0.00</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 <td class="right">0.00</td>
@@ -153,9 +153,10 @@ Competition results for the QF_FP division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">5674</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

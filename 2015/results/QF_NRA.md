@@ -72,7 +72,7 @@ Competition results for the QF_NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">884237.95</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">10000</td>
 <td class="right">458920.89</td>
@@ -124,7 +124,7 @@ Competition results for the QF_NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">765719.51</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">9941</td>
 <td class="right">427115.80</td>
@@ -182,7 +182,7 @@ Competition results for the QF_NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">884251.07</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">10000</td>
 <td class="right">459072.40</td>
@@ -243,7 +243,7 @@ Competition results for the QF_NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">765732.33</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">9941</td>
 <td class="right">427256.36</td>
@@ -291,7 +291,7 @@ Competition results for the QF_NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">184</td>
 <td class="right">0</td>
 </tr>
@@ -302,3 +302,4 @@ Competition results for the QF_NRA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

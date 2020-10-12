@@ -23,7 +23,7 @@ Competition results as of Wed Jul 8 20:38:52 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[Z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">793993050421.53</td>
 </tr>
 <tr class="center">
@@ -38,7 +38,7 @@ Competition results as of Wed Jul 8 20:38:52 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">477393580823.14</td>
 </tr>
 <tr class="center">
@@ -91,7 +91,7 @@ Competition results as of Wed Jul 8 20:38:52 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[Z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">793993050421.53</td>
 </tr>
 <tr class="center">
@@ -106,7 +106,7 @@ Competition results as of Wed Jul 8 20:38:52 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">477393580823.14</td>
 </tr>
 <tr class="center">
@@ -153,3 +153,4 @@ Competition results as of Wed Jul 8 20:38:52 GMT
 </td>
 </tr>
 </table>
+<span id="fn"> n. Non-competitive.</span>

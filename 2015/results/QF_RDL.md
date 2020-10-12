@@ -66,7 +66,7 @@ Competition results for the QF_RDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">5164.95</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">214</td>
 <td class="right">22949.24</td>
@@ -112,7 +112,7 @@ Competition results for the QF_RDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1148.44</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">145</td>
 <td class="right">2332.36</td>
@@ -163,7 +163,7 @@ Competition results for the QF_RDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">5158.67</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">214</td>
 <td class="right">22955.60</td>
@@ -217,7 +217,7 @@ Competition results for the QF_RDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1143.56</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">145</td>
 <td class="right">2332.36</td>
@@ -260,7 +260,7 @@ Competition results for the QF_RDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">6</td>
 <td class="right">0</td>
 </tr>
@@ -271,3 +271,4 @@ Competition results for the QF_RDL division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

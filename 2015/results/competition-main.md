@@ -27,7 +27,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[Z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">159.36</td>
 </tr>
 <tr class="center">
@@ -47,7 +47,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">79.77</td>
 </tr>
 <tr class="center">
@@ -141,7 +141,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[Z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">159.36</td>
 </tr>
 <tr class="center">
@@ -161,7 +161,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">79.77</td>
 </tr>
 <tr class="center">
@@ -255,7 +255,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[Z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">139.34</td>
 </tr>
 <tr class="center">
@@ -280,7 +280,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">60.27</td>
 </tr>
 <tr class="center">
@@ -369,7 +369,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[Z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">139.34</td>
 </tr>
 <tr class="center">
@@ -394,7 +394,7 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </tr>
 <tr class="center">
 <td> -</td>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">60.27</td>
 </tr>
 <tr class="center">
@@ -476,3 +476,4 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </td>
 </tr>
 </table>
+<span id="fn"> n. Non-competitive.</span>

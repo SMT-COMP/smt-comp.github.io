@@ -1,27 +1,3 @@
----
-layout: default
----
-{%- include tablesorter.html -%}
-
-##  ALIA (Main Track)
-
-Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
-
-**Competition benchmarks = 42** 
-**<br/>Competition industrial benchmarks = 42** 
-
-### The winners for this division are: 
-<table>
-<tr>
-<th class="center">Sequential Performance</th>
-<th class="center">Sequential Performance (industrial)</th>
-<th class="center">Parallel Performance</th>
-<th class="center">Parallel Performance (industrial)</th>
-</tr>
-<tr class="center">
-<td>CVC4 (exp)</td>
-<td>CVC4 (exp)</td>
-<td>CVC4 (exp)</td>
 <td>CVC4 (exp)</td>
 </tr>
 </table>
@@ -59,7 +35,7 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">3.42</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">42</td>
 <td class="right">1.79</td>
@@ -100,7 +76,7 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">3.42</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">42</td>
 <td class="right">1.79</td>
@@ -145,7 +121,7 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">3.56</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">42</td>
 <td class="right">1.79</td>
@@ -192,7 +168,7 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">3.56</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">42</td>
 <td class="right">1.79</td>
@@ -231,7 +207,7 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
@@ -242,3 +218,4 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

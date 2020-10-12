@@ -43,7 +43,7 @@ Competition results for the QF_LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">18987.48</td>
 </tr>
 <tr>
-<td>[MathSat 5.3.6]</td>
+<td><span class="non-competing-grey">MathSat 5.3.6<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">795</td>
 <td class="right">1482.41</td>
@@ -64,7 +64,7 @@ Competition results for the QF_LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">9070.04</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">741</td>
 <td class="right">17521.60</td>
@@ -96,7 +96,7 @@ Competition results for the QF_LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">18987.48</td>
 </tr>
 <tr>
-<td>[MathSat 5.3.6]</td>
+<td><span class="non-competing-grey">MathSat 5.3.6<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">795</td>
 <td class="right">1482.41</td>
@@ -117,7 +117,7 @@ Competition results for the QF_LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">9070.04</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">741</td>
 <td class="right">17521.60</td>
@@ -125,3 +125,4 @@ Competition results for the QF_LRA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

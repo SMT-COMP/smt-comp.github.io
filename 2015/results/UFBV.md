@@ -43,7 +43,7 @@ Competition results for the UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">4796.48</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">71</td>
 <td class="right">363.81</td>
@@ -77,7 +77,7 @@ Competition results for the UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">4796.48</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">71</td>
 <td class="right">363.81</td>
@@ -114,7 +114,7 @@ Competition results for the UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">4796.79</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">71</td>
 <td class="right">363.81</td>
@@ -154,7 +154,7 @@ Competition results for the UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">4796.79</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">71</td>
 <td class="right">363.81</td>
@@ -185,9 +185,10 @@ Competition results for the UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

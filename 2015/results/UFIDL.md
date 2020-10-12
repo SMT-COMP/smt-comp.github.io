@@ -60,7 +60,7 @@ Competition results for the UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">768.54</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">66</td>
 <td class="right">4803.20</td>
@@ -100,7 +100,7 @@ Competition results for the UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">768.54</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">66</td>
 <td class="right">4803.20</td>
@@ -144,7 +144,7 @@ Competition results for the UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">768.86</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">66</td>
 <td class="right">4805.03</td>
@@ -191,7 +191,7 @@ Competition results for the UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">768.86</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">66</td>
 <td class="right">4805.03</td>
@@ -229,7 +229,7 @@ Competition results for the UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">2</td>
 <td class="right">0</td>
 </tr>
@@ -240,3 +240,4 @@ Competition results for the UFIDL division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

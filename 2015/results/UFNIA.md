@@ -43,7 +43,7 @@ Competition results for the UFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">693239.32</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">2114</td>
 <td class="right">356919.77</td>
@@ -77,7 +77,7 @@ Competition results for the UFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">693239.32</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">2114</td>
 <td class="right">356919.77</td>
@@ -115,7 +115,7 @@ Competition results for the UFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">696830.87</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">2114</td>
 <td class="right">357005.99</td>
@@ -155,7 +155,7 @@ Competition results for the UFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">696830.87</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">2114</td>
 <td class="right">357005.99</td>
@@ -186,9 +186,10 @@ Competition results for the UFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">205</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

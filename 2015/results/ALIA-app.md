@@ -47,7 +47,7 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1724.92</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">202552</td>
 <td class="right">141.19</td>
@@ -87,7 +87,7 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1724.92</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">202552</td>
 <td class="right">141.19</td>
@@ -95,3 +95,4 @@ Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

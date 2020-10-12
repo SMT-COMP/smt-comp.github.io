@@ -37,7 +37,7 @@ Competition results for the QF_ANIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">58.06</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">6</td>
 <td class="right">8.45</td>
@@ -65,7 +65,7 @@ Competition results for the QF_ANIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">58.06</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">6</td>
 <td class="right">8.45</td>
@@ -96,7 +96,7 @@ Competition results for the QF_ANIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">58.05</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">6</td>
 <td class="right">8.45</td>
@@ -128,7 +128,7 @@ Competition results for the QF_ANIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">58.05</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">6</td>
 <td class="right">8.45</td>
@@ -153,9 +153,10 @@ Competition results for the QF_ANIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

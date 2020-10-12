@@ -96,13 +96,13 @@ Competition results for the QF_BV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2106185.67</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">25895</td>
 <td class="right">1658560.27</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">26108</td>
 <td class="right">1052484.34</td>
@@ -172,13 +172,13 @@ Competition results for the QF_BV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">535652.74</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">24715</td>
 <td class="right">650255.89</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">24769</td>
 <td class="right">494140.09</td>
@@ -258,14 +258,14 @@ Competition results for the QF_BV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2106222.00</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">25895</td>
 <td class="right">1658981.54</td>
 <td class="right">1658449.30</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">26108</td>
 <td class="right">1052766.15</td>
@@ -347,14 +347,14 @@ Competition results for the QF_BV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">535723.71</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">24715</td>
 <td class="right">650407.29</td>
 <td class="right">650222.61</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">24769</td>
 <td class="right">494270.76</td>
@@ -415,14 +415,15 @@ Competition results for the QF_BV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">519</td>
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">306</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

@@ -66,7 +66,7 @@ Competition results for the QF_UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">5510.08</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">439</td>
 <td class="right">5812.97</td>
@@ -112,7 +112,7 @@ Competition results for the QF_UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">5496.56</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">420</td>
 <td class="right">5807.85</td>
@@ -163,7 +163,7 @@ Competition results for the QF_UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">5510.70</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">439</td>
 <td class="right">5815.03</td>
@@ -217,7 +217,7 @@ Competition results for the QF_UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">5497.17</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">420</td>
 <td class="right">5809.91</td>
@@ -260,7 +260,7 @@ Competition results for the QF_UFIDL division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">2</td>
 <td class="right">0</td>
 </tr>
@@ -271,3 +271,4 @@ Competition results for the QF_UFIDL division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

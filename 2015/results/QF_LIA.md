@@ -72,13 +72,13 @@ Competition results for the QF_LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">577864.36</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5710</td>
 <td class="right">412224.72</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5592</td>
 <td class="right">742614.82</td>
@@ -130,13 +130,13 @@ Competition results for the QF_LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">313169.18</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">4015</td>
 <td class="right">289785.01</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">4035</td>
 <td class="right">266839.13</td>
@@ -194,14 +194,14 @@ Competition results for the QF_LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">577838.32</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5710</td>
 <td class="right">412336.47</td>
 <td class="right">412095.28</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5592</td>
 <td class="right">742856.58</td>
@@ -262,14 +262,14 @@ Competition results for the QF_LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">313157.37</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">4015</td>
 <td class="right">289857.28</td>
 <td class="right">289728.44</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">4035</td>
 <td class="right">266900.93</td>
@@ -317,12 +317,12 @@ Competition results for the QF_LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">129</td>
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">247</td>
 <td class="right">0</td>
 </tr>
@@ -333,3 +333,4 @@ Competition results for the QF_LIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

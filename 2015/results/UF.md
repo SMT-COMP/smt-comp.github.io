@@ -60,7 +60,7 @@ Competition results for the UF division as of Fri Oct 30 12:49:29 GMT
 <td class="right">150661.68</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1819</td>
 <td class="right">1872284.61</td>
@@ -100,7 +100,7 @@ Competition results for the UF division as of Fri Oct 30 12:49:29 GMT
 <td class="right">147319.22</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1371</td>
 <td class="right">1841726.88</td>
@@ -146,7 +146,7 @@ Competition results for the UF division as of Fri Oct 30 12:49:29 GMT
 <td class="right">151082.60</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1819</td>
 <td class="right">1872822.41</td>
@@ -193,7 +193,7 @@ Competition results for the UF division as of Fri Oct 30 12:49:29 GMT
 <td class="right">147738.12</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1371</td>
 <td class="right">1842254.24</td>
@@ -231,7 +231,7 @@ Competition results for the UF division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">1020</td>
 <td class="right">0</td>
 </tr>
@@ -242,3 +242,4 @@ Competition results for the UF division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

@@ -66,13 +66,13 @@ Competition results for the QF_AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">38.54</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1009</td>
 <td class="right">546.72</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1009</td>
 <td class="right">121.79</td>
@@ -118,13 +118,13 @@ Competition results for the QF_AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1.99</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19</td>
 <td class="right">418.51</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19</td>
 <td class="right">1.81</td>
@@ -175,14 +175,14 @@ Competition results for the QF_AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">41.43</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1009</td>
 <td class="right">546.72</td>
 <td class="right">547.64</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1009</td>
 <td class="right">121.79</td>
@@ -235,14 +235,14 @@ Competition results for the QF_AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2.04</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19</td>
 <td class="right">418.51</td>
 <td class="right">418.44</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19</td>
 <td class="right">1.81</td>
@@ -284,12 +284,12 @@ Competition results for the QF_AUFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
@@ -300,3 +300,4 @@ Competition results for the QF_AUFLIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

@@ -40,7 +40,7 @@ Competition results for the ANIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">193.96</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">23488</td>
 <td class="right">16.79</td>
@@ -73,7 +73,7 @@ Competition results for the ANIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">193.96</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">23488</td>
 <td class="right">16.79</td>
@@ -81,3 +81,4 @@ Competition results for the ANIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

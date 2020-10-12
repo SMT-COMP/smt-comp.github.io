@@ -60,7 +60,7 @@ Competition results for the LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1.95</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">201</td>
 <td class="right">7.29</td>
@@ -100,7 +100,7 @@ Competition results for the LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1.95</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">201</td>
 <td class="right">7.29</td>
@@ -144,7 +144,7 @@ Competition results for the LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2.54</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">201</td>
 <td class="right">7.29</td>
@@ -191,7 +191,7 @@ Competition results for the LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2.54</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">201</td>
 <td class="right">7.29</td>
@@ -229,7 +229,7 @@ Competition results for the LIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
@@ -240,3 +240,4 @@ Competition results for the LIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

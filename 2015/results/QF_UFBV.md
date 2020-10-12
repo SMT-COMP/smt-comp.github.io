@@ -66,13 +66,13 @@ Competition results for the QF_UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">34700.62</td>
 <td class="right">12</td>
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">19767.85</td>
 <td class="right">0</td>
 <td class="right">0</td>
@@ -112,13 +112,13 @@ Competition results for the QF_UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">11815.62</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19</td>
 <td class="right">34702.41</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">31</td>
 <td class="right">19775.70</td>
@@ -163,14 +163,14 @@ Competition results for the QF_UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">11812.03</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19</td>
 <td class="right">34712.54</td>
 <td class="right">34700.62</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">31</td>
 <td class="right">19775.70</td>
@@ -217,14 +217,14 @@ Competition results for the QF_UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">11812.03</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19</td>
 <td class="right">34712.54</td>
 <td class="right">34700.62</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">31</td>
 <td class="right">19775.70</td>
@@ -260,14 +260,15 @@ Competition results for the QF_UFBV division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">12</td>
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

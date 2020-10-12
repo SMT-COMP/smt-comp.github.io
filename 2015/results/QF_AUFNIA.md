@@ -37,7 +37,7 @@ Competition results for the QF_AUFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">17.97</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">21</td>
 <td class="right">19.23</td>
@@ -65,7 +65,7 @@ Competition results for the QF_AUFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">17.97</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">21</td>
 <td class="right">19.23</td>
@@ -96,7 +96,7 @@ Competition results for the QF_AUFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">18.01</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">21</td>
 <td class="right">19.23</td>
@@ -128,7 +128,7 @@ Competition results for the QF_AUFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">18.01</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">21</td>
 <td class="right">19.23</td>
@@ -153,9 +153,10 @@ Competition results for the QF_AUFNIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

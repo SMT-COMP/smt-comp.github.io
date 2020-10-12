@@ -47,7 +47,7 @@ Competition results for the QF_NIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">15484.24</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">4181657</td>
 <td class="right">2220.93</td>
@@ -86,7 +86,7 @@ Competition results for the QF_NIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">15484.24</td>
 </tr>
 <tr>
-<td>[z3 4.4.0]</td>
+<td><span class="non-competing-grey">z3 4.4.0<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">4181657</td>
 <td class="right">2220.93</td>
@@ -94,3 +94,4 @@ Competition results for the QF_NIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

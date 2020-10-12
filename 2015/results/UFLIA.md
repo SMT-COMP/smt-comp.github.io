@@ -60,7 +60,7 @@ Competition results for the UFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">302426.62</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">7779</td>
 <td class="right">1192775.34</td>
@@ -100,7 +100,7 @@ Competition results for the UFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">261029.18</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">7413</td>
 <td class="right">1136406.38</td>
@@ -144,7 +144,7 @@ Competition results for the UFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">302481.89</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">7779</td>
 <td class="right">1193076.88</td>
@@ -191,7 +191,7 @@ Competition results for the UFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">261077.58</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">7413</td>
 <td class="right">1136688.58</td>
@@ -229,7 +229,7 @@ Competition results for the UFLIA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">625</td>
 <td class="right">0</td>
 </tr>
@@ -240,3 +240,4 @@ Competition results for the UFLIA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

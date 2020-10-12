@@ -66,13 +66,13 @@ Competition results for the QF_UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">6686.06</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1622</td>
 <td class="right">12471.63</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1625</td>
 <td class="right">7260.58</td>
@@ -118,13 +118,13 @@ Competition results for the QF_UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">6663.18</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">722</td>
 <td class="right">12427.91</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">725</td>
 <td class="right">7191.58</td>
@@ -175,14 +175,14 @@ Competition results for the QF_UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">6690.98</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1622</td>
 <td class="right">12476.04</td>
 <td class="right">12473.26</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">1625</td>
 <td class="right">7262.32</td>
@@ -236,14 +236,14 @@ Competition results for the QF_UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">6666.11</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">722</td>
 <td class="right">12432.32</td>
 <td class="right">12428.62</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">725</td>
 <td class="right">7193.32</td>
@@ -286,12 +286,12 @@ Competition results for the QF_UFLRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[MathSat]</td>
+<td><span class="non-competing-grey">MathSat<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">5</td>
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">2</td>
 <td class="right">0</td>
 </tr>
@@ -302,3 +302,4 @@ Competition results for the QF_UFLRA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

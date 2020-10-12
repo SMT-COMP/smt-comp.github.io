@@ -60,7 +60,7 @@ Competition results for the LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1154.86</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">335</td>
 <td class="right">10439.30</td>
@@ -100,7 +100,7 @@ Competition results for the LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2.00</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">261</td>
 <td class="right">8.04</td>
@@ -144,7 +144,7 @@ Competition results for the LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">1155.59</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">335</td>
 <td class="right">10442.83</td>
@@ -191,7 +191,7 @@ Competition results for the LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">2.75</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">261</td>
 <td class="right">8.04</td>
@@ -229,7 +229,7 @@ Competition results for the LRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">4</td>
 <td class="right">0</td>
 </tr>
@@ -240,3 +240,4 @@ Competition results for the LRA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

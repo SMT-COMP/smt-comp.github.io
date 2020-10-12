@@ -72,7 +72,7 @@ Competition results for the QF_LIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">259.65</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5</td>
 <td class="right">72.71</td>
@@ -118,7 +118,7 @@ Competition results for the QF_LIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">259.65</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5</td>
 <td class="right">72.71</td>
@@ -170,7 +170,7 @@ Competition results for the QF_LIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">259.56</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5</td>
 <td class="right">72.71</td>
@@ -224,7 +224,7 @@ Competition results for the QF_LIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">259.56</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">5</td>
 <td class="right">72.71</td>
@@ -265,9 +265,10 @@ Competition results for the QF_LIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">1</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

@@ -43,7 +43,7 @@ Competition results for the NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">20829.06</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">1</td>
 <td class="right">3750</td>
 <td class="right">9573.29</td>
@@ -77,7 +77,7 @@ Competition results for the NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">20829.06</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">1</td>
 <td class="right">3750</td>
 <td class="right">9573.29</td>
@@ -115,7 +115,7 @@ Competition results for the NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">20835.64</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">1</td>
 <td class="right">3750</td>
 <td class="right">9573.29</td>
@@ -155,7 +155,7 @@ Competition results for the NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">20835.64</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">1</td>
 <td class="right">3750</td>
 <td class="right">9573.29</td>
@@ -186,9 +186,10 @@ Competition results for the NRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">37</td>
 <td class="right">0</td>
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>

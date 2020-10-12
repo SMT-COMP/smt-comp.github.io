@@ -60,7 +60,7 @@ Competition results for the AUFLIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">291002.13</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19845</td>
 <td class="right">9050.49</td>
@@ -100,7 +100,7 @@ Competition results for the AUFLIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">25758.58</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19647</td>
 <td class="right">4078.35</td>
@@ -145,7 +145,7 @@ Competition results for the AUFLIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">291022.33</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19845</td>
 <td class="right">9053.54</td>
@@ -192,7 +192,7 @@ Competition results for the AUFLIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">25813.16</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">0</td>
 <td class="right">19647</td>
 <td class="right">4079.25</td>
@@ -229,7 +229,7 @@ Competition results for the AUFLIRA division as of Fri Oct 30 12:49:29 GMT
 <td class="right">0</td>
 </tr>
 <tr>
-<td>[z3]</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
 <td class="right">4</td>
 <td class="right">0</td>
 </tr>
@@ -240,3 +240,4 @@ Competition results for the AUFLIRA division as of Fri Oct 30 12:49:29 GMT
 </tr>
 </table>
 
+<span id="fn"> n. Non-competitive.</span>
