@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-10-05 13:57:13
+resultdate: 2020-10-13 09:11:42
 
 year: 2020
 
@@ -11,6 +11,7 @@ track: track_model_validation
 recognition: largest_contribution
 
 winner_seq: Bitwuzla
+
 winner_par: Bitwuzla
 
 sequential:
@@ -28,6 +29,7 @@ sequential:
   correctScore: 0.00258886
   timeScore: 0.30106396
   division: QF_BV
+  experimental: false
 - name: CVC4-mv
   correctScore: 0.00033284
   timeScore: 0.01005156
@@ -58,6 +60,7 @@ parallel:
   correctScore: 0.00245218
   timeScore: 0.29354561
   division: QF_BV
+  experimental: false
 - name: CVC4-mv
   correctScore: 0.00033284
   timeScore: 0.01000434

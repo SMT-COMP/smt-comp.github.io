@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-10-05 13:57:10
+resultdate: 2020-10-13 09:11:40
 
 year: 2020
 
@@ -42,6 +42,7 @@ sequential:
   correctScore: 1.00667369
   timeScore: 2.17918592
   division: QF_BV
+  experimental: false
 - name: Yices2 Model Validation
   second: CVC4-mv
   correctScore: 1.00000000
@@ -78,6 +79,7 @@ parallel:
   correctScore: 1.00262375
   timeScore: 1.43850991
   division: QF_BV
+  experimental: false
 - name: Yices2 Model Validation
   second: CVC4-mv
   correctScore: 1.00000000
