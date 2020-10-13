@@ -16,422 +16,422 @@
   <th>Contact(s)</th>
 </tr>
 <tr>
-  <td>ABC_default</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7815</td>
-  <td>8091</td>
-  <td>2402498868</td>
-  <td><a href="systemDescriptions/ABC.pdf">ABC</a></td>
-  <td>Valeriy Balabanov (<a href="mailto:balabasik@gmail.com">balabasik@gmail.com</a>)</td>
+  <td class="left">ABC_default</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7815</td>
+  <td class="right">8091</td>
+  <td class="right">2402498868</td>
+  <td class="right"><a href="systemDescriptions/ABC.pdf">ABC</a></td>
+  <td class="right">Valeriy Balabanov (<a href="mailto:balabasik@gmail.com">balabasik@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>ABC_glucose</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7816</td>
-  <td>8092</td>
-  <td>2402498868</td>
-  <td><a href="systemDescriptions/ABC.pdf">ABC</a></td>
-  <td>Valeriy Balabanov (<a href="mailto:balabasik@gmail.com">balabasik@gmail.com</a>)</td>
+  <td class="left">ABC_glucose</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7816</td>
+  <td class="right">8092</td>
+  <td class="right">2402498868</td>
+  <td class="right"><a href="systemDescriptions/ABC.pdf">ABC</a></td>
+  <td class="right">Valeriy Balabanov (<a href="mailto:balabasik@gmail.com">balabasik@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>AProVE</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>1229 (configuration: default)</td>
-  <td></td>
-  <td>483272109</td>
-  <td><a href="systemDescriptions/AProVE.pdf">AProVE</a></td>
-  <td>Carsten Fuhs (<a href="mailto:carsten@dcs.bbk.ac.uk">carsten@dcs.bbk.ac.uk</a>)</td>
+  <td class="left">AProVE</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">1229 (configuration: default)</td>
+  <td class="right"></td>
+  <td class="right">483272109</td>
+  <td class="right"><a href="systemDescriptions/AProVE.pdf">AProVE</a></td>
+  <td class="right">Carsten Fuhs (<a href="mailto:carsten@dcs.bbk.ac.uk">carsten@dcs.bbk.ac.uk</a>)</td>
 </tr>
 <tr>
-  <td>Boolector</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7801</td>
-  <td>8073</td>
-  <td>42</td>
-  <td><a href="systemDescriptions/Boolector.pdf">Boolector</a></td>
-  <td>Mathias Preiner (<a href="mailto:mathias.preiner@jku.at">mathias.preiner@jku.at</a>)</td>
+  <td class="left">Boolector</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7801</td>
+  <td class="right">8073</td>
+  <td class="right">42</td>
+  <td class="right"><a href="systemDescriptions/Boolector.pdf">Boolector</a></td>
+  <td class="right">Mathias Preiner (<a href="mailto:mathias.preiner@jku.at">mathias.preiner@jku.at</a>)</td>
 </tr>
 <tr>
-  <td>Boolector (preprop)</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7802</td>
-  <td>8079</td>
-  <td>42</td>
-  <td><a href="systemDescriptions/Boolector.pdf">Boolector</a></td>
-  <td>Mathias Preiner (<a href="mailto:mathias.preiner@jku.at">mathias.preiner@jku.at</a>)</td>
+  <td class="left">Boolector (preprop)</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7802</td>
+  <td class="right">8079</td>
+  <td class="right">42</td>
+  <td class="right"><a href="systemDescriptions/Boolector.pdf">Boolector</a></td>
+  <td class="right">Mathias Preiner (<a href="mailto:mathias.preiner@jku.at">mathias.preiner@jku.at</a>)</td>
 </tr>
 <tr>
-  <td>CVC4 (Main track)</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7811</td>
-  <td>8018</td>
-  <td>823514</td>
-  <td></td>
-  <td>Clark Barrett (<a href="mailto:barrett@cs.nyu.edu">barrett@cs.nyu.edu</a>)</td>
+  <td class="left">CVC4 (Main track)</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7811</td>
+  <td class="right">8018</td>
+  <td class="right">823514</td>
+  <td class="right"></td>
+  <td class="right">Clark Barrett (<a href="mailto:barrett@cs.nyu.edu">barrett@cs.nyu.edu</a>)</td>
 </tr>
 <tr>
-  <td>CVC4 (Application track)<sup><a href="#fnn">n</a></sup></td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>3091</td>
-  <td></td>
-  <td>-</td>
-  <td></td>
-  <td><a href="https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091">https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091</a></td>
+  <td class="left">CVC4 (Application track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">3091</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091">https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091</a></td>
 </tr>
 <tr>
-  <td>MapleSTP</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7809</td>
-  <td>8069</td>
-  <td>0</td>
-  <td></td>
-  <td>Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
+  <td class="left">MapleSTP</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7809</td>
+  <td class="right">8069</td>
+  <td class="right">0</td>
+  <td class="right"></td>
+  <td class="right">Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
 </tr>
 <tr>
-  <td>MapleSTP-final</td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7809</td>
-  <td>8270</td>
-  <td>-</td>
-  <td></td>
-  <td>Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
+  <td class="left">MapleSTP-final</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7809</td>
+  <td class="right">8270</td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right">Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
 </tr>
 <tr>
-  <td>MapleSTP-mt</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7810</td>
-  <td>8070</td>
-  <td>0</td>
-  <td></td>
-  <td>Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
+  <td class="left">MapleSTP-mt</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7810</td>
+  <td class="right">8070</td>
+  <td class="right">0</td>
+  <td class="right"></td>
+  <td class="right">Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
 </tr>
 <tr>
-  <td>MapleSTP-mt-final</td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7810</td>
-  <td>8269</td>
-  <td>-</td>
-  <td></td>
-  <td>Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
+  <td class="left">MapleSTP-mt-final</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7810</td>
+  <td class="right">8269</td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right">Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
 </tr>
 <tr>
-  <td>MathSAT 5 (Main track)<sup><a href="#fnn">n</a></sup></td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7873</td>
-  <td></td>
-  <td>-</td>
-  <td></td>
-  <td><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
+  <td class="left">MathSAT 5 (Main track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7873</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
 </tr>
 <tr>
-  <td>MathSAT 5 (Application track)<sup><a href="#fnn">n</a></sup></td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7874</td>
-  <td></td>
-  <td>-</td>
-  <td></td>
-  <td><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
+  <td class="left">MathSAT 5 (Application track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7874</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
 </tr>
 <tr>
-  <td>MathSAT 5 (Unsat-core track)<sup><a href="#fnn">n</a></sup></td>
-  <td>-</td>
-  <td>-</td>
-  <td>X</td>
-  <td>8321</td>
-  <td></td>
-  <td>-</td>
-  <td></td>
-  <td><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
+  <td class="left">MathSAT 5 (Unsat-core track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="right">8321</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
 </tr>
 <tr>
-  <td>Minkeyrink</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7793</td>
-  <td>8093</td>
-  <td>3828084720</td>
-  <td></td>
-  <td>Trevor Hansen (<a href="mailto:trev_abroad@yahoo.com">trev_abroad@yahoo.com</a>)</td>
+  <td class="left">Minkeyrink</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7793</td>
+  <td class="right">8093</td>
+  <td class="right">3828084720</td>
+  <td class="right"></td>
+  <td class="right">Trevor Hansen (<a href="mailto:trev_abroad@yahoo.com">trev_abroad@yahoo.com</a>)</td>
 </tr>
 <tr>
-  <td>OpenSMT2 (2016-05-12)</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7725</td>
-  <td></td>
-  <td>8700</td>
-  <td></td>
-  <td>Antti Hyv&auml;rinen (<a href="mailto:antti.hyvarinen@gmail.com">antti.hyvarinen@gmail.com</a>)</td>
+  <td class="left">OpenSMT2 (2016-05-12)</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7725</td>
+  <td class="right"></td>
+  <td class="right">8700</td>
+  <td class="right"></td>
+  <td class="right">Antti Hyv&auml;rinen (<a href="mailto:antti.hyvarinen@gmail.com">antti.hyvarinen@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>ProB</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7755</td>
-  <td>7964</td>
-  <td>9247</td>
-  <td><a href="systemDescriptions/ProB.pdf">ProB</a></td>
-  <td>Sebastian Krings (<a href="mailto:krings@cs.uni-duesseldorf.de">krings@cs.uni-duesseldorf.de</a>)</td>
+  <td class="left">ProB</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7755</td>
+  <td class="right">7964</td>
+  <td class="right">9247</td>
+  <td class="right"><a href="systemDescriptions/ProB.pdf">ProB</a></td>
+  <td class="right">Sebastian Krings (<a href="mailto:krings@cs.uni-duesseldorf.de">krings@cs.uni-duesseldorf.de</a>)</td>
 </tr>
 <tr>
-  <td>Q3B</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7760</td>
-  <td>8085</td>
-  <td>2784434708</td>
-  <td></td>
-  <td>Martin Jon&aacute;&#353; (<a href="mailto:359542@mail.muni.cz">359542@mail.muni.cz</a>)</td>
+  <td class="left">Q3B</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7760</td>
+  <td class="right">8085</td>
+  <td class="right">2784434708</td>
+  <td class="right"></td>
+  <td class="right">Martin Jon&aacute;&#353; (<a href="mailto:359542@mail.muni.cz">359542@mail.muni.cz</a>)</td>
 </tr>
 <tr>
-  <td>raSAT 0.3</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>5594</td>
-  <td></td>
-  <td>5594</td>
-  <td><a href="systemDescriptions/raSAT.pdf">raSAT</a></td>
-  <td>Tung Vu Xuan (<a href="mailto:tungvx@jaist.ac.jp">tungvx@jaist.ac.jp</a>)</td>
+  <td class="left">raSAT 0.3</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">5594</td>
+  <td class="right"></td>
+  <td class="right">5594</td>
+  <td class="right"><a href="systemDescriptions/raSAT.pdf">raSAT</a></td>
+  <td class="right">Tung Vu Xuan (<a href="mailto:tungvx@jaist.ac.jp">tungvx@jaist.ac.jp</a>)</td>
 </tr>
 <tr>
-  <td>raSAT 0.4 exp</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7814</td>
-  <td>8014</td>
-  <td>7814</td>
-  <td><a href="systemDescriptions/raSAT.pdf">raSAT</a></td>
-  <td>Tung Vu Xuan (<a href="mailto:tungvx@jaist.ac.jp">tungvx@jaist.ac.jp</a>)</td>
+  <td class="left">raSAT 0.4 exp</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7814</td>
+  <td class="right">8014</td>
+  <td class="right">7814</td>
+  <td class="right"><a href="systemDescriptions/raSAT.pdf">raSAT</a></td>
+  <td class="right">Tung Vu Xuan (<a href="mailto:tungvx@jaist.ac.jp">tungvx@jaist.ac.jp</a>)</td>
 </tr>
 <tr>
-  <td>SMT-RAT</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7763</td>
-  <td>8068</td>
-  <td>17</td>
-  <td><a href="systemDescriptions/SMT-RAT.pdf">SMT-RAT</a></td>
-  <td>Florian Corzilius (<a href="mailto:corzilius@informatik.rwth-aachen.de">corzilius@informatik.rwth-aachen.de</a>)</td>
+  <td class="left">SMT-RAT</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7763</td>
+  <td class="right">8068</td>
+  <td class="right">17</td>
+  <td class="right"><a href="systemDescriptions/SMT-RAT.pdf">SMT-RAT</a></td>
+  <td class="right">Florian Corzilius (<a href="mailto:corzilius@informatik.rwth-aachen.de">corzilius@informatik.rwth-aachen.de</a>)</td>
 </tr>
 <tr>
-  <td>SMTInterpol</td>
-  <td>X</td>
-  <td>X</td>
-  <td>X</td>
-  <td>7795</td>
-  <td>8005</td>
-  <td>3536504</td>
-  <td><a href="systemDescriptions/SMTInterpol.pdf">SMTInterpol</a></td>
-  <td>Jochen Hoenicke (<a href="mailto:hoenicke@gmail.com">hoenicke@gmail.com</a>)</td>
+  <td class="left">SMTInterpol</td>
+  <td class="center">X</td>
+  <td class="center">X</td>
+  <td class="center">X</td>
+  <td class="right">7795</td>
+  <td class="right">8005</td>
+  <td class="right">3536504</td>
+  <td class="right"><a href="systemDescriptions/SMTInterpol.pdf">SMTInterpol</a></td>
+  <td class="right">Jochen Hoenicke (<a href="mailto:hoenicke@gmail.com">hoenicke@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-cms-exp-2016</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7790</td>
-  <td>7979</td>
-  <td>0</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-cms-exp-2016</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7790</td>
+  <td class="right">7979</td>
+  <td class="right">0</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-cms-exp-fixed-2016</td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7790</td>
-  <td>8244</td>
-  <td>-</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-cms-exp-fixed-2016</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7790</td>
+  <td class="right">8244</td>
+  <td class="right">-</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-cms-mt-2016</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7739</td>
-  <td>7976</td>
-  <td>0</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-cms-mt-2016</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7739</td>
+  <td class="right">7976</td>
+  <td class="right">0</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-cms-mt-fixed-2016</td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7739</td>
-  <td>8241</td>
-  <td>-</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-cms-mt-fixed-2016</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7739</td>
+  <td class="right">8241</td>
+  <td class="right">-</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-cms-st-2016</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7738</td>
-  <td>7977</td>
-  <td>0</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-cms-st-2016</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7738</td>
+  <td class="right">7977</td>
+  <td class="right">0</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-cms-st-fixed-2016</td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7738</td>
-  <td>8242</td>
-  <td>-</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-cms-st-fixed-2016</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7738</td>
+  <td class="right">8242</td>
+  <td class="right">-</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-minisat-st-2016</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7740</td>
-  <td>7978</td>
-  <td>0</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-minisat-st-2016</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7740</td>
+  <td class="right">7978</td>
+  <td class="right">0</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>STP-minisat-st-fixed-2016</td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7740</td>
-  <td>8243</td>
-  <td>-</td>
-  <td><a href="systemDescriptions/STP.pdf">STP</a></td>
-  <td>Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
+  <td class="left">STP-minisat-st-fixed-2016</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7740</td>
+  <td class="right">8243</td>
+  <td class="right">-</td>
+  <td class="right"><a href="systemDescriptions/STP.pdf">STP</a></td>
+  <td class="right">Mate Soos (<a href="mailto:soos.mate@gmail.com">soos.mate@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>toysmt</td>
-  <td>X</td>
-  <td>-</td>
-  <td>X<sup><a href="#fnn">n</a></sup></td>
-  <td>7813</td>
-  <td></td>
-  <td>1863866937</td>
-  <td></td>
-  <td>Masahiro Sakai (<a href="mailto:masahiro.sakai@gmail.com">masahiro.sakai@gmail.com</a>)</td>
+  <td class="left">toysmt</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">X<sup><a href="#fnn">n</a></sup></td>
+  <td class="right">7813</td>
+  <td class="right"></td>
+  <td class="right">1863866937</td>
+  <td class="right"></td>
+  <td class="right">Masahiro Sakai (<a href="mailto:masahiro.sakai@gmail.com">masahiro.sakai@gmail.com</a>)</td>
 </tr>
 <tr>
-  <td>Vampire</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7819</td>
-  <td>8097</td>
-  <td>3163</td>
-  <td><a href="systemDescriptions/Vampire.pdf">Vampire</a></td>
-  <td>Giles Reger (<a href="mailto:giles.reger@manchester.ac.uk">giles.reger@manchester.ac.uk</a>)</td>
+  <td class="left">Vampire</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7819</td>
+  <td class="right">8097</td>
+  <td class="right">3163</td>
+  <td class="right"><a href="systemDescriptions/Vampire.pdf">Vampire</a></td>
+  <td class="right">Giles Reger (<a href="mailto:giles.reger@manchester.ac.uk">giles.reger@manchester.ac.uk</a>)</td>
 </tr>
 <tr>
-  <td>Vampire (parallel)</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7819</td>
-  <td>8098</td>
-  <td>3163</td>
-  <td><a href="systemDescriptions/Vampire.pdf">Vampire</a></td>
-  <td>Giles Reger (<a href="mailto:giles.reger@manchester.ac.uk">giles.reger@manchester.ac.uk</a>)</td>
+  <td class="left">Vampire (parallel)</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7819</td>
+  <td class="right">8098</td>
+  <td class="right">3163</td>
+  <td class="right"><a href="systemDescriptions/Vampire.pdf">Vampire</a></td>
+  <td class="right">Giles Reger (<a href="mailto:giles.reger@manchester.ac.uk">giles.reger@manchester.ac.uk</a>)</td>
 </tr>
 <tr>
-  <td>veriT</td>
-  <td>X</td>
-  <td>-</td>
-  <td>X<sup><a href="#fnn">n</a></sup></td>
-  <td>7797</td>
-  <td>8013</td>
-  <td>20151003</td>
-  <td><a href="systemDescriptions/veriT.pdf">veriT</a></td>
-  <td>Haniel Barbosa (<a href="mailto:haniel.barbosa@inria.fr">haniel.barbosa@inria.fr</a>)</td>
+  <td class="left">veriT</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">X<sup><a href="#fnn">n</a></sup></td>
+  <td class="right">7797</td>
+  <td class="right">8013</td>
+  <td class="right">20151003</td>
+  <td class="right"><a href="systemDescriptions/veriT.pdf">veriT</a></td>
+  <td class="right">Haniel Barbosa (<a href="mailto:haniel.barbosa@inria.fr">haniel.barbosa@inria.fr</a>)</td>
 </tr>
 <tr>
-  <td>Yices-2.4.2</td>
-  <td>X</td>
-  <td>-</td>
-  <td>-</td>
-  <td>7767</td>
-  <td>8087</td>
-  <td>2004744</td>
-  <td></td>
-  <td>Bruno Dutertre (<a href="mailto:bruno.dutertre@sri.com">bruno.dutertre@sri.com</a>)</td>
+  <td class="left">Yices-2.4.2</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7767</td>
+  <td class="right">8087</td>
+  <td class="right">2004744</td>
+  <td class="right"></td>
+  <td class="right">Bruno Dutertre (<a href="mailto:bruno.dutertre@sri.com">bruno.dutertre@sri.com</a>)</td>
 </tr>
 <tr>
-  <td>Yices-2.4.2 incremental</td>
-  <td>-</td>
-  <td>X</td>
-  <td>-</td>
-  <td>7767</td>
-  <td>8088</td>
-  <td>2004744</td>
-  <td></td>
-  <td>Bruno Dutertre (<a href="mailto:bruno.dutertre@sri.com">bruno.dutertre@sri.com</a>)</td>
+  <td class="left">Yices-2.4.2 incremental</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7767</td>
+  <td class="right">8088</td>
+  <td class="right">2004744</td>
+  <td class="right"></td>
+  <td class="right">Bruno Dutertre (<a href="mailto:bruno.dutertre@sri.com">bruno.dutertre@sri.com</a>)</td>
 </tr>
 <tr>
-  <td>Z3 (4.4.1)<sup><a href="#fnn">n</a></sup></td>
-  <td>X</td>
-  <td>X</td>
-  <td>X</td>
-  <td>7875</td>
-  <td></td>
-  <td>-</td>
-  <td></td>
-  <td><a href="https://github.com/Z3Prover/z3/archive/z3-4.4.1.tar.gz">https://github.com/Z3Prover/z3/archive/z3-4.4.1.tar.gz</a></td>
+  <td class="left">Z3 (4.4.1)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">X</td>
+  <td class="center">X</td>
+  <td class="center">X</td>
+  <td class="right">7875</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="https://github.com/Z3Prover/z3/archive/z3-4.4.1.tar.gz">https://github.com/Z3Prover/z3/archive/z3-4.4.1.tar.gz</a></td>
 </tr>
 <tr>
-  <td><b>Total</b></td>
-  <td><b>27</b></td>
-  <td><b>11</b></td>
-  <td><b>5</b></td>
-  <td></td>
-  <td></td>
-  <td><b>908312613</b> (mod 2<sup>30</sup>)</td>
-  <td></td>
-  <td></td>
+  <td class="left"><b>Total</b></td>
+  <td class="center"><b>27</b></td>
+  <td class="center"><b>11</b></td>
+  <td class="center"><b>5</b></td>
+  <td class="right"></td>
+  <td class="right"></td>
+  <td class="right"><b>908312613</b> (mod 2<sup>30</sup>)</td>
+  <td class="right"></td>
+  <td class="right"></td>
 </tr>
 </table>
 
@@ -514,11 +514,11 @@
 </tr>
 <tr class="center">
   <td class="left">CVC4 (Main track)<sup><a href="#fn1">1</a></sup></td>
-  <td>X</td> <td style="color:LightGray">x</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
+  <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 <tr class="center">
   <td class="left">CVC4 (Application track)<sup><a href="#fn2">2</a></sup></td>
-  <td>X</td> <td>X</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td>X</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td>X</td> <td>X</td> <td style="color:LightGray">x</td> <td>X</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td>X</td> <td></td> <td></td> <td style="color:LightGray">x</td> <td>X</td> <td style="color:LightGray">x</td> <td>X</td> <td>X</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td>X</td> <td>X</td> <td>X</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td>X</td> <td style="color:LightGray">x</td>
+  <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td>
 </tr>
 <tr class="center">
   <td class="left">MapleSTP<sup><a href="#fn1">1</a></sup></td>
@@ -542,7 +542,7 @@
 </tr>
 <tr class="center">
   <td class="left">MathSAT 5 (Application track)<sup><a href="#fn2">2</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">x</td> <td>X</td> <td></td> <td style="color:LightGray">x</td> <td>X</td> <td></td> <td style="color:LightGray">x</td> <td>X</td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">x</td> <td style="color:LightGray">x</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
   <td class="left">MathSAT 5 (Unsat-core track)<sup><a href="#fn3">3</a></sup></td>
@@ -618,11 +618,11 @@
 </tr>
 <tr class="center">
   <td class="left">Vampire<sup><a href="#fn1">1</a></sup></td>
-  <td>X</td> <td style="color:LightGray">x</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
+  <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 <tr class="center">
   <td class="left">Vampire (parallel)<sup><a href="#fn1">1</a></sup></td>
-  <td>X</td> <td style="color:LightGray">x</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
+  <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 <tr class="center">
   <td class="left">veriT<sup><a href="#fn1">1</a>,<a href="#fn3">3</a></sup></td>
