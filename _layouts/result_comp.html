@@ -112,7 +112,11 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.sequential %}
+{% if solver.experimental %}
+<tr class="non-competing">
+{% else %}
 <tr>
+{% endif %}
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
@@ -122,6 +126,9 @@ winner is selected.
     <td>
       {% assign div = divisions.items |where: "division", solver.division |first -%}
       <a href="{{ div.url }}">{{ solver.division }}</a>
+      {%- if solver.experimental -%}
+        <sup><a href="#exp">e</a></sup>
+      {%- endif %}
     </td>
 </tr>
 {% endfor %}
@@ -140,7 +147,11 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.parallel %}
+{% if solver.experimental %}
+<tr class="non-competing">
+{% else %}
 <tr>
+{% endif %}
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
@@ -150,6 +161,9 @@ winner is selected.
     <td>
       {% assign div = divisions.items |where: "division", solver.division |first -%}
       <a href="{{ div.url }}">{{ solver.division }}</a>
+      {%- if solver.experimental -%}
+        <sup><a href="#exp">e</a></sup>
+      {%- endif %}
     </td>
 </tr>
 {% endfor %}
@@ -168,7 +182,11 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.sat %}
+{% if solver.experimental %}
+<tr class="non-competing">
+{% else %}
 <tr>
+{% endif %}
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
@@ -178,6 +196,9 @@ winner is selected.
     <td>
       {% assign div = divisions.items |where: "division", solver.division |first -%}
       <a href="{{ div.url }}">{{ solver.division }}</a>
+      {%- if solver.experimental -%}
+        <sup><a href="#exp">e</a></sup>
+      {%- endif %}
     </td>
 </tr>
 {% endfor %}
@@ -196,7 +217,11 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.unsat %}
+{% if solver.experimental %}
+<tr class="non-competing">
+{% else %}
 <tr>
+{% endif %}
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
@@ -206,6 +231,9 @@ winner is selected.
     <td>
       {% assign div = divisions.items |where: "division", solver.division |first -%}
       <a href="{{ div.url }}">{{ solver.division }}</a>
+      {%- if solver.experimental -%}
+        <sup><a href="#exp">e</a></sup>
+      {%- endif %}
     </td>
 </tr>
 {% endfor %}
@@ -224,7 +252,11 @@ winner is selected.
     </tr>
 </thead>
 {% for solver in page.twentyfour %}
+{% if solver.experimental %}
+<tr class="non-competing">
+{% else %}
 <tr>
+{% endif %}
     <td>
       {% assign participant = participants | where:"name", solver.name | first %}
       <a href="{{ participant.url }}">{{ solver.name }}</a>
@@ -234,6 +266,9 @@ winner is selected.
     <td>
       {% assign div = divisions.items |where: "division", solver.division |first -%}
       <a href="{{ div.url }}">{{ solver.division }}</a>
+      {%- if solver.experimental -%}
+        <sup><a href="#exp">e</a></sup>
+      {%- endif %}
     </td>
 </tr>
 {% endfor %}
@@ -243,5 +278,8 @@ winner is selected.
 <p>
   <span id="nc">
     n Non-competing.
+  </span><br/>
+  <span id="exp">
+    e Experimental.
   </span><br/>
 </p>
