@@ -13,11 +13,11 @@ to present the competitors and results of the competition.
 - 15 June&nbsp;2015 Competition jobs started
 - 19 July&nbsp;2015 Results <a href="SMT-COMP-2015-slides.pdf">presented</a>
 
-### Key dates
-- **May&nbsp;1** Deadline for new benchmark contributions
-- **June&nbsp;1** Deadline for first versions of solvers
-- **June&nbsp;14** Deadline for final versions of solvers
-- **July&nbsp;18-19** SMT Workshop (presentation of results)
+### Key Dates
+- **May 1** &nbsp; Deadline for new benchmark contributions
+- **June 1** &nbsp; Deadline for first versions of solvers
+- **June14** &nbsp; Deadline for final versions of solvers
+- **July 18-19** &nbsp; SMT Workshop (presentation of results)
 
 ### Organizers
 - <a href="https://www.lri.fr/~conchon/">Sylvain Conchon</a> - Paris-Sud University, France

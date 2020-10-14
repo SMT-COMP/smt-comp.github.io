@@ -13,11 +13,11 @@ the competitors and results of the competition.
 - {{ news.newsdate | date_to_string }} [{{ news.title }}]({{ news.url }})
 {% endfor %}
 
-### Key dates
-- **May 1** Deadline for new benchmark contributions
-- **June 4** Deadline for first versions of solvers
-- **June 19** Deadline for final versions of solvers
-- **July 22-23** SMT Workshop (presentation of results)
+### Key Dates
+- **May 1** &nbsp; Deadline for new benchmark contributions
+- **June 4** &nbsp; Deadline for first versions of solvers
+- **June 19** &nbsp; Deadline for final versions of solvers
+- **July 22-23** &nbsp; SMT Workshop (presentation of results)
 
 ### Organizers
 

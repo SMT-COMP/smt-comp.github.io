@@ -13,11 +13,11 @@ the competitors and results of the competition.
 - 31 May&nbsp;2016 <a href="https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=161208">Competition jobs</a> started
 - 2 July&nbsp;2016 Results <a href="SMT-COMP-2016.pdf">presented</a>
 
-### Key dates
-- **May 1** Deadline for new benchmark contributions
-- **May 15** Deadline for first versions of solvers
-- **May 29** Deadline for final versions of solvers
-- **July 1-2** SMT Workshop (presentation of results)
+### Key Dates
+- **May 1** &nbsp; Deadline for new benchmark contributions
+- **May 15** &nbsp; Deadline for first versions of solvers
+- **May 29** &nbsp; Deadline for final versions of solvers
+- **July 1-2** &nbsp; SMT Workshop (presentation of results)
 
 ### Organizers
 

@@ -12,7 +12,7 @@ and results of the competition.
 - {{ news.newsdate | date_to_string }} [{{ news.title }}]({{ news.url }})
 {% endfor %}
 
-### Key dates
+### Key Dates
  - **March 1**  &nbsp; Deadline for new benchmark contributions
  - **May 1**    &nbsp; Final versions of competition tools
  - **May 19**   &nbsp; Deadline for first versions of solvers (for all tracks)
