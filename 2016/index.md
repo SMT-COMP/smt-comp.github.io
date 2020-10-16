@@ -8,10 +8,10 @@ the <a href="http://smt-workshop.cs.uiowa.edu/2016/">SMT Workshop
 the competitors and results of the competition.
 
 ### News
-- 16 Feb&nbsp;2016 <a href="call-for-comments.txt">Call for Comments</a> issued
-- 23 April&nbsp;2016 Draft <a href="rules16.pdf">rules</a> posted
-- 31 May&nbsp;2016 <a href="https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=161208">Competition jobs</a> started
-- 2 July&nbsp;2016 Results <a href="SMT-COMP-2016.pdf">presented</a>
+- <span class="date">16 Feb 2016</span> <a href="call-for-comments.txt">Call for Comments</a> issued
+- <span class="date">23 April 2016</span> Draft <a href="rules16.pdf">rules</a> posted
+- <span class="date">31 May 2016</span> <a href="https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=161208">Competition jobs</a> started
+- <span class="date">2 July 2016</span> Results <a href="SMT-COMP-2016.pdf">presented</a>
 
 ### Key Dates
 - **May 1** &nbsp; Deadline for new benchmark contributions

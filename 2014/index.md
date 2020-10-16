@@ -13,15 +13,15 @@ on July 21, as part of the Olympic Games.
 </p>
 
 ### News
-- 21 Jan 2014 : <a href="call-for-comments.txt">Call for comments</A> issued
-- 1 May 2014: Deadlines posted
-- 19 May 2014: revised deadlines, revised rules posted
+- <span class="date">21 Jan 2014</span> <a href="call-for-comments.txt">Call for comments</A> issued
+- <span class="date">1 May 2014</span> Deadlines posted
+- <span class="date">19 May 2014</span> Revised deadlines, revised rules posted
 
 ### Key Dates
 See the [rules document](rules14.pdf) for the complete timeline.
-- **May 15** &nbsp; Deadline for submission of new benchmarks
-- **June 1** &nbsp; Deadline for initial solver submission
-- **June 15** &nbsp; Deadline for final solver versions
+- **May 15 2014** &nbsp; Deadline for submission of new benchmarks
+- **June 1 2014** &nbsp; Deadline for initial solver submission
+- **June 15 2014** &nbsp; Deadline for final solver versions
 
 <p>
 The organizers of SMT-COMP 2014 are

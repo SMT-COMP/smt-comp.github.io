@@ -10,7 +10,7 @@ the competitors and results of the competition.
 ### News
 {% assign newsList = site.news_2018 | reverse %}
 {% for news in newsList %}
-- {{ news.newsdate | date_to_string }} [{{ news.title }}]({{ news.url }})
+- <span class="date">{{ news.newsdate | date_to_string }}</span> [{{ news.title }}]({{ news.url }})
 {% endfor %}
 
 ### Key Dates
