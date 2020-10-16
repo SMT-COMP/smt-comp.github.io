@@ -1,0 +1,40 @@
+Kleaver is the constraint solver of the symbolic execution tool KLEE.
+It uses a series of mathematical simplifications, an optimisation that
+groups constraints into independent subsets, and subset-superset
+caching, after which (if still needed) invokes an underlying SMT
+solver. These optimizations are described in more detail in
+[EXE-CCS-06], [KLEE-OSDI-08] and [MultiSolver-CAV-13]. The competition
+version has caching disabled (since it is only beneficial when
+sequences of queries are issued), and uses STP (the default solver of
+KLEE) as the underlying SMT solver. The portfolio version of Kleaver 
+employs Boolector, STP and Z3 through the metaSMT solver 
+framework [MetaSMT-DIFTS-11].  
+
+Kleaver is available as open-source as part of KLEE, and can be
+downloaded from http://klee.github.io/klee/. It was originally built as
+part of the [KLEE-OSDI-08] project and extended since by the members of
+the Software Reliability Group at Imperial College London and the
+wider KLEE developer community.
+
+
+[EXE-CCS-06] Cristian Cadar, Vijay Ganesh, Peter Pawlowski, David
+Dill, Dawson Engler. EXE: automatically generating inputs of
+death. ACM Conference on Computer and Communications Security (CCS)
+2006: 322-335.
+
+[KLEE-OSDI-08] Cristian Cadar, Daniel Dunbar, Dawson R. Engler.
+KLEE: Unassisted and Automatic Generation of High-Coverage Tests for
+Complex Systems Programs. USENIX Symposium on Operating Systems Design
+and Implementation(OSDI) 2008: 209-224.
+
+[MultiSolver-CAV-13] Hristina Palikareva, Cristian
+Cadar. Multi-solver Support in Symbolic Execution. International
+Conference on Computer Aided Verification (CAV) 2013: 53-68.
+
+[MetaSMT-DIFTS-11] Finn Haedicke, Stefan Frehse, Goerschwin Fey, Daniel 
+Grosse, Rolf Drechsler. metaSMT: Focus on your application not on solver 
+integration. International Workshop on Design and Implementation of Formal 
+Tools and Systems (DIFTS) 2011.
+
+
+ 
