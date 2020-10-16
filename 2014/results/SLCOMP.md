@@ -5,31 +5,14 @@ layout: default
 
 ## SL-COMP  2014
 
-
-
-<meta http-equiv="pragma" content="no-cache" />
-<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
-<META HTTP-EQUIV="Refresh" CONTENT="10;">
-<title>SL-COMP  2014</title>
-</head>
-<body>
-
-<h1>SL-COMP  2014</h1>
 Competition results as of Wed Jun 25 21:20:39 EDT 2014
 
-<h2>FDB_entl</h2>
+### FDB_entl
 
-### Division COMPLETE: The winner is SPEN
+#### Division COMPLETE: The winner is SPEN
 
 
-<table id="sequential" class="result sorted">
-<thead>
-<tr>
-<th class="center">Solver</th>
-</table>
-
-<table id="parallel" class="result sorted">
+<table>
 <thead>
 <tr>
 <th class="center">Solver</th><th class="center">Errors</th>
@@ -38,6 +21,7 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <th class="center">Remaining</th>
 <th class="center">CPU Time (on solved instances)</th>
 </tr>
+</thead>
 <tr>
 <td>SPEN</td>
 <td class="right">0</td>
@@ -71,18 +55,13 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <td>     43.65</td>
 </tr>
 </table>
-<h2>UDB_entl</h2>
 
-### Division COMPLETE: The winner is Cyclist-SL
+### UDB_entl
+
+#### Division COMPLETE: The winner is Cyclist-SL
 
 
-<table id="sequential" class="result sorted">
-<thead>
-<tr>
-<th class="center">Solver</th>
-</table>
-
-<table id="parallel" class="result sorted">
+<table>
 <thead>
 <tr>
 <th class="center">Solver</th><th class="center">Errors</th>
@@ -91,6 +70,7 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <th class="center">Remaining</th>
 <th class="center">CPU Time (on solved instances)</th>
 </tr>
+</thead>
 <tr>
 <td>Cyclist-SL</td>
 <td class="right">0</td>
@@ -116,18 +96,13 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <td>     80.60</td>
 </tr>
 </table>
-<h2>UDB_sat</h2>
 
-### Division COMPLETE: The winner is SLEEK-06
+### UDB_sat
+
+#### Division COMPLETE: The winner is SLEEK-06
 
 
-<table id="sequential" class="result sorted">
-<thead>
-<tr>
-<th class="center">Solver</th>
-</table>
-
-<table id="parallel" class="result sorted">
+<table>
 <thead>
 <tr>
 <th class="center">Solver</th><th class="center">Errors</th>
@@ -136,6 +111,7 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <th class="center">Remaining</th>
 <th class="center">CPU Time (on solved instances)</th>
 </tr>
+</thead>
 <tr>
 <td>SLEEK-06</td>
 <td class="right">0</td>
@@ -153,18 +129,12 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <td>   2620.52</td>
 </tr>
 </table>
-<h2>sll0a_entl</h2>
 
-### Division COMPLETE: The winner is Asterix
+### sll0a_entl
 
+#### Division COMPLETE: The winner is Asterix
 
-<table id="sequential" class="result sorted">
-<thead>
-<tr>
-<th class="center">Solver</th>
-</table>
-
-<table id="parallel" class="result sorted">
+<table>
 <thead>
 <tr>
 <th class="center">Solver</th><th class="center">Errors</th>
@@ -173,6 +143,7 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <th class="center">Remaining</th>
 <th class="center">CPU Time (on solved instances)</th>
 </tr>
+</thead>
 <tr>
 <td>Asterix</td>
 <td class="right">0</td>
@@ -206,18 +177,12 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <td>     11.78</td>
 </tr>
 </table>
-<h2>sll0a_sat</h2>
 
-### Division COMPLETE: The winner is Asterix
+### sll0a_sat
 
+#### Division COMPLETE: The winner is Asterix
 
-<table id="sequential" class="result sorted">
-<thead>
-<tr>
-<th class="center">Solver</th>
-</table>
-
-<table id="parallel" class="result sorted">
+<table>
 <thead>
 <tr>
 <th class="center">Solver</th><th class="center">Errors</th>
@@ -226,6 +191,7 @@ Competition results as of Wed Jun 25 21:20:39 EDT 2014
 <th class="center">Remaining</th>
 <th class="center">CPU Time (on solved instances)</th>
 </tr>
+</thead>
 <tr>
 <td>Asterix</td>
 <td class="right">0</td>

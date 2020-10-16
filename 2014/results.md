@@ -6,7 +6,6 @@ layout: default
 
 Individual results pages can be found from this list:
 
-
 - <a href="results/summary.html">Summary</a>
 - <a href="results/gold.html">Medal Standings</a>
 - <a href="results/ALIA.html">ALIA</a>
@@ -43,3 +42,8 @@ Individual results pages can be found from this list:
 - <a href="results/UFLIA.html">UFLIA</a>
 - <a href="results/UFLRA.html">UFLRA</a>
 - <a href="results/UFNIA.html">UFNIA</a>
+
+
+## SL-COMP 2014 Results
+
+- <a href="results/SLCOMP.html">SL-COMP Results</a>
