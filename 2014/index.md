@@ -23,12 +23,12 @@ See the [rules document](rules14.pdf) for the complete timeline.
 - **June 1 2014** &nbsp; Deadline for initial solver submission
 - **June 15 2014** &nbsp; Deadline for final solver versions
 
-<p>
-The organizers of SMT-COMP 2014 are
+### Organizers
 -  David Cok (GrammaTech, USA)
 -  David Deharbe (Federal University of Rio Grande do Norte, Brazil)
 -  Tjark Weber (Uppsala University, Sweden)
-</p>
+
+### Acknowledgments
 
 The competition uses the
 <a href="https://www.starexec.org">STAR-EXEC</a> server, which is hosted at
