@@ -59,7 +59,7 @@
   - name: Slides
     link: 2018/slides.html
   - name: Report
-    link: https://github.com/SMT-COMP/smt-comp/blob/master/2018/report/SMT-COMP-final.pdf
+    link: https://doi.org/10.3233/SAT190123
 
 - name: 2017
   link: 2017/index.html
@@ -80,7 +80,7 @@
   - name: Slides
     link: 2017/SMT-COMP-2017-slides.pdf
   - name: Report
-    link: https://github.com/SMT-COMP/smt-comp/blob/master/2018/report/SMT-COMP-final.pdf
+    link: https://doi.org/10.3233/SAT190123
 
 - name: 2016
   link: 2016/index.html
@@ -101,7 +101,7 @@
   - name: Slides
     link: 2016/SMT-COMP-2016-slides.pdf
   - name: Report
-    link: https://github.com/SMT-COMP/smt-comp/blob/master/2018/report/SMT-COMP-final.pdf
+    link: https://doi.org/10.3233/SAT190123
 
 - name: 2015
   link: 2015/index.html
@@ -122,7 +122,7 @@
   - name: Slides
     link: 2015/SMT-COMP-2015-slides.pdf
   - name: Report
-    link: https://github.com/SMT-COMP/smt-comp/blob/master/2018/report/SMT-COMP-final.pdf
+    link: https://doi.org/10.3233/SAT190123
 
 - name: 2014
   link: 2014/index.html
@@ -141,4 +141,4 @@
   - name: Results
     link: 2014/results.html
   - name: Report
-    link: https://github.com/SMT-COMP/smt-comp/blob/master/2014/report/SMTCOMP-JSAT-final.pdf
+    link: https://doi.org/10.3233/sat190109
