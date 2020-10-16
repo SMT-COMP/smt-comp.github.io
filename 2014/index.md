@@ -2,9 +2,9 @@
 
 <p>
 The 2014 edition of the Satisfiability Modulo Theories Competition
-(SMT-COMP) (July 17-18, 2014) is part of the <a href="http://vsl2014.at/pages/SMT-index.html">SMT 2014 workshop</a>,
-associated with <a href="http://vsl2014.at/pages/SAT-index.html">SAT 2014</a> at the
-<a href="http://vsl2014.at//">Vienna Summer of Logic</a>
+(SMT-COMP) (July 17-18, 2014) is part of the <a href="http://smt2014.it.uu.se/">SMT 2014 workshop</a>,
+associated with <a href="https://baldur.iti.kit.edu/sat2014/">SAT 2014</a> at the
+<a href="http://vsl2014.at/">Vienna Summer of Logic</a>
 (July&nbsp;9-24, 2014, Vienna, AU). In particular, SMT-COMP is part of the
 <a href="http://vsl2014.at/olympics/">FLoC'14 Olympic Games</a>.
 

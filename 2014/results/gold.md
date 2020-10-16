@@ -8,7 +8,7 @@ layout: default
 
 
 Competition results for the Medal standings division as of Fri Jun 27 16:49:23 EDT 2014
-### Gold/Silver medal current standings
+### Gold/Silver Medal Current Standings
 The gold and silver medal winners are the first and second place measured by
 absence of errors and the most solved problems, measured by a weighted,
 non-linear metric across divisions.
@@ -83,7 +83,7 @@ non-linear metric across divisions.
 <td align="right">   2.859</td>
 </tr>
 <tr>
-<td class="right">4Simp</td>
+<td>4Simp</td>
 <td align="right">100%</td>
 <td align="right">   0.000</td>
 <td align="right">   2.468</td>
@@ -132,17 +132,16 @@ non-linear metric across divisions.
 </tr>
 </table>
 <h2>Bronze medal</h2>
-The bronze medal is awarded to the winner of the<a href="results-QF_BV.shtml">QF_BV</a> division.
-<h2>An alternate scoring metric</h2>
+The bronze medal is awarded to the winner of the <a href="results-QF_BV.shtml">QF_BV</a> division.
+<h2>An Alternate Scoring Metric</h2>
 The organizers also considered a different metric for gold/silver medals. We officially adopted the one above, as expressed in the competition rules, since it emphasizes soundness of solvers (a solver with an error in any division scores lower than solvers with no errors, even when they compete in fewer divisions). In the alternate metric, a division without errors contributes the squared fraction of solved instances weighted by the log10 of the number of benchmarks in the division; a division with errors contributes the negative of the division's weight times the number of errors. For comparative information only, the table below shows rankings using this metric.
 
 
-<table id="sequential" class="result sorted">
-<thead>
+<table>
 <tr>
 <th class="center">Solver</th>
-<td>% Complete</td>
-<td>Alternate<br>Metric</td>
+<th>% Complete</th>
+<th>Alternate<br>Metric</th>
 </tr>
 <tr>
 <td>CVC4</td>
@@ -205,7 +204,7 @@ The organizers also considered a different metric for gold/silver medals. We off
 <td align="right">   2.859</td>
 </tr>
 <tr>
-<td class="right">4Simp</td>
+<td>4Simp</td>
 <td align="right">100%</td>
 <td align="right">   2.468</td>
 </tr>

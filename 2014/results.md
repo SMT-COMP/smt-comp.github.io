@@ -1,6 +1,8 @@
-<!--#set var="title" value="SMT-COMP 2014 results"
--->
+---
+layout: default
+---
 
+## SMT-COMP 2014 Results
 
 Individual results pages can be found from this list:
 
