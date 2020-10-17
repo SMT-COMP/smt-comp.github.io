@@ -142,3 +142,22 @@
     link: 2014/results.html
   - name: Report
     link: https://doi.org/10.3233/sat190109
+
+- name: 2012
+  link: 2012/index.html
+  url: 2012
+  sublinks:
+  - name: Rules
+    link: 2012/rules.html
+  - name: Benchmarks
+    link: 2012/benchmarks.html
+  - name: Tools
+    link: 2012/tools.html
+  - name: Specs
+    link: 2012/specs.html
+  - name: Participants
+    link: 2012/participants.html
+  - name: Results
+    link: 2012/results.html
+  - name: Report
+    link: https://doi.org/10.29007/gj66

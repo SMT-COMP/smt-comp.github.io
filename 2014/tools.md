@@ -6,7 +6,7 @@ tools:
 
 - name: Pre-Processor (Benchmark Scrambler)
   repo: https://github.com/SMT-COMP/scrambler
-  sources: tools/smtcomp2012_scrambler.tar.gz
+  sources: ../2014/tools/smtcomp2012_scrambler.tar.gz
   tracks:
     - name: track_main
       starexec: SMT-COMP 2014 Scrambler
