@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## Summary
-
-### Unsat Core Track
+## Unsat Core Track (Summary)
 Competition results as of Thu Jul 12 23:54:00 GMT
 <table>
 <tr>

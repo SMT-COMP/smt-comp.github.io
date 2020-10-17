@@ -3,9 +3,8 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## Summary
-
-<H1>Unknown Benchmarks Track</H1>Competition results as of Thu Jul 7 07:28:02 GMT
+## Unknown Benchmarks Track (Summary)
+Competition results as of Thu Jul 7 07:28:02 GMT
 
 <table>
 <tr>

@@ -3,9 +3,8 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## Summary
-
-<H1>Unsat Core Track</H1>Competition results as of Wed Jun 29 20:25:52 GMT
+## Unsat Core Track (Summary)
+Competition results as of Wed Jun 29 20:25:52 GMT
 
 <table>
 <tr>

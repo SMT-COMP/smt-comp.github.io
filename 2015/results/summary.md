@@ -2,12 +2,11 @@
 layout: default
 ---
 
-## Summary
+## Main Track (Summary)
 
-<H1>Main Track</H1>Competition results as of Fri Oct 30 12:49:29 GMT
+Competition results as of Fri Oct 30 12:49:29 GMT
 
 
-#### Sequential Performance
 <table>
 <tr>
 <th rowspan="4">Logic</th>

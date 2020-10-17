@@ -9,7 +9,7 @@ Individual results pages can be found from this list:
 - Summary (<a href="results/summary.html">Main Track</a>, <a href="results/app-summary.html">Application Track</a>)
 
 - Competition-Wide Scoring
-  (<a href="results/competition-main.html">Main Track</a>)
+  (<a href="results/competition-main.html">Main Track</a>, (<a href="results/competition-app.html">Application Track</a>)
 
 - ALIA (<a href="results/ALIA.html">Main Track</a>, <a href="results/ALIA-app.html">Application Track</a>)
 

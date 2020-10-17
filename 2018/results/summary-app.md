@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## Summary
-
-### Application Track
+## Application Track (Summary)
 Competition results as of Fri Jul 13 00:00:31 GMT
 <table>
 <tr>

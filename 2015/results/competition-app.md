@@ -9,17 +9,15 @@ Competition results as of Wed Jul 8 20:38:52 GMT
 
 
 
-
-#### Parallel Performance
-<table id="parallel" class="result sorted">
-<tr><td align=center>**Sequential Performances**</td><td align=center>**Parallel Performances**</td>
+<table>
+<tr class="center">
+<th>Sequential Performance</th><th>Parallel Performance</th>
 </tr>
 <tr class="center">
 <td>
-#### Parallel Performance
-<table id="parallel" class="result sorted">
-<tr><td>Rank</td><th class="center">Solver</th>
-<td>Score</td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
 </tr>
 <tr class="center">
 <td> -</td>
@@ -84,10 +82,9 @@ Competition results as of Wed Jul 8 20:38:52 GMT
 </table>
 </td>
 <td>
-#### Parallel Performance
-<table id="parallel" class="result sorted">
-<tr><td>Rank</td><th class="center">Solver</th>
-<td>Score</td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
 </tr>
 <tr class="center">
 <td> -</td>

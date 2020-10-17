@@ -10,20 +10,16 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 
 
 
-#### Sequential Performance
-<table id="sequential" class="result sorted">
-<thead>
-<tr><td align=center>**Sequential Performances**</td><td align=center>**Parallel Performances**</td>
-<td align=center>**Sequential Performances (industrial benchmarks)**</td>
-<td align=center>**Parallel Performances (industrial benchmarks)**</td>
+<table>
+<tr class="center">
+<th>Sequential Performance</th><th>Parallel Performance</th>
+<th>Sequential Performance (industrial)</th><th>Parallel Performance (industrial)</th>
 </tr>
 <tr class="center">
 <td>
-#### Sequential Performance
-<table id="sequential" class="result sorted">
-<thead>
-<tr><td>Rank</td><th class="center">Solver</th>
-<td>Score</td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
 </tr>
 <tr class="center">
 <td> -</td>
@@ -133,11 +129,9 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </table>
 </td>
 <td>
-#### Sequential Performance
-<table id="sequential" class="result sorted">
-<thead>
-<tr><td>Rank</td><th class="center">Solver</th>
-<td>Score</td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
 </tr>
 <tr class="center">
 <td> -</td>
@@ -247,11 +241,9 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </table>
 </td>
 <td>
-#### Sequential Performance
-<table id="sequential" class="result sorted">
-<thead>
-<tr><td>Rank</td><th class="center">Solver</th>
-<td>Score</td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
 </tr>
 <tr class="center">
 <td> -</td>
@@ -361,11 +353,9 @@ Competition results as of Fri Oct 30 12:49:29 GMT
 </table>
 </td>
 <td>
-#### Sequential Performance
-<table id="sequential" class="result sorted">
-<thead>
-<tr><td>Rank</td><th class="center">Solver</th>
-<td>Score</td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
 </tr>
 <tr class="center">
 <td> -</td>

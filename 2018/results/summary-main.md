@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## Summary
-
-### Main Track
+## Main Track (Summary)
 
 Competition results as of Fri Jul 13 00:02:11 GMT
 

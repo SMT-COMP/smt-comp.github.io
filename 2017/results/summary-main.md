@@ -3,9 +3,8 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## Summary
-
-<H1>Main Track</H1>Competition results as of Fri Jul 21 10:18:02 GMT
+## Main Track (Summary)
+Competition results as of Fri Jul 21 10:18:02 GMT
 
 <table>
 <tr>

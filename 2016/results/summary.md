@@ -2,9 +2,8 @@
 layout: default
 ---
 
-## Summary
-
-<H1>Main Track</H1>Competition results as of Thu Jul 7 07:24:34 GMT
+## Main Track (Summary)
+Competition results as of Thu Jul 7 07:24:34 GMT
 
 <table>
 <tr>
