@@ -92,17 +92,6 @@
    <td class="right"><a href="system-descriptions/CVC4.pdf">CVC4</a></td>
    <td class="right">Andres N&ouml;tzli (<a href="mailto:noetzli@stanford.edu">noetzli@stanford.edu</a>)</td>
   </tr>
-  <tr class="non-competing-grey">
-   <td>CVC4-experimental-idl-2<sup><a href="#fnn">n</a></sup></td>
-   <td class="center">X</td>
-   <td class="center"></td>
-   <td class="center"></td>
-   <td class="right">19728</td>
-   <td class="right"></td>
-   <td class="right">&mdash;</td>
-   <td class="right"><a href="system-descriptions/CVC4.pdf">CVC4</a></td>
-   <td class="right">Duligur Ibeling (<a href="mailto:duligur@gmail.com">duligur@gmail.com</a>)</td>
-  </tr>
   <tr>
    <td>CVC4-main</td>
    <td class="center">X</td>
@@ -125,39 +114,6 @@
    <td class="right"><a href="system-descriptions/CVC4.pdf">CVC4</a></td>
    <td class="right">Andres N&ouml;tzli (<a href="mailto:noetzli@stanford.edu">noetzli@stanford.edu</a>)</td>
   </tr>
-  <tr class="non-competing-grey">
-   <td>MathSAT 5.5.2 (Application)<sup><a href="#fnn">n</a></sup></td>
-   <td class="center"></td>
-   <td class="center">X</td>
-   <td class="center"></td>
-   <td class="right">17271</td>
-   <td class="right"></td>
-   <td class="right">&mdash;</td>
-   <td class="right"></td>
-   <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz</a></td>
-  </tr>
-  <tr class="non-competing-grey">
-   <td>MathSAT 5.5.2 (Main)<sup><a href="#fnn">n</a></sup></td>
-   <td class="center">X</td>
-   <td class="center"></td>
-   <td class="center"></td>
-   <td class="right">17270</td>
-   <td class="right"></td>
-   <td class="right">&mdash;</td>
-   <td class="right"></td>
-   <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz</a></td>
-  </tr>
-  <tr class="non-competing-grey">
-   <td>MathSAT 5.5.2 (Unsat-core)<sup><a href="#fnn">n</a></sup></td>
-   <td class="center"></td>
-   <td class="center"></td>
-   <td class="center">X</td>
-   <td class="right">19826</td>
-   <td class="right"></td>
-   <td class="right">&mdash;</td>
-   <td class="right"></td>
-   <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz</a></td>
-  </tr>
   <tr>
    <td>MinkeyRink 2018.1 MT</td>
    <td class="center">X</td>
@@ -179,17 +135,6 @@
    <td class="right">325559</td>
    <td class="right"></td>
    <td class="right">Trevor Hansen (<a href="mailto:trev_Abroad@yahoo.com">trev_Abroad@yahoo.com</a>)</td>
-  </tr>
-  <tr class="non-competing-grey">
-   <td>opensmt2<sup><a href="#fnn">n</a></sup></td>
-   <td class="center">X</td>
-   <td class="center"></td>
-   <td class="center"></td>
-   <td class="right">16651</td>
-   <td class="right">19938</td>
-   <td class="right">&mdash;</td>
-   <td class="right"></td>
-   <td class="right">Antti Hyv&auml;rinen (<a href="mailto:antti.hyvarinen@gmail.com">antti.hyvarinen@gmail.com</a>)</td>
   </tr>
   <tr>
    <td>Q3B</td>
@@ -344,6 +289,61 @@
    <td class="right">256528</td>
    <td class="right"></td>
    <td class="right">Bruno Dutertre (<a href="mailto:Bruno.Dutertre@sri.com">Bruno.Dutertre@sri.com</a>)</td>
+  </tr>
+  <tr class="non-competing-grey">
+   <td>CVC4-experimental-idl-2<sup><a href="#fnn">n</a></sup></td>
+   <td class="center">X</td>
+   <td class="center"></td>
+   <td class="center"></td>
+   <td class="right">19728</td>
+   <td class="right"></td>
+   <td class="right">&mdash;</td>
+   <td class="right"><a href="system-descriptions/CVC4.pdf">CVC4</a></td>
+   <td class="right">Duligur Ibeling (<a href="mailto:duligur@gmail.com">duligur@gmail.com</a>)</td>
+  </tr>
+  <tr class="non-competing-grey">
+   <td>MathSAT 5.5.2 (Application)<sup><a href="#fnn">n</a></sup></td>
+   <td class="center"></td>
+   <td class="center">X</td>
+   <td class="center"></td>
+   <td class="right">17271</td>
+   <td class="right"></td>
+   <td class="right">&mdash;</td>
+   <td class="right"></td>
+   <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz</a></td>
+  </tr>
+  <tr class="non-competing-grey">
+   <td>MathSAT 5.5.2 (Main)<sup><a href="#fnn">n</a></sup></td>
+   <td class="center">X</td>
+   <td class="center"></td>
+   <td class="center"></td>
+   <td class="right">17270</td>
+   <td class="right"></td>
+   <td class="right">&mdash;</td>
+   <td class="right"></td>
+   <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz</a></td>
+  </tr>
+  <tr class="non-competing-grey">
+   <td>MathSAT 5.5.2 (Unsat-core)<sup><a href="#fnn">n</a></sup></td>
+   <td class="center"></td>
+   <td class="center"></td>
+   <td class="center">X</td>
+   <td class="right">19826</td>
+   <td class="right"></td>
+   <td class="right">&mdash;</td>
+   <td class="right"></td>
+   <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.5.2-linux-x86_64.tar.gz</a></td>
+  </tr>
+  <tr class="non-competing-grey">
+   <td>opensmt2<sup><a href="#fnn">n</a></sup></td>
+   <td class="center">X</td>
+   <td class="center"></td>
+   <td class="center"></td>
+   <td class="right">16651</td>
+   <td class="right">19938</td>
+   <td class="right">&mdash;</td>
+   <td class="right"></td>
+   <td class="right">Antti Hyv&auml;rinen (<a href="mailto:antti.hyvarinen@gmail.com">antti.hyvarinen@gmail.com</a>)</td>
   </tr>
   <tr class="non-competing-grey">
    <td>Z3 (4.7.1)<sup><a href="#fnn">n</a></sup></td>

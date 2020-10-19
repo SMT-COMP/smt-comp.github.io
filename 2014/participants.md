@@ -218,8 +218,8 @@ These solvers have expressed intention to participate in SMT-COMP 2014.
   <td class="right" ><a href="system-descriptions/Yices2-description.pdf">Yices</a></td>
   <td class="right" >Bruno Dutertre (<a href="mailto:bruno@csl.sri.com">bruno@csl.sri.com</a>)</td>
 </tr>
-<tr>
-  <td class="left"  >MathSAT 5 (non-competitive)</td>
+<tr class="non-competing-grey">
+  <td class="left"  >MathSAT 5<sup><a href="#fnn">n</a></sup></td>
   <td class="center">X</td>
   <td class="center">?</td>
   <td class="center">174</td>
@@ -228,8 +228,8 @@ These solvers have expressed intention to participate in SMT-COMP 2014.
   <td class="right" >-</td>
   <td class="right" >-</td>
 </tr>
-<tr>
-  <td class="left"  >Z3 (non-competitive)</td>
+<tr class="non-competing-grey">
+  <td class="left"  >Z3<sup><a href="#fnn">n</a></sup></td>
   <td class="center">X</td>
   <td class="center">X</td>
   <td class="center">1286 config 1815 default;<br>app ?</td>
@@ -240,6 +240,12 @@ These solvers have expressed intention to participate in SMT-COMP 2014.
 </tr>
 
 </table>
+
+<p>
+  <span id="fnn">
+    n. Non-competitive.
+  </span>
+</p>
 
 These are the logic divisions in which each solver is competing.
 
@@ -366,11 +372,11 @@ These are the logic divisions in which each solver is competing.
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">MathSAT5 (non-competitive)</td>
+  <td class="left">MathSAT5<sup><a href="#fnn">n</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Z3 (non-competitive)</td>
+  <td class="left">Z3<sup><a href="#fnn">n</a></sup></td>
   <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 

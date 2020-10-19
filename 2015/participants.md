@@ -55,16 +55,6 @@
   <td class="right" >Mathias Preiner (<a href="mailto:mathias.preiner@jku.at">mathias.preiner@jku.at</a>)</td>
 </tr>
 <tr>
-  <td class="left">Boolector (QF_BV incremental fixed)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">-</td>
-  <td class="center">X</td>
-  <td class="center">-</td>
-  <td class="right" >3219</td>
-  <td class="right" >-</td>
-  <td class="right" ><a href="systemDescriptions/Boolector.pdf">Boolector</a></td>
-  <td class="right" >Mathias Preiner (<a href="mailto:mathias.preiner@jku.at">mathias.preiner@jku.at</a>)</td>
-</tr>
-<tr>
   <td class="left">CVC3 (Main track)</td>
   <td class="center">X</td>
   <td class="center">-</td>
@@ -123,26 +113,6 @@
   <td class="right" >44444</td>
   <td class="right" ><a href="systemDescriptions/CVC4.pdf">CVC4</a></td>
   <td class="right" >Kshitij Bansal (<a href="mailto:kshitij@cs.nyu.edu">kshitij@cs.nyu.edu</a>)</td>
-</tr>
-<tr>
-  <td class="left">MathSAT 5 (Main track)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">X</td>
-  <td class="center">-</td>
-  <td class="center">2900</td>
-  <td class="right" >2968</td>
-  <td class="right" >-</td>
-  <td class="right" ></td>
-  <td class="right" ><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz</a></td>
-</tr>
-<tr>
-  <td class="left">MathSAT 5 (Application track)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">-</td>
-  <td class="center">X</td>
-  <td class="center">2900</td>
-  <td class="right" >2970</td>
-  <td class="right" >-</td>
-  <td class="right" ></td>
-  <td class="right" ><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz</a></td>
 </tr>
 <tr>
   <td class="left">OpenSMT2</td>
@@ -285,16 +255,6 @@
   <td class="right" >Dejan Jovanovi&#263; (<a href="mailto:dejan.jovanovic@sri.com">dejan.jovanovic@sri.com</a>)</td>
 </tr>
 <tr>
-  <td class="left">Z3 (4.4.0)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">X</td>
-  <td class="center">X</td>
-  <td class="center">2908</td>
-  <td class="right" >3150</td>
-  <td class="right" >-</td>
-  <td class="right" ></td>
-  <td class="right" ><a href="https://github.com/Z3Prover/z3/archive/z3-4.4.0.tar.gz">https://github.com/Z3Prover/z3/archive/z3-4.4.0.tar.gz</a></td>
-</tr>
-<tr>
   <td class="left">Z3 (unstable)</td>
   <td class="center">X</td>
   <td class="center">-</td>
@@ -313,6 +273,46 @@
   <td class="right" >0</td>
   <td class="right" ></td>
   <td class="right" >Aleksandar Zeljic (<a href="mailto:aleksandar.zeljic@it.uu.se">aleksandar.zeljic@it.uu.se</a>)</td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">Boolector (QF_BV incremental fixed)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right" >3219</td>
+  <td class="right" >-</td>
+  <td class="right" ><a href="systemDescriptions/Boolector.pdf">Boolector</a></td>
+  <td class="right" >Mathias Preiner (<a href="mailto:mathias.preiner@jku.at">mathias.preiner@jku.at</a>)</td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">MathSAT 5 (Main track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">2900</td>
+  <td class="right" >2968</td>
+  <td class="right" >-</td>
+  <td class="right" ></td>
+  <td class="right" ><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">MathSAT 5 (Application track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">2900</td>
+  <td class="right" >2970</td>
+  <td class="right" >-</td>
+  <td class="right" ></td>
+  <td class="right" ><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.6-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">Z3 (4.4.0)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">X</td>
+  <td class="center">X</td>
+  <td class="center">2908</td>
+  <td class="right" >3150</td>
+  <td class="right" >-</td>
+  <td class="right" ></td>
+  <td class="right" ><a href="https://github.com/Z3Prover/z3/archive/z3-4.4.0.tar.gz">https://github.com/Z3Prover/z3/archive/z3-4.4.0.tar.gz</a></td>
 </tr>
 <tr>
   <td><b>Total</b></td>

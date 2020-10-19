@@ -70,6 +70,13 @@ td.left {
   text-align: left;
 }
 
+td.non-competing-grey {
+  color: #707070;
+  a {
+    color: #808080;
+  }
+}
+
 tr.non-competing {
   a {
     color: #000;

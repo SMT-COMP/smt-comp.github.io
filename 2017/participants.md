@@ -6,9 +6,9 @@
 <table>
 <tr class="center">
   <th>Solver</th>
-  <th>Main track</th>
-  <th>Application track</th>
-  <th>Unsat-core track</th>
+  <th>Main Track</th>
+  <th>Application Track</th>
+  <th>Unsat-core Track</th>
   <th>Preliminary version solver id</th>
   <th>Final version solver id</th>
   <th>Seed</th>
@@ -91,39 +91,6 @@
   <td class="right">0</td>
   <td class="right"></td>
   <td class="right">Clark Barrett (<a href="mailto:barrett@cs.stanford.edu">barrett@cs.stanford.edu</a>)</td>
-</tr>
-<tr>
-  <td>MathSAT 5.4.1 (Main)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">X</td>
-  <td class="center"></td>
-  <td class="center"></td>
-  <td class="right">11978</td>
-  <td class="right"></td>
-  <td class="right"></td>
-  <td class="right"></td>
-  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz</a></td>
-</tr>
-<tr>
-  <td>MathSAT 5.4.1 (Application)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center"></td>
-  <td class="center">X</td>
-  <td class="center"></td>
-  <td class="right">11979</td>
-  <td class="right"></td>
-  <td class="right"></td>
-  <td class="right"></td>
-  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz</a></td>
-</tr>
-<tr>
-  <td>MathSAT 5.4.1 (Unsat-core)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center"></td>
-  <td class="center"></td>
-  <td class="center">X</td>
-  <td class="right">12211</td>
-  <td class="right"></td>
-  <td class="right"></td>
-  <td class="right"></td>
-  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz</a></td>
 </tr>
 <tr>
   <td>MinkeyRink</td>
@@ -290,7 +257,40 @@
   <td class="right"></td>
   <td class="right">Dejan Jovanovi&#263; (<a href="mailto:dejan.jovanovic@sri.com">dejan.jovanovic@sri.com</a>)</td>
 </tr>
-<tr>
+<tr class="non-competing-grey">
+  <td>MathSAT 5.4.1 (Main)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">X</td>
+  <td class="center"></td>
+  <td class="center"></td>
+  <td class="right">11978</td>
+  <td class="right"></td>
+  <td class="right"></td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td>MathSAT 5.4.1 (Application)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center"></td>
+  <td class="center">X</td>
+  <td class="center"></td>
+  <td class="right">11979</td>
+  <td class="right"></td>
+  <td class="right"></td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td>MathSAT 5.4.1 (Unsat-core)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center"></td>
+  <td class="center"></td>
+  <td class="center">X</td>
+  <td class="right">12211</td>
+  <td class="right"></td>
+  <td class="right"></td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.4.1-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
   <td>Z3 (4.5.0)<sup><a href="#fnn">n</a></sup></td>
   <td class="center">X</td>
   <td class="center">X</td>

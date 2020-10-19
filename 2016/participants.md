@@ -82,17 +82,6 @@
   <td class="right">Clark Barrett (<a href="mailto:barrett@cs.nyu.edu">barrett@cs.nyu.edu</a>)</td>
 </tr>
 <tr>
-  <td class="left">CVC4 (Application track)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">-</td>
-  <td class="center">X</td>
-  <td class="center">-</td>
-  <td class="right">3091</td>
-  <td class="right"></td>
-  <td class="right">-</td>
-  <td class="right"></td>
-  <td class="right"><a href="https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091">https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091</a></td>
-</tr>
-<tr>
   <td class="left">MapleSTP</td>
   <td class="center">X</td>
   <td class="center">-</td>
@@ -135,39 +124,6 @@
   <td class="right">-</td>
   <td class="right"></td>
   <td class="right">Jimmy Liang (<a href="mailto:jliang@gsd.uwaterloo.ca">jliang@gsd.uwaterloo.ca</a>)</td>
-</tr>
-<tr>
-  <td class="left">MathSAT 5 (Main track)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">X</td>
-  <td class="center">-</td>
-  <td class="center">-</td>
-  <td class="right">7873</td>
-  <td class="right"></td>
-  <td class="right">-</td>
-  <td class="right"></td>
-  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
-</tr>
-<tr>
-  <td class="left">MathSAT 5 (Application track)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">-</td>
-  <td class="center">X</td>
-  <td class="center">-</td>
-  <td class="right">7874</td>
-  <td class="right"></td>
-  <td class="right">-</td>
-  <td class="right"></td>
-  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
-</tr>
-<tr>
-  <td class="left">MathSAT 5 (Unsat-core track)<sup><a href="#fnn">n</a></sup></td>
-  <td class="center">-</td>
-  <td class="center">-</td>
-  <td class="center">X</td>
-  <td class="right">8321</td>
-  <td class="right"></td>
-  <td class="right">-</td>
-  <td class="right"></td>
-  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
 </tr>
 <tr>
   <td class="left">Minkeyrink</td>
@@ -349,7 +305,7 @@
   <td class="left">toysmt</td>
   <td class="center">X</td>
   <td class="center">-</td>
-  <td class="center">X<sup><a href="#fnn">n</a></sup></td>
+  <td class="center non-competing-grey">X<sup><a href="#fnn">n</a></sup></td>
   <td class="right">7813</td>
   <td class="right"></td>
   <td class="right">1863866937</td>
@@ -379,17 +335,6 @@
   <td class="right">Giles Reger (<a href="mailto:giles.reger@manchester.ac.uk">giles.reger@manchester.ac.uk</a>)</td>
 </tr>
 <tr>
-  <td class="left">veriT</td>
-  <td class="center">X</td>
-  <td class="center">-</td>
-  <td class="center">X<sup><a href="#fnn">n</a></sup></td>
-  <td class="right">7797</td>
-  <td class="right">8013</td>
-  <td class="right">20151003</td>
-  <td class="right"><a href="systemDescriptions/veriT.pdf">veriT</a></td>
-  <td class="right">Haniel Barbosa (<a href="mailto:haniel.barbosa@inria.fr">haniel.barbosa@inria.fr</a>)</td>
-</tr>
-<tr>
   <td class="left">Yices-2.4.2</td>
   <td class="center">X</td>
   <td class="center">-</td>
@@ -411,7 +356,62 @@
   <td class="right"></td>
   <td class="right">Bruno Dutertre (<a href="mailto:bruno.dutertre@sri.com">bruno.dutertre@sri.com</a>)</td>
 </tr>
-<tr>
+<tr class="non-competing-grey">
+  <td class="left">CVC4 (Application track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">3091</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091">https://www.starexec.org/starexec/secure/details/solver.jsp?id=3091</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">MathSAT 5 (Main track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="right">7873</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">MathSAT 5 (Application track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="right">7874</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">MathSAT 5 (Unsat-core track)<sup><a href="#fnn">n</a></sup></td>
+  <td class="center">-</td>
+  <td class="center">-</td>
+  <td class="center">X</td>
+  <td class="right">8321</td>
+  <td class="right"></td>
+  <td class="right">-</td>
+  <td class="right"></td>
+  <td class="right"><a href="http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz">http://mathsat.fbk.eu/download.php?file=mathsat-5.3.11-linux-x86_64.tar.gz</a></td>
+</tr>
+<tr class="non-competing-grey">
+  <td class="left">veriT</td>
+  <td class="center">X</td>
+  <td class="center">-</td>
+  <td class="center">X<sup><a href="#fnn">n</a></sup></td>
+  <td class="right">7797</td>
+  <td class="right">8013</td>
+  <td class="right">20151003</td>
+  <td class="right"><a href="systemDescriptions/veriT.pdf">veriT</a></td>
+  <td class="right">Haniel Barbosa (<a href="mailto:haniel.barbosa@inria.fr">haniel.barbosa@inria.fr</a>)</td>
+</tr>
+<tr class="non-competing-grey">
   <td class="left">Z3 (4.4.1)<sup><a href="#fnn">n</a></sup></td>
   <td class="center">X</td>
   <td class="center">X</td>
