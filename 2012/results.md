@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## SMT-COMP 2014 Results
+## SMT-COMP 2012 Results
 
 
 Individual results pages can be found from this list:

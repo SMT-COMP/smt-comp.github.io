@@ -400,10 +400,6 @@
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Boolector (QF_BV incremental fixed)<sup><a href="#fn2">2</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
-</tr>
-<tr class="center">
   <td class="left">CVC3 (Main track)<sup><a href="#fn1">1</a></sup></td>
   <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
@@ -426,14 +422,6 @@
 <tr class="center">
   <td class="left">CVC4 (Application track) Experimental<sup><a href="#fn2">2</a></sup></td>
   <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td>
-</tr>
-<tr class="center">
-  <td class="left">MathSAT 5 (Main track)<sup><a href="#fn1">1</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
-</tr>
-<tr class="center">
-  <td class="left">MathSAT 5 (Application track)<sup><a href="#fn2">2</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
   <td class="left">OpenSMT2<sup><a href="#fn1">1</a></sup></td>
@@ -492,16 +480,28 @@
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Z3 (4.4.0)<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
-  <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
-</tr>
-<tr class="center">
   <td class="left">Z3 (unstable)<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
   <td class="left">Z3 (IJCAR'14)<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">Boolector (QF_BV incremental fixed)<sup><a href="#fn2">2</a></sup></td>
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">MathSAT 5 (Main track)<sup><a href="#fn1">1</a></sup></td>
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">MathSAT 5 (Application track)<sup><a href="#fn2">2</a></sup></td>
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">Z3 (4.4.0)<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
+  <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 </table>
 

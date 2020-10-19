@@ -517,10 +517,6 @@
   <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 <tr class="center">
-  <td class="left">CVC4 (Application track)<sup><a href="#fn2">2</a></sup></td>
-  <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td>
-</tr>
-<tr class="center">
   <td class="left">MapleSTP<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
@@ -535,18 +531,6 @@
 <tr class="center">
   <td class="left">MapleSTP-mt-final<sup><a href="#fn2">2</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
-</tr>
-<tr class="center">
-  <td class="left">MathSAT 5 (Main track)<sup><a href="#fn1">1</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
-</tr>
-<tr class="center">
-  <td class="left">MathSAT 5 (Application track)<sup><a href="#fn2">2</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
-</tr>
-<tr class="center">
-  <td class="left">MathSAT 5 (Unsat-core track)<sup><a href="#fn3">3</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
   <td class="left">Minkeyrink<sup><a href="#fn1">1</a></sup></td>
@@ -625,10 +609,6 @@
   <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 <tr class="center">
-  <td class="left">veriT<sup><a href="#fn1">1</a>,<a href="#fn3">3</a></sup></td>
-  <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td></td>
-</tr>
-<tr class="center">
   <td class="left">Yices-2.4.2<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
@@ -636,7 +616,27 @@
   <td class="left">Yices-2.4.2 incremental<sup><a href="#fn2">2</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
-<tr class="center">
+<tr class="center non-competing-grey">
+  <td class="left">CVC4 (Application track)<sup><a href="#fn2">2</a></sup></td>
+  <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td>X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">MathSAT 5 (Main track)<sup><a href="#fn1">1</a></sup></td>
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">MathSAT 5 (Application track)<sup><a href="#fn2">2</a></sup></td>
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td></td> <td style="color:LightGray">X</td> <td>X</td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td style="color:LightGray">X</td> <td style="color:LightGray">X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">MathSAT 5 (Unsat-core track)<sup><a href="#fn3">3</a></sup></td>
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
+  <td class="left">veriT<sup><a href="#fn1">1</a>,<a href="#fn3">3</a></sup></td>
+  <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td></td>
+</tr>
+<tr class="center non-competing-grey">
   <td class="left">Z3 (4.4.1)<sup><a href="#fn1">1</a>,<a href="#fn2">2</a>,<a href="#fn3">3</a></sup></td>
   <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
