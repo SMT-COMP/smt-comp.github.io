@@ -9,7 +9,17 @@ layout: default
 <br/>
 **Time Limit:** 1200s
 
-### Winner: MathSAT5-smtcomp12
+### Winners
+<table>
+<tr>
+<th class="center">Winner</th>
+<th class="center">Open-Source Winner</th>
+</tr>
+<tr class="center">
+<td>MathSAT5-smtcomp12</td>
+<td>SMTInterpol</td>
+</tr>
+</table>
 
 ### Result table<sup><a href="#fn1">1</a></sup>
 

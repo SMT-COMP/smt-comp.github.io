@@ -10,7 +10,7 @@ layout: default
 **Time Limit:** 1200s
 
 
-### Winner: CVC3 v2.4.2
+### Non-Competitive Division
 
 ### Result table
 

@@ -10,7 +10,17 @@ layout: default
 **Time Limit:** 1200s
 
 
-### Winner: Boolector
+### Winners
+<table>
+<tr>
+<th class="center">Winner</th>
+<th class="center">Open-Source Winner</th>
+</tr>
+<tr class="center">
+<td>Boolector</td>
+<td>Boolector</td>
+</tr>
+</table>
 
 ### Result table<sup><a href="#fn1">1</a></sup>
 

@@ -4,6 +4,14 @@ layout: default
 
 ## SMT-COMP 2012 Results
 
+<b>
+NOTE: SMT-COMP 2012 was divided into four tracks:
+Main Track (competitive),
+Application Track (competitive),
+Unsat Core Track (non-competitive),
+Exhibition Track (non-competitive).
+Unfortunately, results data for all tracks but the Main Track is lost.
+</b>
 
 Individual results pages can be found from this list:
 - Summary (<a href="results/summary.html">Main Track</a>)

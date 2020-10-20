@@ -13,5 +13,5 @@ Tools specifically for the competition:
 - <a href="tools/run_unsat_core_track.sh">Script to run the unsat core track</a>
 
 Independent tools:
-- <a href="https://es.fbk.eu/people/griggio/misc/smtlib2parser.html">SMT-LIBv2 parser available</a>
+- <a href="https://es.fbk.eu/people/griggio/misc/smtlib2parser.html">SMT-LIBv2 parser</a>
 - <a href="http://smtlib.github.io/jSMTLIB/SMTLIBTutorial.pdf">SMT-LIBv2 tutorial</a> (thanks to GrammaTech's David Cok)

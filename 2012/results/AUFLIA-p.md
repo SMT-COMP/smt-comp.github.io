@@ -9,7 +9,7 @@ layout: default
 <br/>
 **Time Limit:** 1200s
 
-### Winner: CVC4 1.0rc.3931
+### Non-Competitive Division
 
 ### Result table<sup><a href="#fn1">1</a></sup>
 

@@ -10,7 +10,17 @@ layout: default
 **Time Limit:** 1200s
 
 
-### Winner: CVC4 1.0rc.3931
+### Winners
+<table>
+<tr>
+<th class="center">Winner</th>
+<th class="center">Open-Source Winner</th>
+</tr>
+<tr class="center">
+<td>CVC4 1.0rc.3931</td>
+<td>CVC4 1.0rc.3931</td>
+</tr>
+</table>
 
 ### Result table<sup><a href="#fn1">1</a></sup>
 
