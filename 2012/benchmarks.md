@@ -8,9 +8,9 @@ These benchmarks and tools are subject to change until their respective freeze
 dates, as documented in the <a href="rules.html">SMT-COMP rules</a>.
 
 
-### Application track Benchmarks
+### Application Track Benchmarks
 
-#### 2012 additions
+#### 2012 Additions
 - <b>safari</b> - derived from SMT-queries of an infinite-state model-checking tool (from R. Bruttomesso, SAFARI tool, CAV 2012).
 - <b>smtic3_QF_LRA</b> - benchmarks derived from an IC3 algorithm applied to some software verification benchmarks (from A. Griggio).
 
@@ -53,7 +53,7 @@ procedure for the analysis of administrative access control policies. A more
 detailed description of the benchmarks can be found in the following paper:
  <a href="https://dl.acm.org/doi/10.1145/1966913.1966935">Efficient Symbolic Automated Analysis of Administrative Attribute-based RBAC-Policies,</a> by F.  Alberti, A. Armando, and S. Ranise.
 
-### Unsat core benchmarks
+### Unsat Core Track Benchmarks
 The unsat core benchmarks are the subset of the benchmarks from the indicated 
 logics that are unsatisfiable; the benchmarks themselves have been modified
 to include names for the assertions. Per the SMTLIB standard, the benchmarks
@@ -61,10 +61,11 @@ are allowed to contain a mix of named and unmaned formulae, though ordinarily,
 all top-level formulae will have names. The names may be scrambled by the
 benchmark scrambler.
 
-- QF_LRA
-- QF_LIA
-- QF_IDL
-- QF_BV
+The competition benchmarks were selected from these divisions:
+- QF_LIA (2584 benchmarks)
+- QF_LRA (317 benchmarks)
+- QF_IDL (683 benchmarks)
+- QF_BV (1399 benchmarks)
 
 ### Format for Results Files
 
