@@ -80,7 +80,7 @@ Competition results for the QF_BV division as of Fri Jun 27 16:49:23 EDT 2014
 <td align="right"> 2.574</td>
 </tr>
 <tr>
-<td class="right">4Simp</td>
+<td>4Simp</td>
 <td align="right">0</td>
 <td align="right">2121</td>
 <td align="right">367</td>
