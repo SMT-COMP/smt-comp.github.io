@@ -10,11 +10,12 @@ Competition results for the QF_UF division as of Thu Jul 12 23:54:00 GMT
 **Benchmarks in this division : 4330  
 Time limit: 2400s** 
 
-### Winners<table class="result">
+### Winners
+<table>
 <tr>
-                           <th class="center">Sequential Performance</th>
-                           <th class="center">Parallel Performance</th>
-                           </tr><tr class="center"><td>CVC4</td><td>CVC4</td></tr></table>
+<th class="center">Sequential Performance</th>
+<th class="center">Parallel Performance</th>
+</tr><tr class="center"><td>CVC4</td><td>CVC4</td></tr></table>
 ### Result table<sup><a href="#fn1">1</a></sup>
 
 #### Sequential Performance

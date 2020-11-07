@@ -11,7 +11,7 @@ Competition results for the QF_UFBV division as of Fri Jul 13 00:02:11 GMT
 Time limit: 1200s** 
 
 ### Winners
-<table class="result">
+<table>
 <tr><th class="center">Sequential Performance</th><th class="center">Parallel Performance</th></tr>
 <tr class="center"><td>Boolector</td><td>Boolector</td></tr></table>
 ### Result table<sup><a href="#fn1">1</a></sup>

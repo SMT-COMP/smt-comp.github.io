@@ -10,7 +10,8 @@ Competition results for the QF_UFLRA division as of Thu Jul 12 23:54:00 GMT
 **Benchmarks in this division : 511  
 Time limit: 2400s** 
 
-### Winners<table class="result">
+### Winners
+<table >
 <tr>
                            <th class="center">Sequential Performance</th>
                            <th class="center">Parallel Performance</th>
