@@ -380,7 +380,7 @@ Competition results as of Fri Jul 21 10:18:02 GMT
 <td rowspan="4">6141</td>
 <td rowspan="4">42987</td>
 <td rowspan="4">100</td>
-<td><span class="non-competing-grey">mathsat-5.4.1<SUP><a href="#fn">n</a></SUP></span></span>; CVC4; Yices2; SMTInterpol; z3-4.5.0<SUP><a href="#fn">n</a></SUP></span></span>; SMTRAT; veriT</td>
+<td><span class="non-competing-grey">mathsat-5.4.1<SUP><a href="#fn">n</a></SUP></span>; CVC4; Yices2; SMTInterpol; z3-4.5.0<SUP><a href="#fn">n</a></SUP>; SMTRAT; veriT</td>
 </tr>
 <tr>
 <td><span class="non-competing-grey">mathsat-5.4.1<SUP><a href="#fn">n</a></SUP></span>; CVC4; Yices2; SMTInterpol; <span class="non-competing-grey">z3-4.5.0<SUP><a href="#fn">n</a></SUP></span>; SMTRAT; veriT</td>
