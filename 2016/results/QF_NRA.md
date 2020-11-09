@@ -10,7 +10,6 @@ Competition results for the QF_NRA division as of Thu Jul 7 07:24:34 GMT
 **Benchmarks in this division : 10245** 
 
 ### Winners
-#### Sequential Performance
 <table>
 <tr>
 <th class="center">Sequential Performance</th>

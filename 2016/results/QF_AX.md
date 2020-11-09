@@ -13,7 +13,6 @@ Competition results for the QF_AX division as of Thu Jul 7 07:24:34 GMT
 
 
 ### Winners
-#### Sequential Performance
 <table>
 <tr>
 <th class="center">Sequential Performance</th>

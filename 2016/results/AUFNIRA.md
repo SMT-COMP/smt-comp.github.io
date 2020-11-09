@@ -10,7 +10,6 @@ Competition results for the AUFNIRA division as of Thu Jul 7 07:24:34 GMT
 **Benchmarks in this division : 1050** 
 
 ### Winners
-#### Sequential Performance
 <table>
 <tr>
 <th class="center">Sequential Performance</th>

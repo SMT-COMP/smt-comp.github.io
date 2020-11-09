@@ -10,7 +10,6 @@ Competition results for the QF_IDL division as of Thu Jul 7 07:24:34 GMT
 **Benchmarks in this division : 2094** 
 
 ### Winners
-#### Sequential Performance
 <table>
 <tr>
 <th class="center">Sequential Performance</th>
