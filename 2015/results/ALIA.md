@@ -1,3 +1,27 @@
+---
+layout: default
+---
+{%- include tablesorter.html -%}
+
+##  ALIA (Main Track)
+
+Competition results for the ALIA division as of Fri Oct 30 12:49:29 GMT
+
+**Competition benchmarks = 42** 
+**<br/>Competition industrial benchmarks = 42** 
+
+### The winners for this division are: 
+<table>
+<tr>
+<th class="center">Sequential Performance</th>
+<th class="center">Sequential Performance (industrial)</th>
+<th class="center">Parallel Performance</th>
+<th class="center">Parallel Performance (industrial)</th>
+</tr>
+<tr class="center">
+<td>CVC4 (exp)</td>
+<td>CVC4 (exp)</td>
+<td>CVC4 (exp)</td>
 <td>CVC4 (exp)</td>
 </tr>
 </table>
