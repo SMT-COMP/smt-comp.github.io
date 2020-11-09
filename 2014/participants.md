@@ -6,12 +6,12 @@ These solvers have expressed intention to participate in SMT-COMP 2014.
 <table>
 <tr class="center">
   <th>Solver</th>
-  <th>main track</th>
-  <th>application track</th>
-  <th>Preliminary version solver id</th>
-  <th>Final version solver id</th>
+  <th>Main Track</th>
+  <th>Application Track</th>
+  <th>Preliminary Version Solver ID</th>
+  <th>Final Version Solver ID</th>
   <th>Seed</th>
-  <th>System description</th>
+  <th>System Description</th>
   <th>Contacts</th>
 </tr>
 <tr>
