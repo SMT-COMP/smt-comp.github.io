@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## UF
-
-
+## UF (Main Track)
 
 Competition results for the UF division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 2830** (total = 5748, unknown status = 2911, trivial = 7)

@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_AUFLIA
-
-
+## QF_AUFLIA (Main Track)
 
 Competition results for the QF_AUFLIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 610** (total = 1009, unknown status = 0, trivial = 399)

@@ -3,7 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## ALIA
+## ALIA (Main Track)
 Competition results for the ALIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 29** (total = 42, unknown status = 0, trivial = 13)
 

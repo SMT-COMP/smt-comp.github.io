@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_ALIA
-
-
+## QF_ALIA (Main Track)
 
 Competition results for the QF_ALIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 97** (total = 126, unknown status = 0, trivial = 29)

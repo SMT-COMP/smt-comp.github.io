@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## UFLIA
-
-
+## UFLIA (Main Track)
 
 Competition results for the UFLIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 5766** (total = 12138, unknown status = 5499, trivial = 873)

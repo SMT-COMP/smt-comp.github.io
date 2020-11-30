@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## UFIDL
-
-
+## UFIDL (Main Track)
 
 Competition results for the UFIDL division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 49** (total = 80, unknown status = 12, trivial = 19)

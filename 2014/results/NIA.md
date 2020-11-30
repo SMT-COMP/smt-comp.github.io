@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## NIA
-
-
+## NIA (Main Track)
 
 Competition results for the NIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 9** (total = 9, unknown status = 0, trivial = 0)

@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_UFNIA
-
-
+## QF_UFNIA (Main Track)
 
 Competition results for the QF_UFNIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 7** (total = 7, unknown status = 0, trivial = 0)

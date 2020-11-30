@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_NRA
-
-
+## QF_NRA (Main Track)
 
 Competition results for the QF_NRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 10121** (total = 11540, unknown status = 1392, trivial = 27)

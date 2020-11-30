@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## NRA
-
-
+## NRA (Main Track)
 
 Competition results for the NRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 3747** (total = 3813, unknown status = 66, trivial = 0)

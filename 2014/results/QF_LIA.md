@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_LIA
-
-
+## QF_LIA (Main Track)
 
 Competition results for the QF_LIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 4381** (total = 6141, unknown status = 1279, trivial = 481)

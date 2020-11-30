@@ -3,8 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_IDL
-
+## QF_IDL (Main Track)
 
 Competition results for the QF_IDL division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 1315** (total = 2189, unknown status = 537, trivial = 337)

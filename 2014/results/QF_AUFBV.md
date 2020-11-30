@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_AUFBV
-
-
+## QF_AUFBV (Main Track)
 
 Competition results for the QF_AUFBV division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 37** (total = 37, unknown status = 0, trivial = 0)

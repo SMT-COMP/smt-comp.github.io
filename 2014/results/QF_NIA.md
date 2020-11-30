@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_NIA
-
-
+## QF_NIA (Main Track)
 
 Competition results for the QF_NIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 8327** (total = 9359, unknown status = 927, trivial = 105)

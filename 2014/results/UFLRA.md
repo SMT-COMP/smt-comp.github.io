@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## UFLRA
-
-
+## UFLRA (Main Track)
 
 Competition results for the UFLRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 25** (total = 25, unknown status = 0, trivial = 0)

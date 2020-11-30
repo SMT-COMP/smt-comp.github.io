@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_RDL
-
-
+## QF_RDL (Main Track)
 
 Competition results for the QF_RDL division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 132** (total = 255, unknown status = 85, trivial = 38)

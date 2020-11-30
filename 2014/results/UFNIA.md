@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## UFNIA
-
-
+## UFNIA (Main Track)
 
 Competition results for the UFNIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 1587** (total = 3351, unknown status = 1052, trivial = 712)

@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_LRA
-
-
+## QF_LRA (Main Track)
 
 Competition results for the QF_LRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 1343** (total = 1682, unknown status = 208, trivial = 131)

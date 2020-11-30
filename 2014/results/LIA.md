@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## LIA
-
-
+## LIA (Main Track)
 
 Competition results for the LIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 46** (total = 46, unknown status = 0, trivial = 0)

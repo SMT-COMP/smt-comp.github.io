@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## LRA
-
-
+## LRA (Main Track)
 
 Competition results for the LRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 171** (total = 621, unknown status = 450, trivial = 0)

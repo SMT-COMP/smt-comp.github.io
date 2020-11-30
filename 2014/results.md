@@ -6,42 +6,42 @@ layout: default
 
 Individual results pages can be found from this list:
 
-- <a href="results/summary.html">Summary</a>
+- Summary (<a href="results/summary.html">Main Track</a>, <a href="results/summary-app.html">Application Track</a>)
 - <a href="results/gold.html">Medal Standings</a>
-- <a href="results/ALIA.html">ALIA</a>
-- <a href="results/AUFLIA.html">AUFLIA</a>
-- <a href="results/AUFLIRA.html">AUFLIRA</a>
-- <a href="results/AUFNIRA.html">AUFNIRA</a>
-- <a href="results/BV.html">BV</a>
-- <a href="results/LIA.html">LIA</a>
-- <a href="results/LRA.html">LRA</a>
-- <a href="results/NIA.html">NIA</a>
-- <a href="results/NRA.html">NRA</a>
-- <a href="results/QF_ABV.html">QF_ABV</a>
-- <a href="results/QF_ALIA.html">QF_ALIA</a>
-- <a href="results/QF_AUFBV.html">QF_AUFBV</a>
-- <a href="results/QF_AUFLIA.html">QF_AUFLIA</a>
-- <a href="results/QF_AX.html">QF_AX</a>
-- <a href="results/QF_BV.html">QF_BV</a>
-- <a href="results/QF_IDL.html">QF_IDL</a>
-- <a href="results/QF_LIA.html">QF_LIA</a>
-- <a href="results/QF_LRA.html">QF_LRA</a>
-- <a href="results/QF_NIA.html">QF_NIA</a>
-- <a href="results/QF_NRA.html">QF_NRA</a>
-- <a href="results/QF_RDL.html">QF_RDL</a>
-- <a href="results/QF_UF.html">QF_UF</a>
-- <a href="results/QF_UFBV.html">QF_UFBV</a>
-- <a href="results/QF_UFIDL.html">QF_UFIDL</a>
-- <a href="results/QF_UFLIA.html">QF_UFLIA</a>
-- <a href="results/QF_UFLRA.html">QF_UFLRA</a>
-- <a href="results/QF_UFNIA.html">QF_UFNIA</a>
-- <a href="results/QF_UFNRA.html">QF_UFNRA</a>
-- <a href="results/UF.html">UF</a>
-- <a href="results/UFBV.html">UFBV</a>
-- <a href="results/UFIDL.html">UFIDL</a>
-- <a href="results/UFLIA.html">UFLIA</a>
-- <a href="results/UFLRA.html">UFLRA</a>
-- <a href="results/UFNIA.html">UFNIA</a>
+- ALIA (<a href="results/ALIA.html">Main Track</a>)
+- AUFLIA (<a href="results/AUFLIA.html">Main Track</a>)
+- AUFLIRA (<a href="results/AUFLIRA.html">Main Track</a>)
+- AUFNIRA (<a href="results/AUFNIRA.html">Main Track</a>, <a href="results/AUFNIRA-app.html">Application Track</a>)
+- BV (<a href="results/BV.html">Main Track</a>)
+- LIA (<a href="results/LIA.html">Main Track</a>)
+- LRA (<a href="results/LRA.html">Main Track</a>)
+- NIA (<a href="results/NIA.html">Main Track</a>)
+- NRA (<a href="results/NRA.html">Main Track</a>)
+- QF_ABV (<a href="results/QF_ABV.html">Main Track</a>)
+- QF_ALIA (<a href="results/QF_ALIA.html">Main track</a>)
+- QF_AUFBV (<a href="results/QF_AUFBV.html">Main Track</a>)
+- QF_AUFLIA (<a href="results/QF_AUFLIA.html">Main Track</a>, <a href="results/QF_AUFLIA-app.html">Application Track</a>)
+- QF_AX (<a href="results/QF_AX.html">Main Track</a>)
+- QF_BV (<a href="results/QF_BV.html">Main Track</a>, <a href="results/QF_BV-app.html">Application Track</a>)
+- QF_IDL (<a href="results/QF_IDL.html">Main Track</a>)
+- QF_LIA (<a href="results/QF_LIA.html">Main Track</a>, <a href="results/QF_LIA-app.html">Application Track</a>)
+- QF_LRA <a href="results/QF_LRA.html">Main Track</a>, <a href="results/QF_LRA-app.html">Application Track</a>)
+- QF_NIA (<a href="results/QF_NIA.html">Main Track</a>)
+- QF_NRA (<a href="results/QF_NRA.html">Main Track</a>)
+- QF_RDL (<a href="results/QF_RDL.html">Main Track</a>)
+- QF_UF (<a href="results/QF_UF.html">Main Track</a>)
+- QF_UFBV (<a href="results/QF_UFBV.html">Main Track</a>)
+- QF_UFIDL (<a href="results/QF_UFIDL.html">Main Track</a>)
+- QF_UFLIA (<a href="results/QF_UFLIA.html">Main Track</a>, <a href="results/QF_UFLIA-app.html">Application Track</a>)
+- QF_UFLRA (<a href="results/QF_UFLRA.html">Main Track</a>, <a href="results/QF_UFLRA-app.html">Application Track</a>)
+- QF_UFNIA (<a href="results/QF_UFNIA.html">Main Track</a>)
+- QF_UFNRA (<a href="results/QF_UFNRA.html">Main Track</a>)
+- UF (<a href="results/UF.html">Main Track</a>)
+- UFBV (<a href="results/UFBV.html">Main Track</a>)
+- UFIDL (<a href="results/UFIDL.html">Main Track</a>)
+- UFLIA (<a href="results/UFLIA.html">Main Track</a>)
+- UFLRA (<a href="results/UFLRA.html">Main Track</a>, <a href="results/UFLRA-app.html">Application Track</a>)
+- UFNIA (<a href="results/UFNIA.html">Main Track</a>)
 
 
 ## SL-COMP 2014 Results

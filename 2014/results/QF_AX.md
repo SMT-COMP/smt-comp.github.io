@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_AX
-
-
+## QF_AX (Main Track)
 
 Competition results for the QF_AX division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 335** (total = 551, unknown status = 0, trivial = 216)

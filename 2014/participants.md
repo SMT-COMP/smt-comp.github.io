@@ -221,7 +221,7 @@ These solvers have expressed intention to participate in SMT-COMP 2014.
 <tr class="non-competing-grey">
   <td class="left"  >MathSAT 5<sup><a href="#fnn">n</a></sup></td>
   <td class="center">X</td>
-  <td class="center">?</td>
+  <td class="center">X</td>
   <td class="center">174</td>
   <td class="right" >1079 <br>config 1384 default</td>
   <td class="right" >-</td>
@@ -252,95 +252,95 @@ These are the logic divisions in which each solver is competing.
 <table>
 <tr class="center">
   <th>Solver</th>
-  <th>ALIA</th>
-  <th>AUFLIA</th>
-  <th>AUFLIRA</th>
-  <th>AUFNIRA</th>
-  <th>BV</th>        <!-- 5 -->
-  <th>LIA</th>
-  <th>LRA</th>
-  <th>NIA</th>
-  <th>NRA</th>
-  <th>QF_ABV</th>         <!-- 10 -->
-  <th>QF_ALIA</th>
-  <th>QF_AUFBV</th>
-  <th>QF_AUFLIA</th>
-  <th>QF_AX</th>
-  <th>QF_BV</th>        <!-- 15 -->
-  <th>QF_IDL</th>
-  <th>QF_LIA</th>
-  <th>QF_LRA</th>
-  <th>QF_NIA</th>
-  <th>QF_NRA</th>       <!-- 20 -->
-  <th>QF_RDL</th>
-  <th>QF_UF</th>
-  <th>QF_UFBV</th>
-  <th>QF_UFIDL</th>
-  <th>QF_UFLIA</th>     <!-- 25 -->
-  <th>QF_UFLRA</th>
-  <th>QF_UFNIA</th>
-  <th>QF_UFNRA</th>
-  <th>UF</th>
-  <th>UFBV</th>         <!-- 30 -->
-  <th>UFIDL</th>
-  <th>UFLIA</th>
-  <th>UFLRA</th> 
-  <th>UFNIA</th>
+  <th>ALIA<sup><a href="#fn1">1</a></sup></th>
+  <th>AUFLIA<sup><a href="#fn1">1</a></sup></th>
+  <th>AUFLIRA<sup><a href="#fn1">1</a></sup></th>
+  <th>AUFNIRA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>
+  <th>BV<sup><a href="#fn1">1</a></sup></th>        <!-- 5 -->
+  <th>LIA<sup><a href="#fn1">1</a></sup></th>
+  <th>LRA<sup><a href="#fn1">1</a></sup></th>
+  <th>NIA<sup><a href="#fn1">1</a></sup></th>
+  <th>NRA<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_ABV<sup><a href="#fn1">1</a></sup></th>         <!-- 10 -->
+  <th>QF_ALIA<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_AUFBV<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_AUFLIA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>
+  <th>QF_AX<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_BV<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>        <!-- 15 -->
+  <th>QF_IDL<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_LIA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>
+  <th>QF_LRA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>
+  <th>QF_NIA<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_NRA<sup><a href="#fn1">1</a></sup></th>       <!-- 20 -->
+  <th>QF_RDL<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_UF<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_UFBV<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_UFIDL<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_UFLIA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>     <!-- 25 -->
+  <th>QF_UFLRA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>
+  <th>QF_UFNIA<sup><a href="#fn1">1</a></sup></th>
+  <th>QF_UFNRA<sup><a href="#fn1">1</a></sup></th>
+  <th>UF<sup><a href="#fn1">1</a></sup></th>
+  <th>UFBV<sup><a href="#fn1">1</a></sup></th>         <!-- 30 -->
+  <th>UFIDL<sup><a href="#fn1">1</a></sup></th>
+  <th>UFLIA<sup><a href="#fn1">1</a></sup></th>
+  <th>UFLRA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th> 
+  <th>UFNIA<sup><a href="#fn1">1</a></sup></th>
 </tr>
 <tr class="center">
-  <td class="left">4Simp</td>
+  <td class="left">4Simp<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Abziz</td>
+  <td class="left">Abziz<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
 </tr>
 <tr class="center">
-  <td class="left">Abziz2</td>
+  <td class="left">Abziz2<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
 </tr>
 <tr class="center">
-  <td class="left">AProVE</td>
+  <td class="left">AProVE<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Boolector</td>
+  <td class="left">Boolector<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Boolector-d</td>
+  <td class="left">Boolector-d<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Boolector-j</td>
+  <td class="left">Boolector-j<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">CVC3</td>
+  <td class="left">CVC3<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
   <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> 
 </tr>
 <tr class="center">
-  <td class="left">CVC4</td>
+  <td class="left">CVC4<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
   <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 <tr class="center">
-  <td class="left">Kleaver-STP</td>
+  <td class="left">Kleaver-STP<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Kleaver-portfolio</td>
+  <td class="left">Kleaver-portfolio<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">OpenSMT2</td>
+  <td class="left">OpenSMT2<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">raSAT</td>
+  <td class="left">raSAT<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">SMTInterpol</td>
+  <td class="left">SMTInterpol<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <!-- 
@@ -350,7 +350,7 @@ These are the logic divisions in which each solver is competing.
 </tr>
 -->
 <tr class="center">
-  <td class="left">SONOLAR</td>
+  <td class="left">SONOLAR<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <!-- 
@@ -360,27 +360,35 @@ These are the logic divisions in which each solver is competing.
 </tr>
 -->
 <tr class="center">
-  <td class="left">STP-CryptoMiniSat4</td>
+  <td class="left">STP-CryptoMiniSat4<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">veriT</td>
+  <td class="left">veriT<sup><a href="#fn1">1</a></sup></td>
   <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td>
 </tr>
 <tr class="center">
-  <td class="left">Yices2</td>
+  <td class="left">Yices2<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center non-competing-grey">
-  <td class="left">MathSAT5<sup><a href="#fnn">n</a></sup></td>
+  <td class="left">MathSAT5<sup><a href="#fnn">n</a>,<a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center non-competing-grey">
-  <td class="left">Z3<sup><a href="#fnn">n</a></sup></td>
+  <td class="left">Z3<sup><a href="#fnn">n</a>,<a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
   <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 
 </table>
+<p>
+  <span id="fn1">
+    1. Main Track.
+  </span><br/>
+  <span id="fn2">
+    2. Application Track.
+  </span>
+</p>
 
 <br/>
 <br/>

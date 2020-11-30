@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## AUFNIRA
-
-
+## AUFNIRA (Main Track)
 
 Competition results for the AUFNIRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 564** (total = 1495, unknown status = 468, trivial = 463)

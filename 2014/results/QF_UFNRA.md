@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_UFNRA
-
-
+## QF_UFNRA (Main Track)
 
 Competition results for the QF_UFNRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 32** (total = 43, unknown status = 11, trivial = 0)

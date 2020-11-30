@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_UFLIA
-
-
+## QF_UFLIA (Main Track)
 
 Competition results for the QF_UFLIA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 484** (total = 598, unknown status = 0, trivial = 114)

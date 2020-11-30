@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_BV
-
-
+## QF_BV (Main Track)
 
 Competition results for the QF_BV division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 2488** (total = 32500, unknown status = 28138, trivial = 546)

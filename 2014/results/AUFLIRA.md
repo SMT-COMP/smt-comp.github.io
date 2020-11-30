@@ -3,7 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## AUFLIRA
+## AUFLIRA (Main Track)
 Competition results for the AUFLIRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 10791** (total = 20014, unknown status = 168, trivial = 9055)
 

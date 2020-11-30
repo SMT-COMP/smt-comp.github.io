@@ -3,9 +3,7 @@ layout: default
 ---
 {%- include tablesorter.html -%}
 
-## QF_UFLRA
-
-
+## QF_UFLRA (Main Track)
 
 Competition results for the QF_UFLRA division as of Fri Jun 27 16:49:23 EDT 2014
 <br/>**Competition benchmarks = 1176** (total = 1630, unknown status = 87, trivial = 367)
