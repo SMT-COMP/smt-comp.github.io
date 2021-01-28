@@ -29,3 +29,6 @@ Committee.
 <br/>
 The competition is run on [StarExec](https://www.starexec.org),
 a service that is hosted at the University of Iowa.
+
+### Acknowledgment
+- [Aaron Stump](http://homepage.divms.uiowa.edu/~astump/) (StarExec)
