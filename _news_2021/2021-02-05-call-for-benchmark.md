@@ -14,7 +14,7 @@ We encourage new benchmarks in the following logics (which appear to have ‘sta
 
 If you have large complex benchmarks that are important to you and unsolved within some reasonable time limit, we are especially interested to see them. We plan to have a parallel and a cloud track where solvers can use the combined power of multiple cores or machines to solve a single benchmark.  We would particularly like benchmarks that come with a description of why they are difficult and important.  Of course, new challenging benchmarks are always appreciated.
 
-In your submission please follow the guidelines in
+In your submission please follow [these guidelines](/benchmark_submission.html).
 * <https://smt-comp.github.io/benchmark_submission.html>.
 
 Sincerely,
