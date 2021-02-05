@@ -10,7 +10,7 @@ Please let us know as soon as possible if you are considering submitting benchma
 
 We encourage new benchmarks in the following logics (which appear to have ‘stagnated’ in the sense that the benchmarks in them are no longer challenging to competitive solvers):
 
-`ALIA', 'AUFNIRA', 'NIA', 'NRA', 'QF_ANIA', 'QF_AUFBV', 'QF_AUFNIA', 'QF_DT', 'QF_FP', 'QF_LIRA', 'QF_NIRA', 'QF_RDL', 'QF_UFBV', 'QF_UFIDL', 'QF_UFLIA', 'QF_UFLRA', 'QF_UFNIA', 'QF_UFNRA', 'UFBV', 'UFIDL', 'UFLRA'
+`ALIA`, `AUFNIRA`, `NIA`, `NRA`, `QF_ANIA`, `QF_AUFBV`, `QF_AUFNIA`, `QF_DT`, `QF_FP`, `QF_LIRA`, `QF_NIRA`, `QF_RDL`, `QF_UFBV`, `QF_UFIDL`, `QF_UFLIA`, `QF_UFLRA`, `QF_UFNIA`, `QF_UFNRA`, `UFBV`, `UFIDL`, `UFLRA`
 
 If you have large complex benchmarks that are important to you and unsolved within some reasonable time limit, we are especially interested to see them. We plan to have a parallel and a cloud track where solvers can use the combined power of multiple cores or machines to solve a single benchmark.  We would particularly like benchmarks that come with a description of why they are difficult and important.  Of course, new challenging benchmarks are always appreciated.
 
