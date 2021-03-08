@@ -65,7 +65,7 @@ should contain a docker file that compiles the solver.
 ### Solver Submission to Parallel and Cloud Tracks
 
 In order to participate in the Cloud or Parallel Track please send an email to
-<smt-comp-2021@amazon.com> containing the following:
+<aws-smt-comp-2021@googlegroups.com> containing the following:
  1. name of the solver and a list of the authors
  2. your AWS account number
  3. the URL of the GitHub repository including the branch
