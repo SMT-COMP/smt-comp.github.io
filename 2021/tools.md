@@ -1,6 +1,6 @@
 ---
 layout: tools
-year: 2020
+year: 2021
 
 tools:
 
@@ -28,7 +28,7 @@ tools:
       starexec: SMT-COMP 2021 Single Query
       starexecid: 692
     - name: track_incremental
-      starexec: SMT-COMP 2020 Incremental
+      starexec: SMT-COMP 2021 Incremental
       starexecid: 691
     - name: track_unsat_core
       starexec: SMT-COMP 2021 Unsat Core
