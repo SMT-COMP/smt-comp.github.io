@@ -28,7 +28,9 @@ We plan to publish the results including all materials under the CC-BY-ND licens
 Note that a short system description of 1-2 pages (see Section 4 of the [competition rules](https://smt-comp.github.io/2021/rules.pdf)) is part of the solver submission and MANDATORY. Submission of the system description is due until the final solver deadline on June 13, 2021.
 Participants are however asked to provide a link to the system description in the registration form to facilitate the registration, even if the actual description would not yet be available at the time of the registration.  The StarExec links to the final solver submission must be provided via email to the organisers by the final deadline.
 
-The pre- and post-processors we plan to use in the SMT-COMP 2021 are online now.  Note that for testing your solver in the incremental track you need to [wrap the trace executor around your solver](https://github.com/smt-comp/trace-executor#wrapping-your-solver).  Nonetheless, you should provide us with the link to the original unwrapped solver; we will wrap your solver during the competition. 
+The pre- and post-processors we plan to use in the SMT-COMP 2021 were uploaded to StarExec.  Note that for testing your solver in the incremental track you need to [wrap the trace executor around your solver](https://github.com/smt-comp/trace-executor#wrapping-your-solver).  Nonetheless, you should provide us with the link to the original unwrapped solver; we will wrap your solver during the competition.
+
+This year we will organise also a separate, experimental track for parallel and cloud solvers.  For more information on the participation on these two tracks, see [the earlier announcement](2021-02-05-parallel-and-cloud-tracks).
 
 Please see the competition rules for further details.
 
