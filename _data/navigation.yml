@@ -2,14 +2,14 @@
   link: 2021/index.html
   url: 2021
   sublinks:
-#  - name: Rules
-#    link: 2021/rules21.pdf
+  - name: Rules
+    link: 2021/rules.pdf
 #  - name: Benchmarks
 #    link: 2021/benchmarks.html
-#  - name: Tools
-#    link: 2021/tools.html
-#  - name: Specs
-#    link: 2021/specs.html
+  - name: Tools
+    link: 2021/tools.html
+  - name: Specs
+    link: 2021/specs.html
 #  - name: Participants
 #    link: 2021/participants.html
 #  - name: Results
