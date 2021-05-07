@@ -30,7 +30,7 @@ Participants are however asked to provide a link to the system description in th
 
 The pre- and post-processors we plan to use in the SMT-COMP 2021 were uploaded to StarExec.  Note that for testing your solver in the incremental track you need to [wrap the trace executor around your solver](https://github.com/smt-comp/trace-executor#wrapping-your-solver).  Nonetheless, you should provide us with the link to the original unwrapped solver; we will wrap your solver during the competition.
 
-This year we will organise also a separate, experimental track for parallel and cloud solvers.  For more information on the participation on these two tracks, see [the earlier announcement](2021-02-05-parallel-and-cloud-tracks).
+This year we will organise also a separate, experimental track for parallel and cloud solvers.  For more information on the participation on these two tracks, see [Parallel & Cloud Tracks](/2021/parallel-and-cloud-tracks.html).
 
 Please see the competition rules for further details.
 
