@@ -9,376 +9,207 @@ nyse:
   value: 
 
 divisions:
-- name: ABV
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: ABVFP
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: ABVFPLRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: ALIA
+- name: Arith
+  logics:
+  - NIA
+  - LRA
+  - LIA
+  - NRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: ANIA
-  tracks:
-  - track_incremental
-- name: AUFBV
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFBVDTLIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFBVDTNIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFBVFP
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFDTLIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFDTLIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFDTNIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFFPDTLIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFFPDTNIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFLIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFLIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFNIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: AUFNIRA
+- name: Bitvec
+  logics:
+  - BV
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: BV
+- name: Equality
+  logics:
+  - UFDT
+  - UF
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: BVFP
+- name: Equality+LinearArith
+  logics:
+  - AUFLIRA
+  - AUFLIA
+  - AUFDTLIRA
+  - UFLRA
+  - UFDTLIA
+  - ALIA
+  - UFDTLIRA
+  - AUFDTLIA
+  - AUFFPDTLIRA
+  - UFLIA
+  - UFIDL
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: BVFPLRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: FP
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: FPLRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: LIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: LRA
+- name: Equality+MachineArith
+  logics:
+  - UFBV
+  - UFFPDTLIRA
+  - UFFPDTNIRA
+  - ABVFP
+  - ABV
+  - AUFBVFP
+  - AUFBVDTNIA
+  - AUFBVDTLIA
+  - ABVFPLRA
+  - UFBVLIA
+  - UFBVFP
+  - AUFBV
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: NIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: NRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_ABV
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_ABVFP
+- name: Equality+NonLinearArith
+  logics:
+  - UFDTNIA
+  - UFNRA
+  - AUFFPDTNIRA
+  - UFNIA
+  - AUFNIRA
+  - UFDTNIRA
+  - ANIA
+  - AUFDTNIRA
+  - AUFNIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: QF_ABVFPLRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_ALIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_ANIA
+- name: FPArith
+  logics:
+  - BVFP
+  - FP
+  - BVFPLRA
+  - FPLRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: QF_AUFBV
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_AUFBVFP
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_AUFBVLIA
-  tracks:
-  - track_incremental
-- name: QF_AUFBVNIA
-  tracks:
-  - track_incremental
-- name: QF_AUFLIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_AUFNIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_AX
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_BV
+- name: QF_Bitvec
+  logics:
+  - QF_BV
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
   - track_model_validation
-- name: QF_BVFP
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_BVFPLRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_DT
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_FP
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_FPLRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_IDL
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_model_validation
-- name: QF_LIA
+- name: QF_Equality
+  logics:
+  - QF_AX
+  - QF_DT
+  - QF_UFDT
+  - QF_UF
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
   - track_model_validation
-- name: QF_LIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_model_validation
-- name: QF_LRA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-  - track_model_validation
-- name: QF_NIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_NIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_NRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_RDL
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_model_validation
-- name: QF_S
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_SLIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_SNIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UF
+- name: QF_Equality+Bitvec
+  logics:
+  - QF_UFBV
+  - QF_AUFBV
+  - QF_ABV
+  - QF_BV
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
   - track_model_validation
-- name: QF_UFBV
+- name: QF_Equality+Bitvec+Arith
+  logics:
+  - QF_AUFBVLIA
+  - QF_UFBVLIA
+  - QF_AUFBVNIA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+- name: QF_Equality+LinearArith
+  logics:
+  - QF_UFLRA
+  - QF_AUFLIA
+  - QF_UFDTLIRA
+  - QF_UFLIA
+  - QF_UFIDL
+  - QF_ALIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
   - track_model_validation
-- name: QF_UFBVLIA
-  tracks:
-  - track_incremental
-- name: QF_UFDT
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UFDTLIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: QF_UFFP
+- name: QF_Equality+NonLinearArith
+  logics:
+  - QF_UFNRA
+  - QF_ANIA
+  - QF_UFNIA
+  - QF_AUFNIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-- name: QF_UFFPDTLIRA
+- name: QF_FPArith
+  logics:
+  - QF_ABVFPLRA
+  - QF_FPLRA
+  - QF_FP
+  - QF_AUFBVFP
+  - QF_BVFP
+  - QF_ABVFP
+  - QF_UFFP
+  - QF_UFFPDTLIRA
+  - QF_BVFPLRA
   tracks:
   - track_single_query
+  - track_incremental
   - track_unsat_core
-- name: QF_UFIDL
+- name: QF_LinearIntArith
+  logics:
+  - QF_IDL
+  - QF_LIA
+  - QF_LRA
+  - QF_LIRA
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+  - track_model_validation
+- name: QF_LinearRealArith
+  logics:
+  - QF_RDL
+  - QF_LRA
   tracks:
   - track_single_query
   - track_unsat_core
   - track_model_validation
-- name: QF_UFLIA
+- name: QF_NonLinearIntArith
+  logics:
+  - QF_NIRA
+  - QF_NIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
-  - track_model_validation
-- name: QF_UFLRA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-  - track_model_validation
-- name: QF_UFNIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: QF_UFNRA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: UF
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: UFBV
+- name: QF_NonLinearRealArith
+  logics:
+  - QF_NRA
   tracks:
   - track_single_query
   - track_unsat_core
-- name: UFBVFP
+- name: QF_Strings
+  logics:
+  - QF_SNIA
+  - QF_SLIA
+  - QF_S
   tracks:
   - track_single_query
   - track_unsat_core
-- name: UFBVLIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFDT
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFDTLIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFDTLIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFDTNIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: UFDTNIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFFPDTLIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFFPDTNIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFIDL
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFLIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-- name: UFLRA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: UFNIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-- name: UFNRA
-  tracks:
-  - track_incremental
 ---
