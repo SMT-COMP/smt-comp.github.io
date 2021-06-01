@@ -5,6 +5,9 @@ collections:
     news_2021:
         output: true
         permalink: /2021/news/:name
+    participants_2021:
+        output: true
+        permalink: /2021/participants/:name
 
     news_2020:
         output: true
