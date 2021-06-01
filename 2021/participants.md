@@ -11,9 +11,9 @@ nyse:
 divisions:
 - name: Arith
   logics:
-  - NIA
-  - LRA
   - LIA
+  - LRA
+  - NIA
   - NRA
   tracks:
   - track_single_query
@@ -28,58 +28,58 @@ divisions:
   - track_unsat_core
 - name: Equality
   logics:
-  - UFDT
   - UF
+  - UFDT
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
 - name: Equality+LinearArith
   logics:
-  - AUFLIRA
-  - AUFLIA
-  - AUFDTLIRA
-  - UFLRA
-  - UFDTLIA
   - ALIA
-  - UFDTLIRA
   - AUFDTLIA
+  - AUFDTLIRA
   - AUFFPDTLIRA
-  - UFLIA
+  - AUFLIA
+  - AUFLIRA
+  - UFDTLIA
+  - UFDTLIRA
   - UFIDL
+  - UFLIA
+  - UFLRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
 - name: Equality+MachineArith
   logics:
+  - ABV
+  - ABVFP
+  - ABVFPLRA
+  - AUFBV
+  - AUFBVDTLIA
+  - AUFBVDTNIA
+  - AUFBVFP
   - UFBV
+  - UFBVFP
+  - UFBVLIA
   - UFFPDTLIRA
   - UFFPDTNIRA
-  - ABVFP
-  - ABV
-  - AUFBVFP
-  - AUFBVDTNIA
-  - AUFBVDTLIA
-  - ABVFPLRA
-  - UFBVLIA
-  - UFBVFP
-  - AUFBV
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
 - name: Equality+NonLinearArith
   logics:
-  - UFDTNIA
-  - UFNRA
-  - AUFFPDTNIRA
-  - UFNIA
-  - AUFNIRA
-  - UFDTNIRA
   - ANIA
   - AUFDTNIRA
+  - AUFFPDTNIRA
   - AUFNIA
+  - AUFNIRA
+  - UFDTNIA
+  - UFDTNIRA
+  - UFNIA
+  - UFNRA
   tracks:
   - track_single_query
   - track_incremental
@@ -87,8 +87,8 @@ divisions:
 - name: FPArith
   logics:
   - BVFP
-  - FP
   - BVFPLRA
+  - FP
   - FPLRA
   tracks:
   - track_single_query
@@ -106,8 +106,8 @@ divisions:
   logics:
   - QF_AX
   - QF_DT
-  - QF_UFDT
   - QF_UF
+  - QF_UFDT
   tracks:
   - track_single_query
   - track_incremental
@@ -115,10 +115,10 @@ divisions:
   - track_model_validation
 - name: QF_Equality+Bitvec
   logics:
-  - QF_UFBV
-  - QF_AUFBV
   - QF_ABV
+  - QF_AUFBV
   - QF_BV
+  - QF_UFBV
   tracks:
   - track_single_query
   - track_incremental
@@ -127,20 +127,20 @@ divisions:
 - name: QF_Equality+Bitvec+Arith
   logics:
   - QF_AUFBVLIA
-  - QF_UFBVLIA
   - QF_AUFBVNIA
+  - QF_UFBVLIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
 - name: QF_Equality+LinearArith
   logics:
-  - QF_UFLRA
+  - QF_ALIA
   - QF_AUFLIA
   - QF_UFDTLIRA
-  - QF_UFLIA
   - QF_UFIDL
-  - QF_ALIA
+  - QF_UFLIA
+  - QF_UFLRA
   tracks:
   - track_single_query
   - track_incremental
@@ -148,25 +148,25 @@ divisions:
   - track_model_validation
 - name: QF_Equality+NonLinearArith
   logics:
-  - QF_UFNRA
   - QF_ANIA
-  - QF_UFNIA
   - QF_AUFNIA
+  - QF_UFNIA
+  - QF_UFNRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
 - name: QF_FPArith
   logics:
+  - QF_ABVFP
   - QF_ABVFPLRA
-  - QF_FPLRA
-  - QF_FP
   - QF_AUFBVFP
   - QF_BVFP
-  - QF_ABVFP
+  - QF_BVFPLRA
+  - QF_FP
+  - QF_FPLRA
   - QF_UFFP
   - QF_UFFPDTLIRA
-  - QF_BVFPLRA
   tracks:
   - track_single_query
   - track_incremental
@@ -175,7 +175,6 @@ divisions:
   logics:
   - QF_IDL
   - QF_LIA
-  - QF_LRA
   - QF_LIRA
   tracks:
   - track_single_query
@@ -184,16 +183,17 @@ divisions:
   - track_model_validation
 - name: QF_LinearRealArith
   logics:
-  - QF_RDL
   - QF_LRA
+  - QF_RDL
   tracks:
   - track_single_query
+  - track_incremental
   - track_unsat_core
   - track_model_validation
 - name: QF_NonLinearIntArith
   logics:
-  - QF_NIRA
   - QF_NIA
+  - QF_NIRA
   tracks:
   - track_single_query
   - track_incremental
@@ -206,9 +206,9 @@ divisions:
   - track_unsat_core
 - name: QF_Strings
   logics:
-  - QF_SNIA
-  - QF_SLIA
   - QF_S
+  - QF_SLIA
+  - QF_SNIA
   tracks:
   - track_single_query
   - track_unsat_core
