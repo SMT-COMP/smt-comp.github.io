@@ -12,6 +12,12 @@
   - raw_name: track_model_validation
     pretty_name: Model Validation Track
     status: competitive
+  - raw_name: track_cloud
+    pretty_name: Cloud Track
+    status: experimental
+  - raw_name: track_parallel
+    pretty_name: Parallel Track
+    status: experimental
 - year: 2020
   tracks:
   - raw_name: track_single_query
