@@ -117,7 +117,6 @@ divisions:
   logics:
   - QF_ABV
   - QF_AUFBV
-  - QF_BV
   - QF_UFBV
   tracks:
   - track_single_query
@@ -130,9 +129,7 @@ divisions:
   - QF_AUFBVNIA
   - QF_UFBVLIA
   tracks:
-  - track_single_query
   - track_incremental
-  - track_unsat_core
 - name: QF_Equality+LinearArith
   logics:
   - QF_ALIA
