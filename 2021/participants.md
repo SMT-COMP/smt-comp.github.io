@@ -19,6 +19,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: Bitvec
   logics:
   - BV
@@ -26,6 +28,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: Equality
   logics:
   - UF
@@ -34,6 +38,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: Equality+LinearArith
   logics:
   - ALIA
@@ -51,6 +57,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: Equality+MachineArith
   logics:
   - ABV
@@ -69,6 +77,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: Equality+NonLinearArith
   logics:
   - ANIA
@@ -84,6 +94,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: FPArith
   logics:
   - BVFP
@@ -94,6 +106,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: QF_Bitvec
   logics:
   - QF_BV
@@ -102,6 +116,8 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
+  - track_cloud
+  - track_parallel
 - name: QF_Equality
   logics:
   - QF_AX
@@ -113,6 +129,8 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
+  - track_cloud
+  - track_parallel
 - name: QF_Equality+Bitvec
   logics:
   - QF_ABV
@@ -123,6 +141,8 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
+  - track_cloud
+  - track_parallel
 - name: QF_Equality+Bitvec+Arith
   logics:
   - QF_AUFBVLIA
@@ -143,6 +163,8 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
+  - track_cloud
+  - track_parallel
 - name: QF_Equality+NonLinearArith
   logics:
   - QF_ANIA
@@ -153,6 +175,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: QF_FPArith
   logics:
   - QF_ABVFP
@@ -168,6 +192,8 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: QF_LinearIntArith
   logics:
   - QF_IDL
@@ -178,6 +204,8 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
+  - track_cloud
+  - track_parallel
 - name: QF_LinearRealArith
   logics:
   - QF_LRA
@@ -187,6 +215,8 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
+  - track_cloud
+  - track_parallel
 - name: QF_NonLinearIntArith
   logics:
   - QF_NIA
@@ -195,12 +225,16 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: QF_NonLinearRealArith
   logics:
   - QF_NRA
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 - name: QF_Strings
   logics:
   - QF_S
@@ -209,4 +243,6 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_cloud
+  - track_parallel
 ---
