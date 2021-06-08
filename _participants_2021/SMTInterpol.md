@@ -93,6 +93,10 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+- name: QF_UFDTLIRA
+  tracks:
+  - track_single_query
+  - track_unsat_core
 - name: QF_UFIDL
   tracks:
   - track_single_query
@@ -146,6 +150,9 @@ divisions:
   tracks:
   - track_incremental
 - name: QF_UFNIA
+  tracks:
+  - track_incremental
+- name: QF_UFNRA
   tracks:
   - track_incremental
 - name: UFNRA
