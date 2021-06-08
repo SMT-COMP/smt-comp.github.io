@@ -183,7 +183,13 @@ divisions:
 - name: QF_UFDT
   tracks:
   - track_unsat_core
+- name: QF_UFDTLIRA
+  tracks:
+  - track_unsat_core
 - name: QF_UFFP
+  tracks:
+  - track_unsat_core
+- name: QF_UFFPDTLIRA
   tracks:
   - track_unsat_core
 - name: QF_UFIDL

@@ -183,7 +183,13 @@ divisions:
 - name: QF_UFDT
   tracks:
   - track_single_query
+- name: QF_UFDTLIRA
+  tracks:
+  - track_single_query
 - name: QF_UFFP
+  tracks:
+  - track_single_query
+- name: QF_UFFPDTLIRA
   tracks:
   - track_single_query
 - name: QF_UFIDL
