@@ -36,4 +36,7 @@ divisions:
 - name: QF_FPLRA
   tracks:
   - track_single_query
+- name: QF_UFFP
+  tracks:
+  - track_single_query
 ---
