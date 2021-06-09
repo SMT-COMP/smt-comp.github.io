@@ -15,10 +15,46 @@ solverHomePage: "http://www.cs.man.ac.uk/~korovink/iprover/"
 sysDescrUrl: "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2021.pdf"
 sysDescrName: "iProver-v3.5 (SMT-COMP 2021)"
 divisions:
+- name: LIA
+  tracks:
+  - track_single_query
+- name: LRA
+  tracks:
+  - track_single_query
+- name: NIA
+  tracks:
+  - track_single_query
+- name: NRA
+  tracks:
+  - track_single_query
 - name: UF
   tracks:
   - track_single_query
 - name: UFDT
+  tracks:
+  - track_single_query
+- name: UFDTLIA
+  tracks:
+  - track_single_query
+- name: UFDTLIRA
+  tracks:
+  - track_single_query
+- name: UFDTNIA
+  tracks:
+  - track_single_query
+- name: UFDTNIRA
+  tracks:
+  - track_single_query
+- name: UFIDL
+  tracks:
+  - track_single_query
+- name: UFLIA
+  tracks:
+  - track_single_query
+- name: UFLRA
+  tracks:
+  - track_single_query
+- name: UFNIA
   tracks:
   - track_single_query
 ---
