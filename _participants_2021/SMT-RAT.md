@@ -4,7 +4,7 @@ year: 2021
 contact: "nalbach@cs.rwth-aachen.de"
 name: "SMT-RAT"
 preliminaryID: "33081"
-finalID: "-1"
+finalID: "33081"
 team: "Jasper Nalbach, Erika Ábrahám, Philippe Specht, Gereon Kremer, Florian Corzilius, Rebecca Haehn, Sebastian Junges, Stefan Schupp"
 variantOf: ""
 wrapperTool: ""

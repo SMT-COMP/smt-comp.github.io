@@ -4,7 +4,7 @@ year: 2021
 contact: "hans-jorg.schurr@inria.fr"
 name: "veriT+raSAT+Redlog"
 preliminaryID: "33044"
-finalID: "-1"
+finalID: "33044"
 team: "Haniel Barbosa, Pascal Fontaine, Maximilian Jaroschek, Marek Kosta, Mizuhito Ogawa, Thomas Sturm, Vu Xuan Tung"
 variantOf: "33043"
 wrapperTool: ""
