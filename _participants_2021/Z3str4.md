@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "458751"
 solverHomePage: "https://z3str4.github.io"
-sysDescrUrl: "https://z3str4.github.io/smtcomp.pdf"
+sysDescrUrl: "Z3str4.pdf"
 sysDescrName: "Z3str4 String Solver: System Description"
 divisions:
 - name: QF_S

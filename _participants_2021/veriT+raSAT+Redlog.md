@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "54000"
 solverHomePage: "https://www.verit-solver.org"
-sysDescrUrl: "https://verit.loria.fr/documentation/veriTraSATRedlog-smtcomp21.pdf"
+sysDescrUrl: "veriTraSATRedlog.pdf"
 sysDescrName: "veriT+raSAT+Redlog at SMT-COMP 2021"
 divisions:
 - name: QF_NRA

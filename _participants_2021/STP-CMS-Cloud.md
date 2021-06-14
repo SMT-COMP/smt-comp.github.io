@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://stp.github.io/"
-sysDescrUrl: "https://github.com/stp/docs/tree/master/smt2021-descr/descr.pdf"
+sysDescrUrl: "STP.pdf"
 sysDescrName: "STP in the SMT-COMP 2021"
 divisions:
 - name: QF_BV

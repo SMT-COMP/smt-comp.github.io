@@ -12,7 +12,7 @@ derivedTool: "Yices2"
 competing: "yes"
 seed: "278"
 solverHomePage: "https://github.com/disteph/yicesQS"
-sysDescrUrl: "http://www.csl.sri.com/users/sgl/Work/Reports/2021-YicesQS.pdf"
+sysDescrUrl: "Yices2-QS.pdf"
 sysDescrName: "Yices-QS, an extension of Yices for quantified satisfaction"
 divisions:
 - name: BV

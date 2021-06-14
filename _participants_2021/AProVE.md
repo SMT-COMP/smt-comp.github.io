@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "170142"
 solverHomePage: "https://aprove.informatik.rwth-aachen.de/"
-sysDescrUrl: "https://www.dcs.bbk.ac.uk/~carsten/papers/aprove-smtcomp21.pdf"
+sysDescrUrl: "AProVE.pdf"
 sysDescrName: "AProVE at SMT-COMP 2021"
 divisions:
 - name: QF_NIA

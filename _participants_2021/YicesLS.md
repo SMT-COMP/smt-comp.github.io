@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "1"
 solverHomePage: "https://github.com/DouglasLee001/YicesLS"
-sysDescrUrl: "https://github.com/DouglasLee001/YicesLS/blob/main/LS_IDL.pdf"
+sysDescrUrl: "YicesLS.pdf"
 sysDescrName: "LS-IDL: Local Search For SMT on Integer Difference Logic"
 divisions:
 - name: QF_IDL

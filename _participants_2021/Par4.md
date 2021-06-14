@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "no"
 seed: "0"
 solverHomePage: ""
-sysDescrUrl: "https://smt-comp.github.io/2019/system-descriptions/Par4.pdf"
+sysDescrUrl: "Par4.pdf"
 sysDescrName: "Par4 System Description"
 divisions:
 - name: AUFLIRA

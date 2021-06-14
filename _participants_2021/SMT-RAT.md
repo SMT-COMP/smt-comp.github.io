@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "9077370145"
 solverHomePage: "https://smtrat.github.io/"
-sysDescrUrl: "https://raw.githubusercontent.com/ths-rwth/smtrat/master/doc/smtcomp-description/smtcomp-2021.pdf"
+sysDescrUrl: "SMT-RAT.pdf"
 sysDescrName: "SMT-RAT 21.05"
 divisions:
 - name: QF_NIA

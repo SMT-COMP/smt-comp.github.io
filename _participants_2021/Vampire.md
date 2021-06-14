@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "5676"
 solverHomePage: "https://vprover.github.io/"
-sysDescrUrl: "https://github.com/vprover/vprover.github.io/tree/master/reports/smtcomp2021.pdf"
+sysDescrUrl: "Vampire.pdf"
 sysDescrName: "Vampire (4.6-smt)"
 divisions:
 - name: ALIA

@@ -12,8 +12,8 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://cvc5.github.io/"
-sysDescrUrl: ""
-sysDescrName: ""
+sysDescrUrl: "cvc5.pdf"
+sysDescrName: "cvc5 at the SMT Competition 2021"
 divisions:
 - name: ABV
   tracks:

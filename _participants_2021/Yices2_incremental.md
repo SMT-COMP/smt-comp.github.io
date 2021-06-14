@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "89347412"
 solverHomePage: "https://yices.csl.sri.com"
-sysDescrUrl: "http://www.csl.sri.com/users/bruno/publis/yices2-smtcomp2021.pdf"
+sysDescrUrl: "Yices2.pdf"
 sysDescrName: "Yices 2 at SMTCOMP2021"
 divisions:
 - name: QF_ABV

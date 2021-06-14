@@ -12,8 +12,8 @@ derivedTool: ""
 competing: "yes"
 seed: "750"
 solverHomePage: "https://github.com/c-cube/mc2"
-sysDescrUrl: "https://github.com/c-cube/mc2/blob/master/README.md"
-sysDescrName: "readme"
+sysDescrUrl: "mc2"
+sysDescrName: "MC2"
 divisions:
 - name: QF_LRA
   tracks:

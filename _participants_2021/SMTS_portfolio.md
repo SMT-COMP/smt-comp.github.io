@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "http://verify.inf.usi.ch/opensmt2"
-sysDescrUrl: "https://usi-verification-and-security.github.io/opensmt-doc/abstract-2021.pdf"
+sysDescrUrl: "OpenSMT.pdf"
 sysDescrName: "The OpenSMT Solver in SMT-COMP 2021"
 divisions:
 - name: QF_IDL
