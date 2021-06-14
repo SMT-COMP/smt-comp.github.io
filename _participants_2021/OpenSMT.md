@@ -4,7 +4,7 @@ year: 2021
 contact: "antti.hyvarinen@gmail.com"
 name: "OpenSMT"
 preliminaryID: "33003"
-finalID: "-1"
+finalID: "33438"
 team: "Antti Hyvärinen, Martin Blicha, Leonardo Alt, Matteo Marescotti, Sepideh Asadi, Natasha Sharygina"
 variantOf: ""
 wrapperTool: ""

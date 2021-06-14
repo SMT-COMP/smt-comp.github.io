@@ -3,8 +3,8 @@ layout: participant
 year: 2021
 contact: "libohan19@mails.ucas.ac.cn"
 name: "YicesLS"
-preliminaryID: "33241"
-finalID: "-1"
+preliminaryID: "33317"
+finalID: "33369"
 team: "Bohan Li, Shaowei Cai, Xindi Zhang"
 variantOf: ""
 wrapperTool: "Yices-2.6.2"

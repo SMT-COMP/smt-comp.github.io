@@ -4,7 +4,7 @@ year: 2021
 contact: "hans-jorg.schurr@inria.fr"
 name: "veriT"
 preliminaryID: "33043"
-finalID: "-1"
+finalID: "33452"
 team: "Haniel Barbosa, Pascal Fontaine, Hans-Jörg Schurr"
 variantOf: ""
 wrapperTool: ""
@@ -37,6 +37,9 @@ divisions:
   tracks:
   - track_single_query
 - name: QF_LIA
+  tracks:
+  - track_single_query
+- name: QF_LIRA
   tracks:
   - track_single_query
 - name: QF_LRA

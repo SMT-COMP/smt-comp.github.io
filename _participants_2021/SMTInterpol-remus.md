@@ -4,9 +4,9 @@ year: 2021
 contact: "hoenicke@gmail.com"
 name: "SMTInterpol-remus"
 preliminaryID: "33041"
-finalID: "-1"
+finalID: "33435"
 team: "Jürgen Christ, Leonard Fichtner, Jochen Hoenicke, Tanja Schindler"
-variantOf: "SMTInterpol ID 32995"
+variantOf: "32995"
 wrapperTool: ""
 derivedTool: ""
 competing: "yes"
@@ -15,16 +15,31 @@ solverHomePage: "https://ultimate.informatik.uni-freiburg.de/smtinterpol/"
 sysDescrUrl: "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc-2021.pdf"
 sysDescrName: "SMTInterpol"
 divisions:
+- name: ALIA
+  tracks:
+  - track_unsat_core
+- name: AUFLIA
+  tracks:
+  - track_unsat_core
+- name: AUFLIRA
+  tracks:
+  - track_unsat_core
+- name: LIA
+  tracks:
+  - track_unsat_core
+- name: LRA
+  tracks:
+  - track_unsat_core
 - name: QF_ALIA
   tracks:
   - track_unsat_core
 - name: QF_AUFLIA
   tracks:
   - track_unsat_core
-- name: QF_AUFNIA
+- name: QF_AX
   tracks:
   - track_unsat_core
-- name: QF_AX
+- name: QF_DT
   tracks:
   - track_unsat_core
 - name: QF_IDL
@@ -45,6 +60,12 @@ divisions:
 - name: QF_UF
   tracks:
   - track_unsat_core
+- name: QF_UFDT
+  tracks:
+  - track_unsat_core
+- name: QF_UFDTLIRA
+  tracks:
+  - track_unsat_core
 - name: QF_UFIDL
   tracks:
   - track_unsat_core
@@ -52,6 +73,18 @@ divisions:
   tracks:
   - track_unsat_core
 - name: QF_UFLRA
+  tracks:
+  - track_unsat_core
+- name: UF
+  tracks:
+  - track_unsat_core
+- name: UFIDL
+  tracks:
+  - track_unsat_core
+- name: UFLIA
+  tracks:
+  - track_unsat_core
+- name: UFLRA
   tracks:
   - track_unsat_core
 ---
