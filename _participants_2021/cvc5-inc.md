@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "5"
 solverHomePage: "https://cvc5.github.io"
-sysDescrUrl: "https://cvc5.github.io/publications/2021/cvc5-SMT-Competition-2021.pdf"
+sysDescrUrl: "cvc5.pdf"
 sysDescrName: "cvc5 at the SMT Competition 2021"
 divisions:
 - name: ABVFP

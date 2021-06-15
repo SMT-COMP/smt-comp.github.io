@@ -6,7 +6,7 @@ participants: participants_2021
 
 nyse:
   date: 2021-06-15
-  value: 
+  value: 16662.4235
 
 divisions:
 - name: Arith
