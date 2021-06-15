@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "12281"
 solverHomePage: "http://www.cs.man.ac.uk/~korovink/iprover/"
-sysDescrUrl: "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2021.pdf"
+sysDescrUrl: "iProver.pdf"
 sysDescrName: "iProver-v3.5 (SMT-COMP 2021)"
 divisions:
 - name: LIA
