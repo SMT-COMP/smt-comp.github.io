@@ -1,3 +1,12 @@
+- name: 2021
+  link: 2021/results/results-single-query
+  url: 2021
+  sublinks:
+  - name: Participants
+    link: 2021/participants.html
+  - name: Results
+    link: 2021/results/results-single-query
+
 - name: 2020
   link: 2020/index.html
   url: 2020

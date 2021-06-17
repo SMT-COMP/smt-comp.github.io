@@ -1,7 +1,18 @@
 theme: jekyll-theme-dinky
 title: SMT-COMP
 description: The International Satisfiability Modulo Theories (SMT) Competition.
+base_url: https://homepages.dcc.ufmg.br/~hbarbosa/tmp/smtcomp-2020-alternate/
 collections:
+    divisions_2021:
+        output: true
+        permalink: /2021/divisions/:name
+    participants_2021:
+        output: true
+        permalink: /2021/participants/:name
+    results_2021:
+        output: true
+        permalink: /2021/results/:name
+
     news_2020:
         output: true
         permalink: /2020/news/:name

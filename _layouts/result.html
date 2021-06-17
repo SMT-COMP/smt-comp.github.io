@@ -21,10 +21,10 @@ layout: default
 
 
 
-<h2>{{ page.division }} ({{ track }})</h2>
+<h2>{{ page.pretty_name }} - {{ track }}</h2>
 
 <p>
-Competition results for the {{ page.division }} division
+    Competition results for the {{ page.pretty_name }} division
 in the {{ track }}.
 </p>
 
@@ -462,5 +462,3 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
 {%- endfor -%}
 </p>
-
-

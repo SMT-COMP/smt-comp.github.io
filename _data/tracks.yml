@@ -1,3 +1,9 @@
+- year: 2021
+  tracks:
+  - raw_name: track_single_query
+    pretty_name: Single Query Track
+    status: competitive
+
 - year: 2020
   tracks:
   - raw_name: track_single_query

@@ -14,7 +14,9 @@ layout: default
 {% assign divisions = results
    | where: "layout", "result" | group_by: 'division' %}
 
-<h2>SMT-COMP {{ page.year }} Results</h2>
+<h2>SMT-COMP 2020 alternative results</h2>
+
+<p>What the results of single-query <a href="https://smt-comp.github.io/2020/results.html">SMT-COMP 2020</a> would have looked like with divisions split as shown below.</p>
 
 <h3>Competition-Wide Recognitions</h3>
 
@@ -66,28 +68,26 @@ tracks and divisions.
 </ul>
 {%- endif -%}
 <p>
-<h3>Divisions</h3>
-<ul>
-{% for result in divisions %}
-  {%- assign track_str = "" -%}
-  {% for item in result.items %}
-    {% assign track = tracks |where: "raw_name", item.track  |first %}
-    {% assign track = track.pretty_name %}
-    {%- assign track_str = track_str |append: '<a href="'
-                                     |append: item.url
-                                     |append: '">'
-                                     |append: track
-                                     |append: '</a>'
-                                     |append: ':' -%}
-  {% endfor %}
-  {%- assign track_str = track_str | split: ":" -%}
-  <li><b>{{ result.name }}</b></li>
-  <ul>
-    {% for ts in track_str %}
-    <li>{{ ts }}</li>
-    {% endfor %}
-  </ul>
-{% endfor %}
-</ul>
-
-
+    <!-- <h3>Divisions</h3>
+         <ul>
+         {% for result in divisions %}
+         {%- assign track_str = "" -%}
+         {% for item in result.items %}
+         {% assign track = tracks |where: "raw_name", item.track  |first %}
+         {% assign track = track.pretty_name %}
+         {%- assign track_str = track_str |append: '<a href="'
+         |append: item.url
+         |append: '">'
+         |append: track
+         |append: '</a>'
+         |append: ':' -%}
+         {% endfor %}
+         {%- assign track_str = track_str | split: ":" -%}
+         <li><b>{{ result.name }}</b></li>
+         <ul>
+         {% for ts in track_str %}
+         <li>{{ ts }}</li>
+         {% endfor %}
+         </ul>
+         {% endfor %}
+         </ul> -->

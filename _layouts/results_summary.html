@@ -10,21 +10,23 @@ layout: default
 {%- assign track = track.pretty_name -%}
 {%- assign disagreements = site[page.disagreements] -%}
 
-<h2>SMT-COMP {{ page.year }} Results - {{ track }} (Summary)</h2>
+<h2>SMT-COMP 2020 alternative results - {{ track }} (Summary)</h2>
 
 <!-- Note: we assume that the order of solvers in the .md files is according
-           to the ranking in the respective category! -->
+     to the ranking in the respective category! -->
+
+<p>What the results of single-query <a href="https://smt-comp.github.io/2020/results.html">SMT-COMP 2020</a> would have looked like with divisions split as shown below.</p>
 
 <p>
-Summary of all competition results for the {{ track }}.
-<br/>
-Results are given ranked by performance for each scoring scheme
-(best solver is given as left-most solver).
-{%- if track_status != "competitive" -%}
-<br/>
-This track is {{ track_status }}. Solvers are only ranked by performance, but no
-winner is selected.
-{%- endif -%}
+    Summary of all competition results for the {{ track }}.
+    <br/>
+    Results are given ranked by performance for each scoring scheme
+    (best solver is given as left-most solver).
+    {%- if track_status != "competitive" -%}
+    <br/>
+    This track is {{ track_status }}. Solvers are only ranked by performance, but no
+    winner is selected.
+    {%- endif -%}
 </p>
 
 {%- assign scores = page.scores |split: "," -%}
@@ -33,7 +35,7 @@ winner is selected.
 {%- assign division_data = site[page.divisions] |where: "division", division.division |first -%}
 {%- assign division_data = division_data.tracks |where: "name", page.track |first -%}
 
-<h3><a href="{{ division.url }}">{{ division.division }}</a></h3>
+<h3><a href="{{ division.url }}">{{ division.pretty_name }}</a></h3>
 {%- if division_data.status != "competitive" -%}
 <p>
 This division is {{ division_data.status }}. Solvers are only ranked by performance, but no
@@ -48,6 +50,7 @@ The division has <a href="{{ div_disagr.url }}">disagreements</a>
 </p>
   {%- endif -%}
 {%- endif -%}
+<p></p>
   <table>
     <thead>
     <th>Scoring Scheme</th>
@@ -109,4 +112,3 @@ The division has <a href="{{ div_disagr.url }}">disagreements</a>
   {%- endfor -%}
   </table>
 {%- endfor -%}
-

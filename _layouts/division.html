@@ -4,7 +4,7 @@ layout: default
 {%- assign tracks = site.data.tracks |where: "year", page.year |first -%}
 {%- assign tracks = tracks.tracks -%}
 
-<h2><a href="{{ page.description }}">{{ page.division }}</a></h2>
+<h2><a href="{{ page.description }}">{{ page.pretty_name }}</a></h2>
 <h3>Tracks</h3>
 <table>
 <tr>
@@ -30,4 +30,3 @@ layout: default
 <h3>Notes</h3>
 {{ content }}
 {% endif %}
-

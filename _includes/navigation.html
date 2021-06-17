@@ -21,22 +21,22 @@
 
   <p>{{ site.description | default: site.github.project_tagline }}</p>
 
+  <!-- <p class="view">
+       <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+       </p>
+       <p class="view">
+       <a href="/index.html"><b>Home</b></a><br/>
+       <a href="/introduction.html"><b>Introduction</b></a><br/>
+       <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+       <a href="/publications.html"><b>Publications</b></a><br/>
+       <a class="hl" href="http://www.smt-lib.org"><b>SMT-LIB</b></a></br>
+       <a class="hl" href="/previous.html"><b>Competitions by Year</b></a></br>
+       </p> -->
   <p class="view">
-    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
-  </p>
-  <p class="view">
-    <a href="/index.html"><b>Home</b></a><br/>
-    <a href="/introduction.html"><b>Introduction</b></a><br/>
-    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
-    <a href="/publications.html"><b>Publications</b></a><br/>
-    <a class="hl" href="http://www.smt-lib.org"><b>SMT-LIB</b></a></br>
-    <a class="hl" href="/previous.html"><b>Competitions by Year</b></a></br>
-  </p>
-  <p class="view">
-    <h3>
-      {%- assign link = "/" -%}
-      {%- if year != '' -%}{%- assign link = link |append: year |append: '/' -%}{%- endif -%}
-      <a href="{{ link }}">SMT-COMP {{ year }}</a>
+      <!-- <h3>
+           {%- assign link = "/" -%}
+           {%- if year != '' -%}{%- assign link = link |append: year |append: '/' -%}{%- endif -%}
+           <a href="{{ link }}">SMT-COMP {{ year }}</a> -->
     </h3>
     {% for item in menu_items %}
       {%- assign i = item.name |split: '20' |first -%}
@@ -56,4 +56,3 @@
   </ul>
   {% endif %}
 </header>
-
