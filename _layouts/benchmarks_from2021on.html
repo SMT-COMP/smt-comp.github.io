@@ -63,6 +63,7 @@ Note that not all of them were selected in the first place.
     {%- for division in divisions -%}
     {%- for track in division.tracks -%}
     {%- if track.name == track_descr.raw_name -%}
+    {%- if track.n_insts > 0 -%}
     <tr {% if track.status == "non-competitive" %} class = "non-competing" {% endif %}>
         <td><a href="{{ division.url }}">{{ division.division }}</a>{%- if
             track.status == "non-competitive" -%}<sup><a href="#nc">n</a></sup>{%-
@@ -99,6 +100,7 @@ Note that not all of them were selected in the first place.
           {%- endfor -%}
         </td>
     </tr>
+    {%- endif -%}
     {%- endif -%}
     {%- endfor -%}
     {%- endfor -%}
