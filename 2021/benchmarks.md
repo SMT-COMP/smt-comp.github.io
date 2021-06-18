@@ -8,8 +8,8 @@ note: "SMT-COMP 2021 will use a large subset of the benchmarks available within
        the 2021-05-26 release of SMT-LIB, as described in the competition
        rules."
 
-#smtlib_space: "https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=445201"
-#smtlib_path: "root/SMT/SMT-LIB benchmarks/2021-05-26"
+smtlib_space: "https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=445201"
+smtlib_path: "root/SMT/SMT-LIB benchmarks/2021-05-26"
 
 tracks:
 - name: track_single_query

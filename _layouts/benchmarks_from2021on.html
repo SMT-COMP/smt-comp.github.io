@@ -20,23 +20,17 @@ layout: default
 {%- for track_descr in tracks -%}
 
 {%- assign n_divisions = 0 -%}
-{%-for benchmark in divisions -%}
-{%- for track in benchmark.tracks -%}
-{%- if track.name == track_descr.raw_name -%}
-{%- if track.n_insts > 0 -%}
-{%- assign n_divisions = n_divisions | plus:1 -%}
-{%- endif -%}
-{%- endif -%}
-{%- endfor -%}
+{%- for division in divisions -%}
+  {%- for track in division.tracks -%}
+    {%- if track.name == track_descr.raw_name -%}
+      {%- if track.n_insts > 0 -%}
+        {%- assign n_divisions = n_divisions | plus:1 -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
 {%- endfor -%}
 
 <h3>{{ track_descr.pretty_name }}</h3>
-
-{%- if track_descr.raw_name == "track_single_query_challenge" -%}
-{{ chall_sq_note }}
-{%- elsif track_descr.raw_name == "track_incremental_challenge" -%}
-{{ chall_inc_note }}
-{%- endif -%}
 
 {%- if n_divisions == 0 -%}
 The {{ track_descr.pretty_name }} divisions are not yet available.
@@ -45,8 +39,7 @@ The {{ track_descr.pretty_name }} divisions are not yet available.
 
 
 <p>
-    In total there are
-    {{ n_divisions }} divisions in the {{ track_descr.pretty_name }}.
+    In total there {% if n_divisions > 1 %} are {{ n_divisions }} divisions {% else %} is 1 division {% endif %} in the {{ track_descr.pretty_name }}.
 </br>
 {%- assign selection = page.tracks |where: "name", track_descr.raw_name |first -%}
 You can download the
@@ -62,26 +55,50 @@ Note that not all of them were selected in the first place.
 <table>
     <tr>
         <th>Division</th>
-        <th>Number of Included Benchmarks</th>
+        <th>Division benchmarks</th>
+        <th>Logic</th>
+        <th>Logic benchmarks</th>
     </tr>
     {%- assign total = 0 -%}
-    {%- for benchmark in divisions -%}
-    {%- for track in benchmark.tracks -%}
+    {%- for division in divisions -%}
+    {%- for track in division.tracks -%}
     {%- if track.name == track_descr.raw_name -%}
-    {%- if track.n_insts > 0 -%}
     <tr {% if track.status == "non-competitive" %} class = "non-competing" {% endif %}>
-        <td><a href="{{ benchmark.url }}">{{ benchmark.division }}</a>{%- if
+        <td><a href="{{ division.url }}">{{ division.division }}</a>{%- if
             track.status == "non-competitive" -%}<sup><a href="#nc">n</a></sup>{%-
             elsif track.status == "experimental" -%}<sup><a href="#ec">e</a></sup>{%-
             endif -%}</td>
         <td>{{ track.n_insts }}
             {%- assign total = total | plus: track.n_insts -%}
-            {%- if track.n_excluded > 0 -%}
-            ({{ track.n_excluded }} excluded)
+            {%- if n_excluded > 0 -%}
+            ({{ n_excluded }} excluded)
             {%- endif -%}
         </td>
+        <td>
+          {%- assign processed = 0 -%}
+          {%- for logics in track.logic_insts -%}
+            {%- for logic in logics -%}
+              {{ logic[0] }}
+              {%- if processed < logics.size -%}
+                <br>
+              {%- endif -%}
+              {%- assign processed = processed | plus:1 -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </td>
+        <td>
+          {%- assign processed = 0 -%}
+          {%- for logics in track.logic_insts -%}
+            {%- for logic in logics -%}
+              {{ logic[1] }}
+              {%- if processed < logics.size -%}
+                <br>
+              {%- endif -%}
+              {%- assign processed = processed | plus:1 -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </td>
     </tr>
-    {%- endif -%}
     {%- endif -%}
     {%- endfor -%}
     {%- endfor -%}
@@ -92,6 +109,8 @@ Note that not all of them were selected in the first place.
         <td>
             <b>{{ total }}</b>
         </td>
+        <td></td>
+        <td></td>
     </tr>
 </table>
 

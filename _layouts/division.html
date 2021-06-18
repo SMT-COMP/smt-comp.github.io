@@ -11,18 +11,48 @@ layout: default
 <th>Track</th>
 <th>Number of Benchmarks</th>
 <th>Status</th>
+{%- if page.year >= 2021 -%}
+  <th>Logics</th>
+  <th>Benchmarks</th>
+{%- endif -%}
 </tr>
 {%- for track in tracks -%}
-<tr>
-<td>{{ track.pretty_name }}</td>
-    {%- for div_track in page.tracks -%}
+  <tr>
+      {%- for div_track in page.tracks -%}
         {%- if div_track.name == track.raw_name -%}
-<td>{{ div_track.n_insts }}</td>
-<td>{{ div_track.status }}</td>
+          <td>{{ track.pretty_name }}</td>
+          <td>{{ div_track.n_insts }}</td>
+          <td>{{ div_track.status }}</td>
+          {%- if page.year >= 2021 -%}
+            <td>
+              {%- assign processed = 0 -%}
+              {%- for logics in div_track.logic_insts -%}
+                {%- for logic in logics -%}
+                  {{ logic[0] }}
+                  {%- if processed < logics.size -%}
+                    <br>
+                  {%- endif -%}
+                  {%- assign processed = processed | plus:1 -%}
+                {%- endfor -%}
+              {%- endfor -%}
+            </td>
+            <td>
+                {%- assign processed = 0 -%}
+                {%- for logics in div_track.logic_insts -%}
+                  {%- for logic in logics -%}
+                    {{ logic[1] }}
+                    {%- if processed < logics.size -%}
+                      <br>
+                    {%- endif -%}
+                    {%- assign processed = processed | plus:1 -%}
+                  {%- endfor -%}
+                {%- endfor -%}
+            </td>
+          {%- endif -%}
         {%- endif -%}
-    {%- endfor -%}
-</tr>
-{% endfor %}
+      {%- endfor -%}
+  </tr>
+{%- endfor -%}
 </table>
 
 {% assign content_test = content | strip %}
@@ -30,4 +60,3 @@ layout: default
 <h3>Notes</h3>
 {{ content }}
 {% endif %}
-
