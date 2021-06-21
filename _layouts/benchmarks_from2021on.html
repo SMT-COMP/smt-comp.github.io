@@ -79,6 +79,9 @@ Note that not all of them were selected in the first place.
           {%- assign processed = 0 -%}
           {%- for logics in track.logic_insts -%}
             {%- for logic in logics -%}
+              {%- if logic[1] == 0 -%}
+                {%- continue -%}
+              {%- endif -%}
               {{ logic[0] }}
               {%- if processed < logics.size -%}
                 <br>
@@ -91,6 +94,9 @@ Note that not all of them were selected in the first place.
           {%- assign processed = 0 -%}
           {%- for logics in track.logic_insts -%}
             {%- for logic in logics -%}
+              {%- if logic[1] == 0 -%}
+                {%- continue -%}
+              {%- endif -%}
               {{ logic[1] }}
               {%- if processed < logics.size -%}
                 <br>

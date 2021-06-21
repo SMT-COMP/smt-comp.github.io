@@ -28,6 +28,9 @@ layout: default
               {%- assign processed = 0 -%}
               {%- for logics in div_track.logic_insts -%}
                 {%- for logic in logics -%}
+                  {%- if logic[1] == 0 -%}
+                   {%- continue -%}
+                  {%- endif -%}
                   {{ logic[0] }}
                   {%- if processed < logics.size -%}
                     <br>
@@ -40,6 +43,9 @@ layout: default
                 {%- assign processed = 0 -%}
                 {%- for logics in div_track.logic_insts -%}
                   {%- for logic in logics -%}
+                    {%- if logic[1] == 0 -%}
+                      {%- continue -%}
+                    {%- endif -%}
                     {{ logic[1] }}
                     {%- if processed < logics.size -%}
                       <br>
