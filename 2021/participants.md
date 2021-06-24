@@ -45,7 +45,6 @@ divisions:
   - ALIA
   - AUFDTLIA
   - AUFDTLIRA
-  - AUFFPDTLIRA
   - AUFLIA
   - AUFLIRA
   - UFDTLIA
@@ -68,6 +67,7 @@ divisions:
   - AUFBVDTLIA
   - AUFBVDTNIA
   - AUFBVFP
+  - AUFFPDTLIRA
   - UFBV
   - UFBVFP
   - UFBVLIA
