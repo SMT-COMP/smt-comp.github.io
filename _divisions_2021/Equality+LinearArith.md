@@ -3,26 +3,24 @@ layout: division
 year: 2021
 division: Equality+LinearArith
 logics: 
-- AUFLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFLIRA
-  UFDTLIA: http://smtlib.cs.uiowa.edu/logics.shtml#UFDTLIA
-  AUFDTLIA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFDTLIA
-  ALIA: http://smtlib.cs.uiowa.edu/logics.shtml#ALIA
-  AUFLIA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFLIA
-  AUFDTLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFDTLIRA
+- UFDTLIA: http://smtlib.cs.uiowa.edu/logics.shtml#UFDTLIA
   UFDTLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#UFDTLIRA
-  AUFFPDTLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFFPDTLIRA
-  UFLIA: http://smtlib.cs.uiowa.edu/logics.shtml#UFLIA
-  UFLRA: http://smtlib.cs.uiowa.edu/logics.shtml#UFLRA
   UFIDL: http://smtlib.cs.uiowa.edu/logics.shtml#UFIDL
+  UFLRA: http://smtlib.cs.uiowa.edu/logics.shtml#UFLRA
+  AUFDTLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFDTLIRA
+  AUFLIA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFLIA
+  AUFLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFLIRA
+  ALIA: http://smtlib.cs.uiowa.edu/logics.shtml#ALIA
+  UFLIA: http://smtlib.cs.uiowa.edu/logics.shtml#UFLIA
+  AUFDTLIA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFDTLIA
 tracks:
 - name: track_single_query
   status: competitive
-  n_insts: 18026
+  n_insts: 17873
   logic_insts:
   - ALIA: 19
     AUFDTLIA: 147
     AUFDTLIRA: 6069
-    AUFFPDTLIRA: 153
     AUFLIA: 1638
     AUFLIRA: 1683
     UFDTLIA: 277
@@ -35,7 +33,6 @@ tracks:
   - ALIA: 0
     AUFDTLIA: 0
     AUFDTLIRA: 0
-    AUFFPDTLIRA: 0
     AUFLIA: 0
     AUFLIRA: 0
     UFDTLIA: 0
@@ -55,12 +52,11 @@ tracks:
     UFLRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 24608
+  n_insts: 24477
   logic_insts:
   - ALIA: 0
     AUFDTLIA: 0
     AUFDTLIRA: 5385
-    AUFFPDTLIRA: 131
     AUFLIA: 1245
     AUFLIRA: 9885
     UFDTLIA: 0
@@ -73,7 +69,6 @@ tracks:
   - ALIA: 0
     AUFDTLIA: 0
     AUFDTLIRA: 0
-    AUFFPDTLIRA: 0
     AUFLIA: 0
     AUFLIRA: 0
     UFDTLIA: 0
@@ -88,7 +83,6 @@ tracks:
   - ALIA: 0
     AUFDTLIA: 0
     AUFDTLIRA: 16
-    AUFFPDTLIRA: 0
     AUFLIA: 16
     AUFLIRA: 16
     UFDTLIA: 16
@@ -101,7 +95,6 @@ tracks:
   - ALIA: 0
     AUFDTLIA: 0
     AUFDTLIRA: 0
-    AUFFPDTLIRA: 0
     AUFLIA: 0
     AUFLIRA: 0
     UFDTLIA: 0
@@ -116,7 +109,6 @@ tracks:
   - ALIA: 0
     AUFDTLIA: 0
     AUFDTLIRA: 17
-    AUFFPDTLIRA: 0
     AUFLIA: 17
     AUFLIRA: 17
     UFDTLIA: 17
@@ -129,7 +121,6 @@ tracks:
   - ALIA: 0
     AUFDTLIA: 0
     AUFDTLIRA: 0
-    AUFFPDTLIRA: 0
     AUFLIA: 0
     AUFLIRA: 0
     UFDTLIA: 0

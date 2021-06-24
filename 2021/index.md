@@ -31,5 +31,6 @@ The competition is run on [StarExec](https://www.starexec.org),
 a service that is hosted at the University of Iowa.
 
 ### Acknowledgment
+- [Andrew Reynolds](https://homepage.divms.uiowa.edu/~ajreynol/) (Spotting wrong logic classification)
 - [Andrea Micheli](https://www.mikand.net/) ([pySMT](https://github.com/pysmt/pysmt) model validator)
 - [Aaron Stump](http://homepage.divms.uiowa.edu/~astump/) (StarExec)

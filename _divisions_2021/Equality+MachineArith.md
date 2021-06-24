@@ -3,22 +3,23 @@ layout: division
 year: 2021
 division: Equality+MachineArith
 logics: 
-- UFBVFP: http://smtlib.cs.uiowa.edu/logics.shtml#UFBVFP
-  AUFBVDTLIA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBVDTLIA
-  ABVFP: http://smtlib.cs.uiowa.edu/logics.shtml#ABVFP
+- ABVFPLRA: http://smtlib.cs.uiowa.edu/logics.shtml#ABVFPLRA
+  AUFFPDTLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFFPDTLIRA
+  UFBVLIA: http://smtlib.cs.uiowa.edu/logics.shtml#UFBVLIA
   UFBV: http://smtlib.cs.uiowa.edu/logics.shtml#UFBV
+  AUFBVDTLIA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBVDTLIA
   ABV: http://smtlib.cs.uiowa.edu/logics.shtml#ABV
+  AUFBVFP: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBVFP
+  UFFPDTNIRA: http://smtlib.cs.uiowa.edu/logics.shtml#UFFPDTNIRA
+  ABVFP: http://smtlib.cs.uiowa.edu/logics.shtml#ABVFP
+  UFBVFP: http://smtlib.cs.uiowa.edu/logics.shtml#UFBVFP
   AUFBV: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBV
   UFFPDTLIRA: http://smtlib.cs.uiowa.edu/logics.shtml#UFFPDTLIRA
   AUFBVDTNIA: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBVDTNIA
-  AUFBVFP: http://smtlib.cs.uiowa.edu/logics.shtml#AUFBVFP
-  ABVFPLRA: http://smtlib.cs.uiowa.edu/logics.shtml#ABVFPLRA
-  UFFPDTNIRA: http://smtlib.cs.uiowa.edu/logics.shtml#UFFPDTNIRA
-  UFBVLIA: http://smtlib.cs.uiowa.edu/logics.shtml#UFBVLIA
 tracks:
 - name: track_single_query
   status: competitive
-  n_insts: 2699
+  n_insts: 2852
   logic_insts:
   - ABV: 169
     ABVFP: 30
@@ -27,6 +28,7 @@ tracks:
     AUFBVDTLIA: 845
     AUFBVDTNIA: 1
     AUFBVFP: 57
+    AUFFPDTLIRA: 153
     UFBV: 143
     UFBVFP: 2
     UFBVLIA: 208
@@ -41,6 +43,7 @@ tracks:
     AUFBVDTLIA: 0
     AUFBVDTNIA: 0
     AUFBVFP: 0
+    AUFFPDTLIRA: 0
     UFBV: 0
     UFBVFP: 0
     UFBVLIA: 0
@@ -56,7 +59,7 @@ tracks:
   - ABVFP: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 324
+  n_insts: 455
   logic_insts:
   - ABV: 2
     ABVFP: 0
@@ -65,6 +68,7 @@ tracks:
     AUFBVDTLIA: 20
     AUFBVDTNIA: 0
     AUFBVFP: 0
+    AUFFPDTLIRA: 131
     UFBV: 0
     UFBVFP: 0
     UFBVLIA: 0
@@ -79,6 +83,7 @@ tracks:
     AUFBVDTLIA: 0
     AUFBVDTNIA: 0
     AUFBVFP: 0
+    AUFFPDTLIRA: 0
     UFBV: 0
     UFBVFP: 0
     UFBVLIA: 0
@@ -95,6 +100,7 @@ tracks:
     AUFBVDTLIA: 0
     AUFBVDTNIA: 0
     AUFBVFP: 0
+    AUFFPDTLIRA: 0
     UFBV: 16
     UFBVFP: 0
     UFBVLIA: 0
@@ -109,6 +115,7 @@ tracks:
     AUFBVDTLIA: 0
     AUFBVDTNIA: 0
     AUFBVFP: 0
+    AUFFPDTLIRA: 0
     UFBV: 0
     UFBVFP: 0
     UFBVLIA: 0
@@ -125,6 +132,7 @@ tracks:
     AUFBVDTLIA: 0
     AUFBVDTNIA: 0
     AUFBVFP: 0
+    AUFFPDTLIRA: 0
     UFBV: 17
     UFBVFP: 0
     UFBVLIA: 0
@@ -139,6 +147,7 @@ tracks:
     AUFBVDTLIA: 0
     AUFBVDTNIA: 0
     AUFBVFP: 0
+    AUFFPDTLIRA: 0
     UFBV: 0
     UFBVFP: 0
     UFBVLIA: 0
