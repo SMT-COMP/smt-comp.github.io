@@ -17,14 +17,28 @@ layout: default
 {%- assign division = divisions | where: "division", page.division |first -%}
 {%- assign division = division.tracks | where: "name", page.track |first -%}
 
+{%- assign trueDivision = 1 -%}
+{%- if page.year >= 2021 -%}
+  {%- assign n_logics = 0 -%}
+  {%- for logic in page.logics -%}
+    {%- assign n_logics = n_logics | plus:1 -%}
+  {%- endfor -%}
+  {%- if n_logics == 0 -%}
+    {%- assign trueDivision = 0 -%}
+  {%- endif -%}
+{%- endif -%}
+
 {%- assign disagreement = disagreements | where: "division", page.division | where: "track", page.track |first -%}
-
-
 
 <h2>{{ page.division }} ({{ track }})</h2>
 
 <p>
-Competition results for the {{ page.division }} division
+    Competition results for the {{ page.division }}
+    {% if trueDivision == 1 %}
+      division
+    {% else %}
+      logic
+    {% endif %}
 in the {{ track }}.
 </p>
 
@@ -40,11 +54,24 @@ Page generated on {{ page.resultdate | time_to_string }}
 <b> Memory Limit:</b> {{ page.mem_limit }} GB
 </p>
 
+{%- if page.year >= 2021 and trueDivision == 1 -%}
+<p>
+    <b>Logics: </b>
+    {%- assign result_page = "results_" | append: page.year -%}
+    {%- assign first = 0 -%}
+    {%- for logic in page.logics -%}
+      {%- assign result = site[result_page] | where: "division", logic | where: "track", page.track | first -%}
+      {% if first > 0 %}, {%- else -%}{%- assign first = 1 -%}{% endif %}
+      <a href="{{ result.url }}">{{ result.division }}</a>
+    {%- endfor -%}
+</p>
+{%- endif -%}
+
 {%- if track_status != "competitive" -%}
 This track is {{ track_status }}.
 Solvers are only ranked by performance, but no
 winner is selected.
-{%- elsif division.status != "competitive" %}
+{%- elsif trueDivision == 1 and division.status != "competitive" %}
 This division is {{ division.status }}.
 Solvers are only ranked by performance, but no winner is selected.
 {%- else -%}
@@ -462,5 +489,3 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
 {%- endfor -%}
 </p>
-
-
