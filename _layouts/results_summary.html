@@ -13,25 +13,40 @@ layout: default
 <h2>SMT-COMP {{ page.year }} Results - {{ track }} (Summary)</h2>
 
 <!-- Note: we assume that the order of solvers in the .md files is according
-           to the ranking in the respective category! -->
+     to the ranking in the respective category! -->
 
 <p>
-Summary of all competition results for the {{ track }}.
-<br/>
-Results are given ranked by performance for each scoring scheme
-(best solver is given as left-most solver).
-{%- if track_status != "competitive" -%}
-<br/>
-This track is {{ track_status }}. Solvers are only ranked by performance, but no
-winner is selected.
-{%- endif -%}
+    Summary of all competition results for the {{ track }}.
+    <br/>
+    Results are given ranked by performance for each scoring scheme
+    (best solver is given as left-most solver).
+    {%- if track_status != "competitive" -%}
+    <br/>
+    This track is {{ track_status }}. Solvers are only ranked by performance, but no
+    winner is selected.
+    {%- endif -%}
 </p>
 
 {%- assign scores = page.scores |split: "," -%}
 {%- assign results = site[page.results] |where: "layout", "result" | group_by: "track" |where: "name", page.track |first -%}
+{%- assign allDivisions = site[page.divisions] -%}
+
 {%- for division in results.items -%}
-{%- assign division_data = site[page.divisions] |where: "division", division.division |first -%}
-{%- assign division_data = division_data.tracks |where: "name", page.track |first -%}
+  {%- if page.year >= 2021 -%}
+  <!-- test if true division -->
+    {%- assign hits = 0 -%}
+    {%- for actualDivision in allDivisions -%}
+      {%- if division.division == actualDivision.division -%}
+        {%- assign hits = hits | plus:1 -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if hits == 0 -%}
+      {% continue %}
+    {%- endif -%}
+  {%- endif -%}
+   {%- assign division_data = site[page.divisions] |where: "division", division.division |first -%}
+  {%- assign division_data = division_data.tracks |where: "name", page.track |first -%}
 
 <h3><a href="{{ division.url }}">{{ division.division }}</a></h3>
 {%- if division_data.status != "competitive" -%}
@@ -109,4 +124,3 @@ The division has <a href="{{ div_disagr.url }}">disagreements</a>
   {%- endfor -%}
   </table>
 {%- endfor -%}
-
