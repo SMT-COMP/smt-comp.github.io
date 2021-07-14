@@ -159,6 +159,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.sequential |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.sequential |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.sequential |map: "unsolved" |first -%}
+  {%- assign has_abstained = page.sequential |map: "abstained" |first -%}
 <h3>Sequential Performance</h3>
 <table id="sequential" class="result sorted">
 <thead>
@@ -179,6 +180,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
+  {%- endif -%}
+  {%- if has_abstained -%}
+        <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
         <th class="center">Memout</th>
@@ -209,6 +213,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
+  {%- if has_abstained -%}
+    <td class="right">{{ solver.abstained }}</td>
+  {%- endif -%}
   {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
     <td class="right">{{ solver.memout }}</td>
@@ -224,6 +231,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.parallel |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.parallel |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.parallel |map: "unsolved" |first -%}
+  {%- assign has_abstained = page.parallel |map: "abstained" |first -%}
 <h3>Parallel Performance</h3>
 <table id="parallel" class="result sorted">
 <thead>
@@ -244,6 +252,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
+  {%- endif -%}
+  {%- if has_abstained -%}
+        <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
         <th class="center">Memout</th>
@@ -275,6 +286,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
+  {%- if has_abstained -%}
+    <td class="right">{{ solver.abstained }}</td>
+  {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
     <td class="right">{{ solver.memout }}</td>
 </tr>
@@ -289,6 +303,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.sat |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.sat |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.sat |map: "unsolved" |first -%}
+  {%- assign has_abstained = page.sat |map: "abstained" |first -%}
 <h3>SAT Performance</h3>
 <table id="sat" class="result sorted">
 <thead>
@@ -309,6 +324,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
+  {%- endif -%}
+  {%- if has_abstained -%}
+        <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
         <th class="center">Memout</th>
@@ -339,6 +357,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
+  {%- if has_abstained -%}
+    <td class="right">{{ solver.abstained }}</td>
+  {%- endif -%}
   {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
     <td class="right">{{ solver.memout }}</td>
@@ -354,6 +375,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.unsat |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.unsat |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.unsat |map: "unsolved" |first -%}
+  {%- assign has_abstained = page.unsat |map: "abstained" |first -%}
 <h3>UNSAT Performance</h3>
 <table id="unsat" class="result sorted">
 <thead>
@@ -374,6 +396,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
+  {%- endif -%}
+  {%- if has_abstained -%}
+        <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
         <th class="center">Memout</th>
@@ -405,6 +430,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
+  {%- if has_abstained -%}
+    <td class="right">{{ solver.abstained }}</td>
+  {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
     <td class="right">{{ solver.memout }}</td>
 </tr>
@@ -419,6 +447,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.twentyfour |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.twentyfour |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.twentyfour |map: "unsolved" |first -%}
+  {%- assign has_abstained = page.twentyfour |map: "abstained" |first -%}
 <h3>24 seconds Performance</h3>
 <table id="twentyfour" class="result sorted">
 <thead>
@@ -439,6 +468,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
+  {%- endif -%}
+  {%- if has_abstained -%}
+        <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
         <th class="center">Memout</th>
@@ -469,6 +501,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
+  {%- endif -%}
+  {%- if has_abstained -%}
+    <td class="right">{{ solver.abstained }}</td>
   {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
     <td class="right">{{ solver.memout }}</td>
