@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-07-04 11:48:00
+resultdate: 2021-07-14 14:12:27
 
 year: 2020
 
@@ -14,59 +14,59 @@ winner_par: CVC4-inc
 
 parallel:
 - name: CVC4-inc
-  correctScore: 0.06594954
-  timeScore: 0.00004036
+  correctScore: 0.07036068
+  timeScore: 0.00003776
   division: UF
 - name: CVC4-inc
-  correctScore: 0.00480092
+  correctScore: 0.00481985
   timeScore: 0.00000000
   division: UFLRA
 - name: Yices2 incremental
-  correctScore: 0.00457920
-  timeScore: 0.00581871
+  correctScore: 0.00459725
+  timeScore: 0.00584165
   division: QF_UFLIA
 - name: Yices2 incremental
-  correctScore: 0.00209716
-  timeScore: 0.00380876
+  correctScore: 0.00210543
+  timeScore: 0.00382378
   division: QF_AUFLIA
 - name: Bitwuzla
-  correctScore: 0.00091387
-  timeScore: 0.02909676
+  correctScore: 0.00091747
+  timeScore: 0.02921149
   division: QF_ABV
 - name: Yices2 incremental
-  correctScore: 0.00078822
-  timeScore: 0.00217774
+  correctScore: 0.00079132
+  timeScore: 0.00218633
   division: QF_LIA
 - name: Yices2 incremental
-  correctScore: 0.00063181
-  timeScore: 0.00163031
+  correctScore: 0.00063430
+  timeScore: 0.00163674
   division: QF_AUFBV
 - name: CVC4-inc
-  correctScore: 0.00031575
-  timeScore: 0.00371626
+  correctScore: 0.00031699
+  timeScore: 0.00373092
   division: QF_BV
 - name: Bitwuzla
-  correctScore: 0.00019816
-  timeScore: 0.07632875
+  correctScore: 0.00019894
+  timeScore: 0.07662971
   division: QF_UFBV
 - name: Yices2 incremental
-  correctScore: 0.00017177
+  correctScore: 0.00017244
   timeScore: 0.00000000
   division: QF_LRA
 - name: SMTInterpol
-  correctScore: 0.00008919
-  timeScore: 0.02097954
+  correctScore: 0.00008954
+  timeScore: 0.02106226
   division: QF_UFLRA
 - name: CVC4-inc
-  correctScore: 0.00008001
-  timeScore: 0.00054438
+  correctScore: 0.00008032
+  timeScore: 0.00054653
   division: LRA
 - name: Yices2 incremental
   correctScore: 0.00000000
-  timeScore: 0.03645146
+  timeScore: 0.03659518
   division: QF_UF
 - name: SMTInterpol
   correctScore: 0.00000000
-  timeScore: 0.00033280
+  timeScore: 0.00033411
   division: LIA
 ---

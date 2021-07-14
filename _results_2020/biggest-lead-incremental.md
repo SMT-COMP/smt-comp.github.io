@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2020-07-04 11:47:57
+resultdate: 2021-07-14 14:12:25
 
 year: 2020
 
@@ -63,6 +63,11 @@ parallel:
   timeScore: 0.23350567
   division: LRA
 - name: CVC4-inc
+  second: SMTInterpol
+  correctScore: 1.14488242
+  timeScore: 2.28504528
+  division: UF
+- name: CVC4-inc
   second: UltimateEliminator+MathSAT
   correctScore: 1.12500000
   timeScore: 0.00980400
@@ -72,11 +77,6 @@ parallel:
   correctScore: 1.10621835
   timeScore: 1.62208231
   division: QF_LIA
-- name: CVC4-inc
-  second: SMTInterpol
-  correctScore: 1.10476127
-  timeScore: 2.29123653
-  division: UF
 - name: Yices2 incremental
   second: SMTInterpol
   correctScore: 1.06716332
@@ -89,8 +89,8 @@ parallel:
   division: UFLRA
 - name: Bitwuzla
   second: CVC4-inc
-  correctScore: 1.05405405
-  timeScore: 1.47957370
+  correctScore: 1.05517241
+  timeScore: 1.47954751
   division: QF_BVFP
 - name: Yices2 incremental
   second: OpenSMT

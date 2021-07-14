@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2020-07-04 11:47:56
+resultdate: 2021-07-14 14:12:24
 
 year: 2020
 
@@ -10,7 +10,7 @@ participants: participants_2020
 disagreements: disagreements_2020
 division: UF
 track: track_incremental
-n_benchmarks: 2031
+n_benchmarks: 1998
 time_limit: 1200
 mem_limit: 60
 
@@ -19,46 +19,46 @@ parallel:
 - name: z3
   competing: "no"
   errorScore: 0
-  correctScore: 88956
-  CPUScore: 915238.52
-  WallScore: 915555.941
+  correctScore: 85771
+  CPUScore: 915196.49
+  WallScore: 915514.105
   unsolved: 217050
   timeout: 706
   memout: 0
 - name: CVC4-inc
   competing: "yes"
   errorScore: 0
-  correctScore: 32901
-  CPUScore: 715796.606
-  WallScore: 715770.012
-  unsolved: 273105
+  correctScore: 30525
+  CPUScore: 715777.916
+  WallScore: 715751.644
+  unsolved: 272296
   timeout: 588
   memout: 0
 - name: SMTInterpol
   competing: "yes"
   errorScore: 0
-  correctScore: 29781
-  CPUScore: 1647589.878
-  WallScore: 1639999.69
-  unsolved: 276225
-  timeout: 1341
+  correctScore: 26662
+  CPUScore: 1642708.243
+  WallScore: 1635526.205
+  unsolved: 276159
+  timeout: 1339
   memout: 0
 - name: SMTInterpol-fixed
   competing: "no"
   errorScore: 0
-  correctScore: 29764
-  CPUScore: 1647222.421
-  WallScore: 1639843.907
-  unsolved: 276242
-  timeout: 1340
+  correctScore: 26647
+  CPUScore: 1642655.397
+  WallScore: 1635644.581
+  unsolved: 276174
+  timeout: 1338
   memout: 0
 - name: UltimateEliminator+MathSAT
   competing: "yes"
   errorScore: 0
   correctScore: 0
-  CPUScore: 6691.99
-  WallScore: 3089.537
-  unsolved: 306006
+  CPUScore: 6584.07
+  WallScore: 3039.56
+  unsolved: 302821
   timeout: 0
   memout: 0
 ---
