@@ -239,7 +239,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
         <th class="center">Solver</th>
         <th class="center">Error Score</th>
         <th class="center">Correct Score</th>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
         <th class="center">CPU Time Score</th>
+  {%- endif -%}
         <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
         <th class="center">Solved</th>
@@ -272,7 +274,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {%- endif -%}
     </td>
     <td class="right">{{ solver.correctScore }}</td>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
     <td class="right">{{ solver.CPUScore }}</td>
+  {%- endif -%}
     <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
     <td class="right">{{ solver.solved }}</td>
@@ -311,7 +315,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
         <th class="center">Solver</th>
         <th class="center">Error Score</th>
         <th class="center">Correct Score</th>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
         <th class="center">CPU Time Score</th>
+  {%- endif -%}
         <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
         <th class="center">Solved</th>
@@ -344,7 +350,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {%- endif -%}
     </td>
     <td class="right">{{ solver.correctScore }}</td>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
     <td class="right">{{ solver.CPUScore }}</td>
+  {%- endif -%}
     <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
     <td class="right">{{ solver.solved }}</td>
@@ -383,7 +391,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
         <th class="center">Solver</th>
         <th class="center">Error Score</th>
         <th class="center">Correct Score</th>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
         <th class="center">CPU Time Score</th>
+  {%- endif -%}
         <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
         <th class="center">Solved</th>
@@ -416,7 +426,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {%- endif -%}
     </td>
     <td class="right">{{ solver.correctScore }}</td>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
     <td class="right">{{ solver.CPUScore }}</td>
+  {%- endif -%}
     <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
     <td class="right">{{ solver.solved }}</td>
@@ -455,7 +467,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
         <th class="center">Solver</th>
         <th class="center">Error Score</th>
         <th class="center">Correct Score</th>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
         <th class="center">CPU Time Score</th>
+  {%- endif -%}
         <th class="center">Wall Time Score</th>
   {%- if has_solved -%}
         <th class="center">Solved</th>
@@ -488,7 +502,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
       {%- endif -%}
     </td>
     <td class="right">{{ solver.correctScore }}</td>
+  {%- if page.track != "track_cloud" and page.track != "track_parallel" -%}
     <td class="right">{{ solver.CPUScore }}</td>
+  {%- endif -%}
     <td class="right">{{ solver.WallScore }}</td>
   {%- if has_solved -%}
     <td class="right">{{ solver.solved }}</td>
