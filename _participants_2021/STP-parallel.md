@@ -4,7 +4,7 @@ year: 2021
 contact: "soos.mate@gmail.com"
 name: "STP-parallel"
 preliminaryID: "-1"
-finalID: "-1"
+finalID: "15"
 team: "Trevor Hansen, Andrew V. Jones, Norbert Manthey, Ryan Govostes, Mate Soos, Vijay Ganesh and Dan Liew"
 variantOf: ""
 wrapperTool: ""
