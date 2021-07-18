@@ -158,7 +158,6 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.sequential |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.sequential |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.sequential |map: "unsolved" |first -%}
-  {%- assign has_abstained = page.sequential |map: "abstained" |first -%}
 <h3>Sequential Performance</h3>
 <table id="sequential" class="result sorted">
 <thead>
@@ -180,7 +179,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
   {%- endif -%}
-  {%- if has_abstained -%}
+  {%- if trueDivision == 1 -%}
         <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
@@ -212,9 +211,9 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- endif -%}
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
-  {%- if has_abstained -%}
-    <td class="right">{{ solver.abstained }}</td>
   {%- endif -%}
+  {%- if trueDivision == 1 -%}
+    <td class="right">{{ solver.abstained }}</td>
   {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
     <td class="right">{{ solver.memout }}</td>
@@ -230,7 +229,6 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.parallel |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.parallel |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.parallel |map: "unsolved" |first -%}
-  {%- assign has_abstained = page.parallel |map: "abstained" |first -%}
 <h3>Parallel Performance</h3>
 <table id="parallel" class="result sorted">
 <thead>
@@ -254,7 +252,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
   {%- endif -%}
-  {%- if has_abstained -%}
+  {%- if trueDivision == 1 -%}
         <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
@@ -289,7 +287,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
-  {%- if has_abstained -%}
+  {%- if trueDivision == 1 -%}
     <td class="right">{{ solver.abstained }}</td>
   {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
@@ -306,7 +304,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.sat |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.sat |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.sat |map: "unsolved" |first -%}
-  {%- assign has_abstained = page.sat |map: "abstained" |first -%}
+  {%- assign has_abstained = page.unsat |map: "abstained" |first -%}
 <h3>SAT Performance</h3>
 <table id="sat" class="result sorted">
 <thead>
@@ -331,7 +329,11 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
         <th class="center">Unsolved</th>
   {%- endif -%}
   {%- if has_abstained -%}
-        <th class="center">Abstained</th>
+    {%- if trueDivision == 1 -%}
+      <th class="center">Abstained</th>
+    {%- else -%}
+      <th class="center">N/A</th>
+    {%- endif -%}
   {%- endif -%}
         <th class="center">Timeout</th>
         <th class="center">Memout</th>
@@ -407,7 +409,11 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
         <th class="center">Unsolved</th>
   {%- endif -%}
   {%- if has_abstained -%}
-        <th class="center">Abstained</th>
+    {%- if trueDivision == 1 -%}
+      <th class="center">Abstained</th>
+    {%- else -%}
+      <th class="center">N/A</th>
+    {%- endif -%}
   {%- endif -%}
         <th class="center">Timeout</th>
         <th class="center">Memout</th>
@@ -458,7 +464,6 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- assign has_solved_sat = page.twentyfour |map: "solved_sat" |first -%}
   {%- assign has_solved_unsat = page.twentyfour |map: "solved_unsat" |first -%}
   {%- assign has_unsolved = page.twentyfour |map: "unsolved" |first -%}
-  {%- assign has_abstained = page.twentyfour |map: "abstained" |first -%}
 <h3>24 seconds Performance</h3>
 <table id="twentyfour" class="result sorted">
 <thead>
@@ -482,7 +487,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- if has_unsolved -%}
         <th class="center">Unsolved</th>
   {%- endif -%}
-  {%- if has_abstained -%}
+  {%- if trueDivision == 1 -%}
         <th class="center">Abstained</th>
   {%- endif -%}
         <th class="center">Timeout</th>
@@ -517,7 +522,7 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   {%- if has_unsolved -%}
     <td class="right">{{ solver.unsolved }}</td>
   {%- endif -%}
-  {%- if has_abstained -%}
+  {%- if trueDivision == 1 -%}
     <td class="right">{{ solver.abstained }}</td>
   {%- endif -%}
     <td class="right">{{ solver.timeout }}</td>
@@ -531,6 +536,15 @@ Note: the division has <a href="{{ disagreement.url }}">disagreements</a>
   <span id="nc">
     n Non-competing.
   </span><br/>
+{%- if trueDivision == 1 -%}
+  <span id="nc">
+    Abstained: Total of benchmarks in logics in this division that solver chose to abstain from. For SAT/UNSAT scores, this column also includes benchmarks not known to be SAT/UNSAT.
+    </span><br/>
+{%- else -%}
+  <span id="nc">
+    N/A: Benchmarks not known to be SAT/UNSAT, respectively.
+    </span><br/>
+{%- endif-%}
 {%- for solver in page.parallel %}
   {%- if solver.errorFootnote %}
   <span id="error{{solver.name}}">
