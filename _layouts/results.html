@@ -68,7 +68,23 @@ tracks and divisions.
 <p>
 <h3>Divisions</h3>
 <ul>
+
+{%- assign allDivisions = site[page.divisions] -%}
 {% for result in divisions %}
+  {%- if page.year >= 2021 -%}
+  <!-- test if true division -->
+    {%- assign hits = 0 -%}
+    {%- for actualDivision in allDivisions -%}
+      {%- if result.name == actualDivision.division -%}
+        {%- assign hits = hits | plus:1 -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if hits == 0 -%}
+      {% continue %}
+    {%- endif -%}
+  {%- endif -%}
+
   {%- assign track_str = "" -%}
   {% for item in result.items %}
     {% assign track = tracks |where: "raw_name", item.track  |first %}
@@ -89,5 +105,3 @@ tracks and divisions.
   </ul>
 {% endfor %}
 </ul>
-
-

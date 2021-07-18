@@ -4,7 +4,7 @@ year: 2021
 contact: "noetzli@cs.stanford.edu"
 name: "cvc5-gg"
 preliminaryID: "-1"
-finalID: "-1"
+finalID: "11"
 team: "Clark Barrett, Alex Ozdemir, Andres Noetzli, Andrew Reynolds, Cesare Tinelli, Amalee Wilson, Andrew Wu"
 variantOf: ""
 wrapperTool: ""

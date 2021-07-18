@@ -14,8 +14,8 @@
     link: 2021/parallel-and-cloud-tracks.html
   - name: Participants
     link: 2021/participants.html
-#  - name: Results
-#    link: 2021/results.html
+  - name: Results
+    link: 2021/results.html
 #  - name: Slides
 #    link: 2021/SMT-COMP-2021-slides.pdf
 #  - name: Solver submission
