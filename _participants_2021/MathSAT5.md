@@ -66,6 +66,7 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_BVFP
   tracks:
   - track_single_query
@@ -88,20 +89,24 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_model_validation
 - name: QF_LIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_LIRA
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_model_validation
 - name: QF_LRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_NIA
   tracks:
   - track_single_query
@@ -119,16 +124,19 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_model_validation
 - name: QF_UF
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_UFBV
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_UFFP
   tracks:
   - track_single_query
@@ -138,16 +146,19 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
+  - track_model_validation
 - name: QF_UFLIA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_UFLRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_UFNIA
   tracks:
   - track_single_query

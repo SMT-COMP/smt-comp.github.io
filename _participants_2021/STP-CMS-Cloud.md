@@ -18,5 +18,4 @@ divisions:
 - name: QF_BV
   tracks:
   - track_cloud
-  - track_parallel
 ---
