@@ -34,3 +34,10 @@ a service that is hosted at the University of Iowa.
 - [Andrew Reynolds](https://homepage.divms.uiowa.edu/~ajreynol/) (Spotting wrong logic classification)
 - [Andrea Micheli](https://www.mikand.net/) ([pySMT](https://github.com/pysmt/pysmt) model validator)
 - [Aaron Stump](http://homepage.divms.uiowa.edu/~astump/) (StarExec)
+- [Clark Barrett](http://theory.stanford.edu/~barrett/), [Pascal
+  Fontaine](https://members.loria.fr/PFontaine/), [Aina
+Niemetz](https://cs.stanford.edu/~niemetz/), [Mathias
+Preiner](https://cs.stanford.edu/~preiner/), and [Hans-Jörg
+Schurr](https://team.inria.fr/veridis/schurr/)
+([smt-lib](http://smtlib.cs.uiowa.edu/index.shtml) maintenance)
+- Jonathan Eidelman and Mike Whalen (Cloud and Parallel Tracks AWS Support)
