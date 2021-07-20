@@ -28,7 +28,8 @@ SMT-COMP 2021 is organized under the direction of the SMT Steering
 Committee.
 <br/>
 The competition is run on [StarExec](https://www.starexec.org),
-a service that is hosted at the University of Iowa.
+a service that is hosted at the University of Iowa.  The parallel and
+cloud tracks are run on AWS.
 
 ### Acknowledgment
 - [Andrew Reynolds](https://homepage.divms.uiowa.edu/~ajreynol/) (Spotting wrong logic classification)
