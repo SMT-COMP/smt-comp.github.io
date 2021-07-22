@@ -33,7 +33,7 @@ necessary for the adoption of SMT.
 
 ### Competition.
 The Satisfiability Modulo Theories Competition (SMT-COMP) arose from the
-[SMT-LIB](http://www.smt-lib.org/) (Satisfiability Modulo Theories Library)
+[SMT-LIB](https://smtlib.cs.uiowa.edu/) (Satisfiability Modulo Theories Library)
 initiative to spur adoption of the common, community-designed SMT-LIB formats,
 and to spark further advances in SMT, especially for verification. Competitions
 in other automated reasoning fields, such as
