@@ -1,3 +1,8 @@
+- name: 2022
+  link: 2022/index.html
+  url: 2022
+  sublinks:
+
 - name: 2021
   link: 2021/index.html
   url: 2021
