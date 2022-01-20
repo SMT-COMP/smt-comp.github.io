@@ -2,7 +2,8 @@
 
 The *17th International Satisfiability Modulo Theories Competition (SMT-COMP
 2022)* is part of the 
-[SMT Workshop](https://smt-workshop.cs.uiowa.edu/) 2022<!---, affiliated with -->.
+[SMT Workshop](https://smt-workshop.cs.uiowa.edu/) 2022, 
+affiliated with [IJCAR 2022](https://easychair.org/smart-program/IJCAR2022/).
 The SMT Workshop will include a block of time to
 present the competitors and results of the competition.
 
