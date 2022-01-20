@@ -7,7 +7,7 @@ The SMT Workshop will include a block of time to
 present the competitors and results of the competition.
 
 ### News
-{% assign newsList = site.news_2021 | reverse %}
+{% assign newsList = site.news_2022 | reverse %}
 {% for news in newsList %}
 - {{ news.newsdate | date_to_string }} [{{ news.title }}]({{ news.url }})
 {% endfor %}
