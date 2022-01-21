@@ -14,14 +14,14 @@ present the competitors and results of the competition.
 {% endfor %}
 
 ### Key dates
- - **May ??** &nbsp; Final versions of competition tools
- - **June 17?**    &nbsp; Deadline for first versions of solvers (for all tracks)
- - **July 8?**   &nbsp; Deadline for final versions of solvers, including system descriptions
- - **August ??** &nbsp; SMT Workshop (presentation of results)
+ - **May 28** &nbsp; Final versions of competition tools
+ - **June 18**    &nbsp; Deadline for first versions of solvers (for all tracks)
+ - **July 2**   &nbsp; Deadline for final versions of solvers, including system descriptions
+ - **August 12** &nbsp; SMT Workshop (presentation of results)
 
 ### Organizers
 - [Haniel Barbosa](http://homepages.dcc.ufmg.br/~hbarbosa/) (chair) - Universidade Federal de Minas Gerais, Brazil
-- [François Bobot](https://github.com/bobot) - Commissariat à l'énergie atomique et aux énergies alternatives, France
+- [François Bobot](https://github.com/bobot) - CEA List, France
 - [Jochen Hoenicke](https://jochen-hoenicke.de/) - Albert-Ludwigs-Universität Freiburg, Germany
 
 SMT-COMP 2022 is organized under the direction of the SMT Steering
