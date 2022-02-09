@@ -1,18 +1,20 @@
 ## Benchmark submission
 
-To submit new benchmarks, simply send the new benchmarks to one of the SMT-LIB
-maintainers [1].  We encourage to distribute benchmarks under the
-Creative Commons Attribution 4.0 International License,
-but submitters can specify
-their own licence in the benchmark itself using the
-`(set-info :license "licence string")` command.
+To submit new benchmarks, please follow the detailed instructions available at
+[the SMT-LIB benchmark submission
+repository](https://github.com/SMT-LIB/benchmark-submission).
 
-Detailed instructions for submitting benchmarks are available at [the SMT-LIB
-pending benchmarks
-repository](https://clc-gitlab.cs.uiowa.edu:2443/SMT-LIB-benchmarks-tmp/benchmarks-pending/-/blob/master/README.md).
+We encourage to distribute benchmarks under the Creative Commons Attribution 4.0
+International License, but submitters can specify their own licence in the
+benchmark itself using the `(set-info :license "licence string")` command.
 
-Note that the people maintaining the SMT-LIB benchmarks are not in
-general the same as the ones organizing the competition.
+If you have any questions please contact one of the SMT-LIB maintainers
+[1]. Note that the people maintaining the SMT-LIB benchmarks are not in general
+the same as the ones organizing the competition.
 
-
-1. The SMT-LIB benchmark collection is co-managed by Clark Barrett, Pascal Fontaine, Aina Niemetz, Mathias Preiner, and Hans-Jörg Schurr ([source](https://smtlib.cs.uiowa.edu/credits.shtml#players)).
+1. The SMT-LIB benchmark collection is co-managed by
+ - [Clark Barrett](http://www.cs.stanford.edu/~barrett), [barrett@cs.stanford.edu](mailto:barrett@cs.stanford.edu)
+ - [Pascal Fontaine](https://members.loria.fr/PFontaine/), [pascal.fontaine@uliege.be](mailto:pascal.fontaine@uliege.be)
+ - [Aina Niemetz](https://cs.stanford.edu/~niemetz/), [niemetz@cs.stanford.edu](mailto:niemetz@cs.stanford.edu)
+ - [Mathias Preiner](https://cs.stanford.edu/~preiner/), [preiner@cs.stanford.edu](mailto:preiner@cs.stanford.edu)
+ - [Hans-Jörg Schurr](https://schurr.io/), [hans-jorg.schurr@inria.fr](mailto:hans-jorg.schurr@inria.fr)
