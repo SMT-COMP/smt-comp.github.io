@@ -7,7 +7,7 @@ newsdate: 2022-03-22
 Hello everybody,
 
 The submission deadline for the first version of the solvers is on Jun
-18.  However, it is useful for the organizing team to know in advance
+18\.  However, it is useful for the organizing team to know in advance
 which and how many solvers may be entering.  If you have not submitted
 a solver before, or if you think there may be unusual circumstances,
 please let us know at your earliest convenience if you think you may
