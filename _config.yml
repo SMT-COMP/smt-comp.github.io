@@ -4,7 +4,7 @@ description: The International Satisfiability Modulo Theories (SMT) Competition.
 collections:
     news_2022:
         output: true
-        permalink: /2021/news/:name
+        permalink: /2022/news/:name
 
     news_2021:
         output: true
