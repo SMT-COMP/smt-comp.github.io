@@ -83,12 +83,12 @@ Solvers in this track will be wrapped in the competition to include the script
 [starexec_run_proof](https://github.com/SMT-COMP/postprocessors/tree/master/proof-track/starexec_run_proof).  This script will call the solver
 and checker script.
 
-You can submit a single solver for all tracks, by providing a different
+You can submit a single solver for all tracks, by providing a
 `starexec_run_default` script for the other tracks and the
-`starexec_solver_default` and `starexec_checker_default` scripts for the
-proof exhibition track.  For testing, you can include our wrapper script
-above renamed to `starexec_run_proof`.  This will give you a
-second configuration for your solver.
+`smtcomp_solver` and `smtcomp_checker` scripts for the
+proof exhibition track.  You can also include the script
+`starexec_run_proof` so that the configuration for the proof
+track is created.
 
 ### Key-Value Pairs
 
