@@ -2,6 +2,16 @@
   link: 2022/index.html
   url: 2022
   sublinks:
+  - name: Rules
+    link: 2022/rules.pdf
+  - name: Tools
+    link: 2022/tools.html
+  - name: Specs
+    link: 2022/specs.html
+  - name: Parallel & Cloud Tracks
+    link: 2022/parallel-and-cloud-tracks.html
+  - name: Solver submission
+    link: https://forms.gle/ewNQdFJbmQ12GxpX8
 
 - name: 2021
   link: 2021/index.html

@@ -12,6 +12,9 @@
   - raw_name: track_model_validation
     pretty_name: Model Validation Track
     status: competitive
+  - raw_name: track_proof_exhibition
+    pretty_name: Proof Exhibition Track
+    status: experimental
   - raw_name: track_cloud
     pretty_name: Cloud Track
     status: experimental
