@@ -39,8 +39,8 @@ tools:
       starexec: SMT-COMP 2021 Unsat Core
       starexecid: 727
     - name: track_model_validation
-      starexec: SMT-COMP 2021 Model-Validation
-      starexecid: 672
+      starexec: SMT-COMP 2022 Model-Validation
+      starexecid: 742
     - name: track_proof_exhibition
       starexec: SMT-COMP 2022 Proof-Exhibition
       starexecid: 741
