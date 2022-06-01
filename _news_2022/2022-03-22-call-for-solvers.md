@@ -4,7 +4,9 @@ author:
 title: Call for solvers
 newsdate: 2022-03-22
 ---
-Hello everybody,
+# 17th International Satisfiability Modulo Theories Competition (SMT-COMP'22)
+
+## First Call for Solvers
 
 The submission deadline for the first version of the solvers is on Jun
 18\.  However, it is useful for the organizing team to know in advance
