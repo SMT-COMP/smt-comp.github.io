@@ -1,8 +1,8 @@
 ---
 layout: news
 author:
-title: Call for solvers
-newsdate: 2022-03-22
+title: Final call for solvers
+newsdate: 2022-06-01
 ---
 # 17th International Satisfiability Modulo Theories Competition (SMT-COMP'22)
 
