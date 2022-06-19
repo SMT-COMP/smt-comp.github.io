@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "francois.bobot@cea.fr"
 name: "2020-COLIBRI"
 preliminaryID: "28309"
 finalID: "28737"

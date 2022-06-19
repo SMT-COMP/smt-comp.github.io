@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "irfan@cs.stanford.edu"
 name: "LazyBV2Int"
 preliminaryID: "28568"
 finalID: "28722"

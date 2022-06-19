@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "bruno.dutertre@sri.com"
 name: "2020-Yices2 Model Validation"
 preliminaryID: "28464"
 finalID: "28819"

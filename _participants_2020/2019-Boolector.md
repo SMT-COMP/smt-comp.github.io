@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "preiner@cs.stanford.edu"
 name: "2019-Boolector"
 preliminaryID: "23380"
 finalID: "23711"

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "heizmann@informatik.uni-freiburg.de"
 name: "UltimateEliminator+MathSAT"
 preliminaryID: "28804"
 finalID: "33466"

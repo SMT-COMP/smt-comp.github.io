@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: mbromber@mpi-inf.mpg.de
 name: SPASS-SATT
 preliminaryID: 23356
 finalID: 23356

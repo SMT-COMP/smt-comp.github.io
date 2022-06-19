@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: ""
 name: "z3-mv"
 preliminaryID: ""
 finalID: "33758"

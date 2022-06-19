@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "nalbach@cs.rwth-aachen.de"
 name: "SMT-RAT"
 preliminaryID: "28075"
 finalID: "28075"

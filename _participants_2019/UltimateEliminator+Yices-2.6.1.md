@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: heizmann@informatik.uni-freiburg.de
 name: UltimateEliminator+Yices-2.6.1
 preliminaryID: 23423
 finalID: 23744

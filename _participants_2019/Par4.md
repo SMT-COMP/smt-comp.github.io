@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: tjark.weber@it.uu.se
 name: Par4
 preliminaryID: 23391
 finalID: 23672

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: ""
 name: "2018-Yices (unsat core)"
 preliminaryID: ""
 finalID: "19796"

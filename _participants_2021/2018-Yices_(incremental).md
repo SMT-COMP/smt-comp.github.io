@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: ""
 name: "2018-Yices (incremental)"
 preliminaryID: ""
 finalID: "19995"

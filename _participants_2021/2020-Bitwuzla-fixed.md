@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "preiner@cs.stanford.edu"
 name: "2020-Bitwuzla-fixed"
 preliminaryID: "29091"
 finalID: "29091"

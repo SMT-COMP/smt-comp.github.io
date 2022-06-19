@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "antti.hyvarinen@gmail.com"
 name: "OpenSMT - fixed"
 preliminaryID: ""
 finalID: "33687"

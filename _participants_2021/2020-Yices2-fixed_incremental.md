@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "bruno.dutertre@sri.com"
 name: "2020-Yices2-fixed incremental"
 preliminaryID: "29034"
 finalID: "29034"

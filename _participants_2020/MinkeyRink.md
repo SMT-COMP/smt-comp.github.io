@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "trev_abroad@yahoo.com"
 name: "MinkeyRink"
 preliminaryID: "23719"
 finalID: "28838"

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "noetzli@cs.stanford.edu"
 name: "2020-CVC4-inc"
 preliminaryID: "28466"
 finalID: "28799"

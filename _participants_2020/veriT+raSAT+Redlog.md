@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "hans-jorg.schurr@inria.fr"
 name: "veriT+raSAT+Redlog"
 preliminaryID: "28339"
 finalID: "28339"

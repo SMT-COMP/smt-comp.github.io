@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "simon.cruanes.2007@m4x.org"
 name: "mc2"
 preliminaryID: "33279"
 finalID: "33279"

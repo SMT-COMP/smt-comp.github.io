@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: hebing@ios.ac.cn
 name: Boolector-ReasonLS
 preliminaryID: 
 finalID: 23692

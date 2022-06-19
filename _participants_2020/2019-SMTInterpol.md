@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "hoenicke@informatik.uni-freiburg.de"
 name: "2019-SMTInterpol"
 preliminaryID: "23360"
 finalID: "23554"
