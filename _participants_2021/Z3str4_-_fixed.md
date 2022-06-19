@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "murphy.berzish@gmail.com"
 name: "Z3str4 - fixed"
 preliminaryID: ""
 finalID: "33727"

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: ""
 name: "MathSAT5"
 preliminaryID: "28851"
 finalID: "28851"

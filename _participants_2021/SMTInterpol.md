@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "hoenicke@gmail.com"
 name: "SMTInterpol"
 preliminaryID: "32995"
 finalID: "33439"

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "trev_abroad@yahoo.com"
 name: "STP"
 preliminaryID: "28776"
 finalID: "33442"

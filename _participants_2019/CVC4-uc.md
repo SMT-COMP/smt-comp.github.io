@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: noetzli@cs.stanford.edu
 name: CVC4-uc
 preliminaryID: 23416
 finalID: 23732

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: mohamed.iguernlala@ocamlpro.com
 name: Ctrl-Ergo
 preliminaryID: 23398
 finalID: 23398

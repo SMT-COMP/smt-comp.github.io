@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "airfan@stanford.edu"
 name: "2019-MathSAT-default"
 preliminaryID: "23373"
 finalID: "23680"

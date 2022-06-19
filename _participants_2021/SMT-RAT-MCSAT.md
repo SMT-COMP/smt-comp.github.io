@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "nalbach@cs.rwth-aachen.de"
 name: "SMT-RAT-MCSAT"
 preliminaryID: "33080"
 finalID: "33080"

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: heizmann@informatik.uni-freiburg.de
 name: UltimateEliminator+MathSAT-5.5.4
 preliminaryID: 23425
 finalID: 23742

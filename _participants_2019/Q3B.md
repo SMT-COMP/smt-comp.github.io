@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: martin.jonas@mail.muni.cz
 name: Q3B
 preliminaryID: 23405
 finalID: 23686

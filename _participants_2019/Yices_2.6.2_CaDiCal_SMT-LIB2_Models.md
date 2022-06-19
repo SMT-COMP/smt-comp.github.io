@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: bruno.dutertre@sri.com
 name: Yices 2.6.2 CaDiCal/SMT-LIB2 Models
 preliminaryID: 23371
 finalID: 23698

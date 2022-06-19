@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: giles.reger@manchester.ac.uk
 name: Vampire
 preliminaryID: 23409
 finalID: 23703

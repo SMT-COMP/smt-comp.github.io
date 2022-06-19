@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "trev_abroad@yahoo.com"
 name: "STP + MergeSAT"
 preliminaryID: "23401"
 finalID: "28841"

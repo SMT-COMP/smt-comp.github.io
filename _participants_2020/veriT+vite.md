@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "hans-jorg.schurr@inria.fr"
 name: "veriT+vite"
 preliminaryID: "28742"
 finalID: "28742"

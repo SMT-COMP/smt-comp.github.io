@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "carsten@dcs.bbk.ac.uk"
 name: "AProVE"
 preliminaryID: "1229"
 finalID: "1229"

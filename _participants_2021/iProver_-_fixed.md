@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "konstantin.korovin@manchester.ac.uk"
 name: "iProver - fixed"
 preliminaryID: ""
 finalID: "33670"

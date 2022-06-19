@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: 
 name: 2018-Minkeyrink MT
 preliminaryID: 
 finalID: 19777

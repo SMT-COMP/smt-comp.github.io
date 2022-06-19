@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: preiner@cs.stanford.edu
 name: Boolector
 preliminaryID: 23380
 finalID: 23711

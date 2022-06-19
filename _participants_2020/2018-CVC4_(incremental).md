@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: ""
 name: "2018-CVC4 (incremental)"
 preliminaryID: ""
 finalID: "19992"

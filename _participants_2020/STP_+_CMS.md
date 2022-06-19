@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "trev_abroad@yahoo.com"
 name: "STP + CMS"
 preliminaryID: "23663"
 finalID: "28776"

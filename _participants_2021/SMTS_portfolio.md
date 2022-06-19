@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "antti.hyvarinen@gmail.com"
 name: "SMTS portfolio"
 preliminaryID: "-1"
 finalID: "13"

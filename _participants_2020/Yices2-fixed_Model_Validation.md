@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "bruno.dutertre@sri.com"
 name: "Yices2-fixed Model Validation"
 preliminaryID: "29033"
 finalID: "29033"

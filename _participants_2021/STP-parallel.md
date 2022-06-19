@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2021
-contact: "soos.mate@gmail.com"
 name: "STP-parallel"
 preliminaryID: "-1"
 finalID: "15"

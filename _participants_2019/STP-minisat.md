@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: nmanthey@conp-solutions.com
 name: STP-minisat
 preliminaryID: 23402
 finalID: 23402

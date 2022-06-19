@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2019
-contact: bruno.dutertre@sri.com
 name: Yices 2.6.2 New Bvsolver
 preliminaryID: 23367
 finalID: 23701

@@ -1,7 +1,6 @@
 ---
 layout: participant
 year: 2020
-contact: "albin.coquereau@ocamlpro.com"
 name: "Alt-Ergo"
 preliminaryID: "28077"
 finalID: "28634"
