@@ -87,8 +87,28 @@ entered as non-competing solvers by the organizers for comparison.
   {%- endif -%}
 </td>
 {% endfor -%}
-<td class="right">{{- solver.preliminaryID -}}</td>
-<td class="right">{{- solver.finalID -}}</td>
+<td class="right">
+  {%- assign prelimids = solver.preliminaryID | split: ";" -%}
+  {%- for id in prelimids %}
+    {%- assign numids = id | split: "(" %}
+    {%- assign numid = numids[0] | floor %}
+    {%- if numid > 0 -%}
+      <a href="https://www.starexec.org/starexec/secure/details/solver.jsp?id={{ numid }}">{{ id }}</a><br/>
+    {%- else -%}
+      -
+    {%- endif -%}
+  {%- endfor -%}</td>
+<td class="right">
+  {%- assign prelimids = solver.finalID | split: ";" -%}
+  {%- for id in prelimids %}
+    {%- assign numids = id | split: "(" %}
+    {%- assign numid = numids[0] | floor %}
+    {%- if numid > 0 -%}
+      <a href="https://www.starexec.org/starexec/secure/details/solver.jsp?id={{ numid }}">{{ id }}</a><br/>
+    {%- else -%}
+      -
+    {%- endif -%}
+  {%- endfor -%}</td>
 <td class="right">{{- solver.seed -}}</td>
 <td class="right">
 {%- if solver.sysDescrUrl != "" -%}
