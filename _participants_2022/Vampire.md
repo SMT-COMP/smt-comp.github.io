@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "Vampire"
-preliminaryID: "36841"
+preliminaryID: "36957"
 finalID: "-1"
 team: "Giles Reger, Martin Suda, Andrei Voronkov, Laura Kovacs, Ahmed Bhayat, Bernhard Gleiss, Marton Hajdu, Petra Hozzova, Evgeny Kotelnikov, Jakob Rath, Michael Rawson, Martin Riener, Johannes Schoisswohl"
 variantOf: ""
