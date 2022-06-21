@@ -19,6 +19,4 @@ divisions:
   - track_single_query
   - track_incremental
   - track_model_validation
-  - track_cloud
-  - track_parallel
 ---
