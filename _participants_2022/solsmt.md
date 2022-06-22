@@ -17,9 +17,11 @@ divisions:
 - name: QF_LRA
   tracks:
   - track_single_query
+  - track_incremental
   - track_model_validation
 - name: QF_RDL
   tracks:
   - track_single_query
+  - track_incremental
   - track_model_validation
 ---

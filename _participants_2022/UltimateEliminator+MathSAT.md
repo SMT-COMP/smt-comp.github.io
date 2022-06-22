@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "UltimateEliminator+MathSAT"
-preliminaryID: "36831"
+preliminaryID: "36966"
 finalID: "-1"
 team: "Max Barth, Daniel Dietsch, Matthias Heizmann, Andreas Podelski"
 variantOf: ""
