@@ -22,3 +22,7 @@ This is the repository for the SMT-COMP website on GitHub Pages.
    - `_results_yyyy`
 
 
+### How to generate the website locally
+
+ * `sudo gem install jekyll bundler jekyll-theme-dinky`
+ * `jekyll build`

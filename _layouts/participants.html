@@ -262,12 +262,23 @@ These are the logic divisions in which each solver is participating.
 </td>
         {%- for track in division.tracks %}
 <td class="center">
+          {%- assign is_not_empty = nil -%}
+          {%- for logic in division.logics -%}
+            {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track |first -%}
+            {%- if in_logic -%}
+            {%- assign is_not_empty = logic -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if is_not_empty -%}
           {%- for logic in division.logics -%}
             {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track |first -%}
             {%- if in_logic -%}
               {{logic}}<br/>
+            {%- else -%}
+              <s>{{logic}}</s><br/>
 	    {%- endif -%}
           {%- endfor -%}
+	  {%- endif -%}
 </td>
         {%- endfor %}
 </tr>
