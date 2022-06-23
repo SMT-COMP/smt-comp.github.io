@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "OpenSMT"
-preliminaryID: "36857"
+preliminaryID: "36857(old);36972"
 finalID: "-1"
 team: "Antti Hyvärinen, Martin Blicha, Masoud Asadzade, Václav Luňák, Leonardo Alt, Matteo Marescotti, Sepideh Asadi, Konstantin Britikov, Mate Soos, Natasha Sharygina, Rodrigo Otoni"
 variantOf: ""

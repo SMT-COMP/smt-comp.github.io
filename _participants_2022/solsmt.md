@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "3729"
 solverHomePage: "https://github.com/ethereum/solidity/"
-sysDescrUrl: "www.msoos.org/largefiles/solsmt-smtcomp-2022.pdf"
+sysDescrUrl: "https://www.msoos.org/largefiles/solsmt-smtcomp-2022.pdf"
 sysDescrName: "solsmt at the SMT Competition 2022"
 divisions:
 - name: QF_LRA

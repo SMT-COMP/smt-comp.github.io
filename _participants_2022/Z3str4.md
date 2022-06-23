@@ -20,7 +20,4 @@ divisions:
 - name: QF_SLIA
   tracks:
   - track_single_query
-- name: QF_SNIA
-  tracks:
-  - track_single_query
 ---
