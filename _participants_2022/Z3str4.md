@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "Z3str4"
-preliminaryID: "36880"
+preliminaryID: "36977"
 finalID: "-1"
 team: "Zhengyang Lu, Stefan Siemer, Mitja Kulczynski, Murphy Berzish, Vijay Ganesh, Florin Manea"
 variantOf: ""

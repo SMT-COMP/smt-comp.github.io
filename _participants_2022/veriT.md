@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "veriT"
-preliminaryID: "36867(pe);33452(sq)"
+preliminaryID: "36975(pe);33452(sq)"
 finalID: "-1"
 team: "Bruno Andreotti, Haniel Barbosa, Pascal Fontaine, Hans-Jörg Schurr"
 variantOf: ""

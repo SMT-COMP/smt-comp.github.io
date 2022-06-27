@@ -83,11 +83,13 @@ divisions:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_BVFPLRA
   tracks:
   - track_single_query
   - track_incremental
   - track_unsat_core
+  - track_model_validation
 - name: QF_FP
   tracks:
   - track_single_query
