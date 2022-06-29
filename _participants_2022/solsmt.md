@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "solsmt"
-preliminaryID: "36940"
+preliminaryID: "38500"
 finalID: "-1"
 team: "Christian Reitwiessner (Ethereum Foundation), Mate Soos (Ethereum Foundation)"
 variantOf: ""

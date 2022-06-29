@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "STP"
-preliminaryID: "36690"
+preliminaryID: "38974"
 finalID: "-1"
 team: "Various"
 variantOf: ""
