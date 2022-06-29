@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "solsmt"
-preliminaryID: "38500"
+preliminaryID: "39004"
 finalID: "-1"
 team: "Christian Reitwiessner (Ethereum Foundation), Mate Soos (Ethereum Foundation)"
 variantOf: ""
@@ -18,10 +18,8 @@ divisions:
   tracks:
   - track_single_query
   - track_incremental
-  - track_model_validation
 - name: QF_RDL
   tracks:
   - track_single_query
   - track_incremental
-  - track_model_validation
 ---
