@@ -14,6 +14,9 @@ solverHomePage: "https://github.com/usi-verification-and-security/opensmt"
 sysDescrUrl: "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/abstract-2022.pdf"
 sysDescrName: "OpenSMT in SMT-COMP 2022"
 divisions:
+- name: QF_AX
+  tracks:
+  - track_single_query
 - name: QF_IDL
   tracks:
   - track_single_query
