@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "OpenSMT"
-preliminaryID: "36972"
+preliminaryID: "39040"
 finalID: "-1"
 team: "Antti Hyvärinen, Martin Blicha, Masoud Asadzade, Václav Luňák, Leonardo Alt, Matteo Marescotti, Sepideh Asadi, Konstantin Britikov, Mate Soos, Natasha Sharygina, Rodrigo Otoni"
 variantOf: ""
@@ -21,43 +21,36 @@ divisions:
   tracks:
   - track_single_query
   - track_model_validation
-  - track_cloud
 - name: QF_LIA
   tracks:
   - track_single_query
   - track_incremental
   - track_model_validation
   - track_proof_exhibition
-  - track_cloud
 - name: QF_LRA
   tracks:
   - track_single_query
   - track_incremental
   - track_model_validation
   - track_proof_exhibition
-  - track_cloud
 - name: QF_RDL
   tracks:
   - track_single_query
   - track_model_validation
-  - track_cloud
 - name: QF_UF
   tracks:
   - track_single_query
   - track_incremental
   - track_model_validation
   - track_proof_exhibition
-  - track_cloud
 - name: QF_UFLIA
   tracks:
   - track_single_query
   - track_incremental
   - track_model_validation
-  - track_cloud
 - name: QF_UFLRA
   tracks:
   - track_single_query
   - track_incremental
   - track_model_validation
-  - track_cloud
 ---
