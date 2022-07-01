@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "cvc5-lfsc"
-preliminaryID: "38948"
+preliminaryID: "39052"
 finalID: "-1"
 team: "Haniel Barbosa, Clark W. Barrett, Martin Brain, Gereon Kremer, Hanna Lachnitt, Makai Mann, Abdalrhman Mohamed, Mudathir Mohamed, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Ying Sheng, Cesare Tinelli, Yoni Zohar"
 variantOf: "36875"

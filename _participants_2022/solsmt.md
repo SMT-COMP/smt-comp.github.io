@@ -21,5 +21,4 @@ divisions:
 - name: QF_RDL
   tracks:
   - track_single_query
-  - track_incremental
 ---

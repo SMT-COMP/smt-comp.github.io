@@ -2,7 +2,7 @@
 layout: participant
 year: 2022
 name: "smtinterpol"
-preliminaryID: "38989"
+preliminaryID: "39066"
 finalID: "-1"
 team: "Jochen Hoenicke, Tanja Schindler"
 variantOf: ""
@@ -12,7 +12,7 @@ competing: "yes"
 seed: "945345692"
 solverHomePage: "https://ultimate.informatik.uni-freiburg.de/smtinterpol"
 sysDescrUrl: "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2022.pdf"
-sysDescrName: "SMTInterpol"
+sysDescrName: "SMTInterpol with resolution proofs"
 divisions:
 - name: ALIA
   tracks:
@@ -30,11 +30,6 @@ divisions:
   - track_single_query
   - track_unsat_core
   - track_proof_exhibition
-- name: AUFDTNIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_proof_exhibition
 - name: AUFLIA
   tracks:
   - track_single_query
@@ -43,17 +38,6 @@ divisions:
 - name: AUFLIRA
   tracks:
   - track_single_query
-  - track_unsat_core
-  - track_proof_exhibition
-- name: AUFNIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_proof_exhibition
-- name: AUFNIRA
-  tracks:
-  - track_single_query
-  - track_incremental
   - track_unsat_core
   - track_proof_exhibition
 - name: LIA
@@ -66,16 +50,6 @@ divisions:
   tracks:
   - track_single_query
   - track_incremental
-  - track_unsat_core
-  - track_proof_exhibition
-- name: NIA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_proof_exhibition
-- name: NRA
-  tracks:
-  - track_single_query
   - track_unsat_core
   - track_proof_exhibition
 - name: QF_ALIA
@@ -136,22 +110,6 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
-  - track_proof_exhibition
-- name: QF_NIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-  - track_proof_exhibition
-- name: QF_NIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_proof_exhibition
-- name: QF_NRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
   - track_proof_exhibition
 - name: QF_RDL
   tracks:
@@ -229,17 +187,6 @@ divisions:
   - track_single_query
   - track_unsat_core
   - track_proof_exhibition
-- name: UFDTNIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-  - track_proof_exhibition
-- name: UFDTNIRA
-  tracks:
-  - track_single_query
-  - track_unsat_core
-  - track_proof_exhibition
 - name: UFIDL
   tracks:
   - track_single_query
@@ -256,13 +203,19 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_proof_exhibition
-- name: UFNIA
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-  - track_proof_exhibition
 - name: ANIA
+  tracks:
+  - track_incremental
+- name: AUFNIRA
+  tracks:
+  - track_incremental
+- name: QF_NIA
+  tracks:
+  - track_incremental
+- name: UFDTNIA
+  tracks:
+  - track_incremental
+- name: UFNIA
   tracks:
   - track_incremental
 - name: UFNRA
