@@ -114,11 +114,9 @@ divisions:
   tracks:
   - track_single_query
   - track_incremental
-  - track_unsat_core
 - name: QF_UFNRA
   tracks:
   - track_single_query
-  - track_unsat_core
 - name: UF
   tracks:
   - track_single_query
