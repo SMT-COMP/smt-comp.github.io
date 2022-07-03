@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "Yices2"
 preliminaryID: "33403;33404(inc);33405(mv)"
-finalID: "-1"
+finalID: "33403;33404(inc);33405(mv)"
 team: "Bruno Dutertre, Dejan Jovanović, Stéphane Graham-Lengrand, Ian A. Mason, Aman Goel"
 variantOf: ""
 wrapperTool: ""
@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://yices.csl.sri.com/"
-sysDescrUrl: "https://yices.csl.sri.com/"
+sysDescrUrl: "http://www.csl.sri.com/users/sgl/Work/Reports/2022-yices2.pdf"
 sysDescrName: "Yices 2 in SMT-COMP 2022"
 divisions:
 - name: QF_ABV
@@ -70,15 +70,12 @@ divisions:
   tracks:
   - track_single_query
   - track_incremental
-  - track_unsat_core
 - name: QF_NIRA
   tracks:
   - track_single_query
-  - track_unsat_core
 - name: QF_NRA
   tracks:
   - track_single_query
-  - track_unsat_core
 - name: QF_RDL
   tracks:
   - track_single_query
@@ -125,5 +122,4 @@ divisions:
 - name: UF
   tracks:
   - track_single_query
-  - track_unsat_core
 ---

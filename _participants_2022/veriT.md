@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "veriT"
 preliminaryID: "36975(pe);33452(sq)"
-finalID: "-1"
+finalID: "39098(pe);33452(sq)"
 team: "Bruno Andreotti, Haniel Barbosa, Pascal Fontaine, Hans-Jörg Schurr"
 variantOf: ""
 wrapperTool: ""
@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "109"
 solverHomePage: "https://www.verit-solver.org"
-sysDescrUrl: "https://www.verit-solver.org"
+sysDescrUrl: "veriT.pdf"
 sysDescrName: "veriT at SMT-COMP 2022"
 divisions:
 - name: ALIA

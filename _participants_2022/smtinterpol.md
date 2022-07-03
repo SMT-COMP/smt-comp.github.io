@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "smtinterpol"
 preliminaryID: "39066"
-finalID: "-1"
+finalID: "39093"
 team: "Jochen Hoenicke, Tanja Schindler"
 variantOf: ""
 wrapperTool: ""

@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "Q3B"
 preliminaryID: "36884"
-finalID: "-1"
+finalID: "39062"
 team: "Martin Jonáš, Jan Strejček"
 variantOf: ""
 wrapperTool: ""

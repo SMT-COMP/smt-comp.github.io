@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "cvc5"
 preliminaryID: "36875(sq);36870(inc);36872(mv);39025(pe);36869(uc)"
-finalID: "-1"
+finalID: "39117;39114(inc)"
 team: "Haniel Barbosa, Clark Barrett, Martin Brain, Gereon Kremer, Hanna Lachnitt, Makai Mann, Abdalrhman Mohamed, Mudathir Mohamed, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Ying Sheng, Cesare Tinelli, Yoni Zohar"
 variantOf: ""
 wrapperTool: ""
@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "5"
 solverHomePage: "https://cvc5.github.io"
-sysDescrUrl: "https://cvc5.github.io"
+sysDescrUrl: "cvc5.pdf"
 sysDescrName: "cvc5 at the SMT Competition 2022"
 divisions:
 - name: ABV

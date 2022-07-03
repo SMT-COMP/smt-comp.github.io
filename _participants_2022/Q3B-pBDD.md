@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "Q3B-pBDD"
 preliminaryID: "36885"
-finalID: "-1"
+finalID: "39086"
 team: "Martin Jonáš (359542@mail.muni.cz) Jan Strejček (xstrejc@fi.muni.cz)"
 variantOf: "36884"
 wrapperTool: ""

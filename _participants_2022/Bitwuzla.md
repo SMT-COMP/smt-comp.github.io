@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "Bitwuzla"
 preliminaryID: "36798"
-finalID: "-1"
+finalID: "39101"
 team: "Aina Niemetz, Mathias Preiner"
 variantOf: ""
 wrapperTool: ""

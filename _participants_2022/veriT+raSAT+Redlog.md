@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "2039"
 solverHomePage: "https://www.verit-solver.org"
-sysDescrUrl: "https://www.verit-solver.org"
+sysDescrUrl: "veriT+raSAT+Redlog.pdf"
 sysDescrName: "veriT+raSAT+Redlog at SMT-COMP 2022"
 divisions:
 - name: QF_NRA
