@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "STP"
 preliminaryID: "38974"
-finalID: "-1"
+finalID: "38974"
 team: "Various"
 variantOf: ""
 wrapperTool: ""

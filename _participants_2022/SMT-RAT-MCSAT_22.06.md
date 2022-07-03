@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "SMT-RAT-MCSAT 22.06"
 preliminaryID: "36804"
-finalID: "-1"
+finalID: "36804"
 team: "Jasper Nalbach, Erika Ábrahám, Philip Kroll, Gereon Kremer, Florian Corzilius, Rebecca Haehn, Sebastian Junges, Stefan Schupp"
 variantOf: ""
 wrapperTool: ""
