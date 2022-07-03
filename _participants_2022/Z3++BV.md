@@ -11,7 +11,7 @@ derivedTool: "Z3-4.8.15"
 competing: "yes"
 seed: ""
 solverHomePage: "https://z3-plus-plus.github.io/"
-sysDescrUrl: "https://github.com/z3-plus-plus/z3-plus-plus.github.io/blob/main/Z3%2B%2B_at_SMT_COMP_2022.pdf"
+sysDescrUrl: "https://github.com/z3-plus-plus/z3-plus-plus.github.io/raw/main/Z3%2B%2B_at_SMT_COMP_2022.pdf"
 sysDescrName: "Z3++ at SMT-COMP 2022"
 divisions:
 - name: QF_BV

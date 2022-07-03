@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "OpenSMT"
 preliminaryID: "39040"
-finalID: "-1"
+finalID: "39040"
 team: "Antti Hyvärinen, Martin Blicha, Masoud Asadzade, Václav Luňák, Leonardo Alt, Matteo Marescotti, Sepideh Asadi, Konstantin Britikov, Mate Soos, Natasha Sharygina, Rodrigo Otoni"
 variantOf: ""
 wrapperTool: ""
@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "91648253"
 solverHomePage: "https://github.com/usi-verification-and-security/opensmt"
-sysDescrUrl: "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/abstract-2022.pdf"
+sysDescrUrl: "https://github.com/usi-verification-and-security/opensmt-doc/raw/master/abstract-2022.pdf"
 sysDescrName: "OpenSMT in SMT-COMP 2022"
 divisions:
 - name: QF_AX
