@@ -3,7 +3,7 @@ layout: participant
 year: 2022
 name: "veriT+raSAT+Redlog"
 preliminaryID: "33044(sq)"
-finalID: "-1"
+finalID: "33044"
 team: "Haniel Barbosa, Pascal Fontaine, Maximilian Jaroschek, Marek Kosta, Mizuhito Ogawa, Thomas Sturm, Vu Xuan Tung"
 variantOf: "33043"
 wrapperTool: ""
