@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "7"
 solverHomePage: "https://colibri.frama-c.com/"
-sysDescrUrl: "https://colibri.frama-c.com/colibri_smt_comp_2022.pdf"
+sysDescrUrl: "COLIBRI.pdf"
 sysDescrName: "COLIBRI: SMT solving with CP"
 divisions:
 - name: QF_ABVFP

@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://ultimate.informatik.uni-freiburg.de/eliminator/"
-sysDescrUrl: "http://www.informatik.uni-freiburg.de/~heizmann/tmp/UltimateEliminatorSmtcomp2022.pdf"
+sysDescrUrl: "UltimateEliminator%2BMathSAT.pdf"
 sysDescrName: "UltimateEliminator at SMT-COMP 2022"
 divisions:
 - name: ABV

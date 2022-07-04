@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "91648253"
 solverHomePage: "https://github.com/usi-verification-and-security/opensmt"
-sysDescrUrl: "https://github.com/usi-verification-and-security/opensmt-doc/raw/master/abstract-2022.pdf"
+sysDescrUrl: "OpenSMT.pdf"
 sysDescrName: "OpenSMT in SMT-COMP 2022"
 divisions:
 - name: QF_AX

@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "5630542780"
 solverHomePage: "https://smtrat.github.io/"
-sysDescrUrl: "https://raw.githubusercontent.com/ths-rwth/smtrat/master/doc/smtcomp-description/smtcomp-2022.pdf"
+sysDescrUrl: "SMT-RAT-MCSAT.pdf"
 sysDescrName: "SMT-RAT 22.06"
 divisions:
 - name: QF_NRA

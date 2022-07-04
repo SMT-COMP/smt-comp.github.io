@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://yices.csl.sri.com/"
-sysDescrUrl: "http://www.csl.sri.com/users/sgl/Work/Reports/2022-yices2.pdf"
+sysDescrUrl: "Yices2.pdf"
 sysDescrName: "Yices 2 in SMT-COMP 2022"
 divisions:
 - name: QF_ABV

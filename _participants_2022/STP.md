@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "679"
 solverHomePage: "https://stp.github.io/"
-sysDescrUrl: "https://github.com/stp/docs/raw/master/smt2022-descr/descr.pdf"
+sysDescrUrl: "STP.pdf"
 sysDescrName: "STP at the SMT-COMP 2022"
 divisions:
 - name: QF_BV

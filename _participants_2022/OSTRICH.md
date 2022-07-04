@@ -11,7 +11,7 @@ derivedTool: "OSTRICH is based on the SMT solver Princess (version 2022-07-01)"
 competing: "yes"
 seed: "74672647"
 solverHomePage: "https://github.com/uuverifiers/ostrich"
-sysDescrUrl: "https://philipp.ruemmer.org/ostrich-2022.pdf"
+sysDescrUrl: "OSTRICH.pdf"
 sysDescrName: "The OSTRICH String Solver"
 divisions:
 - name: QF_S

@@ -11,7 +11,7 @@ derivedTool: ""
 competing: "yes"
 seed: "658700"
 solverHomePage: "https://www.fi.muni.cz/~xpavlik5/Q3B-pBDD/"
-sysDescrUrl: "https://www.fi.muni.cz/~xpavlik5/Q3B-pBDD/SMTCOMP22_description.pdf"
+sysDescrUrl: "Q3B-pBDD.pdf"
 sysDescrName: "Q3B-pBDD in SMT Competition 2022"
 divisions:
 - name: BV
