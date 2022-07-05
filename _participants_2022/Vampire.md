@@ -90,7 +90,6 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
-  - track_proof_exhibition
   - track_cloud
   - track_parallel
 - name: UFDT
@@ -147,7 +146,4 @@ divisions:
   - track_unsat_core
   - track_cloud
   - track_parallel
-- name: QF_UF
-  tracks:
-  - track_proof_exhibition
 ---

@@ -6,7 +6,7 @@ participants: participants_2022
 
 nyse:
   date: 2022-07-05
-  value: 
+  value: 14636.7563
 
 divisions:
 - name: Arith
