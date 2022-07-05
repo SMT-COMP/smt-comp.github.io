@@ -4,6 +4,8 @@
   sublinks:
   - name: Rules
     link: 2022/rules.pdf
+  - name: Benchmarks
+    link: 2022/benchmarks.html
   - name: Tools
     link: 2022/tools.html
   - name: Specs

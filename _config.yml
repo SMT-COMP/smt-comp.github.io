@@ -8,6 +8,9 @@ collections:
     participants_2022:
         output: true
         permalink: /2022/participants/:name
+    divisions_2022:
+        output: true
+        permalink: /2022/divisions/:name
 
     news_2021:
         output: true
