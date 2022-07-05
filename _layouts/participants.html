@@ -201,14 +201,14 @@ These are the logic divisions in which each solver is participating.
       {%- for solver in participants -%}
         {%- assign in_division = nil -%}
         {%- if page.year >= 2021 -%}
-          {%- for logic in division.logics -%}
-            {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track |first -%}
+          {%- for logic in track.logics -%}
+            {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track.name |first -%}
             {%- if in_logic -%}
 	      {%- assign in_division = logic -%}
 	    {%- endif -%}
 	  {%- endfor -%}
 	{%- else -%}
-          {%- assign in_division = solver.divisions |where: "name", division.name |where: "tracks", track |first -%}
+          {%- assign in_division = solver.divisions |where: "name", division.name |where: "tracks", track.name |first -%}
 	{%- endif -%}
         {%- if in_division -%}
             {%- assign nsolvers_logic = nsolvers_logic |plus: 1 -%}
@@ -239,7 +239,7 @@ These are the logic divisions in which each solver is participating.
 <th>Solver</th>
   {%- for track in division.tracks %}
 <th class="center">
-    {%- assign tt = tracks |where: "raw_name", track  |first %}
+    {%- assign tt = tracks |where: "raw_name", track.name  |first %}
     {{ tt.pretty_name }}
 </th>
   {%- endfor -%}
@@ -247,11 +247,13 @@ These are the logic divisions in which each solver is participating.
   {%- for solver in all_solvers -%}
     {%- if page.year >= 2021 -%}
       {%- assign in_division = nil -%}
-      {%- for logic in division.logics -%}
-        {%- assign in_logic = solver.divisions |where: "name", logic |first -%}
-        {%- if in_logic -%}
-          {%- assign in_division = logic -%}
-	{%- endif -%}
+      {%- for track in division.tracks %}
+        {%- for logic in track.logics -%}
+          {%- assign in_logic = solver.divisions |where: "name", logic |first -%}
+          {%- if in_logic -%}
+            {%- assign in_division = logic -%}
+	  {%- endif -%}
+        {%- endfor -%}
       {%- endfor -%}
       {%- if in_division -%}
 <tr{% if solver.competing == "no" %} class="non-competing"{% endif %}>
@@ -263,15 +265,15 @@ These are the logic divisions in which each solver is participating.
         {%- for track in division.tracks %}
 <td class="center">
           {%- assign is_not_empty = nil -%}
-          {%- for logic in division.logics -%}
-            {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track |first -%}
+          {%- for logic in track.logics -%}
+            {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track.name |first -%}
             {%- if in_logic -%}
             {%- assign is_not_empty = logic -%}
             {%- endif -%}
           {%- endfor -%}
           {%- if is_not_empty -%}
-          {%- for logic in division.logics -%}
-            {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track |first -%}
+          {%- for logic in track.logics -%}
+            {%- assign in_logic = solver.divisions |where: "name", logic |where: "tracks", track.name |first -%}
             {%- if in_logic -%}
               {{logic}}<br/>
             {%- else -%}
@@ -294,7 +296,7 @@ These are the logic divisions in which each solver is participating.
 </td>
     {%- for track in division.tracks %}
 <td class="center">
-        {%- assign in_logic = solver.divisions |where: "name", division.name |where: "tracks", track |first -%}
+        {%- assign in_logic = solver.divisions |where: "name", division.name |where: "tracks", track.name |first -%}
           {%- if in_logic -%}
             X
           {%- endif -%}
