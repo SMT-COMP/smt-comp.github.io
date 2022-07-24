@@ -26,20 +26,20 @@ tracks:
   - UF: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 2628
   logic_insts:
-  - UF: 0
-    UFDT: 0
+  - UF: 1697
+    UFDT: 931
   n_excluded: 0
   logic_excluded:
   - UF: 0
     UFDT: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 2628
   logic_insts:
-  - UF: 0
-    UFDT: 0
+  - UF: 1697
+    UFDT: 931
   n_excluded: 0
   logic_excluded:
   - UF: 0

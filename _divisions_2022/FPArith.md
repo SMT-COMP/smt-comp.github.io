@@ -34,10 +34,10 @@ tracks:
     BVFPLRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 1
   logic_insts:
   - BVFP: 0
-    BVFPLRA: 0
+    BVFPLRA: 1
     FP: 0
     FPLRA: 0
   n_excluded: 0
@@ -48,10 +48,10 @@ tracks:
     FPLRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 1
   logic_insts:
   - BVFP: 0
-    BVFPLRA: 0
+    BVFPLRA: 1
     FP: 0
     FPLRA: 0
   n_excluded: 0

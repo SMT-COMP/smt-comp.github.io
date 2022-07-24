@@ -44,14 +44,14 @@ tracks:
     QF_UFLRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 577
   logic_insts:
-  - QF_ALIA: 0
-    QF_AUFLIA: 0
-    QF_UFDTLIRA: 0
-    QF_UFIDL: 0
-    QF_UFLIA: 0
-    QF_UFLRA: 0
+  - QF_ALIA: 30
+    QF_AUFLIA: 300
+    QF_UFDTLIRA: 17
+    QF_UFIDL: 113
+    QF_UFLIA: 16
+    QF_UFLRA: 101
   n_excluded: 0
   logic_excluded:
   - QF_ALIA: 0
@@ -62,11 +62,11 @@ tracks:
     QF_UFLRA: 0
 - name: track_model_validation
   status: competitive
-  n_insts: 0
+  n_insts: 891
   logic_insts:
-  - QF_UFIDL: 0
-    QF_UFLIA: 0
-    QF_UFLRA: 0
+  - QF_UFIDL: 206
+    QF_UFLIA: 300
+    QF_UFLRA: 385
   n_excluded: 0
   logic_excluded:
   - QF_UFIDL: 0
@@ -74,14 +74,14 @@ tracks:
     QF_UFLRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 577
   logic_insts:
-  - QF_ALIA: 0
-    QF_AUFLIA: 0
-    QF_UFDTLIRA: 0
-    QF_UFIDL: 0
-    QF_UFLIA: 0
-    QF_UFLRA: 0
+  - QF_ALIA: 30
+    QF_AUFLIA: 300
+    QF_UFDTLIRA: 17
+    QF_UFIDL: 113
+    QF_UFLIA: 16
+    QF_UFLRA: 101
   n_excluded: 0
   logic_excluded:
   - QF_ALIA: 0

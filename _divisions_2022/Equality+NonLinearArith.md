@@ -48,14 +48,14 @@ tracks:
     UFNRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 4161
   logic_insts:
-  - AUFDTNIRA: 0
-    AUFNIA: 0
-    AUFNIRA: 0
+  - AUFDTNIRA: 492
+    AUFNIA: 3
+    AUFNIRA: 526
     UFDTNIA: 0
-    UFDTNIRA: 0
-    UFNIA: 0
+    UFDTNIRA: 1552
+    UFNIA: 1588
   n_excluded: 0
   logic_excluded:
   - AUFDTNIRA: 0
@@ -66,14 +66,14 @@ tracks:
     UFNIA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 4161
   logic_insts:
-  - AUFDTNIRA: 0
-    AUFNIA: 0
-    AUFNIRA: 0
+  - AUFDTNIRA: 492
+    AUFNIA: 3
+    AUFNIRA: 526
     UFDTNIA: 0
-    UFDTNIRA: 0
-    UFNIA: 0
+    UFDTNIRA: 1552
+    UFNIA: 1588
   n_excluded: 0
   logic_excluded:
   - AUFDTNIRA: 0

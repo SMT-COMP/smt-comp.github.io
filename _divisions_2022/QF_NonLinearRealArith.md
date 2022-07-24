@@ -15,17 +15,17 @@ tracks:
   - QF_NRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 243
   logic_insts:
-  - QF_NRA: 0
+  - QF_NRA: 243
   n_excluded: 0
   logic_excluded:
   - QF_NRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 243
   logic_insts:
-  - QF_NRA: 0
+  - QF_NRA: 243
   n_excluded: 0
   logic_excluded:
   - QF_NRA: 0

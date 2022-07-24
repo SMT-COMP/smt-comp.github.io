@@ -18,20 +18,20 @@ tracks:
     QF_UFDT: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 200
   logic_insts:
-  - QF_DT: 0
-    QF_UFDT: 0
+  - QF_DT: 100
+    QF_UFDT: 100
   n_excluded: 0
   logic_excluded:
   - QF_DT: 0
     QF_UFDT: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 200
   logic_insts:
-  - QF_DT: 0
-    QF_UFDT: 0
+  - QF_DT: 100
+    QF_UFDT: 100
   n_excluded: 0
   logic_excluded:
   - QF_DT: 0

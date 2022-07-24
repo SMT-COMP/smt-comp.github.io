@@ -36,12 +36,12 @@ tracks:
     QF_UFNRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 228
   logic_insts:
-  - QF_ANIA: 0
-    QF_AUFNIA: 0
-    QF_UFNIA: 0
-    QF_UFNRA: 0
+  - QF_ANIA: 26
+    QF_AUFNIA: 12
+    QF_UFNIA: 179
+    QF_UFNRA: 11
   n_excluded: 0
   logic_excluded:
   - QF_ANIA: 0
@@ -50,12 +50,12 @@ tracks:
     QF_UFNRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 228
   logic_insts:
-  - QF_ANIA: 0
-    QF_AUFNIA: 0
-    QF_UFNIA: 0
-    QF_UFNRA: 0
+  - QF_ANIA: 26
+    QF_AUFNIA: 12
+    QF_UFNIA: 179
+    QF_UFNRA: 11
   n_excluded: 0
   logic_excluded:
   - QF_ANIA: 0

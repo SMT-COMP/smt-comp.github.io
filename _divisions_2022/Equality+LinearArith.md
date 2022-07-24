@@ -52,18 +52,18 @@ tracks:
     UFLRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 22866
   logic_insts:
   - ALIA: 0
-    AUFDTLIA: 0
-    AUFDTLIRA: 0
-    AUFLIA: 0
-    AUFLIRA: 0
+    AUFDTLIA: 60
+    AUFDTLIRA: 4917
+    AUFLIA: 1245
+    AUFLIRA: 9885
     UFDTLIA: 0
-    UFDTLIRA: 0
-    UFIDL: 0
-    UFLIA: 0
-    UFLRA: 0
+    UFDTLIRA: 2857
+    UFIDL: 30
+    UFLIA: 3862
+    UFLRA: 10
   n_excluded: 0
   logic_excluded:
   - ALIA: 0
@@ -78,18 +78,18 @@ tracks:
     UFLRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 22866
   logic_insts:
   - ALIA: 0
-    AUFDTLIA: 0
-    AUFDTLIRA: 0
-    AUFLIA: 0
-    AUFLIRA: 0
+    AUFDTLIA: 60
+    AUFDTLIRA: 4917
+    AUFLIA: 1245
+    AUFLIRA: 9885
     UFDTLIA: 0
-    UFDTLIRA: 0
-    UFIDL: 0
-    UFLIA: 0
-    UFLRA: 0
+    UFDTLIRA: 2857
+    UFIDL: 30
+    UFLIA: 3862
+    UFLRA: 10
   n_excluded: 0
   logic_excluded:
   - ALIA: 0

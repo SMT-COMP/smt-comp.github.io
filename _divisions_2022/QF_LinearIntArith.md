@@ -29,11 +29,11 @@ tracks:
   - QF_LIA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 1027
   logic_insts:
-  - QF_IDL: 0
-    QF_LIA: 0
-    QF_LIRA: 0
+  - QF_IDL: 100
+    QF_LIA: 922
+    QF_LIRA: 5
   n_excluded: 0
   logic_excluded:
   - QF_IDL: 0
@@ -41,11 +41,11 @@ tracks:
     QF_LIRA: 0
 - name: track_model_validation
   status: competitive
-  n_insts: 0
+  n_insts: 4785
   logic_insts:
-  - QF_IDL: 0
-    QF_LIA: 0
-    QF_LIRA: 0
+  - QF_IDL: 735
+    QF_LIA: 4049
+    QF_LIRA: 1
   n_excluded: 0
   logic_excluded:
   - QF_IDL: 0
@@ -53,11 +53,11 @@ tracks:
     QF_LIRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 1027
   logic_insts:
-  - QF_IDL: 0
-    QF_LIA: 0
-    QF_LIRA: 0
+  - QF_IDL: 100
+    QF_LIA: 922
+    QF_LIRA: 5
   n_excluded: 0
   logic_excluded:
   - QF_IDL: 0

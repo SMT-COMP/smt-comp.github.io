@@ -34,11 +34,11 @@ tracks:
     LRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 237
   logic_insts:
-  - LIA: 0
+  - LIA: 227
     LRA: 0
-    NIA: 0
+    NIA: 10
     NRA: 0
   n_excluded: 0
   logic_excluded:
@@ -48,11 +48,11 @@ tracks:
     NRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 237
   logic_insts:
-  - LIA: 0
+  - LIA: 227
     LRA: 0
-    NIA: 0
+    NIA: 10
     NRA: 0
   n_excluded: 0
   logic_excluded:

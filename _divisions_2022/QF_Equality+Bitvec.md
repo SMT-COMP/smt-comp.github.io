@@ -33,11 +33,11 @@ tracks:
     QF_UFBV: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 2225
   logic_insts:
-  - QF_ABV: 0
-    QF_AUFBV: 0
-    QF_UFBV: 0
+  - QF_ABV: 1865
+    QF_AUFBV: 34
+    QF_UFBV: 326
   n_excluded: 0
   logic_excluded:
   - QF_ABV: 0
@@ -45,19 +45,19 @@ tracks:
     QF_UFBV: 0
 - name: track_model_validation
   status: competitive
-  n_insts: 0
+  n_insts: 375
   logic_insts:
-  - QF_UFBV: 0
+  - QF_UFBV: 375
   n_excluded: 0
   logic_excluded:
   - QF_UFBV: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 2225
   logic_insts:
-  - QF_ABV: 0
-    QF_AUFBV: 0
-    QF_UFBV: 0
+  - QF_ABV: 1865
+    QF_AUFBV: 34
+    QF_UFBV: 326
   n_excluded: 0
   logic_excluded:
   - QF_ABV: 0

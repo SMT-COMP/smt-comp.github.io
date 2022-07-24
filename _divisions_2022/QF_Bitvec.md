@@ -23,25 +23,25 @@ tracks:
   - QF_BV: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 2886
   logic_insts:
-  - QF_BV: 0
+  - QF_BV: 2886
   n_excluded: 0
   logic_excluded:
   - QF_BV: 0
 - name: track_model_validation
   status: competitive
-  n_insts: 0
+  n_insts: 7319
   logic_insts:
-  - QF_BV: 0
+  - QF_BV: 7319
   n_excluded: 0
   logic_excluded:
   - QF_BV: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 2886
   logic_insts:
-  - QF_BV: 0
+  - QF_BV: 2886
   n_excluded: 0
   logic_excluded:
   - QF_BV: 0

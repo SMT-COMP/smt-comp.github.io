@@ -59,17 +59,17 @@ tracks:
     QF_UFFP: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 13634
   logic_insts:
-  - QF_ABVFP: 0
+  - QF_ABVFP: 1965
     QF_ABVFPLRA: 0
     QF_AUFBVFP: 0
-    QF_BVFP: 0
-    QF_BVFPLRA: 0
-    QF_FP: 0
+    QF_BVFP: 1586
+    QF_BVFPLRA: 46
+    QF_FP: 10031
     QF_FPLRA: 0
-    QF_UFFP: 0
-    QF_UFFPDTNIRA: 0
+    QF_UFFP: 2
+    QF_UFFPDTNIRA: 4
   n_excluded: 0
   logic_excluded:
   - QF_ABVFP: 0
@@ -83,12 +83,12 @@ tracks:
     QF_UFFPDTNIRA: 0
 - name: track_model_validation
   status: experimental
-  n_insts: 0
+  n_insts: 17243
   logic_insts:
-  - QF_BVFP: 0
-    QF_BVFPLRA: 0
-    QF_FP: 0
-    QF_FPLRA: 0
+  - QF_BVFP: 7024
+    QF_BVFPLRA: 106
+    QF_FP: 10068
+    QF_FPLRA: 45
     QF_UFFP: 0
   n_excluded: 0
   logic_excluded:
@@ -99,17 +99,17 @@ tracks:
     QF_UFFP: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 13634
   logic_insts:
-  - QF_ABVFP: 0
+  - QF_ABVFP: 1965
     QF_ABVFPLRA: 0
     QF_AUFBVFP: 0
-    QF_BVFP: 0
-    QF_BVFPLRA: 0
-    QF_FP: 0
+    QF_BVFP: 1586
+    QF_BVFPLRA: 46
+    QF_FP: 10031
     QF_FPLRA: 0
-    QF_UFFP: 0
-    QF_UFFPDTNIRA: 0
+    QF_UFFP: 2
+    QF_UFFPDTNIRA: 4
   n_excluded: 0
   logic_excluded:
   - QF_ABVFP: 0

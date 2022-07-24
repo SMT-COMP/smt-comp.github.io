@@ -26,20 +26,20 @@ tracks:
   - QF_NIA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 2058
   logic_insts:
-  - QF_NIA: 0
-    QF_NIRA: 0
+  - QF_NIA: 2056
+    QF_NIRA: 2
   n_excluded: 0
   logic_excluded:
   - QF_NIA: 0
     QF_NIRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 2058
   logic_insts:
-  - QF_NIA: 0
-    QF_NIRA: 0
+  - QF_NIA: 2056
+    QF_NIRA: 2
   n_excluded: 0
   logic_excluded:
   - QF_NIA: 0
