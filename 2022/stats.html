@@ -2,73 +2,37 @@
 layout: default
 ---
 
-<html>
-    <head>
-        <title>Pivot Demo</title>
         <!-- external libs from cdnjs -->
         <script src="https://cdn.plot.ly/plotly-basic-latest.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
-
-        <!-- PivotTable.js libs from ../dist -->
-        <link rel="stylesheet" type="text/css" href="../js/pivot.css">
-        <script type="text/javascript" src="../js/pivot.js"></script>
-        <script type="text/javascript" src="../js/plotly_renderers.js"></script>
-        <style>
-            body {font-family: Verdana;}
-        </style>
-
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/plotly_renderers.min.js"></script>
         <!-- optional: mobile support with jqueryui-touch-punch -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    </head>
-    <body>
         <script type="text/javascript">
-    // This example loads the "Canadian Parliament 2012"
-    // dataset from a CSV instead of from JSON.
-
-    // var successRate = function() {
-    //   return function() {
-    //     return {
-    //       sumSuccesses: 0,
-    //       sumTrials: 0,
-    //       push: function(record) {
-    //         if (!isNaN(parseFloat(record.successes))) {
-    //           this.sumSuccesses += parseFloat(record.successes);
-    //         }
-    //         if (!isNaN(parseFloat(record[denom]))) {
-    //           return this.sumTrials += parseFloat(record.trials);
-    //         }
-    //       },
-    //       value: function() { return this.sumSuccesses / this.sumTrials; },
-    //       format: function(x) { return x; },
-    //       numInputs: 0
-    //     };
-    //   };
-    // };
 
           var renderers = $.extend($.pivotUtilities.renderers,
                                    $.pivotUtilities.plotly_renderers);
 
-    $(function(){
-        Papa.parse("sq.csv", {
-            download: true,
-            skipEmptyLines: true,
-            complete: function(parsed){
-                $("#output").pivotUI(parsed.data, {
-                    rows: ["Prover"], cols: ["Solved"],
-                    renderers: renderers
-                });
-            }
-        });
-     });
+          $(function(){
+              Papa.parse("sq.csv", {
+                  download: true,
+                  skipEmptyLines: true,
+                  complete: function(parsed){
+                      $("#output").pivotUI(parsed.data, {
+                          rows: ["Prover"], cols: ["Solved"],
+                          renderers: renderers
+                      });
+                  }
+              });
+          });
         </script>
-        <p><a href="index.html">&laquo; back to PivotTable.js examples</a></p>
+        <p>Informations about prover results for all the divisions in sequential query</p>
 
         <p style="width: 800px"></p>
 
 
         <div id="output" style="margin: 30px;"></div>
-
-    </body>
-</html>
