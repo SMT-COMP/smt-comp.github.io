@@ -18,7 +18,12 @@ pivottable: true
               only_answer:  {rows:["solver"], cols:["division"],
                              vals:["nb"], aggregatorName:"Integer Sum",
                              rendererName:"Bar Chart",
-                             inclusions : { result : ["sat"] } },
+                             inclusions : { result : ["sat","unsat"] } },
+              only_BV_sat_unsat:  {rows:["result","solver"], cols:["division"],
+                             vals:["nb"], aggregatorName:"Integer Sum",
+                             rendererName:"Bar Chart",
+                             inclusions : { result : ["sat","unsat"],
+                                            division : [ "QF_Bitvec" ] } }
           }
 
           var g_onclick = function(){alert("oups")};
@@ -33,7 +38,7 @@ pivottable: true
                               renderers: renderers,
                           },options),true)};
 
-                      show(predefined.all_result)
+                      show(predefined.only_answer)
 
                       g_onclick = function (label){show(predefined[label])}
 
@@ -53,6 +58,8 @@ pivottable: true
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#" onclick="g_onclick('all_result')">All results by division</a>
     <a class="dropdown-item" href="#" onclick="g_onclick('only_sat')">Only satisfiable answer</a>
+    <a class="dropdown-item" href="#" onclick="g_onclick('only_answer')">Only sat/unsat answer</a>
+    <a class="dropdown-item" href="#" onclick="g_onclick('only_BV_sat_unsat')">Only QF_Bitvec division with separate sum</a>
   </div>
 </div>
         <div id="output" style="margin: 30px;"></div>
