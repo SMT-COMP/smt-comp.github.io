@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-08 10:23:08
+resultdate: 2022-08-09 00:05:33
 
 year: 2022
 
@@ -21,7 +21,7 @@ winner_unsat: Yices2
 winner_24s: Yices2
 
 sequential:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 260
@@ -113,7 +113,7 @@ sequential:
   timeout: 72
   memout: 0
 parallel:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 260
@@ -244,7 +244,7 @@ sat:
   abstained: 215
   timeout: 72
   memout: 0
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 70
@@ -310,7 +310,7 @@ unsat:
   abstained: 85
   timeout: 54
   memout: 0
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 190
@@ -389,7 +389,7 @@ unsat:
   timeout: 72
   memout: 0
 twentyfour:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 222

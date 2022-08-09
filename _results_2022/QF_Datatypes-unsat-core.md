@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-08 10:24:14
+resultdate: 2022-08-09 00:06:47
 
 year: 2022
 
@@ -20,7 +20,7 @@ logics:
 winner_seq: cvc5
 winner_par: cvc5
 sequential:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 854021
@@ -53,7 +53,7 @@ sequential:
   timeout: 184
   memout: 0
 parallel:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 854021

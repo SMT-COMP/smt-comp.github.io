@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-08 10:23:08
+resultdate: 2022-08-09 00:05:33
 
 year: 2022
 
@@ -35,7 +35,7 @@ winner_unsat: cvc5
 winner_24s: cvc5
 
 sequential:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 1460
@@ -101,7 +101,7 @@ sequential:
   timeout: 840
   memout: 5
 parallel:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 1460
@@ -167,7 +167,7 @@ parallel:
   timeout: 840
   memout: 5
 sat:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 336
@@ -233,7 +233,7 @@ sat:
   timeout: 840
   memout: 5
 unsat:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 1124
@@ -299,7 +299,7 @@ unsat:
   timeout: 840
   memout: 5
 twentyfour:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 1284

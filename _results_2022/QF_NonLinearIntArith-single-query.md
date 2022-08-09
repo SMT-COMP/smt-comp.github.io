@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-08 10:23:08
+resultdate: 2022-08-09 00:05:33
 
 year: 2022
 
@@ -63,7 +63,7 @@ sequential:
   abstained: 2
   timeout: 2847
   memout: 34
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 9247
@@ -181,7 +181,7 @@ parallel:
   abstained: 2
   timeout: 2628
   memout: 34
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 9247
@@ -299,7 +299,7 @@ sat:
   abstained: 4988
   timeout: 2628
   memout: 34
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 6311
@@ -417,7 +417,7 @@ unsat:
   abstained: 8698
   timeout: 2628
   memout: 34
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 2936
@@ -574,7 +574,7 @@ twentyfour:
   abstained: 2
   timeout: 5660
   memout: 0
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 6518

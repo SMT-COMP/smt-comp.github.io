@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-08 10:24:15
+resultdate: 2022-08-09 00:06:47
 
 year: 2022
 
@@ -41,7 +41,7 @@ sequential:
   WallScore: 976692.677
   timeout: 749
   memout: 0
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 75076
@@ -82,7 +82,7 @@ parallel:
   WallScore: 949178.834
   timeout: 726
   memout: 0
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 75076

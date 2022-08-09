@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-08 10:23:08
+resultdate: 2022-08-09 00:05:32
 
 year: 2022
 
@@ -21,7 +21,7 @@ winner_unsat: Bitwuzla
 winner_24s: Bitwuzla
 
 sequential:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 177
@@ -87,7 +87,7 @@ sequential:
   timeout: 0
   memout: 0
 parallel:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 177
@@ -153,7 +153,7 @@ parallel:
   timeout: 0
   memout: 0
 sat:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 165
@@ -232,7 +232,7 @@ unsat:
   abstained: 191
   timeout: 56
   memout: 0
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 12
@@ -285,7 +285,7 @@ unsat:
   timeout: 0
   memout: 0
 twentyfour:
-- name: z3
+- name: z3-4.8.17
   competing: "no"
   errorScore: 0
   correctScore: 167
