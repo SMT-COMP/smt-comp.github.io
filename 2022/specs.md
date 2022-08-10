@@ -1,3 +1,7 @@
+---
+layout: default
+
+---
 ## Machine Specifications
 
 The competition will run on the [StarExec](http://www.starexec.org/)

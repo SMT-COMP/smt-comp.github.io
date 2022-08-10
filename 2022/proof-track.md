@@ -1,3 +1,7 @@
+---
+layout: default
+
+---
 ## Proof Exhibition Track
 
 In the new Proof Exhibition Track, teams can submit a proof-producing solver
