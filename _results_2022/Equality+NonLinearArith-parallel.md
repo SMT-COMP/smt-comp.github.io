@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-10 11:19:37
+resultdate: 2022-08-10 14:49:55
 
 year: 2022
 
@@ -19,21 +19,21 @@ logics:
   UFDTNIRA: 5
   UFNIA: 31
 
-winner_par: "-"
+winner_par: Vampire
 winner_sat: "-"
-winner_unsat: "-"
-winner_24s: "-"
+winner_unsat: Vampire
+winner_24s: Vampire
 
 parallel:
 - name: Vampire
   competing: "yes"
-  errorScore: 2
-  correctScore: 0
+  errorScore: 0
+  correctScore: 6
   WallScore: 95288.683
-  solved: 0
+  solved: 6
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 83
+  solved_unsat: 6
+  unsolved: 77
   abstained: 0
   timeout: 0
   memout: 0
@@ -53,26 +53,26 @@ sat:
 unsat:
 - name: Vampire
   competing: "yes"
-  errorScore: 2
-  correctScore: 0
-  WallScore: 44.324
-  solved: 0
+  errorScore: 0
+  correctScore: 6
+  WallScore: 2888.683
+  solved: 6
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 2
-  abstained: 81
+  solved_unsat: 6
+  unsolved: 0
+  abstained: 77
   timeout: 0
   memout: 0
 twentyfour:
 - name: Vampire
   competing: "yes"
-  errorScore: 1
-  correctScore: 0
+  errorScore: 0
+  correctScore: 1
   WallScore: 1969.43
-  solved: 0
+  solved: 1
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 83
+  solved_unsat: 1
+  unsolved: 82
   abstained: 0
   timeout: 82
   memout: 0

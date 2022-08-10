@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-10 11:19:35
+resultdate: 2022-08-10 14:49:53
 
 year: 2022
 
@@ -14,21 +14,21 @@ n_benchmarks: 19
 time_limit: 1200
 mem_limit: N/A
 
-winner_par: "-"
+winner_par: Vampire
 winner_sat: "-"
-winner_unsat: "-"
-winner_24s: "-"
+winner_unsat: Vampire
+winner_24s: Vampire
 
 parallel:
 - name: Vampire
   competing: "yes"
-  errorScore: 3
-  correctScore: 0
+  errorScore: 2
+  correctScore: 6
   WallScore: 16333.651
-  solved: 0
+  solved: 6
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 19
+  solved_unsat: 6
+  unsolved: 13
   abstained: 0
   timeout: 0
   memout: 0
@@ -72,38 +72,38 @@ sat:
 unsat:
 - name: Vampire
   competing: "yes"
-  errorScore: 3
-  correctScore: 0
-  WallScore: 2636.002
-  solved: 0
+  errorScore: 2
+  correctScore: 6
+  WallScore: 3133.651
+  solved: 6
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 3
-  abstained: 16
+  solved_unsat: 6
+  unsolved: 2
+  abstained: 11
   timeout: 0
   memout: 0
 - name: cvc5-cloud
   competing: "yes"
   errorScore: 3
   correctScore: 0
-  WallScore: 3600.0
+  WallScore: 9600.0
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 3
-  abstained: 16
+  unsolved: 8
+  abstained: 11
   timeout: 0
   memout: 0
 twentyfour:
 - name: Vampire
   competing: "yes"
   errorScore: 0
-  correctScore: 0
+  correctScore: 2
   WallScore: 442.311
-  solved: 0
+  solved: 2
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 19
+  solved_unsat: 2
+  unsolved: 17
   abstained: 0
   timeout: 17
   memout: 0

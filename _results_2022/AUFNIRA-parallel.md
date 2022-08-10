@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-10 11:19:37
+resultdate: 2022-08-10 14:49:55
 
 year: 2022
 
@@ -14,21 +14,21 @@ n_benchmarks: 38
 time_limit: 1200
 mem_limit: N/A
 
-winner_par: "-"
+winner_par: Vampire
 winner_sat: "-"
-winner_unsat: "-"
+winner_unsat: Vampire
 winner_24s: "-"
 
 parallel:
 - name: Vampire
   competing: "yes"
-  errorScore: 1
-  correctScore: 0
+  errorScore: 0
+  correctScore: 5
   WallScore: 42487.253
-  solved: 0
+  solved: 5
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 38
+  solved_unsat: 5
+  unsolved: 33
   abstained: 0
   timeout: 0
   memout: 0
@@ -48,14 +48,14 @@ sat:
 unsat:
 - name: Vampire
   competing: "yes"
-  errorScore: 1
-  correctScore: 0
-  WallScore: 42.894
-  solved: 0
+  errorScore: 0
+  correctScore: 5
+  WallScore: 2887.253
+  solved: 5
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 1
-  abstained: 37
+  solved_unsat: 5
+  unsolved: 0
+  abstained: 33
   timeout: 0
   memout: 0
 twentyfour:

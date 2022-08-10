@@ -1,3 +1,8 @@
+---
+layout: default
+
+---
+
 ## Parallel and Cloud Tracks
 
 Like last year we are organising new, experimental, cloud and parallel tracks

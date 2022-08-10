@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2022-08-10 11:19:35
+resultdate: 2022-08-10 14:49:53
 
 year: 2022
 
@@ -19,33 +19,33 @@ logics:
   UFDTNIRA: 5
   UFNIA: 31
 
-winner_par: "-"
+winner_par: Vampire
 winner_sat: "-"
-winner_unsat: "-"
-winner_24s: "-"
+winner_unsat: Vampire
+winner_24s: Vampire
 
 parallel:
 - name: Vampire
   competing: "yes"
-  errorScore: 2
-  correctScore: 0
+  errorScore: 0
+  correctScore: 5
   WallScore: 94497.552
-  solved: 0
+  solved: 5
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 83
+  solved_unsat: 5
+  unsolved: 78
   abstained: 0
   timeout: 0
   memout: 0
 - name: cvc5-cloud
   competing: "yes"
   errorScore: 2
-  correctScore: 0
+  correctScore: 2
   WallScore: 97247.809
-  solved: 0
+  solved: 2
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 83
+  solved_unsat: 2
+  unsolved: 81
   abstained: 0
   timeout: 0
   memout: 0
@@ -77,51 +77,51 @@ sat:
 unsat:
 - name: Vampire
   competing: "yes"
-  errorScore: 2
-  correctScore: 0
-  WallScore: 33.299
-  solved: 0
+  errorScore: 0
+  correctScore: 5
+  WallScore: 3297.552
+  solved: 5
   solved_sat: 0
-  solved_unsat: 0
+  solved_unsat: 5
   unsolved: 2
-  abstained: 81
+  abstained: 76
   timeout: 0
   memout: 0
 - name: cvc5-cloud
   competing: "yes"
   errorScore: 2
-  correctScore: 0
-  WallScore: 2400.0
-  solved: 0
+  correctScore: 2
+  WallScore: 6047.809
+  solved: 2
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 2
-  abstained: 81
+  solved_unsat: 2
+  unsolved: 5
+  abstained: 76
   timeout: 0
   memout: 0
 twentyfour:
+- name: Vampire
+  competing: "yes"
+  errorScore: 0
+  correctScore: 2
+  WallScore: 1977.299
+  solved: 2
+  solved_sat: 0
+  solved_unsat: 2
+  unsolved: 81
+  abstained: 0
+  timeout: 81
+  memout: 0
 - name: cvc5-cloud
   competing: "yes"
   errorScore: 0
-  correctScore: 0
+  correctScore: 1
   WallScore: 1982.655
-  solved: 0
+  solved: 1
   solved_sat: 0
-  solved_unsat: 0
-  unsolved: 83
+  solved_unsat: 1
+  unsolved: 82
   abstained: 0
   timeout: 82
-  memout: 0
-- name: Vampire
-  competing: "yes"
-  errorScore: 2
-  correctScore: 0
-  WallScore: 1977.299
-  solved: 0
-  solved_sat: 0
-  solved_unsat: 0
-  unsolved: 83
-  abstained: 0
-  timeout: 81
   memout: 0
 ---
