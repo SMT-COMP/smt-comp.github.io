@@ -11,6 +11,9 @@ collections:
     divisions_2022:
         output: true
         permalink: /2022/divisions/:name
+    results_2022:
+        output: true
+        permalink: /2022/results/:name
 
     news_2021:
         output: true
