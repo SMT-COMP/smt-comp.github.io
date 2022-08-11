@@ -23,7 +23,14 @@ pivottable: true
                              vals:["nb"], aggregatorName:"Integer Sum",
                              rendererName:"Bar Chart",
                              inclusions : { result : ["sat","unsat"],
-                                            division : [ "QF_Bitvec" ] } }
+                                            division : [ "QF_Bitvec" ] } },
+              sum_cpu_time:  {rows:["solver"], cols:["division"],
+                             vals:["cpu_time"], aggregatorName:"Sum",
+                             rendererName:"Bar Chart",
+                             rowOrder: "value_a_to_z",
+                             inclusions : { result : ["sat"],
+                                            division : [ "QF_Equality" ],
+                                            competitive : ["yes"] } }
           }
 
           var g_onclick = function(){alert("oups")};
@@ -60,6 +67,7 @@ pivottable: true
     <a class="dropdown-item" href="#" onclick="g_onclick('only_sat')">Only satisfiable answer</a>
     <a class="dropdown-item" href="#" onclick="g_onclick('only_answer')">Only sat/unsat answer</a>
     <a class="dropdown-item" href="#" onclick="g_onclick('only_BV_sat_unsat')">Only QF_Bitvec division with separate sum</a>
+    <a class="dropdown-item" href="#" onclick="g_onclick('sum_cpu_time')">Order competitive provers by cpu time for QF_Arith for satisfiable answers</a>
   </div>
 </div>
         <div id="output" style="margin: 30px;"></div>
