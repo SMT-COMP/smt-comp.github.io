@@ -4,6 +4,7 @@ year: 2022
 name: "Q3B"
 preliminaryID: "36884"
 finalID: "39062"
+configID_sq: "659695"
 team: "Martin Jonáš, Jan Strejček"
 variantOf: ""
 wrapperTool: ""

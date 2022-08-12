@@ -4,6 +4,7 @@ year: 2022
 name: "STP-fixed"
 preliminaryID: ""
 finalID: "41385"
+configID_sq: "671258"
 team: "Various"
 variantOf: ""
 wrapperTool: ""

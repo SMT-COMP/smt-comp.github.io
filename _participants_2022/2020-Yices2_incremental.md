@@ -4,6 +4,7 @@ year: 2022
 name: "2020-Yices2 incremental"
 preliminaryID: "28344"
 finalID: "28821"
+configID_sq: ""
 team: "Dejan Jovanović, Stéphane Graham-Lengrand, Ian A. Mason"
 variantOf: ""
 wrapperTool: ""

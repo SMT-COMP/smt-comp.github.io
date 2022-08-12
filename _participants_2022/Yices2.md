@@ -4,6 +4,7 @@ year: 2022
 name: "Yices2"
 preliminaryID: "33403;33404(inc);33405(mv)"
 finalID: "33403;33404(inc);33405(mv)"
+configID_sq: "659700"
 team: "Bruno Dutertre, Dejan Jovanović, Stéphane Graham-Lengrand, Ian A. Mason, Aman Goel"
 variantOf: ""
 wrapperTool: ""

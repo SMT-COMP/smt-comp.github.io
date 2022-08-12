@@ -3,7 +3,8 @@ layout: participant
 year: 2022
 name: "SMTS cube-and-conquer"
 preliminaryID: ""
-finalID: ""
+finalID: "1"
+configID_sq: "1"
 team: "Seyedmasoud Asadzadeh, Antti Hyvärinen, Martin Blicha, Konstantin Britikov, Sepideh Asadi, Matteo Marescotti, Václav Luňák, Leonardo Alt, Mate Soos, Natasha Sharygina"
 variantOf: ""
 wrapperTool: ""

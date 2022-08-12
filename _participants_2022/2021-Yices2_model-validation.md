@@ -4,6 +4,7 @@ year: 2022
 name: "2021-Yices2 model-validation"
 preliminaryID: "33008"
 finalID: "33405"
+configID_sq: ""
 team: "Bruno Dutertre, Dejan Jovanović, Stéphane Graham-Lengrand, Ian A. Mason, Aman Goel"
 variantOf: ""
 wrapperTool: ""

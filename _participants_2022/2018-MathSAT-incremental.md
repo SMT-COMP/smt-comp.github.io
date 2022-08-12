@@ -4,6 +4,7 @@ year: 2022
 name: "2018-MathSAT-incremental"
 preliminaryID: ""
 finalID: "19993"
+configID_sq: ""
 team: ""
 variantOf: ""
 wrapperTool: ""

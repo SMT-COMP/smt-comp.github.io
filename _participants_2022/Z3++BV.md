@@ -4,6 +4,7 @@ year: 2022
 name: "Z3++BV"
 preliminaryID: "38972"
 finalID: "39106"
+configID_sq: "659704"
 team: "Shaowei Cai, Bohan Li, Jinkun Lin, Zhonghan Wang, Bohua Zhan, Xindi Zhang, Mengyu Zhao"
 variantOf: "Z3++"
 wrapperTool: ""

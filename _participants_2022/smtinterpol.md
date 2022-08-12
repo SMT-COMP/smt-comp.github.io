@@ -4,6 +4,7 @@ year: 2022
 name: "smtinterpol"
 preliminaryID: "39066"
 finalID: "39093"
+configID_sq: "659678"
 team: "Jochen Hoenicke, Tanja Schindler"
 variantOf: ""
 wrapperTool: ""

@@ -4,6 +4,7 @@ year: 2022
 name: "Vampire"
 preliminaryID: "36957"
 finalID: "39081"
+configID_sq: "659685"
 team: "Giles Reger, Martin Suda, Andrei Voronkov, Laura Kovacs, Ahmed Bhayat, Bernhard Gleiss, Marton Hajdu, Petra Hozzova, Evgeny Kotelnikov, Jakob Rath, Michael Rawson, Martin Riener, Johannes Schoisswohl"
 variantOf: ""
 wrapperTool: "Z3 4.8.12 @ commit f03d756e086f81f2596157241e0decfb1c982299"

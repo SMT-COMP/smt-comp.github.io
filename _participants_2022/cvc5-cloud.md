@@ -3,7 +3,8 @@ layout: participant
 year: 2022
 name: "cvc5-cloud"
 preliminaryID: ""
-finalID: ""
+finalID: "4"
+configID_sq: "4"
 team: "Amalee Wilson, Andres Noetzli, Andrew Reynolds, Cesare Tinelli, Clark Barrett"
 variantOf: ""
 wrapperTool: ""
