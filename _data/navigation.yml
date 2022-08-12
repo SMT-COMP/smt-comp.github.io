@@ -18,10 +18,10 @@
     link: 2022/participants.html
   - name: Results
     link: 2022/results.html
-#  - name: Solver submission
-#    link: https://forms.gle/ewNQdFJbmQ12GxpX8
   - name: Statistics
     link: 2022/stats.html
+  - name: Slides
+    link: 2022/slides.html
 
 - name: 2021
   link: 2021/index.html
