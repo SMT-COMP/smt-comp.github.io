@@ -4,6 +4,7 @@ year: 2022
 name: "NRA-LS"
 preliminaryID: "36859(sq)"
 finalID: "39120"
+configID_sq: "659693"
 team: "Minghao Liu, Fuqi Jia, Pei Huang, Rui Han, Yu Zhang, Feifei Ma, Jian Zhang"
 variantOf: ""
 wrapperTool: "cvc5-1.0.0"

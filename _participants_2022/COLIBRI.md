@@ -4,6 +4,7 @@ year: 2022
 name: "COLIBRI"
 preliminaryID: "36854"
 finalID: "36854"
+configID_sq: "659692"
 team: "François Bobot, Bruno Marre"
 variantOf: ""
 wrapperTool: ""

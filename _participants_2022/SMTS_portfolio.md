@@ -3,7 +3,8 @@ layout: participant
 year: 2022
 name: "SMTS portfolio"
 preliminaryID: ""
-finalID: ""
+finalID: "3"
+configID_sq: "3"
 team: "Seyedmasoud Asadzadeh, Antti Hyvärinen, Martin Blicha, Konstantin Britikov, Sepideh Asadi, Matteo Marescotti, Václav Luňák, Leonardo Alt, Mate Soos, Natasha Sharygina"
 variantOf: ""
 wrapperTool: ""

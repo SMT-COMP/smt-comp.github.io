@@ -4,6 +4,7 @@ year: 2022
 name: "2021-SMTInterpol"
 preliminaryID: "32995"
 finalID: "33439"
+configID_sq: "550583"
 team: "Jürgen Christ, Jochen Hoenicke, Moritz Mohr, Tanja Schindler"
 variantOf: ""
 wrapperTool: ""

@@ -1,0 +1,144 @@
+---
+layout: default
+pivottable: true
+
+participants: participants_2022
+
+---
+
+{%- assign participants = site[page.participants] -%}
+{%- assign participants = participants | where_exp:"solver", "solver.configID_sq != ''" -%}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+        <script type="text/javascript">
+
+          const parseFiles = (files,doSomething) => {
+              const filesData = []
+              Promise.all([...files].map((file) =>
+                  new Promise((resolve, reject) =>
+                      Papa.parse(file, {
+                          download: true,
+                          skipEmptyLines: true,
+                          complete: resolve,  // Resolve each promise
+                          error: reject,
+                      }),
+                  )),
+              ).then((results) => {
+                  results.forEach((result, index) => {
+                      filesData.push(result)
+                  })
+                  doSomething(filesData) // now since .then() excutes after all promises are resolved, filesData contains all the parsed files.
+              }).catch((err) => console.log('Something went wrong:', err))
+          }
+
+          function getMultipleRandom_keepheader(arr, num) {
+              if (arr.length <= num + 1) return arr;
+              let myrng = new Math.seedrandom(num);
+              const shuffled = arr.slice(1).sort(() => 0.5 - myrng.quick());
+
+              return [arr[0]].concat(shuffled.slice(0, num));
+          }
+
+          var renderers = $.extend($.pivotUtilities.renderers,
+                                   $.pivotUtilities.plotly_renderers);
+
+          var predefined = {
+              all_result: {rows:["solver","result"], cols:["division"],
+                            vals:["nb"], aggregatorName:"Integer Sum"},
+              only_sat:  {rows:["solver"], cols:["division"],
+                          vals:["nb"], aggregatorName:"Integer Sum",
+                          rendererName:"Bar Chart",
+                          inclusions : { result : ["sat"] } },
+              only_answer:  {rows:["solver"], cols:["division"],
+                             vals:["nb"], aggregatorName:"Integer Sum",
+                             rendererName:"Bar Chart",
+                             inclusions : { result : ["sat","unsat"] } },
+              only_BV_sat_unsat:  {rows:["result","solver"], cols:["division"],
+                             vals:["nb"], aggregatorName:"Integer Sum",
+                             rendererName:"Bar Chart",
+                             inclusions : { result : ["sat","unsat"],
+                                            division : [ "QF_Bitvec" ] } },
+              sum_cpu_time:  {rows:["solver"], cols:["division"],
+                             vals:["cpu_time"], aggregatorName:"Sum",
+                             rendererName:"Bar Chart",
+                             rowOrder: "value_a_to_z",
+                             inclusions : { result : ["sat"],
+                                            division : [ "QF_Equality" ],
+                                            competitive : ["yes"] } }
+          };
+
+{%- for i in (1..2) -%}
+{%- assign solver = participants[i] -%}
+          solver{{i}}={id: {{solver.configID_sq}}, name: '{{solver.name}}'};
+{%- endfor -%}
+
+          function refresh() {$(function(){
+              file1="results/solver_"+solver1.id+"_sq.csv";
+              file2="results/solver_"+solver2.id+"_sq.csv";
+              parseFiles(["results/benchmarks.csv",file1,file2], function(parsed){
+                  let benchmarks = parsed[0].data;
+                  let file1 = parsed[1].data;
+                  let file2 = parsed[2].data;
+                  let row = benchmarks[0];
+                  row = row.concat(file1[0].slice(1).map(x => solver1.name+" "+x),file2[0].slice(1).map(x => solver2.name+" "+x))
+                  let data=[row];
+                  let i1 = 1;
+                  let i2 = 1;
+                  for (let i = 1;
+                       i < benchmarks.length && i1 < file1.length && i2 < file2.length;
+                       i++) {
+                      if (benchmarks[i][0] == file1[i1][0] &&
+                          benchmarks[i][0] == file2[i2][0]) {
+                          let row = benchmarks[i];
+                          row = row.concat(file1[i1].slice(1),file2[i2].slice(1))
+                          data.push(row)
+                      }
+                      if (benchmarks[i][0] == file1[i1][0]) i1++;
+                      if (benchmarks[i][0] == file2[i2][0]) i2++;
+                  };
+                  $("#max")[0].innerHTML="/"+(data.length-1);
+                  let num = parseInt(($("#limit")[0].value));
+                  data = getMultipleRandom_keepheader(data,num);
+                  $("#output").pivotUI(data,
+                                       { renderers: renderers,
+                                         aggregatorName:"Count",
+                                         rendererName:"Scatter Chart",
+                                         rows:[solver1.name+" cpu_time"],
+                                         cols:[solver2.name+" cpu_time"]
+                                       },true);
+              }
+
+                  )
+              })};
+
+          refresh();
+
+
+        </script>
+        <p>Informations about prover results for all the divisions in sequential query</p>
+
+        <p style="width: 800px"></p>
+
+<!-- <div class="d-flex flex-column justify-content-start"> -->
+<div class="d-flex justify-content-start">
+{%- for i in (1..2) -%}
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Solver{{i}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+{%- for solver in participants -%}
+<a class="dropdown-item" href="#" onclick="solver{{i}}={id: {{solver.configID_sq}}, name: '{{solver.name}}'};refresh();">{{ solver.name }}</a>
+{%- endfor -%}
+  </div>
+</div>
+{%- endfor -%}
+<div>
+Limit:<input type="text" id="limit" value="1000" onkeypress="if (event.key === 'Enter') { refresh()}" ><span id="max">/???</span>
+</div>
+</div>
+
+<!-- <div class="d-flex justify-content-start"> -->
+<div id="output" style="margin: 30px;"></div>
+<!-- </div> -->
+<!-- </div> -->

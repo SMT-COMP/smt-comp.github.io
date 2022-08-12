@@ -4,6 +4,7 @@ year: 2022
 name: "smtinterpol-fixed"
 preliminaryID: ""
 finalID: "41483"
+configID_sq: "671399"
 team: "Jochen Hoenicke, Tanja Schindler"
 variantOf: ""
 wrapperTool: ""

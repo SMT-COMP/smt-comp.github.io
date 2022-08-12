@@ -4,6 +4,7 @@ year: 2022
 name: "2021-Bitwuzla - fixed"
 preliminaryID: ""
 finalID: "33809"
+configID_sq: ""
 team: "Aina Niemetz, Mathias Preiner"
 variantOf: ""
 wrapperTool: ""

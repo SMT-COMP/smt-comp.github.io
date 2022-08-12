@@ -4,6 +4,7 @@ year: 2022
 name: "YicesQS"
 preliminaryID: "36836"
 finalID: "39111"
+configID_sq: "659775"
 team: "Stephane Graham-Lengrand"
 variantOf: ""
 wrapperTool: ""

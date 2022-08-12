@@ -4,6 +4,7 @@ year: 2022
 name: "Z3str4"
 preliminaryID: "36977"
 finalID: "39107"
+configID_sq: "659705"
 team: "Zhengyang Lu, Stefan Siemer, Mitja Kulczynski, Murphy Berzish, Vijay Ganesh, Florin Manea"
 variantOf: ""
 wrapperTool: ""

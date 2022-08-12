@@ -4,6 +4,7 @@ year: 2022
 name: "2021-cvc5-inc"
 preliminaryID: "33070"
 finalID: "33449"
+configID_sq: ""
 team: "Clark Barrett, Haniel Barbosa, Gereon Kremer, Abdal Mohamed, Mudathir Mohamed, Aina Niemetz, Andres Noetzli, Mathias Preiner, Andrew Reynolds, Cesare Tinelli, Yoni Zohar"
 variantOf: ""
 wrapperTool: ""

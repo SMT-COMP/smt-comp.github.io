@@ -4,6 +4,7 @@ year: 2022
 name: "MathSAT"
 preliminaryID: ""
 finalID: "41381"
+configID_sq: "671120"
 team: ""
 variantOf: ""
 wrapperTool: ""

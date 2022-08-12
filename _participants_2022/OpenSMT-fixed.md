@@ -4,6 +4,7 @@ year: 2022
 name: "OpenSMT-fixed"
 preliminaryID: ""
 finalID: "41413"
+configID_sq: "671257"
 team: "Antti Hyvärinen, Martin Blicha, Masoud Asadzade, Václav Luňák, Leonardo Alt, Matteo Marescotti, Sepideh Asadi, Konstantin Britikov, Mate Soos, Natasha Sharygina, Rodrigo Otoni"
 variantOf: ""
 wrapperTool: ""
