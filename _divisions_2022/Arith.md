@@ -62,12 +62,12 @@ tracks:
     NRA: 0
 - name: track_cloud
   status: competitive
-  n_insts: 0
+  n_insts: 41
   logic_insts:
   - LIA: 0
-    LRA: 0
+    LRA: 40
     NIA: 0
-    NRA: 0
+    NRA: 1
   n_excluded: 0
   logic_excluded:
   - LIA: 0
@@ -76,12 +76,12 @@ tracks:
     NRA: 0
 - name: track_parallel
   status: competitive
-  n_insts: 0
+  n_insts: 41
   logic_insts:
   - LIA: 0
-    LRA: 0
+    LRA: 40
     NIA: 0
-    NRA: 0
+    NRA: 1
   n_excluded: 0
   logic_excluded:
   - LIA: 0

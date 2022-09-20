@@ -56,20 +56,20 @@ tracks:
     QF_RDL: 0
 - name: track_cloud
   status: competitive
-  n_insts: 0
+  n_insts: 23
   logic_insts:
-  - QF_LRA: 0
-    QF_RDL: 0
+  - QF_LRA: 19
+    QF_RDL: 4
   n_excluded: 0
   logic_excluded:
   - QF_LRA: 0
     QF_RDL: 0
 - name: track_parallel
   status: competitive
-  n_insts: 0
+  n_insts: 23
   logic_insts:
-  - QF_LRA: 0
-    QF_RDL: 0
+  - QF_LRA: 19
+    QF_RDL: 4
   n_excluded: 0
   logic_excluded:
   - QF_LRA: 0

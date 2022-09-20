@@ -92,14 +92,14 @@ tracks:
     QF_UFLRA: 0
 - name: track_cloud
   status: competitive
-  n_insts: 0
+  n_insts: 1
   logic_insts:
   - QF_ALIA: 0
     QF_AUFLIA: 0
     QF_UFDTLIRA: 0
     QF_UFIDL: 0
     QF_UFLIA: 0
-    QF_UFLRA: 0
+    QF_UFLRA: 1
   n_excluded: 0
   logic_excluded:
   - QF_ALIA: 0
@@ -110,14 +110,14 @@ tracks:
     QF_UFLRA: 0
 - name: track_parallel
   status: competitive
-  n_insts: 0
+  n_insts: 1
   logic_insts:
   - QF_ALIA: 0
     QF_AUFLIA: 0
     QF_UFDTLIRA: 0
     QF_UFIDL: 0
     QF_UFLIA: 0
-    QF_UFLRA: 0
+    QF_UFLRA: 1
   n_excluded: 0
   logic_excluded:
   - QF_ALIA: 0

@@ -84,14 +84,14 @@ tracks:
     UFNIA: 0
 - name: track_cloud
   status: competitive
-  n_insts: 0
+  n_insts: 83
   logic_insts:
-  - AUFDTNIRA: 0
+  - AUFDTNIRA: 9
     AUFNIA: 0
-    AUFNIRA: 0
+    AUFNIRA: 38
     UFDTNIA: 0
-    UFDTNIRA: 0
-    UFNIA: 0
+    UFDTNIRA: 5
+    UFNIA: 31
   n_excluded: 0
   logic_excluded:
   - AUFDTNIRA: 0
@@ -102,14 +102,14 @@ tracks:
     UFNIA: 0
 - name: track_parallel
   status: competitive
-  n_insts: 0
+  n_insts: 83
   logic_insts:
-  - AUFDTNIRA: 0
+  - AUFDTNIRA: 9
     AUFNIA: 0
-    AUFNIRA: 0
+    AUFNIRA: 38
     UFDTNIA: 0
-    UFDTNIRA: 0
-    UFNIA: 0
+    UFDTNIRA: 5
+    UFNIA: 31
   n_excluded: 0
   logic_excluded:
   - AUFDTNIRA: 0

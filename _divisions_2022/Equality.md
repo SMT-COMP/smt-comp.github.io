@@ -46,20 +46,20 @@ tracks:
     UFDT: 0
 - name: track_cloud
   status: competitive
-  n_insts: 0
+  n_insts: 79
   logic_insts:
-  - UF: 0
-    UFDT: 0
+  - UF: 41
+    UFDT: 38
   n_excluded: 0
   logic_excluded:
   - UF: 0
     UFDT: 0
 - name: track_parallel
   status: competitive
-  n_insts: 0
+  n_insts: 79
   logic_insts:
-  - UF: 0
-    UFDT: 0
+  - UF: 41
+    UFDT: 38
   n_excluded: 0
   logic_excluded:
   - UF: 0

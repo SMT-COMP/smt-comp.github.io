@@ -104,17 +104,17 @@ tracks:
     UFLRA: 0
 - name: track_cloud
   status: competitive
-  n_insts: 0
+  n_insts: 84
   logic_insts:
   - ALIA: 0
     AUFDTLIA: 0
-    AUFDTLIRA: 0
-    AUFLIA: 0
-    AUFLIRA: 0
-    UFDTLIA: 0
-    UFDTLIRA: 0
+    AUFDTLIRA: 18
+    AUFLIA: 10
+    AUFLIRA: 7
+    UFDTLIA: 7
+    UFDTLIRA: 23
     UFIDL: 0
-    UFLIA: 0
+    UFLIA: 19
     UFLRA: 0
   n_excluded: 0
   logic_excluded:
@@ -130,17 +130,17 @@ tracks:
     UFLRA: 0
 - name: track_parallel
   status: competitive
-  n_insts: 0
+  n_insts: 84
   logic_insts:
   - ALIA: 0
     AUFDTLIA: 0
-    AUFDTLIRA: 0
-    AUFLIA: 0
-    AUFLIRA: 0
-    UFDTLIA: 0
-    UFDTLIRA: 0
+    AUFDTLIRA: 18
+    AUFLIA: 10
+    AUFLIRA: 7
+    UFDTLIA: 7
+    UFDTLIRA: 23
     UFIDL: 0
-    UFLIA: 0
+    UFLIA: 19
     UFLRA: 0
   n_excluded: 0
   logic_excluded:

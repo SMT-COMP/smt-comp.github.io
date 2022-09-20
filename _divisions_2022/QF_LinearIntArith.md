@@ -65,10 +65,10 @@ tracks:
     QF_LIRA: 0
 - name: track_cloud
   status: competitive
-  n_insts: 0
+  n_insts: 89
   logic_insts:
-  - QF_IDL: 0
-    QF_LIA: 0
+  - QF_IDL: 63
+    QF_LIA: 26
     QF_LIRA: 0
   n_excluded: 0
   logic_excluded:
@@ -77,10 +77,10 @@ tracks:
     QF_LIRA: 0
 - name: track_parallel
   status: competitive
-  n_insts: 0
+  n_insts: 89
   logic_insts:
-  - QF_IDL: 0
-    QF_LIA: 0
+  - QF_IDL: 63
+    QF_LIA: 26
     QF_LIRA: 0
   n_excluded: 0
   logic_excluded:
