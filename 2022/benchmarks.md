@@ -22,9 +22,9 @@ tracks:
   url: selected_benchmarks/benchmark_selection_unsat_core_2022.tar.xz
 - name: track_proof_exhibition
   url: selected_benchmarks/benchmark_selection_proof_exhibition_2022.tar.xz
-#- name: track_cloud
-#  url: selected_benchmarks/benchmark_selection_cloud_2022.tar.xz
-#- name: track_parallel
-#  url: selected_benchmarks/benchmark_selection_parallel_2022.tar.xz
+- name: track_cloud
+  url: selected_benchmarks/benchmark_selection_cloud_2022.tar.xz
+- name: track_parallel
+  url: selected_benchmarks/benchmark_selection_parallel_2022.tar.xz
 
 ---
