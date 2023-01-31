@@ -14,16 +14,16 @@ present the competitors and results of the competition.
 {% endfor %}
 
 ### Key dates
- - **Mar 31??** &nbsp; Deadline for new benchmark contributions
- - **April ??** &nbsp; Final versions of competition tools
- - **May ??**    &nbsp; Deadline for first versions of solvers (for all tracks)
- - **May ??**   &nbsp; Deadline for final versions of solvers, including system descriptions
+ - **Mar 31** &nbsp; Deadline for new benchmark contributions
+ - **April 29** &nbsp; Final versions of competition tools
+ - **May 13**    &nbsp; Deadline for first versions of solvers (for all tracks)
+ - **May 27**   &nbsp; Deadline for final versions of solvers, including system descriptions
  - **July 5&ndash;6** &nbsp; SMT Workshop (presentation of results)
 
 ### Organizers
 - [François Bobot](https://github.com/bobot) (chair) - CEA List, France
-- [Jochen Hoenicke](https://jochen-hoenicke.de/) - Certora
 - [Martin Bromberger](https://www.mpi-inf.mpg.de/departments/automation-of-logic/people/martin-bromberger) - MPI Informatik, Germany
+- [Jochen Hoenicke](https://jochen-hoenicke.de/) - Certora, Israel
 
 SMT-COMP 2023 is organized under the direction of the SMT Steering
 Committee.
