@@ -22,7 +22,7 @@ present the competitors and results of the competition.
 
 ### Organizers
 - [François Bobot](https://github.com/bobot) (chair) - CEA List, France
-- [Martin Bromberger](https://www.mpi-inf.mpg.de/departments/automation-of-logic/people/martin-bromberger) - MPI Informatik, Germany
+- [Martin Bromberger](https://www.mpi-inf.mpg.de/departments/automation-of-logic/people/martin-bromberger) - MPI für Informatik, Germany
 - [Jochen Hoenicke](https://jochen-hoenicke.de/) - Certora, Israel
 
 SMT-COMP 2023 is organized under the direction of the SMT Steering
