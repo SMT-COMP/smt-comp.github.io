@@ -25,9 +25,8 @@ benchmarks that come with a description of why they are difficult and
 important. Of course, new challenging benchmarks are always
 appreciated.
 
-For your submission please follow the guidelines in
-
-https://smt-comp.github.io/benchmark_submission.html
+For your submission please follow 
+[these guidelines](https://smt-comp.github.io/benchmark_submission.html).
 
 Note that this is a different (but improved) process from previous
 years. If you have questions you can contact us or the SMT-LIB

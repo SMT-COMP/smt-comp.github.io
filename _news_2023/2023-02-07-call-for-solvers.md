@@ -19,11 +19,10 @@ supporting them. Participants of these tracks are required to submit
 their solver via a GitHub repository (which can be private). The
 repository should contain a docker file that compiles the
 solver. Detailed instructions for submitting to these tracks are
-available here (they lift to SMT):
+available [in the aws-samples repository](https://github.com/aws-samples/aws-batch-comp-infrastructure-sample)
+(they lift to SMT).
 
-https://github.com/aws-samples/aws-batch-comp-infrastructure-sample
-
-To participate teams must email aws-smtcomp-2023@googlegroups.com with
+To participate teams must email [aws-smtcomp-2023@googlegroups.com](mailto:aws-smtcomp-2023@googlegroups.com) with
 the following:
 
 1. name of the solver and a list of the authors
