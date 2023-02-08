@@ -1,3 +1,30 @@
+- name: 2023
+  link: 2023/index.html
+  url: 2023
+  sublinks:
+#  - name: Rules
+#    link: 2023/rules.pdf
+#  - name: Benchmarks
+#    link: 2023/benchmarks.html
+#  - name: Tools
+#    link: 2023/tools.html
+#  - name: Specs
+#    link: 2023/specs.html
+#  - name: Proof Exhibition Track
+#    link: 2023/proof-track.html
+#  - name: Parallel & Cloud Tracks
+#    link: 2023/parallel-and-cloud-tracks.html
+#  - name: Participants
+#    link: 2023/participants.html
+#  - name: Results
+#    link: 2023/results.html
+#  - name: Statistics
+#    link: 2023/stats.html
+#  - name: Comparisons
+#    link: 2023/comparisons.html
+#  - name: Slides
+#    link: 2023/slides.html
+
 - name: 2022
   link: 2022/index.html
   url: 2022
