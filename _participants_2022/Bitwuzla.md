@@ -11,7 +11,7 @@ wrapperTool: ""
 derivedTool: ""
 competing: "yes"
 seed: "42"
-solverHomePage: "bitwuzla.github.io"
+solverHomePage: "https://bitwuzla.github.io"
 sysDescrUrl: "https://bitwuzla.github.io/data/smtcomp2022/paper.pdf"
 sysDescrName: "Bitwuzla at the SMT-COMP 2022"
 divisions:

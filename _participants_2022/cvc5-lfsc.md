@@ -11,7 +11,7 @@ wrapperTool: ""
 derivedTool: ""
 competing: "yes"
 seed: "5"
-solverHomePage: "cvc5.github.io"
+solverHomePage: "https://cvc5.github.io"
 sysDescrUrl: "cvc5.pdf"
 sysDescrName: "cvc5 at the SMT Competition 2022"
 divisions:
