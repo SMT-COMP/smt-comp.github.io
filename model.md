@@ -16,8 +16,8 @@ questions how a solver should describe the model it chose.
 We propose that solvers should give the values similar as for
 uninterpreted functions using `define-fun`.  The given function definition
 must coincide on the defined inputs with the values given by the
-theory.  To achieve this, the function definition may call the theory
-function again.
+theory.  To achieve this, the function definition may call the original theory
+function using the same name as the function that is defined.
 
 In the model validation track require that solvers give the values for
 an undefined input, if it affects the satisfiability of the benchmark.
@@ -28,13 +28,13 @@ that case and calls the original theory function in the other case.
 Here are some examples, for valid definitions of theory functions:
 
 ```smt2
-(define-fun div ((Int a) (Int b)) (Int)
+(define-fun div ((a Int) (b Int)) Int
    (ite (= b 0) (ite (= a 0) 5 0) (div a b)))
-(define-fun car (((List Int) a)) (List Int)
+(define-fun car ((a (List Int))) (List Int)
    (match a
       ((cons hd tl) hd)
       (nil  42)))
-(define-fun cdr (((List Int) a)) Int
+(define-fun cdr ((a (List Int))) Int
    (ite ((_ is cons) a) (cdr a) a))
 ```
 
@@ -66,10 +66,15 @@ TODO
 It currently exists two propositions of representation of array values:
 
 1. By building a value using `const`, and  `store`:
-`(define-fun b () (Array Int Real) (store ((as const (Array Int Real)) 0.0) 0 (/ (- 1) 2)))`
+
+```smt2
+(define-fun b () (Array Int Real)
+   (store ((as const (Array Int Real)) 0.0) 0 (/ (- 1) 2)))
+```
 
 2. By using an additional uninterpreted function:
-```
+
+```smt2
 (define-fun b () (Array Int Real)
   (_ as-array k!1))
 (define-fun k!1 ((x!0 Int)) Real
@@ -85,7 +90,7 @@ and can handle models for problems with quantifications. Since Smtlib3 should
 introduce anonymous functions we propose to backport the feature just for the
 definition of model of arrays. Moreover we propose to add the function `as-array` to convert from a function `(-> A B)` to an array `(Array A B)`.
 
-```
+```smt2
 (define-fun b () (Array Int Real)
   (as-array (lambda ((x!0 Int))
    (ite (= x!0 1) 3.0
