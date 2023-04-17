@@ -7,6 +7,37 @@ SMTCOMP.
 
 ## Partial functions
 
+Some theory functions are only partially defined, e.g., division by
+zero.  The SMT semantics states that a benchmark is sat if there is an
+extension of these partial functions to a total function, i.e., the
+value of the function can be chosen by the solver.  This begs the
+questions how a solver should describe the model it chose.
+
+We propose that solvers should give the values similar as for
+uninterpreted functions using `define-fun`.  The given function definition
+must coincide on the defined inputs with the values given by the
+theory.  To achieve this, the function definition may call the theory
+function again.
+
+In the model validation track require that solvers give the values for
+an undefined input, if it affects the satisfiability of the benchmark.
+A solver should give a concrete value for all undefined inputs.  A
+simple way to achieve this is with an `ite` expression that checks if
+the input leads to undefinedness and provides a concrete expression in
+that case and calls the original theory function in the other case.
+Here are some examples, for valid definitions of theory functions:
+
+```smt2
+(define-fun div ((Int a) (Int b)) (Int)
+   (ite (= b 0) (ite (= a 0) 5 0) (div a b)))
+(define-fun car (((List Int) a)) (List Int)
+   (match a
+      ((cons hd tl) hd)
+      (nil  42)))
+(define-fun cdr (((List Int) a)) Int
+   (ite ((_ is cons) a) (cdr a) a))
+```
+
 ## Algebraic numbers
 
 Representation of (algebraic
