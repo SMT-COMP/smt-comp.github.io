@@ -66,14 +66,11 @@ TODO
 It currently exists two propositions of representation of array values:
 
 1. By building a value using `const`, and  `store`:
-
 ```smt2
 (define-fun b () (Array Int Real)
    (store ((as const (Array Int Real)) 0.0) 0 (/ (- 1) 2)))
 ```
-
 2. By using an additional uninterpreted function:
-
 ```smt2
 (define-fun b () (Array Int Real)
   (_ as-array k!1))
