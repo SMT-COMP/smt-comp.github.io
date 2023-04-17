@@ -66,19 +66,19 @@ TODO
 It currently exists two propositions of representation of array values:
 
 1. By building a value using `const`, and  `store`:
-```smt2
-(define-fun b () (Array Int Real)
-   (store ((as const (Array Int Real)) 0.0) 0 (/ (- 1) 2)))
-```
+   ```smt2
+   (define-fun b () (Array Int Real)
+      (store (store ((as const (Array Int Real)) 2.0) 0 1.0) 1 3.0))
+   ```
 2. By using an additional uninterpreted function:
-```smt2
-(define-fun b () (Array Int Real)
-  (_ as-array k!1))
-(define-fun k!1 ((x!0 Int)) Real
-  (ite (= x!0 1) 3.0
-  (ite (= x!0 0) 1.0
-   2.0)))
-```
+   ```smt2
+   (define-fun b () (Array Int Real)
+     (_ as-array k!1))
+   (define-fun k!1 ((x!0 Int)) Real
+     (ite (= x!0 1) 3.0
+     (ite (= x!0 0) 1.0
+      2.0)))
+   ```
 
 The first propositions gives directly a constant term (that use the symbol const
 that is not defined by the SMTlib format) when the second propositions requires
