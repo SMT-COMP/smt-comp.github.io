@@ -88,7 +88,7 @@ We identified two opposing objectives:
 - Uniqueness of the representation
 - Human readability
 
-The first objective allows knowing syntactically which values are equal in a model. The human readability means that a human can get an understanding of the value of the number just by reading the value. We propose two ways to write values of algebraic numbers that corresponding to one objective each `root-of-with-ordering` and `root-of-with-interval`. In both case the polynomial with integer coefficient is represented by the list of coefficient from the smallest degree to the greatest $x^2-2$ is `((- 2) 0 1)`.
+The first objective allows checking syntactically which values are equal in a model. The human readability means that a human can get an understanding of the value of the number just by reading the value. We propose two ways to write values of algebraic numbers that corresponding to one objective each `root-of-with-ordering` and `root-of-with-interval`. In both case the polynomial with integer coefficient is represented by the list of coefficients in ascending order, i.e., from the coefficient of the constant term to the leading coefficient.  For example, $x^2 - 2$ is represented as `((- 2) 0 1)`.  For uniqueness, the coefficients should be coprime integers and the leading coefficient should be positive.
 
 
 * `(root-of-with-ordering (p_0 p_1 ... p_n) i)` represents the `i`-th root ordered with multiplicity from the smallest to greatest of the polynomial `(p_0 p_1 ... p_n)`. Here, `i` is a numeral (non-negative integer) and is `0` for the smallest root of the polynomial. The polynomial must be the unique reduced minimal polynomial, in particular, it must only have simple roots.
