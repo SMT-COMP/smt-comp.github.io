@@ -1,7 +1,8 @@
 ## Experimental model validation track
 
 The format for the model output of some theories is not yet defined by the
-SMTLIB. The following document describe proposition of such definitions. The format will be used by the
+SMTLIB. The following document describes our proposal of such definitions.
+This format will be used by the
 model validator of the SMTLIB for the experimental model validation track of the
 SMTCOMP 2023.
 
@@ -19,13 +20,16 @@ must coincide on the defined inputs with the values given by the
 theory.  To achieve this, the function definition may call the original theory
 function using the same name as the function that is defined.
 
-In the model validation track require that solvers give the values for
+In the model validation track, solvers MUST give the values for
 an undefined input, if it affects the satisfiability of the benchmark.
-A solver should give a concrete value for all undefined inputs.  A
+A solver SHOULD give a concrete value for all undefined inputs.  A
 simple way to achieve this is with an `ite` expression that checks if
 the input leads to undefinedness and provides a concrete expression in
 that case and calls the original theory function in the other case.
-Here are some examples, given that the following definition of an algebraic datatype is present in the input problem:
+
+As an example, consider the theories of non-linear arithmetic and data
+types and the following definition of an algebraic data type for lists
+in the input problem:
 
 ```smt2
 (declare-datatypes ((list 1)) ((par (alpha) (
@@ -34,7 +38,8 @@ Here are some examples, given that the following definition of an algebraic data
 ))))
 ```
 
-The model with valid definitions of theory functions:
+The partially defined theory functions may be defined using the following
+definitions in the model:
 
 ```smt2
 (define-fun div ((a Int) (b Int)) Int
@@ -47,13 +52,20 @@ The model with valid definitions of theory functions:
    (ite ((_ is cons) a) (cdr a) a))
 ```
 
-It is not a recursive function, more like shadowing. The model checker is lenient, it will complain only if it needs a value in the uninterpreted domain of a partial function. For example for `assert (= 0.5 (div 1.0 x))`, the definition of `div` can be omitted if the value of `x` is `2.0` is the model, but it can't be omitted if it is `0.0`.
+The functions `div`/`car`/`cdr` should not be considered to be recursive function.
+Instead the definition shadows the (partially defined) theory function and
+the definition calls the original theory function in the function body.
+The model checker
+is lenient, it will complain only if it needs a value in the uninterpreted
+domain of a partial function. For example for `(assert (= 0.5 (div 1.0 x)))`,
+the definition of `div` can be omitted if the solver chose `2.0` as the
+value for `x` in the model, but it can't be omitted if it chose `0.0`.
 
 ## Algebraic numbers
 
-Representation of (algebraic
+Representations of (algebraic
 numbers)[https://en.wikipedia.org/wiki/Algebraic_number] are needed for
-representing models of `QF_NRA`. Their representation usually consists in two
+representing models of `QF_NRA`. Their representation usually consists of two
 parts, one polynomial and a way to specify which root of the polynomial is the
 represented algebraic numbers.
 
@@ -79,14 +91,14 @@ We identified two opposing objectives:
 The first objective allows knowing syntactically which values are equal in a model. The human readability means that a human can get an understanding of the value of the number just by reading the value. We propose two ways to write values of algebraic numbers that corresponding to one objective each `root-of-with-ordering` and `root-of-with-interval`. In both case the polynomial with integer coefficient is represented by the list of coefficient from the smallest degree to the greatest $x^2-2$ is `((- 2) 0 1)`.
 
 
-* `(root-of-with-ordering (p_0 p_1 ... p_n) i)` represents the `i` nth root ordered with multiplicity from the smallest to greatest of the polynomial `(p_0 p_1 ... p_n)`. `i` is a numeral (positive integer). The polynomial must be the unique reduced minimal polynomial.
-* `(root-of-with-interval (p_0 p_1 ... p_n) (min max))` represents the unique root between `min` and `max` of the polynomial `(p_0 p_1 ... p_n)`. `i` is an integer. `min` and `max` are decimal, with negative number written as `(- 1.0)`.
+* `(root-of-with-ordering (p_0 p_1 ... p_n) i)` represents the `i`-th root ordered with multiplicity from the smallest to greatest of the polynomial `(p_0 p_1 ... p_n)`. Here, `i` is a numeral (non-negative integer) and is `0` for the smallest root of the polynomial. The polynomial must be the unique reduced minimal polynomial, in particular, it must only have simple roots.
+* `(root-of-with-interval (p_0 p_1 ... p_n) (min max))` represents the unique root between `min` and `max` of the polynomial `(p_0 p_1 ... p_n)`. `i` is an integer. `min` and `max` are rational model values, e.g. `(0.0 (/ 1.0 2.0))` for the interval `[0, .5]` or `((- 1.0) (/ (- 1.0) 2.0))` for the interval [-1, -.5].
 
 The constraint on the uniqueness of the polynomial in `root-of-with-ordering` could perhaps be removed.
 
 ## Array values
 
-It currently exists two propositions of representation of array values:
+There are currently three proposed ways to represent array values:
 
 1. By building a value using `const`, and `store`:
    ```smt2
@@ -102,14 +114,24 @@ It currently exists two propositions of representation of array values:
      (ite (= x!0 0) 1.0
       2.0)))
    ```
+3. By building an array from model values and `store`:
+   ```smt2
+   (define-fun b () (Array Int Real)
+      (store (store (as @array0 (Array Int Real)) 0 1.0) 1 3.0))
+   ```
+   Note that here the value is not uniquely defined.  For our purpose,
+   the array values must explicitly use store to define values for all
+   indices that are read by any `select` in the benchmark.
+   Different model values for arrays are considered
+   to be not equal like in the UF logic.
 
 The first propositions gives directly a constant term (that use the symbol `const`
 that is not defined by the SMTLIB format) when the second proposition requires
 to define an additional function.
 
  The second proposition is more general
-and can handle models for problems with quantifications. Since Smtlib3 should
-introduce anonymous functions we though proposing to backport the feature just for the
+and can handle models for problems with quantifiers. Since SMT-LIB 3 should
+introduce anonymous functions we propose to backport the feature for the
 definition of model of arrays with the addition of the function `as-array` to convert from a function `(-> A B)` to an array `(Array A B)`. We would have
 
 ```smt2
@@ -120,7 +142,12 @@ definition of model of arrays with the addition of the function `as-array` to co
     2.0)))))
 ```
 
-However using generic functions for defining arrays makes the valuation of equalities between arrays complicated. So in order to keep the ability to compute the interpretation of quantifier free formulas, we propose to require the first propositions for array models in quantifier free logic. That do not mandate the `const` function to be builtin in the theory, it could appear only in the model even if disallow to put back the models as assertions.
-
+However, using generic functions for defining arrays makes it harder for
+the model validator to evaluate array equality (extensionality).
+So in order to keep the validator simple for quantifier free formulas,
+we require the first way of defining array models in quantifier free logic.
+The `const` function is only visible in the array models and not part of the
+theory.  A benchmark problem must not contain the `const` function in an
+assertion.
 
 To sum up, in quantifier free logic, model for arrays should be represented using `store` and `const` function.
