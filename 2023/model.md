@@ -91,10 +91,12 @@ We identified two opposing objectives:
 The first objective allows checking syntactically which values are equal in a model. The human readability means that a human can get an understanding of the value of the number just by reading the value. We propose two ways to write values of algebraic numbers that corresponding to one objective each `root-of-with-ordering` and `root-of-with-interval`. In both case the polynomial with integer coefficient is represented by the list of coefficients in ascending order, i.e., from the coefficient of the constant term to the leading coefficient.  For example, $x^2 - 2$ is represented as `((- 2) 0 1)`.  For uniqueness, the coefficients should be coprime integers and the leading coefficient should be positive.
 
 
-* `(root-of-with-ordering (p_0 p_1 ... p_n) i)` represents the `i`-th root ordered with multiplicity from the smallest to greatest of the polynomial `(p_0 p_1 ... p_n)`. Here, `i` is a numeral (non-negative integer) and is `0` for the smallest root of the polynomial. The polynomial must be the unique reduced minimal polynomial, in particular, it must only have simple roots.
-* `(root-of-with-interval (p_0 p_1 ... p_n) (min max))` represents the unique root between `min` and `max` of the polynomial `(p_0 p_1 ... p_n)`. `i` is an integer. `min` and `max` are rational model values, e.g. `(0.0 (/ 1.0 2.0))` for the interval `[0, .5]` or `((- 1.0) (/ (- 1.0) 2.0))` for the interval [-1, -.5].
+* `(root-of-with-ordering (coeffs p_0 p_1 ... p_n) i)` represents the `i`-th root ordered with multiplicity from the smallest to greatest of the polynomial `(p_0 p_1 ... p_n)`. Here, `i` is a numeral (non-negative integer) and is `0` for the smallest root of the polynomial. The polynomial must be the unique reduced minimal polynomial, in particular, it must only have simple roots.
+* `(root-of-with-interval (coeffs p_0 p_1 ... p_n) (min max))` represents the unique root between `min` and `max` of the polynomial `(p_0 p_1 ... p_n)`. `i` is an integer. `min` and `max` are rational model values, e.g. `(0.0 (/ 1.0 2.0))` for the interval `[0, .5]` or `((- 1.0) (/ (- 1.0) 2.0))` for the interval [-1, -.5].
 
 The constraint on the uniqueness of the polynomial in `root-of-with-ordering` could perhaps be removed.
+
+(EDIT: a previous version did not require `coeffs` but it is necessary in order to be an smtlib term)
 
 ## Array values
 
