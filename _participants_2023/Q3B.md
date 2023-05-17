@@ -4,7 +4,7 @@ year: 2023
 name: "Q3B"
 preliminaryID: "39062"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741312"
 team: "Martin Jonáš, Jan Strejček, Jakub Szymsza"
 variantOf: ""
 wrapperTool: ""
@@ -18,5 +18,4 @@ divisions:
 - name: BV
   tracks:
   - track_single_query
-  - track_incremental
 ---

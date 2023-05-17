@@ -4,7 +4,7 @@ year: 2023
 name: "cvc5"
 preliminaryID: "44516;44517(inc)"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741300"
 team: "Leni Aniva Haniel Barbosa Clark Barrett Martin Brain Vinícius Camillo Gereon Kremer Hanna Lachnitt Abdalrhman Mohamed Mudathir Mohamed Aina Niemetz Andres Nötzli Alex Ozdemir Mathias Preiner Andrew Reynolds Ying Sheng Cesare Tinelli Amalee Wilson Yoni Zohar"
 variantOf: ""
 wrapperTool: ""

@@ -4,7 +4,7 @@ year: 2023
 name: "Z3-Owl"
 preliminaryID: "44471"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741332"
 team: "Xinkai Ma,Jiahui Sun, Siyuan Zhu, Peisen Yao, Rui Chang, Yongwang Zhao, Wensheng Tang, and Charles Zhang"
 variantOf: ""
 wrapperTool: ""

@@ -4,7 +4,7 @@ year: 2023
 name: "Yaga"
 preliminaryID: "44519"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741324"
 team: "Drahomír Hanák, Martin Blicha, Jan Kofroň"
 variantOf: ""
 wrapperTool: ""

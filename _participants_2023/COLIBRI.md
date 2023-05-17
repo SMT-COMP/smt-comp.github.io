@@ -4,7 +4,7 @@ year: 2023
 name: "COLIBRI"
 preliminaryID: "44384"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741297"
 team: "Bruno Marre, François Bobot, Zakaria Chihani"
 variantOf: ""
 wrapperTool: ""

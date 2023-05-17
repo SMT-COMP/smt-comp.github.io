@@ -4,7 +4,7 @@ year: 2023
 name: "ismt"
 preliminaryID: "44467(mv);44468(sq)"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741329"
 team: "Fuqi Jia, Rui Han, Minghao Liu, Cunjing Ge, Pei Huang, Feifei Ma, Jian Zhang."
 variantOf: ""
 wrapperTool: "Yices2 2.6.2 for 44468(sq)"

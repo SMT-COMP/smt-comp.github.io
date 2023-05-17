@@ -4,7 +4,7 @@ year: 2023
 name: "Q3B-pBDD"
 preliminaryID: "36885"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741314"
 team: "Matěj Pavlík (469088@mail.muni.cz) Martin Jonáš (359542@mail.muni.cz) Jan Strejček (xstrejc@fi.muni.cz)"
 variantOf: "Q3B"
 wrapperTool: ""

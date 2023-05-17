@@ -4,7 +4,7 @@ year: 2023
 name: "YicesQS"
 preliminaryID: "39111"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741330"
 team: "Stephane Graham-Lengrand"
 variantOf: ""
 wrapperTool: ""

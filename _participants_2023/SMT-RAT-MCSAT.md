@@ -4,7 +4,7 @@ year: 2023
 name: "SMT-RAT-MCSAT"
 preliminaryID: "44411"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741315"
 team: "Jasper Nalbach, Valentin Promies, Erika Ábrahám, Philip Kroll"
 variantOf: ""
 wrapperTool: ""

@@ -4,7 +4,7 @@ year: 2023
 name: "Z3AlphaSMT"
 preliminaryID: "44520"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741333"
 team: "Zhengyang Lu, Piyush Jha, and Vijay Ganesh"
 variantOf: ""
 wrapperTool: ""

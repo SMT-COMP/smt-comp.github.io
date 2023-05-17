@@ -4,7 +4,7 @@ year: 2023
 name: "Z3strAlpha"
 preliminaryID: "44485"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741334"
 team: "Zhengyang Lu, Stefan Siemer, Piyush Jha, Florin Manea, and Vijay Ganesh∗"
 variantOf: ""
 wrapperTool: ""

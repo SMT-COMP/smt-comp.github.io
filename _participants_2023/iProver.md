@@ -4,7 +4,7 @@ year: 2023
 name: "iProver"
 preliminaryID: "44524"
 finalID: "-1"
-configID_sq: ""
+configID_sq: "741304"
 team: "Konstantin Korovin, Andre Duarte, Edvard K. Holden"
 variantOf: ""
 wrapperTool: "Z3 v4.11.2, MiniSAT v2.0, Vampire v4.7"
