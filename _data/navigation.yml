@@ -16,8 +16,8 @@
     link: 2023/proof-track.html
   - name: Parallel & Cloud Tracks
     link: 2023/parallel-and-cloud-tracks.html
-#  - name: Participants
-#    link: 2023/participants.html
+  - name: Participants
+    link: 2023/participants.html
 #  - name: Results
 #    link: 2023/results.html
 #  - name: Statistics
@@ -26,8 +26,8 @@
 #    link: 2023/comparisons.html
 #  - name: Slides
 #    link: 2023/slides.html
-  - name: Solver submission
-    link: https://forms.gle/xhUDQaTynbS3mccE7
+#  - name: Solver submission
+#    link: https://forms.gle/xhUDQaTynbS3mccE7
 
 - name: 2022
   link: 2022/index.html
