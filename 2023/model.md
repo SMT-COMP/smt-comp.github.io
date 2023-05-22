@@ -96,7 +96,10 @@ The first objective allows checking syntactically which values are equal in a mo
 
 The constraint on the uniqueness of the polynomial in `root-of-with-ordering` could perhaps be removed.
 
-(EDIT: a previous version did not require `coeffs` but it is necessary in order to be an smtlib term)
+(EDIT:
+  * a previous version did not require `coeffs`, but it is necessary in order to be an SMTLIB term.
+  * Because of a typo, the model validator will accept this year both `root-of-with-ordering` and `root-of-with-order`.
+)
 
 ## Array values
 
