@@ -103,14 +103,14 @@ The constraint on the uniqueness of the polynomial in `root-of-with-ordering` co
 
 ## Array values
 
-There are currently three proposed ways to represent array values:
-
-1. By building a value using `const`, and `store`:
+Models for arrays should be represented using the `store` and `const` functions:
    ```smt2
    (define-fun b () (Array Int Real)
       (store (store ((as const (Array Int Real)) 2.0) 0 1.0) 1 3.0))
    ```
-2. By using an additional uninterpreted function:
+
+There were two alternative suggestions but we rejected them for various reasons at least for this years conference. We will still outline them here to explain our reasoning. The alternatives are:
+1. By using an additional uninterpreted function:
    ```smt2
    (define-fun b () (Array Int Real)
      (_ as-array k!1))
@@ -119,7 +119,7 @@ There are currently three proposed ways to represent array values:
      (ite (= x!0 0) 1.0
       2.0)))
    ```
-3. By building an array from model values and `store`:
+2. By building an array from model values and `store`:
    ```smt2
    (define-fun b () (Array Int Real)
       (store (store (as @array0 (Array Int Real)) 0 1.0) 1 3.0))
@@ -130,13 +130,11 @@ There are currently three proposed ways to represent array values:
    Different model values for arrays are considered
    to be not equal like in the UF logic.
 
-The first propositions gives directly a constant term (that use the symbol `const`
-that is not defined by the SMTLIB format) when the second proposition requires
-to define an additional function.
+The const/store representation gives directly a constant term (that use the symbol `const` that is not defined by the SMTLIB format) when the first alternative requires to define an additional function.
 
- The second proposition is more general
+ The first alternative is more general
 and can handle models for problems with quantifiers. Since SMT-LIB 3 should
-introduce anonymous functions we propose to backport the feature for the
+introduce anonymous functions we could backport the feature for the
 definition of model of arrays with the addition of the function `as-array` to convert from a function `(-> A B)` to an array `(Array A B)`. We would have
 
 ```smt2
@@ -155,4 +153,4 @@ The `const` function is only visible in the array models and not part of the
 theory.  A benchmark problem must not contain the `const` function in an
 assertion.
 
-To sum up, in quantifier free logic, model for arrays should be represented using `store` and `const` function.
+To sum up, in quantifier free logic, models for arrays should be represented using `store` and `const` function.
