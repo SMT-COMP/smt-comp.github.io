@@ -92,13 +92,14 @@ The first objective allows checking syntactically which values are equal in a mo
 
 
 * `(root-of-with-ordering (coeffs p_0 p_1 ... p_n) i)` represents the `i`-th root ordered with multiplicity from the smallest to greatest of the polynomial `(p_0 p_1 ... p_n)`. Here, `i` is a numeral (non-negative integer) and is `0` for the smallest root of the polynomial. The polynomial must be the unique reduced minimal polynomial, in particular, it must only have simple roots.
-* `(root-of-with-interval (coeffs p_0 p_1 ... p_n) (min max))` represents the unique root between `min` and `max` of the polynomial `(p_0 p_1 ... p_n)`. `i` is an integer. `min` and `max` are rational model values, e.g. `(0.0 (/ 1.0 2.0))` for the interval `[0, .5]` or `((- 1.0) (/ (- 1.0) 2.0))` for the interval [-1, -.5].
+* `(root-of-with-interval (coeffs p_0 p_1 ... p_n) min max)` represents the unique root between `min` and `max` of the polynomial `(p_0 p_1 ... p_n)`. `i` is an integer. `min` and `max` are rational model values, e.g. `(0.0 (/ 1.0 2.0))` for the interval `[0, .5]` or `((- 1.0) (/ (- 1.0) 2.0))` for the interval [-1, -.5].
 
 The constraint on the uniqueness of the polynomial in `root-of-with-ordering` could perhaps be removed.
 
 (EDIT:
   * a previous version did not require `coeffs`, but it is necessary in order to be an SMTLIB term.
-  * Because of a typo, the model validator will accept this year both `root-of-with-ordering` and `root-of-with-order`.
+  * a previous version used `(min max)` instead of `min max`, but it is necessary in order to be an SMTLIB term.
+  * Because of a typo, the model validator will accept this year both `root-of-with-ordering` and `root-of-with-order` and both `root-of-with-interval` and `root-of-with-enclosure`.
 )
 
 ## Array values
