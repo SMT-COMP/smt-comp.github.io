@@ -1,21 +1,21 @@
 ---
 layout: participant
 year: 2023
-name: "ismt"
-preliminaryID: "44672"
-finalID: "44672"
-configID_sq: ""
+name: "yices-ismt"
+preliminaryID: "44713"
+finalID: "44713"
+configID_sq: "741676"
 team: "Fuqi Jia, Rui Han, Minghao Liu, Cunjing Ge, Pei Huang, Feifei Ma, Jian Zhang."
 variantOf: ""
-wrapperTool: ""
+wrapperTool: "Yices2 2.6.2"
 derivedTool: ""
 competing: "yes"
 seed: "20230512"
 solverHomePage: "https://github.com/MRVAPOR/Yices-ismt"
 sysDescrUrl: "https://github.com/MRVAPOR/Yices-ismt-description"
-sysDescrName: "ISMT for SMT-COMP 2023"
+sysDescrName: "Yices-ISMT for SMT-COMP 2023"
 divisions:
 - name: QF_NIA
   tracks:
-  - track_model_validation
+  - track_single_query
 ---

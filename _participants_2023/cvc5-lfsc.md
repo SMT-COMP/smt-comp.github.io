@@ -3,9 +3,9 @@ layout: participant
 year: 2023
 name: "cvc5-lfsc"
 preliminaryID: "44515"
-finalID: "-1"
+finalID: "44736"
 configID_sq: ""
-team: "Leni Aniva Haniel Barbosa Clark Barrett Martin Brain Vinícius Camillo Gereon Kremer Hanna Lachnitt Abdalrhman Mohamed Mudathir Mohamed Aina Niemetz Andres Nötzli Alex Ozdemir Mathias Preiner Andrew Reynolds Ying Sheng Cesare Tinelli Amalee Wilson Yoni Zohar"
+team: "Leni Aniva, Haniel Barbosa, Clark Barrett, Martin Brain, Vinícius Camillo, Gereon Kremer, Hanna Lachnitt, Abdalrhman Mohamed, Mudathir Mohamed, Aina Niemetz, Andres Nötzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Ying Sheng, Cesare Tinelli, Amalee Wilson, Yoni Zohar"
 variantOf: "44516"
 wrapperTool: ""
 derivedTool: ""

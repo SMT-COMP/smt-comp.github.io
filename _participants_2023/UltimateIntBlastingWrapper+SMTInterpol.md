@@ -15,34 +15,40 @@ solverHomePage: "https://ultimate-pa.org/"
 sysDescrUrl: "https://www.informatik.uni-freiburg.de/~heizmann/tmp/2023UltimateIntBlastingWrapper.pdf"
 sysDescrName: "Ultimate IntBlastingWrapper"
 divisions:
+- name: ABV
+  tracks:
+  - track_single_query
+- name: AUFBV
+  tracks:
+  - track_single_query
+- name: AUFBVDTLIA
+  tracks:
+  - track_single_query
+- name: BV
+  tracks:
+  - track_single_query
 - name: QF_ABV
   tracks:
   - track_single_query
-  - track_incremental
-  - track_unsat_core
 - name: QF_AUFBV
   tracks:
   - track_single_query
-  - track_incremental
-  - track_unsat_core
 - name: QF_BV
   tracks:
   - track_single_query
-  - track_incremental
-  - track_unsat_core
 - name: QF_UFBV
   tracks:
   - track_single_query
-  - track_incremental
-  - track_unsat_core
 - name: QF_UFBVDT
   tracks:
   - track_single_query
-  - track_unsat_core
-- name: QF_AUFBVLIA
+- name: UFBV
   tracks:
-  - track_incremental
-- name: QF_UFBVLIA
+  - track_single_query
+- name: UFBVDT
   tracks:
-  - track_incremental
+  - track_single_query
+- name: UFBVLIA
+  tracks:
+  - track_single_query
 ---

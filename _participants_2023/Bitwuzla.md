@@ -117,12 +117,6 @@ divisions:
   - track_single_query
   - track_unsat_core
   - track_model_validation
-- name: QF_UF
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
-  - track_model_validation
 - name: QF_UFBV
   tracks:
   - track_single_query
@@ -135,11 +129,6 @@ divisions:
   - track_incremental
   - track_unsat_core
   - track_model_validation
-- name: UF
-  tracks:
-  - track_single_query
-  - track_incremental
-  - track_unsat_core
 - name: UFBV
   tracks:
   - track_single_query

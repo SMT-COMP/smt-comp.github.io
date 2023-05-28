@@ -39,7 +39,4 @@ divisions:
 - name: QF_UFFP
   tracks:
   - track_single_query
-- name: QF_UFFPDTNIRA
-  tracks:
-  - track_single_query
 ---

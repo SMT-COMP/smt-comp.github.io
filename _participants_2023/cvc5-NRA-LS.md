@@ -1,9 +1,9 @@
 ---
 layout: participant
 year: 2023
-name: "NRA-LS"
+name: "cvc5-NRA-LS"
 preliminaryID: "44469"
-finalID: "-1"
+finalID: "44741;44742(mv)"
 configID_sq: "741307"
 team: "Minghao Liu, Kunhang Lv, Fuqi Jia, Rui Han, Yu Zhang, Pei Huang, Feifei Ma, Jian Zhang"
 variantOf: ""

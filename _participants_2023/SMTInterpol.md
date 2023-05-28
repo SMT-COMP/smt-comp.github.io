@@ -2,9 +2,9 @@
 layout: participant
 year: 2023
 name: "SMTInterpol"
-preliminaryID: "44472"
-finalID: "-1"
-configID_sq: "741317"
+preliminaryID: "44719"
+finalID: "44689"
+configID_sq: "741683"
 team: "Jürgen Christ, Daniel Dietsch, Leonard Fichtner, Joanna Greulich, Matthias Heizmann, Jochen Hoenicke, Moritz Mohr, Alexander Nutz, Markus Pomrehn, Pascal Raiola, Tanja Schindler"
 variantOf: ""
 wrapperTool: ""

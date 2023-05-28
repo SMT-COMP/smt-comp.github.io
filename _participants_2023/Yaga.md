@@ -2,17 +2,17 @@
 layout: participant
 year: 2023
 name: "Yaga"
-preliminaryID: "44519"
+preliminaryID: "44687"
 finalID: "-1"
-configID_sq: "741324"
+configID_sq: "741634"
 team: "Drahomír Hanák, Martin Blicha, Jan Kofroň"
 variantOf: ""
 wrapperTool: ""
 derivedTool: ""
 competing: "yes"
 seed: "3621199"
-solverHomePage: "https://TBD"
-sysDescrUrl: "https://drive.google.com/file/d/1TXjjcMCOnuKDu47fZ11zdecE0pVRftCy/view?usp=sharing"
+solverHomePage: "https://github.com/d3sformal/yaga"
+sysDescrUrl: "https://d3s.mff.cuni.cz/files/research/formal-methods/yaga/abstract-2023.pdf"
 sysDescrName: "The Yaga SMT Solver in SMT-COMP 2023"
 divisions:
 - name: QF_LRA
