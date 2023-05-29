@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "Bitwuzla"
 preliminaryID: "44483"
-finalID: "-1"
+finalID: "44756"
 configID_sq: "741296"
 team: "Aina Niemetz, Mathias Preiner"
 variantOf: ""
