@@ -2,8 +2,8 @@
 layout: participant
 year: 2023
 name: "Yaga"
-preliminaryID: "44687"
-finalID: "-1"
+preliminaryID: "44678"
+finalID: "44678"
 configID_sq: "741634"
 team: "Drahomír Hanák, Martin Blicha, Jan Kofroň"
 variantOf: ""

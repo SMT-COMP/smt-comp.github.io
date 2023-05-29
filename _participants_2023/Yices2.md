@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "Yices2"
 preliminaryID: "44479;44480(inc);44481(mv)"
-finalID: "-1"
+finalID: "44479;44751(inc);44755(mv)"
 configID_sq: "741325"
 team: "Bruno Dutertre, Aman Goel, St ́ephane Graham-Lengrand, Ahmed Irfan, Dejan Jovanovi ́c, Ian A. Mason"
 variantOf: ""

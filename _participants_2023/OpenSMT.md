@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "OpenSMT"
 preliminaryID: "44686"
-finalID: "-1"
+finalID: "44750"
 configID_sq: "741633"
 team: "Martin Blicha, Konstantin I. Britikov, Antti E. J. Hyvärinen, Rodrigo Otoni, Natasha Sharygina"
 variantOf: ""
