@@ -6,7 +6,7 @@ participants: participants_2023
 
 nyse:
   date: 2023-05-30
-  value: 
+  value: 15078.6900
 
 divisions:
 - name: Arith
