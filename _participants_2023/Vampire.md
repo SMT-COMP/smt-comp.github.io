@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "Vampire"
 preliminaryID: "44484"
-finalID: "-1"
+finalID: "44484"
 configID_sq: "741323"
 team: "Giles Reger, Martin Suda, Andrei Voronkov, Laura Kovacs, Ahmed Bhayat, Bernhard Gleiss, Marton Hajdu, Petra Hozzova, Jakob Rath, Michael Rawson, Johannes Schoisswohl"
 variantOf: ""

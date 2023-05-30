@@ -350,31 +350,26 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
-  - track_model_validation
   - track_proof_exhibition
 - name: QF_UFDT
   tracks:
   - track_single_query
   - track_unsat_core
-  - track_model_validation
   - track_proof_exhibition
 - name: QF_UFDTLIA
   tracks:
   - track_single_query
   - track_unsat_core
-  - track_model_validation
   - track_proof_exhibition
 - name: QF_UFDTLIRA
   tracks:
   - track_single_query
   - track_unsat_core
-  - track_model_validation
   - track_proof_exhibition
 - name: QF_UFDTNIA
   tracks:
   - track_single_query
   - track_unsat_core
-  - track_model_validation
   - track_proof_exhibition
 - name: QF_UFFP
   tracks:
@@ -387,7 +382,6 @@ divisions:
   tracks:
   - track_single_query
   - track_unsat_core
-  - track_model_validation
   - track_proof_exhibition
 - name: QF_UFIDL
   tracks:

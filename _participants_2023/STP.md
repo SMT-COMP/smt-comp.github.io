@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "STP"
 preliminaryID: "41385"
-finalID: "-1"
+finalID: "41385"
 configID_sq: "741320"
 team: "Various"
 variantOf: ""

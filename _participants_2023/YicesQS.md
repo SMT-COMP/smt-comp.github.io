@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "YicesQS"
 preliminaryID: "39111"
-finalID: "-1"
+finalID: "39111"
 configID_sq: "741330"
 team: "Stephane Graham-Lengrand"
 variantOf: ""

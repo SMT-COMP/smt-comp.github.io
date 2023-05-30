@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "iProver"
 preliminaryID: "44524"
-finalID: "-1"
+finalID: "44768"
 configID_sq: "741304"
 team: "Konstantin Korovin, Andre Duarte, Edvard K. Holden"
 variantOf: ""

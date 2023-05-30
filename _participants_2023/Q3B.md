@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "Q3B"
 preliminaryID: "39062"
-finalID: "-1"
+finalID: "44707"
 configID_sq: "741312"
 team: "Martin Jonáš, Jan Strejček, Jakub Szymsza"
 variantOf: ""
