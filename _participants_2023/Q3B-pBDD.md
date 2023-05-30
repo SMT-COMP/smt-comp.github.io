@@ -15,7 +15,5 @@ solverHomePage: "https://www.fi.muni.cz/~xpavlik5/Q3B-pBDD/"
 sysDescrUrl: "https://www.fi.muni.cz/~xpavlik5/Q3B-pBDD/SMTCOMP23_description.pdf"
 sysDescrName: "Q3B-pBDD in SMT Competition 2023"
 divisions:
-- name: BV
-  tracks:
-  - track_single_query
+
 ---

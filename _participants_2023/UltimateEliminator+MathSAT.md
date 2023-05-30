@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "UltimateEliminator+MathSAT"
 preliminaryID: "44489"
-finalID: "-1"
+finalID: "44761"
 configID_sq: "741321"
 team: "TBA"
 variantOf: ""

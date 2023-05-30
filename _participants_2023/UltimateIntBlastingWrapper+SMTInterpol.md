@@ -3,7 +3,7 @@ layout: participant
 year: 2023
 name: "UltimateIntBlastingWrapper+SMTInterpol"
 preliminaryID: "44525"
-finalID: "-1"
+finalID: "44760"
 configID_sq: "741322"
 team: "Max Barth, Matthias Heizmann"
 variantOf: ""
