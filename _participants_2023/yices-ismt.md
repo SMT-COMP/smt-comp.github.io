@@ -4,7 +4,7 @@ year: 2023
 name: "yices-ismt"
 preliminaryID: "44713"
 finalID: "44713"
-configID_sq: "741676"
+configID_sq: "741783"
 team: "Fuqi Jia, Rui Han, Minghao Liu, Cunjing Ge, Pei Huang, Feifei Ma, Jian Zhang."
 variantOf: ""
 wrapperTool: "Yices2 2.6.2"

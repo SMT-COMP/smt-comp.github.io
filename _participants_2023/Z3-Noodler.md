@@ -4,7 +4,7 @@ year: 2023
 name: "Z3-Noodler"
 preliminaryID: "44407"
 finalID: "44716"
-configID_sq: "741331"
+configID_sq: "741785"
 team: "Vojťech Havlena, Juraj Síč, David Chocholatý, Ondřej Lengál, Lukáš Holík, Yu-Fang Chen"
 variantOf: ""
 wrapperTool: ""

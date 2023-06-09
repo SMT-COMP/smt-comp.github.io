@@ -4,7 +4,7 @@ year: 2023
 name: "SMTInterpol"
 preliminaryID: "44719"
 finalID: "44759"
-configID_sq: "741683"
+configID_sq: "741799"
 team: "Jürgen Christ, Daniel Dietsch, Leonard Fichtner, Joanna Greulich, Matthias Heizmann, Jochen Hoenicke, Moritz Mohr, Alexander Nutz, Markus Pomrehn, Pascal Raiola, Tanja Schindler"
 variantOf: ""
 wrapperTool: ""
@@ -78,6 +78,18 @@ divisions:
   - track_single_query
   - track_unsat_core
   - track_proof_exhibition
+- name: QF_AX
+  tracks:
+  - track_single_query
+  - track_unsat_core
+  - track_model_validation
+  - track_proof_exhibition
+- name: QF_DT
+  tracks:
+  - track_single_query
+  - track_unsat_core
+  - track_model_validation
+  - track_proof_exhibition
 - name: QF_IDL
   tracks:
   - track_single_query
@@ -105,6 +117,19 @@ divisions:
   - track_model_validation
   - track_proof_exhibition
 - name: QF_RDL
+  tracks:
+  - track_single_query
+  - track_unsat_core
+  - track_model_validation
+  - track_proof_exhibition
+- name: QF_UF
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+  - track_model_validation
+  - track_proof_exhibition
+- name: QF_UFDT
   tracks:
   - track_single_query
   - track_unsat_core
@@ -152,6 +177,17 @@ divisions:
   tracks:
   - track_single_query
   - track_incremental
+  - track_unsat_core
+  - track_proof_exhibition
+- name: UF
+  tracks:
+  - track_single_query
+  - track_incremental
+  - track_unsat_core
+  - track_proof_exhibition
+- name: UFDT
+  tracks:
+  - track_single_query
   - track_unsat_core
   - track_proof_exhibition
 - name: UFDTLIA

@@ -4,7 +4,7 @@ year: 2023
 name: "Q3B-pBDD"
 preliminaryID: "36885"
 finalID: "-1"
-configID_sq: "741314"
+configID_sq: ""
 team: "Matěj Pavlík, Martin Jonáš, Jan Strejček"
 variantOf: "Q3B"
 wrapperTool: ""

@@ -4,7 +4,7 @@ year: 2023
 name: "UltimateIntBlastingWrapper+SMTInterpol"
 preliminaryID: "44525"
 finalID: "44760"
-configID_sq: "741322"
+configID_sq: "741802"
 team: "Max Barth, Matthias Heizmann"
 variantOf: ""
 wrapperTool: "SMTInterpol 2.5-1252-g82eb3a0"

@@ -4,7 +4,7 @@ year: 2023
 name: "OSTRICH"
 preliminaryID: "44420"
 finalID: "44767"
-configID_sq: "741311"
+configID_sq: "741807"
 team: "Taolue Chen Riccardo De Masellis Alejandro Flores-Lamas Matthew Hague Zhilei Han Denghang Hu Shuanglong Kan Anthony W. Lin Oliver Markgraf Philipp Rümmer Amanda Stjerna Zhilin Wu"
 variantOf: ""
 wrapperTool: ""

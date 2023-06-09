@@ -4,7 +4,7 @@ year: 2023
 name: "STP"
 preliminaryID: "41385"
 finalID: "41385"
-configID_sq: "741320"
+configID_sq: "741774"
 team: "Various"
 variantOf: ""
 wrapperTool: ""

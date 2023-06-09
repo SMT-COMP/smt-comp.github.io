@@ -4,7 +4,7 @@ year: 2023
 name: "UltimateEliminator+MathSAT"
 preliminaryID: "44489"
 finalID: "44761"
-configID_sq: "741321"
+configID_sq: "741804"
 team: "TBA"
 variantOf: ""
 wrapperTool: "MathSAT-5.6.9"

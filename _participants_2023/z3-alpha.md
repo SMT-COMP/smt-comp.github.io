@@ -4,7 +4,7 @@ year: 2023
 name: "z3-alpha"
 preliminaryID: "44485"
 finalID: "44764"
-configID_sq: "741334"
+configID_sq: "741805"
 team: "Zhengyang Lu, Stefan Siemer, Piyush Jha, Florin Manea, Joel Day, and Vijay Ganesh∗"
 variantOf: ""
 wrapperTool: ""
