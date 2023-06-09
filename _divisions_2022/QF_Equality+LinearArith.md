@@ -74,14 +74,14 @@ tracks:
     QF_UFLRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 577
+  n_insts: 1301
   logic_insts:
-  - QF_ALIA: 30
-    QF_AUFLIA: 300
-    QF_UFDTLIRA: 17
-    QF_UFIDL: 113
-    QF_UFLIA: 16
-    QF_UFLRA: 101
+  - QF_ALIA: 72
+    QF_AUFLIA: 380
+    QF_UFDTLIRA: 66
+    QF_UFIDL: 300
+    QF_UFLIA: 183
+    QF_UFLRA: 300
   n_excluded: 0
   logic_excluded:
   - QF_ALIA: 0

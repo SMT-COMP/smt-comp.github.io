@@ -26,9 +26,9 @@ tracks:
   - QF_LRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 196
+  n_insts: 204
   logic_insts:
-  - QF_LRA: 196
+  - QF_LRA: 204
     QF_RDL: 0
   n_excluded: 0
   logic_excluded:
@@ -36,9 +36,9 @@ tracks:
     QF_RDL: 0
 - name: track_model_validation
   status: competitive
-  n_insts: 582
+  n_insts: 625
   logic_insts:
-  - QF_LRA: 473
+  - QF_LRA: 516
     QF_RDL: 109
   n_excluded: 0
   logic_excluded:
@@ -46,10 +46,10 @@ tracks:
     QF_RDL: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 196
+  n_insts: 462
   logic_insts:
-  - QF_LRA: 196
-    QF_RDL: 0
+  - QF_LRA: 349
+    QF_RDL: 113
   n_excluded: 0
   logic_excluded:
   - QF_LRA: 0

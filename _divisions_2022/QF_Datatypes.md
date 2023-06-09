@@ -28,9 +28,9 @@ tracks:
     QF_UFDT: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 200
+  n_insts: 2361
   logic_insts:
-  - QF_DT: 100
+  - QF_DT: 2261
     QF_UFDT: 100
   n_excluded: 0
   logic_excluded:

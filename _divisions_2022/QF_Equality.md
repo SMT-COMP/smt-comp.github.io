@@ -44,10 +44,10 @@ tracks:
   - QF_UF: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 2263
+  n_insts: 2459
   logic_insts:
-  - QF_AX: 202
-    QF_UF: 2061
+  - QF_AX: 279
+    QF_UF: 2180
   n_excluded: 0
   logic_excluded:
   - QF_AX: 0

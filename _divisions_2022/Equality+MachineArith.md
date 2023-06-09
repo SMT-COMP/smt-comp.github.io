@@ -59,21 +59,21 @@ tracks:
   - ABVFPLRA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 1515
+  n_insts: 1710
   logic_insts:
-  - ABV: 2
-    ABVFP: 0
-    ABVFPLRA: 0
+  - ABV: 23
+    ABVFP: 1
+    ABVFPLRA: 4
     AUFBV: 0
-    AUFBVDTLIA: 20
-    AUFBVDTNIA: 0
+    AUFBVDTLIA: 166
+    AUFBVDTNIA: 3
     AUFBVDTNIRA: 1062
     AUFBVFP: 0
-    AUFFPDTNIRA: 131
+    AUFFPDTNIRA: 132
     UFBV: 0
     UFBVFP: 0
     UFBVLIA: 0
-    UFFPDTNIRA: 300
+    UFFPDTNIRA: 319
   n_excluded: 0
   logic_excluded:
   - ABV: 0
@@ -91,21 +91,21 @@ tracks:
     UFFPDTNIRA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 1515
+  n_insts: 2197
   logic_insts:
-  - ABV: 2
-    ABVFP: 0
-    ABVFPLRA: 0
-    AUFBV: 0
-    AUFBVDTLIA: 20
-    AUFBVDTNIA: 0
+  - ABV: 23
+    ABVFP: 1
+    ABVFPLRA: 4
+    AUFBV: 321
+    AUFBVDTLIA: 171
+    AUFBVDTNIA: 3
     AUFBVDTNIRA: 1062
-    AUFBVFP: 0
-    AUFFPDTNIRA: 131
-    UFBV: 0
-    UFBVFP: 0
-    UFBVLIA: 0
-    UFFPDTNIRA: 300
+    AUFBVFP: 24
+    AUFFPDTNIRA: 132
+    UFBV: 126
+    UFBVFP: 1
+    UFBVLIA: 8
+    UFFPDTNIRA: 321
   n_excluded: 0
   logic_excluded:
   - ABV: 0

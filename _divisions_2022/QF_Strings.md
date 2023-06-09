@@ -21,10 +21,10 @@ tracks:
     QF_SNIA: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 0
+  n_insts: 3352
   logic_insts:
-  - QF_S: 0
-    QF_SLIA: 0
+  - QF_S: 172
+    QF_SLIA: 3180
     QF_SNIA: 0
   n_excluded: 0
   logic_excluded:
@@ -33,10 +33,10 @@ tracks:
     QF_SNIA: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 0
+  n_insts: 4593
   logic_insts:
-  - QF_S: 0
-    QF_SLIA: 0
+  - QF_S: 172
+    QF_SLIA: 4421
     QF_SNIA: 0
   n_excluded: 0
   logic_excluded:

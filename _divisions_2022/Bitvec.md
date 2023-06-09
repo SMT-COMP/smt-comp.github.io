@@ -23,17 +23,17 @@ tracks:
   - BV: 0
 - name: track_unsat_core
   status: competitive
-  n_insts: 300
+  n_insts: 362
   logic_insts:
-  - BV: 300
+  - BV: 362
   n_excluded: 0
   logic_excluded:
   - BV: 0
 - name: track_proof_exhibition
   status: competitive
-  n_insts: 300
+  n_insts: 2660
   logic_insts:
-  - BV: 300
+  - BV: 2660
   n_excluded: 0
   logic_excluded:
   - BV: 0
