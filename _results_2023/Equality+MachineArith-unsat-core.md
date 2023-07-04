@@ -1,0 +1,105 @@
+---
+layout: result
+resultdate: 2023-07-04 20:19:29
+
+year: 2023
+
+divisions: divisions_2023
+participants: participants_2023
+
+disagreements: disagreements_2023
+division: Equality+MachineArith
+track: track_unsat_core
+n_benchmarks: 492
+time_limit: 1200
+mem_limit: 60
+logics:
+- ABV: 485
+  ABVFP: 3
+  ABVFPLRA: 4
+
+winner_seq: cvc5
+winner_par: cvc5
+sequential:
+- name: cvc5
+  competing: "yes"
+  errorScore: 0
+  correctScore: 151
+  CPUScore: 5.251
+  WallScore: 5.234
+  timeout: 1
+  memout: 0
+- name: 2022-z3-4.8.17
+  competing: "no"
+  errorScore: 0
+  correctScore: 121
+  CPUScore: 1438.91
+  WallScore: 1439.297
+  timeout: 13
+  memout: 0
+- name: Bitwuzla Fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 111
+  CPUScore: 134.839
+  WallScore: 134.856
+  timeout: 3
+  memout: 0
+- name: Bitwuzla
+  competing: "yes"
+  errorScore: 0
+  correctScore: 111
+  CPUScore: 137.77
+  WallScore: 137.882
+  timeout: 3
+  memout: 0
+- name: UltimateEliminator+MathSAT
+  competing: "yes"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 0.0
+  WallScore: 0.0
+  timeout: 0
+  memout: 0
+parallel:
+- name: cvc5
+  competing: "yes"
+  errorScore: 0
+  correctScore: 151
+  CPUScore: 5.251
+  WallScore: 5.234
+  timeout: 1
+  memout: 0
+- name: 2022-z3-4.8.17
+  competing: "no"
+  errorScore: 0
+  correctScore: 121
+  CPUScore: 1438.91
+  WallScore: 1439.297
+  timeout: 13
+  memout: 0
+- name: Bitwuzla Fixed
+  competing: "no"
+  errorScore: 0
+  correctScore: 111
+  CPUScore: 134.839
+  WallScore: 134.856
+  timeout: 3
+  memout: 0
+- name: Bitwuzla
+  competing: "yes"
+  errorScore: 0
+  correctScore: 111
+  CPUScore: 137.77
+  WallScore: 137.882
+  timeout: 3
+  memout: 0
+- name: UltimateEliminator+MathSAT
+  competing: "yes"
+  errorScore: 0
+  correctScore: 0
+  CPUScore: 0.0
+  WallScore: 0.0
+  timeout: 0
+  memout: 0
+---

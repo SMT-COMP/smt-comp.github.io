@@ -331,6 +331,22 @@ divisions:
     - BVFPLRA
     - FP
     - FPLRA
+- name: QF_ADT+BitVec
+  tracks:
+  - name: track_model_validation
+    logics:
+    - QF_ABV
+    - QF_AUFBV
+    - QF_UFBVDT
+- name: QF_ADT+LinArith
+  tracks:
+  - name: track_model_validation
+    logics:
+    - QF_ALIA
+    - QF_AUFLIA
+    - QF_AX
+    - QF_UFDTLIA
+    - QF_UFDTLIRA
 - name: QF_Bitvec
   tracks:
   - name: track_single_query
@@ -395,7 +411,6 @@ divisions:
     - QF_UF
   - name: track_model_validation
     logics:
-    - QF_AX
     - QF_UF
   - name: track_proof_exhibition
     logics:
@@ -430,10 +445,7 @@ divisions:
     - QF_UFBVDT
   - name: track_model_validation
     logics:
-    - QF_ABV
-    - QF_AUFBV
     - QF_UFBV
-    - QF_UFBVDT
   - name: track_proof_exhibition
     logics:
     - QF_ABV
@@ -487,10 +499,6 @@ divisions:
     - QF_UFLRA
   - name: track_model_validation
     logics:
-    - QF_ALIA
-    - QF_AUFLIA
-    - QF_UFDTLIA
-    - QF_UFDTLIRA
     - QF_UFIDL
     - QF_UFLIA
     - QF_UFLRA

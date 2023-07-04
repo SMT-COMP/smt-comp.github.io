@@ -49,19 +49,13 @@ tracks:
     QF_UFBV: 0
     QF_UFBVDT: 0
 - name: track_model_validation
-  status: experimental
-  n_insts: 5706
+  status: competitive
+  n_insts: 412
   logic_insts:
-  - QF_ABV: 5227
-    QF_AUFBV: 24
-    QF_UFBV: 412
-    QF_UFBVDT: 43
+  - QF_UFBV: 412
   n_excluded: 0
   logic_excluded:
-  - QF_ABV: 0
-    QF_AUFBV: 0
-    QF_UFBV: 0
-    QF_UFBVDT: 0
+  - QF_UFBV: 0
 - name: track_proof_exhibition
   status: competitive
   n_insts: 1389

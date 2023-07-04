@@ -4,8 +4,8 @@
   sublinks:
   - name: Rules
     link: 2023/rules.pdf
-#  - name: Benchmarks
-#    link: 2023/benchmarks.html
+  - name: Benchmarks
+    link: 2023/benchmarks.html
 #  - name: Tools
 #    link: 2023/tools.html
   - name: Specs
@@ -18,8 +18,8 @@
     link: 2023/parallel-and-cloud-tracks.html
   - name: Participants
     link: 2023/participants.html
-#  - name: Results
-#    link: 2023/results.html
+  - name: Results
+    link: 2023/results.html
 #  - name: Statistics
 #    link: 2023/stats.html
 #  - name: Comparisons

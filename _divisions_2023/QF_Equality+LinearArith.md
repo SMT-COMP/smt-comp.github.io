@@ -66,23 +66,15 @@ tracks:
     QF_UFLIA: 0
     QF_UFLRA: 0
 - name: track_model_validation
-  status: experimental
-  n_insts: 1449
+  status: competitive
+  n_insts: 921
   logic_insts:
-  - QF_ALIA: 101
-    QF_AUFLIA: 300
-    QF_UFDTLIA: 47
-    QF_UFDTLIRA: 80
-    QF_UFIDL: 206
+  - QF_UFIDL: 206
     QF_UFLIA: 330
     QF_UFLRA: 385
   n_excluded: 0
   logic_excluded:
-  - QF_ALIA: 0
-    QF_AUFLIA: 0
-    QF_UFDTLIA: 0
-    QF_UFDTLIRA: 0
-    QF_UFIDL: 0
+  - QF_UFIDL: 0
     QF_UFLIA: 0
     QF_UFLRA: 0
 - name: track_proof_exhibition
