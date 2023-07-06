@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2023-07-04 20:20:11
+resultdate: 2023-07-06 16:06:19
 
 year: 2023
 
@@ -10,41 +10,53 @@ participants: participants_2023
 disagreements: disagreements_2023
 division: UFDT
 track: track_cloud
-n_benchmarks: 67
+n_benchmarks: 69
 time_limit: 1200
 mem_limit: N/A
 
-winner_par: Vampire
-winner_sat: Vampire
-winner_unsat: Vampire
+winner_par: cvc5
+winner_sat: cvc5
+winner_unsat: cvc5
 winner_24s: cvc5
 
 parallel:
-- name: Vampire
-  competing: "yes"
-  errorScore: 0
-  correctScore: 30
-  WallScore: 9927.332
-  solved: 30
-  solved_sat: 14
-  solved_unsat: 16
-  unsolved: 37
-  abstained: 0
-  timeout: 0
-  memout: 0
 - name: cvc5
   competing: "yes"
   errorScore: 0
-  correctScore: 24
-  WallScore: 8122.28
-  solved: 24
-  solved_sat: 13
+  correctScore: 26
+  WallScore: 9190.693
+  solved: 26
+  solved_sat: 15
   solved_unsat: 11
   unsolved: 43
   abstained: 0
   timeout: 0
   memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 2
+  correctScore: 30
+  WallScore: 9927.332
+  solved: 30
+  solved_sat: 14
+  solved_unsat: 16
+  unsolved: 39
+  abstained: 0
+  timeout: 0
+  memout: 0
 sat:
+- name: cvc5
+  competing: "yes"
+  errorScore: 0
+  correctScore: 15
+  WallScore: 7552.837
+  solved: 15
+  solved_sat: 15
+  solved_unsat: 0
+  unsolved: 4
+  abstained: 50
+  timeout: 0
+  memout: 0
 - name: Vampire
   competing: "yes"
   errorScore: 0
@@ -53,35 +65,11 @@ sat:
   solved: 14
   solved_sat: 14
   solved_unsat: 0
-  unsolved: 3
-  abstained: 50
-  timeout: 0
-  memout: 0
-- name: cvc5
-  competing: "yes"
-  errorScore: 0
-  correctScore: 13
-  WallScore: 6484.424
-  solved: 13
-  solved_sat: 13
-  solved_unsat: 0
-  unsolved: 4
+  unsolved: 5
   abstained: 50
   timeout: 0
   memout: 0
 unsat:
-- name: Vampire
-  competing: "yes"
-  errorScore: 0
-  correctScore: 16
-  WallScore: 3141.104
-  solved: 16
-  solved_sat: 0
-  solved_unsat: 16
-  unsolved: 6
-  abstained: 45
-  timeout: 0
-  memout: 0
 - name: cvc5
   competing: "yes"
   errorScore: 0
@@ -91,7 +79,19 @@ unsat:
   solved_sat: 0
   solved_unsat: 11
   unsolved: 11
-  abstained: 45
+  abstained: 47
+  timeout: 0
+  memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 2
+  correctScore: 16
+  WallScore: 3141.104
+  solved: 16
+  solved_sat: 0
+  solved_unsat: 16
+  unsolved: 6
+  abstained: 47
   timeout: 0
   memout: 0
 twentyfour:
@@ -103,9 +103,9 @@ twentyfour:
   solved: 5
   solved_sat: 0
   solved_unsat: 5
-  unsolved: 62
+  unsolved: 64
   abstained: 0
-  timeout: 59
+  timeout: 61
   memout: 0
 - name: Vampire
   competing: "yes"
@@ -115,8 +115,8 @@ twentyfour:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 67
+  unsolved: 69
   abstained: 0
-  timeout: 67
+  timeout: 69
   memout: 0
 ---

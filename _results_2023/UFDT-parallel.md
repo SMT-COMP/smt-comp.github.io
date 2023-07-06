@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2023-07-04 20:20:13
+resultdate: 2023-07-06 16:06:21
 
 year: 2023
 
@@ -14,24 +14,12 @@ n_benchmarks: 57
 time_limit: 1200
 mem_limit: N/A
 
-winner_par: Vampire
+winner_par: iProver
 winner_sat: Vampire
-winner_unsat: Vampire
-winner_24s: Vampire
+winner_unsat: iProver
+winner_24s: iProver
 
 parallel:
-- name: Vampire
-  competing: "yes"
-  errorScore: 0
-  correctScore: 28
-  WallScore: 3147.154
-  solved: 28
-  solved_sat: 12
-  solved_unsat: 16
-  unsolved: 29
-  abstained: 0
-  timeout: 0
-  memout: 0
 - name: iProver
   competing: "yes"
   errorScore: 0
@@ -44,6 +32,18 @@ parallel:
   abstained: 0
   timeout: 0
   memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 2
+  correctScore: 26
+  WallScore: 3139.542
+  solved: 26
+  solved_sat: 12
+  solved_unsat: 14
+  unsolved: 31
+  abstained: 0
+  timeout: 0
+  memout: 0
 sat:
 - name: Vampire
   competing: "yes"
@@ -53,8 +53,8 @@ sat:
   solved: 12
   solved_sat: 12
   solved_unsat: 0
-  unsolved: 0
-  abstained: 45
+  unsolved: 2
+  abstained: 43
   timeout: 0
   memout: 0
 - name: iProver
@@ -65,23 +65,11 @@ sat:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 12
-  abstained: 45
+  unsolved: 14
+  abstained: 43
   timeout: 0
   memout: 0
 unsat:
-- name: Vampire
-  competing: "yes"
-  errorScore: 0
-  correctScore: 16
-  WallScore: 1934.809
-  solved: 16
-  solved_sat: 0
-  solved_unsat: 16
-  unsolved: 0
-  abstained: 41
-  timeout: 0
-  memout: 0
 - name: iProver
   competing: "yes"
   errorScore: 0
@@ -90,23 +78,23 @@ unsat:
   solved: 2
   solved_sat: 0
   solved_unsat: 2
-  unsolved: 14
-  abstained: 41
+  unsolved: 12
+  abstained: 43
+  timeout: 0
+  memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 2
+  correctScore: 14
+  WallScore: 1927.197
+  solved: 14
+  solved_sat: 0
+  solved_unsat: 14
+  unsolved: 0
+  abstained: 43
   timeout: 0
   memout: 0
 twentyfour:
-- name: Vampire
-  competing: "yes"
-  errorScore: 0
-  correctScore: 10
-  WallScore: 26.872
-  solved: 10
-  solved_sat: 0
-  solved_unsat: 10
-  unsolved: 47
-  abstained: 0
-  timeout: 47
-  memout: 0
 - name: iProver
   competing: "yes"
   errorScore: 0
@@ -118,5 +106,17 @@ twentyfour:
   unsolved: 56
   abstained: 0
   timeout: 56
+  memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 2
+  correctScore: 8
+  WallScore: 19.26
+  solved: 8
+  solved_sat: 0
+  solved_unsat: 8
+  unsolved: 49
+  abstained: 0
+  timeout: 47
   memout: 0
 ---

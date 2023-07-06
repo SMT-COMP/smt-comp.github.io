@@ -1,6 +1,6 @@
 ---
 layout: result_comp
-resultdate: 2023-07-04 20:20:11
+resultdate: 2023-07-06 16:06:19
 
 year: 2023
 
@@ -20,20 +20,20 @@ parallel:
   experimental: false
 - name: Vampire
   second: cvc5
-  correctScore: 3.26666667
-  timeScore: 0.10485507
-  division: Equality+LinearArith
-  experimental: false
-- name: Vampire
-  second: cvc5
   correctScore: 3.00000000
   timeScore: 0.01060873
   division: Arith
   experimental: false
-- name: Vampire
-  second: cvc5
-  correctScore: 1.39473684
-  timeScore: 0.81619757
+- name: cvc5
+  second: Vampire
+  correctScore: 0.77358491
+  timeScore: 1.11996710
   division: Equality
+  experimental: false
+- name: cvc5
+  second: Vampire
+  correctScore: 0.59183673
+  timeScore: 9.30266623
+  division: Equality+LinearArith
   experimental: false
 ---

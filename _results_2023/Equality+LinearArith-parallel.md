@@ -1,6 +1,6 @@
 ---
 layout: result
-resultdate: 2023-07-04 20:20:13
+resultdate: 2023-07-06 16:06:21
 
 year: 2023
 
@@ -22,24 +22,12 @@ logics:
   UFIDL: 2
   UFLIA: 26
 
-winner_par: Vampire
+winner_par: iProver
 winner_sat: "-"
-winner_unsat: Vampire
+winner_unsat: iProver
 winner_24s: Vampire
 
 parallel:
-- name: Vampire
-  competing: "yes"
-  errorScore: 0
-  correctScore: 56
-  WallScore: 8389.049
-  solved: 56
-  solved_sat: 0
-  solved_unsat: 56
-  unsolved: 47
-  abstained: 0
-  timeout: 0
-  memout: 0
 - name: iProver
   competing: "yes"
   errorScore: 0
@@ -52,6 +40,18 @@ parallel:
   abstained: 0
   timeout: 0
   memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 13
+  correctScore: 43
+  WallScore: 6773.31
+  solved: 43
+  solved_sat: 0
+  solved_unsat: 43
+  unsolved: 60
+  abstained: 0
+  timeout: 0
+  memout: 0
 sat:
 - name: Vampire
   competing: "yes"
@@ -61,8 +61,8 @@ sat:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 4
-  abstained: 99
+  unsolved: 17
+  abstained: 86
   timeout: 0
   memout: 0
 - name: iProver
@@ -73,23 +73,11 @@ sat:
   solved: 0
   solved_sat: 0
   solved_unsat: 0
-  unsolved: 4
-  abstained: 99
+  unsolved: 17
+  abstained: 86
   timeout: 0
   memout: 0
 unsat:
-- name: Vampire
-  competing: "yes"
-  errorScore: 0
-  correctScore: 56
-  WallScore: 8389.049
-  solved: 56
-  solved_sat: 0
-  solved_unsat: 56
-  unsolved: 1
-  abstained: 46
-  timeout: 0
-  memout: 0
 - name: iProver
   competing: "yes"
   errorScore: 0
@@ -98,8 +86,20 @@ unsat:
   solved: 1
   solved_sat: 0
   solved_unsat: 1
-  unsolved: 56
-  abstained: 46
+  unsolved: 43
+  abstained: 59
+  timeout: 0
+  memout: 0
+- name: Vampire
+  competing: "yes"
+  errorScore: 13
+  correctScore: 43
+  WallScore: 6773.31
+  solved: 43
+  solved_sat: 0
+  solved_unsat: 43
+  unsolved: 1
+  abstained: 59
   timeout: 0
   memout: 0
 twentyfour:
