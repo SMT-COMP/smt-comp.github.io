@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "20230512"
 solverHomePage: "https://github.com/MRVAPOR/Yices-ismt"
-sysDescrUrl: "https://github.com/MRVAPOR/Yices-ismt-description"
+sysDescrUrl: "ismt.pdf"
 sysDescrName: "ISMT for SMT-COMP 2023"
 divisions:
 - name: QF_NIA
