@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://yices.csl.sri.com"
-sysDescrUrl: "https://ahmed-irfan.github.io/sys-desc/yices2-smtcomp-2023.pdf"
+sysDescrUrl: "Yices2.pdf"
 sysDescrName: "Yices 2 in SMT-COMP 2023"
 divisions:
 - name: QF_ABV

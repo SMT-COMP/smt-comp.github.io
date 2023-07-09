@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "no"
 seed: "78549"
 solverHomePage: "https://www.fi.muni.cz/~xpavlik5/Q3B-pBDD/"
-sysDescrUrl: "https://www.fi.muni.cz/~xpavlik5/Q3B-pBDD/SMTCOMP23_description.pdf"
+sysDescrUrl: "Q3B-pBDD.pdf"
 sysDescrName: "Q3B-pBDD in SMT Competition 2023"
 divisions:
 

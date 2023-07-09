@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "3621199"
 solverHomePage: "https://github.com/d3sformal/yaga"
-sysDescrUrl: "https://d3s.mff.cuni.cz/files/research/formal-methods/yaga/abstract-2023.pdf"
+sysDescrUrl: "Yaga.pdf"
 sysDescrName: "The Yaga SMT Solver in SMT-COMP 2023"
 divisions:
 - name: QF_LRA

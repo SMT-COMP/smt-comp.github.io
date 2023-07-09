@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "0"
 solverHomePage: "https://www.ultimate-pa.org/?ui=tool&tool=eliminator"
-sysDescrUrl: "https://www.informatik.uni-freiburg.de/~heizmann/tmp/2023UltimateEliminator.pdf"
+sysDescrUrl: "UltimateEliminator%2BMathSAT.pdf"
 sysDescrName: "Ultimate Eliminator at SMT-COMP 2023"
 divisions:
 - name: ABV

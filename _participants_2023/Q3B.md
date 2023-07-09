@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "2353490582350"
 solverHomePage: "https://github.com/martinjonas/q3b"
-sysDescrUrl: "https://www.fi.muni.cz/~xjonas/q3b_smtcomp23.pdf"
+sysDescrUrl: "Q3B.pdf"
 sysDescrName: "Q3B in SMT Competition 2023"
 divisions:
 - name: BV

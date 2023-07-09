@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "99"
 solverHomePage: "https://github.com/minghao-liu/NRA-LS"
-sysDescrUrl: "https://github.com/minghao-liu/NRA-LS/blob/main/system_description_2023.pdf"
+sysDescrUrl: "cvc5-NRA-LS.pdf"
 sysDescrName: "NRA-LS at the SMT Competition 2023"
 divisions:
 - name: QF_NRA

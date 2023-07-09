@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "3021856368"
 solverHomePage: "https://ultimate.informatik.uni-freiburg.de/smtinterpol"
-sysDescrUrl: "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2023.pdf"
+sysDescrUrl: "SMTInterpol.pdf"
 sysDescrName: "SMTInterpol with resolution proofs"
 divisions:
 - name: ALIA

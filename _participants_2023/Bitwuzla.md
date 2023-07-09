@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "42"
 solverHomePage: "https://bitwuzla.github.io/"
-sysDescrUrl: "https://bitwuzla.github.io/data/smtcomp2023/paper.pdf"
+sysDescrUrl: "Bitwuzla.pdf"
 sysDescrName: "Bitwuzla at the SMT-COMP 2023"
 divisions:
 - name: ABV

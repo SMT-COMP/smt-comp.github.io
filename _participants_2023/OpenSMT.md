@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "9471002"
 solverHomePage: "https://github.com/usi-verification-and-security/opensmt"
-sysDescrUrl: "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/abstract-2023.pdf"
+sysDescrUrl: "OpenSMT.pdf"
 sysDescrName: "The OpenSMT Solver in SMT-COMP 2023"
 divisions:
 - name: QF_ALIA

@@ -12,7 +12,7 @@ derivedTool: "Z3(version 4.8.11)"
 competing: "yes"
 seed: "8"
 solverHomePage: "https://github.com/z3-owl/z3-owl.github.io"
-sysDescrUrl: "https://github.com/z3-owl/z3-owl.github.io/blob/main/Z3owl_SMT_COMP_2023.pdf"
+sysDescrUrl: "Z3-Owl.pdf"
 sysDescrName: "Z3-Owl at SMT-COMP 2023"
 divisions:
 - name: QF_ABV

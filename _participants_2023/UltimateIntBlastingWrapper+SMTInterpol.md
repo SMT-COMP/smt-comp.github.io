@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "4294967296"
 solverHomePage: "https://ultimate-pa.org/"
-sysDescrUrl: "https://www.informatik.uni-freiburg.de/~heizmann/tmp/2023UltimateIntBlastingWrapper.pdf"
+sysDescrUrl: "UltimateIntBlastingWrapper%2BSMTInterpol.pdf"
 sysDescrName: "Ultimate IntBlastingWrapper"
 divisions:
 - name: ABV

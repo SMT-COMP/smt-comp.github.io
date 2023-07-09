@@ -12,7 +12,7 @@ derivedTool: "Z3"
 competing: "yes"
 seed: "6590"
 solverHomePage: "https://github.com/VeriFIT/z3-noodler"
-sysDescrUrl: "http://www.fit.vutbr.cz/~holik/pub/z3-noodler_sysdecr_2023.pdf"
+sysDescrUrl: "Z3-Noodler.pdf"
 sysDescrName: "Z3-Noodler, System description for SMT-comp 2023"
 divisions:
 - name: QF_S

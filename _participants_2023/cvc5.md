@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "1965"
 solverHomePage: "https://cvc5.github.io"
-sysDescrUrl: "https://homepage.cs.uiowa.edu/~hschrr/cvc5.pdf"
+sysDescrUrl: "cvc5.pdf"
 sysDescrName: "cvc5 at the SMT Competition 2023"
 divisions:
 - name: ABV

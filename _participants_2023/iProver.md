@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "191937"
 solverHomePage: "https://gitlab.com/korovin/iprover"
-sysDescrUrl: "http://www.cs.man.ac.uk/~korovink/my_pub/iprover-smt-comp-2023.pdf"
+sysDescrUrl: "iProver.pdf"
 sysDescrName: "iProver v3.8 (SMT-COMP-2023)"
 divisions:
 - name: ALIA

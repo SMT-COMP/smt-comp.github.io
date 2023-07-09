@@ -12,7 +12,7 @@ derivedTool: ""
 competing: "yes"
 seed: "16"
 solverHomePage: "https://stp.github.io/"
-sysDescrUrl: "https://github.com/stp/docs/tree/master/smt2023-descr/descr.pdf"
+sysDescrUrl: "STP.pdf"
 sysDescrName: "STP 2023"
 divisions:
 - name: QF_BV
