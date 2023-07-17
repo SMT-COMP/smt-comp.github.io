@@ -52,6 +52,7 @@ sequential:
 - name: Bitwuzla
   competing: "yes"
   errorScore: 3
+  errorFootnote: "The error score is caused by Bitwuzla using the wrong names in the unsat core output (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 159271
   CPUScore: 5906.347
   WallScore: 5911.902
@@ -93,6 +94,7 @@ parallel:
 - name: Bitwuzla
   competing: "yes"
   errorScore: 3
+  errorFootnote: "The error score is caused by Bitwuzla using the wrong names in the unsat core output (syntactic problems).  It does not indicate an unsoundness."
   correctScore: 159271
   CPUScore: 5906.347
   WallScore: 5911.902
