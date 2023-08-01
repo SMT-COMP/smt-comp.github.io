@@ -28,11 +28,11 @@ Time limit: 2400s**
   <th>avg. CPU time</th>
 </tr></thead><tr>
 <td>Yices 2.6.0</td>
-<td>0.000</td><td>14706936.731</td><td>559.547</td><tr>
+<td>0.000</td><td>14706936.731</td><td>559.547</td></tr><tr>
 <td>CVC4</td>
-<td>0.000</td><td>14607999.737</td><td>428.874</td><tr>
+<td>0.000</td><td>14607999.737</td><td>428.874</td></tr><tr>
 <td>mathsat-5.5.2<SUP><a href="#fn">n</a></SUP></td>
-<td>0.000</td><td>14681317.650</td><td>563.789</td><tr>
+<td>0.000</td><td>14681317.650</td><td>563.789</td></tr><tr>
 <td>z3-4.7.1<SUP><a href="#fn">n</a></SUP></td>
 <td>0.000</td><td>14601324.711</td><td>641.502</td></tr></table>
 

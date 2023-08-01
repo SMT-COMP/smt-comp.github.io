@@ -11,7 +11,13 @@ Competition results as of Tue Jul 18 22:06:21 GMT
 <th>Logic</th>
 <th>Solvers</th>
 <th>Benchmarks</th>
-<th>Order</th>
+<th>Order (sequential performance)</th>
+</tr>
+<tr class="center">
+<th></th>
+<th></th>
+<th></th>
+<th>Order (parallel performance)</th>
 </tr>
 <tr>
 <td rowspan="4"><a href="QF_AUFBV-ucore.html">QF_AUFBV</a>
