@@ -7,7 +7,7 @@ layout: default
 Competition results as of Wed Jun 29 20:25:52 GMT
 
 <table>
-<tr>
+<tr class="center">
 <th>Logic</th>
 <th>Solvers</th>
 <th>Benchmarks</th>

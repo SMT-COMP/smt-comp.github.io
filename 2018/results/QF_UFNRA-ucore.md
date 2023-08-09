@@ -21,7 +21,7 @@ Time limit: 2400s**
   <th>avg. CPU time</th>
 </tr></thead><tr>
 <td>CVC4</td>
-<td>0.000</td><td>55.290</td><td>2.179</td><tr>
+<td>0.000</td><td>55.290</td><td>2.179</td></tr><tr>
 <td>z3-4.7.1<SUP><a href="#fn">n</a></SUP></td>
 <td>0.000</td><td>99.154</td><td>0.066</td></tr></table>
 
