@@ -20,12 +20,12 @@
     link: 2023/participants.html
   - name: Results
     link: 2023/results.html
-#  - name: Statistics
-#    link: 2023/stats.html
-#  - name: Comparisons
-#    link: 2023/comparisons.html
-#  - name: Slides
-#    link: 2023/slides.html
+  - name: Statistics
+    link: 2023/stats.html
+  - name: Comparisons
+    link: 2023/comparisons.html
+  - name: Slides
+    link: 2023/slides.html
 #  - name: Solver submission
 #    link: https://forms.gle/xhUDQaTynbS3mccE7
 

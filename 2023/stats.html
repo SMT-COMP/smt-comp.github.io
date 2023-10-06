@@ -1,0 +1,73 @@
+---
+layout: default
+pivottable: true
+---
+
+        <script type="text/javascript">
+
+          var renderers = $.extend($.pivotUtilities.renderers,
+                                   $.pivotUtilities.plotly_renderers);
+
+          var predefined = {
+              all_result: {rows:["solver","result"], cols:["division"],
+                            vals:["nb"], aggregatorName:"Integer Sum"},
+              only_sat:  {rows:["solver"], cols:["division"],
+                          vals:["nb"], aggregatorName:"Integer Sum",
+                          rendererName:"Bar Chart",
+                          inclusions : { result : ["sat"] } },
+              only_answer:  {rows:["solver"], cols:["division"],
+                             vals:["nb"], aggregatorName:"Integer Sum",
+                             rendererName:"Bar Chart",
+                             inclusions : { result : ["sat","unsat"] } },
+              only_BV_sat_unsat:  {rows:["result","solver"], cols:["division"],
+                             vals:["nb"], aggregatorName:"Integer Sum",
+                             rendererName:"Bar Chart",
+                             inclusions : { result : ["sat","unsat"],
+                                            division : [ "QF_Bitvec" ] } },
+              sum_cpu_time:  {rows:["solver"], cols:["division"],
+                             vals:["cpu_time"], aggregatorName:"Sum",
+                             rendererName:"Bar Chart",
+                             rowOrder: "value_a_to_z",
+                             inclusions : { result : ["sat"],
+                                            division : [ "QF_Equality" ],
+                                            competitive : ["yes"] } }
+          }
+
+          var g_onclick = function(){alert("oups")};
+
+          $(function(){
+              Papa.parse("sq.csv", {
+                  download: true,
+                  skipEmptyLines: true,
+                  complete: function(parsed){
+                      var show = function (options){
+                          $("#output").pivotUI(parsed.data, $.extend({}, {
+                              renderers: renderers,
+                          },options),true)};
+
+                      show(predefined.only_answer)
+
+                      g_onclick = function (label){show(predefined[label])}
+
+                  }
+              });
+          });
+        </script>
+        <p>Informations about prover results for all the divisions in sequential query</p>
+
+        <p style="width: 800px"></p>
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Predefined view
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#" onclick="g_onclick('all_result')">All results by division</a>
+    <a class="dropdown-item" href="#" onclick="g_onclick('only_sat')">Only satisfiable answer</a>
+    <a class="dropdown-item" href="#" onclick="g_onclick('only_answer')">Only sat/unsat answer</a>
+    <a class="dropdown-item" href="#" onclick="g_onclick('only_BV_sat_unsat')">Only QF_Bitvec division with separate sum</a>
+    <a class="dropdown-item" href="#" onclick="g_onclick('sum_cpu_time')">Order competitive provers by cpu time for QF_Arith for satisfiable answers</a>
+  </div>
+</div>
+        <div id="output" style="margin: 30px;"></div>
