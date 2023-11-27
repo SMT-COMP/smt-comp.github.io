@@ -1,124 +1,71 @@
-[build-system]  # https://python-poetry.org/docs/pyproject/#poetry-and-pep-517
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.poetry]  # https://python-poetry.org/docs/pyproject/
+[tool.poetry]
 name = "smtcomp"
-version = "0.0.0"
-description = "Tools for running the SMT Competition"
-authors = ["SMT organizers <francois.bobot@cea.fr>"]
+version = "0.1.0"
+description = ""
+authors = ["SMTCOMP"]
+license = "MIT"
 readme = "README.md"
-repository = "https://github.com/SMT-COMP/smt-comp.github.io"
+packages = [{include = "smtcomp"}]
 
-[tool.poetry.scripts]  # https://python-poetry.org/docs/pyproject/#scripts
-smtcomp = "smtcomp.cli:app"
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "*"
+gunicorn = "*"
+pydantic = { extras = ["dotenv"], version = "*" }
+python-dotenv = "*"
+python-json-logger = "*"
+typer = "*"
+uvicorn = "*"
 
-[tool.poetry.dependencies]  # https://python-poetry.org/docs/dependency-specification/
-pydantic = ">=1.10.7"
-python = ">=3.8,<4.0"
-typer = { extras = ["all"], version = ">=0.9.0" }
+[tool.poetry.group.dev.dependencies]
+bandit = "*"
+black = { allow-prereleases = true, version = "*" }
+fastapi = {extras = ["all"], version = "*"}
+isort = "*"
+mypy = "*"
+poetry = "^1.4.2"
+pre-commit = "*"
+pre-commit-hooks = "*"
+pytest = "*"
+pytest-cov = "*"
+ruff = "*"
 
-[tool.poetry.group.test.dependencies]  # https://python-poetry.org/docs/master/managing-dependencies/
-coverage = { extras = ["toml"], version = ">=7.2.5" }
-mypy = ">=1.2.0"
-poethepoet = ">=0.20.0"
-pre-commit = ">=3.3.1"
-pytest = ">=7.3.1"
-pytest-clarity = ">=1.0.1"
-pytest-mock = ">=3.10.0"
-pytest-xdist = ">=3.2.1"
-ruff = ">=0.1.3"
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+include = ".pyi?$"
+exclude = """
+(
+  /(
+      .eggs         # exclude a few common directories in the
+    | .git          # root of the project
+    | .hg
+    | .mypy_cache
+    | .tox
+    | .venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+"""
 
-[tool.poetry.group.dev.dependencies]  # https://python-poetry.org/docs/master/managing-dependencies/
-cruft = ">=2.14.0"
-pdoc = ">=13.1.1"
+[tool.isort]
+# compatible with psf/black
+# https://pycqa.github.io/isort/docs/configuration/black_compatibility/
+# https://github.com/psf/black/blob/master/docs/compatible_configs.md
+profile = "black"
+float_to_top = true
 
-[tool.coverage.report]  # https://coverage.readthedocs.io/en/latest/config.html#report
-precision = 1
-show_missing = true
-skip_covered = true
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = """
+    -ra
+    -v
+    --strict-markers
+"""
 
-[tool.coverage.run]  # https://coverage.readthedocs.io/en/latest/config.html#run
-branch = true
-command_line = "--module pytest"
-data_file = "reports/.coverage"
-source = ["src"]
-
-[tool.coverage.xml]  # https://coverage.readthedocs.io/en/latest/config.html#xml
-output = "reports/coverage.xml"
-
-[tool.mypy]  # https://mypy.readthedocs.io/en/latest/config_file.html
-junit_xml = "reports/mypy.xml"
-plugins = "pydantic.mypy"
-ignore_missing_imports = true
-pretty = true
-show_column_numbers = true
-show_error_codes = true
-show_error_context = true
-warn_unreachable = true
-
-[tool.pytest.ini_options]  # https://docs.pytest.org/en/latest/reference/reference.html#ini-options-ref
-addopts = "--color=yes --doctest-modules --exitfirst --failed-first --verbosity=2 --junitxml=reports/pytest.xml"
-testpaths = ["src", "tests"]
-xfail_strict = true
-
-[tool.ruff]  # https://github.com/charliermarsh/ruff
-fix = true
-ignore-init-module-imports = true
-line-length = 100
-select = ["A", "ASYNC", "B", "C4", "C90", "D", "DTZ", "E", "F", "FLY", "FURB", "I", "ISC", "LOG", "N", "NPY", "PERF", "PGH", "PIE", "PLC", "PLE", "PLR", "PLW", "PT", "RET", "RUF", "RSE", "SIM", "TID", "UP", "W", "YTT"]
-ignore = ["E501", "PGH001", "PGH002", "PGH003", "RET504", "S101"]
-unfixable = ["F401", "F841"]
-src = ["src", "tests"]
-target-version = "py38"
-
-[tool.ruff.flake8-tidy-imports]
-ban-relative-imports = "all"
-
-[tool.ruff.pydocstyle]
-convention = "numpy"
-
-[tool.poe.tasks]  # https://github.com/nat-n/poethepoet
-
-  [tool.poe.tasks.docs]
-  help = "Generate this package's docs"
-  cmd = """
-    pdoc
-      --docformat $docformat
-      --output-directory $outputdirectory
-      smtcomp
-    """
-
-    [[tool.poe.tasks.docs.args]]
-    help = "The docstring style (default: numpy)"
-    name = "docformat"
-    options = ["--docformat"]
-    default = "numpy"
-
-    [[tool.poe.tasks.docs.args]]
-    help = "The output directory (default: docs)"
-    name = "outputdirectory"
-    options = ["--output-directory"]
-    default = "docs"
-
-  [tool.poe.tasks.lint]
-  help = "Lint this package"
-
-    [[tool.poe.tasks.lint.sequence]]
-    cmd = """
-      pre-commit run
-        --all-files
-        --color always
-      """
-
-  [tool.poe.tasks.test]
-  help = "Test this package"
-
-    [[tool.poe.tasks.test.sequence]]
-    cmd = "coverage run"
-
-    [[tool.poe.tasks.test.sequence]]
-    cmd = "coverage report"
-
-    [[tool.poe.tasks.test.sequence]]
-    cmd = "coverage xml"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
