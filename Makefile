@@ -1,104 +1,36 @@
-## options
-# based on https://tech.davis-hansson.com/p/make/
-MAKEFLAGS += --warn-undefined-variables
-MAKEFLAGS += --no-builtin-rules
-SHELL := bash
-.SHELLFLAGS := -eu -o pipefail -c
-.ONESHELL:
-.DEFAULT_GOAL := help
-.DELETE_ON_ERROR:
+.PHONY: install
+install: ## Install the poetry environment and install the pre-commit hooks
+	@echo "🚀 Creating virtual environment using pyenv and poetry"
+	@poetry install
+	@poetry shell
 
-## variables
-
-ENVIRONMENT ?= dev
-ARGS =
-APP_NAME = $(shell python -m src.config app_name)
-SOURCE_DIR := src
-TEST_DIR := tests
-
-IMAGE_HOST = $(shell python -m src.config image_host)
-IMAGE_REPO = $(shell python -m src.config image_repo)
-IMAGE_NAME = $(IMAGE_HOST)/$(IMAGE_REPO)/$(APP_NAME)
-IMAGE_TAG ?= latest
-
-## formula
-
-# based on https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
-.PHONY: help
-help:  ## print help message
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
-## dependencies
-
-.PHONY: deps-install
-deps-install:  ## install dependencies
-	python -m pip install poetry
-	python -m poetry install --no-root
-
-.PHONY: deps-install-ci
-deps-install-ci:
-	python -m pip install poetry
-	python -m poetry config virtualenvs.create false
-	python -m poetry install --no-root
-	python -m poetry show
-
-.PHONY: deps-update
-deps-update:
-	python -m poetry update
-	python -m poetry export --format requirements.txt --output requirements.txt --without-hashes
-
-requirements.txt: poetry.lock
-	python -m poetry export --format requirements.txt --output requirements.txt --without-hashes
-
-requirements-dev.txt: poetry.lock
-	python -m poetry export --with dev --format requirements.txt --output requirements-dev.txt --without-hashes
-
-## checks
-
-.PHONY: format
-format:
-	python -m ruff check --fix .
-	python -m isort .
-	python -m black $(SOURCE_DIR) $(TEST_DIR)
-
-.PHONY: lint
-lint:
-	python -m ruff check .
-	python -m isort . --check --diff
-	python -m black $(SOURCE_DIR) $(TEST_DIR) --diff
-	python -m bandit -r $(SOURCE_DIR) -lll -iii
-	python -m mypy $(SOURCE_DIR)
+.PHONY: check
+check: ## Run code quality tools.
+	@echo "🚀 Checking Poetry lock file consistency with 'pyproject.toml': Running poetry lock --check"
+	@poetry check --lock
+	@echo "🚀 Linting code: Running pre-commit"
+	@poetry run pre-commit run -a
+	@echo "🚀 Static type checking: Running mypy"
+	@poetry run mypy
+	@echo "🚀 Checking for obsolete dependencies: Running deptry"
+	@poetry run deptry .
 
 .PHONY: test
-test:
-	python -m pytest $(TEST_DIR) --cov $(SOURCE_DIR)
+test: ## Test the code with pytest
+	@echo "🚀 Testing code: Running pytest"
+	@poetry run pytest --cov --cov-config=pyproject.toml --cov-report=xml
 
-.PHONY: run-ci
-run-ci: deps-install-ci lint test  ## run ci
+.PHONY: build
+build: clean-build ## Build wheel file using poetry
+	@echo "🚀 Creating wheel file"
+	@poetry build
 
-## app
+.PHONY: clean-build
+clean-build: ## clean build artifacts
+	@rm -rf dist
 
-.PHONY: run-task
-run-task:  ## run python task
-	python -m src.task
+.PHONY: help
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: run
-run: run-task  ## run main python app
-
-## docker-compose
-
-.PHONY: dc-build
-dc-build: requirements.txt  ## build app image
-	IMAGE_TAG=$(IMAGE_TAG) docker compose build
-
-.PHONY: dc-push
-dc-push:
-	IMAGE_TAG=$(IMAGE_TAG) docker compose push
-
-.PHONY: dc-stop
-dc-stop:
-	docker compose stop
-
-.PHONY: dc-down
-dc-down:
-	docker compose down
+.DEFAULT_GOAL := help

@@ -1,112 +1,43 @@
-# Python Project Template
+# smtcomp
 
-Starter template for python projects
+[![Release](https://img.shields.io/github/v/release/smtcomp/smtcomp.github.io)](https://img.shields.io/github/v/release/smtcomp/smtcomp.github.io)
+[![Build status](https://img.shields.io/github/actions/workflow/status/smtcomp/smtcomp.github.io/main.yml?branch=main)](https://github.com/smtcomp/smtcomp.github.io/actions/workflows/main.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/smtcomp/smtcomp.github.io/branch/main/graph/badge.svg)](https://codecov.io/gh/smtcomp/smtcomp.github.io)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/smtcomp/smtcomp.github.io)](https://img.shields.io/github/commit-activity/m/smtcomp/smtcomp.github.io)
+[![License](https://img.shields.io/github/license/smtcomp/smtcomp.github.io)](https://img.shields.io/github/license/smtcomp/smtcomp.github.io)
 
-## Features
+Tools used for the organization of the SMT competition
 
-- environment management with Conda
-- project metadata and dependency management with Poetry
-- preconfigured continuous integration tasks
-  - code formatting with isort and Black
-  - code linting with isort, Black, Flake8, Bandit and Mypy
-  - unit tests with pytest
-  - pre-commit hooks
-  - CICD pipelines with GitHub Actions
-- application
-  - logging with standard logging and python-json-logger
-  - configuration with standard configparser, python-dotenv and pydantic
-  - command line with Typer
-  - web service with FastAPI, Uvicorn and Gunicorn
-- deployment with Docker images
-  - development image based on `python:latest`
-  - lightweight production image based on `python:slim` using multi-stage build
-- Make formula for common development tasks
-  - install dependencies
-  - run continuous integration tasks
-  - run application
-  - build Docker images
+- **Github repository**: <https://github.com/smtcomp/smtcomp.github.io/>
+- **Documentation** <https://smtcomp.github.io/smtcomp/>
 
-## Usage
+## Getting started with your project
 
-Clone this repository or [use it as a template][generate] to generate a new repository.
-
-Update the project name and metadata in `pyproject.toml` and `configs/main.ini`.
-
-### External dependencies
-
-- [Conda][conda]
-- [Docker][docker]
-- [Make][make]
-
-### Create environment
-
-Use Conda to create a virtual environment and activate it for the project.
+First, create a repository on GitHub with the same name as this project, and then run the following commands:
 
 ```bash
-conda create --name smtcomp --yes python=3.11
-conda activate smtcomp
+git init -b main
+git add .
+git commit -m "init commit"
+git remote add origin git@github.com:smtcomp/smtcomp.github.io.git
+git push -u origin main
 ```
 
-### Install dependencies
-
-Install Poetry with pip. Then install project dependencies with Poetry.
+Finally, install the environment and the pre-commit hooks with
 
 ```bash
-make deps-install
+make install
 ```
 
-Use Poetry to add project and development dependencies into `pyproject.toml`.
+You are now ready to start development on your project!
+The CI/CD pipeline will be triggered when you open a pull request, merge to main, or when you create a new release.
 
-NOTE: Poetry must be included as a development dependency to prevent
-Poetry from uninstalling itself and its dependencies.
+To finalize the set-up for publishing to PyPi or Artifactory, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/publishing/#set-up-for-pypi).
+For activating the automatic documentation with MkDocs, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/mkdocs/#enabling-the-documentation-on-github).
+To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/codecov/).
 
-```bash
-# development dependency
-poetry add --dev poetry
+## Releasing a new version
 
-# project dependency
-poetry add pydantic
-```
+---
 
-## Tools
-
-- Environment management
-  - [Conda][conda]
-  - [Poetry][poetry]
-  - [Docker][docker]
-- Linting & Testing
-  - [isort][isort]
-  - [Black][black]
-  - [Flake8][flake8]
-  - [Bandit][bandit]
-  - [Mypy][mypy]
-  - [pytest][pytest]
-  - [pre-commit][pre-commit]
-- Application
-  - [logging][logging]
-  - [python-json-logger][python-json-logger]
-  - [configparser][configparser]
-  - [python-dotenv][python-dotenv]
-  - [pydantic][pydantic]
-  - [Typer][typer]
-  - [Make][make]
-
-[conda]: https://docs.conda.io/en/latest
-[poetry]: https://python-poetry.org
-[isort]: https://timothycrosley.github.io/isort
-[black]: https://black.readthedocs.io/en/stable
-[flake8]: https://flake8.pycqa.org/en/latest
-[bandit]: https://github.com/PyCQA/bandit
-[mypy]: http://www.mypy-lang.org
-[pytest]: https://docs.pytest.org/en/stable
-[pre-commit]: https://pre-commit.com
-[logging]: https://docs.python.org/3/library/logging.html
-[python-json-logger]: https://github.com/madzak/python-json-logger
-[configparser]: https://docs.python.org/3/library/configparser.html
-[python-dotenv]: https://saurabh-kumar.com/python-dotenv
-[pydantic]: https://pydantic-docs.helpmanual.io
-[typer]: https://typer.tiangolo.com
-[make]: https://www.gnu.org/software/make
-[docker]: https://www.docker.com
-
-[generate]: https://github.com/smtcomp/smtcomp.github.io/generate
+Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).
