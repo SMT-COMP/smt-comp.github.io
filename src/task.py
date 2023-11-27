@@ -1,10 +1,11 @@
 import typer
 
+
 app = typer.Typer()
 
 
 @app.command()
-def main(name: str = typer.Argument("World")) -> None:
+def main(name: str) -> None:
     """
     Print hello message
 

@@ -89,9 +89,6 @@ poetry add pydantic
   - [python-dotenv][python-dotenv]
   - [pydantic][pydantic]
   - [Typer][typer]
-  - [FastAPI][fastapi]
-  - [Uvicorn][uvicorn]
-  - [Gunicorn][gunicorn]
   - [Make][make]
 
 [conda]: https://docs.conda.io/en/latest
@@ -109,9 +106,6 @@ poetry add pydantic
 [python-dotenv]: https://saurabh-kumar.com/python-dotenv
 [pydantic]: https://pydantic-docs.helpmanual.io
 [typer]: https://typer.tiangolo.com
-[fastapi]: https://fastapi.tiangolo.com
-[uvicorn]: https://www.uvicorn.org
-[gunicorn]: https://gunicorn.org
 [make]: https://www.gnu.org/software/make
 [docker]: https://www.docker.com
 

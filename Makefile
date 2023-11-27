@@ -82,16 +82,8 @@ run-ci: deps-install-ci lint test  ## run ci
 run-task:  ## run python task
 	python -m src.task
 
-.PHONY: run-web-dev
-run-web-dev:
-	python -m uvicorn src.web:app --reload
-
-.PHONY: run-web
-run-web:  ## run python web
-	python -m gunicorn src.web:app -c src/gunicorn_conf.py
-
 .PHONY: run
-run: run-web  ## run main python app
+run: run-task  ## run main python app
 
 ## docker-compose
 
@@ -102,14 +94,6 @@ dc-build: requirements.txt  ## build app image
 .PHONY: dc-push
 dc-push:
 	IMAGE_TAG=$(IMAGE_TAG) docker compose push
-
-.PHONY: dc-up
-dc-up:  ## run app image
-	docker compose up web_dev
-
-.PHONY: dc-exec
-dc-exec:
-	docker compose exec web_dev /bin/bash
 
 .PHONY: dc-stop
 dc-stop:
