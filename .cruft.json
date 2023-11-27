@@ -1,0 +1,32 @@
+{
+  "template": "https://github.com/radix-ai/poetry-cookiecutter",
+  "commit": "eaec9e0a47b4ff89d19bae8d75a9f12889504ce6",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "package_name": "smtcomp",
+      "package_description": "Tools for running the SMT Competition",
+      "package_url": "https://github.com/SMT-COMP/smt-comp.github.io",
+      "author_name": "SMT organizers",
+      "author_email": "francois.bobot@cea.fr",
+      "python_version": "3.8",
+      "docker_image": "python:$PYTHON_VERSION-slim",
+      "development_environment": "simple",
+      "with_conventional_commits": "0",
+      "with_fastapi_api": "0",
+      "with_jupyter_lab": "0",
+      "with_pydantic_typing": "1",
+      "with_sentry_logging": "0",
+      "with_streamlit_app": "0",
+      "with_typer_cli": "1",
+      "continuous_integration": "GitHub",
+      "docstring_style": "NumPy",
+      "private_package_repository_name": "",
+      "private_package_repository_url": "",
+      "__package_name_kebab_case": "smtcomp",
+      "__package_name_snake_case": "smtcomp",
+      "_template": "https://github.com/radix-ai/poetry-cookiecutter"
+    }
+  },
+  "directory": null
+}

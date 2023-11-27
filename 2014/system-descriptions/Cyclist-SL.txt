@@ -1,7 +1,0 @@
-Cyclist-SL: Nikos Gorogiannis <nikos.gorogiannis@gmail.com>
-
-An entailment prover for separation logic with inductive predicates
-based on cyclic proof.  The theory and design is described in
-
-J. Brotherston, N. Gorogiannis, and R. L. Petersen. A generic cyclic
-theorem prover. In Proc. APLAS-10, pages 350-367. Springer, 2012.

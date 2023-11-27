@@ -1,8 +1,0 @@
-SLSAT Nikos Gorogiannis <nikos.gorogiannis@gmail.com>
-
-A satisfiability checker for separation logic with inductive predicates.
-The algorithm, its soundness and its complexity are described in
-
-James Brotherston, Carsten Fuhs, Nikos Gorogiannis, and Juan Navarro
-Prez. A decision procedure for satisfiability in separation logic with
-inductive predicates. To appear at CSL-LICS, 2014.

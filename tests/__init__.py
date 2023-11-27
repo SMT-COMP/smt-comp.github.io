@@ -1,0 +1,1 @@
+"""smtcomp test suite."""

@@ -1,9 +1,0 @@
-
-
-SLIDE is a tool for deciding entailments between two given predicates,
-from a larger system of inductively defined predicates, written in an
-existential fragment of Separation Logic. The proof method relies on
-converting both the left hand and right hand sides of the entailment
-into two tree automata AutLHS and AutRHS, respectively, and checking
-the tree language inclusion of the automaton AutLHS in the automaton
-AutRHS.
