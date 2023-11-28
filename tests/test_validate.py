@@ -8,13 +8,13 @@ from smtcomp.main import app
 from smtcomp.submission import read
 
 runner = CliRunner()
-good_cases = ["test1.json"]
+good_cases = ["tests/test1.json", "submissions/template/template.json"]
 bad_cases = ["test_bad.json"]
 
 
 @pytest.mark.parametrize("name", good_cases)
 def test_good_json(name: str):
-    result = runner.invoke(app, ["validate", path.join("tests", name)])
+    result = runner.invoke(app, ["validate", name])
     assert result.stdout == ""
     assert result.exit_code == 0
 

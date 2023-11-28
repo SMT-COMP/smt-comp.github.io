@@ -1,12 +1,10 @@
-[//]: # "Generated from submissions/template/template.md"
-
 ## Submissions directory
 
 The creation of new submission is done through the creation of a new json file
 in this directory and the submission of a Pull Request.
 
 It could be done directly from the web-interface and starting with a template:
-[create a new submission](https://github.com/SMT-COMP/smt-comp.github.io/new/new_submission/submissions?value=%7B%0A%20%20%20%20%22name%22%3A%20%22%3Csolver%20name%3E%22%2C%0A%20%20%20%20%22authors%22%3A%20%5B%22First%20Smith%22%2C%20%22Second%20Baker%22%5D%2C%0A%20%20%20%20%22url%22%3A%20%22https%3A%2F%2Fexample.com%2Ffoo.zip%22%0A%7D%0A)
+[create a new submission](https://github.com/SMT-COMP/smt-comp.github.io/new/new_submission/submissions?value=$value)
 
 - The filename should start with the name of your solver and end with `.json`
 - The continuous integration will check the format
