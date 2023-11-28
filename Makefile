@@ -7,7 +7,7 @@ install: ## Install the poetry environment and install the pre-commit hooks
 .PHONY: check
 check: ## Run code quality tools.
 	@echo "🚀 Checking for obsolete submissions/Readme.md"
-	@python3 submissions/template/generate_Readme.py check
+	@poetry run python3 submissions/template/generate_Readme.py check
 	@echo "🚀 Checking Poetry lock file consistency with 'pyproject.toml': Running poetry lock --check"
 	@poetry check --lock
 	@echo "🚀 Linting code: Running pre-commit"
@@ -20,7 +20,7 @@ check: ## Run code quality tools.
 .PHONY: test
 test: ## Test the code with pytest
 	@echo "🚀 Generating submissions/Readme.md"
-	@python3 submissions/template/generate_Readme.py generate
+	@poetry run python3 submissions/template/generate_Readme.py generate
 	@echo "🚀 Testing code: Running pytest"
 	@poetry run pytest --cov --cov-config=pyproject.toml --cov-report=xml
 
