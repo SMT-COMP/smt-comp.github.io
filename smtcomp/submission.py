@@ -12,4 +12,4 @@ def read(file: str) -> Submission:
 def show(s: Submission) -> None:
     rich.print(f"[bold]{s.name}:[/bold]")
     rich.print(f"  - {len(s.authors)} authors")
-    rich.print(f"  - url: {s.url}")
+    rich.print(f"  - url: {s.website}")

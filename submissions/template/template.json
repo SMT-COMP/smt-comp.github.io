@@ -1,5 +1,19 @@
 {
     "name": "<solver name>",
-    "authors": ["First Smith", "Second Baker"],
-    "url": "https://example.com/foo.zip"
+    "authors": [
+        "First Smith",
+        { "name": "Second Baker", "website": "http://baker.com/" }
+    ],
+    "contacts": ["contact name <contact email>"],
+    "solver": "http://example.com/solver.tar.gz",
+    "solver_hash": { "sha256": "012345" },
+    "website": "http://example.com/",
+    "system_description": "http://example.com/system.pdf",
+    "command": ["cmd", "default_command_line"],
+    "solver_type": "Standalone",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] },
+        { "tracks": ["SingleQuery"], "logics": "QF_.*" },
+        { "tracks": ["SingleQuery"], "logics": ["LIA"] }
+    ]
 }

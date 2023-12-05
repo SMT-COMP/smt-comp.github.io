@@ -1,1 +1,23 @@
-{ "name": "mysolver", "authors": [], "url": "http://example.com/solver.zip" }
+{
+    "name": "mysolver",
+    "authors": [
+        "foo",
+        {
+            "name": "bar",
+            "website": "http://bar.com/"
+        }
+    ],
+    "contacts": ["foo bar <foo@bar.org>"],
+    "solver": "http://example.com/solver.tar.gz",
+    "solver_hash": {
+        "sha256": "012345"
+    },
+    "website": "http://example.com/",
+    "system_description": "http://example.com/system.pdf",
+    "command": ["foo"],
+    "solver_type": "Standalone",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] },
+        { "tracks": ["SingleQuery"], "logics": "QF_.*" }
+    ]
+}
