@@ -1,6 +1,6 @@
 import re
 from enum import Enum
-from typing import Any, List, Optional
+from typing import Any, Dict, List, Optional, Set
 
 from pydantic import BaseModel, RootModel, model_validator
 from pydantic.networks import HttpUrl
@@ -163,17 +163,17 @@ class Logic(str, Enum):
     UFNRA = "UFNRA"
 
 
-tracks = {
+tracks: Dict[Track, Dict[Division, Set[Logic]]] = {
     Track.SingleQuery: {
-        Division.QF_Datatypes: [
+        Division.QF_Datatypes: {
             Logic.QF_DT,
             Logic.QF_UFDT,
-        ],
-        Division.QF_Equality: [
+        },
+        Division.QF_Equality: {
             Logic.QF_AX,
             Logic.QF_UF,
-        ],
-        Division.QF_Equality_LinearArith: [
+        },
+        Division.QF_Equality_LinearArith: {
             Logic.QF_ALIA,
             Logic.QF_AUFLIA,
             Logic.QF_UFDTLIA,
@@ -181,33 +181,33 @@ tracks = {
             Logic.QF_UFIDL,
             Logic.QF_UFLIA,
             Logic.QF_UFLRA,
-        ],
-        Division.QF_Equality_NonLinearArith: [
+        },
+        Division.QF_Equality_NonLinearArith: {
             Logic.QF_ANIA,
             Logic.QF_AUFNIA,
             Logic.QF_UFDTNIA,
             Logic.QF_UFNIA,
             Logic.QF_UFNRA,
-        ],
-        Division.QF_Equality_Bitvec: [
+        },
+        Division.QF_Equality_Bitvec: {
             Logic.QF_ABV,
             Logic.QF_AUFBV,
             Logic.QF_UFBV,
             Logic.QF_UFBVDT,
-        ],
-        Division.QF_LinearIntArith: [
+        },
+        Division.QF_LinearIntArith: {
             Logic.QF_IDL,
             Logic.QF_LIA,
             Logic.QF_LIRA,
-        ],
-        Division.QF_LinearRealArith: [
+        },
+        Division.QF_LinearRealArith: {
             Logic.QF_LRA,
             Logic.QF_RDL,
-        ],
-        Division.QF_Bitvec: [
+        },
+        Division.QF_Bitvec: {
             Logic.QF_BV,
-        ],
-        Division.QF_FPArith: [
+        },
+        Division.QF_FPArith: {
             Logic.QF_ABVFP,
             Logic.QF_ABVFPLRA,
             Logic.QF_AUFBVFP,
@@ -217,24 +217,24 @@ tracks = {
             Logic.QF_FPLRA,
             Logic.QF_UFFP,
             Logic.QF_UFFPDTNIRA,
-        ],
-        Division.QF_NonLinearIntArith: [
+        },
+        Division.QF_NonLinearIntArith: {
             Logic.QF_NIA,
             Logic.QF_NIRA,
-        ],
-        Division.QF_NonLinearRealArith: [
+        },
+        Division.QF_NonLinearRealArith: {
             Logic.QF_NRA,
-        ],
-        Division.QF_Strings: [
+        },
+        Division.QF_Strings: {
             Logic.QF_S,
             Logic.QF_SLIA,
             Logic.QF_SNIA,
-        ],
-        Division.Equality: [
+        },
+        Division.Equality: {
             Logic.UF,
             Logic.UFDT,
-        ],
-        Division.Equality_LinearArith: [
+        },
+        Division.Equality_LinearArith: {
             Logic.ALIA,
             Logic.AUFDTLIA,
             Logic.AUFDTLIRA,
@@ -245,8 +245,8 @@ tracks = {
             Logic.UFIDL,
             Logic.UFLIA,
             Logic.UFLRA,
-        ],
-        Division.Equality_MachineArith: [
+        },
+        Division.Equality_MachineArith: {
             Logic.ABV,
             Logic.ABVFP,
             Logic.ABVFPLRA,
@@ -261,8 +261,8 @@ tracks = {
             Logic.UFBVFP,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
-        ],
-        Division.Equality_NonLinearArith: [
+        },
+        Division.Equality_NonLinearArith: {
             Logic.ANIA,
             Logic.AUFDTNIRA,
             Logic.AUFNIA,
@@ -270,107 +270,107 @@ tracks = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
-        ],
-        Division.Arith: [
+        },
+        Division.Arith: {
             Logic.LIA,
             Logic.LRA,
             Logic.NIA,
             Logic.NRA,
-        ],
-        Division.Bitvec: [
+        },
+        Division.Bitvec: {
             Logic.BV,
-        ],
-        Division.FPArith: [
+        },
+        Division.FPArith: {
             Logic.BVFP,
             Logic.BVFPLRA,
             Logic.FP,
             Logic.FPLRA,
-        ],
+        },
     },
     Track.Incremental: {
-        Division.QF_Equality: [
+        Division.QF_Equality: {
             Logic.QF_UF,
-        ],
-        Division.QF_Equality_LinearArith: [
+        },
+        Division.QF_Equality_LinearArith: {
             Logic.QF_ALIA,
             Logic.QF_AUFLIA,
             Logic.QF_UFLIA,
             Logic.QF_UFLRA,
-        ],
-        Division.QF_Equality_NonLinearArith: [
+        },
+        Division.QF_Equality_NonLinearArith: {
             Logic.QF_ANIA,
             Logic.QF_UFNIA,
             Logic.QF_UFNRA,
-        ],
-        Division.QF_Equality_Bitvec: [
+        },
+        Division.QF_Equality_Bitvec: {
             Logic.QF_ABV,
             Logic.QF_AUFBV,
             Logic.QF_UFBV,
-        ],
-        Division.QF_Equality_Bitvec_Arith: [
+        },
+        Division.QF_Equality_Bitvec_Arith: {
             Logic.QF_AUFBVLIA,
             Logic.QF_AUFBVNIA,
             Logic.QF_UFBVLIA,
-        ],
-        Division.QF_LinearIntArith: [
+        },
+        Division.QF_LinearIntArith: {
             Logic.QF_LIA,
-        ],
-        Division.QF_LinearRealArith: [
+        },
+        Division.QF_LinearRealArith: {
             Logic.QF_LRA,
-        ],
-        Division.QF_Bitvec: [
+        },
+        Division.QF_Bitvec: {
             Logic.QF_BV,
-        ],
-        Division.QF_FPArith: [
+        },
+        Division.QF_FPArith: {
             Logic.QF_ABVFP,
             Logic.QF_ABVFPLRA,
             Logic.QF_BVFP,
             Logic.QF_BVFPLRA,
             Logic.QF_FP,
             Logic.QF_UFFP,
-        ],
-        Division.QF_NonLinearIntArith: [
+        },
+        Division.QF_NonLinearIntArith: {
             Logic.QF_NIA,
-        ],
-        Division.Equality: [
+        },
+        Division.Equality: {
             Logic.UF,
-        ],
-        Division.Equality_LinearArith: [
+        },
+        Division.Equality_LinearArith: {
             Logic.ALIA,
             Logic.UFLRA,
-        ],
-        Division.Equality_MachineArith: [
+        },
+        Division.Equality_MachineArith: {
             Logic.ABVFPLRA,
-        ],
-        Division.Equality_NonLinearArith: [
+        },
+        Division.Equality_NonLinearArith: {
             Logic.ANIA,
             Logic.AUFNIRA,
             Logic.UFDTNIA,
             Logic.UFNIA,
             Logic.UFNRA,
-        ],
-        Division.Arith: [
+        },
+        Division.Arith: {
             Logic.LIA,
             Logic.LRA,
-        ],
-        Division.Bitvec: [
+        },
+        Division.Bitvec: {
             Logic.BV,
-        ],
-        Division.FPArith: [
+        },
+        Division.FPArith: {
             Logic.BVFP,
             Logic.BVFPLRA,
-        ],
+        },
     },
     Track.UnsatCore: {
-        Division.QF_Datatypes: [
+        Division.QF_Datatypes: {
             Logic.QF_DT,
             Logic.QF_UFDT,
-        ],
-        Division.QF_Equality: [
+        },
+        Division.QF_Equality: {
             Logic.QF_AX,
             Logic.QF_UF,
-        ],
-        Division.QF_Equality_LinearArith: [
+        },
+        Division.QF_Equality_LinearArith: {
             Logic.QF_ALIA,
             Logic.QF_AUFLIA,
             Logic.QF_UFDTLIA,
@@ -378,33 +378,33 @@ tracks = {
             Logic.QF_UFIDL,
             Logic.QF_UFLIA,
             Logic.QF_UFLRA,
-        ],
-        Division.QF_Equality_NonLinearArith: [
+        },
+        Division.QF_Equality_NonLinearArith: {
             Logic.QF_ANIA,
             Logic.QF_AUFNIA,
             Logic.QF_UFDTNIA,
             Logic.QF_UFNIA,
             Logic.QF_UFNRA,
-        ],
-        Division.QF_Equality_Bitvec: [
+        },
+        Division.QF_Equality_Bitvec: {
             Logic.QF_ABV,
             Logic.QF_AUFBV,
             Logic.QF_UFBV,
             Logic.QF_UFBVDT,
-        ],
-        Division.QF_LinearIntArith: [
+        },
+        Division.QF_LinearIntArith: {
             Logic.QF_IDL,
             Logic.QF_LIA,
             Logic.QF_LIRA,
-        ],
-        Division.QF_LinearRealArith: [
+        },
+        Division.QF_LinearRealArith: {
             Logic.QF_LRA,
             Logic.QF_RDL,
-        ],
-        Division.QF_Bitvec: [
+        },
+        Division.QF_Bitvec: {
             Logic.QF_BV,
-        ],
-        Division.QF_FPArith: [
+        },
+        Division.QF_FPArith: {
             Logic.QF_ABVFP,
             Logic.QF_ABVFPLRA,
             Logic.QF_AUFBVFP,
@@ -414,24 +414,24 @@ tracks = {
             Logic.QF_FPLRA,
             Logic.QF_UFFP,
             Logic.QF_UFFPDTNIRA,
-        ],
-        Division.QF_NonLinearIntArith: [
+        },
+        Division.QF_NonLinearIntArith: {
             Logic.QF_NIA,
             Logic.QF_NIRA,
-        ],
-        Division.QF_NonLinearRealArith: [
+        },
+        Division.QF_NonLinearRealArith: {
             Logic.QF_NRA,
-        ],
-        Division.QF_Strings: [
+        },
+        Division.QF_Strings: {
             Logic.QF_S,
             Logic.QF_SLIA,
             Logic.QF_SNIA,
-        ],
-        Division.Equality: [
+        },
+        Division.Equality: {
             Logic.UF,
             Logic.UFDT,
-        ],
-        Division.Equality_LinearArith: [
+        },
+        Division.Equality_LinearArith: {
             Logic.ALIA,
             Logic.AUFDTLIA,
             Logic.AUFDTLIRA,
@@ -442,8 +442,8 @@ tracks = {
             Logic.UFIDL,
             Logic.UFLIA,
             Logic.UFLRA,
-        ],
-        Division.Equality_MachineArith: [
+        },
+        Division.Equality_MachineArith: {
             Logic.ABV,
             Logic.ABVFP,
             Logic.ABVFPLRA,
@@ -458,8 +458,8 @@ tracks = {
             Logic.UFBVFP,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
-        ],
-        Division.Equality_NonLinearArith: [
+        },
+        Division.Equality_NonLinearArith: {
             Logic.ANIA,
             Logic.AUFDTNIRA,
             Logic.AUFNIA,
@@ -467,71 +467,71 @@ tracks = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
-        ],
-        Division.Arith: [
+        },
+        Division.Arith: {
             Logic.LIA,
             Logic.LRA,
             Logic.NIA,
             Logic.NRA,
-        ],
-        Division.Bitvec: [
+        },
+        Division.Bitvec: {
             Logic.BV,
-        ],
-        Division.FPArith: [
+        },
+        Division.FPArith: {
             Logic.BVFP,
             Logic.BVFPLRA,
             Logic.FP,
             Logic.FPLRA,
-        ],
+        },
     },
     Track.ModelValidation: {
-        Division.QF_Datatypes: [
+        Division.QF_Datatypes: {
             Logic.QF_DT,
             Logic.QF_UFDT,
-        ],
-        Division.QF_Equality: [
+        },
+        Division.QF_Equality: {
             Logic.QF_UF,
-        ],
-        Division.QF_Equality_LinearArith: [
+        },
+        Division.QF_Equality_LinearArith: {
             Logic.QF_UFIDL,
             Logic.QF_UFLIA,
             Logic.QF_UFLRA,
-        ],
-        Division.QF_Equality_NonLinearArith: [
+        },
+        Division.QF_Equality_NonLinearArith: {
             Logic.QF_ANIA,
             Logic.QF_AUFNIA,
             Logic.QF_UFDTNIA,
             Logic.QF_UFNIA,
             Logic.QF_UFNRA,
-        ],
-        Division.QF_Equality_Bitvec: [
+        },
+        Division.QF_Equality_Bitvec: {
             Logic.QF_UFBV,
-        ],
-        Division.QF_ADT_BitVec: [
+        },
+        Division.QF_ADT_BitVec: {
             Logic.QF_ABV,
             Logic.QF_AUFBV,
             Logic.QF_UFBVDT,
-        ],
-        Division.QF_ADT_LinArith: [
+        },
+        Division.QF_ADT_LinArith: {
             Logic.QF_ALIA,
             Logic.QF_AUFLIA,
             Logic.QF_AX,
             Logic.QF_UFDTLIA,
             Logic.QF_UFDTLIRA,
-        ],
-        Division.QF_LinearIntArith: [
+        },
+        Division.QF_LinearIntArith: {
             Logic.QF_IDL,
             Logic.QF_LIA,
             Logic.QF_LIRA,
-        ],
-        Division.QF_LinearRealArith: [
+        },
+        Division.QF_LinearRealArith: {
             Logic.QF_LRA,
             Logic.QF_RDL,
-        ],
-        Division.QF_Bitvec: [
+        },
+        Division.QF_Bitvec: {
             Logic.QF_BV,
-        ],
-        Division.QF_FPArith: [
+        },
+        Division.QF_FPArith: {
             Logic.QF_ABVFP,
             Logic.QF_ABVFPLRA,
             Logic.QF_AUFBVFP,
@@ -541,25 +541,25 @@ tracks = {
             Logic.QF_FPLRA,
             Logic.QF_UFFP,
             Logic.QF_UFFPDTNIRA,
-        ],
-        Division.QF_NonLinearIntArith: [
+        },
+        Division.QF_NonLinearIntArith: {
             Logic.QF_NIA,
             Logic.QF_NIRA,
-        ],
-        Division.QF_NonLinearRealArith: [
+        },
+        Division.QF_NonLinearRealArith: {
             Logic.QF_NRA,
-        ],
+        },
     },
     Track.ProofExhibition: {
-        Division.QF_Datatypes: [
+        Division.QF_Datatypes: {
             Logic.QF_DT,
             Logic.QF_UFDT,
-        ],
-        Division.QF_Equality: [
+        },
+        Division.QF_Equality: {
             Logic.QF_AX,
             Logic.QF_UF,
-        ],
-        Division.QF_Equality_LinearArith: [
+        },
+        Division.QF_Equality_LinearArith: {
             Logic.QF_ALIA,
             Logic.QF_AUFLIA,
             Logic.QF_UFDTLIA,
@@ -567,33 +567,33 @@ tracks = {
             Logic.QF_UFIDL,
             Logic.QF_UFLIA,
             Logic.QF_UFLRA,
-        ],
-        Division.QF_Equality_NonLinearArith: [
+        },
+        Division.QF_Equality_NonLinearArith: {
             Logic.QF_ANIA,
             Logic.QF_AUFNIA,
             Logic.QF_UFDTNIA,
             Logic.QF_UFNIA,
             Logic.QF_UFNRA,
-        ],
-        Division.QF_Equality_Bitvec: [
+        },
+        Division.QF_Equality_Bitvec: {
             Logic.QF_ABV,
             Logic.QF_AUFBV,
             Logic.QF_UFBV,
             Logic.QF_UFBVDT,
-        ],
-        Division.QF_LinearIntArith: [
+        },
+        Division.QF_LinearIntArith: {
             Logic.QF_IDL,
             Logic.QF_LIA,
             Logic.QF_LIRA,
-        ],
-        Division.QF_LinearRealArith: [
+        },
+        Division.QF_LinearRealArith: {
             Logic.QF_LRA,
             Logic.QF_RDL,
-        ],
-        Division.QF_Bitvec: [
+        },
+        Division.QF_Bitvec: {
             Logic.QF_BV,
-        ],
-        Division.QF_FPArith: [
+        },
+        Division.QF_FPArith: {
             Logic.QF_ABVFP,
             Logic.QF_ABVFPLRA,
             Logic.QF_AUFBVFP,
@@ -603,24 +603,24 @@ tracks = {
             Logic.QF_FPLRA,
             Logic.QF_UFFP,
             Logic.QF_UFFPDTNIRA,
-        ],
-        Division.QF_NonLinearIntArith: [
+        },
+        Division.QF_NonLinearIntArith: {
             Logic.QF_NIA,
             Logic.QF_NIRA,
-        ],
-        Division.QF_NonLinearRealArith: [
+        },
+        Division.QF_NonLinearRealArith: {
             Logic.QF_NRA,
-        ],
-        Division.QF_Strings: [
+        },
+        Division.QF_Strings: {
             Logic.QF_S,
             Logic.QF_SLIA,
             Logic.QF_SNIA,
-        ],
-        Division.Equality: [
+        },
+        Division.Equality: {
             Logic.UF,
             Logic.UFDT,
-        ],
-        Division.Equality_LinearArith: [
+        },
+        Division.Equality_LinearArith: {
             Logic.ALIA,
             Logic.AUFDTLIA,
             Logic.AUFDTLIRA,
@@ -631,8 +631,8 @@ tracks = {
             Logic.UFIDL,
             Logic.UFLIA,
             Logic.UFLRA,
-        ],
-        Division.Equality_MachineArith: [
+        },
+        Division.Equality_MachineArith: {
             Logic.ABV,
             Logic.ABVFP,
             Logic.ABVFPLRA,
@@ -647,8 +647,8 @@ tracks = {
             Logic.UFBVFP,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
-        ],
-        Division.Equality_NonLinearArith: [
+        },
+        Division.Equality_NonLinearArith: {
             Logic.ANIA,
             Logic.AUFDTNIRA,
             Logic.AUFNIA,
@@ -656,33 +656,33 @@ tracks = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
-        ],
-        Division.Arith: [
+        },
+        Division.Arith: {
             Logic.LIA,
             Logic.LRA,
             Logic.NIA,
             Logic.NRA,
-        ],
-        Division.Bitvec: [
+        },
+        Division.Bitvec: {
             Logic.BV,
-        ],
-        Division.FPArith: [
+        },
+        Division.FPArith: {
             Logic.BVFP,
             Logic.BVFPLRA,
             Logic.FP,
             Logic.FPLRA,
-        ],
+        },
     },
     Track.Cloud: {
-        Division.QF_Datatypes: [
+        Division.QF_Datatypes: {
             Logic.QF_DT,
             Logic.QF_UFDT,
-        ],
-        Division.QF_Equality: [
+        },
+        Division.QF_Equality: {
             Logic.QF_AX,
             Logic.QF_UF,
-        ],
-        Division.QF_Equality_LinearArith: [
+        },
+        Division.QF_Equality_LinearArith: {
             Logic.QF_ALIA,
             Logic.QF_AUFLIA,
             Logic.QF_UFDTLIA,
@@ -690,33 +690,33 @@ tracks = {
             Logic.QF_UFIDL,
             Logic.QF_UFLIA,
             Logic.QF_UFLRA,
-        ],
-        Division.QF_Equality_NonLinearArith: [
+        },
+        Division.QF_Equality_NonLinearArith: {
             Logic.QF_ANIA,
             Logic.QF_AUFNIA,
             Logic.QF_UFDTNIA,
             Logic.QF_UFNIA,
             Logic.QF_UFNRA,
-        ],
-        Division.QF_Equality_Bitvec: [
+        },
+        Division.QF_Equality_Bitvec: {
             Logic.QF_ABV,
             Logic.QF_AUFBV,
             Logic.QF_UFBV,
             Logic.QF_UFBVDT,
-        ],
-        Division.QF_LinearIntArith: [
+        },
+        Division.QF_LinearIntArith: {
             Logic.QF_IDL,
             Logic.QF_LIA,
             Logic.QF_LIRA,
-        ],
-        Division.QF_LinearRealArith: [
+        },
+        Division.QF_LinearRealArith: {
             Logic.QF_LRA,
             Logic.QF_RDL,
-        ],
-        Division.QF_Bitvec: [
+        },
+        Division.QF_Bitvec: {
             Logic.QF_BV,
-        ],
-        Division.QF_FPArith: [
+        },
+        Division.QF_FPArith: {
             Logic.QF_ABVFP,
             Logic.QF_ABVFPLRA,
             Logic.QF_AUFBVFP,
@@ -726,24 +726,24 @@ tracks = {
             Logic.QF_FPLRA,
             Logic.QF_UFFP,
             Logic.QF_UFFPDTNIRA,
-        ],
-        Division.QF_NonLinearIntArith: [
+        },
+        Division.QF_NonLinearIntArith: {
             Logic.QF_NIA,
             Logic.QF_NIRA,
-        ],
-        Division.QF_NonLinearRealArith: [
+        },
+        Division.QF_NonLinearRealArith: {
             Logic.QF_NRA,
-        ],
-        Division.QF_Strings: [
+        },
+        Division.QF_Strings: {
             Logic.QF_S,
             Logic.QF_SLIA,
             Logic.QF_SNIA,
-        ],
-        Division.Equality: [
+        },
+        Division.Equality: {
             Logic.UF,
             Logic.UFDT,
-        ],
-        Division.Equality_LinearArith: [
+        },
+        Division.Equality_LinearArith: {
             Logic.ALIA,
             Logic.AUFDTLIA,
             Logic.AUFDTLIRA,
@@ -754,8 +754,8 @@ tracks = {
             Logic.UFIDL,
             Logic.UFLIA,
             Logic.UFLRA,
-        ],
-        Division.Equality_MachineArith: [
+        },
+        Division.Equality_MachineArith: {
             Logic.ABV,
             Logic.ABVFP,
             Logic.ABVFPLRA,
@@ -770,8 +770,8 @@ tracks = {
             Logic.UFBVFP,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
-        ],
-        Division.Equality_NonLinearArith: [
+        },
+        Division.Equality_NonLinearArith: {
             Logic.ANIA,
             Logic.AUFDTNIRA,
             Logic.AUFNIA,
@@ -779,33 +779,33 @@ tracks = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
-        ],
-        Division.Arith: [
+        },
+        Division.Arith: {
             Logic.LIA,
             Logic.LRA,
             Logic.NIA,
             Logic.NRA,
-        ],
-        Division.Bitvec: [
+        },
+        Division.Bitvec: {
             Logic.BV,
-        ],
-        Division.FPArith: [
+        },
+        Division.FPArith: {
             Logic.BVFP,
             Logic.BVFPLRA,
             Logic.FP,
             Logic.FPLRA,
-        ],
+        },
     },
     Track.Parallel: {
-        Division.QF_Datatypes: [
+        Division.QF_Datatypes: {
             Logic.QF_DT,
             Logic.QF_UFDT,
-        ],
-        Division.QF_Equality: [
+        },
+        Division.QF_Equality: {
             Logic.QF_AX,
             Logic.QF_UF,
-        ],
-        Division.QF_Equality_LinearArith: [
+        },
+        Division.QF_Equality_LinearArith: {
             Logic.QF_ALIA,
             Logic.QF_AUFLIA,
             Logic.QF_UFDTLIA,
@@ -813,33 +813,33 @@ tracks = {
             Logic.QF_UFIDL,
             Logic.QF_UFLIA,
             Logic.QF_UFLRA,
-        ],
-        Division.QF_Equality_NonLinearArith: [
+        },
+        Division.QF_Equality_NonLinearArith: {
             Logic.QF_ANIA,
             Logic.QF_AUFNIA,
             Logic.QF_UFDTNIA,
             Logic.QF_UFNIA,
             Logic.QF_UFNRA,
-        ],
-        Division.QF_Equality_Bitvec: [
+        },
+        Division.QF_Equality_Bitvec: {
             Logic.QF_ABV,
             Logic.QF_AUFBV,
             Logic.QF_UFBV,
             Logic.QF_UFBVDT,
-        ],
-        Division.QF_LinearIntArith: [
+        },
+        Division.QF_LinearIntArith: {
             Logic.QF_IDL,
             Logic.QF_LIA,
             Logic.QF_LIRA,
-        ],
-        Division.QF_LinearRealArith: [
+        },
+        Division.QF_LinearRealArith: {
             Logic.QF_LRA,
             Logic.QF_RDL,
-        ],
-        Division.QF_Bitvec: [
+        },
+        Division.QF_Bitvec: {
             Logic.QF_BV,
-        ],
-        Division.QF_FPArith: [
+        },
+        Division.QF_FPArith: {
             Logic.QF_ABVFP,
             Logic.QF_ABVFPLRA,
             Logic.QF_AUFBVFP,
@@ -849,24 +849,24 @@ tracks = {
             Logic.QF_FPLRA,
             Logic.QF_UFFP,
             Logic.QF_UFFPDTNIRA,
-        ],
-        Division.QF_NonLinearIntArith: [
+        },
+        Division.QF_NonLinearIntArith: {
             Logic.QF_NIA,
             Logic.QF_NIRA,
-        ],
-        Division.QF_NonLinearRealArith: [
+        },
+        Division.QF_NonLinearRealArith: {
             Logic.QF_NRA,
-        ],
-        Division.QF_Strings: [
+        },
+        Division.QF_Strings: {
             Logic.QF_S,
             Logic.QF_SLIA,
             Logic.QF_SNIA,
-        ],
-        Division.Equality: [
+        },
+        Division.Equality: {
             Logic.UF,
             Logic.UFDT,
-        ],
-        Division.Equality_LinearArith: [
+        },
+        Division.Equality_LinearArith: {
             Logic.ALIA,
             Logic.AUFDTLIA,
             Logic.AUFDTLIRA,
@@ -877,8 +877,8 @@ tracks = {
             Logic.UFIDL,
             Logic.UFLIA,
             Logic.UFLRA,
-        ],
-        Division.Equality_MachineArith: [
+        },
+        Division.Equality_MachineArith: {
             Logic.ABV,
             Logic.ABVFP,
             Logic.ABVFPLRA,
@@ -893,8 +893,8 @@ tracks = {
             Logic.UFBVFP,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
-        ],
-        Division.Equality_NonLinearArith: [
+        },
+        Division.Equality_NonLinearArith: {
             Logic.ANIA,
             Logic.AUFDTNIRA,
             Logic.AUFNIA,
@@ -902,22 +902,22 @@ tracks = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
-        ],
-        Division.Arith: [
+        },
+        Division.Arith: {
             Logic.LIA,
             Logic.LRA,
             Logic.NIA,
             Logic.NRA,
-        ],
-        Division.Bitvec: [
+        },
+        Division.Bitvec: {
             Logic.BV,
-        ],
-        Division.FPArith: [
+        },
+        Division.FPArith: {
             Logic.BVFP,
             Logic.BVFPLRA,
             Logic.FP,
             Logic.FPLRA,
-        ],
+        },
     },
 }
 
@@ -957,6 +957,21 @@ class Participation(BaseModel, extra="forbid"):
     command: Optional[Command] = None
     experimental: bool = False
 
+    def get(self, d: None | Dict[Track, Dict[Division, Set[Logic]]] = None) -> Dict[Track, Dict[Division, Set[Logic]]]:
+        if d is None:
+            d = {}
+        for track in self.tracks:
+            divs = d.setdefault(track, {})
+            for division in self.divisions:
+                logics: Set[Logic] = divs.setdefault(division, set())
+                logics.update(tracks[track][division])
+            for logic in self.logics.root:
+                for div, logics in tracks[track].items():
+                    if logic in logics:
+                        logics = divs.setdefault(div, set())
+                        logics.add(logic)
+        return d
+
 
 class Participations(RootModel):
     root: List[Participation]
@@ -968,6 +983,13 @@ class Participations(RootModel):
     def get_logics(self, track: Track) -> List[Logic]:
         """ " Return the logics in which the solver participates"""
         return []  # TODO
+
+    def get(self, d: None | Dict[Track, Dict[Division, Set[Logic]]] = None) -> Dict[Track, Dict[Division, Set[Logic]]]:
+        if d is None:
+            d = {}
+        for p in self.root:
+            p.get(d)
+        return d
 
 
 class Submission(BaseModel, extra="forbid"):

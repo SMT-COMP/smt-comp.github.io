@@ -12,8 +12,8 @@
     "command": ["cmd", "default_command_line"],
     "solver_type": "Standalone",
     "participations": [
-        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] },
-        { "tracks": ["SingleQuery"], "logics": "QF_.*" },
+        { "tracks": ["SingleQuery"], "divisions": ["Equality"] },
+        { "tracks": ["SingleQuery"], "logics": "QF_.*LRA.*" },
         { "tracks": ["SingleQuery"], "logics": ["LIA"] }
     ]
 }
