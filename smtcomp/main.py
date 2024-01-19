@@ -1,8 +1,13 @@
+import json
+from pathlib import Path
+
 import rich
 import typer
 from pydantic import ValidationError
 
+import smtcomp.defs as defs
 import smtcomp.submission as submission
+from smtcomp.convert_csv import convert_csv as convert_csv_file
 
 app = typer.Typer()
 
@@ -35,3 +40,20 @@ def validate(file: str) -> None:
     except ValidationError as e:
         print(e)
         exit(1)
+
+
+@app.command()
+def convert_csv(file: str, dstdir: str) -> None:
+    """
+    Convert a csv (old submission format) to json files (new format)
+    """
+    convert_csv_file(Path(file), Path(dstdir))
+
+
+@app.command()
+def dump_json_schema(dst: Path) -> None:
+    """
+    Dump the json schemas used for submissions at the given file
+    """
+    with open(dst, "w") as f:
+        f.write(json.dumps(defs.Submission.model_json_schema(), indent=2))

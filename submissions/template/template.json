@@ -1,19 +1,30 @@
 {
     "name": "<solver name>",
-    "authors": [
+    "contributors": [
         "First Smith",
         { "name": "Second Baker", "website": "http://baker.com/" }
     ],
-    "contacts": ["contact name <contact email>"],
-    "solver": "http://example.com/solver.tar.gz",
-    "solver_hash": { "sha256": "012345" },
+    "contacts": ["contact name <contact@email.com>"],
+    "archive": {
+        "url": "http://example.com/solver.tar.gz",
+        "h": { "sha256": "012345" }
+    },
     "website": "http://example.com/",
     "system_description": "http://example.com/system.pdf",
-    "command": ["cmd", "default_command_line"],
+    "command": ["relative_cmd", "default_command_line"],
     "solver_type": "Standalone",
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["Equality"] },
-        { "tracks": ["SingleQuery"], "logics": "QF_.*LRA.*" },
-        { "tracks": ["SingleQuery"], "logics": ["LIA"] }
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "QF_.*LRA.*",
+            "command": ["relative_cmd", "other_option"]
+        },
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["LIA"],
+            "archive": { "url": "http://example.com/solver_lia.tar.gz" },
+            "command": ["relative_cmd", "--super-lia"]
+        }
     ]
 }

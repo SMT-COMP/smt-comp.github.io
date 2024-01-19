@@ -12,7 +12,7 @@ def read(file: str) -> Submission:
 
 def show(s: Submission) -> None:
     tree = Tree(f"[bold]{s.name}[/bold]")
-    tree.add(f"{len(s.authors)} authors")
+    tree.add(f"{len(s.contributors)} authors")
     tree.add(f"website: {s.website}")
     tracks = s.participations.get()
     tree_part = tree.add("Participations")

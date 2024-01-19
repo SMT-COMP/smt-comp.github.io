@@ -1,6 +1,6 @@
 {
     "name": "mysolver",
-    "authors": [
+    "contributors": [
         "foo",
         {
             "name": "bar",
@@ -8,9 +8,9 @@
         }
     ],
     "contacts": ["foo bar <foo@bar.org>"],
-    "solver": "http://example.com/solver.tar.gz",
-    "solver_hash": {
-        "sha256": "012345"
+    "archive": {
+        "url": "http://example.com/solver.tar.gz",
+        "h": { "sha256": "012345" }
     },
     "website": "http://example.com/",
     "system_description": "http://example.com/system.pdf",

@@ -1,25 +1,72 @@
+from __future__ import annotations
+
 import re
 from enum import Enum
-from typing import Any, Dict, List, Optional, Set
+from typing import Any
 
-from pydantic import BaseModel, RootModel, model_validator
-from pydantic.networks import HttpUrl
+from pydantic import BaseModel, Field, RootModel, model_validator
+from pydantic.networks import HttpUrl, validate_email
+
+
+class NameEmail(BaseModel):
+    """
+    Name and valide email "name <email>"
+    """
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                "Jane Smith <jane.smith@edu.world>",
+            ]
+        }
+    }
+
+    name: str
+    email: str
+
+    @model_validator(mode="before")
+    @classmethod
+    def split_email(cls, data: NameEmail | str) -> Any:
+        if isinstance(data, str):
+            name, email = validate_email(data)
+            return {"name": name, "email": email}
+        return data
+
+    def __str__(self) -> str:
+        return f"{self.name} <{self.email}>"
 
 
 class Hash(BaseModel, extra="forbid"):
-    sha256: Optional[str] = None
-    sha512: Optional[str] = None
+    sha256: str | None = None
+    sha512: str | None = None
 
     @model_validator(mode="after")
-    def check_one_set(self) -> "Hash":
+    def check_one_set(self) -> Hash:
         if self.sha256 is None and self.sha512 is None:
             raise ValueError("one hash type is required")
         return self
 
 
-class Author(BaseModel, extra="forbid"):
+class Contributor(BaseModel, extra="forbid"):
+    """
+    Contributors in the developement of the solver. If only name is provided,
+    it can be directly given.
+    """
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                "Jane Smith",
+                {
+                    "name": "Jane Smith",
+                    "website": "http://jane.smith.name",
+                },
+            ]
+        }
+    }
+
     name: str
-    website: Optional[HttpUrl] = None
+    website: HttpUrl | None = None
 
     @model_validator(mode="before")
     @classmethod
@@ -163,7 +210,7 @@ class Logic(str, Enum):
     UFNRA = "UFNRA"
 
 
-tracks: Dict[Track, Dict[Division, Set[Logic]]] = {
+tracks: dict[Track, dict[Division, set[Logic]]] = {
     Track.SingleQuery: {
         Division.QF_Datatypes: {
             Logic.QF_DT,
@@ -923,47 +970,63 @@ tracks: Dict[Track, Dict[Division, Set[Logic]]] = {
 
 
 class Logics(RootModel):
-    root: List[Logic]
+    root: list[Logic]
 
     @model_validator(mode="before")
     @classmethod
     def name_is_default_field(cls, data: Any) -> Any:
         if isinstance(data, str):
-            logics = []
-            r = re.compile(data)
-            for logic in Logic:
-                if r.fullmatch(logic):
-                    logics.append(logic)
-            return logics
+            return cls.logics_from_regexp(data)
         return data
+
+    @classmethod
+    def from_regexp(cls, data: str) -> Logics:
+        return Logics(root=cls.logics_from_regexp(data))
+
+    @classmethod
+    def logics_from_regexp(cls, data: str) -> list[Logic]:
+        logics = []
+        r = re.compile(data)
+        for logic in Logic:
+            if r.fullmatch(logic):
+                logics.append(logic)
+        return logics
 
 
 class Command(BaseModel, extra="forbid"):
     binary: str
-    arguments: List[str]
+    arguments: list[str] = []
 
     @model_validator(mode="before")
     @classmethod
     def split_command(cls, data: Any) -> Any:
-        if not isinstance(data, list) or len(data) < 1:
-            raise ValueError("Command must be a non empty list")
-        return {"binary": data[0], "arguments": data[1:]}
+        if isinstance(data, list):
+            if len(data) < 1:
+                raise ValueError("Command must be a non empty list")
+            return {"binary": data[0], "arguments": data[1:]}
+        return data
+
+
+class Archive(BaseModel):
+    url: HttpUrl
+    h: Hash | None = None
 
 
 class Participation(BaseModel, extra="forbid"):
-    tracks: List[Track]
+    tracks: list[Track]
     logics: Logics = Logics(root=[])
-    divisions: List[Division] = []
-    command: Optional[Command] = None
+    divisions: list[Division] = []
+    archive: Archive | None = None
+    command: Command | None = None
     experimental: bool = False
 
-    def get(self, d: None | Dict[Track, Dict[Division, Set[Logic]]] = None) -> Dict[Track, Dict[Division, Set[Logic]]]:
+    def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
             d = {}
         for track in self.tracks:
             divs = d.setdefault(track, {})
             for division in self.divisions:
-                logics: Set[Logic] = divs.setdefault(division, set())
+                logics: set[Logic] = divs.setdefault(division, set())
                 logics.update(tracks[track][division])
             for logic in self.logics.root:
                 for div, logics in tracks[track].items():
@@ -974,17 +1037,17 @@ class Participation(BaseModel, extra="forbid"):
 
 
 class Participations(RootModel):
-    root: List[Participation]
+    root: list[Participation]
 
-    def get_divisions(self, track: Track) -> List[Division]:
+    def get_divisions(self, track: Track) -> list[Division]:
         """ " Return the divisions in which the solver participates"""
         return []  # TODO
 
-    def get_logics(self, track: Track) -> List[Logic]:
+    def get_logics(self, track: Track) -> list[Logic]:
         """ " Return the logics in which the solver participates"""
         return []  # TODO
 
-    def get(self, d: None | Dict[Track, Dict[Division, Set[Logic]]] = None) -> Dict[Track, Dict[Division, Set[Logic]]]:
+    def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
             d = {}
         for p in self.root:
@@ -994,12 +1057,19 @@ class Participations(RootModel):
 
 class Submission(BaseModel, extra="forbid"):
     name: str
-    authors: List[Author]
-    contacts: List[str]  # List[NameEmail]
-    solver: HttpUrl
-    solver_hash: Hash
+    contributors: list[Contributor] = Field(min_length=1)
+    contacts: list[NameEmail] = Field(min_length=1)
+    archive: Archive | None = None
+    command: Command | None = None
     website: HttpUrl
     system_description: HttpUrl
-    command: Optional[Command]
     solver_type: SolverType
     participations: Participations
+
+    @model_validator(mode="after")
+    def check_archive(self) -> "Submission":
+        if self.archive is None and not all(p.archive for p in self.participations.root):
+            raise ValueError("Field archive is needed in all participations if not present at the root")
+        if self.command is None and not all(p.command for p in self.participations.root):
+            raise ValueError("Field command is needed in all participations if not present at the root")
+        return self
