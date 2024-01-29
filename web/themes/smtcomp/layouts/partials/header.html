@@ -1,0 +1,18 @@
+  <h1>
+    <a href="/">{{ site.Title }}</a>
+  </h1>
+
+  <p>{{ index .Site.Params "description" }}</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp">GitHub</a>
+  </p>
+
+  {{ partial "menu.html" (dict "menuID" "global" "page" .) }}
+
+  <p class="view">
+    <h3>
+      <a href="">SMT-COMP 2024</a>
+    </h3>
+
+  {{ partial "menu.html" (dict "menuID" "year" "page" .) }}

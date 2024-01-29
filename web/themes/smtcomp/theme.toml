@@ -1,0 +1,5 @@
+name = 'SMT-COMP'
+description = 'SMT-COMP Theme'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/SMT-COMP/smt-comp.github.io'

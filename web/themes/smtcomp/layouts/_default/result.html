@@ -1,0 +1,122 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+
+  {{ $trueDivision := and (isset .Params "logics") (index .Params.logics 0 | len | ne 0) }}
+
+  <h2>{{ .Params.division }} ({{ .Params.track }})</h2>
+
+<p>
+  Competition results for the {{ .Params.division }}
+  {{ if $trueDivision }} division {{ else }} logic {{ end }}
+  in the {{ .Params.track }}.
+</p>
+
+<p>Results were generated on {{ .Params.resultdate }}</p>
+
+<p>
+  <b>Benchmarks</b>: {{ .Params.n_benchmarks }}</br>
+  <b>Time Limit:</b> {{ .Params.time_limit }} seconds</br>
+  <b>Memory Limit:</b> {{ .Params.mem_limit }} GB
+</p>
+
+{{ if $trueDivision }}
+<b>Logics: </b><ul>
+  {{ range $logic, $benchmarks := index .Params.logics 0 }}
+  <li><a href="../{{ $logic | lower }}-{{ replace ($.Params.track | strings.TrimPrefix "track_") "_" "-" }}">{{ $logic }}</a> : {{ $benchmarks }} benchmarks</li>
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ $winner_categories := slice "winner_seq" "winner_par" "winner_sat" "winner_unsat" "winner_24s" }}
+
+<h3>Winners</h3>
+<table>
+  <thead>
+    <tr>
+    {{ range $cat := $winner_categories }}
+      {{ if isset $.Params $cat }}
+      <th class="center">Sequential Performance</th>
+      {{ end }}
+    {{ end }}
+    </tr>
+  </thead>
+  <tr>
+    {{ range $cat := $winner_categories }}
+    {{ with index $.Params $cat }}
+    <td class="center">
+      {{ if eq . '-' }}
+      &mdash;
+      {{ else }}
+      {{ . }}
+      {{ end }}
+    </td>
+    {{ end }}
+    {{ end }}
+  </tr>
+</table>
+
+{{ $categories := slice "sequential" "parallel" "sat" "unsat" "twentyfour" }}
+
+{{ $category_names := dict
+"sequential" "Sequential"
+"parallel" "Parallel"
+"sat" "SAT"
+"unsat" "UNSAT"
+"twentyfour" "24 seconds"
+}}
+
+{{ range $cat := $categories }}
+{{ with index $.Params $cat }}
+<h3>{{ index $category_names $cat }} Performance</h3>
+<table id="{{ $cat }}" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        <th class="center">Solved SAT</th>
+        <th class="center">Solved UNSAT</th>
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+{{ range $solver := . }}
+<tr {{ if eq $solver.competing "no" }}class = "non-competing" {{ end }}>
+    <td>
+      <a href="TODO">{{ $solver.name }}</a>{{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
+    </td>
+    <td class="right">{{ $solver.errorScore }}
+      {{ if $solver.errorFootnote }}
+         <a href="#error{{ $solver.name }}">*</a>
+      {{ end }}
+    </td>
+    <td class="right">{{ $solver.correctScore }}</td>
+    <td class="right">{{ $solver.CPUScore }}</td>
+    <td class="right">{{ $solver.WallScore }}</td>
+
+    <td class="right">{{ $solver.solved }}</td>
+    <td class="right">{{ $solver.solved_sat }}</td>
+    <td class="right">{{ $solver.solved_unsat }}</td>
+    <td class="right">{{ $solver.unsolved }}</td>
+    <td class="right">{{ $solver.abstained }}</td>
+
+    <td class="right">{{ $solver.timeout }}</td>
+    <td class="right">{{ $solver.memout }}</td>
+</tr>
+{{ end }}
+</table>
+{{ end }}
+{{ end }}
+
+
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{ end }}

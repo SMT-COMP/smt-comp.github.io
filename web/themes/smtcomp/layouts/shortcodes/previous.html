@@ -1,0 +1,5 @@
+<ul>
+{{ range $.Site.Data.competitions }}
+  <li><a href="{{ .link }}">{{ .name }}</a>
+{{ end }}
+</ul>

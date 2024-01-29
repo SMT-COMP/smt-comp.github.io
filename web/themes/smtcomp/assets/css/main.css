@@ -1,0 +1,161 @@
+h4 { margin-top: 20px; }
+
+table.sorted thead tr th, table.sorted tfoot tr th {
+ /* background-color: #e6EEEE; */
+ padding: 4px;
+ padding-right: 40px;
+ border: 1px solid black;
+ vertical-align: middle;
+}
+table.sorted thead tr .header {
+ background-image: url(https://smt-comp.github.io/img/bg.gif);
+ background-repeat: no-repeat;
+ background-position: center right;
+ cursor: pointer;
+}
+table.sorted tbody td {
+ color: #3D3D3D;
+ padding: 4px;
+ background-color: #FFF;
+ vertical-align: top;
+}
+table.sorted tbody tr.odd td {
+ background-color:#F0F0F6;
+}
+table.sorted thead tr .headerSortUp {
+ background-image: url(https://smt-comp.github.io/img/asc.gif);
+}
+table.sorted thead tr .headerSortDown {
+ background-image: url(https://smt-comp.github.io/img/desc.gif);
+}
+table.sorted thead tr .headerSortDown, table.sorted thead tr .headerSortUp {
+background-color: #d5d9d9;
+color: #000;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+th {
+  font-size: 1em;
+}
+
+th.center {
+  text-align: center;
+}
+
+td {
+  white-space: nowrap;
+  background: none;
+  padding: 4px;
+  border: 1px solid #ccc;
+}
+
+td.center {
+  text-align: center;
+}
+
+td.right {
+  text-align: right;
+}
+
+td.left {
+  text-align: left;
+}
+
+td.non-competing-grey {
+  color: #707070;
+  a {
+    color: #808080;
+  }
+}
+
+tr.non-competing {
+  a {
+    color: #000;
+  }
+}
+
+tr.center td {
+  text-align: center;
+}
+
+tr.center th {
+  text-align: center;
+}
+
+tr.right td {
+  text-align: right;
+}
+
+tr.center td.left {
+  text-align: left;
+}
+
+tr.right td.left {
+  text-align: left;
+}
+
+tr.non-competing-grey {
+  color: #707070;
+  a {
+    color: #808080;
+  }
+}
+
+span.date {
+  color: #606060;
+  margin-right: 5px;
+}
+
+span.non-competing-grey {
+  color: #707070;
+  a {
+    color: #808080;
+  }
+}
+
+tr.total {
+  border-top: 3px solid #ccc;
+}
+
+td.non-competing {
+  a {
+    color: #000;
+  }
+}
+
+span.non-competing {
+  a {
+    color: #000;
+  }
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+b {
+  font-weight: bold;
+}
+
+ul li ul {
+  list-style-type: circle;
+}
+
+ul li p {
+  margin: 0;
+}
