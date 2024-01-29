@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2015/results/NIA.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2015/results/NIA.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2015/results/NIA.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6495ED; } </style>
+    
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2015/">SMT-COMP 2015</a>
+    </h3>
+    <a href="/2015/rules15.pdf"><b>Rules</b></a><br/><a href="/2015/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2015/tools.html"><b>Tools</b></a><br/><a href="/2015/specs.html"><b>Specs</b></a><br/><a href="/2015/participants.html"><b>Participants</b></a><br/><a href="/2015/results.html"><b>Results</b></a><br/><a href="/2015/SMT-COMP-2015-slides.pdf"><b>Slides</b></a><br/><a href="https://doi.org/10.3233/SAT190123"><b>Report</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2 id="nia-main-track">NIA (Main Track)</h2>
+
+<p>Competition results for the NIA division as of Fri Oct 30 12:49:29 GMT</p>
+
+<p><strong>Competition benchmarks = 9</strong> 
+<strong><br />Competition industrial benchmarks = 9</strong></p>
+
+<h3 id="non-competitive-division">Non-Competitive division</h3>
+
+<h4 id="sequential-performance">Sequential Performance</h4>
+<table id="sequential" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0.07</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.12</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.20</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">9</td>
+<td class="right">0.33</td>
+</tr>
+</table>
+<h4 id="sequential-performance-industrial">Sequential Performance (industrial)</h4>
+<table id="sequentiali" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0.07</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.12</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.20</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">9</td>
+<td class="right">0.33</td>
+</tr>
+</table>
+<h4 id="parallel-performance">Parallel Performance</h4>
+<table id="parallel" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+<th class="center">WALL</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0.07</td>
+<td class="right">0.09</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.12</td>
+<td class="right">0.16</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.20</td>
+<td class="right">0.25</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">9</td>
+<td class="right">0.33</td>
+<td class="right">0.33</td>
+</tr>
+</table>
+<h4 id="parallel-performance-industrial">Parallel Performance (industrial)</h4>
+<table id="paralleli" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+<th class="center">WALL</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">0</td>
+<td class="right">0.07</td>
+<td class="right">0.09</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.12</td>
+<td class="right">0.16</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">3</td>
+<td class="right">0.20</td>
+<td class="right">0.25</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">9</td>
+<td class="right">0.33</td>
+<td class="right">0.33</td>
+</tr>
+
+</table>
+<h4 id="other-information">Other Information</h4>
+<table>
+<tr>
+<th class="center">Solver</th>
+<th class="center">Not Solved</th>
+<th class="center">Remaining</th>
+</tr>
+<tr>
+<td>CVC3</td>
+<td class="right">9</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">6</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">6</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">0</td>
+</tr>
+</table>
+
+<p><span id="fn"> n. Non-competitive.</span></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Qf_nra Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Qf_nra Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2020/results/qf-nra-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2020/results/qf-nra-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Qf_nra Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Qf_nra Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2020/results/qf-nra-single-query"},"url":"https://smt-comp.github.io/2020/results/qf-nra-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #3361FF; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2020/">SMT-COMP 2020</a>
+    </h3>
+    <a href="/2020/rules20.pdf"><b>Rules</b></a><br/><a href="/2020/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2020/tools.html"><b>Tools</b></a><br/><a href="/2020/specs.html"><b>Specs</b></a><br/><a href="/2020/participants.html"><b>Participants</b></a><br/><a href="/2020/results.html"><b>Results</b></a><br/><a href="/2020/SMT-COMP-2020-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+<h2>QF_NRA (Single Query Track)</h2>
+
+<p>
+    Competition results for the QF_NRA
+    
+      division
+    
+in the Single Query Track.
+</p>
+
+<p>
+Page generated on 2020-07-04 11:46:59 +0000
+</p>
+
+<p>
+<b>Benchmarks</b>: 2230
+</br>
+<b>Time Limit:</b> 1200 seconds
+</br>
+<b> Memory Limit:</b> 60 GB
+</p><h3>Winners</h3>
+<table>
+    <thead>
+        <tr><th class="center">Sequential Performance</th><th class="center">Parallel Performance</th><th class="center">SAT Performance (parallel)</th><th class="center">UNSAT Performance (parallel)</th><th class="center">24s Performance (parallel)</th></tr>
+    </thead>
+    <tr><td class="center">Yices2</td><td class="center">Yices2</td><td class="center">Yices2</td>
+     
+     
+        <td class="center">Yices2</td>
+     
+     
+        <td class="center">Yices2</td>
+     
+    </tr>
+</table>
+
+<p><p>
+
+<!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Sequential Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2020/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1998</td>
+    <td class="right">325585.346</td>
+    <td class="right">294271.298</td><td class="right">1998</td><td class="right">937</td><td class="right">1061</td><td class="right">232</td><td class="right"></td><td class="right">180</td>
+    <td class="right">52</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2020/participants/yices2-fixed">Yices2-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1770</td>
+    <td class="right">579351.637</td>
+    <td class="right">580091.866</td><td class="right">1770</td><td class="right">816</td><td class="right">954</td><td class="right">460</td><td class="right"></td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2020/participants/yices2">Yices2</a></td>
+    <td class="right">0</td>
+    <td class="right">1770</td>
+    <td class="right">580322.491</td>
+    <td class="right">580314.797</td><td class="right">1770</td><td class="right">816</td><td class="right">954</td><td class="right">460</td><td class="right"></td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2020/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1658</td>
+    <td class="right">708539.767</td>
+    <td class="right">708566.395</td><td class="right">1658</td><td class="right">830</td><td class="right">828</td><td class="right">572</td><td class="right"></td><td class="right">566</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2020/participants/smt-rat-mcsat">SMT-RAT-MCSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">1564</td>
+    <td class="right">808770.651</td>
+    <td class="right">808779.078</td><td class="right">1564</td><td class="right">751</td><td class="right">813</td><td class="right">666</td><td class="right"></td><td class="right">632</td>
+    <td class="right">8</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2020/participants/verit-rasat-redlog">veriT+raSAT+Redlog</a></td>
+    <td class="right">0</td>
+    <td class="right">1420</td>
+    <td class="right">975715.937</td>
+    <td class="right">975662.684</td><td class="right">1420</td><td class="right">635</td><td class="right">785</td><td class="right">810</td><td class="right"></td><td class="right">808</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2020/participants/smt-rat-calc">SMT-RAT-CAlC</a></td>
+    <td class="right">0</td>
+    <td class="right">1377</td>
+    <td class="right">1045700.847</td>
+    <td class="right">1045791.558</td><td class="right">1377</td><td class="right">652</td><td class="right">725</td><td class="right">853</td><td class="right"></td><td class="right">845</td>
+    <td class="right">7</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2020/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">1325</td>
+    <td class="right">1169585.429</td>
+    <td class="right">1179419.785</td><td class="right">1325</td><td class="right">385</td><td class="right">940</td><td class="right">905</td><td class="right"></td><td class="right">905</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2020/participants/mathsat5">MathSAT5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1292</td>
+    <td class="right">1155961.421</td>
+    <td class="right">1156078.182</td><td class="right">1292</td><td class="right">361</td><td class="right">931</td><td class="right">938</td><td class="right"></td><td class="right">938</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- PARALLEL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">2010</td><td class="right">333813.256</td><td class="right">287439.958</td><td class="right">2010</td><td class="right">946</td><td class="right">1064</td><td class="right">220</td><td class="right"></td><td class="right">168</td>
+    <td class="right">52</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/yices2-fixed">Yices2-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1770</td><td class="right">580033.882</td><td class="right">580073.896</td><td class="right">1770</td><td class="right">816</td><td class="right">954</td><td class="right">460</td><td class="right"></td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/yices2">Yices2</a></td>
+    <td class="right">0</td>
+    <td class="right">1770</td><td class="right">580374.371</td><td class="right">580298.647</td><td class="right">1770</td><td class="right">816</td><td class="right">954</td><td class="right">460</td><td class="right"></td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1658</td><td class="right">708610.427</td><td class="right">708547.195</td><td class="right">1658</td><td class="right">830</td><td class="right">828</td><td class="right">572</td><td class="right"></td><td class="right">566</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-mcsat">SMT-RAT-MCSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">1564</td><td class="right">808820.671</td><td class="right">808759.198</td><td class="right">1564</td><td class="right">751</td><td class="right">813</td><td class="right">666</td><td class="right"></td><td class="right">632</td>
+    <td class="right">8</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/verit-rasat-redlog">veriT+raSAT+Redlog</a></td>
+    <td class="right">0</td>
+    <td class="right">1420</td><td class="right">975761.947</td><td class="right">975644.694</td><td class="right">1420</td><td class="right">635</td><td class="right">785</td><td class="right">810</td><td class="right"></td><td class="right">808</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-calc">SMT-RAT-CAlC</a></td>
+    <td class="right">0</td>
+    <td class="right">1377</td><td class="right">1045783.947</td><td class="right">1045762.018</td><td class="right">1377</td><td class="right">652</td><td class="right">725</td><td class="right">853</td><td class="right"></td><td class="right">845</td>
+    <td class="right">7</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">1326</td><td class="right">1179005.929</td><td class="right">1179094.776</td><td class="right">1326</td><td class="right">385</td><td class="right">941</td><td class="right">904</td><td class="right"></td><td class="right">904</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/mathsat5">MathSAT5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1292</td><td class="right">1156089.651</td><td class="right">1156039.582</td><td class="right">1292</td><td class="right">361</td><td class="right">931</td><td class="right">938</td><td class="right"></td><td class="right">938</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- SAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>SAT Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">946</td><td class="right">134294.83</td><td class="right">104843.315</td><td class="right">946</td><td class="right">946</td><td class="right">0</td><td class="right">1284</td><td class="right">168</td>
+    <td class="right">52</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">830</td><td class="right">237748.324</td><td class="right">237699.536</td><td class="right">830</td><td class="right">830</td><td class="right">0</td><td class="right">1400</td><td class="right">566</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/yices2">Yices2</a></td>
+    <td class="right">0</td>
+    <td class="right">816</td><td class="right">254741.897</td><td class="right">254706.176</td><td class="right">816</td><td class="right">816</td><td class="right">0</td><td class="right">1414</td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/yices2-fixed">Yices2-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">816</td><td class="right">254729.098</td><td class="right">254746.901</td><td class="right">816</td><td class="right">816</td><td class="right">0</td><td class="right">1414</td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-mcsat">SMT-RAT-MCSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">751</td><td class="right">316588.126</td><td class="right">316577.986</td><td class="right">751</td><td class="right">751</td><td class="right">0</td><td class="right">1479</td><td class="right">632</td>
+    <td class="right">8</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-calc">SMT-RAT-CAlC</a></td>
+    <td class="right">0</td>
+    <td class="right">652</td><td class="right">443829.654</td><td class="right">443811.591</td><td class="right">652</td><td class="right">652</td><td class="right">0</td><td class="right">1578</td><td class="right">845</td>
+    <td class="right">7</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/verit-rasat-redlog">veriT+raSAT+Redlog</a></td>
+    <td class="right">0</td>
+    <td class="right">635</td><td class="right">465121.218</td><td class="right">465053.788</td><td class="right">635</td><td class="right">635</td><td class="right">0</td><td class="right">1595</td><td class="right">808</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">385</td><td class="right">826466.362</td><td class="right">826835.56</td><td class="right">385</td><td class="right">385</td><td class="right">0</td><td class="right">1845</td><td class="right">904</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/mathsat5">MathSAT5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">361</td><td class="right">800695.491</td><td class="right">800697.572</td><td class="right">361</td><td class="right">361</td><td class="right">0</td><td class="right">1869</td><td class="right">938</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- UNSAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>UNSAT Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1064</td><td class="right">42318.426</td><td class="right">25396.643</td><td class="right">1064</td><td class="right">0</td><td class="right">1064</td><td class="right">1166</td><td class="right">168</td>
+    <td class="right">52</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/yices2-fixed">Yices2-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">954</td><td class="right">168104.784</td><td class="right">168126.995</td><td class="right">954</td><td class="right">0</td><td class="right">954</td><td class="right">1276</td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/yices2">Yices2</a></td>
+    <td class="right">0</td>
+    <td class="right">954</td><td class="right">168432.474</td><td class="right">168392.471</td><td class="right">954</td><td class="right">0</td><td class="right">954</td><td class="right">1276</td><td class="right">460</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">941</td><td class="right">195339.568</td><td class="right">195059.217</td><td class="right">941</td><td class="right">0</td><td class="right">941</td><td class="right">1289</td><td class="right">904</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/mathsat5">MathSAT5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">931</td><td class="right">198194.16</td><td class="right">198142.01</td><td class="right">931</td><td class="right">0</td><td class="right">931</td><td class="right">1299</td><td class="right">938</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">828</td><td class="right">316040.786</td><td class="right">316026.34</td><td class="right">828</td><td class="right">0</td><td class="right">828</td><td class="right">1402</td><td class="right">566</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-mcsat">SMT-RAT-MCSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">813</td><td class="right">336463.282</td><td class="right">336411.554</td><td class="right">813</td><td class="right">0</td><td class="right">813</td><td class="right">1417</td><td class="right">632</td>
+    <td class="right">8</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/verit-rasat-redlog">veriT+raSAT+Redlog</a></td>
+    <td class="right">0</td>
+    <td class="right">785</td><td class="right">354551.18</td><td class="right">354501.652</td><td class="right">785</td><td class="right">0</td><td class="right">785</td><td class="right">1445</td><td class="right">808</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-calc">SMT-RAT-CAlC</a></td>
+    <td class="right">0</td>
+    <td class="right">725</td><td class="right">444754.293</td><td class="right">444750.427</td><td class="right">725</td><td class="right">0</td><td class="right">725</td><td class="right">1505</td><td class="right">845</td>
+    <td class="right">7</td>
+</tr>
+
+</table><!-- 24s PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>24 seconds Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1889</td><td class="right">14257.489</td><td class="right">10323.972</td><td class="right">1889</td><td class="right">889</td><td class="right">1000</td><td class="right">341</td><td class="right"></td><td class="right">289</td>
+    <td class="right">52</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/yices2">Yices2</a></td>
+    <td class="right">0</td>
+    <td class="right">1666</td><td class="right">14357.316</td><td class="right">14358.132</td><td class="right">1666</td><td class="right">779</td><td class="right">887</td><td class="right">564</td><td class="right"></td><td class="right">564</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/yices2-fixed">Yices2-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1666</td><td class="right">14363.767</td><td class="right">14364.913</td><td class="right">1666</td><td class="right">779</td><td class="right">887</td><td class="right">564</td><td class="right"></td><td class="right">564</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1593</td><td class="right">17711.919</td><td class="right">17691.094</td><td class="right">1593</td><td class="right">802</td><td class="right">791</td><td class="right">637</td><td class="right"></td><td class="right">632</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-mcsat">SMT-RAT-MCSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">1445</td><td class="right">20675.031</td><td class="right">20652.75</td><td class="right">1445</td><td class="right">730</td><td class="right">715</td><td class="right">785</td><td class="right"></td><td class="right">777</td>
+    <td class="right">8</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/verit-rasat-redlog">veriT+raSAT+Redlog</a></td>
+    <td class="right">0</td>
+    <td class="right">1394</td><td class="right">20733.113</td><td class="right">20721.203</td><td class="right">1394</td><td class="right">619</td><td class="right">775</td><td class="right">836</td><td class="right"></td><td class="right">836</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/smt-rat-calc">SMT-RAT-CAlC</a></td>
+    <td class="right">0</td>
+    <td class="right">1251</td><td class="right">25197.195</td><td class="right">25171.847</td><td class="right">1251</td><td class="right">646</td><td class="right">605</td><td class="right">979</td><td class="right"></td><td class="right">972</td>
+    <td class="right">7</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2020/participants/mathsat5">MathSAT5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1163</td><td class="right">27996.385</td><td class="right">27995.378</td><td class="right">1163</td><td class="right">317</td><td class="right">846</td><td class="right">1067</td><td class="right"></td><td class="right">1067</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2020/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">1002</td><td class="right">31768.353</td><td class="right">31728.2</td><td class="right">1002</td><td class="right">197</td><td class="right">805</td><td class="right">1228</td><td class="right"></td><td class="right">1228</td>
+    <td class="right">0</td>
+</tr>
+
+</table><p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/><span id="nc">
+    Abstained: Total of benchmarks in logics in this division that solver chose to abstain from. For SAT/UNSAT scores, this column also includes benchmarks not known to be SAT/UNSAT.
+    </span><br/></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

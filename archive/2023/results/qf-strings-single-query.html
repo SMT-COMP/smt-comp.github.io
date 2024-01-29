@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Qf_strings Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Qf_strings Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2023/results/qf-strings-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2023/results/qf-strings-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Qf_strings Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Qf_strings Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2023/results/qf-strings-single-query"},"url":"https://smt-comp.github.io/2023/results/qf-strings-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6000ff; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2023/">SMT-COMP 2023</a>
+    </h3>
+    <a href="/2023/rules.pdf"><b>Rules</b></a><br/><a href="/2023/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2023/specs.html"><b>Specs</b></a><br/><a href="/2023/model.html"><b>Model Validation Track</b></a><br/><a href="/2023/proof-track.html"><b>Proof Exhibition Track</b></a><br/><a href="/2023/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2023/participants.html"><b>Participants</b></a><br/><a href="/2023/results.html"><b>Results</b></a><br/><a href="/2023/stats.html"><b>Statistics</b></a><br/><a href="/2023/comparisons.html"><b>Comparisons</b></a><br/><a href="/2023/slides.html"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+<h2>QF_Strings (Single Query Track)</h2>
+
+<p>
+    Competition results for the QF_Strings
+    
+      division
+    
+in the Single Query Track.
+</p>
+
+<p>
+Page generated on 2023-07-06 16:04:54 +0000
+</p>
+
+<p>
+<b>Benchmarks</b>: 30855
+</br>
+<b>Time Limit:</b> 1200 seconds
+</br>
+<b> Memory Limit:</b> 60 GB
+</p><b>Logics: </b><ul><li><a href="/2023/results/qf-s-single-query">QF_S</a> : 8847 benchmarks</li><li><a href="/2023/results/qf-slia-single-query">QF_SLIA</a> : 21938 benchmarks</li><li><a href="/2023/results/qf-snia-single-query">QF_SNIA</a> : 70 benchmarks</li></ul><h3>Winners</h3>
+<table>
+    <thead>
+        <tr><th class="center">Sequential Performance</th><th class="center">Parallel Performance</th><th class="center">SAT Performance (parallel)</th><th class="center">UNSAT Performance (parallel)</th><th class="center">24s Performance (parallel)</th></tr>
+    </thead>
+    <tr><td class="center">cvc5</td><td class="center">cvc5</td><td class="center">cvc5</td>
+     
+     
+        <td class="center">cvc5</td>
+     
+     
+        <td class="center">z3-alpha</td>
+     
+    </tr>
+</table>
+
+<p><p>
+
+<!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Sequential Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+  
+      <a href="/2023/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">30291</td>
+    <td class="right">520876.164</td>
+    <td class="right">529819.493</td><td class="right">30291</td><td class="right">19974</td><td class="right">10317</td><td class="right">564</td><td class="right">0</td><td class="right">557</td>
+    <td class="right">4</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2023/participants/2022-cvc5">2022-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">29825</td>
+    <td class="right">567038.083</td>
+    <td class="right">575084.373</td><td class="right">29825</td><td class="right">19760</td><td class="right">10065</td><td class="right">1030</td><td class="right">0</td><td class="right">1027</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2023/participants/z3-alpha">z3-alpha</a></td>
+    <td class="right">0</td>
+    <td class="right">29764</td>
+    <td class="right">189759.852</td>
+    <td class="right">189287.851</td><td class="right">29764</td><td class="right">19507</td><td class="right">10257</td><td class="right">1091</td><td class="right">0</td><td class="right">835</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2023/participants/ostrich-fixed">OSTRICH Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">25786</td>
+    <td class="right">518390.549</td>
+    <td class="right">279618.422</td><td class="right">25786</td><td class="right">15444</td><td class="right">10342</td><td class="right">5069</td><td class="right">0</td><td class="right">5063</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2023/participants/z3-noodler-fixed">Z3-Noodler Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">1</td>
+    <td class="right">21421</td>
+    <td class="right">212161.562</td>
+    <td class="right">212078.539</td><td class="right">21421</td><td class="right">13084</td><td class="right">8337</td><td class="right">9364</td><td class="right">70</td><td class="right">2108</td>
+    <td class="right">4347</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2023/participants/z3-noodler">Z3-Noodler</a></td>
+    <td class="right">5</td>
+    <td class="right">21482</td>
+    <td class="right">202995.982</td>
+    <td class="right">202990.131</td><td class="right">21482</td><td class="right">13147</td><td class="right">8335</td><td class="right">9303</td><td class="right">70</td><td class="right">2052</td>
+    <td class="right">4405</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2023/participants/ostrich">OSTRICH</a></td>
+    <td class="right">10</td>
+    <td class="right">25670</td>
+    <td class="right">468031.837</td>
+    <td class="right">246482.979</td><td class="right">25670</td><td class="right">15327</td><td class="right">10343</td><td class="right">5185</td><td class="right">0</td><td class="right">5091</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- PARALLEL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">30291</td><td class="right">520876.164</td><td class="right">529819.493</td><td class="right">30291</td><td class="right">19974</td><td class="right">10317</td><td class="right">564</td><td class="right">0</td><td class="right">557</td>
+    <td class="right">4</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/2022-cvc5">2022-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">29825</td><td class="right">567038.083</td><td class="right">575084.373</td><td class="right">29825</td><td class="right">19760</td><td class="right">10065</td><td class="right">1030</td><td class="right">0</td><td class="right">1027</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-alpha">z3-alpha</a></td>
+    <td class="right">0</td>
+    <td class="right">29764</td><td class="right">189759.852</td><td class="right">189287.851</td><td class="right">29764</td><td class="right">19507</td><td class="right">10257</td><td class="right">1091</td><td class="right">0</td><td class="right">835</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/ostrich-fixed">OSTRICH Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">25812</td><td class="right">558107.459</td><td class="right">304149.926</td><td class="right">25812</td><td class="right">15470</td><td class="right">10342</td><td class="right">5043</td><td class="right">0</td><td class="right">5035</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler-fixed">Z3-Noodler Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">1</td>
+    <td class="right">21421</td><td class="right">212161.562</td><td class="right">212078.539</td><td class="right">21421</td><td class="right">13084</td><td class="right">8337</td><td class="right">9364</td><td class="right">70</td><td class="right">2108</td>
+    <td class="right">4347</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler">Z3-Noodler</a></td>
+    <td class="right">5</td>
+    <td class="right">21481</td><td class="right">201796.002</td><td class="right">201790.111</td><td class="right">21481</td><td class="right">13146</td><td class="right">8335</td><td class="right">9304</td><td class="right">70</td><td class="right">2053</td>
+    <td class="right">4405</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/ostrich">OSTRICH</a></td>
+    <td class="right">10</td>
+    <td class="right">25680</td><td class="right">480650.027</td><td class="right">257684.189</td><td class="right">25680</td><td class="right">15337</td><td class="right">10343</td><td class="right">5175</td><td class="right">0</td><td class="right">5074</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- SAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>SAT Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">19974</td><td class="right">412780.084</td><td class="right">419964.064</td><td class="right">19974</td><td class="right">19974</td><td class="right">0</td><td class="right">164</td><td class="right">10717</td><td class="right">557</td>
+    <td class="right">4</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/2022-cvc5">2022-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">19760</td><td class="right">470382.063</td><td class="right">478017.612</td><td class="right">19760</td><td class="right">19760</td><td class="right">0</td><td class="right">378</td><td class="right">10717</td><td class="right">1027</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-alpha">z3-alpha</a></td>
+    <td class="right">0</td>
+    <td class="right">19507</td><td class="right">177017.948</td><td class="right">176617.159</td><td class="right">19507</td><td class="right">19507</td><td class="right">0</td><td class="right">631</td><td class="right">10717</td><td class="right">835</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/ostrich-fixed">OSTRICH Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">15470</td><td class="right">423750.262</td><td class="right">221131.26</td><td class="right">15470</td><td class="right">15470</td><td class="right">0</td><td class="right">4668</td><td class="right">10717</td><td class="right">5035</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler-fixed">Z3-Noodler Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">13084</td><td class="right">203295.382</td><td class="right">203212.614</td><td class="right">13084</td><td class="right">13084</td><td class="right">0</td><td class="right">6984</td><td class="right">10787</td><td class="right">2108</td>
+    <td class="right">4347</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/ostrich">OSTRICH</a></td>
+    <td class="right">1</td>
+    <td class="right">15337</td><td class="right">345971.52</td><td class="right">174252.506</td><td class="right">15337</td><td class="right">15337</td><td class="right">0</td><td class="right">4801</td><td class="right">10717</td><td class="right">5074</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler">Z3-Noodler</a></td>
+    <td class="right">4</td>
+    <td class="right">13146</td><td class="right">192152.525</td><td class="right">192151.68</td><td class="right">13146</td><td class="right">13146</td><td class="right">0</td><td class="right">6922</td><td class="right">10787</td><td class="right">2053</td>
+    <td class="right">4405</td>
+</tr>
+
+</table><!-- UNSAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>UNSAT Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/ostrich-fixed">OSTRICH Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">10342</td><td class="right">134357.197</td><td class="right">83018.666</td><td class="right">10342</td><td class="right">0</td><td class="right">10342</td><td class="right">252</td><td class="right">20261</td><td class="right">5035</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">10317</td><td class="right">108096.08</td><td class="right">109855.429</td><td class="right">10317</td><td class="right">0</td><td class="right">10317</td><td class="right">277</td><td class="right">20261</td><td class="right">557</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-alpha">z3-alpha</a></td>
+    <td class="right">0</td>
+    <td class="right">10257</td><td class="right">12741.904</td><td class="right">12670.692</td><td class="right">10257</td><td class="right">0</td><td class="right">10257</td><td class="right">337</td><td class="right">20261</td><td class="right">835</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/2022-cvc5">2022-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">10065</td><td class="right">96656.02</td><td class="right">97066.761</td><td class="right">10065</td><td class="right">0</td><td class="right">10065</td><td class="right">529</td><td class="right">20261</td><td class="right">1027</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler-fixed">Z3-Noodler Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">1</td>
+    <td class="right">8337</td><td class="right">8866.179</td><td class="right">8865.925</td><td class="right">8337</td><td class="right">0</td><td class="right">8337</td><td class="right">2257</td><td class="right">20261</td><td class="right">2108</td>
+    <td class="right">4347</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler">Z3-Noodler</a></td>
+    <td class="right">1</td>
+    <td class="right">8335</td><td class="right">9643.477</td><td class="right">9638.432</td><td class="right">8335</td><td class="right">0</td><td class="right">8335</td><td class="right">2259</td><td class="right">20261</td><td class="right">2053</td>
+    <td class="right">4405</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/ostrich">OSTRICH</a></td>
+    <td class="right">9</td>
+    <td class="right">10343</td><td class="right">134678.507</td><td class="right">83431.684</td><td class="right">10343</td><td class="right">0</td><td class="right">10343</td><td class="right">251</td><td class="right">20261</td><td class="right">5074</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- 24s PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>24 seconds Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-alpha">z3-alpha</a></td>
+    <td class="right">0</td>
+    <td class="right">28820</td><td class="right">28287.264</td><td class="right">27940.808</td><td class="right">28820</td><td class="right">18632</td><td class="right">10188</td><td class="right">2035</td><td class="right">0</td><td class="right">1897</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">28581</td><td class="right">12860.626</td><td class="right">12628.504</td><td class="right">28581</td><td class="right">18643</td><td class="right">9938</td><td class="right">2274</td><td class="right">0</td><td class="right">2268</td>
+    <td class="right">4</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/2022-cvc5">2022-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">28002</td><td class="right">14974.409</td><td class="right">14783.176</td><td class="right">28002</td><td class="right">18262</td><td class="right">9740</td><td class="right">2853</td><td class="right">0</td><td class="right">2851</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/ostrich-fixed">OSTRICH Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">24009</td><td class="right">208530.073</td><td class="right">82512.246</td><td class="right">24009</td><td class="right">13893</td><td class="right">10116</td><td class="right">6846</td><td class="right">0</td><td class="right">6845</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler-fixed">Z3-Noodler Fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">1</td>
+    <td class="right">20819</td><td class="right">4983.736</td><td class="right">4953.244</td><td class="right">20819</td><td class="right">12533</td><td class="right">8286</td><td class="right">9966</td><td class="right">70</td><td class="right">2803</td>
+    <td class="right">4347</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/z3-noodler">Z3-Noodler</a></td>
+    <td class="right">5</td>
+    <td class="right">20828</td><td class="right">4893.504</td><td class="right">4856.207</td><td class="right">20828</td><td class="right">12556</td><td class="right">8272</td><td class="right">9957</td><td class="right">70</td><td class="right">2733</td>
+    <td class="right">4405</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2023/participants/ostrich">OSTRICH</a></td>
+    <td class="right">9</td>
+    <td class="right">24054</td><td class="right">210099.837</td><td class="right">83070.977</td><td class="right">24054</td><td class="right">13935</td><td class="right">10119</td><td class="right">6801</td><td class="right">0</td><td class="right">6783</td>
+    <td class="right">0</td>
+</tr>
+
+</table><p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/><span id="nc">
+    Abstained: Total of benchmarks in logics in this division that solver chose to abstain from. For SAT/UNSAT scores, this column also includes benchmarks not known to be SAT/UNSAT.
+    </span><br/></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

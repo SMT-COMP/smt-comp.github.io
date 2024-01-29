@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2015/results/QF_IDL.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2015/results/QF_IDL.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2015/results/QF_IDL.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6495ED; } </style>
+    
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2015/">SMT-COMP 2015</a>
+    </h3>
+    <a href="/2015/rules15.pdf"><b>Rules</b></a><br/><a href="/2015/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2015/tools.html"><b>Tools</b></a><br/><a href="/2015/specs.html"><b>Specs</b></a><br/><a href="/2015/participants.html"><b>Participants</b></a><br/><a href="/2015/results.html"><b>Results</b></a><br/><a href="/2015/SMT-COMP-2015-slides.pdf"><b>Slides</b></a><br/><a href="https://doi.org/10.3233/SAT190123"><b>Report</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2 id="qf_idl-main-track">QF_IDL (Main Track)</h2>
+
+<p>Competition results for the QF_IDL division as of Fri Oct 30 12:49:29 GMT</p>
+
+<p><strong>Competition benchmarks = 2094</strong> 
+<strong><br />Competition industrial benchmarks = 1074</strong></p>
+
+<h3 id="the-winners-for-this-division-are">The winners for this division are:</h3>
+<h4 id="sequential-performance">Sequential Performance</h4>
+<table>
+<tr>
+<th class="center">Sequential Performance</th>
+<th class="center">Sequential Performance (industrial)</th>
+<th class="center">Parallel Performance</th>
+<th class="center">Parallel Performance (industrial)</th>
+</tr>
+<tr class="center">
+<td>Yices</td>
+<td>Yices</td>
+<td>Yices</td>
+<td>Yices</td>
+</tr>
+</table>
+<h3 id="division-complete">Division COMPLETE</h3>
+
+<h4 id="sequential-performance-1">Sequential Performance</h4>
+<table id="sequential" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+</tr>
+</thead>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">1834</td>
+<td class="right">812546.38</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">1835</td>
+<td class="right">812119.48</td>
+</tr>
+<tr>
+<td>SMTInterpol</td>
+<td class="right">0</td>
+<td class="right">1646</td>
+<td class="right">1264057.27</td>
+</tr>
+<tr>
+<td>Yices</td>
+<td class="right">0</td>
+<td class="right">1950</td>
+<td class="right">395133.07</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">1965</td>
+<td class="right">431735.20</td>
+</tr>
+<tr>
+<td>veriT</td>
+<td class="right">0</td>
+<td class="right">1638</td>
+<td class="right">1332543.16</td>
+</tr>
+</table>
+<h4 id="sequential-performance-industrial">Sequential Performance (industrial)</h4>
+<table id="sequentiali" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+</tr>
+</thead>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">991</td>
+<td class="right">292132.68</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">992</td>
+<td class="right">291687.86</td>
+</tr>
+<tr>
+<td>SMTInterpol</td>
+<td class="right">0</td>
+<td class="right">869</td>
+<td class="right">597200.74</td>
+</tr>
+<tr>
+<td>Yices</td>
+<td class="right">0</td>
+<td class="right">1012</td>
+<td class="right">192096.80</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">1023</td>
+<td class="right">228443.27</td>
+</tr>
+<tr>
+<td>veriT</td>
+<td class="right">0</td>
+<td class="right">935</td>
+<td class="right">422027.61</td>
+</tr>
+</table>
+<h4 id="parallel-performance">Parallel Performance</h4>
+<table id="parallel" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+<th class="center">WALL</th>
+</tr>
+</thead>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">1834</td>
+<td class="right">812777.75</td>
+<td class="right">812472.85</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">1835</td>
+<td class="right">812348.86</td>
+<td class="right">812046.56</td>
+</tr>
+<tr>
+<td>SMTInterpol</td>
+<td class="right">0</td>
+<td class="right">1648</td>
+<td class="right">1592553.47</td>
+<td class="right">1232274.35</td>
+</tr>
+<tr>
+<td>Yices</td>
+<td class="right">0</td>
+<td class="right">1950</td>
+<td class="right">395259.88</td>
+<td class="right">395118.58</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">1965</td>
+<td class="right">431863.50</td>
+<td class="right">431682.47</td>
+</tr>
+<tr>
+<td>veriT</td>
+<td class="right">0</td>
+<td class="right">1638</td>
+<td class="right">1332925.88</td>
+<td class="right">1332462.81</td>
+</tr>
+
+</table>
+<h4 id="parallel-performance-industrial">Parallel Performance (industrial)</h4>
+<table id="paralleli" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+<th class="center">WALL</th>
+</tr>
+</thead>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">991</td>
+<td class="right">292201.07</td>
+<td class="right">292101.56</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">992</td>
+<td class="right">291753.95</td>
+<td class="right">291644.79</td>
+</tr>
+<tr>
+<td>SMTInterpol</td>
+<td class="right">0</td>
+<td class="right">870</td>
+<td class="right">839201.52</td>
+<td class="right">580923.92</td>
+</tr>
+<tr>
+<td>Yices</td>
+<td class="right">0</td>
+<td class="right">1012</td>
+<td class="right">192149.82</td>
+<td class="right">192084.96</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">1023</td>
+<td class="right">228490.03</td>
+<td class="right">228403.24</td>
+</tr>
+<tr>
+<td>veriT</td>
+<td class="right">0</td>
+<td class="right">935</td>
+<td class="right">422121.39</td>
+<td class="right">422006.96</td>
+</tr>
+
+</table>
+<h4 id="other-information">Other Information</h4>
+<table>
+<tr>
+<th class="center">Solver</th>
+<th class="center">Not Solved</th>
+<th class="center">Remaining</th>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">260</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">259</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>SMTInterpol</td>
+<td class="right">446</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>Yices</td>
+<td class="right">144</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">129</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>veriT</td>
+<td class="right">456</td>
+<td class="right">0</td>
+</tr>
+</table>
+
+<p><span id="fn"> n. Non-competitive.</span></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

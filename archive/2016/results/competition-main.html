@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2016/results/competition-main.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2016/results/competition-main.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2016/results/competition-main.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #ff75dd; } </style>
+    
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2016/">SMT-COMP 2016</a>
+    </h3>
+    <a href="/2016/rules16.pdf"><b>Rules</b></a><br/><a href="/2016/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2016/tools.html"><b>Tools</b></a><br/><a href="/2016/specs.html"><b>Specs</b></a><br/><a href="/2016/participants.html"><b>Participants</b></a><br/><a href="/2016/results.html"><b>Results</b></a><br/><a href="/2016/SMT-COMP-2016-slides.pdf"><b>Slides</b></a><br/><a href="https://doi.org/10.3233/SAT190123"><b>Report</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2 id="competition-wide-scoring-for-the-main-track">Competition-Wide Scoring for the Main Track</h2>
+
+<p>Competition results as of Thu Jul 7 07:24:34 GMT</p>
+
+<table>
+<tr class="center"><th>Sequential Performances</th><th>Parallel Performances</th>
+</tr>
+<tr class="center">
+<td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
+</tr>
+<tr class="center">
+<td> -</td>
+<td><span class="non-competing-grey">Z3<sup><a href="#fn">n</a></sup></span>
+</td>
+<td class="right">185.09</td>
+</tr>
+<tr class="center">
+<td class="right">1</td>
+<td>CVC4</td>
+<td class="right">180.95</td>
+</tr>
+<tr class="center">
+<td class="right">2</td>
+<td>Yices2</td>
+<td class="right">119.29</td>
+</tr>
+<tr class="center">
+<td class="right">3</td>
+<td>veriT-dev</td>
+<td class="right">75.11</td>
+</tr>
+<tr class="center">
+<td> -</td>
+<td>MathSat5<sup><a href="#fn">n</a></sup>
+</td>
+<td class="right">74.06</td>
+</tr>
+<tr class="center">
+<td class="right">4</td>
+<td>SMTInterpol</td>
+<td class="right">68.91</td>
+</tr>
+<tr class="center">
+<td class="right">5</td>
+<td>vampire_smt_4.1_parallel</td>
+<td class="right">65.36</td>
+</tr>
+<tr class="center">
+<td class="right">6</td>
+<td>vampire_smt_4.1</td>
+<td class="right">64.90</td>
+</tr>
+<tr class="center">
+<td class="right">7</td>
+<td>Boolector</td>
+<td class="right">32.52</td>
+</tr>
+<tr class="center">
+<td class="right">8</td>
+<td>OpenSMT2</td>
+<td class="right">18.83</td>
+</tr>
+<tr class="center">
+<td class="right">9</td>
+<td>toysmt</td>
+<td class="right">10.52</td>
+</tr>
+<tr class="center">
+<td class="right">10</td>
+<td>raSAT 0.4</td>
+<td class="right">8.97</td>
+</tr>
+<tr class="center">
+<td class="right">11</td>
+<td>Boolector (preprop)</td>
+<td class="right">8.74</td>
+</tr>
+<tr class="center">
+<td class="right">12</td>
+<td>stp-cms-st</td>
+<td class="right">8.52</td>
+</tr>
+<tr class="center">
+<td class="right">13</td>
+<td>stp-cms-exp</td>
+<td class="right">8.16</td>
+</tr>
+<tr class="center">
+<td class="right">14</td>
+<td>Minkeyrink</td>
+<td class="right">8.02</td>
+</tr>
+<tr class="center">
+<td class="right">15</td>
+<td>stp-cms-mt</td>
+<td class="right">8.02</td>
+</tr>
+<tr class="center">
+<td class="right">16</td>
+<td>ABC_glucose</td>
+<td class="right">7.77</td>
+</tr>
+<tr class="center">
+<td class="right">17</td>
+<td>MapleSTP</td>
+<td class="right">6.91</td>
+</tr>
+<tr class="center">
+<td class="right">18</td>
+<td>raSAT 0.3</td>
+<td class="right">6.82</td>
+</tr>
+<tr class="center">
+<td class="right">19</td>
+<td>MapleSTP-mt</td>
+<td class="right">6.57</td>
+</tr>
+<tr class="center">
+<td class="right">20</td>
+<td>stp-minisat-st</td>
+<td class="right">6.18</td>
+</tr>
+<tr class="center">
+<td class="right">21</td>
+<td>ABC_default</td>
+<td class="right">5.01</td>
+</tr>
+<tr class="center">
+<td class="right">22</td>
+<td>ProB</td>
+<td class="right">3.95</td>
+</tr>
+<tr class="center">
+<td class="right">23</td>
+<td>AProVE</td>
+<td class="right">2.68</td>
+</tr>
+<tr class="center">
+<td class="right">24</td>
+<td>SMT-RAT</td>
+<td>-38.67</td>
+</tr>
+<tr class="center">
+<td class="right">25</td>
+<td>Q3B</td>
+<td>-7120.68</td>
+</tr>
+</table>
+</td>
+<td>
+<table>
+<tr><td><b>Rank</b></td><td class="center"><b>Solver</b></td>
+<td><b>Score</b></td>
+</tr>
+<tr class="center">
+<td> -</td>
+<td><span class="non-competing-grey">Z3<sup><a href="#fn">n</a></sup></span>
+</td>
+<td class="right">185.09</td>
+</tr>
+<tr class="center">
+<td class="right">1</td>
+<td>CVC4</td>
+<td class="right">181.19</td>
+</tr>
+<tr class="center">
+<td class="right">2</td>
+<td>Yices2</td>
+<td class="right">119.29</td>
+</tr>
+<tr class="center">
+<td class="right">3</td>
+<td>veriT-dev</td>
+<td class="right">75.11</td>
+</tr>
+<tr class="center">
+<td> -</td>
+<td>MathSat5<sup><a href="#fn">n</a></sup>
+</td>
+<td class="right">74.07</td>
+</tr>
+<tr class="center">
+<td class="right">4</td>
+<td>SMTInterpol</td>
+<td class="right">68.95</td>
+</tr>
+<tr class="center">
+<td class="right">5</td>
+<td>vampire_smt_4.1_parallel</td>
+<td class="right">65.62</td>
+</tr>
+<tr class="center">
+<td class="right">6</td>
+<td>vampire_smt_4.1</td>
+<td class="right">64.90</td>
+</tr>
+<tr class="center">
+<td class="right">7</td>
+<td>Boolector</td>
+<td class="right">32.52</td>
+</tr>
+<tr class="center">
+<td class="right">8</td>
+<td>OpenSMT2</td>
+<td class="right">18.83</td>
+</tr>
+<tr class="center">
+<td class="right">9</td>
+<td>toysmt</td>
+<td class="right">10.52</td>
+</tr>
+<tr class="center">
+<td class="right">10</td>
+<td>raSAT 0.4</td>
+<td class="right">9.07</td>
+</tr>
+<tr class="center">
+<td class="right">11</td>
+<td>Boolector (preprop)</td>
+<td class="right">8.74</td>
+</tr>
+<tr class="center">
+<td class="right">12</td>
+<td>Minkeyrink</td>
+<td class="right">8.71</td>
+</tr>
+<tr class="center">
+<td class="right">13</td>
+<td>stp-cms-mt</td>
+<td class="right">8.58</td>
+</tr>
+<tr class="center">
+<td class="right">14</td>
+<td>stp-cms-st</td>
+<td class="right">8.52</td>
+</tr>
+<tr class="center">
+<td class="right">15</td>
+<td>stp-cms-exp</td>
+<td class="right">8.16</td>
+</tr>
+<tr class="center">
+<td class="right">16</td>
+<td>ABC_glucose</td>
+<td class="right">7.77</td>
+</tr>
+<tr class="center">
+<td class="right">17</td>
+<td>MapleSTP-mt</td>
+<td class="right">7.38</td>
+</tr>
+<tr class="center">
+<td class="right">18</td>
+<td>MapleSTP</td>
+<td class="right">6.91</td>
+</tr>
+<tr class="center">
+<td class="right">19</td>
+<td>stp-minisat-st</td>
+<td class="right">6.18</td>
+</tr>
+<tr class="center">
+<td class="right">20</td>
+<td>ABC_default</td>
+<td class="right">5.01</td>
+</tr>
+<tr class="center">
+<td class="right">21</td>
+<td>ProB</td>
+<td class="right">3.95</td>
+</tr>
+<tr class="center">
+<td class="right">22</td>
+<td>AProVE</td>
+<td class="right">2.68</td>
+</tr>
+<tr class="center">
+<td class="right">23</td>
+<td>SMT-RAT</td>
+<td>-38.67</td>
+</tr>
+<tr class="center">
+<td class="right">24</td>
+<td>raSAT 0.3</td>
+<td>-6638.27</td>
+</tr>
+<tr class="center">
+<td class="right">25</td>
+<td>Q3B</td>
+<td>-7323.52</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><span id="fn"> n. Non-competitive.</span></p>
+
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

@@ -1,0 +1,31 @@
+======================================================================
+
+    13th International Satisfiability Modulo Theories Competition
+                            (SMT-COMP'18)
+
+                          July 12-13, 2018
+                             Oxford, UK
+
+                        FINAL CALL FOR SOLVERS
+
+======================================================================
+
+We now invite registration of solvers for SMT-COMP 2018. Solvers must
+be uploaded to StarExec, and entered into the competition via the web
+form at
+
+    https://goo.gl/forms/3pAMFHsfDJqGqucR2
+
+The submission deadline for (first versions of) solvers is
+
+    *** May 27, 2018. ***
+
+After the above date, no new entrants will be accepted. However,
+submitted solvers may be updated until
+
+    *** June 10, 2018. ***
+
+Please see the competition rules for further details.
+
+Sincerely,
+Tjark (for the organizing team)

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Proof Exhibition Track | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Proof Exhibition Track" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2023/proof-track.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2023/proof-track.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Proof Exhibition Track" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Proof Exhibition Track","url":"https://smt-comp.github.io/2023/proof-track.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6000ff; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2023/">SMT-COMP 2023</a>
+    </h3>
+    <a href="/2023/rules.pdf"><b>Rules</b></a><br/><a href="/2023/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2023/specs.html"><b>Specs</b></a><br/><a href="/2023/model.html"><b>Model Validation Track</b></a><br/><a href="/2023/proof-track.html"><b>Proof Exhibition Track</b></a><br/><a href="/2023/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2023/participants.html"><b>Participants</b></a><br/><a href="/2023/results.html"><b>Results</b></a><br/><a href="/2023/stats.html"><b>Statistics</b></a><br/><a href="/2023/comparisons.html"><b>Comparisons</b></a><br/><a href="/2023/slides.html"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h2 id="proof-exhibition-track">Proof Exhibition Track</h2>
+
+<p>In the new Proof Exhibition Track, teams can submit a proof-producing solver
+together with a proof checker for its proof format.  We will compile and
+present the results, as well as assemble a panel of experts (not necessarily
+organizers) to do a qualitative assessment for each proof-producing solver,
+proof format, and proof checker.</p>
+
+<h3 id="solver-script-for-starexec">Solver Script for StarExec</h3>
+
+<p>Solver authors should provide two scripts with their solver.  The first
+script called <code class="language-plaintext highlighter-rouge">smtcomp_solver</code>, should take the name of the
+benchmark file as a single argument and run the solver on the benchmark.</p>
+
+<p>As usual the benchmark is pre-processed, i.e., the identifiers are randomized
+and the commands for producing proofs are added to the benchmark.  The solver
+needs to understand the option <code class="language-plaintext highlighter-rouge">:produce-proofs</code> and the command <code class="language-plaintext highlighter-rouge">(get-proof)</code>.
+Solvers must respond to each command in the benchmark script with the answer
+defined in the SMT-LIB format specification.  There will be a <code class="language-plaintext highlighter-rouge">(check-sat)</code>
+command for which <code class="language-plaintext highlighter-rouge">unsat</code> should be output and a <code class="language-plaintext highlighter-rouge">(get-proof)</code> command for
+which the proof should be given as an s-expression according to the
+SMT-LIB standard (the format is not specified otherwise).
+Solvers that respond <code class="language-plaintext highlighter-rouge">unknown</code> to the <code class="language-plaintext highlighter-rouge">(check-sat)</code> command should respond
+with an error to the following <code class="language-plaintext highlighter-rouge">(get-proof)</code> command.  Note that the error
+result must be output to stdout.
+In contrast to other tracks, anything written to stderr is ignored and the
+output is saved for diagnostic purposes.</p>
+
+<h3 id="proof-checker-script-for-starexec">Proof Checker Script for StarExec</h3>
+
+<p>The second script, <code class="language-plaintext highlighter-rouge">smtcomp_checker</code>, should take
+the benchmark file name as first argument and the stdout output of the
+solver script as second argument.  Note that this output will
+usually start with the <code class="language-plaintext highlighter-rouge">unsat</code> result of the <code class="language-plaintext highlighter-rouge">(check-sat)</code>
+command, which the checker must either parse or skip.</p>
+
+<p>The checker should check the proof within the output and provide the result
+to stdout.  Output printed to stderr is ignored (and saved for diagnostics).
+The first line of the proof checker result should be either
+<code class="language-plaintext highlighter-rouge">valid</code>, <code class="language-plaintext highlighter-rouge">invalid</code>, <code class="language-plaintext highlighter-rouge">holey</code>, <code class="language-plaintext highlighter-rouge">sat</code>, or <code class="language-plaintext highlighter-rouge">unknown</code>.
+The answer <code class="language-plaintext highlighter-rouge">valid</code> must only be given when the checker certifies that the
+given proof justifies the unsatisfiability of the given benchmark.
+A checker that returns <code class="language-plaintext highlighter-rouge">valid</code> to a satisfiable benchmark is deemed to be
+unsound.
+The answer <code class="language-plaintext highlighter-rouge">invalid</code> should be returned if the proof is errorneous or
+otherwise malformed.
+If the proof checker determines that the proof is valid but it contains
+holes, i.e., steps that are not checked for correctness, the answer should
+be <code class="language-plaintext highlighter-rouge">holey</code>.
+The answer <code class="language-plaintext highlighter-rouge">sat</code> should be given if the solver claimed that the benchmark
+is satisfiable and <code class="language-plaintext highlighter-rouge">unknown</code> should be given if (1) the solver answered
+<code class="language-plaintext highlighter-rouge">unknown</code>, (2) it answered <code class="language-plaintext highlighter-rouge">unsat</code> but did not give a proof, or (3) the
+solver gave an error result.</p>
+
+<p>After the first line, the proof checker can provide arbitrary <code class="language-plaintext highlighter-rouge">key=value</code>
+pairs.  These will be collected in the final result table and can include
+for example information about the number of proof steps, the number of nodes
+in the proof, the number of holes, the number of different proof rules, etc.</p>
+
+<h3 id="evaluating-the-results">Evaluating the Results</h3>
+
+<p>The result of a solver is considered erroneous if the proof checker
+returns <code class="language-plaintext highlighter-rouge">sat</code> or <code class="language-plaintext highlighter-rouge">invalid</code>.
+Since the proof exhibition track is non-competitive and we are not fixing
+the definition of a valid proof, there will be no score computed for this
+track.</p>
+
+<p>A proof checker is unsound if it returns <code class="language-plaintext highlighter-rouge">valid</code> for an (invalid) proof
+of a satisfiable benchmark.
+Thus, a proof checker must also check that the formula that was proved
+corresponds to the benchmark given.  Soundness of the proof checker is
+a central criterion by which the participants will be judged.</p>
+
+<h3 id="time-limit">Time Limit.</h3>
+
+<p>This track will use a wall-clock time limit of 20 minutes per
+solver/benchmark pair.  This time limit includes the time for proof checking.
+We will record the times for each stage.</p>
+
+<h3 id="wrapper">Wrapper</h3>
+
+<p>Solvers in this track will be wrapped in the competition to include the script
+<a href="https://github.com/SMT-COMP/postprocessors/tree/master/proof-track/starexec_run_proof">starexec_run_proof</a>.  This script will call the solver
+and checker script.</p>
+
+<p>If you participate in the proof track, you should include the
+script mentioned above in your solver binary.
+You can submit a single solver binary for all tracks, by providing a
+<code class="language-plaintext highlighter-rouge">starexec_run_default</code> script for the other tracks.  You also
+need to create <code class="language-plaintext highlighter-rouge">smtcomp_solver</code> and <code class="language-plaintext highlighter-rouge">smtcomp_checker</code> scripts for the
+proof exhibition track.  You can also create more configurations
+for the other tracks by adding a corresponding <code class="language-plaintext highlighter-rouge">starexec_run_</code><em>track</em>
+script.</p>
+
+<h3 id="key-value-pairs">Key-Value Pairs</h3>
+
+<p>As mentioned above the proof checker can add arbitrary key-value pairs
+that will be collected in the results.  To standardize the results, we
+suggest that proof checkers print the following key-value pairs:</p>
+
+<ul>
+  <li>holes: number of unchecked axioms or rewrite rules (that
+can introduce unsoundness),</li>
+  <li>axioms: number of checked axioms or rewrite rules,</li>
+  <li>steps: number of proof steps (in some proof-specific granularity),</li>
+  <li>assertions: number of asserted formulas used in the proof.</li>
+</ul>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

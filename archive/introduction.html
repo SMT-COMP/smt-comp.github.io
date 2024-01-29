@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Introduction | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Introduction" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/introduction.html" />
+<meta property="og:url" content="https://smt-comp.github.io/introduction.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Introduction" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Introduction","url":"https://smt-comp.github.io/introduction.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6000ff; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/">SMT-COMP </a>
+    </h3>
+    
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+
+<h2 id="introduction">Introduction</h2>
+
+<h3 id="decision-procedures">Decision procedures.</h3>
+<p>Decision procedures for Satisfiability Modulo Theories (SMT) are of
+continuing interest for many verification applications. SMT solvers are
+typically used for verification as backends: a verification problem or
+subproblem is translated into an SMT formula and submitted to the SMT
+solver. The solver then attempts to report satisfiability or
+unsatisfiability of the formula. The advantage SMT solvers are usually
+considered to have over pure SAT solvers, which are also often used as
+verification backends (e.g., for bounded model checking), is the higher
+level of abstraction at which they can operate.  By implementing
+theories like arithmetic, arrays, and uninterpreted functions directly,
+SMT solvers have the promise to provide higher performance than SAT
+solvers working on encodings of such structures to the bit level.</p>
+
+<h3 id="standard-formats">Standard formats.</h3>
+<p>The additional promise of SMT over pure SAT is balanced by additional
+challenges. Since SMT deals with first-order (most commonly
+quantifier-free) formulas instead of purely propositional ones, creation
+and widespread adoption of a common input language is more difficult
+than for SAT. It is furthermore more important, since the more
+expressive setting of SMT potentially allows more room for variation in
+the exact details of the logic (e.g., sorted or unsorted, total or
+partial functions, etc.). Hence, translations between input formats of
+different tools are more complex, and in some cases it may even not be
+clear what such a translation should be. This makes the issue of input
+format critical. For combination with other tools like skeptical proof
+assistants (requiring a proof of every theorem validated by an external
+tool), common output formats for objects like proofs and models are also
+necessary for the adoption of SMT.</p>
+
+<h3 id="competition">Competition.</h3>
+<p>The Satisfiability Modulo Theories Competition (SMT-COMP) arose from the
+<a href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a> (Satisfiability Modulo Theories Library)
+initiative to spur adoption of the common, community-designed SMT-LIB formats,
+and to spark further advances in SMT, especially for verification. Competitions
+in other automated reasoning fields, such as
+<a href="http://www.tptp.org/CASC/">CASC competition</a> and the
+<a href="http://www.satcompetition.org/">SAT competition</a>,
+have helped inspire continuing improvements in tools from year to year.<br />
+The first SMT-COMP was held in 2005 as a satellite event of the
+<a href="http://www.cav2005.inf.ed.ac.uk/">17th International Conference on Computer-Aided Verification (CAV 2005)</a>.
+The experience with SMT-COMP 2005 confirmed the community’s expectations that a
+public competition would indeed motivate implementors of SMT solvers to adopt
+the common SMT-LIB input format.  <a href="previous.html">Subsequent SMT-COMPs</a> have
+provided further evidence that such a competition can stimulate improvement in
+solver implementations: solvers entered in each competition have improved
+significantly over those in previous competitions.</p>
+
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

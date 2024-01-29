@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Qf_fparith Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Qf_fparith Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2022/results/qf-fparith-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2022/results/qf-fparith-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Qf_fparith Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Qf_fparith Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2022/results/qf-fparith-single-query"},"url":"https://smt-comp.github.io/2022/results/qf-fparith-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #602000; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2022/">SMT-COMP 2022</a>
+    </h3>
+    <a href="/2022/rules.pdf"><b>Rules</b></a><br/><a href="/2022/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2022/tools.html"><b>Tools</b></a><br/><a href="/2022/specs.html"><b>Specs</b></a><br/><a href="/2022/proof-track.html"><b>Proof Exhibition Track</b></a><br/><a href="/2022/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2022/participants.html"><b>Participants</b></a><br/><a href="/2022/results.html"><b>Results</b></a><br/><a href="/2022/stats.html"><b>Statistics</b></a><br/><a href="/2022/comparisons.html"><b>Comparisons</b></a><br/><a href="/2022/slides.html"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+<h2>QF_FPArith (Single Query Track)</h2>
+
+<p>
+    Competition results for the QF_FPArith
+    
+      division
+    
+in the Single Query Track.
+</p>
+
+<p>
+Page generated on 2022-08-10 11:17:45 +0000
+</p>
+
+<p>
+<b>Benchmarks</b>: 1500
+</br>
+<b>Time Limit:</b> 1200 seconds
+</br>
+<b> Memory Limit:</b> 60 GB
+</p><b>Logics: </b><ul><li><a href="/2022/results/qf-abvfp-single-query">QF_ABVFP</a> : 600 benchmarks</li><li><a href="/2022/results/qf-abvfplra-single-query">QF_ABVFPLRA</a> : 25 benchmarks</li><li><a href="/2022/results/qf-aufbvfp-single-query">QF_AUFBVFP</a> : 1 benchmarks</li><li><a href="/2022/results/qf-bvfp-single-query">QF_BVFP</a> : 465 benchmarks</li><li><a href="/2022/results/qf-bvfplra-single-query">QF_BVFPLRA</a> : 69 benchmarks</li><li><a href="/2022/results/qf-fp-single-query">QF_FP</a> : 285 benchmarks</li><li><a href="/2022/results/qf-fplra-single-query">QF_FPLRA</a> : 55 benchmarks</li></ul><h3>Winners</h3>
+<table>
+    <thead>
+        <tr><th class="center">Sequential Performance</th><th class="center">Parallel Performance</th><th class="center">SAT Performance (parallel)</th><th class="center">UNSAT Performance (parallel)</th><th class="center">24s Performance (parallel)</th></tr>
+    </thead>
+    <tr><td class="center">Bitwuzla</td><td class="center">Bitwuzla</td><td class="center">Bitwuzla</td>
+     
+     
+        <td class="center">Bitwuzla</td>
+     
+     
+        <td class="center">Bitwuzla</td>
+     
+    </tr>
+</table>
+
+<p><p>
+
+<!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Sequential Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+  
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a></td>
+    <td class="right">0</td>
+    <td class="right">1439</td>
+    <td class="right">82604.868</td>
+    <td class="right">82577.783</td><td class="right">1439</td><td class="right">549</td><td class="right">890</td><td class="right">61</td><td class="right">0</td><td class="right">45</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2022/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1429</td>
+    <td class="right">132292.259</td>
+    <td class="right">132136.806</td><td class="right">1429</td><td class="right">549</td><td class="right">880</td><td class="right">71</td><td class="right">0</td><td class="right">71</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2022/participants/2021-cvc5">2021-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1423</td>
+    <td class="right">133834.826</td>
+    <td class="right">133708.602</td><td class="right">1423</td><td class="right">542</td><td class="right">881</td><td class="right">77</td><td class="right">0</td><td class="right">77</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2022/participants/mathsat">MathSAT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1386</td>
+    <td class="right">159982.817</td>
+    <td class="right">159934.201</td><td class="right">1386</td><td class="right">534</td><td class="right">852</td><td class="right">114</td><td class="right">0</td><td class="right">103</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2022/participants/z3-4-8-17">z3-4.8.17</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1316</td>
+    <td class="right">294174.216</td>
+    <td class="right">304576.623</td><td class="right">1316</td><td class="right">504</td><td class="right">812</td><td class="right">184</td><td class="right">0</td><td class="right">156</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2022/participants/colibri">COLIBRI</a></td>
+    <td class="right">0</td>
+    <td class="right">1267</td>
+    <td class="right">144280.522</td>
+    <td class="right">144248.226</td><td class="right">1267</td><td class="right">516</td><td class="right">751</td><td class="right">232</td><td class="right">1</td><td class="right">112</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- PARALLEL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a></td>
+    <td class="right">0</td>
+    <td class="right">1439</td><td class="right">82610.638</td><td class="right">82576.183</td><td class="right">1439</td><td class="right">549</td><td class="right">890</td><td class="right">61</td><td class="right">0</td><td class="right">45</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1429</td><td class="right">132305.219</td><td class="right">132133.386</td><td class="right">1429</td><td class="right">549</td><td class="right">880</td><td class="right">71</td><td class="right">0</td><td class="right">71</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/2021-cvc5">2021-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1423</td><td class="right">133847.276</td><td class="right">133704.732</td><td class="right">1423</td><td class="right">542</td><td class="right">881</td><td class="right">77</td><td class="right">0</td><td class="right">77</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/mathsat">MathSAT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1386</td><td class="right">160001.767</td><td class="right">159929.901</td><td class="right">1386</td><td class="right">534</td><td class="right">852</td><td class="right">114</td><td class="right">0</td><td class="right">103</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/z3-4-8-17">z3-4.8.17</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1316</td><td class="right">294675.736</td><td class="right">304569.523</td><td class="right">1316</td><td class="right">504</td><td class="right">812</td><td class="right">184</td><td class="right">0</td><td class="right">156</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a></td>
+    <td class="right">0</td>
+    <td class="right">1267</td><td class="right">144280.522</td><td class="right">144248.226</td><td class="right">1267</td><td class="right">516</td><td class="right">751</td><td class="right">232</td><td class="right">1</td><td class="right">112</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- SAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>SAT Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a></td>
+    <td class="right">0</td>
+    <td class="right">549</td><td class="right">13236.788</td><td class="right">13231.952</td><td class="right">549</td><td class="right">549</td><td class="right">0</td><td class="right">14</td><td class="right">937</td><td class="right">45</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">549</td><td class="right">29685.159</td><td class="right">29659.447</td><td class="right">549</td><td class="right">549</td><td class="right">0</td><td class="right">14</td><td class="right">937</td><td class="right">71</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/2021-cvc5">2021-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">542</td><td class="right">35449.638</td><td class="right">35407.377</td><td class="right">542</td><td class="right">542</td><td class="right">0</td><td class="right">21</td><td class="right">937</td><td class="right">77</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/mathsat">MathSAT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">534</td><td class="right">39717.309</td><td class="right">39716.76</td><td class="right">534</td><td class="right">534</td><td class="right">0</td><td class="right">29</td><td class="right">937</td><td class="right">103</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a></td>
+    <td class="right">0</td>
+    <td class="right">516</td><td class="right">35992.866</td><td class="right">35976.572</td><td class="right">516</td><td class="right">516</td><td class="right">0</td><td class="right">46</td><td class="right">938</td><td class="right">112</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/z3-4-8-17">z3-4.8.17</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">504</td><td class="right">88235.967</td><td class="right">95171.904</td><td class="right">504</td><td class="right">504</td><td class="right">0</td><td class="right">59</td><td class="right">937</td><td class="right">156</td>
+    <td class="right">4</td>
+</tr>
+
+</table><!-- UNSAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>UNSAT Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a></td>
+    <td class="right">0</td>
+    <td class="right">890</td><td class="right">57373.85</td><td class="right">57344.231</td><td class="right">890</td><td class="right">0</td><td class="right">890</td><td class="right">37</td><td class="right">573</td><td class="right">45</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/2021-cvc5">2021-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">881</td><td class="right">86397.638</td><td class="right">86297.354</td><td class="right">881</td><td class="right">0</td><td class="right">881</td><td class="right">46</td><td class="right">573</td><td class="right">77</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">880</td><td class="right">90620.06</td><td class="right">90473.939</td><td class="right">880</td><td class="right">0</td><td class="right">880</td><td class="right">47</td><td class="right">573</td><td class="right">71</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/mathsat">MathSAT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">852</td><td class="right">108284.458</td><td class="right">108213.141</td><td class="right">852</td><td class="right">0</td><td class="right">852</td><td class="right">75</td><td class="right">573</td><td class="right">103</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/z3-4-8-17">z3-4.8.17</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">812</td><td class="right">194439.769</td><td class="right">197397.619</td><td class="right">812</td><td class="right">0</td><td class="right">812</td><td class="right">115</td><td class="right">573</td><td class="right">156</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a></td>
+    <td class="right">0</td>
+    <td class="right">751</td><td class="right">96287.655</td><td class="right">96271.654</td><td class="right">751</td><td class="right">0</td><td class="right">751</td><td class="right">176</td><td class="right">573</td><td class="right">112</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- 24s PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>24 seconds Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a></td>
+    <td class="right">0</td>
+    <td class="right">1328</td><td class="right">5623.635</td><td class="right">5584.682</td><td class="right">1328</td><td class="right">506</td><td class="right">822</td><td class="right">172</td><td class="right">0</td><td class="right">156</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a></td>
+    <td class="right">0</td>
+    <td class="right">1232</td><td class="right">6305.487</td><td class="right">6272.508</td><td class="right">1232</td><td class="right">505</td><td class="right">727</td><td class="right">267</td><td class="right">1</td><td class="right">148</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/mathsat">MathSAT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1229</td><td class="right">9755.24</td><td class="right">9717.128</td><td class="right">1229</td><td class="right">463</td><td class="right">766</td><td class="right">271</td><td class="right">0</td><td class="right">260</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/2021-cvc5">2021-cvc5</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1218</td><td class="right">11580.342</td><td class="right">11431.629</td><td class="right">1218</td><td class="right">484</td><td class="right">734</td><td class="right">282</td><td class="right">0</td><td class="right">282</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1192</td><td class="right">11839.632</td><td class="right">11701.886</td><td class="right">1192</td><td class="right">463</td><td class="right">729</td><td class="right">308</td><td class="right">0</td><td class="right">308</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2022/participants/z3-4-8-17">z3-4.8.17</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">898</td><td class="right">18246.092</td><td class="right">18236.577</td><td class="right">898</td><td class="right">376</td><td class="right">522</td><td class="right">602</td><td class="right">0</td><td class="right">598</td>
+    <td class="right">4</td>
+</tr>
+
+</table><p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/><span id="nc">
+    Abstained: Total of benchmarks in logics in this division that solver chose to abstain from. For SAT/UNSAT scores, this column also includes benchmarks not known to be SAT/UNSAT.
+    </span><br/></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

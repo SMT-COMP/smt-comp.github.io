@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Experimental model validation track | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Experimental model validation track" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2023/model.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2023/model.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Experimental model validation track" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Experimental model validation track","url":"https://smt-comp.github.io/2023/model.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6000ff; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2023/">SMT-COMP 2023</a>
+    </h3>
+    <a href="/2023/rules.pdf"><b>Rules</b></a><br/><a href="/2023/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2023/specs.html"><b>Specs</b></a><br/><a href="/2023/model.html"><b>Model Validation Track</b></a><br/><a href="/2023/proof-track.html"><b>Proof Exhibition Track</b></a><br/><a href="/2023/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2023/participants.html"><b>Participants</b></a><br/><a href="/2023/results.html"><b>Results</b></a><br/><a href="/2023/stats.html"><b>Statistics</b></a><br/><a href="/2023/comparisons.html"><b>Comparisons</b></a><br/><a href="/2023/slides.html"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h2 id="experimental-model-validation-track">Experimental model validation track</h2>
+
+<p>The format for the model output of some theories is not yet defined by the
+SMTLIB. The following document describes our proposal of such definitions.
+This format will be used by the
+model validator of the SMTLIB for the experimental model validation track of the
+SMTCOMP 2023.</p>
+
+<h2 id="partial-functions">Partial functions</h2>
+
+<p>Some theory functions are only partially defined, e.g., division by
+zero.  The SMT semantics states that a benchmark is sat if there is an
+extension of these partial functions to a total function, i.e., the
+value of the function can be chosen by the solver.  This begs the
+questions how a solver should describe the model it chose.</p>
+
+<p>We propose that solvers should give the values similar as for
+uninterpreted functions using <code class="language-plaintext highlighter-rouge">define-fun</code>.  The given function definition
+must coincide on the defined inputs with the values given by the
+theory.  To achieve this, the function definition may call the original theory
+function using the same name as the function that is defined.</p>
+
+<p>In the model validation track, solvers MUST give the values for
+an undefined input, if it affects the satisfiability of the benchmark.
+A solver SHOULD give a concrete value for all undefined inputs.  A
+simple way to achieve this is with an <code class="language-plaintext highlighter-rouge">ite</code> expression that checks if
+the input leads to undefinedness and provides a concrete expression in
+that case and calls the original theory function in the other case.</p>
+
+<p>As an example, consider the theories of non-linear arithmetic and data
+types and the following definition of an algebraic data type for lists
+in the input problem:</p>
+
+<pre><code class="language-smt2">(declare-datatypes ((list 1)) ((par (alpha) (
+  (nil)
+  (cons (car alpha) (cdr (list alpha)))
+))))
+</code></pre>
+
+<p>The partially defined theory functions may be defined using the following
+definitions in the model:</p>
+
+<pre><code class="language-smt2">(define-fun div ((a Int) (b Int)) Int
+   (ite (= b 0) (ite (= a 0) 5 0) (div a b)))
+(define-fun car ((a (List Int))) (List Int)
+   (match a
+      ((cons hd tl) hd)
+      (nil  42)))
+(define-fun cdr ((a (List Int))) Int
+   (ite ((_ is cons) a) (cdr a) a))
+</code></pre>
+
+<p>The functions <code class="language-plaintext highlighter-rouge">div</code>/<code class="language-plaintext highlighter-rouge">car</code>/<code class="language-plaintext highlighter-rouge">cdr</code> should not be considered to be recursive function.
+Instead the definition shadows the (partially defined) theory function and
+the definition calls the original theory function in the function body.
+The model checker
+is lenient, it will complain only if it needs a value in the uninterpreted
+domain of a partial function. For example for <code class="language-plaintext highlighter-rouge">(assert (= 0.5 (div 1.0 x)))</code>,
+the definition of <code class="language-plaintext highlighter-rouge">div</code> can be omitted if the solver chose <code class="language-plaintext highlighter-rouge">2.0</code> as the
+value for <code class="language-plaintext highlighter-rouge">x</code> in the model, but it can’t be omitted if it chose <code class="language-plaintext highlighter-rouge">0.0</code>.</p>
+
+<h2 id="algebraic-numbers">Algebraic numbers</h2>
+
+<p>Representations of (algebraic
+numbers)[https://en.wikipedia.org/wiki/Algebraic_number] are needed for
+representing models of <code class="language-plaintext highlighter-rouge">QF_NRA</code>. Their representation usually consists of two
+parts, one polynomial and a way to specify which root of the polynomial is the
+represented algebraic numbers.</p>
+
+<p>For the polynomial there are two main choices:</p>
+
+<ul>
+  <li>Any polynomial with rational coefficients</li>
+  <li>The unique reduced minimal polynomial with integer coefficients</li>
+</ul>
+
+<p>For specifying the roots:</p>
+
+<ul>
+  <li>An enclosure where that contains a unique root of the polynomial</li>
+  <li>A rational which is the closest to a unique root</li>
+  <li>The number of the root in a specific ordering.</li>
+</ul>
+
+<p>The ordering can be smallest to greatest however it doesn’t extend to complex
+values. Moreover, multiplicities must be taken into account. However, it offers
+the possibility to have a unique representation for an algebraic number.</p>
+
+<p>We identified two opposing objectives:</p>
+<ul>
+  <li>Uniqueness of the representation</li>
+  <li>Human readability</li>
+</ul>
+
+<p>The first objective allows checking syntactically which values are equal in a model. The human readability means that a human can get an understanding of the value of the number just by reading the value. We propose two ways to write values of algebraic numbers that corresponding to one objective each <code class="language-plaintext highlighter-rouge">root-of-with-ordering</code> and <code class="language-plaintext highlighter-rouge">root-of-with-interval</code>. In both case the polynomial with integer coefficient is represented by the list of coefficients in ascending order, i.e., from the coefficient of the constant term to the leading coefficient.  For example, $x^2 - 2$ is represented as <code class="language-plaintext highlighter-rouge">((- 2) 0 1)</code>.  For uniqueness, the coefficients should be coprime integers and the leading coefficient should be positive.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">(root-of-with-ordering (coeffs p_0 p_1 ... p_n) i)</code> represents the <code class="language-plaintext highlighter-rouge">i</code>-th root ordered with multiplicity from the smallest to greatest of the polynomial <code class="language-plaintext highlighter-rouge">(p_0 p_1 ... p_n)</code>. Here, <code class="language-plaintext highlighter-rouge">i</code> is a numeral (non-negative integer) and is <code class="language-plaintext highlighter-rouge">0</code> for the smallest root of the polynomial. The polynomial must be the unique reduced minimal polynomial, in particular, it must only have simple roots.</li>
+  <li><code class="language-plaintext highlighter-rouge">(root-of-with-interval (coeffs p_0 p_1 ... p_n) min max)</code> represents the unique root between <code class="language-plaintext highlighter-rouge">min</code> and <code class="language-plaintext highlighter-rouge">max</code> of the polynomial <code class="language-plaintext highlighter-rouge">(p_0 p_1 ... p_n)</code>. <code class="language-plaintext highlighter-rouge">i</code> is an integer. <code class="language-plaintext highlighter-rouge">min</code> and <code class="language-plaintext highlighter-rouge">max</code> are rational model values, e.g. <code class="language-plaintext highlighter-rouge">(0.0 (/ 1.0 2.0))</code> for the interval <code class="language-plaintext highlighter-rouge">[0, .5]</code> or <code class="language-plaintext highlighter-rouge">((- 1.0) (/ (- 1.0) 2.0))</code> for the interval [-1, -.5].</li>
+</ul>
+
+<p>The constraint on the uniqueness of the polynomial in <code class="language-plaintext highlighter-rouge">root-of-with-ordering</code> could perhaps be removed.</p>
+
+<p>(EDIT:</p>
+<ul>
+  <li>a previous version did not require <code class="language-plaintext highlighter-rouge">coeffs</code>, but it is necessary in order to be an SMTLIB term.</li>
+  <li>a previous version used <code class="language-plaintext highlighter-rouge">(min max)</code> instead of <code class="language-plaintext highlighter-rouge">min max</code>, but it is necessary in order to be an SMTLIB term.</li>
+  <li>Because of a typo, the model validator will accept this year both <code class="language-plaintext highlighter-rouge">root-of-with-ordering</code> and <code class="language-plaintext highlighter-rouge">root-of-with-order</code> and both <code class="language-plaintext highlighter-rouge">root-of-with-interval</code> and <code class="language-plaintext highlighter-rouge">root-of-with-enclosure</code>.
+)</li>
+</ul>
+
+<h2 id="array-values">Array values</h2>
+
+<p>Models for arrays should be represented using the <code class="language-plaintext highlighter-rouge">store</code> and <code class="language-plaintext highlighter-rouge">const</code> functions:</p>
+<pre><code class="language-smt2">   (define-fun b () (Array Int Real)
+      (store (store ((as const (Array Int Real)) 2.0) 0 1.0) 1 3.0))
+</code></pre>
+
+<p>There were two alternative suggestions but we rejected them for various reasons at least for this years conference. We will still outline them here to explain our reasoning. The alternatives are:</p>
+<ol>
+  <li>By using an additional uninterpreted function:
+    <pre><code class="language-smt2">(define-fun b () (Array Int Real)
+  (_ as-array k!1))
+(define-fun k!1 ((x!0 Int)) Real
+  (ite (= x!0 1) 3.0
+  (ite (= x!0 0) 1.0
+   2.0)))
+</code></pre>
+  </li>
+  <li>By building an array from model values and <code class="language-plaintext highlighter-rouge">store</code>:
+    <pre><code class="language-smt2">(define-fun b () (Array Int Real)
+   (store (store (as @array0 (Array Int Real)) 0 1.0) 1 3.0))
+</code></pre>
+    <p>Note that here the value is not uniquely defined.  For our purpose,
+the array values must explicitly use store to define values for all
+indices that are read by any <code class="language-plaintext highlighter-rouge">select</code> in the benchmark.
+Different model values for arrays are considered
+to be not equal like in the UF logic.</p>
+  </li>
+</ol>
+
+<p>The const/store representation gives directly a constant term (that use the symbol <code class="language-plaintext highlighter-rouge">const</code> that is not defined by the SMTLIB format) when the first alternative requires to define an additional function.</p>
+
+<p>The first alternative is more general
+and can handle models for problems with quantifiers. Since SMT-LIB 3 should
+introduce anonymous functions we could backport the feature for the
+definition of model of arrays with the addition of the function <code class="language-plaintext highlighter-rouge">as-array</code> to convert from a function <code class="language-plaintext highlighter-rouge">(-&gt; A B)</code> to an array <code class="language-plaintext highlighter-rouge">(Array A B)</code>. We would have</p>
+
+<pre><code class="language-smt2">(define-fun b () (Array Int Real)
+  (as-array (lambda ((x!0 Int))
+   (ite (= x!0 1) 3.0
+   (ite (= x!0 0) 1.0
+    2.0)))))
+</code></pre>
+
+<p>However, using generic functions for defining arrays makes it harder for
+the model validator to evaluate array equality (extensionality).
+So in order to keep the validator simple for quantifier free formulas,
+we require the first way of defining array models in quantifier free logic.
+The <code class="language-plaintext highlighter-rouge">const</code> function is only visible in the array models and not part of the
+theory.  A benchmark problem must not contain the <code class="language-plaintext highlighter-rouge">const</code> function in an
+assertion.</p>
+
+<p>To sum up, in quantifier free logic, models for arrays should be represented using <code class="language-plaintext highlighter-rouge">store</code> and <code class="language-plaintext highlighter-rouge">const</code> function.</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+
