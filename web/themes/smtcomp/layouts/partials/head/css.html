@@ -2,9 +2,6 @@
 
 {{- with resources.Get "css/main.css" }}
   {{- if eq hugo.Environment "development" }}
-    {{ $sass := resources.Get "css/main.scss" }}
-    {{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
     {{- with . | minify | fingerprint }}
