@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2015
+---
+
 ## SMT-COMP 2015
 
 The <i>10th International Satisfiability Modulo Theories Competition

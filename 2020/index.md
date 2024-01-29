@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2020
+---
+
 ## SMT-COMP 2020
 
 The *15th International Satisfiability Modulo Theories Competition (SMT-COMP

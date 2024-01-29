@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2022
+---
+
 ## SMT-COMP 2022
 
 The *17th International Satisfiability Modulo Theories Competition (SMT-COMP

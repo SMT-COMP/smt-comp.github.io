@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2021
+---
+
 ## SMT-COMP 2021
 
 The *16th International Satisfiability Modulo Theories Competition (SMT-COMP

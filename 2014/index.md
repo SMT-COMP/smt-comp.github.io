@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2014
+---
+
 ## SMT-COMP 2014
 
 <p>

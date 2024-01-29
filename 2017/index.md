@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2017
+---
+
 ## SMT-COMP 2017
 
 The *12th International Satisfiability Modulo Theories Competition

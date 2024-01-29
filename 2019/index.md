@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2019
+---
+
 ## SMT-COMP 2019
 
 The *14th International Satisfiability Modulo Theories Competition

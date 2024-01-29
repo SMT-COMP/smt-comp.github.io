@@ -1,3 +1,8 @@
+---
+layout: default
+title: SMT-COMP 2016
+---
+
 ## SMT-COMP 2016
 
 The <i>11th International Satisfiability Modulo Theories Competition
