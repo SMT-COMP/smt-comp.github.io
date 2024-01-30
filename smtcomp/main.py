@@ -8,6 +8,7 @@ from pydantic import ValidationError
 import smtcomp.defs as defs
 import smtcomp.submission as submission
 from smtcomp.convert_csv import convert_csv as convert_csv_file
+from smtcomp.benchmarks import clone_group
 
 app = typer.Typer()
 
@@ -57,3 +58,12 @@ def dump_json_schema(dst: Path) -> None:
     """
     with open(dst, "w") as f:
         f.write(json.dumps(defs.Submission.model_json_schema(), indent=2))
+
+
+@app.command()
+def download_benchmarks(dst: Path, dryrun: bool = False) -> None:
+    """
+    Clone or update all the benchmarks used by the SMTCOMP
+    """
+    clone_group("SMT-LIB-benchmarks", dst.joinpath("non-incremental"), dryrun)
+    clone_group("SMT-LIB-benchmarks-inc", dst.joinpath("incremental"), dryrun)
