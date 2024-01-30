@@ -25,7 +25,7 @@ present the competitors and results of the competition.
 ### Organizers
 - [Martin Bromberger](https://www.mpi-inf.mpg.de/departments/automation-of-logic/people/martin-bromberger) (chair) - MPI für Informatik, Germany
 - [François Bobot](https://github.com/bobot) - CEA List, France
-- [Martin Jonáš](https://mjonas.net/) - Masaryk University, Czechia
+- [Martin Jonáš](https://fi.muni.cz/~xjonas) - Masaryk University, Czechia
 
 SMT-COMP 2024 is organized under the direction of the SMT Steering
 Committee.
