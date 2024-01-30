@@ -6,6 +6,10 @@ theme = 'smtcomp'
 [params]
     description =  'The International Satisfiability Modulo Theories (SMT) Competition.'
 
+[markup]
+  [markup.highlight]
+    style = 'github'
+
 [[menu.global]]
     name = 'Home'
     pageRef = '/'

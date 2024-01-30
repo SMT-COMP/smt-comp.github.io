@@ -17,7 +17,7 @@ web: https://doi.org/10.3233/SAT190123
   volume    = {11},
   number    = {1},
   pages     = {221--259},
-  year      = {2019}
+  year      = {2019},
   url       = {https://doi.org/10.3233/SAT190123},
 }
 ```
