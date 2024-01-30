@@ -31,6 +31,7 @@ SMT-COMP 2024 is organized under the direction of the SMT Steering
 Committee.
 
 ### Acknowledgment
+- [Dirk Beyer](https://www.sosy-lab.org/people/beyer/) (VerifierCloud)
 - [Aaron Stump](http://homepage.divms.uiowa.edu/~astump/) (StarExec)
 - [Clark Barrett](http://theory.stanford.edu/~barrett/),
   [Pascal Fontaine](https://members.loria.fr/PFontaine/),
