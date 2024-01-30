@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ range sort .Pages "File.Path" "desc" }}
+  <h2>
+    {{ if .Params.web }}
+    <a href="{{ .Params.web }}">{{ .LinkTitle }}</a>
+    {{ else }}
+    {{ .LinkTitle }}
+    {{ end }}
+  </h2>
+    {{ .Params.authors }}
+    {{ .Content }}
+  {{ end }}
+{{ end }}

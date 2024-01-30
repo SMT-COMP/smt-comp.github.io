@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2023/comparisons.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2023/comparisons.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2023/comparisons.html"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- external libs from cdnjs -->
+        <script src="https://cdn.plot.ly/plotly-basic-latest.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/plotly_renderers.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- optional: mobile support with jqueryui-touch-punch -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+   <!-- Hack because the jekyll theme is not compatible with bootstrap library -->
+    <style> * { box-sizing: unset; } </style><link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6000ff; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2023/">SMT-COMP 2023</a>
+    </h3>
+    <a href="/2023/rules.pdf"><b>Rules</b></a><br/><a href="/2023/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2023/specs.html"><b>Specs</b></a><br/><a href="/2023/model.html"><b>Model Validation Track</b></a><br/><a href="/2023/proof-track.html"><b>Proof Exhibition Track</b></a><br/><a href="/2023/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2023/participants.html"><b>Participants</b></a><br/><a href="/2023/results.html"><b>Results</b></a><br/><a href="/2023/stats.html"><b>Statistics</b></a><br/><a href="/2023/comparisons.html"><b>Comparisons</b></a><br/><a href="/2023/slides.html"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+        <script type="text/javascript">
+
+          const parseFiles = (files,doSomething) => {
+              const filesData = []
+              Promise.all([...files].map((file) =>
+                  new Promise((resolve, reject) =>
+                      Papa.parse(file, {
+                          download: true,
+                          skipEmptyLines: true,
+                          complete: resolve,  // Resolve each promise
+                          error: reject,
+                      }),
+                  )),
+              ).then((results) => {
+                  results.forEach((result, index) => {
+                      filesData.push(result)
+                  })
+                  doSomething(filesData) // now since .then() excutes after all promises are resolved, filesData contains all the parsed files.
+              }).catch((err) => console.log('Something went wrong:', err))
+          }
+
+          function getMultipleRandom_keepheader(arr, num) {
+              if (arr.length <= num + 1) return arr;
+              let myrng = new Math.seedrandom(num);
+              const shuffled = arr.slice(1).sort(() => 0.5 - myrng.quick());
+
+              return [arr[0]].concat(shuffled.slice(0, num));
+          }
+
+          var renderers = $.extend($.pivotUtilities.renderers,
+                                   $.pivotUtilities.plotly_renderers);
+
+          var predefined = {
+              all_result: {rows:["solver","result"], cols:["division"],
+                            vals:["nb"], aggregatorName:"Integer Sum"},
+              only_sat:  {rows:["solver"], cols:["division"],
+                          vals:["nb"], aggregatorName:"Integer Sum",
+                          rendererName:"Bar Chart",
+                          inclusions : { result : ["sat"] } },
+              only_answer:  {rows:["solver"], cols:["division"],
+                             vals:["nb"], aggregatorName:"Integer Sum",
+                             rendererName:"Bar Chart",
+                             inclusions : { result : ["sat","unsat"] } },
+              only_BV_sat_unsat:  {rows:["result","solver"], cols:["division"],
+                             vals:["nb"], aggregatorName:"Integer Sum",
+                             rendererName:"Bar Chart",
+                             inclusions : { result : ["sat","unsat"],
+                                            division : [ "QF_Bitvec" ] } },
+              sum_cpu_time:  {rows:["solver"], cols:["division"],
+                             vals:["cpu_time"], aggregatorName:"Sum",
+                             rendererName:"Bar Chart",
+                             rowOrder: "value_a_to_z",
+                             inclusions : { result : ["sat"],
+                                            division : [ "QF_Equality" ],
+                                            competitive : ["yes"] } }
+          };solver1={id: 359925, name: '2020-Bitwuzla-fixed'};solver2={id: 358916, name: '2020-Bitwuzla'};function refresh() {$(function(){
+              file1="results/solver_"+solver1.id+"_sq.csv";
+              file2="results/solver_"+solver2.id+"_sq.csv";
+              parseFiles(["results/benchmarks.csv",file1,file2], function(parsed){
+                  let benchmarks = parsed[0].data;
+                  let file1 = parsed[1].data;
+                  let file2 = parsed[2].data;
+                  let row = benchmarks[0];
+                  row = row.concat(file1[0].slice(1).map(x => solver1.name+" "+x),file2[0].slice(1).map(x => solver2.name+" "+x))
+                  let data=[row];
+                  let i1 = 1;
+                  let i2 = 1;
+                  for (let i = 1;
+                       i < benchmarks.length && i1 < file1.length && i2 < file2.length;
+                       i++) {
+                      if (benchmarks[i][0] == file1[i1][0] &&
+                          benchmarks[i][0] == file2[i2][0]) {
+                          let row = benchmarks[i];
+                          row = row.concat(file1[i1].slice(1),file2[i2].slice(1))
+                          data.push(row)
+                      }
+                      if (benchmarks[i][0] == file1[i1][0]) i1++;
+                      if (benchmarks[i][0] == file2[i2][0]) i2++;
+                  };
+                  $("#max")[0].innerHTML="/"+(data.length-1);
+                  let num = parseInt(($("#limit")[0].value));
+                  data = getMultipleRandom_keepheader(data,num);
+                  $("#output").pivotUI(data,
+                                       { renderers: renderers,
+                                         aggregatorName:"Count",
+                                         rendererName:"Scatter Chart",
+                                         rows:[solver1.name+" cpu_time"],
+                                         cols:[solver2.name+" cpu_time"]
+                                       },true);
+              }
+
+                  )
+              })};
+
+          refresh();
+
+
+        </script>
+        <p>Informations about prover results for all the divisions in sequential query</p>
+
+        <p style="width: 800px"></p>
+
+<!-- <div class="d-flex flex-column justify-content-start"> -->
+<div class="d-flex justify-content-start"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Solver1
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#" onclick="solver1={id: 331799, name: '2019-Par4'};refresh();">2019-Par4</a><a class="dropdown-item" href="#" onclick="solver1={id: 359925, name: '2020-Bitwuzla-fixed'};refresh();">2020-Bitwuzla-fixed</a><a class="dropdown-item" href="#" onclick="solver1={id: 358916, name: '2020-Bitwuzla'};refresh();">2020-Bitwuzla</a><a class="dropdown-item" href="#" onclick="solver1={id: 358911, name: '2020-CVC4'};refresh();">2020-CVC4</a><a class="dropdown-item" href="#" onclick="solver1={id: 550583, name: '2021-SMTInterpol'};refresh();">2021-SMTInterpol</a><a class="dropdown-item" href="#" onclick="solver1={id: 550592, name: '2021-Yices2'};refresh();">2021-Yices2</a><a class="dropdown-item" href="#" onclick="solver1={id: 550576, name: '2021-cvc5'};refresh();">2021-cvc5</a><a class="dropdown-item" href="#" onclick="solver1={id: 551349, name: '2021-z3'};refresh();">2021-z3</a><a class="dropdown-item" href="#" onclick="solver1={id: 659665, name: 'Bitwuzla'};refresh();">Bitwuzla</a><a class="dropdown-item" href="#" onclick="solver1={id: 659692, name: 'COLIBRI'};refresh();">COLIBRI</a><a class="dropdown-item" href="#" onclick="solver1={id: 671120, name: 'MathSAT'};refresh();">MathSAT</a><a class="dropdown-item" href="#" onclick="solver1={id: 659693, name: 'NRA-LS'};refresh();">NRA-LS</a><a class="dropdown-item" href="#" onclick="solver1={id: 659694, name: 'OSTRICH'};refresh();">OSTRICH</a><a class="dropdown-item" href="#" onclick="solver1={id: 671257, name: 'OpenSMT-fixed'};refresh();">OpenSMT-fixed</a><a class="dropdown-item" href="#" onclick="solver1={id: 659675, name: 'OpenSMT'};refresh();">OpenSMT</a><a class="dropdown-item" href="#" onclick="solver1={id: 659696, name: 'Q3B-pBDD'};refresh();">Q3B-pBDD</a><a class="dropdown-item" href="#" onclick="solver1={id: 659695, name: 'Q3B'};refresh();">Q3B</a><a class="dropdown-item" href="#" onclick="solver1={id: 659697, name: 'SMT-RAT-MCSAT 22.06'};refresh();">SMT-RAT-MCSAT 22.06</a><a class="dropdown-item" href="#" onclick="solver1={id: 1, name: 'SMTS cube-and-conquer'};refresh();">SMTS cube-and-conquer</a><a class="dropdown-item" href="#" onclick="solver1={id: 3, name: 'SMTS portfolio'};refresh();">SMTS portfolio</a><a class="dropdown-item" href="#" onclick="solver1={id: 671258, name: 'STP-fixed'};refresh();">STP-fixed</a><a class="dropdown-item" href="#" onclick="solver1={id: 659682, name: 'STP'};refresh();">STP</a><a class="dropdown-item" href="#" onclick="solver1={id: 659690, name: 'UltimateEliminator+MathSAT'};refresh();">UltimateEliminator+MathSAT</a><a class="dropdown-item" href="#" onclick="solver1={id: 659685, name: 'Vampire'};refresh();">Vampire</a><a class="dropdown-item" href="#" onclick="solver1={id: 671259, name: 'Yices-ismt-fixed'};refresh();">Yices-ismt-fixed</a><a class="dropdown-item" href="#" onclick="solver1={id: 659702, name: 'Yices-ismt'};refresh();">Yices-ismt</a><a class="dropdown-item" href="#" onclick="solver1={id: 659700, name: 'Yices2'};refresh();">Yices2</a><a class="dropdown-item" href="#" onclick="solver1={id: 659775, name: 'YicesQS'};refresh();">YicesQS</a><a class="dropdown-item" href="#" onclick="solver1={id: 671134, name: 'Z3++-fixed'};refresh();">Z3++-fixed</a><a class="dropdown-item" href="#" onclick="solver1={id: 659703, name: 'Z3++'};refresh();">Z3++</a><a class="dropdown-item" href="#" onclick="solver1={id: 659704, name: 'Z3++BV'};refresh();">Z3++BV</a><a class="dropdown-item" href="#" onclick="solver1={id: 659705, name: 'Z3str4'};refresh();">Z3str4</a><a class="dropdown-item" href="#" onclick="solver1={id: 4, name: 'cvc5-cloud'};refresh();">cvc5-cloud</a><a class="dropdown-item" href="#" onclick="solver1={id: 659669, name: 'cvc5'};refresh();">cvc5</a><a class="dropdown-item" href="#" onclick="solver1={id: 671399, name: 'smtinterpol-fixed'};refresh();">smtinterpol-fixed</a><a class="dropdown-item" href="#" onclick="solver1={id: 659678, name: 'smtinterpol'};refresh();">smtinterpol</a><a class="dropdown-item" href="#" onclick="solver1={id: 659681, name: 'solsmt'};refresh();">solsmt</a><a class="dropdown-item" href="#" onclick="solver1={id: 659699, name: 'veriT+raSAT+Redlog'};refresh();">veriT+raSAT+Redlog</a><a class="dropdown-item" href="#" onclick="solver1={id: 659698, name: 'veriT'};refresh();">veriT</a><a class="dropdown-item" href="#" onclick="solver1={id: 671133, name: 'z3-4.8.17'};refresh();">z3-4.8.17</a></div>
+</div><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Solver2
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#" onclick="solver2={id: 331799, name: '2019-Par4'};refresh();">2019-Par4</a><a class="dropdown-item" href="#" onclick="solver2={id: 359925, name: '2020-Bitwuzla-fixed'};refresh();">2020-Bitwuzla-fixed</a><a class="dropdown-item" href="#" onclick="solver2={id: 358916, name: '2020-Bitwuzla'};refresh();">2020-Bitwuzla</a><a class="dropdown-item" href="#" onclick="solver2={id: 358911, name: '2020-CVC4'};refresh();">2020-CVC4</a><a class="dropdown-item" href="#" onclick="solver2={id: 550583, name: '2021-SMTInterpol'};refresh();">2021-SMTInterpol</a><a class="dropdown-item" href="#" onclick="solver2={id: 550592, name: '2021-Yices2'};refresh();">2021-Yices2</a><a class="dropdown-item" href="#" onclick="solver2={id: 550576, name: '2021-cvc5'};refresh();">2021-cvc5</a><a class="dropdown-item" href="#" onclick="solver2={id: 551349, name: '2021-z3'};refresh();">2021-z3</a><a class="dropdown-item" href="#" onclick="solver2={id: 659665, name: 'Bitwuzla'};refresh();">Bitwuzla</a><a class="dropdown-item" href="#" onclick="solver2={id: 659692, name: 'COLIBRI'};refresh();">COLIBRI</a><a class="dropdown-item" href="#" onclick="solver2={id: 671120, name: 'MathSAT'};refresh();">MathSAT</a><a class="dropdown-item" href="#" onclick="solver2={id: 659693, name: 'NRA-LS'};refresh();">NRA-LS</a><a class="dropdown-item" href="#" onclick="solver2={id: 659694, name: 'OSTRICH'};refresh();">OSTRICH</a><a class="dropdown-item" href="#" onclick="solver2={id: 671257, name: 'OpenSMT-fixed'};refresh();">OpenSMT-fixed</a><a class="dropdown-item" href="#" onclick="solver2={id: 659675, name: 'OpenSMT'};refresh();">OpenSMT</a><a class="dropdown-item" href="#" onclick="solver2={id: 659696, name: 'Q3B-pBDD'};refresh();">Q3B-pBDD</a><a class="dropdown-item" href="#" onclick="solver2={id: 659695, name: 'Q3B'};refresh();">Q3B</a><a class="dropdown-item" href="#" onclick="solver2={id: 659697, name: 'SMT-RAT-MCSAT 22.06'};refresh();">SMT-RAT-MCSAT 22.06</a><a class="dropdown-item" href="#" onclick="solver2={id: 1, name: 'SMTS cube-and-conquer'};refresh();">SMTS cube-and-conquer</a><a class="dropdown-item" href="#" onclick="solver2={id: 3, name: 'SMTS portfolio'};refresh();">SMTS portfolio</a><a class="dropdown-item" href="#" onclick="solver2={id: 671258, name: 'STP-fixed'};refresh();">STP-fixed</a><a class="dropdown-item" href="#" onclick="solver2={id: 659682, name: 'STP'};refresh();">STP</a><a class="dropdown-item" href="#" onclick="solver2={id: 659690, name: 'UltimateEliminator+MathSAT'};refresh();">UltimateEliminator+MathSAT</a><a class="dropdown-item" href="#" onclick="solver2={id: 659685, name: 'Vampire'};refresh();">Vampire</a><a class="dropdown-item" href="#" onclick="solver2={id: 671259, name: 'Yices-ismt-fixed'};refresh();">Yices-ismt-fixed</a><a class="dropdown-item" href="#" onclick="solver2={id: 659702, name: 'Yices-ismt'};refresh();">Yices-ismt</a><a class="dropdown-item" href="#" onclick="solver2={id: 659700, name: 'Yices2'};refresh();">Yices2</a><a class="dropdown-item" href="#" onclick="solver2={id: 659775, name: 'YicesQS'};refresh();">YicesQS</a><a class="dropdown-item" href="#" onclick="solver2={id: 671134, name: 'Z3++-fixed'};refresh();">Z3++-fixed</a><a class="dropdown-item" href="#" onclick="solver2={id: 659703, name: 'Z3++'};refresh();">Z3++</a><a class="dropdown-item" href="#" onclick="solver2={id: 659704, name: 'Z3++BV'};refresh();">Z3++BV</a><a class="dropdown-item" href="#" onclick="solver2={id: 659705, name: 'Z3str4'};refresh();">Z3str4</a><a class="dropdown-item" href="#" onclick="solver2={id: 4, name: 'cvc5-cloud'};refresh();">cvc5-cloud</a><a class="dropdown-item" href="#" onclick="solver2={id: 659669, name: 'cvc5'};refresh();">cvc5</a><a class="dropdown-item" href="#" onclick="solver2={id: 671399, name: 'smtinterpol-fixed'};refresh();">smtinterpol-fixed</a><a class="dropdown-item" href="#" onclick="solver2={id: 659678, name: 'smtinterpol'};refresh();">smtinterpol</a><a class="dropdown-item" href="#" onclick="solver2={id: 659681, name: 'solsmt'};refresh();">solsmt</a><a class="dropdown-item" href="#" onclick="solver2={id: 659699, name: 'veriT+raSAT+Redlog'};refresh();">veriT+raSAT+Redlog</a><a class="dropdown-item" href="#" onclick="solver2={id: 659698, name: 'veriT'};refresh();">veriT</a><a class="dropdown-item" href="#" onclick="solver2={id: 671133, name: 'z3-4.8.17'};refresh();">z3-4.8.17</a></div>
+</div><div>
+Limit:<input type="text" id="limit" value="1000" onkeypress="if (event.key === 'Enter') { refresh()}" ><span id="max">/???</span>
+</div>
+</div>
+
+<!-- <div class="d-flex justify-content-start"> -->
+<div id="output" style="margin: 30px;"></div>
+<!-- </div> -->
+<!-- </div> -->
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

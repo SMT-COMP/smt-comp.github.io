@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2021/benchmarks.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2021/benchmarks.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2021/benchmarks.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #008050; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2021/">SMT-COMP 2021</a>
+    </h3>
+    <a href="/2021/rules.pdf"><b>Rules</b></a><br/><a href="/2021/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2021/tools.html"><b>Tools</b></a><br/><a href="/2021/specs.html"><b>Specs</b></a><br/><a href="/2021/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2021/participants.html"><b>Participants</b></a><br/><a href="/2021/results.html"><b>Results</b></a><br/><a href="/2021/SMT-COMP-2021-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h2>Benchmarks</h2>
+
+<p>SMT-COMP 2021 will use a large subset of the benchmarks available within the 2021-05-26 release of SMT-LIB, as described in the competition rules.</p>
+
+<p>
+    The SMT-LIB benchmarks are available in space
+    <a href="https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=445201">root/SMT/SMT-LIB benchmarks/2021-05-26</a>
+    on <a href="https://www.starexec.org">StarExec</a>.
+</p><h3>Single Query Track</h3><p>
+    In total there  are 18 divisions  in the Single Query Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_single_query_2021.tar.xz">list of selected benchmarks</a>.
+
+</p>
+
+<table>
+    <tr>
+        <th>Division</th>
+        <th>Division benchmarks</th>
+        <th>Logic</th>
+        <th>Logic benchmarks</th>
+    </tr><tr >
+        <td><a href="/2021/divisions/arith">Arith</a></td>
+        <td>1620</td>
+        <td>LIA<br>LRA<br>NIA<br>NRA<br></td>
+        <td>300<br>1003<br>17<br>300<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/bitvec">Bitvec</a></td>
+        <td>970</td>
+        <td>BV<br></td>
+        <td>970<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-lineararith">Equality+LinearArith</a></td>
+        <td>17873</td>
+        <td>ALIA<br>AUFDTLIA<br>AUFDTLIRA<br>AUFLIA<br>AUFLIRA<br>UFDTLIA<br>UFDTLIRA<br>UFIDL<br>UFLIA<br>UFLRA<br></td>
+        <td>19<br>147<br>6069<br>1638<br>1683<br>277<br>5165<br>20<br>2848<br>7<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-machinearith">Equality+MachineArith</a></td>
+        <td>2852</td>
+        <td>ABV<br>ABVFP<br>ABVFPLRA<br>AUFBV<br>AUFBVDTLIA<br>AUFBVDTNIA<br>AUFBVFP<br>AUFFPDTLIRA<br>UFBV<br>UFBVFP<br>UFBVLIA<br>UFFPDTLIRA<br>UFFPDTNIRA<br></td>
+        <td>169<br>30<br>75<br>761<br>845<br>1<br>57<br>153<br>143<br>2<br>208<br>387<br>21<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-nonlineararith">Equality+NonLinearArith</a></td>
+        <td>7816</td>
+        <td>AUFDTNIRA<br>AUFFPDTNIRA<br>AUFNIA<br>AUFNIRA<br>UFDTNIA<br>UFDTNIRA<br>UFNIA<br></td>
+        <td>300<br>13<br>3<br>300<br>1<br>921<br>6278<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality">Equality</a></td>
+        <td>4409</td>
+        <td>UF<br>UFDT<br></td>
+        <td>2857<br>1552<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/fparith">FPArith</a></td>
+        <td>1805</td>
+        <td>BVFP<br>BVFPLRA<br>FP<br>FPLRA<br></td>
+        <td>229<br>185<br>1364<br>27<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-bitvec">QF_Bitvec</a></td>
+        <td>8828</td>
+        <td>QF_BV<br></td>
+        <td>8828<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-bitvec">QF_Equality+Bitvec</a></td>
+        <td>3221</td>
+        <td>QF_ABV<br>QF_AUFBV<br>QF_UFBV<br></td>
+        <td>2880<br>41<br>300<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-lineararith">QF_Equality+LinearArith</a></td>
+        <td>1961</td>
+        <td>QF_ALIA<br>QF_AUFLIA<br>QF_UFDTLIRA<br>QF_UFIDL<br>QF_UFLIA<br>QF_UFLRA<br></td>
+        <td>116<br>558<br>146<br>300<br>300<br>541<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-nonlineararith">QF_Equality+NonLinearArith</a></td>
+        <td>430</td>
+        <td>QF_ANIA<br>QF_AUFNIA<br>QF_UFNIA<br>QF_UFNRA<br></td>
+        <td>94<br>9<br>300<br>27<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality">QF_Equality</a></td>
+        <td>4229</td>
+        <td>QF_AX<br>QF_DT<br>QF_UF<br>QF_UFDT<br></td>
+        <td>300<br>204<br>3522<br>203<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-fparith">QF_FPArith</a></td>
+        <td>1710</td>
+        <td>QF_ABVFP<br>QF_ABVFPLRA<br>QF_AUFBVFP<br>QF_BVFP<br>QF_BVFPLRA<br>QF_FP<br>QF_FPLRA<br>QF_UFFPDTLIRA<br></td>
+        <td>619<br>25<br>1<br>484<br>72<br>300<br>55<br>154<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearintarith">QF_LinearIntArith</a></td>
+        <td>4456</td>
+        <td>QF_IDL<br>QF_LIA<br>QF_LIRA<br></td>
+        <td>1138<br>3311<br>7<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearrealarith">QF_LinearRealArith</a></td>
+        <td>829</td>
+        <td>QF_LRA<br>QF_RDL<br></td>
+        <td>582<br>247<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearintarith">QF_NonLinearIntArith</a></td>
+        <td>11683</td>
+        <td>QF_NIA<br>QF_NIRA<br></td>
+        <td>11681<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearrealarith">QF_NonLinearRealArith</a></td>
+        <td>2766</td>
+        <td>QF_NRA<br></td>
+        <td>2766<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-strings">QF_Strings</a></td>
+        <td>23842</td>
+        <td>QF_S<br>QF_SLIA<br>QF_SNIA<br></td>
+        <td>807<br>23030<br>5<br></td>
+    </tr><tr class="total">
+        <td>
+            <b>Total</b>
+        </td>
+        <td>
+            <b>101300</b>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table><h3>Incremental Track</h3><p>
+    In total there  are 17 divisions  in the Incremental Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_incremental_2021.tar.xz">list of selected benchmarks</a>.
+
+</p>
+
+<table>
+    <tr>
+        <th>Division</th>
+        <th>Division benchmarks</th>
+        <th>Logic</th>
+        <th>Logic benchmarks</th>
+    </tr><tr >
+        <td><a href="/2021/divisions/arith">Arith</a></td>
+        <td>11</td>
+        <td>LIA<br>LRA<br></td>
+        <td>6<br>5<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/bitvec">Bitvec</a></td>
+        <td>18</td>
+        <td>BV<br></td>
+        <td>18<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-lineararith">Equality+LinearArith</a></td>
+        <td>959</td>
+        <td>ALIA<br>UFLRA<br></td>
+        <td>24<br>935<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-machinearith">Equality+MachineArith</a></td>
+        <td>4</td>
+        <td>ABVFP<br></td>
+        <td>4<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-nonlineararith">Equality+NonLinearArith</a></td>
+        <td>2342</td>
+        <td>ANIA<br>AUFNIRA<br>UFDTNIA<br>UFNIA<br>UFNRA<br></td>
+        <td>3<br>165<br>139<br>2031<br>4<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality">Equality</a></td>
+        <td>2033</td>
+        <td>UF<br></td>
+        <td>2033<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/fparith">FPArith</a></td>
+        <td>10</td>
+        <td>BVFP<br></td>
+        <td>10<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-bitvec">QF_Bitvec</a></td>
+        <td>1294</td>
+        <td>QF_BV<br></td>
+        <td>1294<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-bitvec-arith">QF_Equality+Bitvec+Arith</a></td>
+        <td>523</td>
+        <td>QF_AUFBVLIA<br>QF_AUFBVNIA<br>QF_UFBVLIA<br></td>
+        <td>300<br>44<br>179<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-bitvec">QF_Equality+Bitvec</a></td>
+        <td>1832</td>
+        <td>QF_ABV<br>QF_AUFBV<br>QF_UFBV<br></td>
+        <td>636<br>31<br>1165<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-lineararith">QF_Equality+LinearArith</a></td>
+        <td>2031</td>
+        <td>QF_ALIA<br>QF_AUFLIA<br>QF_UFLIA<br>QF_UFLRA<br></td>
+        <td>44<br>72<br>386<br>1529<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-nonlineararith">QF_Equality+NonLinearArith</a></td>
+        <td>512</td>
+        <td>QF_ANIA<br>QF_UFNIA<br>QF_UFNRA<br></td>
+        <td>5<br>506<br>1<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality">QF_Equality</a></td>
+        <td>889</td>
+        <td>QF_UF<br></td>
+        <td>889<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-fparith">QF_FPArith</a></td>
+        <td>9686</td>
+        <td>QF_ABVFP<br>QF_BVFP<br>QF_FP<br>QF_UFFP<br></td>
+        <td>9218<br>300<br>167<br>1<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearintarith">QF_LinearIntArith</a></td>
+        <td>69</td>
+        <td>QF_LIA<br></td>
+        <td>69<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearrealarith">QF_LinearRealArith</a></td>
+        <td>10</td>
+        <td>QF_LRA<br></td>
+        <td>10<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearintarith">QF_NonLinearIntArith</a></td>
+        <td>10</td>
+        <td>QF_NIA<br></td>
+        <td>10<br></td>
+    </tr><tr class="total">
+        <td>
+            <b>Total</b>
+        </td>
+        <td>
+            <b>22233</b>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table><h3>Unsat Core Track</h3><p>
+    In total there  are 17 divisions  in the Unsat Core Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_unsat_core_2021.tar.xz">list of selected benchmarks</a>.
+
+</p>
+
+<table>
+    <tr>
+        <th>Division</th>
+        <th>Division benchmarks</th>
+        <th>Logic</th>
+        <th>Logic benchmarks</th>
+    </tr><tr >
+        <td><a href="/2021/divisions/arith">Arith</a></td>
+        <td>237</td>
+        <td>LIA<br>NIA<br></td>
+        <td>235<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/bitvec">Bitvec</a></td>
+        <td>300</td>
+        <td>BV<br></td>
+        <td>300<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-lineararith">Equality+LinearArith</a></td>
+        <td>24477</td>
+        <td>AUFDTLIRA<br>AUFLIA<br>AUFLIRA<br>UFDTLIRA<br>UFIDL<br>UFLIA<br>UFLRA<br></td>
+        <td>5385<br>1245<br>9885<br>4060<br>30<br>3862<br>10<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-machinearith">Equality+MachineArith</a></td>
+        <td>455</td>
+        <td>ABV<br>AUFBVDTLIA<br>AUFFPDTLIRA<br>UFFPDTLIRA<br>UFFPDTNIRA<br></td>
+        <td>2<br>20<br>131<br>300<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-nonlineararith">Equality+NonLinearArith</a></td>
+        <td>2516</td>
+        <td>AUFDTNIRA<br>AUFNIA<br>AUFNIRA<br>UFDTNIRA<br>UFNIA<br></td>
+        <td>50<br>3<br>526<br>349<br>1588<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality">Equality</a></td>
+        <td>2628</td>
+        <td>UF<br>UFDT<br></td>
+        <td>1697<br>931<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/fparith">FPArith</a></td>
+        <td>1</td>
+        <td>BVFPLRA<br></td>
+        <td>1<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-bitvec">QF_Bitvec</a></td>
+        <td>2868</td>
+        <td>QF_BV<br></td>
+        <td>2868<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-bitvec">QF_Equality+Bitvec</a></td>
+        <td>2225</td>
+        <td>QF_ABV<br>QF_AUFBV<br>QF_UFBV<br></td>
+        <td>1865<br>34<br>326<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-lineararith">QF_Equality+LinearArith</a></td>
+        <td>577</td>
+        <td>QF_ALIA<br>QF_AUFLIA<br>QF_UFDTLIRA<br>QF_UFIDL<br>QF_UFLIA<br>QF_UFLRA<br></td>
+        <td>30<br>300<br>17<br>113<br>16<br>101<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-nonlineararith">QF_Equality+NonLinearArith</a></td>
+        <td>210</td>
+        <td>QF_ANIA<br>QF_AUFNIA<br>QF_UFNIA<br>QF_UFNRA<br></td>
+        <td>8<br>12<br>179<br>11<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality">QF_Equality</a></td>
+        <td>2463</td>
+        <td>QF_AX<br>QF_DT<br>QF_UF<br>QF_UFDT<br></td>
+        <td>202<br>100<br>2061<br>100<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-fparith">QF_FPArith</a></td>
+        <td>13634</td>
+        <td>QF_ABVFP<br>QF_BVFP<br>QF_BVFPLRA<br>QF_FP<br>QF_UFFP<br>QF_UFFPDTLIRA<br></td>
+        <td>1965<br>1586<br>46<br>10031<br>2<br>4<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearintarith">QF_LinearIntArith</a></td>
+        <td>381</td>
+        <td>QF_IDL<br>QF_LIA<br>QF_LIRA<br></td>
+        <td>100<br>276<br>5<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearrealarith">QF_LinearRealArith</a></td>
+        <td>196</td>
+        <td>QF_LRA<br></td>
+        <td>196<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearintarith">QF_NonLinearIntArith</a></td>
+        <td>2053</td>
+        <td>QF_NIA<br>QF_NIRA<br></td>
+        <td>2051<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearrealarith">QF_NonLinearRealArith</a></td>
+        <td>243</td>
+        <td>QF_NRA<br></td>
+        <td>243<br></td>
+    </tr><tr class="total">
+        <td>
+            <b>Total</b>
+        </td>
+        <td>
+            <b>55464</b>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table><h3>Model Validation Track</h3><p>
+    In total there  are 6 divisions  in the Model Validation Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_model_validation_2021.tar.xz">list of selected benchmarks</a>.
+
+</p>
+
+<table>
+    <tr>
+        <th>Division</th>
+        <th>Division benchmarks</th>
+        <th>Logic</th>
+        <th>Logic benchmarks</th>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-bitvec">QF_Bitvec</a></td>
+        <td>7268</td>
+        <td>QF_BV<br></td>
+        <td>7268<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-bitvec">QF_Equality+Bitvec</a><sup><a href="#ec">e</a></sup></td>
+        <td>375</td>
+        <td>QF_UFBV<br></td>
+        <td>375<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-lineararith">QF_Equality+LinearArith</a><sup><a href="#ec">e</a></sup></td>
+        <td>891</td>
+        <td>QF_UFIDL<br>QF_UFLRA<br>QF_UFLIA<br></td>
+        <td>206<br>385<br>300<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality">QF_Equality</a><sup><a href="#ec">e</a></sup></td>
+        <td>1571</td>
+        <td>QF_UF<br></td>
+        <td>1571<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearintarith">QF_LinearIntArith</a></td>
+        <td>2615</td>
+        <td>QF_IDL<br>QF_LIA<br>QF_LIRA<br></td>
+        <td>691<br>1923<br>1<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearrealarith">QF_LinearRealArith</a></td>
+        <td>582</td>
+        <td>QF_RDL<br>QF_LRA<br></td>
+        <td>109<br>473<br></td>
+    </tr><tr class="total">
+        <td>
+            <b>Total</b>
+        </td>
+        <td>
+            <b>13302</b>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table><h3>Cloud Track</h3><p>
+    In total there  are 14 divisions  in the Cloud Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_cloud_2021.tar.xz">list of selected benchmarks</a>.
+
+</p>
+
+<table>
+    <tr>
+        <th>Division</th>
+        <th>Division benchmarks</th>
+        <th>Logic</th>
+        <th>Logic benchmarks</th>
+    </tr><tr >
+        <td><a href="/2021/divisions/arith">Arith</a></td>
+        <td>23</td>
+        <td>LIA<br>LRA<br>NIA<br>NRA<br></td>
+        <td>4<br>16<br>1<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/bitvec">Bitvec</a></td>
+        <td>16</td>
+        <td>BV<br></td>
+        <td>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-lineararith">Equality+LinearArith</a></td>
+        <td>107</td>
+        <td>AUFDTLIRA<br>AUFLIA<br>AUFLIRA<br>UFDTLIA<br>UFDTLIRA<br>UFIDL<br>UFLIA<br>UFLRA<br></td>
+        <td>16<br>16<br>16<br>16<br>16<br>9<br>16<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-machinearith">Equality+MachineArith</a></td>
+        <td>16</td>
+        <td>UFBV<br></td>
+        <td>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-nonlineararith">Equality+NonLinearArith</a></td>
+        <td>67</td>
+        <td>AUFDTNIRA<br>AUFNIA<br>AUFNIRA<br>UFDTNIRA<br>UFNIA<br></td>
+        <td>16<br>3<br>16<br>16<br>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality">Equality</a></td>
+        <td>32</td>
+        <td>UF<br>UFDT<br></td>
+        <td>16<br>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-bitvec">QF_Bitvec</a></td>
+        <td>16</td>
+        <td>QF_BV<br></td>
+        <td>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-bitvec">QF_Equality+Bitvec</a></td>
+        <td>16</td>
+        <td>QF_ABV<br></td>
+        <td>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-nonlineararith">QF_Equality+NonLinearArith</a></td>
+        <td>6</td>
+        <td>QF_UFNRA<br></td>
+        <td>6<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-fparith">QF_FPArith</a></td>
+        <td>19</td>
+        <td>QF_BVFP<br>QF_FP<br></td>
+        <td>3<br>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearintarith">QF_LinearIntArith</a></td>
+        <td>32</td>
+        <td>QF_IDL<br>QF_LIA<br></td>
+        <td>16<br>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearrealarith">QF_LinearRealArith</a></td>
+        <td>32</td>
+        <td>QF_LRA<br>QF_RDL<br></td>
+        <td>16<br>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearintarith">QF_NonLinearIntArith</a></td>
+        <td>16</td>
+        <td>QF_NIA<br></td>
+        <td>16<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearrealarith">QF_NonLinearRealArith</a></td>
+        <td>16</td>
+        <td>QF_NRA<br></td>
+        <td>16<br></td>
+    </tr><tr class="total">
+        <td>
+            <b>Total</b>
+        </td>
+        <td>
+            <b>414</b>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table><h3>Parallel Track</h3><p>
+    In total there  are 14 divisions  in the Parallel Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_parallel_2021.tar.xz">list of selected benchmarks</a>.
+
+</p>
+
+<table>
+    <tr>
+        <th>Division</th>
+        <th>Division benchmarks</th>
+        <th>Logic</th>
+        <th>Logic benchmarks</th>
+    </tr><tr >
+        <td><a href="/2021/divisions/arith">Arith</a></td>
+        <td>24</td>
+        <td>LIA<br>LRA<br>NIA<br>NRA<br></td>
+        <td>4<br>17<br>1<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/bitvec">Bitvec</a></td>
+        <td>17</td>
+        <td>BV<br></td>
+        <td>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-lineararith">Equality+LinearArith</a></td>
+        <td>113</td>
+        <td>AUFDTLIRA<br>AUFLIA<br>AUFLIRA<br>UFDTLIA<br>UFDTLIRA<br>UFIDL<br>UFLIA<br>UFLRA<br></td>
+        <td>17<br>17<br>17<br>17<br>17<br>9<br>17<br>2<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-machinearith">Equality+MachineArith</a></td>
+        <td>17</td>
+        <td>UFBV<br></td>
+        <td>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality-nonlineararith">Equality+NonLinearArith</a></td>
+        <td>71</td>
+        <td>AUFDTNIRA<br>AUFNIA<br>AUFNIRA<br>UFDTNIRA<br>UFNIA<br></td>
+        <td>17<br>3<br>17<br>17<br>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/equality">Equality</a></td>
+        <td>34</td>
+        <td>UF<br>UFDT<br></td>
+        <td>17<br>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-bitvec">QF_Bitvec</a></td>
+        <td>17</td>
+        <td>QF_BV<br></td>
+        <td>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-bitvec">QF_Equality+Bitvec</a></td>
+        <td>17</td>
+        <td>QF_ABV<br></td>
+        <td>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-equality-nonlineararith">QF_Equality+NonLinearArith</a></td>
+        <td>6</td>
+        <td>QF_UFNRA<br></td>
+        <td>6<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-fparith">QF_FPArith</a></td>
+        <td>20</td>
+        <td>QF_BVFP<br>QF_FP<br></td>
+        <td>3<br>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearintarith">QF_LinearIntArith</a></td>
+        <td>34</td>
+        <td>QF_IDL<br>QF_LIA<br></td>
+        <td>17<br>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-linearrealarith">QF_LinearRealArith</a></td>
+        <td>17</td>
+        <td>QF_LRA<br></td>
+        <td>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearintarith">QF_NonLinearIntArith</a></td>
+        <td>17</td>
+        <td>QF_NIA<br></td>
+        <td>17<br></td>
+    </tr><tr >
+        <td><a href="/2021/divisions/qf-nonlinearrealarith">QF_NonLinearRealArith</a></td>
+        <td>17</td>
+        <td>QF_NRA<br></td>
+        <td>17<br></td>
+    </tr><tr class="total">
+        <td>
+            <b>Total</b>
+        </td>
+        <td>
+            <b>421</b>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table><p>
+    <span id="nc">
+        n Non-competing.
+    </span><br/>
+    <span id="ec">
+        e Experimental.
+    </span><br/>
+</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

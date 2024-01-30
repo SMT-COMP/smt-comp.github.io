@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2016/results/ucore-summary.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2016/results/ucore-summary.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2016/results/ucore-summary.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #ff75dd; } </style>
+    
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2016/">SMT-COMP 2016</a>
+    </h3>
+    <a href="/2016/rules16.pdf"><b>Rules</b></a><br/><a href="/2016/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2016/tools.html"><b>Tools</b></a><br/><a href="/2016/specs.html"><b>Specs</b></a><br/><a href="/2016/participants.html"><b>Participants</b></a><br/><a href="/2016/results.html"><b>Results</b></a><br/><a href="/2016/SMT-COMP-2016-slides.pdf"><b>Slides</b></a><br/><a href="https://doi.org/10.3233/SAT190123"><b>Report</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2 id="unsat-core-track-summary">Unsat Core Track (Summary)</h2>
+<p>Competition results as of Wed Jun 29 20:25:52 GMT</p>
+
+<table>
+<tr class="center">
+<th>Logic</th>
+<th>Solvers</th>
+<th>Benchmarks</th>
+<th>Order</th>
+</tr>
+<tr><td rowspan="2"><a href="QF_AUFBV-ucore.html">QF_AUFBV</a>
+</td><td rowspan="2">2</td><td rowspan="2">31</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="AUFNIRA-ucore.html">AUFNIRA</a>
+</td><td rowspan="2">1</td><td rowspan="2">1046</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="AUFLIA-ucore.html">AUFLIA</a>
+</td><td rowspan="2">2</td><td rowspan="2">3</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="UFIDL-ucore.html">UFIDL</a>
+</td><td rowspan="2">2</td><td rowspan="2">62</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="UF-ucore.html">UF</a>
+</td><td rowspan="2">2</td><td rowspan="2">2039</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_UFNIA-ucore.html">QF_UFNIA</a>
+</td><td rowspan="2">1</td><td rowspan="2">7</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_UFNRA-ucore.html">QF_UFNRA</a>
+</td><td rowspan="2">1</td><td rowspan="2">18</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_NIRA-ucore.html">QF_NIRA</a>
+</td><td rowspan="2">1</td><td rowspan="2">2</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_BVFP-ucore.html">QF_BVFP</a>
+</td><td rowspan="2">2</td><td rowspan="2">6</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="UFLRA-ucore.html">UFLRA</a>
+</td><td rowspan="2">2</td><td rowspan="2">20</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_IDL-ucore.html">QF_IDL</a>
+</td><td rowspan="2">3</td><td rowspan="2">816</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>; SMTInterpol</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_RDL-ucore.html">QF_RDL</a>
+</td><td rowspan="2">4</td><td rowspan="2">113</td>
+<td><span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">toysmt<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_UFBV-ucore.html">QF_UFBV</a>
+</td><td rowspan="2">2</td><td rowspan="2">31</td>
+<td><span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_BV-ucore.html">QF_BV</a>
+</td><td rowspan="2">2</td><td rowspan="2">17172</td>
+<td><span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_LRA-ucore.html">QF_LRA</a>
+</td><td rowspan="2">5</td><td rowspan="2">633</td>
+<td>SMTInterpol; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">toysmt<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_LIA-ucore.html">QF_LIA</a>
+</td><td rowspan="2">4</td><td rowspan="2">2840</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="UFLIA-ucore.html">UFLIA</a>
+</td><td rowspan="2">2</td><td rowspan="2">8377</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="NIA-ucore.html">NIA</a>
+</td><td rowspan="2">1</td><td rowspan="2">3</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_ANIA-ucore.html">QF_ANIA</a>
+</td><td rowspan="2">1</td><td rowspan="2">8</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_ABV-ucore.html">QF_ABV</a>
+</td><td rowspan="2">2</td><td rowspan="2">4644</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_UF-ucore.html">QF_UF</a>
+</td><td rowspan="2">5</td><td rowspan="2">4100</td>
+<td><span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">toysmt<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_AX-ucore.html">QF_AX</a>
+</td><td rowspan="2">3</td><td rowspan="2">279</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_AUFNIA-ucore.html">QF_AUFNIA</a>
+</td><td rowspan="2">1</td><td rowspan="2">15</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_NRA-ucore.html">QF_NRA</a>
+</td><td rowspan="2">1</td><td rowspan="2">4948</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_UFIDL-ucore.html">QF_UFIDL</a>
+</td><td rowspan="2">3</td><td rowspan="2">335</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="AUFLIRA-ucore.html">AUFLIRA</a>
+</td><td rowspan="2">2</td><td rowspan="2">19749</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="BV-ucore.html">BV</a>
+</td><td rowspan="2">1</td><td rowspan="2">56</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="LIA-ucore.html">LIA</a>
+</td><td rowspan="2">2</td><td rowspan="2">191</td>
+<td><span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_UFLRA-ucore.html">QF_UFLRA</a>
+</td><td rowspan="2">5</td><td rowspan="2">853</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">toysmt<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_NIA-ucore.html">QF_NIA</a>
+</td><td rowspan="2">1</td><td rowspan="2">316</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_LIRA-ucore.html">QF_LIRA</a>
+</td><td rowspan="2">2</td><td rowspan="2">5</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="UFBV-ucore.html">UFBV</a>
+</td><td rowspan="2">1</td><td rowspan="2">53</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="UFNIA-ucore.html">UFNIA</a>
+</td><td rowspan="2">1</td><td rowspan="2">2318</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_ALIA-ucore.html">QF_ALIA</a>
+</td><td rowspan="2">4</td><td rowspan="2">80</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="ALIA-ucore.html">ALIA</a>
+</td><td rowspan="2">2</td><td rowspan="2">41</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_UFLIA-ucore.html">QF_UFLIA</a>
+</td><td rowspan="2">4</td><td rowspan="2">195</td>
+<td><span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_FP-ucore.html">QF_FP</a>
+</td><td rowspan="2">1</td><td rowspan="2">17213</td>
+<td><span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="NRA-ucore.html">NRA</a>
+</td><td rowspan="2">1</td><td rowspan="2">3788</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="QF_AUFLIA-ucore.html">QF_AUFLIA</a>
+</td><td rowspan="2">4</td><td rowspan="2">516</td>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>; SMTInterpol; <span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">MathSat5<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+<tr><td rowspan="2"><a href="LRA-ucore.html">LRA</a>
+</td><td rowspan="2">2</td><td rowspan="2">319</td>
+<td><span class="non-competing-grey">veriT<sup><a href="#fn">n</a></sup></span>; <span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span>
+</td>
+</tr>
+<tr>
+</tr>
+</table>
+<p><span id="fn"> n. Non-competitive.</span></p>
+
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

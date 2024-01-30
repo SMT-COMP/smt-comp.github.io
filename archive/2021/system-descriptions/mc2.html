@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>MC2 | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="MC2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2021/system-descriptions/mc2.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2021/system-descriptions/mc2.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="MC2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"MC2","url":"https://smt-comp.github.io/2021/system-descriptions/mc2.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #008050; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2021/">SMT-COMP 2021</a>
+    </h3>
+    <a href="/2021/rules.pdf"><b>Rules</b></a><br/><a href="/2021/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2021/tools.html"><b>Tools</b></a><br/><a href="/2021/specs.html"><b>Specs</b></a><br/><a href="/2021/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2021/participants.html"><b>Participants</b></a><br/><a href="/2021/results.html"><b>Results</b></a><br/><a href="/2021/SMT-COMP-2021-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h1 id="mc2">MC2</h1>
+
+<p>MC² (“Model Constructing Modular Contraption”) is a modular SMT solver
+in OCaml, based on the MCSat calculus.</p>
+
+<p>It implements most of the techniques described in de Moura and Jovanović
+(VMCAI 13), in around 7 thousands lines of code (not including dependencies).
+EUF is supported via congruence lemmas; LRA is based on a conflict-driven
+Fourier-Motzkin solver. Boolean formulas are turned into clauses during preprocessing,
+using the Tseitin encoding; the core solver handles clauses like a regular SAT
+solver, as the code was originally derived from
+msat (github.com/Gbury/mSAT), itself derived from Alt-Ergo Zero.
+However most of the code was modified or rewritten by Simon Cruanes while
+working at Veridis at Loria, Nancy, France; and later in his own free time.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p><a href="https://c-cube.github.io/mc2/">https://c-cube.github.io/mc2/</a></p>
+
+<h2 id="short-summary">Short Summary</h2>
+
+<p>MC² is a <a href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories">SMT solver</a>.
+SMT solvers are automatic tools that try to assess whether a given logic
+formula is <em>satisfiable</em> (admits a model, an interpretation that makes it true)
+or <em>unsatisfiable</em> (no interpretation can make it true; it is absurd, and its
+negation is a theorem).
+Prominent solvers include <a href="https://github.com/Z3Prover/z3">Z3</a>,
+<a href="https://cvc5.github.io/">cvc5</a>, <a href="https://github.com/SRI-CSL/yices2/">Yices 2</a>,
+and others; all of them follow the <strong>CDCL(T)</strong> paradigm.
+Most of these solvers are implemented in C or C++.</p>
+
+<p>In contract, MC² is based on the <strong>mcSAT</strong> calculus
+(see
+<a href="http://csl.sri.com/~dejan/papers/jovanovic-fmcad2013.pdf">[fmcad’13]</a>
+and
+<a href="http://www.csl.sri.com/users/dejan/papers/mcsat-vmcai2013.pdf">[vmcai’13]</a>).
+mcSAT is fundamentally different from CDCL(T);
+it is a so-called <em>natural SMT</em> calculus where the boolean reasoning of CDCL is
+extended so as to be able to assign values to non-boolean variables (such as
+linear arithmetic variables, for example).
+As a calculus it can be considered stronger, in some sense, because it can have
+shorter proofs by virtue of being allowed to introduce new terms during the proof
+search.
+On the other hand, mcSAT is not as well known or battle tested as CDCL(T).
+MC² started as an experiment to try and reproduce some results from vmcai’13.</p>
+
+<h2 id="copyright">COPYRIGHT</h2>
+
+<p>This program is distributed under the Apache Software License version
+2.0. See the enclosed file <code class="language-plaintext highlighter-rouge">LICENSE</code>.</p>
+
+<p>(archived from <a href="https://github.com/c-cube/mc2/blob/master/README.md">https://github.com/c-cube/mc2/blob/master/README.md</a>)</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Biggest Lead Unsat Core | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Biggest Lead Unsat Core" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2021/results/biggest-lead-unsat-core" />
+<meta property="og:url" content="https://smt-comp.github.io/2021/results/biggest-lead-unsat-core" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Biggest Lead Unsat Core" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Biggest Lead Unsat Core","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2021/results/biggest-lead-unsat-core"},"url":"https://smt-comp.github.io/2021/results/biggest-lead-unsat-core"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #008050; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2021/">SMT-COMP 2021</a>
+    </h3>
+    <a href="/2021/rules.pdf"><b>Rules</b></a><br/><a href="/2021/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2021/tools.html"><b>Tools</b></a><br/><a href="/2021/specs.html"><b>Specs</b></a><br/><a href="/2021/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2021/participants.html"><b>Participants</b></a><br/><a href="/2021/results.html"><b>Results</b></a><br/><a href="/2021/SMT-COMP-2021-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2>Biggest Lead Ranking- Unsat Core Track</h2>
+
+
+<p>
+Page generated on 2021-07-18 17:31:27 +0000
+</p>
+
+<h3>Winners</h3>
+<table>
+    <thead>
+        <tr>
+        
+            <th>Sequential Performance</th>
+        
+        
+            <th>Parallel Performance</th>
+        
+        
+        
+        
+        </tr>
+    </thead>
+    <tr>
+        
+        <td>
+          
+            cvc5-uc
+          
+        </td>
+        
+        
+        <td>
+          
+            cvc5-uc
+          
+        </td>
+        
+        
+        
+        
+    </tr>
+</table>
+<h3>Sequential Performance</h3>
+<table id="sequential-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>177624.0</td>
+    <td>6.125e-05</td>
+    <td>
+      <a href="/2021/results/qf-nonlinearrealarith-unsat-core">QF_NonLinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>80016.0</td>
+    <td>0.00114924</td>
+    <td>
+      <a href="/2021/results/qf-equality-nonlineararith-unsat-core">QF_Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>25289.0</td>
+    <td>1.329e-05</td>
+    <td>
+      <a href="/2021/results/qf-nonlinearintarith-unsat-core">QF_NonLinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>8990.0</td>
+    <td>0.00501836</td>
+    <td>
+      <a href="/2021/results/equality-machinearith-unsat-core">Equality+MachineArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>78.0</td>
+    <td>0.13652805</td>
+    <td>
+      <a href="/2021/results/bitvec-unsat-core">Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>22.0</td>
+    <td>0.84856368</td>
+    <td>
+      <a href="/2021/results/fparith-unsat-core">FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>4.5</td>
+    <td>10.4541339</td>
+    <td>
+      <a href="/2021/results/arith-unsat-core">Arith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>2.67934996</td>
+    <td>4.63440653</td>
+    <td>
+      <a href="/2021/results/equality-unsat-core">Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/yices2">Yices2</a>
+    </td>
+    <td>2.19055857</td>
+    <td>1.36433478</td>
+    <td>
+      <a href="/2021/results/qf-equality-lineararith-unsat-core">QF_Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.80755576</td>
+    <td>6.25972258</td>
+    <td>
+      <a href="/2021/results/equality-lineararith-unsat-core">Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.22167359</td>
+    <td>1.13382467</td>
+    <td>
+      <a href="/2021/results/equality-nonlineararith-unsat-core">Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.15710605</td>
+    <td>1.06426955</td>
+    <td>
+      <a href="/2021/results/qf-equality-unsat-core">QF_Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.10809979</td>
+    <td>0.64600524</td>
+    <td>
+      <a href="/2021/results/qf-linearintarith-unsat-core">QF_LinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>1.07418125</td>
+    <td>1.68987586</td>
+    <td>
+      <a href="/2021/results/qf-equality-bitvec-unsat-core">QF_Equality+Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>1.07010066</td>
+    <td>3.61302036</td>
+    <td>
+      <a href="/2021/results/qf-bitvec-unsat-core">QF_Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>1.01698493</td>
+    <td>3.11870267</td>
+    <td>
+      <a href="/2021/results/qf-fparith-unsat-core">QF_FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/yices2">Yices2</a>
+    </td>
+    <td>1.01460338</td>
+    <td>0.56142582</td>
+    <td>
+      <a href="/2021/results/qf-linearrealarith-unsat-core">QF_LinearRealArith</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>Parallel Performance</h3>
+<table id="parallel-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>177624.0</td>
+    <td>0.00013094</td>
+    <td>
+      <a href="/2021/results/qf-nonlinearrealarith-unsat-core">QF_NonLinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>80016.0</td>
+    <td>0.00232293</td>
+    <td>
+      <a href="/2021/results/qf-equality-nonlineararith-unsat-core">QF_Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>25289.0</td>
+    <td>4.414e-05</td>
+    <td>
+      <a href="/2021/results/qf-nonlinearintarith-unsat-core">QF_NonLinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>8990.0</td>
+    <td>0.00317057</td>
+    <td>
+      <a href="/2021/results/equality-machinearith-unsat-core">Equality+MachineArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>78.0</td>
+    <td>0.12757205</td>
+    <td>
+      <a href="/2021/results/bitvec-unsat-core">Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>22.0</td>
+    <td>0.58253678</td>
+    <td>
+      <a href="/2021/results/fparith-unsat-core">FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>4.5</td>
+    <td>10.2731269</td>
+    <td>
+      <a href="/2021/results/arith-unsat-core">Arith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>2.65398865</td>
+    <td>4.50495704</td>
+    <td>
+      <a href="/2021/results/equality-unsat-core">Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/yices2">Yices2</a>
+    </td>
+    <td>2.05198284</td>
+    <td>2.03097773</td>
+    <td>
+      <a href="/2021/results/qf-equality-lineararith-unsat-core">QF_Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.80433097</td>
+    <td>6.16651255</td>
+    <td>
+      <a href="/2021/results/equality-lineararith-unsat-core">Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.18544704</td>
+    <td>0.66910847</td>
+    <td>
+      <a href="/2021/results/equality-nonlineararith-unsat-core">Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.11960708</td>
+    <td>1.0096471</td>
+    <td>
+      <a href="/2021/results/qf-equality-unsat-core">QF_Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/cvc5-uc">cvc5-uc</a>
+    </td>
+    <td>1.10809979</td>
+    <td>0.63774782</td>
+    <td>
+      <a href="/2021/results/qf-linearintarith-unsat-core">QF_LinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>1.07418125</td>
+    <td>1.68939043</td>
+    <td>
+      <a href="/2021/results/qf-equality-bitvec-unsat-core">QF_Equality+Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>1.07010066</td>
+    <td>3.61382059</td>
+    <td>
+      <a href="/2021/results/qf-bitvec-unsat-core">QF_Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>1.01698493</td>
+    <td>3.1207169</td>
+    <td>
+      <a href="/2021/results/qf-fparith-unsat-core">QF_FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2021/participants/yices2">Yices2</a>
+    </td>
+    <td>1.01460338</td>
+    <td>0.5615646</td>
+    <td>
+      <a href="/2021/results/qf-linearrealarith-unsat-core">QF_LinearRealArith</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+  <span id="exp">
+    e Experimental.
+  </span><br/>
+</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

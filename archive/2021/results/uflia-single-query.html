@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Uflia Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Uflia Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2021/results/uflia-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2021/results/uflia-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Uflia Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Uflia Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2021/results/uflia-single-query"},"url":"https://smt-comp.github.io/2021/results/uflia-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #008050; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2021/">SMT-COMP 2021</a>
+    </h3>
+    <a href="/2021/rules.pdf"><b>Rules</b></a><br/><a href="/2021/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2021/tools.html"><b>Tools</b></a><br/><a href="/2021/specs.html"><b>Specs</b></a><br/><a href="/2021/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2021/participants.html"><b>Participants</b></a><br/><a href="/2021/results.html"><b>Results</b></a><br/><a href="/2021/SMT-COMP-2021-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+<h2>UFLIA (Single Query Track)</h2>
+
+<p>
+    Competition results for the UFLIA
+    
+      logic
+    
+in the Single Query Track.
+</p>
+
+<p>
+Page generated on 2021-07-18 17:29:07 +0000
+</p>
+
+<p>
+<b>Benchmarks</b>: 2848
+</br>
+<b>Time Limit:</b> 1200 seconds
+</br>
+<b> Memory Limit:</b> 60 GB
+</p><h3>Winners</h3>
+<table>
+    <thead>
+        <tr><th class="center">Sequential Performance</th><th class="center">Parallel Performance</th><th class="center">SAT Performance (parallel)</th><th class="center">UNSAT Performance (parallel)</th><th class="center">24s Performance (parallel)</th></tr>
+    </thead>
+    <tr><td class="center">cvc5</td><td class="center">cvc5</td><td class="center">SMTInterpol</td>
+     
+     
+        <td class="center">cvc5</td>
+     
+     
+        <td class="center">veriT</td>
+     
+    </tr>
+</table>
+
+<p><p>
+
+<!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Sequential Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2021/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1641</td>
+    <td class="right">1471592.797</td>
+    <td class="right">1456374.101</td><td class="right">1641</td><td class="right">7</td><td class="right">1634</td><td class="right">1207</td><td class="right">1163</td>
+    <td class="right">44</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2021/participants/2020-cvc4">2020-CVC4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1615</td>
+    <td class="right">1480242.838</td>
+    <td class="right">1498764.669</td><td class="right">1615</td><td class="right">2</td><td class="right">1613</td><td class="right">1233</td><td class="right">1202</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2021/participants/cvc5-fixed">cvc5 - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1589</td>
+    <td class="right">688247.291</td>
+    <td class="right">1508521.201</td><td class="right">1589</td><td class="right">0</td><td class="right">1589</td><td class="right">1259</td><td class="right">1240</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2021/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1584</td>
+    <td class="right">697022.626</td>
+    <td class="right">1514824.283</td><td class="right">1584</td><td class="right">1</td><td class="right">1583</td><td class="right">1264</td><td class="right">1245</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2021/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1558</td>
+    <td class="right">1547763.299</td>
+    <td class="right">1547855.941</td><td class="right">1558</td><td class="right">0</td><td class="right">1558</td><td class="right">1290</td><td class="right">1252</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2021/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1451</td>
+    <td class="right">1700499.522</td>
+    <td class="right">1636008.943</td><td class="right">1451</td><td class="right">0</td><td class="right">1451</td><td class="right">1397</td><td class="right">1345</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2021/participants/vampire-fixed">Vampire - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1444</td>
+    <td class="right">1698205.023</td>
+    <td class="right">1630941.767</td><td class="right">1444</td><td class="right">0</td><td class="right">1444</td><td class="right">1404</td><td class="right">1340</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2021/participants/2020-vampire">2020-Vampire</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1420</td>
+    <td class="right">1702023.435</td>
+    <td class="right">1639319.07</td><td class="right">1420</td><td class="right">0</td><td class="right">1420</td><td class="right">1428</td><td class="right">1348</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2021/participants/2020-z3">2020-z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1324</td>
+    <td class="right">1457518.666</td>
+    <td class="right">1460896.998</td><td class="right">1324</td><td class="right">7</td><td class="right">1317</td><td class="right">1524</td><td class="right">972</td>
+    <td class="right">9</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2021/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1255</td>
+    <td class="right">1508120.616</td>
+    <td class="right">1516770.377</td><td class="right">1255</td><td class="right">7</td><td class="right">1248</td><td class="right">1593</td><td class="right">1000</td>
+    <td class="right">15</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2021/participants/iprover">iProver</a></td>
+    <td class="right">0</td>
+    <td class="right">664</td>
+    <td class="right">2679735.424</td>
+    <td class="right">2635017.357</td><td class="right">664</td><td class="right">0</td><td class="right">664</td><td class="right">2184</td><td class="right">2138</td>
+    <td class="right">45</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2021/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">410</td>
+    <td class="right">2871312.981</td>
+    <td class="right">2865163.048</td><td class="right">410</td><td class="right">3</td><td class="right">407</td><td class="right">2438</td><td class="right">2362</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2021/participants/ultimateeliminator-mathsat">UltimateEliminator+MathSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td>
+    <td class="right">23602.241</td>
+    <td class="right">16869.599</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">2848</td><td class="right">4</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- PARALLEL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1660</td><td class="right">1482580.847</td><td class="right">1444909.946</td><td class="right">1660</td><td class="right">9</td><td class="right">1651</td><td class="right">1188</td><td class="right">1144</td>
+    <td class="right">44</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-cvc4">2020-CVC4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1615</td><td class="right">1497922.268</td><td class="right">1498707.379</td><td class="right">1615</td><td class="right">2</td><td class="right">1613</td><td class="right">1233</td><td class="right">1211</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/cvc5-fixed">cvc5 - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1589</td><td class="right">1508258.016</td><td class="right">1508454.731</td><td class="right">1589</td><td class="right">0</td><td class="right">1589</td><td class="right">1259</td><td class="right">1240</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1584</td><td class="right">1514481.761</td><td class="right">1514759.843</td><td class="right">1584</td><td class="right">1</td><td class="right">1583</td><td class="right">1264</td><td class="right">1245</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1558</td><td class="right">1547913.879</td><td class="right">1547786.621</td><td class="right">1558</td><td class="right">0</td><td class="right">1558</td><td class="right">1290</td><td class="right">1251</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1476</td><td class="right">1794963.422</td><td class="right">1597977.962</td><td class="right">1476</td><td class="right">0</td><td class="right">1476</td><td class="right">1372</td><td class="right">1286</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/vampire-fixed">Vampire - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1473</td><td class="right">1809357.953</td><td class="right">1593600.404</td><td class="right">1473</td><td class="right">0</td><td class="right">1473</td><td class="right">1375</td><td class="right">1279</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-vampire">2020-Vampire</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1450</td><td class="right">1802364.775</td><td class="right">1604654.492</td><td class="right">1450</td><td class="right">0</td><td class="right">1450</td><td class="right">1398</td><td class="right">1289</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-z3">2020-z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1324</td><td class="right">1458752.046</td><td class="right">1460856.158</td><td class="right">1324</td><td class="right">7</td><td class="right">1317</td><td class="right">1524</td><td class="right">982</td>
+    <td class="right">9</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1255</td><td class="right">1511096.896</td><td class="right">1516726.237</td><td class="right">1255</td><td class="right">7</td><td class="right">1248</td><td class="right">1593</td><td class="right">1000</td>
+    <td class="right">15</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/iprover">iProver</a></td>
+    <td class="right">0</td>
+    <td class="right">720</td><td class="right">2757168.544</td><td class="right">2604321.45</td><td class="right">720</td><td class="right">0</td><td class="right">720</td><td class="right">2128</td><td class="right">2082</td>
+    <td class="right">45</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">413</td><td class="right">2951289.261</td><td class="right">2851222.323</td><td class="right">413</td><td class="right">3</td><td class="right">410</td><td class="right">2435</td><td class="right">2313</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/ultimateeliminator-mathsat">UltimateEliminator+MathSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">23602.241</td><td class="right">16869.599</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">2848</td><td class="right">4</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- SAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>SAT Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">N/A</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">9</td><td class="right">3029.899</td><td class="right">1028.778</td><td class="right">9</td><td class="right">9</td><td class="right">0</td><td class="right">0</td><td class="right">2839</td><td class="right">1144</td>
+    <td class="right">44</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">7</td><td class="right">2400.286</td><td class="right">2400.288</td><td class="right">7</td><td class="right">7</td><td class="right">0</td><td class="right">2</td><td class="right">2839</td><td class="right">1000</td>
+    <td class="right">15</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-z3">2020-z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">7</td><td class="right">2400.389</td><td class="right">2400.389</td><td class="right">7</td><td class="right">7</td><td class="right">0</td><td class="right">2</td><td class="right">2839</td><td class="right">982</td>
+    <td class="right">9</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">3</td><td class="right">2407.842</td><td class="right">2404.05</td><td class="right">3</td><td class="right">3</td><td class="right">0</td><td class="right">6</td><td class="right">2839</td><td class="right">2313</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-cvc4">2020-CVC4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">2</td><td class="right">5037.514</td><td class="right">5120.263</td><td class="right">2</td><td class="right">2</td><td class="right">0</td><td class="right">7</td><td class="right">2839</td><td class="right">1211</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1</td><td class="right">7053.414</td><td class="right">7147.77</td><td class="right">1</td><td class="right">1</td><td class="right">0</td><td class="right">8</td><td class="right">2839</td><td class="right">1245</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/ultimateeliminator-mathsat">UltimateEliminator+MathSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">44.891</td><td class="right">27.676</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">9</td><td class="right">2839</td><td class="right">4</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">7202.806</td><td class="right">7202.796</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">9</td><td class="right">2839</td><td class="right">1251</td>
+    <td class="right">2</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/cvc5-fixed">cvc5 - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">7733.247</td><td class="right">7733.283</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">9</td><td class="right">2839</td><td class="right">1240</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/vampire-fixed">Vampire - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">14400.13</td><td class="right">10797.88</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">9</td><td class="right">2839</td><td class="right">1279</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-vampire">2020-Vampire</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">10800.0</td><td class="right">10800.0</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">9</td><td class="right">2839</td><td class="right">1289</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/iprover">iProver</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">10800.0</td><td class="right">10800.0</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">9</td><td class="right">2839</td><td class="right">2082</td>
+    <td class="right">45</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">10800.0</td><td class="right">10800.0</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">9</td><td class="right">2839</td><td class="right">1286</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- UNSAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>UNSAT Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">N/A</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1651</td><td class="right">129550.948</td><td class="right">93881.169</td><td class="right">1651</td><td class="right">0</td><td class="right">1651</td><td class="right">63</td><td class="right">1134</td><td class="right">1144</td>
+    <td class="right">44</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-cvc4">2020-CVC4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1613</td><td class="right">161310.292</td><td class="right">161990.929</td><td class="right">1613</td><td class="right">0</td><td class="right">1613</td><td class="right">101</td><td class="right">1134</td><td class="right">1211</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/cvc5-fixed">cvc5 - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1589</td><td class="right">167317.249</td><td class="right">167502.928</td><td class="right">1589</td><td class="right">0</td><td class="right">1589</td><td class="right">125</td><td class="right">1134</td><td class="right">1240</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1583</td><td class="right">174210.178</td><td class="right">174376.962</td><td class="right">1583</td><td class="right">0</td><td class="right">1583</td><td class="right">131</td><td class="right">1134</td><td class="right">1245</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1558</td><td class="right">217986.413</td><td class="right">217882.682</td><td class="right">1558</td><td class="right">0</td><td class="right">1558</td><td class="right">156</td><td class="right">1134</td><td class="right">1251</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1476</td><td class="right">400906.742</td><td class="right">237911.71</td><td class="right">1476</td><td class="right">0</td><td class="right">1476</td><td class="right">238</td><td class="right">1134</td><td class="right">1286</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/vampire-fixed">Vampire - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1473</td><td class="right">408956.223</td><td class="right">232842.154</td><td class="right">1473</td><td class="right">0</td><td class="right">1473</td><td class="right">241</td><td class="right">1134</td><td class="right">1279</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-vampire">2020-Vampire</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1450</td><td class="right">412763.495</td><td class="right">243903.132</td><td class="right">1450</td><td class="right">0</td><td class="right">1450</td><td class="right">264</td><td class="right">1134</td><td class="right">1289</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-z3">2020-z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1317</td><td class="right">390362.541</td><td class="right">390795.865</td><td class="right">1317</td><td class="right">0</td><td class="right">1317</td><td class="right">397</td><td class="right">1134</td><td class="right">982</td>
+    <td class="right">9</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1248</td><td class="right">466958.121</td><td class="right">468614.025</td><td class="right">1248</td><td class="right">0</td><td class="right">1248</td><td class="right">466</td><td class="right">1134</td><td class="right">1000</td>
+    <td class="right">15</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/iprover">iProver</a></td>
+    <td class="right">0</td>
+    <td class="right">720</td><td class="right">1396368.544</td><td class="right">1243521.45</td><td class="right">720</td><td class="right">0</td><td class="right">720</td><td class="right">994</td><td class="right">1134</td><td class="right">2082</td>
+    <td class="right">45</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">410</td><td class="right">1621147.944</td><td class="right">1583693.917</td><td class="right">410</td><td class="right">0</td><td class="right">410</td><td class="right">1304</td><td class="right">1134</td><td class="right">2313</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/ultimateeliminator-mathsat">UltimateEliminator+MathSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">15754.985</td><td class="right">11644.228</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1714</td><td class="right">1134</td><td class="right">4</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- 24s PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>24 seconds Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2019-par4">2019-Par4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1573</td><td class="right">32251.38</td><td class="right">31316.833</td><td class="right">1573</td><td class="right">7</td><td class="right">1566</td><td class="right">1275</td><td class="right">1231</td>
+    <td class="right">44</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1484</td><td class="right">34093.317</td><td class="right">34091.999</td><td class="right">1484</td><td class="right">0</td><td class="right">1484</td><td class="right">1364</td><td class="right">1342</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/cvc5">cvc5</a></td>
+    <td class="right">0</td>
+    <td class="right">1466</td><td class="right">34674.521</td><td class="right">34646.376</td><td class="right">1466</td><td class="right">0</td><td class="right">1466</td><td class="right">1382</td><td class="right">1374</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/cvc5-fixed">cvc5 - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1466</td><td class="right">34682.212</td><td class="right">34658.036</td><td class="right">1466</td><td class="right">0</td><td class="right">1466</td><td class="right">1382</td><td class="right">1374</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-cvc4">2020-CVC4</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1430</td><td class="right">35768.604</td><td class="right">35758.117</td><td class="right">1430</td><td class="right">0</td><td class="right">1430</td><td class="right">1418</td><td class="right">1411</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1278</td><td class="right">49625.092</td><td class="right">40834.839</td><td class="right">1278</td><td class="right">0</td><td class="right">1278</td><td class="right">1570</td><td class="right">1570</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/vampire-fixed">Vampire - fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1263</td><td class="right">49404.939</td><td class="right">40861.473</td><td class="right">1263</td><td class="right">0</td><td class="right">1263</td><td class="right">1585</td><td class="right">1574</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-vampire">2020-Vampire</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1260</td><td class="right">47085.061</td><td class="right">40125.53</td><td class="right">1260</td><td class="right">0</td><td class="right">1260</td><td class="right">1588</td><td class="right">1564</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/2020-z3">2020-z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1243</td><td class="right">39857.254</td><td class="right">39855.452</td><td class="right">1243</td><td class="right">7</td><td class="right">1236</td><td class="right">1605</td><td class="right">1596</td>
+    <td class="right">9</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2021/participants/z3">z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1156</td><td class="right">41737.112</td><td class="right">41735.746</td><td class="right">1156</td><td class="right">7</td><td class="right">1149</td><td class="right">1692</td><td class="right">1676</td>
+    <td class="right">15</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/iprover">iProver</a></td>
+    <td class="right">0</td>
+    <td class="right">541</td><td class="right">68418.294</td><td class="right">58841.694</td><td class="right">541</td><td class="right">0</td><td class="right">541</td><td class="right">2307</td><td class="right">2261</td>
+    <td class="right">45</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">320</td><td class="right">61780.288</td><td class="right">60138.172</td><td class="right">320</td><td class="right">3</td><td class="right">317</td><td class="right">2528</td><td class="right">2459</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2021/participants/ultimateeliminator-mathsat">UltimateEliminator+MathSAT</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">15705.443</td><td class="right">9091.635</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">2848</td><td class="right">14</td>
+    <td class="right">0</td>
+</tr>
+
+</table><p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/><span id="nc">
+    N/A: Benchmarks not known to be SAT/UNSAT, respectively.
+    </span><br/></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Qf_bv Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Qf_bv Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2019/results/qf-bv-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2019/results/qf-bv-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Qf_bv Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Qf_bv Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2019/results/qf-bv-single-query"},"url":"https://smt-comp.github.io/2019/results/qf-bv-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #c30000; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2019/">SMT-COMP 2019</a>
+    </h3>
+    <a href="/2019/rules19.pdf"><b>Rules</b></a><br/><a href="/2019/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2019/tools.html"><b>Tools</b></a><br/><a href="/2019/specs.html"><b>Specs</b></a><br/><a href="/2019/participants.html"><b>Participants</b></a><br/><a href="/2019/results.html"><b>Results</b></a><br/><a href="/2019/SMT-COMP-2019-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+<h2>QF_BV (Single Query Track)</h2>
+
+<p>
+    Competition results for the QF_BV
+    
+      division
+    
+in the Single Query Track.
+</p>
+
+<p>
+Page generated on 2019-07-23 17:56:09 +0000
+</p>
+
+<p>
+<b>Benchmarks</b>: 8909
+</br>
+<b>Time Limit:</b> 2400 seconds
+</br>
+<b> Memory Limit:</b> 60 GB
+</p><h3>Winners</h3>
+<table>
+    <thead>
+        <tr><th class="center">Sequential Performance</th><th class="center">Parallel Performance</th><th class="center">SAT Performance (parallel)</th><th class="center">UNSAT Performance (parallel)</th><th class="center">24s Performance (parallel)</th></tr>
+    </thead>
+    <tr><td class="center">Boolector</td><td class="center">Poolector</td><td class="center">Poolector</td>
+     
+     
+        <td class="center">Poolector</td>
+     
+     
+        <td class="center">Par4</td>
+     
+    </tr>
+</table>
+
+<p><p>
+
+<!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Sequential Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/boolector">Boolector</a></td>
+    <td class="right">0</td>
+    <td class="right">8751</td>
+    <td class="right">593123.182</td>
+    <td class="right">592976.764</td><td class="right">8751</td><td class="right">3071</td><td class="right">5680</td><td class="right">158</td><td class="right"></td><td class="right">158</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/yices-2-6-2-cadical">Yices 2.6.2 CaDiCal</a></td>
+    <td class="right">0</td>
+    <td class="right">8718</td>
+    <td class="right">660202.171</td>
+    <td class="right">660060.442</td><td class="right">8718</td><td class="right">3053</td><td class="right">5665</td><td class="right">191</td><td class="right"></td><td class="right">191</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/poolector">Poolector</a></td>
+    <td class="right">0</td>
+    <td class="right">8685</td>
+    <td class="right">903990.358</td>
+    <td class="right">631227.578</td><td class="right">8685</td><td class="right">3033</td><td class="right">5652</td><td class="right">224</td><td class="right"></td><td class="right">224</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">8684</td>
+    <td class="right">764037.013</td>
+    <td class="right">615686.559</td><td class="right">8684</td><td class="right">3045</td><td class="right">5639</td><td class="right">225</td><td class="right"></td><td class="right">225</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/yices-2-6-2-new-bvsolver">Yices 2.6.2 New Bvsolver</a></td>
+    <td class="right">0</td>
+    <td class="right">8682</td>
+    <td class="right">715513.665</td>
+    <td class="right">715553.17</td><td class="right">8682</td><td class="right">3034</td><td class="right">5648</td><td class="right">227</td><td class="right"></td><td class="right">227</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/minkeyrink-solver">Minkeyrink Solver</a></td>
+    <td class="right">0</td>
+    <td class="right">8665</td>
+    <td class="right">821185.831</td>
+    <td class="right">821081.937</td><td class="right">8665</td><td class="right">3047</td><td class="right">5618</td><td class="right">244</td><td class="right"></td><td class="right">244</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/2018-boolector">2018-Boolector</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8643</td>
+    <td class="right">836115.435</td>
+    <td class="right">836025.057</td><td class="right">8643</td><td class="right">2996</td><td class="right">5647</td><td class="right">266</td><td class="right"></td><td class="right">266</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/yices-2-6-2-cryptominisat">Yices 2.6.2 Cryptominisat</a></td>
+    <td class="right">0</td>
+    <td class="right">8638</td>
+    <td class="right">904420.903</td>
+    <td class="right">904177.225</td><td class="right">8638</td><td class="right">2996</td><td class="right">5642</td><td class="right">271</td><td class="right"></td><td class="right">270</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">8586</td>
+    <td class="right">1089212.311</td>
+    <td class="right">1088837.964</td><td class="right">8586</td><td class="right">3060</td><td class="right">5526</td><td class="right">323</td><td class="right"></td><td class="right">312</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/minkeyrink-solver-mt">Minkeyrink Solver MT</a></td>
+    <td class="right">0</td>
+    <td class="right">8581</td>
+    <td class="right">1086025.278</td>
+    <td class="right">853664.695</td><td class="right">8581</td><td class="right">3015</td><td class="right">5566</td><td class="right">328</td><td class="right"></td><td class="right">320</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/2018-minkeyrink-mt">2018-Minkeyrink MT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8565</td>
+    <td class="right">1123067.167</td>
+    <td class="right">894069.472</td><td class="right">8565</td><td class="right">3002</td><td class="right">5563</td><td class="right">344</td><td class="right"></td><td class="right">337</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/boolector-reasonls">Boolector-ReasonLS</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8517</td>
+    <td class="right">1423084.047</td>
+    <td class="right">1423178.255</td><td class="right">8517</td><td class="right">2903</td><td class="right">5614</td><td class="right">392</td><td class="right"></td><td class="right">391</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a></td>
+    <td class="right">0</td>
+    <td class="right">8438</td>
+    <td class="right">1375758.546</td>
+    <td class="right">1375728.281</td><td class="right">8438</td><td class="right">3035</td><td class="right">5403</td><td class="right">471</td><td class="right"></td><td class="right">471</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/stp-incremental">STP-incremental</a></td>
+    <td class="right">0</td>
+    <td class="right">8344</td>
+    <td class="right">1871157.156</td>
+    <td class="right">1872023.692</td><td class="right">8344</td><td class="right">2915</td><td class="right">5429</td><td class="right">565</td><td class="right"></td><td class="right">562</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/stp">STP</a></td>
+    <td class="right">0</td>
+    <td class="right">8337</td>
+    <td class="right">1865884.811</td>
+    <td class="right">1866865.74</td><td class="right">8337</td><td class="right">2911</td><td class="right">5426</td><td class="right">572</td><td class="right"></td><td class="right">569</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/stp-mergesat-fixed">STP-mergesat-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8254</td>
+    <td class="right">2206276.164</td>
+    <td class="right">2207349.558</td><td class="right">8254</td><td class="right">2908</td><td class="right">5346</td><td class="right">655</td><td class="right"></td><td class="right">652</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/stp-mt">STP-mt</a></td>
+    <td class="right">0</td>
+    <td class="right">8161</td>
+    <td class="right">2458813.263</td>
+    <td class="right">1962289.182</td><td class="right">8161</td><td class="right">2849</td><td class="right">5312</td><td class="right">748</td><td class="right"></td><td class="right">738</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/stp-minisat">STP-minisat</a></td>
+    <td class="right">0</td>
+    <td class="right">7780</td>
+    <td class="right">3177982.896</td>
+    <td class="right">3179120.189</td><td class="right">7780</td><td class="right">2826</td><td class="right">4954</td><td class="right">1129</td><td class="right"></td><td class="right">1126</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">7694</td>
+    <td class="right">3558041.055</td>
+    <td class="right">3558049.027</td><td class="right">7694</td><td class="right">2790</td><td class="right">4904</td><td class="right">1215</td><td class="right"></td><td class="right">1215</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/stp-portfolio-fixed">STP-portfolio-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">7484</td>
+    <td class="right">3722715.286</td>
+    <td class="right">3499112.702</td><td class="right">7484</td><td class="right">2766</td><td class="right">4718</td><td class="right">1425</td><td class="right"></td><td class="right">1259</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/yices-2-6-2-mcsat-bv">Yices 2.6.2 mcsat-bv</a></td>
+    <td class="right">0</td>
+    <td class="right">5181</td>
+    <td class="right">9404392.697</td>
+    <td class="right">9405034.837</td><td class="right">5181</td><td class="right">1641</td><td class="right">3540</td><td class="right">3728</td><td class="right"></td><td class="right">3593</td>
+    <td class="right">134</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/stp-riss">STP-riss</a></td>
+    <td class="right">0</td>
+    <td class="right">2682</td>
+    <td class="right">55129.873</td>
+    <td class="right">57163.521</td><td class="right">2682</td><td class="right">7</td><td class="right">2675</td><td class="right">6227</td><td class="right"></td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/stp-mergesat">STP-mergesat</a></td>
+    <td class="right">0</td>
+    <td class="right">2548</td>
+    <td class="right">54161.244</td>
+    <td class="right">55346.539</td><td class="right">2548</td><td class="right">7</td><td class="right">2541</td><td class="right">6361</td><td class="right"></td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/stp-portfolio">STP-portfolio</a></td>
+    <td class="right">0</td>
+    <td class="right">2548</td>
+    <td class="right">3442094.429</td>
+    <td class="right">3321325.603</td><td class="right">2548</td><td class="right">7</td><td class="right">2541</td><td class="right">6361</td><td class="right"></td><td class="right">1181</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- PARALLEL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a></td>
+    <td class="right">0</td>
+    <td class="right">8768</td><td class="right">1093383.208</td><td class="right">530089.056</td><td class="right">8768</td><td class="right">3078</td><td class="right">5690</td><td class="right">141</td><td class="right"></td><td class="right">141</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/boolector">Boolector</a></td>
+    <td class="right">0</td>
+    <td class="right">8751</td><td class="right">593150.512</td><td class="right">592971.584</td><td class="right">8751</td><td class="right">3071</td><td class="right">5680</td><td class="right">158</td><td class="right"></td><td class="right">158</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">8730</td><td class="right">840952.893</td><td class="right">567741.53</td><td class="right">8730</td><td class="right">3061</td><td class="right">5669</td><td class="right">179</td><td class="right"></td><td class="right">179</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cadical">Yices 2.6.2 CaDiCal</a></td>
+    <td class="right">0</td>
+    <td class="right">8718</td><td class="right">660229.751</td><td class="right">660053.672</td><td class="right">8718</td><td class="right">3053</td><td class="right">5665</td><td class="right">191</td><td class="right"></td><td class="right">191</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-new-bvsolver">Yices 2.6.2 New Bvsolver</a></td>
+    <td class="right">0</td>
+    <td class="right">8682</td><td class="right">715556.255</td><td class="right">715544.03</td><td class="right">8682</td><td class="right">3034</td><td class="right">5648</td><td class="right">227</td><td class="right"></td><td class="right">227</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver-mt">Minkeyrink Solver MT</a></td>
+    <td class="right">0</td>
+    <td class="right">8667</td><td class="right">1321390.108</td><td class="right">759870.116</td><td class="right">8667</td><td class="right">3047</td><td class="right">5620</td><td class="right">242</td><td class="right"></td><td class="right">234</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver">Minkeyrink Solver</a></td>
+    <td class="right">0</td>
+    <td class="right">8665</td><td class="right">821227.621</td><td class="right">821074.187</td><td class="right">8665</td><td class="right">3047</td><td class="right">5618</td><td class="right">244</td><td class="right"></td><td class="right">244</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-minkeyrink-mt">2018-Minkeyrink MT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8646</td><td class="right">1327000.077</td><td class="right">802191.144</td><td class="right">8646</td><td class="right">3032</td><td class="right">5614</td><td class="right">263</td><td class="right"></td><td class="right">256</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-boolector">2018-Boolector</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8643</td><td class="right">836167.075</td><td class="right">836015.557</td><td class="right">8643</td><td class="right">2996</td><td class="right">5647</td><td class="right">266</td><td class="right"></td><td class="right">266</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cryptominisat">Yices 2.6.2 Cryptominisat</a></td>
+    <td class="right">0</td>
+    <td class="right">8638</td><td class="right">904474.613</td><td class="right">904166.715</td><td class="right">8638</td><td class="right">2996</td><td class="right">5642</td><td class="right">271</td><td class="right"></td><td class="right">270</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">8586</td><td class="right">1089282.411</td><td class="right">1088825.654</td><td class="right">8586</td><td class="right">3060</td><td class="right">5526</td><td class="right">323</td><td class="right"></td><td class="right">312</td>
+    <td class="right">4</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/boolector-reasonls">Boolector-ReasonLS</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8517</td><td class="right">1423150.187</td><td class="right">1423162.935</td><td class="right">8517</td><td class="right">2903</td><td class="right">5614</td><td class="right">392</td><td class="right"></td><td class="right">391</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a></td>
+    <td class="right">0</td>
+    <td class="right">8438</td><td class="right">1375826.986</td><td class="right">1375712.481</td><td class="right">8438</td><td class="right">3035</td><td class="right">5403</td><td class="right">471</td><td class="right"></td><td class="right">471</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mt">STP-mt</a></td>
+    <td class="right">0</td>
+    <td class="right">8365</td><td class="right">2981057.933</td><td class="right">1729291.895</td><td class="right">8365</td><td class="right">2934</td><td class="right">5431</td><td class="right">544</td><td class="right"></td><td class="right">534</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-incremental">STP-incremental</a></td>
+    <td class="right">0</td>
+    <td class="right">8344</td><td class="right">1871251.986</td><td class="right">1872005.122</td><td class="right">8344</td><td class="right">2915</td><td class="right">5429</td><td class="right">565</td><td class="right"></td><td class="right">562</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp">STP</a></td>
+    <td class="right">0</td>
+    <td class="right">8337</td><td class="right">1866152.051</td><td class="right">1866844.69</td><td class="right">8337</td><td class="right">2911</td><td class="right">5426</td><td class="right">572</td><td class="right"></td><td class="right">569</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat-fixed">STP-mergesat-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8254</td><td class="right">2206568.814</td><td class="right">2207327.348</td><td class="right">8254</td><td class="right">2908</td><td class="right">5346</td><td class="right">655</td><td class="right"></td><td class="right">652</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-minisat">STP-minisat</a></td>
+    <td class="right">0</td>
+    <td class="right">7780</td><td class="right">3178347.966</td><td class="right">3179082.259</td><td class="right">7780</td><td class="right">2826</td><td class="right">4954</td><td class="right">1129</td><td class="right"></td><td class="right">1126</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">7694</td><td class="right">3558315.305</td><td class="right">3558001.587</td><td class="right">7694</td><td class="right">2790</td><td class="right">4904</td><td class="right">1215</td><td class="right"></td><td class="right">1215</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio-fixed">STP-portfolio-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">7551</td><td class="right">3783376.786</td><td class="right">3466055.192</td><td class="right">7551</td><td class="right">2798</td><td class="right">4753</td><td class="right">1358</td><td class="right"></td><td class="right">1191</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-mcsat-bv">Yices 2.6.2 mcsat-bv</a></td>
+    <td class="right">0</td>
+    <td class="right">5181</td><td class="right">9404928.717</td><td class="right">9404914.607</td><td class="right">5181</td><td class="right">1641</td><td class="right">3540</td><td class="right">3728</td><td class="right"></td><td class="right">3593</td>
+    <td class="right">134</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-riss">STP-riss</a></td>
+    <td class="right">0</td>
+    <td class="right">2682</td><td class="right">55309.263</td><td class="right">57163.181</td><td class="right">2682</td><td class="right">7</td><td class="right">2675</td><td class="right">6227</td><td class="right"></td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat">STP-mergesat</a></td>
+    <td class="right">0</td>
+    <td class="right">2548</td><td class="right">54344.184</td><td class="right">55346.059</td><td class="right">2548</td><td class="right">7</td><td class="right">2541</td><td class="right">6361</td><td class="right"></td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio">STP-portfolio</a></td>
+    <td class="right">0</td>
+    <td class="right">2548</td><td class="right">3467415.509</td><td class="right">3306837.443</td><td class="right">2548</td><td class="right">7</td><td class="right">2541</td><td class="right">6361</td><td class="right"></td><td class="right">1146</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- SAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>SAT Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a></td>
+    <td class="right">0</td>
+    <td class="right">3078</td><td class="right">438355.315</td><td class="right">145158.46</td><td class="right">3078</td><td class="right">3078</td><td class="right">0</td><td class="right">5831</td><td class="right">141</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/boolector">Boolector</a></td>
+    <td class="right">0</td>
+    <td class="right">3071</td><td class="right">176679.897</td><td class="right">176536.66</td><td class="right">3071</td><td class="right">3071</td><td class="right">0</td><td class="right">5838</td><td class="right">158</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">3061</td><td class="right">276742.106</td><td class="right">150188.421</td><td class="right">3061</td><td class="right">3061</td><td class="right">0</td><td class="right">5848</td><td class="right">179</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">3060</td><td class="right">235704.509</td><td class="right">235461.111</td><td class="right">3060</td><td class="right">3060</td><td class="right">0</td><td class="right">5849</td><td class="right">312</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cadical">Yices 2.6.2 CaDiCal</a></td>
+    <td class="right">0</td>
+    <td class="right">3053</td><td class="right">184986.443</td><td class="right">184856.164</td><td class="right">3053</td><td class="right">3053</td><td class="right">0</td><td class="right">5856</td><td class="right">191</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver-mt">Minkeyrink Solver MT</a></td>
+    <td class="right">0</td>
+    <td class="right">3047</td><td class="right">435207.89</td><td class="right">204200.505</td><td class="right">3047</td><td class="right">3047</td><td class="right">0</td><td class="right">5862</td><td class="right">234</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver">Minkeyrink Solver</a></td>
+    <td class="right">0</td>
+    <td class="right">3047</td><td class="right">229254.087</td><td class="right">229205.08</td><td class="right">3047</td><td class="right">3047</td><td class="right">0</td><td class="right">5862</td><td class="right">244</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a></td>
+    <td class="right">0</td>
+    <td class="right">3035</td><td class="right">278569.066</td><td class="right">278543.514</td><td class="right">3035</td><td class="right">3035</td><td class="right">0</td><td class="right">5874</td><td class="right">471</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-new-bvsolver">Yices 2.6.2 New Bvsolver</a></td>
+    <td class="right">0</td>
+    <td class="right">3034</td><td class="right">238308.93</td><td class="right">238309.557</td><td class="right">3034</td><td class="right">3034</td><td class="right">0</td><td class="right">5875</td><td class="right">227</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-minkeyrink-mt">2018-Minkeyrink MT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">3032</td><td class="right">450610.002</td><td class="right">236162.043</td><td class="right">3032</td><td class="right">3032</td><td class="right">0</td><td class="right">5877</td><td class="right">256</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-boolector">2018-Boolector</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">2996</td><td class="right">348134.384</td><td class="right">348099.135</td><td class="right">2996</td><td class="right">2996</td><td class="right">0</td><td class="right">5913</td><td class="right">266</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cryptominisat">Yices 2.6.2 Cryptominisat</a></td>
+    <td class="right">0</td>
+    <td class="right">2996</td><td class="right">377258.544</td><td class="right">376984.852</td><td class="right">2996</td><td class="right">2996</td><td class="right">0</td><td class="right">5913</td><td class="right">270</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mt">STP-mt</a></td>
+    <td class="right">0</td>
+    <td class="right">2934</td><td class="right">1079007.308</td><td class="right">572695.333</td><td class="right">2934</td><td class="right">2934</td><td class="right">0</td><td class="right">5975</td><td class="right">534</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-incremental">STP-incremental</a></td>
+    <td class="right">0</td>
+    <td class="right">2915</td><td class="right">644719.44</td><td class="right">645278.192</td><td class="right">2915</td><td class="right">2915</td><td class="right">0</td><td class="right">5994</td><td class="right">562</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp">STP</a></td>
+    <td class="right">0</td>
+    <td class="right">2911</td><td class="right">635258.955</td><td class="right">635924.968</td><td class="right">2911</td><td class="right">2911</td><td class="right">0</td><td class="right">5998</td><td class="right">569</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat-fixed">STP-mergesat-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">2908</td><td class="right">644452.097</td><td class="right">645070.653</td><td class="right">2908</td><td class="right">2908</td><td class="right">0</td><td class="right">6001</td><td class="right">652</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/boolector-reasonls">Boolector-ReasonLS</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">2903</td><td class="right">836270.517</td><td class="right">836467.787</td><td class="right">2903</td><td class="right">2903</td><td class="right">0</td><td class="right">6006</td><td class="right">391</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-minisat">STP-minisat</a></td>
+    <td class="right">0</td>
+    <td class="right">2826</td><td class="right">811345.848</td><td class="right">811874.138</td><td class="right">2826</td><td class="right">2826</td><td class="right">0</td><td class="right">6083</td><td class="right">1126</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio-fixed">STP-portfolio-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">2798</td><td class="right">1096145.233</td><td class="right">945644.345</td><td class="right">2798</td><td class="right">2798</td><td class="right">0</td><td class="right">6111</td><td class="right">1191</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">2790</td><td class="right">1089388.13</td><td class="right">1089230.125</td><td class="right">2790</td><td class="right">2790</td><td class="right">0</td><td class="right">6119</td><td class="right">1215</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-mcsat-bv">Yices 2.6.2 mcsat-bv</a></td>
+    <td class="right">0</td>
+    <td class="right">1641</td><td class="right">3703682.885</td><td class="right">3703652.704</td><td class="right">1641</td><td class="right">1641</td><td class="right">0</td><td class="right">7268</td><td class="right">3593</td>
+    <td class="right">134</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat">STP-mergesat</a></td>
+    <td class="right">0</td>
+    <td class="right">7</td><td class="right">43068.286</td><td class="right">43814.377</td><td class="right">7</td><td class="right">7</td><td class="right">0</td><td class="right">8902</td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-riss">STP-riss</a></td>
+    <td class="right">0</td>
+    <td class="right">7</td><td class="right">43780.171</td><td class="right">45101.62</td><td class="right">7</td><td class="right">7</td><td class="right">0</td><td class="right">8902</td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio">STP-portfolio</a></td>
+    <td class="right">0</td>
+    <td class="right">7</td><td class="right">973373.55</td><td class="right">898952.259</td><td class="right">7</td><td class="right">7</td><td class="right">0</td><td class="right">8902</td><td class="right">1146</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- UNSAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>UNSAT Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a></td>
+    <td class="right">0</td>
+    <td class="right">5690</td><td class="right">520627.893</td><td class="right">250530.595</td><td class="right">5690</td><td class="right">0</td><td class="right">5690</td><td class="right">3219</td><td class="right">141</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/boolector">Boolector</a></td>
+    <td class="right">0</td>
+    <td class="right">5680</td><td class="right">282070.615</td><td class="right">282034.924</td><td class="right">5680</td><td class="right">0</td><td class="right">5680</td><td class="right">3229</td><td class="right">158</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">5669</td><td class="right">429810.787</td><td class="right">283153.109</td><td class="right">5669</td><td class="right">0</td><td class="right">5669</td><td class="right">3240</td><td class="right">179</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cadical">Yices 2.6.2 CaDiCal</a></td>
+    <td class="right">0</td>
+    <td class="right">5665</td><td class="right">340843.307</td><td class="right">340797.508</td><td class="right">5665</td><td class="right">0</td><td class="right">5665</td><td class="right">3244</td><td class="right">191</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-new-bvsolver">Yices 2.6.2 New Bvsolver</a></td>
+    <td class="right">0</td>
+    <td class="right">5648</td><td class="right">342847.326</td><td class="right">342834.473</td><td class="right">5648</td><td class="right">0</td><td class="right">5648</td><td class="right">3261</td><td class="right">227</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-boolector">2018-Boolector</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">5647</td><td class="right">353632.69</td><td class="right">353516.422</td><td class="right">5647</td><td class="right">0</td><td class="right">5647</td><td class="right">3262</td><td class="right">266</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cryptominisat">Yices 2.6.2 Cryptominisat</a></td>
+    <td class="right">0</td>
+    <td class="right">5642</td><td class="right">392816.069</td><td class="right">392781.863</td><td class="right">5642</td><td class="right">0</td><td class="right">5642</td><td class="right">3267</td><td class="right">270</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver-mt">Minkeyrink Solver MT</a></td>
+    <td class="right">0</td>
+    <td class="right">5620</td><td class="right">751782.218</td><td class="right">421269.611</td><td class="right">5620</td><td class="right">0</td><td class="right">5620</td><td class="right">3289</td><td class="right">234</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver">Minkeyrink Solver</a></td>
+    <td class="right">0</td>
+    <td class="right">5618</td><td class="right">457573.534</td><td class="right">457469.107</td><td class="right">5618</td><td class="right">0</td><td class="right">5618</td><td class="right">3291</td><td class="right">244</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-minkeyrink-mt">2018-Minkeyrink MT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">5614</td><td class="right">741990.075</td><td class="right">431629.1</td><td class="right">5614</td><td class="right">0</td><td class="right">5614</td><td class="right">3295</td><td class="right">256</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/boolector-reasonls">Boolector-ReasonLS</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">5614</td><td class="right">452479.67</td><td class="right">452295.148</td><td class="right">5614</td><td class="right">0</td><td class="right">5614</td><td class="right">3295</td><td class="right">391</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">5526</td><td class="right">719177.902</td><td class="right">718964.544</td><td class="right">5526</td><td class="right">0</td><td class="right">5526</td><td class="right">3383</td><td class="right">312</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mt">STP-mt</a></td>
+    <td class="right">0</td>
+    <td class="right">5431</td><td class="right">1767650.625</td><td class="right">1022196.561</td><td class="right">5431</td><td class="right">0</td><td class="right">5431</td><td class="right">3478</td><td class="right">534</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-incremental">STP-incremental</a></td>
+    <td class="right">0</td>
+    <td class="right">5429</td><td class="right">1092132.546</td><td class="right">1092326.93</td><td class="right">5429</td><td class="right">0</td><td class="right">5429</td><td class="right">3480</td><td class="right">562</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp">STP</a></td>
+    <td class="right">0</td>
+    <td class="right">5426</td><td class="right">1096493.097</td><td class="right">1096519.721</td><td class="right">5426</td><td class="right">0</td><td class="right">5426</td><td class="right">3483</td><td class="right">569</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a></td>
+    <td class="right">0</td>
+    <td class="right">5403</td><td class="right">962857.921</td><td class="right">962768.966</td><td class="right">5403</td><td class="right">0</td><td class="right">5403</td><td class="right">3506</td><td class="right">471</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat-fixed">STP-mergesat-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">5346</td><td class="right">1427716.717</td><td class="right">1427856.695</td><td class="right">5346</td><td class="right">0</td><td class="right">5346</td><td class="right">3563</td><td class="right">652</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-minisat">STP-minisat</a></td>
+    <td class="right">0</td>
+    <td class="right">4954</td><td class="right">2232602.118</td><td class="right">2232808.121</td><td class="right">4954</td><td class="right">0</td><td class="right">4954</td><td class="right">3955</td><td class="right">1126</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">4904</td><td class="right">2334527.175</td><td class="right">2334371.462</td><td class="right">4904</td><td class="right">0</td><td class="right">4904</td><td class="right">4005</td><td class="right">1215</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio-fixed">STP-portfolio-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">4753</td><td class="right">2552831.553</td><td class="right">2386010.847</td><td class="right">4753</td><td class="right">0</td><td class="right">4753</td><td class="right">4156</td><td class="right">1191</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-mcsat-bv">Yices 2.6.2 mcsat-bv</a></td>
+    <td class="right">0</td>
+    <td class="right">3540</td><td class="right">5566845.832</td><td class="right">5566861.903</td><td class="right">3540</td><td class="right">0</td><td class="right">3540</td><td class="right">5369</td><td class="right">3593</td>
+    <td class="right">134</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-riss">STP-riss</a></td>
+    <td class="right">0</td>
+    <td class="right">2675</td><td class="right">10051.381</td><td class="right">10365.081</td><td class="right">2675</td><td class="right">0</td><td class="right">2675</td><td class="right">6234</td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat">STP-mergesat</a></td>
+    <td class="right">0</td>
+    <td class="right">2541</td><td class="right">9913.661</td><td class="right">10169.042</td><td class="right">2541</td><td class="right">0</td><td class="right">2541</td><td class="right">6368</td><td class="right">13</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio">STP-portfolio</a></td>
+    <td class="right">0</td>
+    <td class="right">2541</td><td class="right">2359641.959</td><td class="right">2273485.184</td><td class="right">2541</td><td class="right">0</td><td class="right">2541</td><td class="right">6368</td><td class="right">1146</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- 24s PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>24 seconds Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">8194</td><td class="right">42231.538</td><td class="right">26483.383</td><td class="right">8194</td><td class="right">2727</td><td class="right">5467</td><td class="right">715</td><td class="right"></td><td class="right">715</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a></td>
+    <td class="right">0</td>
+    <td class="right">8124</td><td class="right">88009.535</td><td class="right">37429.328</td><td class="right">8124</td><td class="right">2744</td><td class="right">5380</td><td class="right">785</td><td class="right"></td><td class="right">785</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-new-bvsolver">Yices 2.6.2 New Bvsolver</a></td>
+    <td class="right">0</td>
+    <td class="right">8100</td><td class="right">29071.744</td><td class="right">29044.283</td><td class="right">8100</td><td class="right">2675</td><td class="right">5425</td><td class="right">809</td><td class="right"></td><td class="right">809</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/boolector">Boolector</a></td>
+    <td class="right">0</td>
+    <td class="right">8077</td><td class="right">38571.647</td><td class="right">38428.277</td><td class="right">8077</td><td class="right">2706</td><td class="right">5371</td><td class="right">832</td><td class="right"></td><td class="right">832</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cadical">Yices 2.6.2 CaDiCal</a></td>
+    <td class="right">0</td>
+    <td class="right">8052</td><td class="right">30452.459</td><td class="right">30372.569</td><td class="right">8052</td><td class="right">2684</td><td class="right">5368</td><td class="right">857</td><td class="right"></td><td class="right">857</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver-mt">Minkeyrink Solver MT</a></td>
+    <td class="right">0</td>
+    <td class="right">8038</td><td class="right">60019.201</td><td class="right">33890.259</td><td class="right">8038</td><td class="right">2727</td><td class="right">5311</td><td class="right">871</td><td class="right"></td><td class="right">871</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-minkeyrink-mt">2018-Minkeyrink MT</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">8018</td><td class="right">59960.229</td><td class="right">34522.524</td><td class="right">8018</td><td class="right">2706</td><td class="right">5312</td><td class="right">891</td><td class="right"></td><td class="right">891</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/minkeyrink-solver">Minkeyrink Solver</a></td>
+    <td class="right">0</td>
+    <td class="right">7985</td><td class="right">36144.083</td><td class="right">36022.984</td><td class="right">7985</td><td class="right">2673</td><td class="right">5312</td><td class="right">924</td><td class="right"></td><td class="right">924</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-boolector">2018-Boolector</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">7705</td><td class="right">41873.386</td><td class="right">41768.305</td><td class="right">7705</td><td class="right">2344</td><td class="right">5361</td><td class="right">1204</td><td class="right"></td><td class="right">1204</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a></td>
+    <td class="right">0</td>
+    <td class="right">7668</td><td class="right">37050.132</td><td class="right">37001.149</td><td class="right">7668</td><td class="right">2542</td><td class="right">5126</td><td class="right">1241</td><td class="right"></td><td class="right">1241</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-cryptominisat">Yices 2.6.2 Cryptominisat</a></td>
+    <td class="right">0</td>
+    <td class="right">7633</td><td class="right">48382.595</td><td class="right">48180.958</td><td class="right">7633</td><td class="right">2279</td><td class="right">5354</td><td class="right">1276</td><td class="right"></td><td class="right">1276</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">7124</td><td class="right">71532.451</td><td class="right">71195.964</td><td class="right">7124</td><td class="right">2178</td><td class="right">4946</td><td class="right">1785</td><td class="right"></td><td class="right">1779</td>
+    <td class="right">4</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mt">STP-mt</a></td>
+    <td class="right">0</td>
+    <td class="right">6986</td><td class="right">97515.748</td><td class="right">63991.112</td><td class="right">6986</td><td class="right">2382</td><td class="right">4604</td><td class="right">1923</td><td class="right"></td><td class="right">1923</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/boolector-reasonls">Boolector-ReasonLS</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">6962</td><td class="right">68178.871</td><td class="right">68006.807</td><td class="right">6962</td><td class="right">1697</td><td class="right">5265</td><td class="right">1947</td><td class="right"></td><td class="right">1947</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp">STP</a></td>
+    <td class="right">0</td>
+    <td class="right">6911</td><td class="right">66713.136</td><td class="right">66483.665</td><td class="right">6911</td><td class="right">2318</td><td class="right">4593</td><td class="right">1998</td><td class="right"></td><td class="right">1998</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-incremental">STP-incremental</a></td>
+    <td class="right">0</td>
+    <td class="right">6910</td><td class="right">66356.012</td><td class="right">66221.113</td><td class="right">6910</td><td class="right">2319</td><td class="right">4591</td><td class="right">1999</td><td class="right"></td><td class="right">1999</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-minisat">STP-minisat</a></td>
+    <td class="right">0</td>
+    <td class="right">6677</td><td class="right">68567.199</td><td class="right">68435.636</td><td class="right">6677</td><td class="right">2370</td><td class="right">4307</td><td class="right">2232</td><td class="right"></td><td class="right">2232</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat-fixed">STP-mergesat-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">6640</td><td class="right">87238.381</td><td class="right">86860.8</td><td class="right">6640</td><td class="right">2209</td><td class="right">4431</td><td class="right">2269</td><td class="right"></td><td class="right">2269</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio-fixed">STP-portfolio-fixed</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">6119</td><td class="right">107244.346</td><td class="right">93996.031</td><td class="right">6119</td><td class="right">2050</td><td class="right">4069</td><td class="right">2790</td><td class="right"></td><td class="right">2626</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">5859</td><td class="right">89765.661</td><td class="right">89636.248</td><td class="right">5859</td><td class="right">1727</td><td class="right">4132</td><td class="right">3050</td><td class="right"></td><td class="right">3050</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2-mcsat-bv">Yices 2.6.2 mcsat-bv</a></td>
+    <td class="right">0</td>
+    <td class="right">4388</td><td class="right">113651.8</td><td class="right">113615.392</td><td class="right">4388</td><td class="right">1214</td><td class="right">3174</td><td class="right">4521</td><td class="right"></td><td class="right">4387</td>
+    <td class="right">134</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-riss">STP-riss</a></td>
+    <td class="right">0</td>
+    <td class="right">2602</td><td class="right">14339.451</td><td class="right">14457.549</td><td class="right">2602</td><td class="right">7</td><td class="right">2595</td><td class="right">6307</td><td class="right"></td><td class="right">169</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-mergesat">STP-mergesat</a></td>
+    <td class="right">0</td>
+    <td class="right">2468</td><td class="right">13752.538</td><td class="right">13652.834</td><td class="right">2468</td><td class="right">7</td><td class="right">2461</td><td class="right">6441</td><td class="right"></td><td class="right">154</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/stp-portfolio">STP-portfolio</a></td>
+    <td class="right">0</td>
+    <td class="right">2468</td><td class="right">80514.605</td><td class="right">75144.611</td><td class="right">2468</td><td class="right">7</td><td class="right">2461</td><td class="right">6441</td><td class="right"></td><td class="right">2410</td>
+    <td class="right">0</td>
+</tr>
+
+</table><p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/><span id="nc">
+    Abstained: Total of benchmarks in logics in this division that solver chose to abstain from. For SAT/UNSAT scores, this column also includes benchmarks not known to be SAT/UNSAT.
+    </span><br/></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+
