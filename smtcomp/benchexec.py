@@ -86,7 +86,7 @@ def xmls_for_submission(s: defs.Submission, timelimit_s: int, memlimit_M: int, c
     for i, p in enumerate(s.participations.root):
         command = cast(defs.Command, p.command if p.command else s.command)
         archive = cast(defs.Archive, p.archive if p.archive else s.archive)
-        file = dst.joinpath("{id}_{i}.xml")
+        file = dst.joinpath(f"{id}_{i}.xml")
         tasks: list[str] = []
         for track, divisions in p.get().items():
             for _, logics in divisions.items():

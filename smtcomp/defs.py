@@ -1021,7 +1021,7 @@ class Command(BaseModel, extra="forbid"):
 
     def uniq_id(self, name: str, archive: Archive) -> str:
         data = [name, str(archive.url), self.binary, *self.arguments]
-        h = hashlib.sha256(*[s.encode() for s in data])
+        h = hashlib.sha256(" ".join(data).encode())
         return h.hexdigest()
 
 

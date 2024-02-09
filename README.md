@@ -11,16 +11,11 @@ Tools used for the organization of the SMT competition
 - **Github repository**: <https://github.com/smtcomp/smtcomp.github.io/>
 - **Documentation** <https://smtcomp.github.io/smtcomp/>
 
-## Getting started with your project
+## Getting started with development in this project
 
-First, create a repository on GitHub with the same name as this project, and then run the following commands:
 
 ```bash
-git init -b main
-git add .
-git commit -m "init commit"
-git remote add origin git@github.com:smtcomp/smtcomp.github.io.git
-git push -u origin main
+git clone git@github.com:smtcomp/smtcomp.github.io.git
 ```
 
 Finally, install the environment and the pre-commit hooks with

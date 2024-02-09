@@ -38,7 +38,7 @@ def is_unpack_present(archive: defs.Archive, dst: Path) -> bool:
 
 
 def find_command(command: defs.Command, archive: defs.Archive, dst: Path) -> Path:
-    d = archive_cache_dir(archive, dst)
+    d = archive_unpack_dir(archive, dst)
     if not (d.exists()):
         raise Exception("Archive not unpacked", archive)
     path = d.joinpath(command.binary)

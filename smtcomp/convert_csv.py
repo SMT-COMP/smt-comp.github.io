@@ -58,6 +58,7 @@ class CsvColumn(str, Enum):
 
 def configurations_on_starexec(id: int, cache: Dict[int, list[str]]) -> list[str]:
     if id in cache:
+        print(cache[id])
         return cache[id]
 
     URL = "https://www.starexec.org/starexec/secure/details/solver.jsp?id=" + str(id)
