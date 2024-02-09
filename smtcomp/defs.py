@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import re
 from enum import Enum
+from pathlib import Path
 from typing import Any
 
 from pydantic import BaseModel, Field, RootModel, model_validator
@@ -993,6 +995,17 @@ class Logics(RootModel):
         return logics
 
 
+class Archive(BaseModel):
+    url: HttpUrl
+    h: Hash | None = None
+
+    def uniq_id(self) -> str:
+        return hashlib.sha256(str(self.url).encode()).hexdigest()
+
+    def path(self) -> Path:
+        return Path(self.uniq_id())
+
+
 class Command(BaseModel, extra="forbid"):
     binary: str
     arguments: list[str] = []
@@ -1006,10 +1019,10 @@ class Command(BaseModel, extra="forbid"):
             return {"binary": data[0], "arguments": data[1:]}
         return data
 
-
-class Archive(BaseModel):
-    url: HttpUrl
-    h: Hash | None = None
+    def uniq_id(self, name: str, archive: Archive) -> str:
+        data = [name, str(archive.url), self.binary, *self.arguments]
+        h = hashlib.sha256(*[s.encode() for s in data])
+        return h.hexdigest()
 
 
 class Participation(BaseModel, extra="forbid"):
@@ -1067,9 +1080,15 @@ class Submission(BaseModel, extra="forbid"):
     participations: Participations
 
     @model_validator(mode="after")
-    def check_archive(self) -> "Submission":
+    def check_archive(self) -> Submission:
         if self.archive is None and not all(p.archive for p in self.participations.root):
             raise ValueError("Field archive is needed in all participations if not present at the root")
         if self.command is None and not all(p.command for p in self.participations.root):
             raise ValueError("Field command is needed in all participations if not present at the root")
         return self
+
+    def uniq_id(self) -> str:
+        return hashlib.sha256(self.name.encode()).hexdigest()
+
+
+default = {"timelimit_s": 60, "memlimit_M": 1024 * 20, "cpuCores": 4}

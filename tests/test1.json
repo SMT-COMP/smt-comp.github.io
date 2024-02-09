@@ -14,7 +14,7 @@
     },
     "website": "http://example.com/",
     "system_description": "http://example.com/system.pdf",
-    "command": ["foo"],
+    "command": ["foo", "--super-fast"],
     "solver_type": "Standalone",
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] },

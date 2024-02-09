@@ -2,9 +2,12 @@ import csv as csv
 import re
 from enum import Enum
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
+import requests
+from bs4 import BeautifulSoup
 from pydantic.networks import HttpUrl
+from option import Option, Some
 
 import smtcomp.defs as defs
 
@@ -53,24 +56,69 @@ class CsvColumn(str, Enum):
     contributors = "Please list all contributors that you wish to be acknowledged here"
 
 
+def configurations_on_starexec(id: int, cache: Dict[int, list[str]]) -> list[str]:
+    if id in cache:
+        return cache[id]
+
+    URL = "https://www.starexec.org/starexec/secure/details/solver.jsp?id=" + str(id)
+    page = requests.get(URL)
+    soup = BeautifulSoup(page.content, "html.parser")
+
+    cache[id] = [i.a.text.strip() for i in soup.find_all(name="td", id="configItem")]
+    print(id, cache[id])
+    return cache[id]
+
+
 def convert_row(row: Dict[str, str], dstdir: Path) -> defs.Submission:
-    def archive_of_solver_id(solver_id: str) -> defs.Archive:
+    def archive_of_solver_id(solver_id: int) -> defs.Archive:
         return defs.Archive(
-            url=HttpUrl("https://www.starexec.org/starexec/secure/download?type=solver&id=" + solver_id),
+            url=HttpUrl(f"https://www.starexec.org/starexec/secure/download?type=solver&id={solver_id}"),
             h=None,
         )
 
     solver_ids = row[CsvColumn.starexec_id].split(",")
 
-    def find_archive(track_id: Optional[str]) -> Optional[defs.Archive]:
-        r = re.compile(" *([0-9]+)+\\(" + track_id + "\\) *") if track_id else re.compile(" *([0-9]+) *")
+    def find_archive_id(track_id: Option[str]) -> Option[int]:
+        r = (
+            re.compile(" *([0-9]+)+\\(" + track_id.unwrap() + "\\) *")
+            if track_id.is_some
+            else re.compile(" *([0-9]+) *")
+        )
         for solver_id in solver_ids:
             g = r.fullmatch(solver_id)
             if g:
-                return archive_of_solver_id(g.group(1))
-        return None
+                return Some(int(g.group(1)))
+        return Option.NONE()
 
-    archive = find_archive(None)
+    cache_confs: Dict[int, list[str]] = {}
+
+    def has_configuration(id: int, track_id: str) -> bool:
+        return track_id in configurations_on_starexec(id, cache_confs)
+
+    def find_archive(track_id: Option[str]) -> Tuple[Option[defs.Archive], Option[defs.Command]]:
+        main_id = find_archive_id(track_id)
+        archive = main_id.map(archive_of_solver_id)
+
+        id = main_id if main_id else find_archive_id(Option.NONE())
+        track_id2 = track_id.unwrap_or("default")
+        print(track_id2)
+        if id:
+            print("ICI", id, configurations_on_starexec(id, cache_confs))
+            if has_configuration(id.unwrap(), track_id2):
+                command = Some(defs.Command(binary="starexec_run_" + track_id2))
+            elif has_configuration(id.unwrap(), "default"):
+                command = Some(defs.Command(binary="starexec_run_default"))
+            elif len(configurations_on_starexec(id, cache_confs)) == 1:
+                # Seems that if there is only one configuration it is accepted
+                command = Some(defs.Command(binary="starexec_run_" + configurations_on_starexec(id, cache_confs)[0]))
+            else:
+                command = Option.NONE()
+
+        else:
+            command = Option.NONE()
+        return archive, command
+
+    archive, command = find_archive(Option.NONE())
     contributors = [
         defs.Contributor(name=name) for line in row[CsvColumn.contributors].splitlines() for name in line.split(",")
     ]
@@ -78,9 +126,13 @@ def convert_row(row: Dict[str, str], dstdir: Path) -> defs.Submission:
 
     def add_track(col: CsvColumn, track: defs.Track, shortcut: str) -> None:
         if row[col] != "" and row[col] != "-":
+            archive, command = find_archive(Some(shortcut))
             participations.append(
                 defs.Participation(
-                    tracks=[track], logics=defs.Logics.from_regexp(row[col].strip()), archive=find_archive(shortcut)
+                    tracks=[track],
+                    logics=defs.Logics.from_regexp(row[col].strip()),
+                    archive=archive.unwrap_or(None),
+                    command=command.unwrap_or(None),
                 )
             )
 
@@ -95,10 +147,10 @@ def convert_row(row: Dict[str, str], dstdir: Path) -> defs.Submission:
         name=row[CsvColumn.name],
         contributors=contributors,
         contacts=[defs.NameEmail(name="unset", email="unset@example.com")],
-        archive=archive,
+        archive=archive.unwrap_or(None),
         website=HttpUrl(row[CsvColumn.homepage]),
         system_description=HttpUrl(row[CsvColumn.system_description]),
-        command=defs.Command(binary="bin/default"),
+        command=command.unwrap_or(None),
         solver_type=defs.SolverType.standalone,
         participations=defs.Participations(root=participations),
     )

@@ -21,6 +21,11 @@ pydantic = "^2.5.0"
 email-validator = "^2.1.0"
 python-gitlab = "*"
 gitpython = "*"
+yattag = "*"
+wget = "*"
+option = "*"
+requests = "*"
+bs4 = "*"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
@@ -38,7 +43,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 120
-target-version = ['py37']
+target-version = ['py310']
 preview = true
 
 [tool.mypy]
@@ -50,6 +55,7 @@ check_untyped_defs = "True"
 warn_return_any = "True"
 warn_unused_ignores = "True"
 show_error_codes = "True"
+ignore_missing_imports = "True"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -58,7 +64,7 @@ testpaths = ["tests"]
 target-version = "py37"
 line-length = 120
 fix = true
-select = [
+lint.select = [
     # flake8-2020
     "YTT",
     # flake8-bandit
@@ -90,11 +96,14 @@ select = [
     # tryceratops
     "TRY",
 ]
-ignore = [
+
+lint.ignore = [
     # LineTooLong
     "E501",
     # DoNotAssignLambda
     "E731",
+    # Shadow builtin value
+    "A001",
 ]
 
 [tool.coverage.report]
@@ -105,7 +114,7 @@ branch = true
 source = ["smtcomp"]
 
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"]
 
 [tool.deptry.per_rule_ignores]

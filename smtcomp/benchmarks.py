@@ -1,20 +1,18 @@
 from __future__ import annotations
-from types import TracebackType
-from typing import TypeVar, Union, Iterable, Sequence, Optional, Callable, Tuple
 
-import time
-
-ProgressType = TypeVar("ProgressType")
-
-import gitlab
 import subprocess
-from rich.progress import Progress
-from pathlib import Path
+import time
 from operator import length_hint
+from pathlib import Path
+from types import TracebackType
+from typing import Callable, Iterable, Sequence, TypeVar
 
 import git
+import gitlab
 from rich import console, progress
-from rich.progress import _TrackThread
+from rich.progress import Progress, _TrackThread
+
+ProgressType = TypeVar("ProgressType")
 
 
 class GitRemoteProgress(git.RemoteProgress):
@@ -51,7 +49,7 @@ class GitRemoteProgress(git.RemoteProgress):
             auto_refresh=False,
         )
         self.progressbar.start()
-        self.active_task: Progress.TaskId | None = None
+        self.active_task: progress.TaskID | None = None
 
     def __del__(self) -> None:
         # logger.info("Destroying bar...")
@@ -109,12 +107,12 @@ class GitRemoteProgress(git.RemoteProgress):
 
 def track(
     progress: Progress,
-    sequence: Union[Iterable[ProgressType], Sequence[ProgressType]],
+    sequence: Iterable[ProgressType] | Sequence[ProgressType],
     total: float | None = None,
-    task_id: Optional[progress.TaskID] = None,
+    task_id: progress.TaskID | None = None,
     description: str = "Working...",
     update_period: float = 0.1,
-) -> Iterable[Tuple[(Callable[[str], None]), ProgressType]]:
+) -> Iterable[tuple[(Callable[[str], None]), ProgressType]]:
     """Track progress by iterating over a sequence.
 
     Args:
@@ -179,7 +177,7 @@ class MyNumbers:
             raise StopIteration
 
 
-def clone_group(name: str, dir: Path, dryrun: bool) -> None:
+def clone_group(name: str, dstdir: Path, dryrun: bool) -> None:
     """clone the group named name in directory dir"""
     with GitRemoteProgress() as gitprogress:
         progress = gitprogress.progressbar
@@ -187,13 +185,13 @@ def clone_group(name: str, dir: Path, dryrun: bool) -> None:
         # group = gl.groups.get(name)
         # projects = list(progress.track(group.projects.list(iterator=True), description="List logics..."))
         projects = [p for _, p in track(progress, iter(MyNumbers()), description="List logics...", total=6)]
-        dir.mkdir(exist_ok=True, parents=True)
+        dstdir.mkdir(exist_ok=True, parents=True)
         for update_message, project in track(progress, projects, description="Downloading..."):
             update_message(project.name)
             if project.name in ["QF_BV_legacy", "Sage2_legacy"]:
                 progress.console.print(project.name, "skipped")
                 continue
-            path = dir.joinpath(project.name)
+            path = dstdir.joinpath(project.name)
             if path.exists():
                 update_message(project.name + " update")
                 if dryrun:
