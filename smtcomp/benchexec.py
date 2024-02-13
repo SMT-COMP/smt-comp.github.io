@@ -19,7 +19,7 @@ class Tool(benchexec.tools.smtlib2.Smtlib2Tool):
     \"""
 
     def executable(self):
-        return util.find_executable({find_command(command,archive,cachedir)!r})
+        return {str(find_command(command,archive,cachedir))!r}
 
     def version(self, executable):
         return ""
@@ -29,11 +29,12 @@ class Tool(benchexec.tools.smtlib2.Smtlib2Tool):
 
     def cmdline(self, executable, options, tasks, propertyfile=None, rlimits={{}}):
         assert len(tasks) <= 1, "only one inputfile supported"
-        return [executable] + {command.arguments!r} + options + tasks
+        return [executable] + {command.arguments!r} + tasks
     """
     # Check the parsing of the file directly
     compile(code, "<string>", "exec")
-    dstdir.joinpath(f"tool_{command.uniq_id(name,archive)}.py").write_text(code)
+    dstdir.joinpath("tools").mkdir(parents=True, exist_ok=True)
+    dstdir.joinpath("tools", f"tool_{command.uniq_id(name,archive)}.py").write_text(code)
 
 
 def generate_xml(
@@ -61,11 +62,11 @@ def generate_xml(
         memlimit=f"{memlimit_M} MB",
         cpuCores=f"{cpuCores}",
     ):
-        tag("rundefinition", name="default")
-        for task in tasks:
-            with tag("tasks", name="task"):
-                with tag("includesfile"):
-                    text(task)
+        with tag("rundefinition", name="default"):
+            for task in tasks:
+                with tag("tasks", name="task"):
+                    with tag("includesfile"):
+                        text(task)
 
     file.write_text(doc.getvalue())
 

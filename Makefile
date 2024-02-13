@@ -38,3 +38,13 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 .DEFAULT_GOAL := help
+
+GENERATED_SCHEMA_FILE=submission-schema.json
+GENERATED_SCHEMA_HTML=submission-schema.html
+
+.PHONY: submission-doc
+submission-doc:
+	@echo "🚀 Generating schema to $(GENERATED_SCHEMA_FILE)"
+	@poetry run smtcomp dump-json-schema $(GENERATED_SCHEMA_FILE)
+	@echo "🚀 Generating html doc to $(GENERATED_SCHEMA_HTML)"
+	generate-schema-doc --expand-buttons --no-link-to-reused-ref $(GENERATED_SCHEMA_FILE) $(GENERATED_SCHEMA_HTML)
