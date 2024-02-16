@@ -3,6 +3,7 @@ layout: default
 title: Design and Results of the 2nd Annual Satisfiability Modulo Theories Competition (SMT-COMP 2006)
 authors: Clark Barrett, Leonardo de Moura, and Aaron Stump
 ---
+
 ```bibtex
 @article{BdMS07,
   author    = {Clark Barrett and Leonardo de Moura and Aaron Stump},

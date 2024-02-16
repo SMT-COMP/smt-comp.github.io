@@ -4,6 +4,7 @@ title: The 2013 Evaluation of SMT-COMP and SMT-LIB
 authors: David R. Cok, Aaron Stump, and Tjark Weber
 web: https://dx.doi.org/10.1007/s10817-015-9328-2
 ---
+
 ```bibtex
 @article{CSW15,
   author    = {David R. Cok and Aaron Stump and Tjark Weber},

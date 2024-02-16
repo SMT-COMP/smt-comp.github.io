@@ -19,8 +19,9 @@ If you have any questions please contact one of the SMT-LIB maintainers
 the same as the ones organizing the competition.
 
 1. The SMT-LIB benchmark collection is co-managed by
- - [Clark Barrett](http://www.cs.stanford.edu/~barrett), [barrett@cs.stanford.edu](mailto:barrett@cs.stanford.edu)
- - [Pascal Fontaine](https://members.loria.fr/PFontaine/), [pascal.fontaine@uliege.be](mailto:pascal.fontaine@uliege.be)
- - [Aina Niemetz](https://cs.stanford.edu/~niemetz/), [niemetz@cs.stanford.edu](mailto:niemetz@cs.stanford.edu)
- - [Mathias Preiner](https://cs.stanford.edu/~preiner/), [preiner@cs.stanford.edu](mailto:preiner@cs.stanford.edu)
- - [Hans-Jörg Schurr](https://schurr.io/), [hans-jorg.schurr@inria.fr](mailto:hans-jorg.schurr@inria.fr)
+
+- [Clark Barrett](http://www.cs.stanford.edu/~barrett), [barrett@cs.stanford.edu](mailto:barrett@cs.stanford.edu)
+- [Pascal Fontaine](https://members.loria.fr/PFontaine/), [pascal.fontaine@uliege.be](mailto:pascal.fontaine@uliege.be)
+- [Aina Niemetz](https://cs.stanford.edu/~niemetz/), [niemetz@cs.stanford.edu](mailto:niemetz@cs.stanford.edu)
+- [Mathias Preiner](https://cs.stanford.edu/~preiner/), [preiner@cs.stanford.edu](mailto:preiner@cs.stanford.edu)
+- [Hans-Jörg Schurr](https://schurr.io/), [hans-jorg.schurr@inria.fr](mailto:hans-jorg.schurr@inria.fr)
