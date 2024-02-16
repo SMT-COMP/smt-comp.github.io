@@ -35,6 +35,3 @@ Conference on Computer Aided Verification (CAV) 2013: 53-68.
 Grosse, Rolf Drechsler. metaSMT: Focus on your application not on solver
 integration. International Workshop on Design and Implementation of Formal
 Tools and Systems (DIFTS) 2011.
-
-
-
