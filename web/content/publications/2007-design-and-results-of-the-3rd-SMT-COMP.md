@@ -4,6 +4,7 @@ title: Design and Results of the 3rd Annual Satisfiability Modulo Theories Compe
 authors: Clark Barrett, Morgan Deters, Albert Oliveras, and Aaron Stump
 web: https://dx.doi.org/10.1142/S0218213008004060
 ---
+
 ```bibtex
 @article{BDOS08,
   author  = {Clark Barrett and Morgan Deters and Albert Oliveras and Aaron Stump},

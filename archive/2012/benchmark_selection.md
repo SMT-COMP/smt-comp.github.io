@@ -50,4 +50,3 @@ source file.  A less algorithmic description can be found in the
 - [select_benchmarks](tools/select_benchmarks_2012.c): Given an input file of benchmarks, selects benchmarks according to the rules; statistics on stderr, benchmarks on stdout.  Some changes may be made to this program before it is used officially for the competition benchmark selection; it is intended that these changes be limited to bug fixes, removal of obsolete debugging code, and documentation cleanups.
 - [Eligible Benchmarks](smtcomp2012-eligible.txt.bz2): These are the eligible 2012 benchmarks for inclusion.  This file lists SMT-COMP 2012 benchmarks and their metadata.
 - [All Benchmarks](smtlib2012-benchs.txt.bz2): this is the total list of 2012 benchmarks, including ineligible benchmarks.
-

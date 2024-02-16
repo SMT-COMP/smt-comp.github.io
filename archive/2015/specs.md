@@ -46,4 +46,3 @@ available memory will be capped at 61440&nbsp;MB.
 before the competition.  Please exercise your solver(s) on a few
 benchmarks to ensure that they run successfully.</b>
 </p>
-

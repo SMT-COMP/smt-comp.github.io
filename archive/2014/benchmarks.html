@@ -26,7 +26,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
     <style> a { color: #D86850; } </style>
-    
+
   </head>
   <body>
     <div class="wrapper">
@@ -35,7 +35,7 @@
     <a href="/">SMT-COMP</a>
   </h1>
 
-  
+
 
   <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
 
@@ -56,7 +56,7 @@
     <a href="/2014/rules14.pdf"><b>Rules</b></a><br/><a href="/2014/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2014/tools.html"><b>Tools</b></a><br/><a href="/2014/specs.html"><b>Specs</b></a><br/><a href="/2014/participants.html"><b>Participants</b></a><br/><a href="/2014/results.html"><b>Results</b></a><br/><a href="https://doi.org/10.3233/sat190109"><b>Report</b></a><br/>
   </p>
 
-  
+
 </header>
 
 
@@ -80,7 +80,7 @@ that logic.</li>
 (set-info :source |&lt;information about where the benchmark came from
 including author contact, paper citations, etc.&gt;|)
 (set-info :smt-lib-version 2.0)
-(set-info :category &lt;either "industrial", "crafted", or "random"&gt;) 
+(set-info :category &lt;either "industrial", "crafted", or "random"&gt;)
 (set-info :status &lt;either sat, unsat, or unknown&gt;)
 </pre>
 <p>In :category, the quotes are needed in the benchmark file.</p>
@@ -98,7 +98,7 @@ including author contact, paper citations, etc.&gt;|)
 
 <h3 id="benchmark-set-and-difficulty-measurements">Benchmark Set And Difficulty Measurements</h3>
 
-<p>The benchmarks used in the competition are selected from the 
+<p>The benchmarks used in the competition are selected from the
 SMT-LIB benchmark set. The complete set is reduced by a few restrictions:</p>
 <ul>
   <li>The correct result (sat or unsat) must be known</li>
@@ -109,7 +109,7 @@ SMT-LIB benchmark set. The complete set is reduced by a few restrictions:</p>
 <p>For the last point a measurement of difficulty is needed. This is an approximate measure meant simply to make the competition more challenging. For 2014 we used the value of the fastest solver on that benchmark in the 2013 evaluation. For benchmarks introduced since then, an approximate value was determined by taking the best value from running one or more solvers from the evaluation during the
 preparation for the 2014 competition.</p>
 
-<p>The table from which benchmarks will be chosen for the competition is available <a href="difficulties-2014.txt">here</a>. 
+<p>The table from which benchmarks will be chosen for the competition is available <a href="difficulties-2014.txt">here</a>.
 The table will be updated during the course of preparing for the competition as benchmarks are corrected, removed because they are ill-formed or inappropriate, moved among logics as needed, or difficuly or expected results determined.</p>
 
 <p>The table is in space-separated form that is very amenable to text processing tools such as awk, grep and sort. You can turn it into a comma-separated table for Excel or similar tools by using sed or tr to turn spaces into commas.</p>
@@ -119,7 +119,7 @@ The table will be updated during the course of preparing for the competition as 
 <ol>
   <li><strong>id</strong> - the StarExec benchmark id. Note that this id will change if the benchmark is corrected. This is happening frequently during the preparation for the competition. The ids will be resynchronized with StarExec just prior to the final selection.</li>
   <li><strong>difficulty</strong> - this value is in seconds, or is one of the words “trivial” or “unknown”. “trivial” benchmarks are those that have been determmined to be easy for every solver and so excluded by the rules. “unknown” means the difficulty value has not yet been determined. Valaues of 1500 or 1600 generally indicate that all solvers quit without a result (timeout or memout).</li>
-  <li><strong>starexec-expected-result</strong> - this is the metadata value from StarExec and is the correct value expected for the benchmark. This should be one of 
+  <li><strong>starexec-expected-result</strong> - this is the metadata value from StarExec and is the correct value expected for the benchmark. This should be one of
 “sat”, “unsat” or “unknown” (without the quotes). However, ther eare also values of “null” (metadata value is not set).</li>
   <li><strong>status</strong> - this is the :status value from the benchmark, as recorded in the StarExec metadata. It should be precisely the same as the starexec-expected-result.</li>
   <li><strong>category</strong> - this is the :category value as recorded in StarExec metadata, which should have determined it from a set-info command in the benchmark. This value should be one of “industrial”, “crafted”, “random”, or “check” (without the quotes). Values of “null” (category not set), “unknown” (category explicitly set to the value “unknown”), and “none” (value in StarExec is an empty string) are also present.</li>
@@ -137,7 +137,6 @@ The table will be updated during the course of preparing for the competition as 
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
-    
+
   </body>
 </html>
-

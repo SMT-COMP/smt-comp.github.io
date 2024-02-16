@@ -1,0 +1,23 @@
+{
+    "name": "mysolver",
+    "contributors": [
+        "foo",
+        {
+            "name": "bar",
+            "website": "http://bar.com/"
+        }
+    ],
+    "contacts": ["foo bar <foo@bar.org>"],
+    "archive": {
+        "url": "http://example.com/solver.tar.gz",
+        "h": { "sha256": "012345" }
+    },
+    "website": "http://example.com/",
+    "system_description": "http://example.com/system.pdf",
+    "command": ["foo", "--super-fast"],
+    "solver_type": "Standalone",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] },
+        { "tracks": ["SingleQuery"], "logics": "QF_.*" }
+    ]
+}

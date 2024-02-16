@@ -30,7 +30,7 @@ it is checked for compatibility with the competition infrastructure on simple
 benchmarks supported by your solver.
 </b>
 
-Note that the organizers had expected the Star-Exec service to be ready for 
+Note that the organizers had expected the Star-Exec service to be ready for
 the 2012 competition; the Star-Exec service would have provided considerably
-more resources. However, development delays have required us (as of mid-May 
+more resources. However, development delays have required us (as of mid-May
 2012) to plan to use SMT-Exec again this year.

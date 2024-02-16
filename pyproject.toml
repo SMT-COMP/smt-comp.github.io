@@ -1,0 +1,123 @@
+[tool.poetry]
+name = "smtcomp"
+version = "0.0.1"
+description = "Tools used for the organization of the SMT competition"
+authors = ["SMTCOMP organizers <francois.bobot@cea.fr>"]
+repository = "https://github.com/smtcomp/smtcomp.github.io"
+documentation = "https://smtcomp.github.io/smtcomp/"
+readme = "README.md"
+packages = [
+  {include = "smtcomp"}
+]
+
+[tool.poetry.scripts]
+smtcomp = "smtcomp.main:app"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+typer = {extras = ["all"], version = "^0.9.0"}
+rich = "^13.7.0"
+pydantic = "^2.5.0"
+email-validator = "^2.1.0"
+python-gitlab = "*"
+gitpython = "*"
+yattag = "*"
+wget = "*"
+option = "*"
+requests = "*"
+bs4 = "*"
+benchexec = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+deptry = "^0.12.0"
+mypy = "^1.5.1"
+pre-commit = "^3.4.0"
+tox = "^4.11.1"
+
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+preview = true
+exclude = 'archive|web'
+
+[tool.mypy]
+files = ["smtcomp"]
+disallow_untyped_defs = "True"
+disallow_any_unimported = "True"
+no_implicit_optional = "True"
+check_untyped_defs = "True"
+warn_return_any = "True"
+warn_unused_ignores = "True"
+show_error_codes = "True"
+ignore_missing_imports = "True"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py37"
+line-length = 120
+fix = true
+lint.select = [
+    # flake8-2020
+    "YTT",
+    # flake8-bandit
+    "S",
+    # flake8-bugbear
+    "B",
+    # flake8-builtins
+    "A",
+    # flake8-comprehensions
+    "C4",
+    # flake8-debugger
+    "T10",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # mccabe
+    "C90",
+    # pycodestyle
+    "E", "W",
+    # pyflakes
+    "F",
+    # pygrep-hooks
+    "PGH",
+    # pyupgrade
+    "UP",
+    # ruff
+    "RUF",
+    # tryceratops
+    "TRY",
+]
+
+lint.ignore = [
+    # LineTooLong
+    "E501",
+    # DoNotAssignLambda
+    "E731",
+    # Shadow builtin value
+    "A001",
+]
+
+[tool.coverage.report]
+skip_empty = true
+
+[tool.coverage.run]
+branch = true
+source = ["smtcomp"]
+
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.deptry.per_rule_ignores]
+DEP002 = ["email-validator"]

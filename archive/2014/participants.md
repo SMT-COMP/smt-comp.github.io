@@ -154,7 +154,7 @@ These solvers have expressed intention to participate in SMT-COMP 2014.
   <td class="right" ><a href="system-descriptions/SMTInterpol-2014.pdf">SMTInterpol</a></td>
   <td class="right" >Jochen Hoenicke (<a href="hoenicke@informatik.uni-freiburg.de">hoenicke@informatik.uni-freiburg.de</a>), Jürgen Christ (<a href="mailto:christj@informatik.uni-freiburg.de">christj@informatik.uni-freiburg.de</a>)</td>
 </tr>
-<!-- 
+<!--
 <tr>
   <td class="left"  >SMT-RAT</td>
   <td class="center">X</td>
@@ -176,7 +176,7 @@ These solvers have expressed intention to participate in SMT-COMP 2014.
   <td class="right" ><a href="system-descriptions/sonolar-smtcomp2014.pdf">SONOLAR</a></td>
   <td class="right" >Florian Lapschies (<a href="mailto:florian@informatik.uni-bremen.de">florian@informatik.uni-bremen.de</a>)</td>
 </tr>
-<!-- 
+<!--
 <tr>
   <td class="left"  >STP</td>
   <td class="center">X</td>
@@ -284,7 +284,7 @@ These are the logic divisions in which each solver is competing.
   <th>UFBV<sup><a href="#fn1">1</a></sup></th>         <!-- 30 -->
   <th>UFIDL<sup><a href="#fn1">1</a></sup></th>
   <th>UFLIA<sup><a href="#fn1">1</a></sup></th>
-  <th>UFLRA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th> 
+  <th>UFLRA<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></th>
   <th>UFNIA<sup><a href="#fn1">1</a></sup></th>
 </tr>
 <tr class="center">
@@ -293,11 +293,11 @@ These are the logic divisions in which each solver is competing.
 </tr>
 <tr class="center">
   <td class="left">Abziz<sup><a href="#fn1">1</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
   <td class="left">Abziz2<sup><a href="#fn1">1</a></sup></td>
-  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
 <tr class="center">
   <td class="left">AProVE<sup><a href="#fn1">1</a></sup></td>
@@ -317,7 +317,7 @@ These are the logic divisions in which each solver is competing.
 </tr>
 <tr class="center">
   <td class="left">CVC3<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
-  <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> 
+  <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td>
 </tr>
 <tr class="center">
   <td class="left">CVC4<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
@@ -343,7 +343,7 @@ These are the logic divisions in which each solver is competing.
   <td class="left">SMTInterpol<sup><a href="#fn1">1</a>,<a href="#fn2">2</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
-<!-- 
+<!--
 <tr class="center">
   <td class="left">SMT-RAT</td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
@@ -353,7 +353,7 @@ These are the logic divisions in which each solver is competing.
   <td class="left">SONOLAR<sup><a href="#fn1">1</a></sup></td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
 </tr>
-<!-- 
+<!--
 <tr class="center">
   <td class="left">STP</td>
   <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>X</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
@@ -395,7 +395,7 @@ These are the logic divisions in which each solver is competing.
 ### SL-COMP 2014 Participants
 
 These are the solvers participating in the Separation Logic competition 2014 (SL-COMP 2014).
-This is a separate competition being conducted with SMT-like solvers that solve encodings of separation logic problems. 
+This is a separate competition being conducted with SMT-like solvers that solve encodings of separation logic problems.
 It is separate from SMT-COMP, though it is using the same infrastructure and being conducted by the same organizing committee.
 The relationship of the associated logic to SMT-LIB is currently under discussion.
 
@@ -481,53 +481,53 @@ These are the benchmark divisions for SL-COMP 2014 in which each solver is compe
 </tr>
 <tr class="center">
   <td class="left">Asterix</td>
-  <td></td> <td></td> 
+  <td></td> <td></td>
   <td>X</td> <td>X</td>
-  <td></td> 
+  <td></td>
 </tr>
 
 <tr class="center">
   <td class="left">Cyclist-SL</td>
-  <td></td> <td>X</td> 
   <td></td> <td>X</td>
-  <td>X</td> 
+  <td></td> <td>X</td>
+  <td>X</td>
 </tr>
 
 <tr class="center">
   <td class="left">SLSAT</td>
-  <td>X</td> <td></td> 
   <td>X</td> <td></td>
-  <td></td> 
+  <td>X</td> <td></td>
+  <td></td>
 </tr>
 
 <!--
 <tr class="center">
   <td class="left">SeLoger 0.5</td>
-  <td></td> <td></td> 
+  <td></td> <td></td>
   <td></td> <td>X</td>
-  <td></td> 
+  <td></td>
 </tr>
 -->
 
 <tr class="center">
   <td class="left">SLEEK</td>
-  <td>X</td> <td>X</td> 
   <td>X</td> <td>X</td>
-  <td>X</td> 
+  <td>X</td> <td>X</td>
+  <td>X</td>
 </tr>
 
 <tr class="center">
   <td class="left">SLIDE</td>
-  <td></td> <td>X</td> 
+  <td></td> <td>X</td>
   <td></td> <td></td>
-  <td>X</td> 
+  <td>X</td>
 </tr>
 
 <tr class="center">
   <td class="left">SPEN</td>
-  <td></td> <td></td> 
+  <td></td> <td></td>
   <td>X</td> <td>X</td>
-  <td>X</td> 
+  <td>X</td>
 </tr>
 
 </table>

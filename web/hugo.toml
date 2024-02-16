@@ -46,6 +46,11 @@ theme = 'smtcomp'
     weight = 10
 
 [[menu.year]]
+    name = 'Solver Submission'
+    pageRef = 'solver_submission'
+    weight = 20
+
+[[menu.year]]
     name = 'Model Validation Track'
     pageRef = 'model'
-    weight = 20
+    weight = 30

@@ -23,8 +23,7 @@ Renders a menu for the given menu ID.
   <nav>
     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
   </nav>
-  {{- end }}
-  </p>
+{{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }}

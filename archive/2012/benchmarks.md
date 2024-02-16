@@ -54,7 +54,7 @@ detailed description of the benchmarks can be found in the following paper:
  <a href="https://dl.acm.org/doi/10.1145/1966913.1966935">Efficient Symbolic Automated Analysis of Administrative Attribute-based RBAC-Policies,</a> by F.  Alberti, A. Armando, and S. Ranise.
 
 ### Unsat Core Track Benchmarks
-The unsat core benchmarks are the subset of the benchmarks from the indicated 
+The unsat core benchmarks are the subset of the benchmarks from the indicated
 logics that are unsatisfiable; the benchmarks themselves have been modified
 to include names for the assertions. Per the SMTLIB standard, the benchmarks
 are allowed to contain a mix of named and unmaned formulae, though ordinarily,

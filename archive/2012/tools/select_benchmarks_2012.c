@@ -271,7 +271,7 @@ int main(int argc, char *argv[]) {
 
     if( !(division      = buf) ||
         !(family        = strchr(division,          ' ')) ||
-        !(s_category    = strchr(family + 1,        ' ')) || 
+        !(s_category    = strchr(family + 1,        ' ')) ||
         !(s_difficulty  = strchr(s_category + 1,    ' ')) ||
         !(s_solution    = strchr(s_difficulty + 1,  ' ')) ||
         !(s_benchmarkid = strchr(s_solution + 1,    ' ')) ||

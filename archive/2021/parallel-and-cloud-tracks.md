@@ -66,4 +66,3 @@ In order to participate in the Cloud or Parallel Track please send an email to
  2. your AWS account number
  3. the URL of the GitHub repository including the branch
  4. the full, 40-character SHA-1 hash of the commit
-

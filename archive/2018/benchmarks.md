@@ -1,7 +1,7 @@
 <h2>Benchmarks</h2>
 SMT-COMP 2018 will use a large subset of the benchmarks available within the
 2018-05-20 release of [SMT-LIB](http://smtlib.cs.uiowa.edu/), as described in
-the competition rules.  
+the competition rules.
 
 The SMT-LIB benchmarks are available in space
 [root/SMT/SMT-LIB benchmarks/2018-05-20](https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=294532)
@@ -799,4 +799,3 @@ QF_SLIA, which contains strings, is experimental in 2018.
     unsat-core track divisions in SMT-COMP 2018.
   </span>
 </p>
-

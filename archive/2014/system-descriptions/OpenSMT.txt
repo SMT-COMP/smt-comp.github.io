@@ -22,4 +22,3 @@ correctness.  While the version competing in the SMT-COMP 2014 still
 suffers from certain inefficiencies, such as a naive implementation of
 theory propagation, it is already in many respects comparable to the
 state-of-the-art in its field.
-
