@@ -6,6 +6,6 @@ draft = false
 
 The solvers are submitted via pull requests to the SMT-COMP repository. To
 submit your solver, please follow the
-[instructions](https://github.com/SMT-COMP/smt-comp.github.io/tree/new_submission/submissions).
+[instructions](https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions).
 The detailed description of the fields in the solver JSON file is available in
 the [schema](schema.html).
