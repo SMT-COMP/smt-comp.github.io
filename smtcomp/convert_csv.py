@@ -32,7 +32,41 @@ class CsvColumn(str, Enum):
     contributors = "Team Members"
 
 
-def configurations_on_starexec(id: int, cache: Dict[int, list[str]]) -> list[str]:
+# cache for tests/solvers_divisions_final.csv
+cache = {
+    44384: ["default"],
+    44702: ["default"],
+    44703: ["default"],
+    44765: ["default"],
+    44767: ["def"],
+    44672: ["default"],
+    44713: ["default"],
+    44741: ["default"],
+    44742: ["default"],
+    44715: ["default"],
+    44759: ["default", "incremental", "proof"],
+    44756: ["default"],
+    44484: ["vampire_smtcomp"],
+    44479: ["default"],
+    44751: ["default"],
+    44755: ["default"],
+    39111: ["default"],
+    41385: ["default"],
+    44761: ["default", "incremental"],
+    44707: ["default"],
+    44716: ["default"],
+    44737: ["proof", "sq", "mv", "uc"],
+    44738: ["default"],
+    44736: ["proof"],
+    44790: ["default", "incremental"],
+    44678: ["default"],
+    44764: ["default"],
+    44768: ["iprover_SMT"],
+    44760: ["default"],
+}
+
+
+def configurations_on_starexec(id: int) -> list[str]:
     if id in cache:
         return cache[id]
 
@@ -67,10 +101,8 @@ def convert_row(row: Dict[str, str], dstdir: Path) -> defs.Submission:
                 return Some(int(g.group(1)))
         return Option.NONE()
 
-    cache_confs: Dict[int, list[str]] = {}
-
     def has_configuration(id: int, track_id: str) -> bool:
-        return track_id in configurations_on_starexec(id, cache_confs)
+        return track_id in configurations_on_starexec(id)
 
     def mk_cmd(conf: str) -> defs.Command:
         return defs.Command(binary="bin/starexec_run_" + conf, compa_starexec=True)
@@ -86,10 +118,10 @@ def convert_row(row: Dict[str, str], dstdir: Path) -> defs.Submission:
                 command = Some(mk_cmd(track_id2))
             elif has_configuration(id.unwrap(), "default"):
                 command = Some(mk_cmd("default"))
-            elif track_id2 == "default" and len(configurations_on_starexec(id.unwrap(), cache_confs)) == 1:
+            elif track_id2 == "default" and len(configurations_on_starexec(id.unwrap())) == 1:
                 # Seems that if there is only one configuration it is accepted
                 # as the default
-                command = Some(mk_cmd(configurations_on_starexec(id.unwrap(), cache_confs)[0]))
+                command = Some(mk_cmd(configurations_on_starexec(id.unwrap())[0]))
             else:
                 command = Option.NONE()
 
