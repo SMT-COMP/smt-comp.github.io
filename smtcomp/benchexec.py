@@ -50,7 +50,8 @@ def generate_xml(
 
     doc.asis('<?xml version="1.0"?>')
     doc.asis(
-        '<!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 2.3//EN" "https://www.sosy-lab.org/benchexec/benchmark-2.2.3dtd">'
+        '<!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 2.3//EN"'
+        ' "https://www.sosy-lab.org/benchexec/benchmark-2.2.3dtd">'
     )
     with tag(
         "benchmark",
