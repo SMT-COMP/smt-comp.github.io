@@ -476,13 +476,13 @@ int DelayBetweenChecks,struct timeval WCStartTime,int PrintEachCheck) {
             PrintTimes("WATCH",LastTreeTime,WallClockSoFar(WCStartTime),GetProcessMem(ChildPID));
         }
 
-    } while ((CPUTimeLimit == 0 || LastTreeTime <= CPUTimeLimit) && 
+    } while ((CPUTimeLimit == 0 || LastTreeTime <= CPUTimeLimit) &&
 NumberInTree > 0 && !GlobalInterrupted);
 
 //----If over time limit, stop them all (XCPU to top guy first)
     if (NumberInTree > 0 && LastTreeTime > CPUTimeLimit) {
         KilledInTree = KillTree(getuid(),ChildPID,SIGXCPU);
-    
+
 	printedTimeout = 1;
 	fprintf(stdout,"Timeout\n");
         fflush(stdout);

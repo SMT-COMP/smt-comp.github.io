@@ -497,4 +497,3 @@
     3. Unsat-core track.
   </span>
 </p>
-

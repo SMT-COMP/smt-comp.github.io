@@ -13,7 +13,7 @@ Submission this year is planned to be through the STAR-EXEC platform, which
 is still in development.
 -->
 
-Submission this year will be through the 
+Submission this year will be through the
 <a href="http://www.smtexec.org/">SMT-Exec service</a>, an execution
 service for SMT solvers.  You are encouraged to upload early and often
 to test your solver on the competition infrastructure.  SMT-Exec allows

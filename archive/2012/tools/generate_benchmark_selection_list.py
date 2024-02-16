@@ -39,7 +39,7 @@ order by
 
 def get_difficulty(times_in_seconds):
     A = 30
-    minutes = [min(t/60.0, 30.0) for t in times_in_seconds]
+    minutes = [min(t / 60.0, 30.0) for t in times_in_seconds]
     minutes.sort()
     if len(minutes) >= 5:
         minutes = minutes[1:-1]
@@ -48,18 +48,21 @@ def get_difficulty(times_in_seconds):
     difficulty = (5.0 * math.log(1.0 + A**2)) / (math.log(1.0 + 30**2))
     return round(difficulty, 3)
 
+
 def get_solution(sols, benchsol):
-    if benchsol in ('sat', 'unsat'):
+    if benchsol in ("sat", "unsat"):
         return benchsol
     else:
         if len(sols) > 1 and len(set(sols)) == 1:
             s = sols[0]
-            if s in ('sat', 'unsat'):
+            if s in ("sat", "unsat"):
                 return s
-    return 'unknown'
+    return "unknown"
+
 
 def warn(msg):
     sys.stderr.write(msg)
+
 
 def main():
     db = MySQLdb.connect(db=SMTEXEC_DB, user=SMTEXEC_USER, passwd=SMTEXEC_PWD)
@@ -75,15 +78,14 @@ def main():
         cursol = row[2].strip()
         if curkey != prevkey:
             if prevkey:
-                difficulty = '%.3f' % get_difficulty(times)
+                difficulty = "%.3f" % get_difficulty(times)
                 solution = get_solution(sols, prevkey[-1])
-                if solution in ('sat', 'unsat'):
+                if solution in ("sat", "unsat"):
                     division = prevkey[0]
-                    family, filename = prevkey[1].split('/', 1)
+                    family, filename = prevkey[1].split("/", 1)
                     benchid = prevkey[2]
                     category = prevkey[3]
-                    entries.append([division, family, category, difficulty,
-                                    solution, benchid, filename])
+                    entries.append([division, family, category, difficulty, solution, benchid, filename])
                 else:
                     excluded += 1
                     pass
@@ -92,7 +94,7 @@ def main():
             times = []
             sols = []
         t = float(row[7])
-        if cursol not in ('sat', 'unsat'):
+        if cursol not in ("sat", "unsat"):
             t = 1800.0
         else:
             sols.append(cursol)
@@ -100,16 +102,15 @@ def main():
 
     if prevkey:
         solution = get_solution(sols, prevkey[-1])
-        if solution in ('sat', 'unsat'):
-            difficulty = '%.3f' % get_difficulty(times)
+        if solution in ("sat", "unsat"):
+            difficulty = "%.3f" % get_difficulty(times)
             division = prevkey[0]
-            family, filename = prevkey[1].split('/', 1)
+            family, filename = prevkey[1].split("/", 1)
             benchid = prevkey[2]
             category = prevkey[3]
-            entries.append([division, family, category, difficulty,
-                            solution, benchid, filename])
+            entries.append([division, family, category, difficulty, solution, benchid, filename])
         else:
-            #warn('EXCLUDING %s\n' % prevkey)
+            # warn('EXCLUDING %s\n' % prevkey)
             excluded += 1
 
     c.close()
@@ -117,13 +118,13 @@ def main():
 
     entries.sort()
     pr = sys.stdout.write
-    pr('%d\n' % len(entries))
+    pr("%d\n" % len(entries))
     for r in entries:
-        pr('%s\n' % ' '.join(map(str, r)))
-    pr('END x industrial 0 sat 0 x\n')
+        pr("%s\n" % " ".join(map(str, r)))
+    pr("END x industrial 0 sat 0 x\n")
 
-    sys.stderr.write('created competition pool with %d / %d benchmarks\n' %
-                     (len(entries), len(entries) + excluded))
+    sys.stderr.write("created competition pool with %d / %d benchmarks\n" % (len(entries), len(entries) + excluded))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

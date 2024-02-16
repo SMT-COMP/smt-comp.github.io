@@ -35,10 +35,10 @@ will be evaluated and the results publicized, but no winners will be awarded.
 Main changes with respect to SMT-COMP 2011
 ------------------------------------------
 
-- We are concentrating on just a few of the benchmark divisions this 
-  year for the main competition. Some divisions, such as QF_UF, are 
-  subsumed into more expressive logics; others have received only 
-  light interest. Our goal is to focus the competition on divisions 
+- We are concentrating on just a few of the benchmark divisions this
+  year for the main competition. Some divisions, such as QF_UF, are
+  subsumed into more expressive logics; others have received only
+  light interest. Our goal is to focus the competition on divisions
   of particular interest to applications. All non-competition divisions
   will be run in exhibition mode, if solvers are submitted against them,
   and the results will be displayed and publicly reported.
@@ -65,7 +65,7 @@ For more detailed information please refer to the rules posted at
 http://www.smtcomp.org/.
 
 In order to deliver high-quality benchmarks and to allow participants
-to test their solvers we consider the deadline of April 15 strict. 
+to test their solvers we consider the deadline of April 15 strict.
 Benchmarks arriving thereafter will be included in the library but
 not used for SMT-COMP 2012.
 
@@ -76,8 +76,8 @@ Benchmarks for Main and Parallel Track
 New benchmarks in all categories are welcome, particularly those
 representative of applications and those relevant to this year's competition.
 
-The potential main competition benchmark divisions for this year include the 
-following divisions. For detailed descriptions of the divisions, refer to the 
+The potential main competition benchmark divisions for this year include the
+following divisions. For detailed descriptions of the divisions, refer to the
 SMT-LIB web page at http://www.smtlib.org/
 
 * QF_BV
@@ -85,8 +85,8 @@ SMT-LIB web page at http://www.smtlib.org/
 * QF_UFLIA, including benchmarks from QF_LIA
 * QF_UFLRA, including benchmarks from QF_LRA
 * QF_IDL
-* AUFLIA+p 
-* AUFLIA-p 
+* AUFLIA+p
+* AUFLIA-p
 * AUFNIRA
 
 where the benchmark categories are described below
@@ -153,14 +153,14 @@ the solver multiple times by adding and retracting assertions.
 Each benchmark can be thought of as a "trace" dumped from the
 interaction of the solver with, e.g., a model-checker. The
 benchmarks will be executed using a "trace executor" which
-simulates (and abstracts away) the online interaction with the 
+simulates (and abstracts away) the online interaction with the
 model checker.
 
 Please refer to the rules for more details.
 
-*** We strongly encourage submissions of benchmarks for this track. *** 
+*** We strongly encourage submissions of benchmarks for this track. ***
 
-We will execute the competition for any benchmark divisions for 
+We will execute the competition for any benchmark divisions for
 which we have adequate benchmarks and entrants.  This is expected to
 include at least the divisions used in 2011: QF_BV, QF_LIA, QF_UFLIA,
 and QF_LRA.
@@ -174,7 +174,7 @@ benchmarks. However, we highly encourage submission of benchmarks
 that elucidate particular problems or challenges in determining
 unsatisfiable cores or generating proofs.
 
-Note that, in SMT-LIB format, an unsat-core benchmark must have 
+Note that, in SMT-LIB format, an unsat-core benchmark must have
 its asserted formulae named (see the standard or contact the organizers).
 
 The organizers are considering and accepting comment on which divisions
@@ -196,15 +196,15 @@ Important Dates
                     application track posted for comment. First version of
                     the benchmark scrambler, benchmark selector and trace
                     executor made available.
-                    
+
 * April 15          Final version of the benchmark scrambler, benchmark
                     selector and trace exector made available.
-                    
-* April 15          No new benchmarks can be added after this date, but 
+
+* April 15          No new benchmarks can be added after this date, but
                     problems with existing benchmarks may be fixed.
 
 * June 1            Benchmark libraries are frozen.
-                    
+
 * June 15 (7pm EDT) Solvers due via StarExec (for all tracks), including
                     system descriptions and magic numbers for benchmark
                     scrambling.
@@ -213,7 +213,7 @@ Important Dates
                     marks the end of the weekend grace period for
                     submissions).
 
-* June 20           Opening value of NYSE Composite Index used to complete 
+* June 20           Opening value of NYSE Composite Index used to complete
                     random seed.
 
 * June 26 - June 29 Dates of IJCAR main conference

@@ -7,9 +7,9 @@ benchmark selection, prints the paths of the selected instances
 
 import os, sys
 
+
 def usage():
-    sys.stdout.write("Usage: %s benchmarks-file selected-ids-file\n" %
-                     os.path.basename(sys.argv[0]))
+    sys.stdout.write("Usage: %s benchmarks-file selected-ids-file\n" % os.path.basename(sys.argv[0]))
     sys.exit(1)
 
 
@@ -22,15 +22,15 @@ def main():
 
     pr = sys.stdout.write
     with open(sys.argv[1]) as f:
-        f.readline() # skip the first line with the count
+        f.readline()  # skip the first line with the count
         for line in f:
             bits = line.split()
             bench_id = int(bits[5])
             if bench_id in selected:
-                pth = '%s/%s/%s' % (bits[0], bits[1], bits[-1])
+                pth = "%s/%s/%s" % (bits[0], bits[1], bits[-1])
                 pr(pth)
-                pr('\n')
+                pr("\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
