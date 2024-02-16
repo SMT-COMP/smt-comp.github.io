@@ -48,3 +48,6 @@ submission-doc:
 	@poetry run smtcomp dump-json-schema $(GENERATED_SCHEMA_FILE)
 	@echo "🚀 Generating html doc to $(GENERATED_SCHEMA_HTML)"
 	generate-schema-doc --expand-buttons --no-link-to-reused-ref $(GENERATED_SCHEMA_FILE) $(GENERATED_SCHEMA_HTML)
+
+hugo-server:
+	(cd web; hugo server)
