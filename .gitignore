@@ -168,3 +168,5 @@ cython_debug/
 
 /submission-schema.json
 /submission-schema.html
+schema_doc.css
+schema_doc.min.js

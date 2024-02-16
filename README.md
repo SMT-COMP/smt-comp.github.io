@@ -30,7 +30,53 @@ To finalize the set-up for publishing to PyPi or Artifactory, see [here](https:/
 For activating the automatic documentation with MkDocs, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/mkdocs/#enabling-the-documentation-on-github).
 To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/codecov/).
 
-## Releasing a new version
+## Using the smtcomp tool for generating benchexec
+
+#### Generate submissions [Optional]
+ The final solvers submitted during the smtcomp 2023 can be used:
+
+```
+smtcomp convert-csv tests/solvers_divisions_final.csv ../tmp/submissions
+```
+
+The generated files can be visualized using:
+
+```
+smtcomp show ../tmp/submissions/YicesQS.json
+```
+
+The solver downloaded using:
+
+```
+smtcomp download-archive ../tmp/submissions/*.json ../tmp/benchexec/cache
+```
+
+Trivial tests benchmarks generated with:
+
+```
+smtcomp generate-benchmarks ../tmp/benchexec/includes/ 
+```
+
+The benchexec tasks generated using:
+
+```
+smtcomp generate-benchexec ../tmp/submissions/*.json ../tmp/includes/all.xml ../tmp/benchexec/cache 
+```
+
+Benchexec started using:
+
+```
+(cd ../tmp/benchexec/includes; benchexec all.xml  --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1)
+```
+
+
+
+
+
+
+
+
+
 
 ---
 

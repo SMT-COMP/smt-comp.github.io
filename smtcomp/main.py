@@ -12,6 +12,7 @@ import smtcomp.defs as defs
 import smtcomp.submission as submission
 from smtcomp.benchmarks import clone_group
 from smtcomp.convert_csv import convert_csv as convert_csv_file
+import smtcomp.generate_benchmarks
 
 app = typer.Typer()
 
@@ -110,3 +111,11 @@ def download_archive(files: List[Path], dst: Path) -> None:
             if p.archive:
                 archive.download(p.archive, dst)
                 archive.unpack(p.archive, dst)
+
+
+@app.command()
+def generate_benchmarks(dst: Path) -> None:
+    """
+    Generate trivial benchmarks for testing
+    """
+    smtcomp.generate_benchmarks.generate_benchmarks(dst)

@@ -72,6 +72,18 @@ def download(archive: defs.Archive, dst: Path) -> None:
         print("Download done")
 
 
+import subprocess
+
+
+# For testing with last year final solver we need some patch
+# on starexec things seems to be executed particularly
+def patch(udir: Path) -> None:
+    if udir.name == "e0873e12a04fcfcf1bf2e449f04101c2812d4c533fb634beb6e92e8eaa6d78f7":
+        # For COLIBRI
+        subprocess.run(["chmod", "-R", "u+x", udir.joinpath("COLIBRI 2023_05_10")])
+        subprocess.run(["mv", udir.joinpath("COLIBRI 2023_05_10"), udir.joinpath("COLIBRI_2023_05_10")])
+
+
 def unpack(archive: defs.Archive, dst: Path) -> None:
     dst.joinpath(unpack_dir()).mkdir(parents=True, exist_ok=True)
     archive_file = is_archive_cache_present(archive, dst)
@@ -85,6 +97,7 @@ def unpack(archive: defs.Archive, dst: Path) -> None:
     else:
         print("unpack archive", archive_file)
         extract_all_with_executable_permission(archive_file, udir)
+        patch(udir)
     if not (is_unpack_present(archive, dst)):
         print("[red]Empty archive", archive_file)
         exit(1)

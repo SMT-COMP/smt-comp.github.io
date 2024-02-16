@@ -30,7 +30,7 @@ class Tool(BaseTool2):  # type: ignore
         output: List[str] = run.output
         isTimeout: bool = run.was_timeout
 
-        if returnsignal == 0:
+        if returnsignal is None:
             status = None
             for line in output:
                 line = line.strip()

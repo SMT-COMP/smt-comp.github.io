@@ -76,13 +76,15 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
             for _, logics in divisions.items():
                 tasks.extend([logic + suffix for logic in logics])
             if tasks:
-                executable = str(find_command(command, archive, cachedir).resolve())
+                executable_path = find_command(command, archive, cachedir)
+                executable = str(executable_path.resolve())
                 if command.compa_starexec:
                     assert command.arguments == []
+                    dirname = str(executable_path.parent.resolve())
                     options = [
                         "bash",
                         "-c",
-                        f"FILE=$(realpath $1); (cd $(dirname {shlex.quote(executable)}); exec {shlex.quote(executable)} $FILE)",
+                        f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec {shlex.quote(executable)} "$FILE")',
                         "compa_starexec",
                     ]
                 else:
