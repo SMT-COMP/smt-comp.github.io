@@ -1009,6 +1009,7 @@ class Archive(BaseModel):
 class Command(BaseModel, extra="forbid"):
     binary: str
     arguments: list[str] = []
+    compa_starexec: bool = False
 
     @model_validator(mode="before")
     @classmethod

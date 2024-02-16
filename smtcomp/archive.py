@@ -1,5 +1,6 @@
 from pathlib import Path
-from shutil import unpack_archive
+from smtcomp.unpack import extract_all_with_executable_permission
+import zipfile
 from typing import Optional
 
 import wget
@@ -34,7 +35,7 @@ def is_archive_cache_present(archive: defs.Archive, dst: Path) -> Optional[Path]
 def is_unpack_present(archive: defs.Archive, dst: Path) -> bool:
     d = archive_unpack_dir(archive, dst)
     d.mkdir(parents=True, exist_ok=True)
-    return bool(next(d.iterdir()))
+    return any(True for _ in d.iterdir())
 
 
 def find_command(command: defs.Command, archive: defs.Archive, dst: Path) -> Path:
@@ -63,7 +64,6 @@ def download(archive: defs.Archive, dst: Path) -> None:
 
             # create this bar_progress method which is invoked automatically from wget
             def bar_progress(current: float, total: float, width: int) -> None:
-                print("current", current, "total", total)
                 progress.update(task1, completed=current, total=total)
 
             y = archive_cache_dir(archive, dst)
@@ -78,10 +78,13 @@ def unpack(archive: defs.Archive, dst: Path) -> None:
     if not archive_file:
         raise ValueError("unpack ith archive")
 
-    print("unpack archive", archive_file)
     dst.mkdir(parents=True, exist_ok=True)
     udir = archive_unpack_dir(archive, dst)
-    unpack_archive(archive_file, udir)  # , filter="data")
+    if is_unpack_present(archive, dst):
+        print("archive already unpacked:", udir)
+    else:
+        print("unpack archive", archive_file)
+        extract_all_with_executable_permission(archive_file, udir)
     if not (is_unpack_present(archive, dst)):
         print("[red]Empty archive", archive_file)
         exit(1)

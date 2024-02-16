@@ -13,7 +13,6 @@ Tools used for the organization of the SMT competition
 
 ## Getting started with development in this project
 
-
 ```bash
 git clone git@github.com:smtcomp/smtcomp.github.io.git
 ```

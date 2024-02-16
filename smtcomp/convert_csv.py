@@ -72,6 +72,9 @@ def convert_row(row: Dict[str, str], dstdir: Path) -> defs.Submission:
     def has_configuration(id: int, track_id: str) -> bool:
         return track_id in configurations_on_starexec(id, cache_confs)
 
+    def mk_cmd(conf: str) -> defs.Command:
+        return defs.Command(binary="bin/starexec_run_" + conf, compa_starexec=True)
+
     def find_archive(track_id: Option[str]) -> Tuple[Option[defs.Archive], Option[defs.Command]]:
         main_id = find_archive_id(track_id)
         archive = main_id.map(archive_of_solver_id)
@@ -80,15 +83,13 @@ def convert_row(row: Dict[str, str], dstdir: Path) -> defs.Submission:
         track_id2 = track_id.unwrap_or("default")
         if id:
             if has_configuration(id.unwrap(), track_id2):
-                command = Some(defs.Command(binary="bin/starexec_run_" + track_id2))
+                command = Some(mk_cmd(track_id2))
             elif has_configuration(id.unwrap(), "default"):
-                command = Some(defs.Command(binary="bin/starexec_run_default"))
+                command = Some(mk_cmd("default"))
             elif track_id2 == "default" and len(configurations_on_starexec(id.unwrap(), cache_confs)) == 1:
                 # Seems that if there is only one configuration it is accepted
                 # as the default
-                command = Some(
-                    defs.Command(binary="bin/starexec_run_" + configurations_on_starexec(id.unwrap(), cache_confs)[0])
-                )
+                command = Some(mk_cmd(configurations_on_starexec(id.unwrap(), cache_confs)[0]))
             else:
                 command = Option.NONE()
 

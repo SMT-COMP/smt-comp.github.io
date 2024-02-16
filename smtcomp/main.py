@@ -1,7 +1,8 @@
 import json
 from pathlib import Path
-
+from typing import List
 import rich
+from rich.progress import track
 import typer
 from pydantic import ValidationError
 
@@ -74,7 +75,7 @@ def download_benchmarks(dst: Path, dryrun: bool = False) -> None:
 
 @app.command()
 def generate_benchexec(
-    file: Path,
+    files: List[Path],
     dst: Path,
     cachedir: Path,
     timelimit_s: int = defs.default["timelimit_s"],
@@ -82,26 +83,30 @@ def generate_benchexec(
     cpuCores: int = defs.default["cpuCores"],
 ) -> None:
     """
-    Generate benchexec files for the given submission
+    Generate the benchexec file for the given submissions
     """
-    dst.mkdir(parents=True, exist_ok=True)
-    s = submission.read(str(file))
-    if s.command and s.archive:
-        benchexec.generate_tool_module(s.command, s.archive, s.name, dst, cachedir)
-    benchexec.xmls_for_submission(s, timelimit_s, memlimit_M, cpuCores, dst)
+    cmdtasks: List[benchexec.CmdTask] = []
+    for file in track(files):
+        s = submission.read(str(file))
+        res = benchexec.cmdtask_for_submission(s, cachedir)
+        cmdtasks.extend(res)
+    benchexec.generate_xml(
+        timelimit_s=timelimit_s, memlimit_M=memlimit_M, cpuCores=cpuCores, cmdtasks=cmdtasks, file=dst
+    )
 
 
 @app.command()
-def download_archive(file: Path, dst: Path) -> None:
+def download_archive(files: List[Path], dst: Path) -> None:
     """
     Download and unpack
     """
-    dst.mkdir(parents=True, exist_ok=True)
-    s = submission.read(str(file))
-    if s.archive:
-        archive.download(s.archive, dst)
-        archive.unpack(s.archive, dst)
-    for p in s.participations.root:
-        if p.archive:
-            archive.download(p.archive, dst)
-            archive.unpack(p.archive, dst)
+    for file in track(files):
+        dst.mkdir(parents=True, exist_ok=True)
+        s = submission.read(str(file))
+        if s.archive:
+            archive.download(s.archive, dst)
+            archive.unpack(s.archive, dst)
+        for p in s.participations.root:
+            if p.archive:
+                archive.download(p.archive, dst)
+                archive.unpack(p.archive, dst)
