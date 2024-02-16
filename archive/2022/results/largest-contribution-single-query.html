@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Largest Contribution Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Largest Contribution Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2022/results/largest-contribution-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2022/results/largest-contribution-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Largest Contribution Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Largest Contribution Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2022/results/largest-contribution-single-query"},"url":"https://smt-comp.github.io/2022/results/largest-contribution-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #602000; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2022/">SMT-COMP 2022</a>
+    </h3>
+    <a href="/2022/rules.pdf"><b>Rules</b></a><br/><a href="/2022/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2022/tools.html"><b>Tools</b></a><br/><a href="/2022/specs.html"><b>Specs</b></a><br/><a href="/2022/proof-track.html"><b>Proof Exhibition Track</b></a><br/><a href="/2022/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2022/participants.html"><b>Participants</b></a><br/><a href="/2022/results.html"><b>Results</b></a><br/><a href="/2022/stats.html"><b>Statistics</b></a><br/><a href="/2022/comparisons.html"><b>Comparisons</b></a><br/><a href="/2022/slides.html"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2>Largest Contribution Ranking - Single Query Track</h2>
+
+
+<p>
+Page generated on 2022-08-10 11:18:05 +0000
+</p>
+
+<h3>Winners</h3>
+<table>
+    <thead>
+        <tr>
+        
+            <th>Sequential Performance</th>
+        
+        
+            <th>Parallel Performance</th>
+        
+        
+            <th>SAT Performance (parallel)</th>
+        
+        
+            <th>UNSAT Performance (parallel)</th>
+        
+        
+            <th>24 seconds Performance (parallel)</th>
+        
+        </tr>
+    </thead>
+    <tr>
+        
+        <td>
+          
+            cvc5
+          
+        </td>
+        
+        
+        <td>
+          
+            cvc5
+          
+        </td>
+        
+        
+        <td>
+          
+            cvc5
+          
+        </td>
+        
+        
+        <td>
+          
+            cvc5
+          
+        </td>
+        
+        
+        <td>
+          
+            cvc5
+          
+        </td>
+        
+    </tr>
+</table>
+<h3>Sequential Performance</h3>
+<table id="sequential-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.02293044</td>
+    <td>0.00978661</td>
+    <td>
+      <a href="/2022/results/equality-machinearith-single-query">Equality+MachineArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.02197364</td>
+    <td>0.08007088</td>
+    <td>
+      <a href="/2022/results/equality-lineararith-single-query">Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.01422021</td>
+    <td>0.02484675</td>
+    <td>
+      <a href="/2022/results/equality-nonlineararith-single-query">Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.01013353</td>
+    <td>0.00564358</td>
+    <td>
+      <a href="/2022/results/equality-single-query">Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00453546</td>
+    <td>0.1003793</td>
+    <td>
+      <a href="/2022/results/qf-strings-single-query">QF_Strings</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yicesqs">YicesQS</a>
+    </td>
+    <td>0.00178084</td>
+    <td>0.0263983</td>
+    <td>
+      <a href="/2022/results/arith-single-query">Arith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00135428</td>
+    <td>0.00675031</td>
+    <td>
+      <a href="/2022/results/fparith-single-query">FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/z3">Z3++</a>
+    </td>
+    <td>0.00094022</td>
+    <td>0.02392435</td>
+    <td>
+      <a href="/2022/results/qf-linearintarith-single-query">QF_LinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/smt-rat-mcsat-22-06">SMT-RAT-MCSAT 22.06</a>
+    </td>
+    <td>0.000913</td>
+    <td>0.00814609</td>
+    <td>
+      <a href="/2022/results/qf-nonlinearrealarith-single-query">QF_NonLinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00058693</td>
+    <td>0.02143423</td>
+    <td>
+      <a href="/2022/results/qf-bitvec-single-query">QF_Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00030775</td>
+    <td>0.00233372</td>
+    <td>
+      <a href="/2022/results/qf-equality-nonlineararith-single-query">QF_Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a>
+    </td>
+    <td>0.0002383</td>
+    <td>0.00791574</td>
+    <td>
+      <a href="/2022/results/qf-fparith-single-query">QF_FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00022799</td>
+    <td>0.01028138</td>
+    <td>
+      <a href="/2022/results/qf-equality-lineararith-single-query">QF_Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00021442</td>
+    <td>0.00287094</td>
+    <td>
+      <a href="/2022/results/bitvec-single-query">Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00018042</td>
+    <td>0.0082733</td>
+    <td>
+      <a href="/2022/results/qf-equality-bitvec-single-query">QF_Equality+Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00010827</td>
+    <td>0.00223611</td>
+    <td>
+      <a href="/2022/results/qf-linearrealarith-single-query">QF_LinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>0.02378649</td>
+    <td>
+      <a href="/2022/results/qf-equality-single-query">QF_Equality</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>Parallel Performance</h3>
+<table id="parallel-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.02293044</td>
+    <td>0.00975924</td>
+    <td>
+      <a href="/2022/results/equality-machinearith-single-query">Equality+MachineArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.01863765</td>
+    <td>0.06412353</td>
+    <td>
+      <a href="/2022/results/equality-lineararith-single-query">Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.01162292</td>
+    <td>0.02034542</td>
+    <td>
+      <a href="/2022/results/equality-nonlineararith-single-query">Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00827626</td>
+    <td>0.00481218</td>
+    <td>
+      <a href="/2022/results/equality-single-query">Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00453546</td>
+    <td>0.10099144</td>
+    <td>
+      <a href="/2022/results/qf-strings-single-query">QF_Strings</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yicesqs">YicesQS</a>
+    </td>
+    <td>0.00178084</td>
+    <td>0.02637699</td>
+    <td>
+      <a href="/2022/results/arith-single-query">Arith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00135428</td>
+    <td>0.00676214</td>
+    <td>
+      <a href="/2022/results/fparith-single-query">FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/z3">Z3++</a>
+    </td>
+    <td>0.00094022</td>
+    <td>0.02395678</td>
+    <td>
+      <a href="/2022/results/qf-linearintarith-single-query">QF_LinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/smt-rat-mcsat-22-06">SMT-RAT-MCSAT 22.06</a>
+    </td>
+    <td>0.000913</td>
+    <td>0.00814995</td>
+    <td>
+      <a href="/2022/results/qf-nonlinearrealarith-single-query">QF_NonLinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.000587</td>
+    <td>0.02144062</td>
+    <td>
+      <a href="/2022/results/qf-bitvec-single-query">QF_Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00030775</td>
+    <td>0.00234814</td>
+    <td>
+      <a href="/2022/results/qf-equality-nonlineararith-single-query">QF_Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a>
+    </td>
+    <td>0.0002383</td>
+    <td>0.00791845</td>
+    <td>
+      <a href="/2022/results/qf-fparith-single-query">QF_FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00022799</td>
+    <td>0.01012272</td>
+    <td>
+      <a href="/2022/results/qf-equality-lineararith-single-query">QF_Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00019655</td>
+    <td>0.00277585</td>
+    <td>
+      <a href="/2022/results/bitvec-single-query">Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00018042</td>
+    <td>0.00827495</td>
+    <td>
+      <a href="/2022/results/qf-equality-bitvec-single-query">QF_Equality+Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00010827</td>
+    <td>0.0021968</td>
+    <td>
+      <a href="/2022/results/qf-linearrealarith-single-query">QF_LinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0236945</td>
+    <td>
+      <a href="/2022/results/qf-equality-single-query">QF_Equality</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>SAT Performance</h3>
+<table id="sat-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.1685148</td>
+    <td>0.00893539</td>
+    <td>
+      <a href="/2022/results/equality-lineararith-single-query">Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.03438715</td>
+    <td>0.00250079</td>
+    <td>
+      <a href="/2022/results/equality-nonlineararith-single-query">Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.02840936</td>
+    <td>0.00218083</td>
+    <td>
+      <a href="/2022/results/equality-machinearith-single-query">Equality+MachineArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.01442777</td>
+    <td>0.00142316</td>
+    <td>
+      <a href="/2022/results/equality-single-query">Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00590496</td>
+    <td>0.01339416</td>
+    <td>
+      <a href="/2022/results/qf-strings-single-query">QF_Strings</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yicesqs">YicesQS</a>
+    </td>
+    <td>0.00237769</td>
+    <td>0.00152893</td>
+    <td>
+      <a href="/2022/results/arith-single-query">Arith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00225681</td>
+    <td>0.00079922</td>
+    <td>
+      <a href="/2022/results/fparith-single-query">FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00146084</td>
+    <td>0.00082241</td>
+    <td>
+      <a href="/2022/results/qf-bitvec-single-query">QF_Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/z3">Z3++</a>
+    </td>
+    <td>0.00082287</td>
+    <td>0.00078177</td>
+    <td>
+      <a href="/2022/results/qf-nonlinearrealarith-single-query">QF_NonLinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/z3">Z3++</a>
+    </td>
+    <td>0.000818</td>
+    <td>0.00149372</td>
+    <td>
+      <a href="/2022/results/qf-linearintarith-single-query">QF_LinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00032325</td>
+    <td>0.00010942</td>
+    <td>
+      <a href="/2022/results/bitvec-single-query">Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/smtinterpol">smtinterpol</a>
+    </td>
+    <td>0.00031997</td>
+    <td>0.00066628</td>
+    <td>
+      <a href="/2022/results/qf-equality-nonlineararith-single-query">QF_Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00016607</td>
+    <td>0.00030415</td>
+    <td>
+      <a href="/2022/results/qf-equality-bitvec-single-query">QF_Equality+Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00015835</td>
+    <td>0.00036162</td>
+    <td>
+      <a href="/2022/results/qf-linearrealarith-single-query">QF_LinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/smtinterpol">smtinterpol</a>
+    </td>
+    <td>0.00010599</td>
+    <td>0.00010089</td>
+    <td>
+      <a href="/2022/results/qf-equality-lineararith-single-query">QF_Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a>
+    </td>
+    <td>4.818e-05</td>
+    <td>7.553e-05</td>
+    <td>
+      <a href="/2022/results/qf-fparith-single-query">QF_FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.0</td>
+    <td>1.64e-06</td>
+    <td>
+      <a href="/2022/results/qf-equality-single-query">QF_Equality</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>UNSAT Performance</h3>
+<table id="unsat-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.01876725</td>
+    <td>0.00636699</td>
+    <td>
+      <a href="/2022/results/equality-machinearith-single-query">Equality+MachineArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/z3">Z3++</a>
+    </td>
+    <td>0.0090453</td>
+    <td>0.00401385</td>
+    <td>
+      <a href="/2022/results/qf-nonlinearintarith-single-query">QF_NonLinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00780429</td>
+    <td>0.012038</td>
+    <td>
+      <a href="/2022/results/equality-nonlineararith-single-query">Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00471552</td>
+    <td>0.00211145</td>
+    <td>
+      <a href="/2022/results/equality-single-query">Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00458981</td>
+    <td>0.01596357</td>
+    <td>
+      <a href="/2022/results/equality-lineararith-single-query">Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/ostrich">OSTRICH</a>
+    </td>
+    <td>0.00163314</td>
+    <td>0.00066081</td>
+    <td>
+      <a href="/2022/results/qf-strings-single-query">QF_Strings</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yicesqs">YicesQS</a>
+    </td>
+    <td>0.00123626</td>
+    <td>0.00195113</td>
+    <td>
+      <a href="/2022/results/arith-single-query">Arith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/z3">Z3++</a>
+    </td>
+    <td>0.00101593</td>
+    <td>0.0006139</td>
+    <td>
+      <a href="/2022/results/qf-linearintarith-single-query">QF_LinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00087951</td>
+    <td>0.00026868</td>
+    <td>
+      <a href="/2022/results/qf-equality-nonlineararith-single-query">QF_Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00087942</td>
+    <td>0.00155703</td>
+    <td>
+      <a href="/2022/results/fparith-single-query">FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/smt-rat-mcsat-22-06">SMT-RAT-MCSAT 22.06</a>
+    </td>
+    <td>0.00045094</td>
+    <td>0.00032699</td>
+    <td>
+      <a href="/2022/results/qf-nonlinearrealarith-single-query">QF_NonLinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00043342</td>
+    <td>0.00048042</td>
+    <td>
+      <a href="/2022/results/qf-equality-lineararith-single-query">QF_Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a>
+    </td>
+    <td>0.00031876</td>
+    <td>0.00061364</td>
+    <td>
+      <a href="/2022/results/qf-fparith-single-query">QF_FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00028065</td>
+    <td>0.00047489</td>
+    <td>
+      <a href="/2022/results/qf-bitvec-single-query">QF_Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00021898</td>
+    <td>0.00012838</td>
+    <td>
+      <a href="/2022/results/qf-equality-bitvec-single-query">QF_Equality+Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00013019</td>
+    <td>0.00028952</td>
+    <td>
+      <a href="/2022/results/bitvec-single-query">Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/opensmt">OpenSMT</a>
+    </td>
+    <td>7.371e-05</td>
+    <td>0.00018547</td>
+    <td>
+      <a href="/2022/results/qf-linearrealarith-single-query">QF_LinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>1.629e-05</td>
+    <td>
+      <a href="/2022/results/qf-equality-single-query">QF_Equality</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>24s Performance</h3>
+<table id="twentyfour-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.02410528</td>
+    <td>0.02480675</td>
+    <td>
+      <a href="/2022/results/equality-nonlineararith-single-query">Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.01998829</td>
+    <td>0.00643714</td>
+    <td>
+      <a href="/2022/results/equality-machinearith-single-query">Equality+MachineArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/vampire">Vampire</a>
+    </td>
+    <td>0.01978803</td>
+    <td>0.00893529</td>
+    <td>
+      <a href="/2022/results/equality-single-query">Equality</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.01184931</td>
+    <td>0.06553996</td>
+    <td>
+      <a href="/2022/results/qf-linearintarith-single-query">QF_LinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00962355</td>
+    <td>0.03141742</td>
+    <td>
+      <a href="/2022/results/equality-lineararith-single-query">Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/z3">Z3++</a>
+    </td>
+    <td>0.00935787</td>
+    <td>0.01605178</td>
+    <td>
+      <a href="/2022/results/qf-nonlinearintarith-single-query">QF_NonLinearIntArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/cvc5">cvc5</a>
+    </td>
+    <td>0.00790622</td>
+    <td>0.08892742</td>
+    <td>
+      <a href="/2022/results/qf-strings-single-query">QF_Strings</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yicesqs">YicesQS</a>
+    </td>
+    <td>0.0026162</td>
+    <td>0.02288083</td>
+    <td>
+      <a href="/2022/results/arith-single-query">Arith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00155748</td>
+    <td>0.00479638</td>
+    <td>
+      <a href="/2022/results/fparith-single-query">FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00097344</td>
+    <td>0.01372932</td>
+    <td>
+      <a href="/2022/results/qf-bitvec-single-query">QF_Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00075469</td>
+    <td>0.00445278</td>
+    <td>
+      <a href="/2022/results/qf-nonlinearrealarith-single-query">QF_NonLinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/colibri">COLIBRI</a>
+    </td>
+    <td>0.00070545</td>
+    <td>0.00628567</td>
+    <td>
+      <a href="/2022/results/qf-fparith-single-query">QF_FPArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00060445</td>
+    <td>0.00215568</td>
+    <td>
+      <a href="/2022/results/qf-linearrealarith-single-query">QF_LinearRealArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00043256</td>
+    <td>0.00416881</td>
+    <td>
+      <a href="/2022/results/qf-equality-bitvec-single-query">QF_Equality+Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/smtinterpol">smtinterpol</a>
+    </td>
+    <td>0.00040399</td>
+    <td>0.00170196</td>
+    <td>
+      <a href="/2022/results/qf-equality-nonlineararith-single-query">QF_Equality+NonLinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>0.00034961</td>
+    <td>0.00587208</td>
+    <td>
+      <a href="/2022/results/qf-equality-lineararith-single-query">QF_Equality+LinearArith</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/bitwuzla">Bitwuzla</a>
+    </td>
+    <td>0.00028858</td>
+    <td>0.00293861</td>
+    <td>
+      <a href="/2022/results/bitvec-single-query">Bitvec</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2022/participants/yices2">Yices2</a>
+    </td>
+    <td>2.481e-05</td>
+    <td>0.02349606</td>
+    <td>
+      <a href="/2022/results/qf-equality-single-query">QF_Equality</a>
+    </td>
+</tr>
+
+</table>
+
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+  <span id="exp">
+    e Experimental.
+  </span><br/>
+</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

@@ -1,0 +1,802 @@
+<h2>Benchmarks</h2>
+SMT-COMP 2018 will use a large subset of the benchmarks available within the
+2018-05-20 release of [SMT-LIB](http://smtlib.cs.uiowa.edu/), as described in
+the competition rules.  
+
+The SMT-LIB benchmarks are available in space
+[root/SMT/SMT-LIB benchmarks/2018-05-20](https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=294532)
+on StarExec.
+
+<h3>Main Track</h3>
+
+All non-incremental SMT-LIB benchmarks are eligible for the main
+track. In total, there are 50 main track divisions. Division
+QF_SLIA, which contains strings, is experimental in 2018.
+
+<table>
+  <tr class="center">
+    <th>Logic</th>
+    <th>Eligible Benchmarks</th>
+    <th>Excluded Benchmarks</th>
+  </tr>
+  <tr>
+    <td>ABVFP</td>
+    <td class="right">1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ALIA</td>
+    <td class="right">42</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>AUFBVDTLIA</td>
+    <td class="right">1709</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>AUFDTLIA</td>
+    <td class="right">728</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>AUFLIA</td>
+    <td class="right">4</td>
+    <td class="right">3272<sup><a href="#fn1">1</a></sup></td>
+  </tr>
+  <tr>
+    <td>AUFLIRA</td>
+    <td class="right">20011</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>AUFNIA<sup><a href="#fn2">2</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">3<sup><a href="#fn1">1</a></sup></td>
+  </tr>
+  <tr>
+    <td>AUFNIRA</td>
+    <td class="right">1480</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>BV</td>
+    <td class="right">5751</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>BVFP</td>
+    <td class="right">24</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>FP</td>
+    <td class="right">61</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LIA</td>
+    <td class="right">388</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LRA</td>
+    <td class="right">2419</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>NIA</td>
+    <td class="right">14</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>NRA</td>
+    <td class="right">3813</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_ABV</td>
+    <td class="right">15066</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_ABVFP</td>
+    <td class="right">18129</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_ALIA</td>
+    <td class="right">139</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_ANIA</td>
+    <td class="right">8</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_AUFBV</td>
+    <td class="right">31</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_AUFLIA</td>
+    <td class="right">1009</td>
+    <td class="right">294<sup><a href="#fn1">1</a></sup></td>
+  </tr>
+  <tr>
+    <td>QF_AUFNIA</td>
+    <td class="right">17</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_AX</td>
+    <td class="right">551</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_BV</td>
+    <td class="right">40102</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_BVFP</td>
+    <td class="right">17215</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_DT</td>
+    <td class="right">8000</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_FP</td>
+    <td class="right">40300</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_IDL</td>
+    <td class="right">2193</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_LIA</td>
+    <td class="right">6947</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_LIRA</td>
+    <td class="right">7</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_LRA</td>
+    <td class="right">1649</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_NIA</td>
+    <td class="right">23876</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_NIRA</td>
+    <td class="right">3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_NRA</td>
+    <td class="right">11489</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_RDL</td>
+    <td class="right">255</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_SLIA</td>
+    <td class="right">72705</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_UF</td>
+    <td class="right">7423</td>
+    <td class="right">34<sup><a href="#fn1">1</a></sup></td>
+  </tr>
+  <tr>
+    <td>QF_UFBV</td>
+    <td class="right">1224</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_UFIDL</td>
+    <td class="right">428</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_UFLIA</td>
+    <td class="right">583</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_UFLRA</td>
+    <td class="right">1284</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_UFNIA</td>
+    <td class="right">7</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QF_UFNRA</td>
+    <td class="right">36</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UF</td>
+    <td class="right">7562</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UFBV</td>
+    <td class="right">200</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UFDT</td>
+    <td class="right">4527</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UFDTLIA</td>
+    <td class="right">303</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UFIDL</td>
+    <td class="right">68</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UFLIA</td>
+    <td class="right">10137</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UFLRA</td>
+    <td class="right">15</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>UFNIA</td>
+    <td class="right">3308</td>
+    <td></td>
+  </tr>
+  <tr class="total">
+    <td><b>Total</b></td>
+    <td class="right"><b>333241</b></td>
+    <td class="right"><b>3603</b></td>
+  </tr>
+</table>
+
+<p>
+  <span id="fn1">
+    1. All benchmarks in family <tt>20170829-Rodin/</tt> were excluded
+    because they contained <tt>:named</tt> terms.
+  </span><br/>
+  <span id="fn2">
+    2. As there are no eligible benchmarks in SMT-LIB, AUFNIA is not
+    actually a main track division in SMT-COMP 2018.
+  </span>
+</p>
+
+<h3>Application Track</h3>
+
+<p>
+  In total, there are 21 application track divisions.
+</p>
+
+<table>
+  <tr class="center">
+    <th>Logic</th>
+    <th>Eligible Benchmarks</th>
+    <th>Excluded Benchmarks</th>
+    <th>Benchmarks with unknown status<sup><a href="#fn3">3</a></sup></th>
+    <th>Benchmarks in SMT-LIB</th>
+  </tr>
+  <tr class="right">
+    <td class="left">ABVFP<sup><a href="#fn4">4</a></sup></td>
+    <td>0</td>
+    <td></td>
+    <td>4</td>
+    <td>4</td>
+  </tr>
+  <tr class="right">
+    <td class="left">ALIA</td>
+    <td>24</td>
+    <td></td>
+    <td>0</td>
+    <td>24</td>
+  </tr>
+  <tr class="right">
+    <td class="left">ANIA</td>
+    <td>3</td>
+    <td></td>
+    <td>0</td>
+    <td>3</td>
+  </tr>
+  <tr class="right">
+    <td class="left">AUFNIRA</td>
+    <td>117</td>
+    <td></td>
+    <td>48</td>
+    <td>165</td>
+  </tr>
+  <tr class="right">
+    <td class="left">BV</td>
+    <td>17</td>
+    <td></td>
+    <td>1</td>
+    <td>18</td>
+  </tr>
+  <tr class="right">
+    <td class="left">BVFP<sup><a href="#fn4">4</a></sup></td>
+    <td>0</td>
+    <td></td>
+    <td>10</td>
+    <td>10</td>
+  </tr>
+  <tr class="right">
+    <td class="left">LIA</td>
+    <td>6</td>
+    <td></td>
+    <td>0</td>
+    <td>6</td>
+  </tr>
+  <tr class="right">
+    <td class="left">LRA<sup><a href="#fn4">4</a></sup></td>
+    <td>0</td>
+    <td>5<sup><a href="#fn5">5</a></sup></td>
+    <td>0</td>
+    <td>5</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ABV</td>
+    <td>15</td>
+    <td></td>
+    <td>0</td>
+    <td>15</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ABVFP<sup><a href="#fn4">4</a></sup></td>
+    <td>0</td>
+    <td></td>
+    <td>9</td>
+    <td>9</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ALIA</td>
+    <td>44</td>
+    <td></td>
+    <td>0</td>
+    <td>44</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ANIA</td>
+    <td>5</td>
+    <td></td>
+    <td>0</td>
+    <td>5</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_AUFBV</td>
+    <td>10</td>
+    <td></td>
+    <td>0</td>
+    <td>10</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_AUFLIA</td>
+    <td>72</td>
+    <td></td>
+    <td>0</td>
+    <td>72</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_BV</td>
+    <td>815</td>
+    <td></td>
+    <td>3</td>
+    <td>818</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_BVFP</td>
+    <td>2</td>
+    <td></td>
+    <td>63</td>
+    <td>65</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_FP</td>
+    <td>2</td>
+    <td></td>
+    <td>1</td>
+    <td>3</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_LIA</td>
+    <td>69</td>
+    <td></td>
+    <td>0</td>
+    <td>69</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_LRA</td>
+    <td>10</td>
+    <td></td>
+    <td>0</td>
+    <td>10</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_NIA</td>
+    <td>10</td>
+    <td></td>
+    <td>0</td>
+    <td>10</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UF<sup><a href="#fn4">4</a></sup></td>
+    <td>0</td>
+    <td></td>
+    <td>766</td>
+    <td>766</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFBV</td>
+    <td>2327</td>
+    <td></td>
+    <td>0</td>
+    <td>2327</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFLIA</td>
+    <td>780</td>
+    <td></td>
+    <td>0</td>
+    <td>780</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFLRA</td>
+    <td>3058</td>
+    <td></td>
+    <td>0</td>
+    <td>3058</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFNIA</td>
+    <td>1</td>
+    <td></td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFLRA</td>
+    <td>1870</td>
+    <td></td>
+    <td>0</td>
+    <td>1870</td>
+  </tr>
+  <tr class="right total">
+    <td class="left"><b>Total</b></td>
+    <td><b>9257</b></td>
+    <td><b>5</b></td>
+    <td><b>905</b></td>
+    <td><b>10167</b></td>
+  </tr>
+</table>
+
+<p>
+  <span id="fn3">
+    3. For the application track, a benchmark is ineligible if its
+    <u>first</u> <tt>check-sat</tt> command has unknown status.
+    Otherwise, (some non-empty prefix of) the benchmark is eligible.
+  </span><br/>
+  <span id="fn4">
+    4. As there are no eligible benchmarks in SMT-LIB, ABVFP, BVFP,
+    LRA, QF_ABVFP and QF_UF are not actually application track
+    divisions in SMT-COMP 2018.
+  </span><br/>
+  <span id="fn5">
+    5. The five benchmarks
+    in <tt>incremental/LRA/20160930-Kopczynski-LOIS/</tt> were
+    excluded because they did not contain <tt>:status</tt>
+    information.
+  </span>
+</p>
+
+<h3>Unsat-Core Track</h3>
+
+<p>
+  All <u>unsatisfiable</u> main track benchmarks are eligible for the
+  unsat-core track (with minor modifications, e.g., named assertions).
+  In total, there are 44 unsat-core track divisions.
+</p>
+
+<table>
+  <tr class="center">
+    <th>Logic</th>
+    <th>Eligible Benchmarks</th>
+    <th>All main track benchmarks</th>
+  </tr>
+  <tr class="right">
+    <td class="left">ABVFP<sup><a href="#fn6">6</a></sup></td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr class="right">
+    <td class="left">ALIA</td>
+    <td>41</td>
+    <td>42</td>
+  </tr>
+  <tr class="right">
+    <td class="left">AUFBVDTLIA</td>
+    <td>25</td>
+    <td>1709</td>
+  </tr>
+  <tr class="right">
+    <td class="left">AUFDTLIA<sup><a href="#fn6">6</a></sup></td>
+    <td>0</td>
+    <td>728</td>
+  </tr>
+  <tr class="right">
+    <td class="left">AUFLIA</td>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+  <tr class="right">
+    <td class="left">AUFLIRA</td>
+    <td>19771</td>
+    <td>20011</td>
+  </tr>
+  <tr class="right">
+    <td class="left">AUFNIA<sup><a href="#fn6">6</a></sup></td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr class="right">
+    <td class="left">AUFNIRA</td>
+    <td>1053</td>
+    <td>1480</td>
+  </tr>
+  <tr class="right">
+    <td class="left">BV</td>
+    <td>4937</td>
+    <td>5751</td>
+  </tr>
+  <tr class="right">
+    <td class="left">BVFP<sup><a href="#fn6">6</a></sup></td>
+    <td>0</td>
+    <td>24</td>
+  </tr>
+  <tr class="right">
+    <td class="left">FP<sup><a href="#fn6">6</a></sup></td>
+    <td>0</td>
+    <td>61</td>
+  </tr>
+  <tr class="right">
+    <td class="left">LIA</td>
+    <td>233</td>
+    <td>388</td>
+  </tr>
+  <tr class="right">
+    <td class="left">LRA</td>
+    <td>1539</td>
+    <td>2419</td>
+  </tr>
+  <tr class="right">
+    <td class="left">NIA</td>
+    <td>4</td>
+    <td>14</td>
+  </tr>
+  <tr class="right">
+    <td class="left">NRA</td>
+    <td>3801</td>
+    <td>3813</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ABV</td>
+    <td>4677</td>
+    <td>15066</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ABVFP</td>
+    <td>3934</td>
+    <td>18129</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ALIA</td>
+    <td>80</td>
+    <td>139</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_ANIA</td>
+    <td>8</td>
+    <td>8</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_AUFBV</td>
+    <td>25</td>
+    <td>31</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_AUFLIA</td>
+    <td>516</td>
+    <td>1009</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_AUFNIA</td>
+    <td>12</td>
+    <td>17</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_AX</td>
+    <td>279</td>
+    <td>551</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_BV</td>
+    <td>25700</td>
+    <td>40102</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_BVFP</td>
+    <td>3174</td>
+    <td>17215</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_DT</td>
+    <td>4422</td>
+    <td>8000</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_FP</td>
+    <td>20026</td>
+    <td>40300</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_IDL</td>
+    <td>816</td>
+    <td>2193</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_LIA</td>
+    <td>3019</td>
+    <td>6947</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_LIRA</td>
+    <td>5</td>
+    <td>7</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_LRA</td>
+    <td>683</td>
+    <td>1649</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_NIA</td>
+    <td>4842</td>
+    <td>23876</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_NIRA</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_NRA</td>
+    <td>5357</td>
+    <td>11489</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_RDL</td>
+    <td>113</td>
+    <td>255</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_SLIA<sup><a href="#fn6">6</a></sup></td>
+    <td>0</td>
+    <td>72705</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UF</td>
+    <td>4330</td>
+    <td>7423</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFBV</td>
+    <td>575</td>
+    <td>1224</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFIDL</td>
+    <td>322</td>
+    <td>428</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFLIA</td>
+    <td>183</td>
+    <td>583</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFLRA</td>
+    <td>511</td>
+    <td>1284</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFNIA</td>
+    <td>7</td>
+    <td>7</td>
+  </tr>
+  <tr class="right">
+    <td class="left">QF_UFNRA</td>
+    <td>11</td>
+    <td>36</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UF</td>
+    <td>3442</td>
+    <td>7562</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFBV</td>
+    <td>97</td>
+    <td>200</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFDT</td>
+    <td>1863</td>
+    <td>4527</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFDTLIA<sup><a href="#fn6">6</a></sup></td>
+    <td>0</td>
+    <td>303</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFIDL</td>
+    <td>57</td>
+    <td>68</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFLIA</td>
+    <td>7743</td>
+    <td>10137</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFLRA</td>
+    <td>10</td>
+    <td>15</td>
+  </tr>
+  <tr class="right">
+    <td class="left">UFNIA</td>
+    <td>2457</td>
+    <td>3308</td>
+  </tr>
+  <tr class="right total">
+    <td class="left"><b>Total</b></td>
+    <td><b>130705</b></td>
+    <td><b>333241</b></td>
+  </tr>
+</table>
+
+<p>
+  <span id="fn6">
+    6. As there are no eligible benchmarks in SMT-LIB, ABVFP,
+    AUFDTLIA, AUFNIA, BVFP, FP, QF_SLIA and UFDTLIA are not actually
+    unsat-core track divisions in SMT-COMP 2018.
+  </span>
+</p>
+

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Auflira Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Auflira Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2019/results/auflira-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2019/results/auflira-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Auflira Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Auflira Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2019/results/auflira-single-query"},"url":"https://smt-comp.github.io/2019/results/auflira-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #c30000; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2019/">SMT-COMP 2019</a>
+    </h3>
+    <a href="/2019/rules19.pdf"><b>Rules</b></a><br/><a href="/2019/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2019/tools.html"><b>Tools</b></a><br/><a href="/2019/specs.html"><b>Specs</b></a><br/><a href="/2019/participants.html"><b>Participants</b></a><br/><a href="/2019/results.html"><b>Results</b></a><br/><a href="/2019/SMT-COMP-2019-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+<h2>AUFLIRA (Single Query Track)</h2>
+
+<p>
+    Competition results for the AUFLIRA
+    
+      division
+    
+in the Single Query Track.
+</p>
+
+<p>
+Page generated on 2019-07-23 17:56:09 +0000
+</p>
+
+<p>
+<b>Benchmarks</b>: 1683
+</br>
+<b>Time Limit:</b> 2400 seconds
+</br>
+<b> Memory Limit:</b> 60 GB
+</p><h3>Winners</h3>
+<table>
+    <thead>
+        <tr><th class="center">Sequential Performance</th><th class="center">Parallel Performance</th><th class="center">SAT Performance (parallel)</th><th class="center">UNSAT Performance (parallel)</th><th class="center">24s Performance (parallel)</th></tr>
+    </thead>
+    <tr><td class="center">Par4</td><td class="center">Par4</td><td class="center">Par4</td>
+     
+     
+        <td class="center">Vampire</td>
+     
+     
+        <td class="center">Par4</td>
+     
+    </tr>
+</table>
+
+<p><p>
+
+<!-- SEQUENTIAL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Sequential Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">1601</td>
+    <td class="right">196956.463</td>
+    <td class="right">196929.576</td><td class="right">1601</td><td class="right">54</td><td class="right">1547</td><td class="right">82</td><td class="right"></td><td class="right">72</td>
+    <td class="right">10</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1600</td>
+    <td class="right">114014.906</td>
+    <td class="right">114393.634</td><td class="right">1600</td><td class="right">54</td><td class="right">1546</td><td class="right">83</td><td class="right"></td><td class="right">27</td>
+    <td class="right">7</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/2018-z3">2018-Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1600</td>
+    <td class="right">151356.061</td>
+    <td class="right">151704.424</td><td class="right">1600</td><td class="right">54</td><td class="right">1546</td><td class="right">83</td><td class="right"></td><td class="right">47</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">1560</td>
+    <td class="right">299439.485</td>
+    <td class="right">302020.23</td><td class="right">1560</td><td class="right">0</td><td class="right">1560</td><td class="right">123</td><td class="right"></td><td class="right">121</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1560</td>
+    <td class="right">328984.747</td>
+    <td class="right">303980.273</td><td class="right">1560</td><td class="right">0</td><td class="right">1560</td><td class="right">123</td><td class="right"></td><td class="right">123</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+  
+      <a href="/2019/participants/cvc4-symbreak">CVC4-SymBreak</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1559</td>
+    <td class="right">298994.282</td>
+    <td class="right">303708.214</td><td class="right">1559</td><td class="right">0</td><td class="right">1559</td><td class="right">124</td><td class="right"></td><td class="right">122</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/alt-ergo">Alt-Ergo</a></td>
+    <td class="right">0</td>
+    <td class="right">1506</td>
+    <td class="right">439198.367</td>
+    <td class="right">428684.686</td><td class="right">1506</td><td class="right">0</td><td class="right">1506</td><td class="right">177</td><td class="right"></td><td class="right">177</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1323</td>
+    <td class="right">845872.953</td>
+    <td class="right">845669.876</td><td class="right">1323</td><td class="right">0</td><td class="right">1323</td><td class="right">360</td><td class="right"></td><td class="right">289</td>
+    <td class="right">5</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">157</td>
+    <td class="right">3640288.714</td>
+    <td class="right">3575591.031</td><td class="right">157</td><td class="right">0</td><td class="right">157</td><td class="right">1526</td><td class="right"></td><td class="right">1468</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/ultimateeliminator-yices-2-6-1">UltimateEliminator+Yices-2.6.1</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td>
+    <td class="right">60210.642</td>
+    <td class="right">59844.176</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">23</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/ultimateeliminator-mathsat-5-5-4">UltimateEliminator+MathSAT-5.5.4</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td>
+    <td class="right">60314.703</td>
+    <td class="right">57557.642</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+  
+      <a href="/2019/participants/ultimateeliminator-smtinterpol">UltimateEliminator+SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td>
+    <td class="right">60367.21</td>
+    <td class="right">57226.853</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- PARALLEL PERFORMANCE ++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>Parallel Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">1601</td><td class="right">196956.463</td><td class="right">196929.576</td><td class="right">1601</td><td class="right">54</td><td class="right">1547</td><td class="right">82</td><td class="right"></td><td class="right">72</td>
+    <td class="right">10</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1600</td><td class="right">114021.376</td><td class="right">114392.634</td><td class="right">1600</td><td class="right">54</td><td class="right">1546</td><td class="right">83</td><td class="right"></td><td class="right">27</td>
+    <td class="right">7</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-z3">2018-Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1600</td><td class="right">151370.151</td><td class="right">151702.804</td><td class="right">1600</td><td class="right">54</td><td class="right">1546</td><td class="right">83</td><td class="right"></td><td class="right">47</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1563</td><td class="right">348500.047</td><td class="right">301838.783</td><td class="right">1563</td><td class="right">0</td><td class="right">1563</td><td class="right">120</td><td class="right"></td><td class="right">120</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">1560</td><td class="right">301933.225</td><td class="right">302014.97</td><td class="right">1560</td><td class="right">0</td><td class="right">1560</td><td class="right">123</td><td class="right"></td><td class="right">121</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/cvc4-symbreak">CVC4-SymBreak</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1559</td><td class="right">303469.062</td><td class="right">303702.214</td><td class="right">1559</td><td class="right">0</td><td class="right">1559</td><td class="right">124</td><td class="right"></td><td class="right">122</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/alt-ergo">Alt-Ergo</a></td>
+    <td class="right">0</td>
+    <td class="right">1519</td><td class="right">485607.727</td><td class="right">412866.757</td><td class="right">1519</td><td class="right">0</td><td class="right">1519</td><td class="right">164</td><td class="right"></td><td class="right">161</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1323</td><td class="right">845923.253</td><td class="right">845658.766</td><td class="right">1323</td><td class="right">0</td><td class="right">1323</td><td class="right">360</td><td class="right"></td><td class="right">289</td>
+    <td class="right">5</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">157</td><td class="right">3983938.964</td><td class="right">3464247.127</td><td class="right">157</td><td class="right">0</td><td class="right">157</td><td class="right">1526</td><td class="right"></td><td class="right">1315</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-smtinterpol">UltimateEliminator+SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">60367.21</td><td class="right">57226.853</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-mathsat-5-5-4">UltimateEliminator+MathSAT-5.5.4</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">60314.703</td><td class="right">57557.642</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-yices-2-6-1">UltimateEliminator+Yices-2.6.1</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">62605.111</td><td class="right">59843.716</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">23</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- SAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>SAT Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">54</td><td class="right">2508.853</td><td class="right">2460.406</td><td class="right">54</td><td class="right">54</td><td class="right">0</td><td class="right">1629</td><td class="right">72</td>
+    <td class="right">10</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-z3">2018-Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">54</td><td class="right">2461.578</td><td class="right">2461.583</td><td class="right">54</td><td class="right">54</td><td class="right">0</td><td class="right">1629</td><td class="right">47</td>
+    <td class="right">2</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">54</td><td class="right">2463.918</td><td class="right">2461.834</td><td class="right">54</td><td class="right">54</td><td class="right">0</td><td class="right">1629</td><td class="right">27</td>
+    <td class="right">7</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-yices-2-6-1">UltimateEliminator+Yices-2.6.1</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">185.004</td><td class="right">121.574</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">23</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-smtinterpol">UltimateEliminator+SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">210.37</td><td class="right">128.334</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-mathsat-5-5-4">UltimateEliminator+MathSAT-5.5.4</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">207.372</td><td class="right">138.587</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">128411.319</td><td class="right">128401.482</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">121</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/cvc4-symbreak">CVC4-SymBreak</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">128449.249</td><td class="right">128450.649</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">122</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">129751.662</td><td class="right">129751.659</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">289</td>
+    <td class="right">5</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/alt-ergo">Alt-Ergo</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">144930.81</td><td class="right">130434.44</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">161</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">139200.09</td><td class="right">131993.91</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">120</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">132000.0</td><td class="right">132000.0</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">1315</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- UNSAT PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>UNSAT Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1563</td><td class="right">53299.957</td><td class="right">13844.873</td><td class="right">1563</td><td class="right">0</td><td class="right">1563</td><td class="right">120</td><td class="right">120</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">1560</td><td class="right">17521.906</td><td class="right">17613.488</td><td class="right">1560</td><td class="right">0</td><td class="right">1560</td><td class="right">123</td><td class="right">121</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/cvc4-symbreak">CVC4-SymBreak</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1559</td><td class="right">19019.813</td><td class="right">19251.565</td><td class="right">1559</td><td class="right">0</td><td class="right">1559</td><td class="right">124</td><td class="right">122</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">1547</td><td class="right">38447.61</td><td class="right">38469.17</td><td class="right">1547</td><td class="right">0</td><td class="right">1547</td><td class="right">136</td><td class="right">72</td>
+    <td class="right">10</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1546</td><td class="right">36477.373</td><td class="right">36477.597</td><td class="right">1546</td><td class="right">0</td><td class="right">1546</td><td class="right">137</td><td class="right">27</td>
+    <td class="right">7</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-z3">2018-Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1546</td><td class="right">38119.459</td><td class="right">38122.276</td><td class="right">1546</td><td class="right">0</td><td class="right">1546</td><td class="right">137</td><td class="right">47</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/alt-ergo">Alt-Ergo</a></td>
+    <td class="right">0</td>
+    <td class="right">1519</td><td class="right">184676.917</td><td class="right">126432.317</td><td class="right">1519</td><td class="right">0</td><td class="right">1519</td><td class="right">164</td><td class="right">161</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1323</td><td class="right">561386.111</td><td class="right">561120.787</td><td class="right">1323</td><td class="right">0</td><td class="right">1323</td><td class="right">360</td><td class="right">289</td>
+    <td class="right">5</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">157</td><td class="right">3696542.644</td><td class="right">3177978.561</td><td class="right">157</td><td class="right">0</td><td class="right">157</td><td class="right">1526</td><td class="right">1315</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-smtinterpol">UltimateEliminator+SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">59925.825</td><td class="right">56954.069</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-mathsat-5-5-4">UltimateEliminator+MathSAT-5.5.4</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">59882.92</td><td class="right">57265.647</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">22</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-yices-2-6-1">UltimateEliminator+Yices-2.6.1</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">62190.996</td><td class="right">59569.552</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right">23</td>
+    <td class="right">0</td>
+</tr>
+
+</table><!-- 24s PERFORMANCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++ --><h3>24 seconds Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th><th class="center">CPU Time Score</th><th class="center">Wall Time Score</th><th class="center">Solved</th><th class="center">Solved SAT</th><th class="center">Solved UNSAT</th><th class="center">Unsolved</th><th class="center">Abstained</th><th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a></td>
+    <td class="right">0</td>
+    <td class="right">1601</td><td class="right">2124.463</td><td class="right">2097.576</td><td class="right">1601</td><td class="right">54</td><td class="right">1547</td><td class="right">82</td><td class="right"></td><td class="right">72</td>
+    <td class="right">10</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/z3">Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1600</td><td class="right">1909.93</td><td class="right">1907.319</td><td class="right">1600</td><td class="right">54</td><td class="right">1546</td><td class="right">83</td><td class="right"></td><td class="right">65</td>
+    <td class="right">7</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/2018-z3">2018-Z3</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1600</td><td class="right">2175.508</td><td class="right">2175.609</td><td class="right">1600</td><td class="right">54</td><td class="right">1546</td><td class="right">83</td><td class="right"></td><td class="right">81</td>
+    <td class="right">2</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a></td>
+    <td class="right">0</td>
+    <td class="right">1516</td><td class="right">9638.991</td><td class="right">5659.215</td><td class="right">1516</td><td class="right">0</td><td class="right">1516</td><td class="right">167</td><td class="right"></td><td class="right">167</td>
+    <td class="right">0</td>
+</tr>
+
+<tr class = "non-competing" >
+    <td>
+      
+      <a href="/2019/participants/cvc4-symbreak">CVC4-SymBreak</a><sup><a href="#nc">n</a></sup></td>
+    <td class="right">0</td>
+    <td class="right">1490</td><td class="right">4782.005</td><td class="right">4781.607</td><td class="right">1490</td><td class="right">0</td><td class="right">1490</td><td class="right">193</td><td class="right"></td><td class="right">193</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a></td>
+    <td class="right">0</td>
+    <td class="right">1489</td><td class="right">4790.392</td><td class="right">4788.378</td><td class="right">1489</td><td class="right">0</td><td class="right">1489</td><td class="right">194</td><td class="right"></td><td class="right">194</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/alt-ergo">Alt-Ergo</a></td>
+    <td class="right">0</td>
+    <td class="right">1483</td><td class="right">5536.658</td><td class="right">5058.654</td><td class="right">1483</td><td class="right">0</td><td class="right">1483</td><td class="right">200</td><td class="right"></td><td class="right">200</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a></td>
+    <td class="right">0</td>
+    <td class="right">1301</td><td class="right">13585.596</td><td class="right">13548.749</td><td class="right">1301</td><td class="right">0</td><td class="right">1301</td><td class="right">382</td><td class="right"></td><td class="right">377</td>
+    <td class="right">5</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">138</td><td class="right">37575.401</td><td class="right">37406.221</td><td class="right">138</td><td class="right">0</td><td class="right">138</td><td class="right">1545</td><td class="right"></td><td class="right">1545</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-smtinterpol">UltimateEliminator+SMTInterpol</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">6498.559</td><td class="right">4318.984</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">27</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-yices-2-6-1">UltimateEliminator+Yices-2.6.1</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">6329.926</td><td class="right">4536.488</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">28</td>
+    <td class="right">0</td>
+</tr>
+
+<tr >
+    <td>
+      
+      <a href="/2019/participants/ultimateeliminator-mathsat-5-5-4">UltimateEliminator+MathSAT-5.5.4</a></td>
+    <td class="right">0</td>
+    <td class="right">0</td><td class="right">6464.746</td><td class="right">4648.706</td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">1683</td><td class="right"></td><td class="right">27</td>
+    <td class="right">0</td>
+</tr>
+
+</table><p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/><span id="nc">
+    Abstained: Total of benchmarks in logics in this division that solver chose to abstain from. For SAT/UNSAT scores, this column also includes benchmarks not known to be SAT/UNSAT.
+    </span><br/></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

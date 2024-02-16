@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2020/benchmarks.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2020/benchmarks.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2020/benchmarks.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #3361FF; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2020/">SMT-COMP 2020</a>
+    </h3>
+    <a href="/2020/rules20.pdf"><b>Rules</b></a><br/><a href="/2020/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2020/tools.html"><b>Tools</b></a><br/><a href="/2020/specs.html"><b>Specs</b></a><br/><a href="/2020/participants.html"><b>Participants</b></a><br/><a href="/2020/results.html"><b>Results</b></a><br/><a href="/2020/SMT-COMP-2020-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h2>Benchmarks</h2>
+
+<p>SMT-COMP 2020 will use a large subset of the benchmarks available within the 2020-04-25 release of SMT-LIB, as described in the competition rules.</p>
+
+<p>
+The SMT-LIB benchmarks are available in space
+<a href="https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=399901">root/SMT/SMT-LIB benchmarks/2020-04-25</a>
+on <a href="https://www.starexec.org">StarExec</a>.
+</p><h3>Single Query Track</h3><p>
+In total there are
+70 divisions in the Single Query Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_single_query_2020.tar.xz">list of selected benchmarks</a>.
+Some benchmarks were excluded from scoring after running the competition,
+because they were not well-formed.  Here is the
+<a href="selected_benchmarks/benchmark_excluded_nonincremental_2020.tar.xz">list of excluded benchmarks</a>.
+Note that not all of them were selected in the first place.
+</p>
+
+<table>
+<tr>
+<th>Division</th>
+<th>Number of Included Benchmarks</th>
+</tr><tr >
+  <td><a href="/2020/divisions/abv">ABV</a></td>
+<td>169</td>
+</tr><tr >
+  <td><a href="/2020/divisions/abvfp">ABVFP</a></td>
+<td>30</td>
+</tr><tr >
+  <td><a href="/2020/divisions/abvfplra">ABVFPLRA</a></td>
+<td>75</td>
+</tr><tr >
+  <td><a href="/2020/divisions/alia">ALIA</a></td>
+<td>19</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufbvdtlia">AUFBVDTLIA</a></td>
+<td>683</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/aufbvdtnia">AUFBVDTNIA</a><sup><a href="#nc">n</a></sup></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufdtlia">AUFDTLIA</a></td>
+<td>147</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufdtlira">AUFDTLIRA</a></td>
+<td>4878</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufdtnira">AUFDTNIRA</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/auffpdtlira">AUFFPDTLIRA</a></td>
+<td>154</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/auffpdtnira">AUFFPDTNIRA</a><sup><a href="#nc">n</a></sup></td>
+<td>13</td>
+</tr><tr >
+  <td><a href="/2020/divisions/auflia">AUFLIA</a></td>
+<td>1310</td>
+</tr><tr >
+  <td><a href="/2020/divisions/auflira">AUFLIRA</a></td>
+<td>1346</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufnia">AUFNIA</a></td>
+<td>3</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufnira">AUFNIRA</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/bv">BV</a></td>
+<td>696</td>
+</tr><tr >
+  <td><a href="/2020/divisions/bvfp">BVFP</a></td>
+<td>224</td>
+</tr><tr >
+  <td><a href="/2020/divisions/bvfplra">BVFPLRA</a></td>
+<td>185</td>
+</tr><tr >
+  <td><a href="/2020/divisions/fp">FP</a></td>
+<td>993</td>
+</tr><tr >
+  <td><a href="/2020/divisions/fplra">FPLRA</a></td>
+<td>27</td>
+</tr><tr >
+  <td><a href="/2020/divisions/lia">LIA</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/lra">LRA</a></td>
+<td>802</td>
+</tr><tr >
+  <td><a href="/2020/divisions/nia">NIA</a></td>
+<td>17</td>
+</tr><tr >
+  <td><a href="/2020/divisions/nra">NRA</a></td>
+<td>93</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-abv">QF_ABV</a></td>
+<td>3385</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-abvfp">QF_ABVFP</a></td>
+<td>500</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-abvfplra">QF_ABVFPLRA</a></td>
+<td>74</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-alia">QF_ALIA</a></td>
+<td>116</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ania">QF_ANIA</a></td>
+<td>94</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-aufbv">QF_AUFBV</a></td>
+<td>34</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-auflia">QF_AUFLIA</a></td>
+<td>467</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-aufnia">QF_AUFNIA</a></td>
+<td>9</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ax">QF_AX</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bv">QF_BV</a></td>
+<td>6861</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bvfp">QF_BVFP</a></td>
+<td>394</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bvfplra">QF_BVFPLRA</a></td>
+<td>168</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-dt">QF_DT</a></td>
+<td>4</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-fp">QF_FP</a></td>
+<td>270</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-fplra">QF_FPLRA</a></td>
+<td>57</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-idl">QF_IDL</a></td>
+<td>834</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lia">QF_LIA</a></td>
+<td>2508</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lira">QF_LIRA</a></td>
+<td>7</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lra">QF_LRA</a></td>
+<td>429</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-nia">QF_NIA</a></td>
+<td>9195</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-nira">QF_NIRA</a></td>
+<td>2</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-nra">QF_NRA</a></td>
+<td>2230</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-rdl">QF_RDL</a></td>
+<td>247</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-s">QF_S</a></td>
+<td>927</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-slia">QF_SLIA</a></td>
+<td>27033</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uf">QF_UF</a></td>
+<td>2800</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufbv">QF_UFBV</a></td>
+<td>217</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uffp">QF_UFFP</a></td>
+<td>2</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufidl">QF_UFIDL</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uflia">QF_UFLIA</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uflra">QF_UFLRA</a></td>
+<td>432</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufnia">QF_UFNIA</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufnra">QF_UFNRA</a></td>
+<td>27</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uf">UF</a></td>
+<td>2291</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufbv">UFBV</a></td>
+<td>72</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdt">UFDT</a></td>
+<td>1223</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdtlia">UFDTLIA</a></td>
+<td>277</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdtlira">UFDTLIRA</a></td>
+<td>4296</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdtnia">UFDTNIA</a></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdtnira">UFDTNIRA</a></td>
+<td>736</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uffpdtlira">UFFPDTLIRA</a></td>
+<td>373</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uffpdtnira">UFFPDTNIRA</a></td>
+<td>21</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufidl">UFIDL</a></td>
+<td>20</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uflia">UFLIA</a></td>
+<td>2278</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uflra">UFLRA</a></td>
+<td>7</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufnia">UFNIA</a></td>
+<td>5041</td>
+</tr><tr class="total">
+<td>
+<b>Total</b>
+</td>
+<td>
+<b>89924</b>
+</td>
+</tr>
+</table><h3>Incremental Track</h3><p>
+In total there are
+32 divisions in the Incremental Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_incremental_2020.tar.xz">list of selected benchmarks</a>.
+Some benchmarks were excluded from scoring after running the competition,
+because they were not well-formed.  Here is the
+<a href="selected_benchmarks/benchmark_excluded_incremental_2020.tar.xz">list of excluded benchmarks</a>.
+Note that not all of them were selected in the first place.
+</p>
+
+<table>
+<tr>
+<th>Division</th>
+<th>Number of Included Benchmarks</th>
+</tr><tr >
+  <td><a href="/2020/divisions/alia">ALIA</a></td>
+<td>24</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ania">ANIA</a></td>
+<td>3</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufnira">AUFNIRA</a></td>
+<td>165</td>
+</tr><tr >
+  <td><a href="/2020/divisions/bv">BV</a></td>
+<td>18</td>
+</tr><tr >
+  <td><a href="/2020/divisions/bvfp">BVFP</a></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/lia">LIA</a></td>
+<td>6</td>
+</tr><tr >
+  <td><a href="/2020/divisions/lra">LRA</a></td>
+<td>5</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-abv">QF_ABV</a></td>
+<td>508</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-abvfp">QF_ABVFP</a></td>
+<td>62</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-alia">QF_ALIA</a></td>
+<td>44</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-ania">QF_ANIA</a><sup><a href="#nc">n</a></sup></td>
+<td>5</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-aufbv">QF_AUFBV</a></td>
+<td>31</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-aufbvlia">QF_AUFBVLIA</a><sup><a href="#nc">n</a></sup></td>
+<td>300</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-aufbvnia">QF_AUFBVNIA</a><sup><a href="#nc">n</a></sup></td>
+<td>44</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-auflia">QF_AUFLIA</a></td>
+<td>72</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bv">QF_BV</a></td>
+<td>1035</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bvfp">QF_BVFP</a></td>
+<td>119</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-fp">QF_FP</a></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lia">QF_LIA</a></td>
+<td>69</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lra">QF_LRA</a></td>
+<td>10</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-nia">QF_NIA</a></td>
+<td>10</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uf">QF_UF</a></td>
+<td>306</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufbv">QF_UFBV</a></td>
+<td>932</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-ufbvlia">QF_UFBVLIA</a><sup><a href="#nc">n</a></sup></td>
+<td>179</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uffp">QF_UFFP</a></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uflia">QF_UFLIA</a></td>
+<td>309</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uflra">QF_UFLRA</a></td>
+<td>1223</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufnia">QF_UFNIA</a></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uf">UF</a></td>
+<td>2031</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uflra">UFLRA</a></td>
+<td>748</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufnia">UFNIA</a></td>
+<td>2029</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufnra">UFNRA</a></td>
+<td>5</td>
+</tr><tr class="total">
+<td>
+<b>Total</b>
+</td>
+<td>
+<b>10296</b>
+</td>
+</tr>
+</table><h3>Unsat Core Track</h3><p>
+In total there are
+49 divisions in the Unsat Core Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_unsat_core_2020.tar.xz">list of selected benchmarks</a>.
+Some benchmarks were excluded from scoring after running the competition,
+because they were not well-formed.  Here is the
+<a href="selected_benchmarks/benchmark_excluded_nonincremental_2020.tar.xz">list of excluded benchmarks</a>.
+Note that not all of them were selected in the first place.
+</p>
+
+<table>
+<tr>
+<th>Division</th>
+<th>Number of Included Benchmarks</th>
+</tr><tr >
+  <td><a href="/2020/divisions/abv">ABV</a></td>
+<td>2</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufbvdtlia">AUFBVDTLIA</a></td>
+<td>20</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufdtlira">AUFDTLIRA</a></td>
+<td>4330</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufdtnira">AUFDTNIRA</a></td>
+<td>50</td>
+</tr><tr >
+  <td><a href="/2020/divisions/auffpdtlira">AUFFPDTLIRA</a></td>
+<td>132</td>
+</tr><tr >
+  <td><a href="/2020/divisions/auflia">AUFLIA</a></td>
+<td>996</td>
+</tr><tr >
+  <td><a href="/2020/divisions/auflira">AUFLIRA</a></td>
+<td>7908</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufnia">AUFNIA</a></td>
+<td>3</td>
+</tr><tr >
+  <td><a href="/2020/divisions/aufnira">AUFNIRA</a></td>
+<td>421</td>
+</tr><tr >
+  <td><a href="/2020/divisions/bv">BV</a></td>
+<td>255</td>
+</tr><tr >
+  <td><a href="/2020/divisions/bvfplra">BVFPLRA</a></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/lia">LIA</a></td>
+<td>235</td>
+</tr><tr >
+  <td><a href="/2020/divisions/nia">NIA</a></td>
+<td>2</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-abv">QF_ABV</a></td>
+<td>1492</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-abvfp">QF_ABVFP</a></td>
+<td>1572</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-alia">QF_ALIA</a></td>
+<td>30</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-ania">QF_ANIA</a><sup><a href="#nc">n</a></sup></td>
+<td>8</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-aufbv">QF_AUFBV</a></td>
+<td>34</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-auflia">QF_AUFLIA</a></td>
+<td>300</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-aufnia">QF_AUFNIA</a><sup><a href="#nc">n</a></sup></td>
+<td>12</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ax">QF_AX</a></td>
+<td>202</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bv">QF_BV</a></td>
+<td>2119</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bvfp">QF_BVFP</a></td>
+<td>1269</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-bvfplra">QF_BVFPLRA</a><sup><a href="#nc">n</a></sup></td>
+<td>46</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-fp">QF_FP</a></td>
+<td>8024</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lia">QF_LIA</a></td>
+<td>271</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lira">QF_LIRA</a></td>
+<td>5</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lra">QF_LRA</a></td>
+<td>196</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-nia">QF_NIA</a><sup><a href="#nc">n</a></sup></td>
+<td>1636</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-nira">QF_NIRA</a><sup><a href="#nc">n</a></sup></td>
+<td>2</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-nra">QF_NRA</a><sup><a href="#nc">n</a></sup></td>
+<td>243</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uf">QF_UF</a></td>
+<td>1644</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufbv">QF_UFBV</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uffp">QF_UFFP</a></td>
+<td>2</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-ufidl">QF_UFIDL</a></td>
+<td>13</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uflia">QF_UFLIA</a></td>
+<td>16</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-uflra">QF_UFLRA</a></td>
+<td>101</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-ufnia">QF_UFNIA</a><sup><a href="#nc">n</a></sup></td>
+<td>164</td>
+</tr><tr  class = "non-competing" >
+  <td><a href="/2020/divisions/qf-ufnra">QF_UFNRA</a><sup><a href="#nc">n</a></sup></td>
+<td>11</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uf">UF</a></td>
+<td>1374</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdt">UFDT</a></td>
+<td>745</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdtlira">UFDTLIRA</a></td>
+<td>3342</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufdtnira">UFDTNIRA</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uffpdtlira">UFFPDTLIRA</a></td>
+<td>300</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uffpdtnira">UFFPDTNIRA</a></td>
+<td>2</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufidl">UFIDL</a></td>
+<td>30</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uflia">UFLIA</a></td>
+<td>3093</td>
+</tr><tr >
+  <td><a href="/2020/divisions/uflra">UFLRA</a></td>
+<td>10</td>
+</tr><tr >
+  <td><a href="/2020/divisions/ufnia">UFNIA</a></td>
+<td>1276</td>
+</tr><tr class="total">
+<td>
+<b>Total</b>
+</td>
+<td>
+<b>44539</b>
+</td>
+</tr>
+</table><h3>Model Validation Track</h3><p>
+In total there are
+6 divisions in the Model Validation Track.
+</br>You can download the
+<a href="selected_benchmarks/benchmark_selection_model_validation_2020.tar.xz">list of selected benchmarks</a>.
+Some benchmarks were excluded from scoring after running the competition,
+because they were not well-formed.  Here is the
+<a href="selected_benchmarks/benchmark_excluded_nonincremental_2020.tar.xz">list of excluded benchmarks</a>.
+Note that not all of them were selected in the first place.
+</p>
+
+<table>
+<tr>
+<th>Division</th>
+<th>Number of Included Benchmarks</th>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-bv">QF_BV</a></td>
+<td>5752</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-idl">QF_IDL</a><sup><a href="#ec">e</a></sup></td>
+<td>512</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lia">QF_LIA</a><sup><a href="#ec">e</a></sup></td>
+<td>1532</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lira">QF_LIRA</a><sup><a href="#ec">e</a></sup></td>
+<td>1</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-lra">QF_LRA</a><sup><a href="#ec">e</a></sup></td>
+<td>378</td>
+</tr><tr >
+  <td><a href="/2020/divisions/qf-rdl">QF_RDL</a><sup><a href="#ec">e</a></sup></td>
+<td>109</td>
+</tr><tr class="total">
+<td>
+<b>Total</b>
+</td>
+<td>
+<b>8284</b>
+</td>
+</tr>
+</table><p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+  <span id="ec">
+    e Experimental.
+  </span><br/>
+</p>
+
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

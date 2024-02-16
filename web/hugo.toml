@@ -1,0 +1,51 @@
+baseURL = 'https://smt-comp.github.io/2024'
+languageCode = 'en-us'
+title = 'SMT-COMP 2024'
+theme = 'smtcomp'
+
+[params]
+    description =  'The International Satisfiability Modulo Theories (SMT) Competition.'
+
+[markup]
+  [markup.highlight]
+    style = 'github'
+
+[[menu.global]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 5
+[[menu.global]]
+    name = 'Introduction'
+    pageRef = 'introduction'
+    weight = 10
+[[menu.global]]
+    name = 'Benchmark Submission'
+    pageRef = 'benchmark_submission'
+    weight = 15
+[[menu.global]]
+    name = 'Publications'
+    pageRef = 'publications'
+    weight = 20
+[[menu.global]]
+    name = 'SMT-LIB'
+    URL = 'https://smtlib.cs.uiowa.edu/'
+    weight = 25
+[[menu.global]]
+    name = 'Previous Editions'
+    pageRef = 'previous'
+    weight = 30
+
+# [[menu.year]]
+#     name = 'Results'
+#     pageRef = 'results'
+#     weight = 10
+
+[[menu.year]]
+    name = 'Rules'
+    URL = '/rules.pdf'
+    weight = 10
+
+[[menu.year]]
+    name = 'Model Validation Track'
+    pageRef = 'model'
+    weight = 20

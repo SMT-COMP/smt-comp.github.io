@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Parallel and Cloud Tracks | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Parallel and Cloud Tracks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2021/parallel-and-cloud-tracks.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2021/parallel-and-cloud-tracks.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Parallel and Cloud Tracks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Parallel and Cloud Tracks","url":"https://smt-comp.github.io/2021/parallel-and-cloud-tracks.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #008050; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2021/">SMT-COMP 2021</a>
+    </h3>
+    <a href="/2021/rules.pdf"><b>Rules</b></a><br/><a href="/2021/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2021/tools.html"><b>Tools</b></a><br/><a href="/2021/specs.html"><b>Specs</b></a><br/><a href="/2021/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2021/participants.html"><b>Participants</b></a><br/><a href="/2021/results.html"><b>Results</b></a><br/><a href="/2021/SMT-COMP-2021-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h2 id="parallel-and-cloud-tracks">Parallel and Cloud Tracks</h2>
+
+<p>This year we are organising new, experimental, cloud and parallel tracks
+for SMT-COMP.  Similar tracks were organised in the SAT competition 2020
+and the competition had a positive impact on the development of parallel
+SAT solvers (see <a href="https://satcompetition.github.io/2020/">https://satcompetition.github.io/2020/</a>).</p>
+
+<h3 id="the-concept">The Concept</h3>
+
+<p>The goal in both the cloud and the parallel tracks is to measure the
+success of a solver in solving a single, hard instance.  This will be done by
+giving solvers instances one at a time, similar to the SMT-COMP single-query
+track.  The participating solvers will be scored based on the number of
+instances that a solver solves within the per-instance wall-clock time limit
+and the total run time, similar to the single-query track’s parallel score.</p>
+
+<p>For these tracks we need to choose in total 400 benchmarks from the
+single-query track logics, and we are specifically reaching out to you, the
+community and especially the competitors, for suggesting suitable instances to
+be included in the tracks.  In addition we will try to identify instances that
+are considered interesting.  All instances should come from the smt-lib
+benchmark library.</p>
+
+<p>The solver submission rules follow those of the rest of the tracks.  However,
+on this track we do accept portfolio solvers, as defined in the rules, as
+competitors.  We encourage submission of non-portfolio solvers and reserve the
+right to give special mentions to non-portfolio solvers in reporting the
+results.</p>
+
+<p>While the standard competition will be run in StarExec, the parallel and cloud
+tracks will be run on Amazon Web Services.  AWS has kindly agreed to sponsor
+the participants in the testing phase.</p>
+
+<h3 id="cloud-track">Cloud track</h3>
+
+<p>The Cloud Track evaluates the effectiveness of parallel SMT solvers to run in a
+distributed manner.  The solvers participating in this track will be executed
+with a wall-clock time limit of 20 minutes running on 100 m4.4xlarge machines
+in parallel. Each m4.4xlarge machine has 16 virtual CPUs and 64 GB memory.
+Communication between the machines is possible using MPI and SSH.</p>
+
+<p>Participants of this track are required to submit their solver via a GitHub
+repository (which can be private). The repository should contain a docker file
+that compiles the solver.  As an example, scripts for account configuration and
+instructions to run HordeSAT in the default configuration are available at
+<a href="https://github.com/aws-samples/aws-batch-comp-infrastructure-sample">https://github.com/aws-samples/aws-batch-comp-infrastructure-sample</a>.</p>
+
+<h3 id="parallel-track">Parallel track</h3>
+
+<p>The solvers participating in this track will be executed with a wall-clock time
+limit of 20 minutes, thus similar to the Single Query Track.  Each solver will
+be run on a single AWS machine of the type m4.16xlarge, which has 64 virtual
+cores and 256GB of memory. More details about m4.16xlarge nodes can be found
+<a href="https://aws.amazon.com/about-aws/whats-new/2016/09/introducing-new-m4-instance-size-m4-16xlarge-and-new-region-availability-of-m4-instances/">here</a>.</p>
+
+<p>Similar to the Cloud Track, participants of this track are required to submit
+their solver via a GitHub repository (which can be private). The repository
+should contain a docker file that compiles the solver.</p>
+
+<h3 id="solver-submission-to-parallel-and-cloud-tracks">Solver Submission to Parallel and Cloud Tracks</h3>
+
+<p>In order to participate in the Cloud or Parallel Track please send an email to
+<a href="mailto:aws-smt-comp-2021@googlegroups.com">aws-smt-comp-2021@googlegroups.com</a> containing the following:</p>
+<ol>
+  <li>name of the solver and a list of the authors</li>
+  <li>your AWS account number</li>
+  <li>the URL of the GitHub repository including the branch</li>
+  <li>the full, 40-character SHA-1 hash of the commit</li>
+</ol>
+
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

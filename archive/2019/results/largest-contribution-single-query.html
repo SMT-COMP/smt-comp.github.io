@@ -1,0 +1,3170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Largest Contribution Single Query | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Largest Contribution Single Query" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2019/results/largest-contribution-single-query" />
+<meta property="og:url" content="https://smt-comp.github.io/2019/results/largest-contribution-single-query" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-29T18:22:10+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Largest Contribution Single Query" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-29T18:22:10+00:00","datePublished":"2024-01-29T18:22:10+00:00","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Largest Contribution Single Query","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2019/results/largest-contribution-single-query"},"url":"https://smt-comp.github.io/2019/results/largest-contribution-single-query"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #c30000; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2019/">SMT-COMP 2019</a>
+    </h3>
+    <a href="/2019/rules19.pdf"><b>Rules</b></a><br/><a href="/2019/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2019/tools.html"><b>Tools</b></a><br/><a href="/2019/specs.html"><b>Specs</b></a><br/><a href="/2019/participants.html"><b>Participants</b></a><br/><a href="/2019/results.html"><b>Results</b></a><br/><a href="/2019/SMT-COMP-2019-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2>Largest Contribution Ranking - Single Query Track</h2>
+
+
+<p>
+Page generated on 2019-07-23 17:57:10 +0000
+</p>
+
+<h3>Winners</h3>
+<table>
+    <thead>
+        <tr>
+        
+            <th>Sequential Performance</th>
+        
+        
+            <th>Parallel Performance</th>
+        
+        
+            <th>SAT Performance (parallel)</th>
+        
+        
+            <th>UNSAT Performance (parallel)</th>
+        
+        
+            <th>24 seconds Performance (parallel)</th>
+        
+        </tr>
+    </thead>
+    <tr>
+        
+        <td>
+          
+            CVC4
+          
+        </td>
+        
+        
+        <td>
+          
+            CVC4
+          
+        </td>
+        
+        
+        <td>
+          
+            Par4
+          
+        </td>
+        
+        
+        <td>
+          
+            Par4
+          
+        </td>
+        
+        
+        <td>
+          
+            Vampire
+          
+        </td>
+        
+    </tr>
+</table>
+<h3>Sequential Performance</h3>
+<table id="sequential-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00427411</td>
+    <td>0.01571041</td>
+    <td>
+      <a href="/2019/results/qf-nia-single-query">QF_NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00336154</td>
+    <td>0.0053727</td>
+    <td>
+      <a href="/2019/results/uf-single-query">UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00314984</td>
+    <td>0.00521575</td>
+    <td>
+      <a href="/2019/results/ufnia-single-query">UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00197351</td>
+    <td>0.00455372</td>
+    <td>
+      <a href="/2019/results/lia-single-query">LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00193427</td>
+    <td>0.00079577</td>
+    <td>
+      <a href="/2019/results/ufdt-single-query">UFDT</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00124067</td>
+    <td>0.00757001</td>
+    <td>
+      <a href="/2019/results/lra-single-query">LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00115031</td>
+    <td>0.00080082</td>
+    <td>
+      <a href="/2019/results/ufdtlia-single-query">UFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00095988</td>
+    <td>0.0131582</td>
+    <td>
+      <a href="/2019/results/auflira-single-query">AUFLIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00056755</td>
+    <td>0.00092622</td>
+    <td>
+      <a href="/2019/results/uflia-single-query">UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00052943</td>
+    <td>0.00124149</td>
+    <td>
+      <a href="/2019/results/aufdtlia-single-query">AUFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00046463</td>
+    <td>0.0033673</td>
+    <td>
+      <a href="/2019/results/auflia-single-query">AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00042188</td>
+    <td>0.00474538</td>
+    <td>
+      <a href="/2019/results/qf-nra-single-query">QF_NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00029702</td>
+    <td>9.497e-05</td>
+    <td>
+      <a href="/2019/results/aufnira-single-query">AUFNIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/boolector">Boolector</a>
+    </td>
+    <td>0.00027639</td>
+    <td>0.02393309</td>
+    <td>
+      <a href="/2019/results/qf-bv-single-query">QF_BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00018485</td>
+    <td>0.00021945</td>
+    <td>
+      <a href="/2019/results/ufbv-single-query">UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/q3b">Q3B</a>
+    </td>
+    <td>0.00014144</td>
+    <td>0.00285693</td>
+    <td>
+      <a href="/2019/results/bv-single-query">BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/ctrl-ergo">Ctrl-Ergo</a>
+    </td>
+    <td>0.00012282</td>
+    <td>0.0060057</td>
+    <td>
+      <a href="/2019/results/qf-lia-single-query">QF_LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>9.934e-05</td>
+    <td>0.00200565</td>
+    <td>
+      <a href="/2019/results/qf-ufidl-single-query">QF_UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>8.632e-05</td>
+    <td>0.00078287</td>
+    <td>
+      <a href="/2019/results/nra-single-query">NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>7.589e-05</td>
+    <td>0.00079589</td>
+    <td>
+      <a href="/2019/results/qf-idl-single-query">QF_IDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/colibri">COLIBRI</a>
+    </td>
+    <td>7.563e-05</td>
+    <td>0.00054526</td>
+    <td>
+      <a href="/2019/results/qf-fp-single-query">QF_FP</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>4.808e-05</td>
+    <td>0.00158262</td>
+    <td>
+      <a href="/2019/results/qf-ufnia-single-query">QF_UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>4.095e-05</td>
+    <td>0.00019983</td>
+    <td>
+      <a href="/2019/results/qf-aufbv-single-query">QF_AUFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>2.846e-05</td>
+    <td>0.00010053</td>
+    <td>
+      <a href="/2019/results/nia-single-query">NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>2.53e-05</td>
+    <td>3.23e-05</td>
+    <td>
+      <a href="/2019/results/ufidl-single-query">UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/spass-satt">SPASS-SATT</a>
+    </td>
+    <td>1.544e-05</td>
+    <td>0.00191605</td>
+    <td>
+      <a href="/2019/results/qf-lra-single-query">QF_LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>1.518e-05</td>
+    <td>0.00028785</td>
+    <td>
+      <a href="/2019/results/alia-single-query">ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/boolector">Boolector</a>
+    </td>
+    <td>9.51e-06</td>
+    <td>0.00886823</td>
+    <td>
+      <a href="/2019/results/qf-abv-single-query">QF_ABV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>9.49e-06</td>
+    <td>0.00100021</td>
+    <td>
+      <a href="/2019/results/qf-uflra-single-query">QF_UFLRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smt-rat">SMT-RAT</a>
+    </td>
+    <td>9.49e-06</td>
+    <td>1.782e-05</td>
+    <td>
+      <a href="/2019/results/qf-nira-single-query">QF_NIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>8.76e-06</td>
+    <td>0.00014908</td>
+    <td>
+      <a href="/2019/results/qf-rdl-single-query">QF_RDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>7.59e-06</td>
+    <td>4.884e-05</td>
+    <td>
+      <a href="/2019/results/qf-lira-single-query">QF_LIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.0</td>
+    <td>0.01546875</td>
+    <td>
+      <a href="/2019/results/qf-uf-single-query">QF_UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00582613</td>
+    <td>
+      <a href="/2019/results/qf-auflia-single-query">QF_AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0024537</td>
+    <td>
+      <a href="/2019/results/qf-uflia-single-query">QF_UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00213777</td>
+    <td>
+      <a href="/2019/results/qf-ax-single-query">QF_AX</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0011973</td>
+    <td>
+      <a href="/2019/results/qf-alia-single-query">QF_ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>0.000571</td>
+    <td>
+      <a href="/2019/results/qf-ufbv-single-query">QF_UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00012766</td>
+    <td>
+      <a href="/2019/results/qf-ufnra-single-query">QF_UFNRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>7.93e-06</td>
+    <td>
+      <a href="/2019/results/qf-ania-single-query">QF_ANIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.0</td>
+    <td>5.56e-06</td>
+    <td>
+      <a href="/2019/results/ufdtnia-single-query">UFDTNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/mathsat-default">MathSAT-default</a>
+    </td>
+    <td>0.0</td>
+    <td>3.04e-06</td>
+    <td>
+      <a href="/2019/results/qf-aufnia-single-query">QF_AUFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/uflra-single-query">UFLRA</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>Parallel Performance</h3>
+<table id="parallel-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00400607</td>
+    <td>0.01290612</td>
+    <td>
+      <a href="/2019/results/qf-nia-single-query">QF_NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00355404</td>
+    <td>0.00443562</td>
+    <td>
+      <a href="/2019/results/uf-single-query">UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00308559</td>
+    <td>0.00567552</td>
+    <td>
+      <a href="/2019/results/ufnia-single-query">UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00195833</td>
+    <td>0.00455371</td>
+    <td>
+      <a href="/2019/results/lia-single-query">LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00182865</td>
+    <td>0.0007447</td>
+    <td>
+      <a href="/2019/results/ufdt-single-query">UFDT</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00141705</td>
+    <td>0.00838973</td>
+    <td>
+      <a href="/2019/results/lra-single-query">LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00115031</td>
+    <td>0.0007948</td>
+    <td>
+      <a href="/2019/results/ufdtlia-single-query">UFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00095988</td>
+    <td>0.0130767</td>
+    <td>
+      <a href="/2019/results/auflira-single-query">AUFLIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00073269</td>
+    <td>0.00098814</td>
+    <td>
+      <a href="/2019/results/uflia-single-query">UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00052943</td>
+    <td>0.00123847</td>
+    <td>
+      <a href="/2019/results/aufdtlia-single-query">AUFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00046303</td>
+    <td>0.00365399</td>
+    <td>
+      <a href="/2019/results/auflia-single-query">AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00042188</td>
+    <td>0.00558371</td>
+    <td>
+      <a href="/2019/results/qf-nra-single-query">QF_NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00019801</td>
+    <td>8.018e-05</td>
+    <td>
+      <a href="/2019/results/aufnira-single-query">AUFNIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00018485</td>
+    <td>0.00021957</td>
+    <td>
+      <a href="/2019/results/ufbv-single-query">UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00016269</td>
+    <td>0.00104863</td>
+    <td>
+      <a href="/2019/results/qf-idl-single-query">QF_IDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a>
+    </td>
+    <td>0.00013813</td>
+    <td>0.00610465</td>
+    <td>
+      <a href="/2019/results/qf-bv-single-query">QF_BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/ctrl-ergo">Ctrl-Ergo</a>
+    </td>
+    <td>0.00013804</td>
+    <td>0.0085191</td>
+    <td>
+      <a href="/2019/results/qf-lia-single-query">QF_LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/q3b">Q3B</a>
+    </td>
+    <td>0.000129</td>
+    <td>0.00284458</td>
+    <td>
+      <a href="/2019/results/bv-single-query">BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>9.934e-05</td>
+    <td>0.00200368</td>
+    <td>
+      <a href="/2019/results/qf-ufidl-single-query">QF_UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>8.632e-05</td>
+    <td>0.00079113</td>
+    <td>
+      <a href="/2019/results/nra-single-query">NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/colibri">COLIBRI</a>
+    </td>
+    <td>7.496e-05</td>
+    <td>0.00048183</td>
+    <td>
+      <a href="/2019/results/qf-fp-single-query">QF_FP</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>4.808e-05</td>
+    <td>0.00158258</td>
+    <td>
+      <a href="/2019/results/qf-ufnia-single-query">QF_UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>4.095e-05</td>
+    <td>0.00019986</td>
+    <td>
+      <a href="/2019/results/qf-aufbv-single-query">QF_AUFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>2.846e-05</td>
+    <td>0.0001017</td>
+    <td>
+      <a href="/2019/results/nia-single-query">NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>2.53e-05</td>
+    <td>3.922e-05</td>
+    <td>
+      <a href="/2019/results/ufidl-single-query">UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/spass-satt">SPASS-SATT</a>
+    </td>
+    <td>1.544e-05</td>
+    <td>0.0011344</td>
+    <td>
+      <a href="/2019/results/qf-lra-single-query">QF_LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>1.518e-05</td>
+    <td>0.00028799</td>
+    <td>
+      <a href="/2019/results/alia-single-query">ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>1.328e-05</td>
+    <td>0.00014913</td>
+    <td>
+      <a href="/2019/results/qf-ufnra-single-query">QF_UFNRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>9.51e-06</td>
+    <td>0.00794912</td>
+    <td>
+      <a href="/2019/results/qf-abv-single-query">QF_ABV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>9.49e-06</td>
+    <td>0.00118576</td>
+    <td>
+      <a href="/2019/results/qf-uflra-single-query">QF_UFLRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smt-rat">SMT-RAT</a>
+    </td>
+    <td>9.49e-06</td>
+    <td>1.782e-05</td>
+    <td>
+      <a href="/2019/results/qf-nira-single-query">QF_NIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>8.76e-06</td>
+    <td>0.00014749</td>
+    <td>
+      <a href="/2019/results/qf-rdl-single-query">QF_RDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>7.59e-06</td>
+    <td>5.077e-05</td>
+    <td>
+      <a href="/2019/results/qf-lira-single-query">QF_LIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00891763</td>
+    <td>
+      <a href="/2019/results/qf-uf-single-query">QF_UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00565019</td>
+    <td>
+      <a href="/2019/results/qf-auflia-single-query">QF_AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00236614</td>
+    <td>
+      <a href="/2019/results/qf-uflia-single-query">QF_UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00208404</td>
+    <td>
+      <a href="/2019/results/qf-ax-single-query">QF_AX</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00110391</td>
+    <td>
+      <a href="/2019/results/qf-alia-single-query">QF_ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00057017</td>
+    <td>
+      <a href="/2019/results/qf-ufbv-single-query">QF_UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>7.87e-06</td>
+    <td>
+      <a href="/2019/results/qf-ania-single-query">QF_ANIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.0</td>
+    <td>5.44e-06</td>
+    <td>
+      <a href="/2019/results/ufdtnia-single-query">UFDTNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/mathsat-default">MathSAT-default</a>
+    </td>
+    <td>0.0</td>
+    <td>3.04e-06</td>
+    <td>
+      <a href="/2019/results/qf-aufnia-single-query">QF_AUFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/uflra-single-query">UFLRA</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>SAT Performance</h3>
+<table id="sat-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.02874303</td>
+    <td>0.00092181</td>
+    <td>
+      <a href="/2019/results/auflira-single-query">AUFLIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>0.00972788</td>
+    <td>3.424e-05</td>
+    <td>
+      <a href="/2019/results/uflia-single-query">UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00668556</td>
+    <td>0.00243225</td>
+    <td>
+      <a href="/2019/results/uf-single-query">UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00551134</td>
+    <td>0.0003725</td>
+    <td>
+      <a href="/2019/results/ufdt-single-query">UFDT</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00414216</td>
+    <td>0.00427465</td>
+    <td>
+      <a href="/2019/results/qf-nia-single-query">QF_NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00354559</td>
+    <td>0.00198276</td>
+    <td>
+      <a href="/2019/results/lia-single-query">LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>0.00242203</td>
+    <td>0.00024995</td>
+    <td>
+      <a href="/2019/results/auflia-single-query">AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00227713</td>
+    <td>2.759e-05</td>
+    <td>
+      <a href="/2019/results/aufnira-single-query">AUFNIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00213739</td>
+    <td>0.00121619</td>
+    <td>
+      <a href="/2019/results/lra-single-query">LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00156552</td>
+    <td>0.00041883</td>
+    <td>
+      <a href="/2019/results/aufdtlia-single-query">AUFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00088808</td>
+    <td>0.00019367</td>
+    <td>
+      <a href="/2019/results/ufnia-single-query">UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00088239</td>
+    <td>9.49e-06</td>
+    <td>
+      <a href="/2019/results/nra-single-query">NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00085914</td>
+    <td>0.00074438</td>
+    <td>
+      <a href="/2019/results/qf-nra-single-query">QF_NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00040988</td>
+    <td>0.00010246</td>
+    <td>
+      <a href="/2019/results/ufbv-single-query">UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>0.00028844</td>
+    <td>1.518e-05</td>
+    <td>
+      <a href="/2019/results/alia-single-query">ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/ctrl-ergo">Ctrl-Ergo</a>
+    </td>
+    <td>0.00024414</td>
+    <td>0.00032283</td>
+    <td>
+      <a href="/2019/results/qf-lia-single-query">QF_LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/q3b">Q3B</a>
+    </td>
+    <td>0.00019686</td>
+    <td>8.737e-05</td>
+    <td>
+      <a href="/2019/results/bv-single-query">BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a>
+    </td>
+    <td>0.00019671</td>
+    <td>0.00011098</td>
+    <td>
+      <a href="/2019/results/qf-bv-single-query">QF_BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00013637</td>
+    <td>0.00014877</td>
+    <td>
+      <a href="/2019/results/qf-idl-single-query">QF_IDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00010121</td>
+    <td>2.009e-05</td>
+    <td>
+      <a href="/2019/results/ufidl-single-query">UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/colibri">COLIBRI</a>
+    </td>
+    <td>9.412e-05</td>
+    <td>0.00010418</td>
+    <td>
+      <a href="/2019/results/qf-fp-single-query">QF_FP</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>4.446e-05</td>
+    <td>8.02e-06</td>
+    <td>
+      <a href="/2019/results/qf-aufbv-single-query">QF_AUFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>3.18e-05</td>
+    <td>4.649e-05</td>
+    <td>
+      <a href="/2019/results/qf-ufnia-single-query">QF_UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>2.8e-05</td>
+    <td>3.947e-05</td>
+    <td>
+      <a href="/2019/results/qf-lra-single-query">QF_LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>2.319e-05</td>
+    <td>5.144e-05</td>
+    <td>
+      <a href="/2019/results/nia-single-query">NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>1.555e-05</td>
+    <td>5.96e-06</td>
+    <td>
+      <a href="/2019/results/qf-uflra-single-query">QF_UFLRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>1.439e-05</td>
+    <td>9.893e-05</td>
+    <td>
+      <a href="/2019/results/qf-ufnra-single-query">QF_UFNRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>2.422e-05</td>
+    <td>
+      <a href="/2019/results/qf-rdl-single-query">QF_RDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a>
+    </td>
+    <td>0.0</td>
+    <td>3.11e-06</td>
+    <td>
+      <a href="/2019/results/qf-abv-single-query">QF_ABV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>2.91e-06</td>
+    <td>
+      <a href="/2019/results/qf-ufbv-single-query">QF_UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>4.9e-07</td>
+    <td>
+      <a href="/2019/results/qf-uflia-single-query">QF_UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>4.8e-07</td>
+    <td>
+      <a href="/2019/results/qf-alia-single-query">QF_ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>1.9e-07</td>
+    <td>
+      <a href="/2019/results/qf-auflia-single-query">QF_AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>9.0e-08</td>
+    <td>
+      <a href="/2019/results/qf-uf-single-query">QF_UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>4.0e-08</td>
+    <td>
+      <a href="/2019/results/qf-ax-single-query">QF_AX</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>4.0e-08</td>
+    <td>
+      <a href="/2019/results/qf-ufidl-single-query">QF_UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/qf-lira-single-query">QF_LIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/mathsat-default">MathSAT-default</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/qf-aufnia-single-query">QF_AUFNIA</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>UNSAT Performance</h3>
+<table id="unsat-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00339904</td>
+    <td>0.00450658</td>
+    <td>
+      <a href="/2019/results/ufnia-single-query">UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00301761</td>
+    <td>0.00103598</td>
+    <td>
+      <a href="/2019/results/qf-nia-single-query">QF_NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00186316</td>
+    <td>0.00076494</td>
+    <td>
+      <a href="/2019/results/uf-single-query">UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00115031</td>
+    <td>0.0007948</td>
+    <td>
+      <a href="/2019/results/ufdtlia-single-query">UFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00095653</td>
+    <td>0.00117697</td>
+    <td>
+      <a href="/2019/results/lra-single-query">LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00073696</td>
+    <td>0.00098024</td>
+    <td>
+      <a href="/2019/results/uflia-single-query">UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00055166</td>
+    <td>0.00021944</td>
+    <td>
+      <a href="/2019/results/ufdt-single-query">UFDT</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00051805</td>
+    <td>0.00186995</td>
+    <td>
+      <a href="/2019/results/auflia-single-query">AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00039209</td>
+    <td>0.00039025</td>
+    <td>
+      <a href="/2019/results/lia-single-query">LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0003074</td>
+    <td>0.00031012</td>
+    <td>
+      <a href="/2019/results/qf-nra-single-query">QF_NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00020998</td>
+    <td>8.668e-05</td>
+    <td>
+      <a href="/2019/results/qf-idl-single-query">QF_IDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00015526</td>
+    <td>6.373e-05</td>
+    <td>
+      <a href="/2019/results/aufnira-single-query">AUFNIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.00013335</td>
+    <td>0.00039625</td>
+    <td>
+      <a href="/2019/results/qf-ufidl-single-query">QF_UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a>
+    </td>
+    <td>0.00010644</td>
+    <td>6.501e-05</td>
+    <td>
+      <a href="/2019/results/qf-bv-single-query">QF_BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00010587</td>
+    <td>9.278e-05</td>
+    <td>
+      <a href="/2019/results/qf-lia-single-query">QF_LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/q3b">Q3B</a>
+    </td>
+    <td>0.00010022</td>
+    <td>0.00022956</td>
+    <td>
+      <a href="/2019/results/bv-single-query">BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>7.757e-05</td>
+    <td>0.00070327</td>
+    <td>
+      <a href="/2019/results/nra-single-query">NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>7.298e-05</td>
+    <td>4.597e-05</td>
+    <td>
+      <a href="/2019/results/qf-ufnia-single-query">QF_UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>6.21e-05</td>
+    <td>5.657e-05</td>
+    <td>
+      <a href="/2019/results/ufbv-single-query">UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/colibri">COLIBRI</a>
+    </td>
+    <td>5.328e-05</td>
+    <td>3.889e-05</td>
+    <td>
+      <a href="/2019/results/qf-fp-single-query">QF_FP</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>5.218e-05</td>
+    <td>1.042e-05</td>
+    <td>
+      <a href="/2019/results/nia-single-query">NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>4.016e-05</td>
+    <td>0.00010024</td>
+    <td>
+      <a href="/2019/results/qf-aufbv-single-query">QF_AUFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/spass-satt">SPASS-SATT</a>
+    </td>
+    <td>3.439e-05</td>
+    <td>2.355e-05</td>
+    <td>
+      <a href="/2019/results/qf-lra-single-query">QF_LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>3.028e-05</td>
+    <td>3.26e-05</td>
+    <td>
+      <a href="/2019/results/qf-abv-single-query">QF_ABV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>1.839e-05</td>
+    <td>0.00032928</td>
+    <td>
+      <a href="/2019/results/auflira-single-query">AUFLIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>1.72e-05</td>
+    <td>1.471e-05</td>
+    <td>
+      <a href="/2019/results/qf-rdl-single-query">QF_RDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smt-rat">SMT-RAT</a>
+    </td>
+    <td>9.49e-06</td>
+    <td>1.782e-05</td>
+    <td>
+      <a href="/2019/results/qf-nira-single-query">QF_NIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>8.86e-06</td>
+    <td>2.593e-05</td>
+    <td>
+      <a href="/2019/results/qf-lira-single-query">QF_LIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>1.685e-05</td>
+    <td>
+      <a href="/2019/results/qf-ufbv-single-query">QF_UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>7.87e-06</td>
+    <td>
+      <a href="/2019/results/qf-ania-single-query">QF_ANIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.0</td>
+    <td>5.44e-06</td>
+    <td>
+      <a href="/2019/results/ufdtnia-single-query">UFDTNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>1.79e-06</td>
+    <td>
+      <a href="/2019/results/qf-alia-single-query">QF_ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>1.25e-06</td>
+    <td>
+      <a href="/2019/results/qf-auflia-single-query">QF_AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>8.4e-07</td>
+    <td>
+      <a href="/2019/results/qf-uf-single-query">QF_UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>6.5e-07</td>
+    <td>
+      <a href="/2019/results/qf-uflia-single-query">QF_UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>2.9e-07</td>
+    <td>
+      <a href="/2019/results/qf-ax-single-query">QF_AX</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/alt-ergo">Alt-Ergo</a>
+    </td>
+    <td>0.0</td>
+    <td>1.5e-07</td>
+    <td>
+      <a href="/2019/results/alia-single-query">ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>1.4e-07</td>
+    <td>
+      <a href="/2019/results/qf-uflra-single-query">QF_UFLRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>1.3e-07</td>
+    <td>
+      <a href="/2019/results/aufdtlia-single-query">AUFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.0</td>
+    <td>1.0e-08</td>
+    <td>
+      <a href="/2019/results/ufidl-single-query">UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/mathsat-na-ext">MathSAT-na-ext</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/qf-aufnia-single-query">QF_AUFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/uflra-single-query">UFLRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/mathsat-default">MathSAT-default</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/qf-ufnra-single-query">QF_UFNRA</a>
+    </td>
+</tr>
+
+</table>
+
+
+
+<h3>24s Performance</h3>
+<table id="twentyfour-lc" class="result sorted">
+<thead>
+    <tr>
+        <th>Solver</th>
+        <th>Correct Score</th>
+        <th>Time Score</th>
+        <th>Division</th>
+    </tr>
+</thead>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.01247027</td>
+    <td>0.00618675</td>
+    <td>
+      <a href="/2019/results/uf-single-query">UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00612962</td>
+    <td>0.00578198</td>
+    <td>
+      <a href="/2019/results/ufnia-single-query">UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00383819</td>
+    <td>0.00896305</td>
+    <td>
+      <a href="/2019/results/qf-nia-single-query">QF_NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00207978</td>
+    <td>0.00455374</td>
+    <td>
+      <a href="/2019/results/lia-single-query">LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00151092</td>
+    <td>0.01617561</td>
+    <td>
+      <a href="/2019/results/auflira-single-query">AUFLIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00141212</td>
+    <td>0.0053872</td>
+    <td>
+      <a href="/2019/results/lra-single-query">LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00127143</td>
+    <td>0.00167736</td>
+    <td>
+      <a href="/2019/results/uflia-single-query">UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00125658</td>
+    <td>0.00580196</td>
+    <td>
+      <a href="/2019/results/auflia-single-query">AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00083977</td>
+    <td>0.00029147</td>
+    <td>
+      <a href="/2019/results/ufdt-single-query">UFDT</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.0006779</td>
+    <td>0.01438052</td>
+    <td>
+      <a href="/2019/results/qf-bv-single-query">QF_BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00056816</td>
+    <td>0.00385004</td>
+    <td>
+      <a href="/2019/results/qf-nra-single-query">QF_NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00050395</td>
+    <td>0.00012335</td>
+    <td>
+      <a href="/2019/results/aufnira-single-query">AUFNIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.00032245</td>
+    <td>0.00111757</td>
+    <td>
+      <a href="/2019/results/qf-lra-single-query">QF_LRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.00031035</td>
+    <td>0.00075746</td>
+    <td>
+      <a href="/2019/results/aufdtlia-single-query">AUFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.0003054</td>
+    <td>0.00026397</td>
+    <td>
+      <a href="/2019/results/ufbv-single-query">UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.00030038</td>
+    <td>8.395e-05</td>
+    <td>
+      <a href="/2019/results/ufdtlia-single-query">UFDTLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.00022461</td>
+    <td>0.00188467</td>
+    <td>
+      <a href="/2019/results/qf-ufidl-single-query">QF_UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/colibri">COLIBRI</a>
+    </td>
+    <td>0.00021667</td>
+    <td>0.00056579</td>
+    <td>
+      <a href="/2019/results/qf-fp-single-query">QF_FP</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/q3b">Q3B</a>
+    </td>
+    <td>0.00021624</td>
+    <td>0.00276962</td>
+    <td>
+      <a href="/2019/results/bv-single-query">BV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.00021261</td>
+    <td>0.00080511</td>
+    <td>
+      <a href="/2019/results/qf-idl-single-query">QF_IDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.00018174</td>
+    <td>0.00050895</td>
+    <td>
+      <a href="/2019/results/qf-rdl-single-query">QF_RDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/ctrl-ergo">Ctrl-Ergo</a>
+    </td>
+    <td>0.00017358</td>
+    <td>0.00399797</td>
+    <td>
+      <a href="/2019/results/qf-lia-single-query">QF_LIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>0.0001535</td>
+    <td>0.00017235</td>
+    <td>
+      <a href="/2019/results/qf-ufnra-single-query">QF_UFNRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>8.727e-05</td>
+    <td>0.00072159</td>
+    <td>
+      <a href="/2019/results/nra-single-query">NRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>4.808e-05</td>
+    <td>0.00158258</td>
+    <td>
+      <a href="/2019/results/qf-ufnia-single-query">QF_UFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>3.479e-05</td>
+    <td>6.265e-05</td>
+    <td>
+      <a href="/2019/results/nia-single-query">NIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>2.846e-05</td>
+    <td>0.00130973</td>
+    <td>
+      <a href="/2019/results/qf-alia-single-query">QF_ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/par4">Par4</a>
+    </td>
+    <td>2.76e-05</td>
+    <td>3.037e-05</td>
+    <td>
+      <a href="/2019/results/ufidl-single-query">UFIDL</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>2.667e-05</td>
+    <td>0.00010362</td>
+    <td>
+      <a href="/2019/results/qf-aufbv-single-query">QF_AUFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/poolector">Poolector</a>
+    </td>
+    <td>1.91e-05</td>
+    <td>0.00274286</td>
+    <td>
+      <a href="/2019/results/qf-abv-single-query">QF_ABV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>1.898e-05</td>
+    <td>0.00282803</td>
+    <td>
+      <a href="/2019/results/qf-uflia-single-query">QF_UFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/smtinterpol">SMTInterpol</a>
+    </td>
+    <td>1.518e-05</td>
+    <td>0.00028799</td>
+    <td>
+      <a href="/2019/results/alia-single-query">ALIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a>
+    </td>
+    <td>1.329e-05</td>
+    <td>0.0223922</td>
+    <td>
+      <a href="/2019/results/qf-uf-single-query">QF_UF</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>9.52e-06</td>
+    <td>0.00173051</td>
+    <td>
+      <a href="/2019/results/qf-uflra-single-query">QF_UFLRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>9.49e-06</td>
+    <td>0.00613964</td>
+    <td>
+      <a href="/2019/results/qf-auflia-single-query">QF_AUFLIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/boolector">Boolector</a>
+    </td>
+    <td>8.64e-06</td>
+    <td>6.006e-05</td>
+    <td>
+      <a href="/2019/results/qf-ufbv-single-query">QF_UFBV</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>0.00208404</td>
+    <td>
+      <a href="/2019/results/qf-ax-single-query">QF_AX</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/vampire">Vampire</a>
+    </td>
+    <td>0.0</td>
+    <td>5.44e-06</td>
+    <td>
+      <a href="/2019/results/ufdtnia-single-query">UFDTNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/mathsat-default">MathSAT-default</a>
+    </td>
+    <td>0.0</td>
+    <td>3.04e-06</td>
+    <td>
+      <a href="/2019/results/qf-aufnia-single-query">QF_AUFNIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/cvc4">CVC4</a>
+    </td>
+    <td>0.0</td>
+    <td>2.2e-07</td>
+    <td>
+      <a href="/2019/results/qf-ania-single-query">QF_ANIA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/yices-2-6-2">Yices 2.6.2</a>
+    </td>
+    <td>0.0</td>
+    <td>3.0e-08</td>
+    <td>
+      <a href="/2019/results/qf-lira-single-query">QF_LIRA</a>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td>
+      
+      <a href="/2019/participants/verit">veriT</a>
+    </td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>
+      <a href="/2019/results/uflra-single-query">UFLRA</a>
+    </td>
+</tr>
+
+</table>
+
+
+<p>
+  <span id="nc">
+    n Non-competing.
+  </span><br/>
+  <span id="exp">
+    e Experimental.
+  </span><br/>
+</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

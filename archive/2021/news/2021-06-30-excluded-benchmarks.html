@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Wrongly Classified Benchmarks | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Wrongly Classified Benchmarks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="When analyzing the SMT-COMP results we found benchmarks that do not fit in their corresponding logic in the latest SMT-LIB release." />
+<meta property="og:description" content="When analyzing the SMT-COMP results we found benchmarks that do not fit in their corresponding logic in the latest SMT-LIB release." />
+<link rel="canonical" href="https://smt-comp.github.io/2021/news/2021-06-30-excluded-benchmarks" />
+<meta property="og:url" content="https://smt-comp.github.io/2021/news/2021-06-30-excluded-benchmarks" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Wrongly Classified Benchmarks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-06-30T00:00:00+00:00","datePublished":"2021-06-30T00:00:00+00:00","description":"When analyzing the SMT-COMP results we found benchmarks that do not fit in their corresponding logic in the latest SMT-LIB release.","headline":"Wrongly Classified Benchmarks","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2021/news/2021-06-30-excluded-benchmarks"},"url":"https://smt-comp.github.io/2021/news/2021-06-30-excluded-benchmarks"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #008050; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2021/">SMT-COMP 2021</a>
+    </h3>
+    <a href="/2021/rules.pdf"><b>Rules</b></a><br/><a href="/2021/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2021/tools.html"><b>Tools</b></a><br/><a href="/2021/specs.html"><b>Specs</b></a><br/><a href="/2021/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2021/participants.html"><b>Participants</b></a><br/><a href="/2021/results.html"><b>Results</b></a><br/><a href="/2021/SMT-COMP-2021-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h2>Wrongly Classified Benchmarks </h2>
+<p>30 Jun 2021
+
+<p>When analyzing the SMT-COMP results we found benchmarks that do not fit in their corresponding logic in the latest SMT-LIB release.</p>
+
+<p>There are several thousand benchmarks in linear arithmetic using div, mod, or non-linear arithmetic.  We will remove these benchmarks from the scoring, since they do not conform to their logic.  Here are the number of problematic benchmarks by logic:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AUFBVDTLIA: 7
+AUFDTLIRA: 1096
+AUFFPDTLIRA: 21
+LIA: 191
+QF_SLIA: 65
+UFDTLIRA: 2581
+UFFPDTLIRA: 10
+</code></pre></div></div>
+
+<p>Roughly half of these benchmarks were selected in the competition.</p>
+
+<p>Also there are 168 benchmarks in the logics *FP that use to_fp with a real number as argument, which are only allowed in the *FPLRA logics.  Half of them are in the incremental track.  We plan to remove these from the scoring as well.</p>
+
+<p>There are 44 benchmarks in QF_SLIA that contain quantifiers and that we plan to remove from the scoring.</p>
+
+<p>Moreover, there is a whole new family of benchmarks in NRA (20200911-Pine) that doesn’t use quantifiers, but are not classified as quantifier-free.  While this is clearly not intended, we plan to still keep these benchmarks in the scoring, since they are valid benchmarks.</p>
+
+<p>A <a href="/2021/excluded_benchmarks/SMT-LIB_excluded.tar.xz">full list of excluded benchmarks</a> can be downloaded here.</p>
+
+
+</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

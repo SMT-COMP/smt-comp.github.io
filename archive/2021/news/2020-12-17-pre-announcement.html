@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP 2021 pre-announcement | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP 2021 pre-announcement" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Dear SMT-COMP participants, dear SMT-LIB community," />
+<meta property="og:description" content="Dear SMT-COMP participants, dear SMT-LIB community," />
+<link rel="canonical" href="https://smt-comp.github.io/2021/news/2020-12-17-pre-announcement" />
+<meta property="og:url" content="https://smt-comp.github.io/2021/news/2020-12-17-pre-announcement" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP 2021 pre-announcement" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-12-17T00:00:00+00:00","datePublished":"2020-12-17T00:00:00+00:00","description":"Dear SMT-COMP participants, dear SMT-LIB community,","headline":"SMT-COMP 2021 pre-announcement","mainEntityOfPage":{"@type":"WebPage","@id":"https://smt-comp.github.io/2021/news/2020-12-17-pre-announcement"},"url":"https://smt-comp.github.io/2021/news/2020-12-17-pre-announcement"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #008050; } </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2021/">SMT-COMP 2021</a>
+    </h3>
+    <a href="/2021/rules.pdf"><b>Rules</b></a><br/><a href="/2021/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2021/tools.html"><b>Tools</b></a><br/><a href="/2021/specs.html"><b>Specs</b></a><br/><a href="/2021/parallel-and-cloud-tracks.html"><b>Parallel & Cloud Tracks</b></a><br/><a href="/2021/participants.html"><b>Participants</b></a><br/><a href="/2021/results.html"><b>Results</b></a><br/><a href="/2021/SMT-COMP-2021-slides.pdf"><b>Slides</b></a><br/><a href="/2020/rules20.pdf"><b>Rules</b></a><br/><a href="/2020/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2020/tools.html"><b>Tools</b></a><br/><a href="/2020/specs.html"><b>Specs</b></a><br/><a href="/2020/participants.html"><b>Participants</b></a><br/><a href="/2020/results.html"><b>Results</b></a><br/><a href="/2020/SMT-COMP-2020-slides.pdf"><b>Slides</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<h2>SMT-COMP 2021 pre-announcement </h2>
+<p>17 Dec 2020
+
+<p>Dear SMT-COMP participants, dear SMT-LIB community,</p>
+
+<p>We are happy to announce the plans for the upcoming SMT competition 2021.  It will be run by the same organizers as last year. We propose a few changes to run more benchmarks, fix issues with scoring, and extend the model validation track.</p>
+
+<p>In 2020 we further reduced the percentage of randomly selected benchmarks for bigger divisions to 40%.  We plan to increase it back to 50% as in 2019.</p>
+
+<p>We change the rules such that the error score is only given to unsound solver results.  Previously, models or unsat cores that could not be parsed by the postprocessors, would be treated as errors.</p>
+
+<p>We fix the way unsound results affect the unsat/sat score. Previously, a solver that always returned unsat would get a perfect unsat score because any errors were counted for the sat score.</p>
+
+<p>We plan to add new divisions to the model validation track.  We will aim for QF_UF and the combination with other supported theories (QF_UFBV, QF_UFLIA, etc.).</p>
+
+<p>The number of SMT-LIB benchmarks has grown so much that running all benchmarks is not possible any more, but we think that running half of them is okay. The timeout has the highest impact on the total run-time of the competition.  We feel the current timeout of  20 minutes is a good compromise.  Also we want to keep limiting the solver submissions: each team submitting more than one solver should only submit substantially different solvers.</p>
+
+<p>The motivation for changing the error score is to punish only solvers that cannot be trusted because they produce unsound results.  These results can easily go unnoticed and may have harmful consequences if a solver is used in safety critical applications.  However, a syntactically invalid output or a solver crash is easy to detect and does not affect the trustworthiness of correct results given by the solver.  Also there is historic precedent: the single query track always treated syntactically wrong output as unknown and not as error. By extending the model validation track, we want to encourage more model producing solvers as these give higher confidence in the soundness of the result.</p>
+
+<p>For the model validation track, we are requiring the model to be given in SMT-LIB format.  In particular, abstract model values, i.e. those for uninterpreted constants and functions, need to be given in the form <code class="language-plaintext highlighter-rouge">(as @identifier Sort)</code>.  Function definitions must not be recursive and must only contain parameter variables, model values, and theory-defined functions. The model validator will not support cardinality constraints (which are not necessary for quantifier-free formulas). If these are given they must be guarded by a comment.  Two abstract model values with different names are assumed to be not equal. Solvers should also no longer output the non-standard <code class="language-plaintext highlighter-rouge">model</code> keyword, although the pre-processor will probably still allow it for this competition. Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(; U is sort of cardinality 2
+ (define-fun a () U
+    (as @0 U))
+  (define-fun b () U
+    (as @1 U))
+  (define-fun f ((x U)) U
+    (ite (= x (as @1 U)) (as @0 U)
+      (as @1 U))))
+</code></pre></div></div>
+
+<p>We would be delighted to receive community’s feedback on the suggestions, and take this opportunity to wish a happy holiday season for everybody who celebrates.</p>
+
+<p>Best regards,</p>
+
+<p>Haniel Barbosa, Jochen Hoenicke (chair), and Antti Hyvärinen</p>
+
+
+</p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+

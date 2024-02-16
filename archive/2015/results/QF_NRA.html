@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SMT-COMP | The International Satisfiability Modulo Theories (SMT) Competition.</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="SMT-COMP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2015/results/QF_NRA.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2015/results/QF_NRA.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SMT-COMP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"SMT-COMP","url":"https://smt-comp.github.io/2015/results/QF_NRA.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #6495ED; } </style>
+    
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+  
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2015/">SMT-COMP 2015</a>
+    </h3>
+    <a href="/2015/rules15.pdf"><b>Rules</b></a><br/><a href="/2015/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2015/tools.html"><b>Tools</b></a><br/><a href="/2015/specs.html"><b>Specs</b></a><br/><a href="/2015/participants.html"><b>Participants</b></a><br/><a href="/2015/results.html"><b>Results</b></a><br/><a href="/2015/SMT-COMP-2015-slides.pdf"><b>Slides</b></a><br/><a href="https://doi.org/10.3233/SAT190123"><b>Report</b></a><br/>
+  </p>
+
+  
+</header>
+
+
+      <section>
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+
+<script>$(document).ready(function() { $("#sequential").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequential-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#parallel-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unsat-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#twentyfour-lc").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#unknown").tablesorter({sortList: [[1,1],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#sequentiali").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#paralleli").tablesorter({sortList: [[1,0],[2,1]]}); } )</script>
+
+<script>$(document).ready(function() { $("#smtexec").tablesorter({sortList: [[1,1],[2,0]]}); } )</script>
+
+<h2 id="qf_nra-main-track">QF_NRA (Main Track)</h2>
+
+<p>Competition results for the QF_NRA division as of Fri Oct 30 12:49:29 GMT</p>
+
+<p><strong>Competition benchmarks = 10184</strong> 
+<strong><br />Competition industrial benchmarks = 10104</strong></p>
+
+<h3 id="the-winners-for-this-division-are">The winners for this division are:</h3>
+<h4 id="sequential-performance">Sequential Performance</h4>
+<table>
+<tr>
+<th class="center">Sequential Performance</th>
+<th class="center">Sequential Performance (industrial)</th>
+<th class="center">Parallel Performance</th>
+<th class="center">Parallel Performance (industrial)</th>
+</tr>
+<tr class="center">
+<td>Yices2-NL</td>
+<td>Yices2-NL</td>
+<td>Yices2-NL</td>
+<td>Yices2-NL</td>
+</tr>
+</table>
+<h3 id="division-complete">Division COMPLETE</h3>
+
+<h4 id="sequential-performance-1">Sequential Performance</h4>
+<table id="sequential" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">3575</td>
+<td class="right">1220252.67</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">2694</td>
+<td class="right">1030.38</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">2694</td>
+<td class="right">1021.11</td>
+</tr>
+<tr>
+<td>SMT-RAT</td>
+<td class="right">0</td>
+<td class="right">8759</td>
+<td class="right">3451838.16</td>
+</tr>
+<tr>
+<td>Yices2-NL</td>
+<td class="right">0</td>
+<td class="right">9854</td>
+<td class="right">884237.95</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">10000</td>
+<td class="right">458920.89</td>
+</tr>
+<tr>
+<td>raSAT</td>
+<td class="right">0</td>
+<td class="right">7952</td>
+<td class="right">4969778.73</td>
+</tr>
+</table>
+<h4 id="sequential-performance-industrial">Sequential Performance (industrial)</h4>
+<table id="sequentiali" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">3572</td>
+<td class="right">1220206.65</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">2693</td>
+<td class="right">1028.21</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">2693</td>
+<td class="right">1018.93</td>
+</tr>
+<tr>
+<td>SMT-RAT</td>
+<td class="right">0</td>
+<td class="right">8706</td>
+<td class="right">3386768.21</td>
+</tr>
+<tr>
+<td>Yices2-NL</td>
+<td class="right">0</td>
+<td class="right">9823</td>
+<td class="right">765719.51</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">9941</td>
+<td class="right">427115.80</td>
+</tr>
+<tr>
+<td>raSAT</td>
+<td class="right">0</td>
+<td class="right">7916</td>
+<td class="right">4863206.04</td>
+</tr>
+</table>
+<h4 id="parallel-performance">Parallel Performance</h4>
+<table id="parallel" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+<th class="center">WALL</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">3575</td>
+<td class="right">1221385.51</td>
+<td class="right">1221136.22</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">2694</td>
+<td class="right">1030.38</td>
+<td class="right">1031.13</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">2694</td>
+<td class="right">1021.11</td>
+<td class="right">1037.88</td>
+</tr>
+<tr>
+<td>SMT-RAT</td>
+<td class="right">0</td>
+<td class="right">8759</td>
+<td class="right">3453107.94</td>
+<td class="right">3451861.02</td>
+</tr>
+<tr>
+<td>Yices2-NL</td>
+<td class="right">0</td>
+<td class="right">9854</td>
+<td class="right">884526.29</td>
+<td class="right">884251.07</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">10000</td>
+<td class="right">459072.40</td>
+<td class="right">458899.11</td>
+</tr>
+<tr>
+<td>raSAT</td>
+<td class="right">0</td>
+<td class="right">7952</td>
+<td class="right">4971762.30</td>
+<td class="right">4969973.68</td>
+</tr>
+
+</table>
+<h4 id="parallel-performance-industrial">Parallel Performance (industrial)</h4>
+<table id="paralleli" class="result sorted">
+<thead>
+<tr>
+<th class="center">Solver</th><th class="center">Errors</th>
+<th class="center">Corrects</th>
+<th class="center">CPU</th>
+<th class="center">WALL</th>
+</tr>
+</thead>
+<tr>
+<td>CVC3</td>
+<td class="right">0</td>
+<td class="right">3572</td>
+<td class="right">1221339.49</td>
+<td class="right">1221090.07</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">0</td>
+<td class="right">2693</td>
+<td class="right">1028.21</td>
+<td class="right">1028.78</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">0</td>
+<td class="right">2693</td>
+<td class="right">1018.93</td>
+<td class="right">1035.47</td>
+</tr>
+<tr>
+<td>SMT-RAT</td>
+<td class="right">0</td>
+<td class="right">8706</td>
+<td class="right">3388016.80</td>
+<td class="right">3386790.50</td>
+</tr>
+<tr>
+<td>Yices2-NL</td>
+<td class="right">0</td>
+<td class="right">9823</td>
+<td class="right">765967.59</td>
+<td class="right">765732.33</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">0</td>
+<td class="right">9941</td>
+<td class="right">427256.36</td>
+<td class="right">427094.33</td>
+</tr>
+<tr>
+<td>raSAT</td>
+<td class="right">0</td>
+<td class="right">7916</td>
+<td class="right">4865145.96</td>
+<td class="right">4863400.55</td>
+</tr>
+
+</table>
+<h4 id="other-information">Other Information</h4>
+<table>
+<tr>
+<th class="center">Solver</th>
+<th class="center">Not Solved</th>
+<th class="center">Remaining</th>
+</tr>
+<tr>
+<td>CVC3</td>
+<td class="right">6609</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>CVC4</td>
+<td class="right">7490</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>CVC4 (exp)</td>
+<td class="right">7490</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>SMT-RAT</td>
+<td class="right">1425</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>Yices2-NL</td>
+<td class="right">330</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td><span class="non-competing-grey">z3<sup><a href="#fn">n</a></sup></span></td>
+<td class="right">184</td>
+<td class="right">0</td>
+</tr>
+<tr>
+<td>raSAT</td>
+<td class="right">2232</td>
+<td class="right">0</td>
+</tr>
+</table>
+
+<p><span id="fn"> n. Non-competitive.</span></p>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
+
