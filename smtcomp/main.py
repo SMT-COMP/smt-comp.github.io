@@ -10,6 +10,7 @@ import smtcomp.archive as archive
 import smtcomp.benchexec as benchexec
 import smtcomp.defs as defs
 import smtcomp.submission as submission
+import smtcomp.execution as execution
 from smtcomp.benchmarks import clone_group
 from smtcomp.convert_csv import convert_csv as convert_csv_file
 import smtcomp.generate_benchmarks
@@ -73,6 +74,15 @@ def download_benchmarks(dst: Path, dryrun: bool = False) -> None:
     clone_group("SMT-LIB-benchmarks", dst.joinpath("non-incremental"), dryrun)
     clone_group("SMT-LIB-benchmarks-inc", dst.joinpath("incremental"), dryrun)
 
+
+@app.command()
+def prepare_execution(dst: Path) -> None:
+    """
+    Generate or download all scripts and tools that are necessary for the execution in Benchexec
+    """
+    execution.download_trace_executor(dst)
+    execution.unpack_trace_executor(dst)
+    execution.copy_tool_module(dst)
 
 @app.command()
 def generate_benchexec(
