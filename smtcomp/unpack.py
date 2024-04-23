@@ -3,7 +3,7 @@
 
 from pathlib import Path
 from zipfile import ZipFile
-from tarfile import TarFile
+import tarfile
 from stat import S_IXUSR
 
 ZIP_UNIX_SYSTEM = 3
@@ -21,7 +21,7 @@ def zip_extract_all_with_executable_permission(file: Path, target_dir: Path) -> 
 
 
 def tar_extract_all_with_executable_permission(file: Path, target_dir: Path) -> None:
-    with TarFile(file, "r") as tf:
+    with tarfile.open(file, "r") as tf:
         tf.extractall(path=target_dir, filter="data")
 
 
