@@ -48,7 +48,7 @@ smtcomp show ../tmp/submissions/YicesQS.json
 The solver downloaded using:
 
 ```
-smtcomp download-archive ../tmp/submissions/*.json ../tmp/benchexec/cache
+smtcomp download-archive ../tmp/submissions/*.json ../tmp/benchexec/execution
 ```
 
 Trivial tests benchmarks generated with:
@@ -60,16 +60,26 @@ smtcomp generate-benchmarks ../tmp/benchexec/includes/
 The benchexec tasks generated using:
 
 ```
-smtcomp generate-benchexec ../tmp/submissions/*.json ../tmp/includes/all.xml ../tmp/benchexec/cache 
+smtcomp generate-benchexec ../tmp/submissions/*.json ../tmp/benchexec/includes/all.xml ../tmp/benchexec/execution
+```
+
+The benchexec execution environment generated using:
+
+```
+smtcomp prepare-execution ../tmp/benchexec/execution
 ```
 
 Benchexec started using:
 
 ```
-(cd ../tmp/benchexec/includes; benchexec all.xml  --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1)
+(cd ../tmp/benchexec/execution; benchexec ../includes/all.xml  --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1)
 ```
 
+Benchexec in verifier cloud started using:
 
+```
+(cd ../tmp/benchexec/execution; PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py ../includes/all.xml  --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
+```
 
 
 
