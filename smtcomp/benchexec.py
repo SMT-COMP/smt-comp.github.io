@@ -1,4 +1,5 @@
 from pathlib import Path
+from os.path import relpath
 from typing import List, cast, Dict, Optional
 
 from yattag import Doc
@@ -77,10 +78,10 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
                 tasks.extend([logic + suffix for logic in logics])
             if tasks:
                 executable_path = find_command(command, archive, cachedir)
-                executable = str(executable_path.resolve())
+                executable = str(relpath(executable_path, start=str(cachedir)))
                 if command.compa_starexec:
                     assert command.arguments == []
-                    dirname = str(executable_path.parent.resolve())
+                    dirname = str(relpath(executable_path.parent, start=str(cachedir)))
                     options = [
                         "bash",
                         "-c",
