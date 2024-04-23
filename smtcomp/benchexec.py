@@ -85,7 +85,7 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
                     options = [
                         "bash",
                         "-c",
-                        f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec {shlex.quote(executable)} "$FILE")',
+                        f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec ./{shlex.quote(executable_path.name)} "$FILE")',
                         "compa_starexec",
                     ]
                 else:
