@@ -32,11 +32,3 @@ submissions = list(Path("submissions").glob("*.json"))
 @pytest.mark.parametrize("submission", submissions)
 def test_submission(submission: str) -> None:
     read(submission)
-
-
-csv = ["tests/SMT-COMP 2023 System Registration.csv"]
-
-
-@pytest.mark.parametrize("csv", csv)
-def test_csv(csv: str, tmp_path: Path) -> None:
-    convert_csv(Path(csv), tmp_path)

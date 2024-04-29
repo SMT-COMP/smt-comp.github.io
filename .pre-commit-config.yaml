@@ -7,7 +7,9 @@ repos:
       - id: check-toml
       - id: check-yaml
       - id: end-of-file-fixer
+        exclude: web/content/solver_submission/schema.html
       - id: trailing-whitespace
+        exclude: web/content/solver_submission/schema.html
 
   #  - repo: https://github.com/astral-sh/ruff-pre-commit
   #    # Ruff version.

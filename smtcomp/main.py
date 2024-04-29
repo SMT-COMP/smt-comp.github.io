@@ -84,6 +84,7 @@ def prepare_execution(dst: Path) -> None:
     execution.unpack_trace_executor(dst)
     execution.copy_tool_module(dst)
 
+
 @app.command()
 def generate_benchexec(
     files: List[Path],

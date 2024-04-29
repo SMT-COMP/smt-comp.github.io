@@ -12,7 +12,7 @@ class Tool(BaseTool2):  # type: ignore
     Generic tool for smtcomp execution
     """
 
-    REQUIRED_PATHS = ['unpack']
+    REQUIRED_PATHS = ["unpack"]
 
     def determine_result(self, run: BaseTool2.Run) -> Any:  # type: ignore
         """Adaptation of Jochen Hoenicke process script

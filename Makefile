@@ -15,14 +15,14 @@ check: ## Run code quality tools.
 	@echo "🚀 Static type checking: Running mypy"
 	@poetry run mypy
 	@echo "🚀 Checking for obsolete dependencies: Running deptry"
-	@poetry run deptry .
+	@poetry run deptry . --extend-exclude "archive|_site"
 
 .PHONY: test
 test: ## Test the code with pytest
 	@echo "🚀 Generating submissions/Readme.md"
 	@poetry run python3 submissions/template/generate_Readme.py generate
 	@echo "🚀 Testing code: Running pytest"
-	@poetry run pytest --cov --cov-config=pyproject.toml --cov-report=xml
+	@poetry run pytest
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry

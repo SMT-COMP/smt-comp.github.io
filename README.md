@@ -33,7 +33,8 @@ To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookie
 ## Using the smtcomp tool for generating benchexec
 
 #### Generate submissions [Optional]
- The final solvers submitted during the smtcomp 2023 can be used:
+
+The final solvers submitted during the smtcomp 2023 can be used:
 
 ```
 smtcomp convert-csv tests/solvers_divisions_final.csv ../tmp/submissions
@@ -54,7 +55,7 @@ smtcomp download-archive ../tmp/submissions/*.json ../tmp/benchexec/execution
 Trivial tests benchmarks generated with:
 
 ```
-smtcomp generate-benchmarks ../tmp/benchexec/includes/ 
+smtcomp generate-benchmarks ../tmp/benchexec/includes/
 ```
 
 The benchexec tasks generated using:
@@ -80,13 +81,6 @@ Benchexec in verifier cloud started using:
 ```
 (cd ../tmp/benchexec/execution; PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py ../includes/all.xml  --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
 ```
-
-
-
-
-
-
-
 
 ---
 
