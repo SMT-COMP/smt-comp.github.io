@@ -170,3 +170,4 @@ cython_debug/
 /submission-schema.html
 schema_doc.css
 schema_doc.min.js
+*.feather

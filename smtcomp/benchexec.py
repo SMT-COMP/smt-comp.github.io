@@ -75,7 +75,7 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
                     continue
             tasks: list[str] = []
             for _, logics in divisions.items():
-                tasks.extend([logic + suffix for logic in logics])
+                tasks.extend([str(logic) + suffix for logic in logics])
             if tasks:
                 executable_path = find_command(command, archive, cachedir)
                 executable = str(relpath(executable_path, start=str(cachedir)))
