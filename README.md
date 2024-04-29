@@ -17,18 +17,85 @@ Tools used for the organization of the SMT competition
 git clone git@github.com:smtcomp/smtcomp.github.io.git
 ```
 
-Finally, install the environment and the pre-commit hooks with
+Finally, install the environment with
 
 ```bash
 make install
 ```
 
-You are now ready to start development on your project!
-The CI/CD pipeline will be triggered when you open a pull request, merge to main, or when you create a new release.
+## For starting a new SMT-COMP year
 
-To finalize the set-up for publishing to PyPi or Artifactory, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/publishing/#set-up-for-pypi).
-For activating the automatic documentation with MkDocs, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/mkdocs/#enabling-the-documentation-on-github).
-To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/codecov/).
+Edit the file `smtcomp/defs.py`, in particular `Config.current_year`, `Logic` for adding new logics and `tracks` for new divisions.
+
+Download the new benchmarks from zenodo, unpack them, unpack the .tar.zst, you should get something like:
+
+```
+$DIR/zenodo
+├── incremental
+│   ├── ABVFPLRA
+│   ├── ALIA
+│   ...
+│   ├── UFNIA
+│   └── UFNRA
+└── non-incremental
+    ├── ABV
+    ├── ABVFP
+    ├── ABVFPLRA
+    ├── ALIA
+    ├── ANIA
+    ├── AUFBV
+    ...
+    ├── UFFPDTNIRA
+    ├── UFIDL
+    ├── UFLIA
+    ├── UFLRA
+    ├── UFNIA
+    └── UFNIRA
+```
+
+Then you can run (very io intensive):
+
+```
+smtcomp $DIR/zenodo ./data/
+```
+
+The directory `./data/` is the one present in this repository
+
+## Using the smtcomp tool for selecting the benchmarks
+
+The list of benchmarks and the previous results are in json which are human
+readable, but slow to parse (1min). So locally the tool use the feather format. The
+feather files are generated with:
+
+```
+smtcomp create-cache ./data/
+```
+
+Working with the feather files with [polars](https://docs.pola.rs/) is very fast,
+so no more intermediate files are needed.
+
+However statistics can be shown, for example for the selection of single track:
+
+```
+smtcomp show-sq-selection-stats ./data/ 0
+```
+
+Which outputs:
+
+```
+          Statistics on the benchmark selection for single query
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━┓
+┃ Logic         ┃ trivial ┃ not trivial ┃ old never ran ┃  new ┃ selected ┃
+┡━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━┩
+│ ABV           │       0 │        2573 │          2402 │    0 │     2487 │
+│ ABVFP         │       0 │          60 │             0 │    0 │       60 │
+│ ABVFPLRA      │       0 │          77 │             0 │    0 │       77 │
+│ ALIA          │      23 │        1545 │          1530 │    0 │     1537 │
+│ ANIA          │       0 │          56 │             0 │   22 │       78 │
+│ AUFBV         │       0 │        1333 │           190 │    0 │      761 │
+│ AUFBVDTLIA    │     115 │        1434 │           134 │    0 │      784 │
+...
+```
 
 ## Using the smtcomp tool for generating benchexec
 

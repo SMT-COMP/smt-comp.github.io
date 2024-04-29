@@ -17,7 +17,7 @@ smtcomp = "smtcomp.main:app"
 python = ">=3.11,<4.0"
 typer = {extras = ["all"], version = "^0.9.0"}
 rich = "^13.7.0"
-pydantic = "^2.5.0"
+pydantic = "^2.7.0"
 email-validator = "^2.1.0"
 python-gitlab = "*"
 gitpython = "*"
@@ -27,7 +27,9 @@ option = "*"
 requests = "*"
 bs4 = "*"
 benchexec = "*"
-pystemd = "*"
+polars = "*"
+#pystemd is not set as dependency because it is not in the CI
+
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
@@ -36,6 +38,7 @@ deptry = "^0.12.0"
 mypy = "^1.5.1"
 pre-commit = "^3.4.0"
 tox = "^4.11.1"
+types-requests = "*"
 
 
 
