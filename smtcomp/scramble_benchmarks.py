@@ -20,6 +20,7 @@ def scramble(competition_track: str, benchmark_list: Path, dstdir: Path, scrambl
     else:
         rich.print(f"[red]Not a known track name: {track}[/red]")
         exit(1)
+
     line  = int(0)
     files = benchmark_list.open().readlines()
     dstdir.mkdir(parents=True, exist_ok=True)
