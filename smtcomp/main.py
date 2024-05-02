@@ -25,6 +25,7 @@ import smtcomp.generate_benchmarks
 import smtcomp.list_benchmarks
 import smtcomp.selection
 from smtcomp.unpack import write_cin, read_cin
+import smtcomp.scramble_benchmarks
 
 app = typer.Typer()
 
@@ -450,3 +451,15 @@ def create_cache(data: Path) -> None:
 #     benchmarks = defs.BenchmarksOld.model_validate_json(read_cin(src))
 #     benchmarks2 = defs.Benchmarks(files=list(map(conv,benchmarks.files)))
 #     write_cin(dst,benchmarks2.model_dump_json(indent=1))
+
+
+@app.command()
+def scramble_benchmarks(src: Path, dstdir: Path, scrambler: Path,
+                        seed: int, max_workers: int = 8) -> None:
+    """
+    Use the scrambler to scramble the listed benchmarks and 
+    write them to the destination directory.
+    The src file must contain one benchmark path per line.
+    """
+    
+    smtcomp.scramble_benchmarks.scramble(src,dstdir,scrambler,seed,max_workers)
