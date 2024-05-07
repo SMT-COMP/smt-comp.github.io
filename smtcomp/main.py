@@ -465,3 +465,4 @@ def scramble_benchmarks(competition_track: str, src: Path, dstdir: Path, scrambl
     """
     
     smtcomp.scramble_benchmarks.scramble(competition_track,src,dstdir,scrambler,seed,max_workers)
+
