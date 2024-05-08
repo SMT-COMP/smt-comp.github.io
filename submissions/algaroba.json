@@ -12,7 +12,7 @@
     "website": "https://github.com/uclid-org/algaroba",
     "system_description": "https://github.com/uclid-org/algaroba/files/15255360/Algaroba_at_the_2024_SMTCOMP.pdf",
     "command": ["algaroba"],
-    "solver_type": "Standalone",
+    "solver_type": "wrapped",
     "participations": [
         { "tracks": ["SingleQuery"], "logics": ["QF_DT", "QF_UFDT"], "divisions": ["QF_Datatypes"] }
     ]
