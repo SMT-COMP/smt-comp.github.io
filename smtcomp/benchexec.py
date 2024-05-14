@@ -2,7 +2,7 @@ from pathlib import Path
 from os.path import relpath
 from typing import List, cast, Dict, Optional
 
-from yattag import Doc
+from yattag import Doc, indent
 
 from smtcomp import defs
 from smtcomp.archive import find_command
@@ -44,7 +44,7 @@ def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: Lis
                         with tag("includesfile"):
                             text(includesfile)
 
-    file.write_text(doc.getvalue())
+    file.write_text(indent(doc.getvalue()))
 
 
 def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
