@@ -4,7 +4,7 @@ The creation of new submission is done through the creation of a new json file
 in this directory and the submission of a Pull Request.
 
 It could be done directly from the web-interface and starting with a template:
-[create a new submission](https://github.com/SMT-COMP/smt-comp.github.io/new/new_submission/submissions?value=$value)
+[create a new submission](https://github.com/SMT-COMP/smt-comp.github.io/new/master/submissions?value=$value)
 
 - The filename should start with the name of your solver and end with `.json`
 - The continuous integration will check the format
