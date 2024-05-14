@@ -80,15 +80,6 @@ class Tool(BaseTool2):  # type: ignore
         tasks = task.input_files
         options = options + ([] if task.options is None else task.options)
         assert len(tasks) <= 1, "only one inputfile supported"
-        assert len(options) >= 2, "options give the mode and command to run"
-        cmd = options[0]
-        options = options[1:]
-        if cmd == "direct":
-            return [*options, *tasks]
-        elif cmd == "trace":
-            if executable == fallback_name:
-                sys.exit("benchexec smtcomp tool needs 'smtlib2_trace_executor' for tracing")
-            else:
-                return [executable, *options, *tasks]
-        else:
-            sys.exit("benchexec smtcomp executor accept only mode direct or trace")
+        assert len(options) >= 1, "options give the command to run"
+
+        return [executable, *options, *tasks]

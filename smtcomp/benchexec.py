@@ -82,17 +82,30 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
                 if command.compa_starexec:
                     assert command.arguments == []
                     dirname = str(relpath(executable_path.parent, start=str(cachedir)))
-                    options = [
-                        "bash",
-                        "-c",
-                        f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec ./{shlex.quote(executable_path.name)} "$FILE")',
-                        "compa_starexec",
-                    ]
+
+                    if mode == "direct":
+                        options = [
+                            "bash",
+                            "-c",
+                            f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec ./{shlex.quote(executable_path.name)} "$FILE")',
+                            "compa_starexec",
+                        ]
+                    else:
+                        assert mode == "trace"
+                        options = [
+                            "bash",
+                            "-c",
+                            f'ROOT=$(pwd); FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec $ROOT/smtlib2_trace_executor ./{shlex.quote(executable_path.name)} "$FILE")',
+                            "compa_starexec",
+                        ]
                 else:
-                    options = [executable] + command.arguments
+                    if mode == "direct":
+                        options = [executable] + command.arguments
+                    else:
+                        options = ["./smtlib2_trace_executor", executable] + command.arguments
                 cmdtask = CmdTask(
                     name=f"{s.name},{i},{track}",
-                    options=[mode] + options,
+                    options=options,
                     includesfiles=tasks,
                 )
                 res.append(cmdtask)
