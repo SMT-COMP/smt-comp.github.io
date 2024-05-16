@@ -10,7 +10,7 @@ The format for the model output of some theories is not yet defined by the
 SMTLIB. The following document describes our proposal of such definitions.
 This format will be used by the
 model validator of the SMTLIB for the experimental model validation track of the
-SMTCOMP 2023.
+SMTCOMP 2024.
 
 ## Partial functions
 

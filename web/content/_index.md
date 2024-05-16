@@ -16,9 +16,9 @@ present the competitors and results of the competition.
 ### Key dates
 
 - **April 13** Deadline for new benchmark contributions
-- **May 11** Final versions of competition tools
-- **May 27** Deadline for first versions of solvers (for all tracks), including preliminary system descriptions
-- **June 8** Deadline for final versions of solvers, including final system descriptions
+- **May 11** Final versions of competition tools (used by the organizers to run the participating solvers)
+- **May 27** Deadline for first versions of participating solvers (for all tracks), including preliminary system descriptions
+- **June 8** Deadline for final versions of participating solvers, including final system descriptions
 - **July 22–23** SMT Workshop (presentation of results)
 
 ### Organizers

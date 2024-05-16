@@ -1,7 +1,8 @@
 from pathlib import Path
+from os.path import relpath
 from typing import List, cast, Dict, Optional
 
-from yattag import Doc
+from yattag import Doc, indent
 
 from smtcomp import defs
 from smtcomp.archive import find_command
@@ -43,7 +44,7 @@ def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: Lis
                         with tag("includesfile"):
                             text(includesfile)
 
-    file.write_text(doc.getvalue())
+    file.write_text(indent(doc.getvalue()))
 
 
 def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
@@ -74,24 +75,37 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
                     continue
             tasks: list[str] = []
             for _, logics in divisions.items():
-                tasks.extend([logic + suffix for logic in logics])
+                tasks.extend([str(logic) + suffix for logic in logics])
             if tasks:
                 executable_path = find_command(command, archive, cachedir)
-                executable = str(executable_path.resolve())
+                executable = str(relpath(executable_path, start=str(cachedir)))
                 if command.compa_starexec:
                     assert command.arguments == []
-                    dirname = str(executable_path.parent.resolve())
-                    options = [
-                        "bash",
-                        "-c",
-                        f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec {shlex.quote(executable)} "$FILE")',
-                        "compa_starexec",
-                    ]
+                    dirname = str(relpath(executable_path.parent, start=str(cachedir)))
+
+                    if mode == "direct":
+                        options = [
+                            "bash",
+                            "-c",
+                            f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec ./{shlex.quote(executable_path.name)} "$FILE")',
+                            "compa_starexec",
+                        ]
+                    else:
+                        assert mode == "trace"
+                        options = [
+                            "bash",
+                            "-c",
+                            f'ROOT=$(pwd); FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec $ROOT/smtlib2_trace_executor ./{shlex.quote(executable_path.name)} "$FILE")',
+                            "compa_starexec",
+                        ]
                 else:
-                    options = [executable] + command.arguments
+                    if mode == "direct":
+                        options = [executable] + command.arguments
+                    else:
+                        options = ["./smtlib2_trace_executor", executable] + command.arguments
                 cmdtask = CmdTask(
                     name=f"{s.name},{i},{track}",
-                    options=[mode] + options,
+                    options=options,
                     includesfiles=tasks,
                 )
                 res.append(cmdtask)

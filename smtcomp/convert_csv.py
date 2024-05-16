@@ -11,6 +11,7 @@ from option import Option, Some
 from rich.progress import track
 
 import smtcomp.defs as defs
+from smtcomp.list_benchmarks import get_smt2_file
 
 
 class CsvColumn(str, Enum):
@@ -175,3 +176,38 @@ def convert_csv(file: Path, dstdir: Path) -> None:
                 submission = convert_row(row, dstdir)
                 with open(Path.joinpath(dstdir, submission.name + ".json"), "w") as f:
                     f.write(submission.model_dump_json())
+
+
+def convert_csv_result(file: Path, track: defs.Track) -> defs.Results:
+    # Some csv benchmark name start with track_.../QF..
+    with open(file) as dcsv:
+        results = csv.DictReader(dcsv)
+        compatibility = next(results)["benchmark"].startswith("track_")
+
+    with open(file) as dcsv:
+        results = csv.DictReader(dcsv)
+        l: list[defs.Result] = []
+        for row in results:
+            if row["result"] == "starexec-unknown":
+                row["result"] = "unknown"
+            elif row["result"] == "--":
+                row["result"] = "unknown"
+            row["benchmark"] = row["benchmark"].replace("UFFPDTLIRA", "UFFPDTNIRA")
+
+            smt2file = get_smt2_file(
+                src=None, file=Path(row["benchmark"].strip()), incremental=track is defs.Track.Incremental
+            )
+
+            l.append(
+                defs.Result(
+                    track=track,
+                    file=smt2file,
+                    solver="{}_{}".format(row["solver"].strip(), row["configuration"].strip()),
+                    cpu_time=float(row["cpu time"]),
+                    wallclock_time=float(row["wallclock time"]),
+                    memory_usage=float(row["memory usage"]),
+                    result=defs.Status(row["result"]),
+                )
+            )
+
+    return defs.Results(results=l)

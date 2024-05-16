@@ -17,9 +17,10 @@ def show(s: Submission) -> None:
     tracks = s.participations.get()
     tree_part = tree.add("Participations")
     for track, divs in sorted(tracks.items()):
-        tree_track = tree_part.add(track)
+        tree_track = tree_part.add(str(track))
         for div, logics in sorted(divs.items()):
-            tree_div = tree_track.add(div)
-            for logic in sorted(logics):
+            tree_div = tree_track.add(str(div))
+            slogics = map(str, logics)
+            for logic in sorted(slogics):
                 tree_div.add(logic)
     rich.print(tree)
