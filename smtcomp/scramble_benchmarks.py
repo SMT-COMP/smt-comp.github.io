@@ -1,4 +1,5 @@
 from pathlib import Path
+import rich
 from rich.progress import track
 import subprocess
 import concurrent.futures
