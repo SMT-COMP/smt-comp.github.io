@@ -65,10 +65,8 @@ def show(
         console.print("</details>")
 
     if into_comment_file is not None:
-        if len(l) > 0:
-            into_comment_file.write_text(console.export_text())
-        else:
-            into_comment_file.write_text("")
+        into_comment_file.write_text(console.export_text())
+
 
 @app.command()
 def validate(file: str) -> None:
