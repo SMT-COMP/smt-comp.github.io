@@ -67,6 +67,18 @@ class EnumAutoInt(Enum):
     def __hash__(self) -> int:
         return self.id
 
+    def __lt__(self, a: EnumAutoInt) -> bool:
+        return self.id.__lt__(a.id)
+
+    def __le__(self, a: EnumAutoInt) -> bool:
+        return self.id.__le__(a.id)
+
+    def __gt__(self, a: EnumAutoInt) -> bool:
+        return self.id.__gt__(a.id)
+
+    def __ge__(self, a: EnumAutoInt) -> bool:
+        return self.id.__ge__(a.id)
+
 
 class NameEmail(BaseModel):
     """

@@ -31,9 +31,13 @@ jobs:
 
       - name: Show changed files
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            poetry run smtcomp show $file
-          done
+          poetry run smtcomp show --into-comment-file comment.md ${{ steps.changed-files.outputs.all_changed_files }}
+
+      - name: PR comment with file
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          filePath: comment.md
+          comment_tag: summary
 
       - name: Run checks
         run: make check
