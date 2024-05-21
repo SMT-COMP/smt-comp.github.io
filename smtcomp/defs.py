@@ -1,13 +1,83 @@
 from __future__ import annotations
 
+import functools
 import hashlib
 import re
 from enum import Enum
-from pathlib import Path
-from typing import Any
+from pathlib import Path, PurePath
+from typing import Any, Dict
 
-from pydantic import BaseModel, Field, RootModel, model_validator
+from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
+
+
+## Parameters that can change each year
+class Config:
+    current_year = 2024
+    oldest_previous_results = 2018
+    timelimit_s = 60
+    memlimit_M = 1024 * 20
+    cpuCores = 4
+    min_used_benchmarks = 300
+    ratio_of_used_benchmarks = 0.5
+
+
+class DataFiles:
+    def __init__(self, data: Path) -> None:
+        self.previous_results = [
+            (year, data.joinpath(f"results-sq-{year}.json.gz"))
+            for year in range(Config.oldest_previous_results, Config.current_year)
+        ]
+        self.benchmarks = data.joinpath(f"benchmarks-{Config.current_year}.json.gz")
+        self.cached_non_incremental_benchmarks = data.joinpath(
+            f"benchmarks-non-incremental-{Config.current_year}.feather"
+        )
+        self.cached_incremental_benchmarks = data.joinpath(f"benchmarks-incremental-{Config.current_year}.feather")
+        self.cached_previous_results = data.joinpath(f"previous-sq-results-{Config.current_year}.feather")
+
+
+class EnumAutoInt(Enum):
+    """
+    Normal enum with strings, but each enum is associated to an int
+    """
+
+    def __str__(self) -> str:
+        return str(self.value)
+
+    def __new__(cls, id: str) -> EnumAutoInt:
+        obj = object.__new__(cls)
+        obj._value_ = id
+        value = len(cls.__members__)
+        obj.id = value
+        if "__ordered__" not in cls.__dict__:
+            cls.__ordered__: list[EnumAutoInt] = []
+        cls.__ordered__.append(obj)
+        return obj
+
+    def __init__(self, id: str) -> None:
+        self.id: int = self.id  # For Mypy
+
+    def __int__(self) -> int:
+        return self.id
+
+    @classmethod
+    def of_int(cls, id: int) -> EnumAutoInt:
+        return cls.__ordered__[id]
+
+    def __hash__(self) -> int:
+        return self.id
+
+    def __lt__(self, a: EnumAutoInt) -> bool:
+        return self.id.__lt__(a.id)
+
+    def __le__(self, a: EnumAutoInt) -> bool:
+        return self.id.__le__(a.id)
+
+    def __gt__(self, a: EnumAutoInt) -> bool:
+        return self.id.__gt__(a.id)
+
+    def __ge__(self, a: EnumAutoInt) -> bool:
+        return self.id.__ge__(a.id)
 
 
 class NameEmail(BaseModel):
@@ -78,16 +148,19 @@ class Contributor(BaseModel, extra="forbid"):
         return data
 
 
-class SolverType(str, Enum):
+class SolverType(EnumAutoInt):
     wrapped = "wrapped"
     derived = "derived"
     standalone = "Standalone"
 
 
-# class RegexpTracks:
+class Status(EnumAutoInt):
+    Unsat = "unsat"
+    Sat = "sat"
+    Unknown = "unknown"
 
 
-class Track(str, Enum):
+class Track(EnumAutoInt):
     UnsatCore = "UnsatCore"
     SingleQuery = "SingleQuery"
     ProofExhibition = "ProofExhibition"
@@ -97,7 +170,7 @@ class Track(str, Enum):
     Parallel = "Parallel"
 
 
-class Division(str, Enum):
+class Division(EnumAutoInt):
     Arith = "Arith"
     Bitvec = "Bitvec"
     Equality = "Equality"
@@ -122,7 +195,7 @@ class Division(str, Enum):
     QF_Strings = "QF_Strings"
 
 
-class Logic(str, Enum):
+class Logic(EnumAutoInt):
     ABV = "ABV"
     ABVFP = "ABVFP"
     ABVFPLRA = "ABVFPLRA"
@@ -165,6 +238,7 @@ class Logic(str, Enum):
     QF_BV = "QF_BV"
     QF_BVFP = "QF_BVFP"
     QF_BVFPLRA = "QF_BVFPLRA"
+    QF_BVLRA = "QF_BVLRA"
     QF_DT = "QF_DT"
     QF_FP = "QF_FP"
     QF_FPLRA = "QF_FPLRA"
@@ -209,6 +283,7 @@ class Logic(str, Enum):
     UFLIA = "UFLIA"
     UFLRA = "UFLRA"
     UFNIA = "UFNIA"
+    UFNIRA = "UFNIRA"
     UFNRA = "UFNRA"
 
 
@@ -971,6 +1046,10 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
 }
 
 
+def logic_used_for_track(t: Track) -> set[Logic]:
+    return functools.reduce(lambda x, y: x | y, tracks[t].values())
+
+
 class Logics(RootModel):
     root: list[Logic]
 
@@ -990,7 +1069,7 @@ class Logics(RootModel):
         logics = []
         r = re.compile(data)
         for logic in Logic:
-            if r.fullmatch(logic):
+            if r.fullmatch(str(logic)):
                 logics.append(logic)
         return logics
 
@@ -1092,4 +1171,88 @@ class Submission(BaseModel, extra="forbid"):
         return hashlib.sha256(self.name.encode()).hexdigest()
 
 
-default = {"timelimit_s": 60, "memlimit_M": 1024 * 20, "cpuCores": 4}
+class Smt2File(BaseModel):
+    incremental: bool
+    logic: Logic
+    family: tuple[str, ...]
+    name: str
+
+    model_config = ConfigDict(frozen=True)
+
+    @model_validator(mode="after")
+    def check_archive(self) -> Smt2File:
+        if "/" in self.name:
+            raise ValueError("name should not contain /, directory part should go in family name")
+        for f in self.family:
+            if "/" in f:
+                raise ValueError("family part should not contain /, it should be splitted")
+        return self
+
+    def path(self) -> Path:
+        if self.incremental:
+            i = "incremental"
+        else:
+            i = "non-incremental"
+        return Path(i, str(self.logic)).joinpath(Path(*self.family)).joinpath(self.name)
+
+    def family_path(self) -> Path:
+        return Path(*self.family)
+
+    @classmethod
+    def of_tuple(cls, incremental: bool, logic: Logic, family: Path, name: str) -> Smt2File:
+        parts = PurePath(family).parts
+
+        return Smt2File(
+            incremental=incremental,
+            logic=logic,
+            family=parts,
+            name=name,
+        )
+
+    @classmethod
+    def of_path(cls, p: Path) -> Smt2File:
+        parts = PurePath(p).parts
+        match parts[0]:
+            case "incremental":
+                incremental = True
+            case "non-incremental":
+                incremental = False
+            case _:
+                raise ValueError("Smt2File path should start with incremental or non-incremental")
+
+        return Smt2File(
+            incremental=incremental,
+            logic=Logic(parts[1]),
+            family=parts[2:-1],
+            name=parts[-1],
+        )
+
+
+class InfoIncremental(BaseModel):
+    file: Smt2File
+    check_sats: int
+
+
+class InfoNonIncremental(BaseModel):
+    file: Smt2File
+    status: Status
+    asserts: int
+
+
+class Benchmarks(BaseModel):
+    incremental: list[InfoIncremental] = []
+    non_incremental: list[InfoNonIncremental] = []
+
+
+class Result(BaseModel):
+    track: Track
+    solver: str
+    file: Smt2File
+    result: Status
+    cpu_time: float
+    wallclock_time: float
+    memory_usage: float
+
+
+class Results(BaseModel):
+    results: list[Result]

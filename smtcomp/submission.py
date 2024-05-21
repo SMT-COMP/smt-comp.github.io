@@ -10,16 +10,21 @@ def read(file: str) -> Submission:
     return Submission.model_validate_json(Path(file).read_text())
 
 
-def show(s: Submission) -> None:
+def tree_summary(s: Submission) -> Tree:
     tree = Tree(f"[bold]{s.name}[/bold]")
     tree.add(f"{len(s.contributors)} authors")
     tree.add(f"website: {s.website}")
     tracks = s.participations.get()
     tree_part = tree.add("Participations")
     for track, divs in sorted(tracks.items()):
-        tree_track = tree_part.add(track)
+        tree_track = tree_part.add(str(track))
         for div, logics in sorted(divs.items()):
-            tree_div = tree_track.add(div)
-            for logic in sorted(logics):
+            tree_div = tree_track.add(str(div))
+            slogics = map(str, logics)
+            for logic in sorted(slogics):
                 tree_div.add(logic)
-    rich.print(tree)
+    return tree
+
+
+def show(s: Submission) -> None:
+    rich.print(tree_summary(s))

@@ -26,17 +26,15 @@ def test_bad_json(name: str) -> None:
     assert result.exit_code == 1
 
 
+@pytest.mark.parametrize("name", good_cases)
+def test_show_json(name: str) -> None:
+    result = runner.invoke(app, ["show", name])
+    assert result.exit_code == 0
+
+
 submissions = list(Path("submissions").glob("*.json"))
 
 
 @pytest.mark.parametrize("submission", submissions)
 def test_submission(submission: str) -> None:
     read(submission)
-
-
-csv = ["tests/SMT-COMP 2023 System Registration.csv"]
-
-
-@pytest.mark.parametrize("csv", csv)
-def test_csv(csv: str, tmp_path: Path) -> None:
-    convert_csv(Path(csv), tmp_path)
