@@ -27,9 +27,15 @@ jobs:
           files: |
             submissions/*.json
 
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+          path: "fork"
+
       - name: Show changed files
         run: |
-          poetry run smtcomp show --into-comment-file comment.md ${{ steps.changed-files.outputs.all_changed_files }}
+          poetry run smtcomp show --into-comment-file comment.md --prefix fork/ ${{ steps.changed-files.outputs.all_changed_files }}
 
       - name: PR comment with file
         uses: thollander/actions-comment-pull-request@v2
