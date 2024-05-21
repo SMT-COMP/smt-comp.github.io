@@ -26,6 +26,12 @@ def test_bad_json(name: str) -> None:
     assert result.exit_code == 1
 
 
+@pytest.mark.parametrize("name", good_cases)
+def test_show_json(name: str) -> None:
+    result = runner.invoke(app, ["show", name])
+    assert result.exit_code == 0
+
+
 submissions = list(Path("submissions").glob("*.json"))
 
 

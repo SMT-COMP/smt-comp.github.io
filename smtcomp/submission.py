@@ -10,7 +10,7 @@ def read(file: str) -> Submission:
     return Submission.model_validate_json(Path(file).read_text())
 
 
-def show(s: Submission) -> None:
+def tree_summary(s: Submission) -> Tree:
     tree = Tree(f"[bold]{s.name}[/bold]")
     tree.add(f"{len(s.contributors)} authors")
     tree.add(f"website: {s.website}")
@@ -23,4 +23,8 @@ def show(s: Submission) -> None:
             slogics = map(str, logics)
             for logic in sorted(slogics):
                 tree_div.add(logic)
-    rich.print(tree)
+    return tree
+
+
+def show(s: Submission) -> None:
+    rich.print(tree_summary(s))

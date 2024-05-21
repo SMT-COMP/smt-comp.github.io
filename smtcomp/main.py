@@ -26,27 +26,49 @@ import smtcomp.list_benchmarks
 import smtcomp.selection
 from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
+from rich.console import Console
 
 app = typer.Typer()
 
 
 @app.command()
-def show(file: str) -> None:
+def show(
+    files: list[Path] = typer.Argument(None),
+    into_comment_file: Annotated[Optional[Path], typer.Option(help="Write the summary into the given file")] = None,
+) -> None:
     """
     Show information about a solver submission
     """
-    s = None
-    try:
-        s = submission.read(file)
-    except Exception as e:
-        rich.print(f"[red]Error during file parsing of {file}[/red]")
-        print(e)
-        exit(1)
-    if not s:
-        rich.print(f"[red]Empty submission??? {file}[/red]")
-        exit(1)
-    submission.show(s)
 
+    def read_submission(file: Path) -> defs.Submission:
+        try:
+            return submission.read(str(file))
+        except Exception as e:
+            rich.print(f"[red]Error during file parsing of {file}[/red]")
+            print(e)
+            exit(1)
+
+    l = list(map(read_submission, files))
+
+    console = Console(record=into_comment_file is not None)
+    if into_comment_file is not None:
+        console.print("<details><summary>Summary of modified submissions</summary>")
+    for s in l:
+        if into_comment_file is not None:
+            console.print("")
+            console.print("```")
+        t = submission.tree_summary(s)
+        console.print(t)
+        if into_comment_file is not None:
+            console.print("```")
+    if into_comment_file is not None:
+        console.print("</details>")
+
+    if into_comment_file is not None:
+        if len(l) > 0:
+            into_comment_file.write_text(console.export_text())
+        else:
+            into_comment_file.write_text("")
 
 @app.command()
 def validate(file: str) -> None:
