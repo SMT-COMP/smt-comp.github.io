@@ -1,0 +1,38 @@
+name: Comment
+
+on:
+  pull_request_target:
+    paths:
+      - submissions/*.json
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-poetry-env
+
+      - name: Compute changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+        with:
+          files: |
+            submissions/*.json
+
+      - name: Show changed files
+        run: |
+          poetry run smtcomp show --into-comment-file comment.md ${{ steps.changed-files.outputs.all_changed_files }}
+
+      - name: PR comment with file
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          filePath: comment.md
+          comment_tag: summary
