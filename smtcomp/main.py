@@ -34,11 +34,15 @@ app = typer.Typer()
 @app.command()
 def show(
     files: list[Path] = typer.Argument(None),
+    prefix: Optional[Path] = None,
     into_comment_file: Annotated[Optional[Path], typer.Option(help="Write the summary into the given file")] = None,
 ) -> None:
     """
     Show information about a solver submission
     """
+
+    if prefix is not None:
+        files = list(map(prefix.joinpath, files))
 
     def read_submission(file: Path) -> defs.Submission:
         try:
