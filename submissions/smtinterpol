@@ -8,11 +8,11 @@
     ],
     "contacts": ["Jochen Hoenicke <jochen@certora.com>"],
     "archive": {
-        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtinterpol-smtcomp2024.tar.gz",
-        "h": { "sha256": "012345" }
+        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtinterpol-2.5-1325-g08d69897.tar.gz",
+        "h": { "sha256": "eb1fa7797ee8e95558dcef06013397582d4dc23bf54acc8f6a8f1bb6a2037d83" }
     },
     "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
-    "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtcomp2024.pdf",
+    "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2024.pdf",
     "command": ["bin/smtinterpol"],
     "solver_type": "Standalone",
     "participations": [
