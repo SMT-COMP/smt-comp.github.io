@@ -1,9 +1,9 @@
 {
     "name": "SMTInterpol",
     "contributors": [
-        "Jürgen Christ", "Daniel Dietsch", "Leonard Fichtner", 
-        "Joanna Greulich", "Elisabeth Henkel", "Matthias Heizmann", 
-        "Jochen Hoenicke", "Moritz Mohr", "Alexander Nutz", 
+        "Jürgen Christ", "Daniel Dietsch", "Leonard Fichtner",
+        "Joanna Greulich", "Elisabeth Henkel", "Matthias Heizmann",
+        "Jochen Hoenicke", "Moritz Mohr", "Alexander Nutz",
         "Markus Pomrehn", "Pascal Raiola", "Tanja Schindler"
     ],
     "contacts": ["Jochen Hoenicke <jochen@certora.com>"],
