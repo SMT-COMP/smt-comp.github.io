@@ -1,0 +1,21 @@
+{
+    "name": "Z3-Noodler",
+    "contributors": [
+        "Vojtěch Havlena",
+        "Juraj Síč",
+        "David Chocholatý",
+        "Lukáš Holík",
+        "Ondřej Lengál",
+    ],
+    "contacts": ["Lukáš Holík <holik@fit.vutbr.cz>"],
+    "archive": {
+        "url": "https://github.com/VeriFIT/z3-noodler/blob/devel/docker/z3-noodler.Dockerfile",
+    },
+    "website": "https://github.com/VeriFIT/z3-noodler",
+    "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2024.pdf",
+    "command": ["z3 smt.string_solver=noodler"],
+    "solver_type": "derived",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] },
+    ]
+}
