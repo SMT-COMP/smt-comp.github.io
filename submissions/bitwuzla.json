@@ -4,8 +4,8 @@
   "contacts": ["Mathias Preiner <preiner@cs.stanford.edu>"],
 
   "archive": {
-    "url": "https://zenodo.org/records/11269168/files/bitwuzla-submission-smtcomp-2024.zip?download=1",
-    "h": {"sha256": "95a3fa2e6edea36f0a3763f69351d5628b6935c9650d06c63c899bceaa8eebff"}
+    "url": "https://zenodo.org/records/11288326/files/bitwuzla-submission-smtcomp-2024.zip?download=1",
+    "h": {"sha256": "2396c5dbb5a377e9b399a688d711918004cfea83e1f7a6f4e7bf8eb9b369854a"}
   },
 
   "command": ["bin/bitwuzla"],
@@ -17,7 +17,7 @@
     {
       "tracks": ["SingleQuery"],
       "logics": "ˆ(QF_)?(A)?(UF)?(BV|FP|FPLRA)+$",
-      "command": ["bin/bitwuzla"]
+      "command": ["bin/bitwuzla", "--abstraction", "--abstraction-bv-size=33"]
     },
     {
       "tracks": ["Incremental"],
