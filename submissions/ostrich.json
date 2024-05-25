@@ -1,0 +1,28 @@
+{
+    "name": "OSTRICH",
+    "contributors": [
+        "Taolue Chen",
+        "Matthew Hague",
+        "Zhilei Han",
+        "Denghang Hu",
+        "Anthony W. Lin",
+        "Oliver Markgraf",
+        "Philipp Rümmer",
+        "Zhilin Wu"
+    ],
+    "contacts": [
+        "Oliver Markgraf <markgraf@cs.uni-kl.de>",
+        "Philipp Rümmer <philipp.ruemmer@it.uu.se>"
+    ],
+    "archive": {
+        "url": "http://example.com/solver.tar.gz",
+        "h": { "sha256": "012345" }
+    },
+    "website": "https://github.com/uuverifiers/ostrich",
+    "system_description": "https://philipp.ruemmer.org/ostrich-2024.pdf",
+    "command": ["ostrich", "-portfolio=strings +quiet"],
+    "solver_type": "Standalone",
+    "participations": [
+      { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
+    ]
+}
