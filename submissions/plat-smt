@@ -1,0 +1,37 @@
+{
+    "name": "plat-smt",
+    "contributors": [
+        "David Ewert",
+    ],
+    "contacts": ["David Ewert <dewert10@gmail.com>"],
+    "archive": {
+        "url": "TODO",
+        "h": { "sha256": "TODO" }
+    },
+    "website": "https://github.com/dewert99/plat-smt",
+    "system_description": "TODO",
+    "command": ["bin/plat-smt"],
+    "solver_type": "Standalone?",
+  "participations": [
+    {
+      "tracks": ["SingleQuery"],
+      "logics": "ˆQF_UF",
+      "command": ["bin/plat-smt"]
+    },
+    {
+      "tracks": ["Incremental"],
+      "logics": "ˆQF_UF",
+      "command": ["bin/plat-smt"]
+    },
+    {
+      "tracks": ["UnsatCore"],
+      "logics": "ˆQF_UF",
+      "command": ["bin/plat-smt"]
+    },
+    {
+      "tracks": ["ModelValidation"],
+      "logics": "ˆQF_UF",
+      "command": ["bin/plat-smt"]
+    }
+  ]
+}
