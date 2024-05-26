@@ -30,8 +30,16 @@ from rich.console import Console
 
 app = typer.Typer()
 
+submissions_panel = "Submissions"
+results_panel = "Results"
+conversion_panel = "Conversion old format"
+benchexec_panel = "Benchexec"
+data_panel = "Data"
+benchmarks_panel = "Benchmarks"
+selection_panel = "Selection process"
 
-@app.command()
+
+@app.command(rich_help_panel=submissions_panel)
 def show(
     files: list[Path] = typer.Argument(None),
     prefix: Optional[Path] = None,
@@ -72,7 +80,7 @@ def show(
         into_comment_file.write_text(console.export_text())
 
 
-@app.command()
+@app.command(rich_help_panel=submissions_panel)
 def validate(file: str) -> None:
     """
     Validate a json defining a solver submission
@@ -84,7 +92,7 @@ def validate(file: str) -> None:
         exit(1)
 
 
-@app.command()
+@app.command(rich_help_panel=conversion_panel)
 def convert_csv(file: str, dstdir: Path) -> None:
     """
     Convert a csv (old submission format) to json files (new format)
@@ -93,7 +101,7 @@ def convert_csv(file: str, dstdir: Path) -> None:
     smtcomp.convert_csv.convert_csv(Path(file), Path(dstdir))
 
 
-@app.command()
+@app.command(rich_help_panel=submissions_panel)
 def dump_json_schema(dst: Path) -> None:
     """
     Dump the json schemas used for submissions at the given file
@@ -102,16 +110,7 @@ def dump_json_schema(dst: Path) -> None:
         f.write(json.dumps(defs.Submission.model_json_schema(), indent=2))
 
 
-@app.command()
-def download_benchmarks(dst: Path, dryrun: bool = False) -> None:
-    """
-    Clone or update all the benchmarks used by the SMTCOMP
-    """
-    clone_group("SMT-LIB-benchmarks", dst.joinpath("non-incremental"), dryrun)
-    clone_group("SMT-LIB-benchmarks-inc", dst.joinpath("incremental"), dryrun)
-
-
-@app.command()
+@app.command(rich_help_panel=benchexec_panel)
 def prepare_execution(dst: Path) -> None:
     """
     Generate or download all scripts and tools that are necessary for the execution in Benchexec
@@ -121,7 +120,7 @@ def prepare_execution(dst: Path) -> None:
     execution.copy_tool_module(dst)
 
 
-@app.command()
+@app.command(rich_help_panel=benchexec_panel)
 def generate_benchexec(
     files: List[Path],
     dst: Path,
@@ -143,7 +142,7 @@ def generate_benchexec(
     )
 
 
-@app.command()
+@app.command(rich_help_panel=benchexec_panel)
 def download_archive(files: List[Path], dst: Path) -> None:
     """
     Download and unpack
@@ -176,7 +175,7 @@ def generate_benchmarks(dst: Path, seed: int = 0) -> None:
     smtcomp.generate_benchmarks.generate_benchmarks(dst, seed)
 
 
-@app.command()
+@app.command(rich_help_panel=benchmarks_panel)
 def create_benchmarks_list(src: Path, data: Path, scrambler: Optional[Path] = None, j: int = 8) -> None:
     """
     List the benchmarks found in SMTLIB releases.
@@ -217,7 +216,7 @@ def create_benchmarks_list(src: Path, data: Path, scrambler: Optional[Path] = No
     write_cin(datafiles.benchmarks, benchmarks.model_dump_json(indent=1))
 
 
-@app.command()
+@app.command(rich_help_panel=benchmarks_panel)
 def benchmarks_stats(src: Path) -> None:
     tree = Tree(src.name)
     benchmarks = defs.Benchmarks.model_validate_json(src.read_text())
@@ -237,7 +236,7 @@ def benchmarks_stats(src: Path) -> None:
     print(tree)
 
 
-@app.command()
+@app.command(rich_help_panel=conversion_panel)
 def convert_csv_result(src: Path, dst: Path, track: defs.Track) -> None:
     results = smtcomp.convert_csv.convert_csv_result(src, track)
     write_cin(dst, results.model_dump_json(indent=1))
@@ -251,12 +250,12 @@ def merge_results_aux(files: list[Path]) -> defs.Results:
     return defs.Results(results=results)
 
 
-@app.command()
+@app.command(rich_help_panel=results_panel)
 def merge_results(files: list[Path], dst: Path) -> None:
     write_cin(dst, merge_results_aux(files).model_dump_json(indent=1))
 
 
-@app.command()
+@app.command(rich_help_panel=benchmarks_panel)
 def merge_benchmarks(files: list[Path], dst: Path) -> None:
     incremental: list[defs.InfoIncremental] = []
     non_incremental: list[defs.InfoNonIncremental] = []
@@ -270,7 +269,7 @@ def merge_benchmarks(files: list[Path], dst: Path) -> None:
 OLD_CRITERIA = Annotated[bool, typer.Option(help="Simulate previous year criteria (needs only to be trivial one year)")]
 
 
-@app.command()
+@app.command(rich_help_panel=selection_panel)
 def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False) -> None:
     """
     Show statistics on the trivial benchmarks
@@ -323,7 +322,7 @@ def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False
     print(table)
 
 
-@app.command()
+@app.command(rich_help_panel=selection_panel)
 def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = False) -> None:
     """
     Show statistics on the benchmarks selected for single query track
@@ -397,7 +396,7 @@ def print_iterable(i: int, tree: Tree, a: Any) -> None:
             print_iterable(i - 1, t1, v)
 
 
-@app.command()
+@app.command(rich_help_panel=data_panel)
 def create_cache(data: Path) -> None:
     datafiles = defs.DataFiles(data)
     print("Loading benchmarks")
@@ -477,7 +476,7 @@ def create_cache(data: Path) -> None:
 #     write_cin(dst,benchmarks2.model_dump_json(indent=1))
 
 
-@app.command()
+@app.command(rich_help_panel=benchexec_panel)
 def scramble_benchmarks(
     competition_track: str, src: Path, dstdir: Path, scrambler: Path, seed: int, max_workers: int = 8
 ) -> None:
