@@ -166,8 +166,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-/submission-schema.json
-/submission-schema.html
+/web/content/solver_submission/schema.json
 schema_doc.css
 schema_doc.min.js
 *.feather
