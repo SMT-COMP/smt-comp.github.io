@@ -1,6 +1,7 @@
 {
     "name": "SMTInterpol",
     "contributors": [
+        "Max Barth", "Leon Cacace",
         "Jürgen Christ", "Daniel Dietsch", "Leonard Fichtner",
         "Joanna Greulich", "Elisabeth Henkel", "Matthias Heizmann",
         "Jochen Hoenicke", "Moritz Mohr", "Alexander Nutz",
@@ -8,8 +9,8 @@
     ],
     "contacts": ["Jochen Hoenicke <jochen@certora.com>"],
     "archive": {
-        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtinterpol-2.5-1325-g08d69897.tar.gz",
-        "h": { "sha256": "eb1fa7797ee8e95558dcef06013397582d4dc23bf54acc8f6a8f1bb6a2037d83" }
+        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtinterpol-2.5-1335-gfbbd08ff.tar.gz",
+        "h": { "sha256": "4aa2d05b8ffbd684e9507a846111ac342f443234f08424b01454becd124b0818" }
     },
     "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
     "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2024.pdf",
@@ -22,9 +23,19 @@
             "command": ["bin/smtinterpol"]
         },
         {
+            "tracks": ["SingleQuery"],
+            "logics": "(QF_)?(AX?)?(UF)?BV(DT)?([IR]DL|[NL][IR]*A)?",
+            "command": ["bin/smtinterpol-bv"]
+        },
+        {
             "tracks": ["Incremental"],
             "logics": "(QF_)?(AX?)?(UF)?(DT)?([IR]DL|[NL][IR]*A)?",
             "command": ["bin/smtinterpol"]
+        },
+        {
+            "tracks": ["Incremental"],
+            "logics": "(QF_)?(AX?)?(UF)?BV(DT)?([IR]DL|[NL][IR]*A)?",
+            "command": ["bin/smtinterpol-bv"]
         },
         {
             "tracks": ["ModelValidation"],
