@@ -39,8 +39,8 @@ help:
 
 .DEFAULT_GOAL := help
 
-GENERATED_SCHEMA_FILE=submission-schema.json
-GENERATED_SCHEMA_HTML=submission-schema.html
+GENERATED_SCHEMA_FILE=web/content/solver_submission/schema.json
+GENERATED_SCHEMA_HTML=web/content/solver_submission/schema.html
 
 .PHONY: submission-doc
 submission-doc:
