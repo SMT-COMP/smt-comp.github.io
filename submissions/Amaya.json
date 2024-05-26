@@ -3,7 +3,7 @@
     "contributors": [
         "Vojtěch Havlena", "Michal Hečko", "Lukáš Holík", "Ondřej Lengál"
     ],
-    "contacts": ["Michal Hečko <mhecko@proton.me>", "Ondřej Lengál <ondra.lengal@gmail.com"],
+    "contacts": ["Michal Hečko <mhecko@proton.me>", "Ondřej Lengál <ondra.lengal@gmail.com>"],
     "archive": {
         "url": "https://github.com/VeriFIT/amaya-smt-comp/raw/master/archives/amaya-smt-comp-2024.tar.gz",
         "h": { "sha256": "59b16f8a303ab45ca84c2f69e10e750b8ce80f284cdcc5e8f683595fefb251ce" }
