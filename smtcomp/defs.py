@@ -394,6 +394,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -591,6 +592,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -780,6 +782,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -903,6 +906,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -1026,6 +1030,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
