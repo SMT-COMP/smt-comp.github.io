@@ -1,9 +1,7 @@
 {
     "name": "OSTRICH",
     "contributors": [
-        "Taolue Chen",
         "Matthew Hague",
-        "Zhilei Han",
         "Denghang Hu",
         "Anthony W. Lin",
         "Oliver Markgraf",
@@ -15,7 +13,7 @@
         "Philipp Rümmer <philipp.ruemmer@it.uu.se>"
     ],
     "archive": {
-        "url": "http://example.com/solver.tar.gz",
+        "url": "https://philipp.ruemmer.org/ostrich-2024.tar.gz",
         "h": { "sha256": "012345" }
     },
     "website": "https://github.com/uuverifiers/ostrich",
