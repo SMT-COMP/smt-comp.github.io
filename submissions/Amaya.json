@@ -3,27 +3,20 @@
     "contributors": [
         "Vojtěch Havlena", "Michal Hečko", "Lukáš Holík", "Ondřej Lengál"
     ],
-    "contacts": ["contact name <contact@email.com>"],
+    "contacts": ["Michal Hečko <mhecko@proton.me>", "Ondřej Lengál <ondra.lengal@gmail.com"],
     "archive": {
-        "url": "http://example.com/solver.tar.gz",
-        "h": { "sha256": "012345" }
+        "url": "https://github.com/VeriFIT/amaya-smt-comp/raw/master/archives/amaya-smt-comp-2024.tar.gz",
+        "h": { "sha256": "59b16f8a303ab45ca84c2f69e10e750b8ce80f284cdcc5e8f683595fefb251ce" }
     },
-    "website": "http://example.com/",
-    "system_description": "http://example.com/system.pdf",
-    "command": ["relative_cmd", "default_command_line"],
+    "website": "https://github.com/MichalHe/amaya",
+    "system_description": "https://github.com/VeriFIT/amaya-smt-comp/blob/master/system-description-2024/main.pdf",
+    "command": ["bash run.sh"],
     "solver_type": "Standalone",
     "participations": [
-        { "tracks": ["SingleQuery"], "divisions": ["Equality"] },
         {
             "tracks": ["SingleQuery"],
-            "logics": "QF_.*LRA.*",
-            "command": ["relative_cmd", "other_option"]
-        },
-        {
-            "tracks": ["SingleQuery"],
-            "logics": ["LIA"],
-            "archive": { "url": "http://example.com/solver_lia.tar.gz" },
-            "command": ["relative_cmd", "--super-lia"]
+            "divisions": ["Arith"],
+            "logics": ["LIA", "NIA"]
         }
     ]
 }
