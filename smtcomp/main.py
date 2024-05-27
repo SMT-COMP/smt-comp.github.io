@@ -1,7 +1,7 @@
 import json
 import itertools
 from pathlib import Path
-from typing import List, Optional, cast, Dict, Any, Annotated
+from typing import List, Optional, cast, Dict, Any, Annotated, TextIO
 import rich
 from rich.progress import track
 import rich.style
@@ -27,6 +27,8 @@ import smtcomp.selection
 from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
+import smtcomp.test_solver as test_solver
+
 
 app = typer.Typer()
 
@@ -142,21 +144,29 @@ def generate_benchexec(
     )
 
 
+# Should be moved somewhere else
+def download_archive_aux(s: defs.Submission, dst: Path) -> None:
+    """
+    Download and unpack
+    """
+    dst.mkdir(parents=True, exist_ok=True)
+    if s.archive:
+        archive.download(s.archive, dst)
+        archive.unpack(s.archive, dst)
+    for p in s.participations.root:
+        if p.archive:
+            archive.download(p.archive, dst)
+            archive.unpack(p.archive, dst)
+
+
 @app.command(rich_help_panel=benchexec_panel)
 def download_archive(files: List[Path], dst: Path) -> None:
     """
     Download and unpack
     """
     for file in track(files):
-        dst.mkdir(parents=True, exist_ok=True)
         s = submission.read(str(file))
-        if s.archive:
-            archive.download(s.archive, dst)
-            archive.unpack(s.archive, dst)
-        for p in s.participations.root:
-            if p.archive:
-                archive.download(p.archive, dst)
-                archive.unpack(p.archive, dst)
+        download_archive_aux(s, dst)
 
 
 @app.command()
@@ -501,3 +511,54 @@ def scramble_benchmarks(
     """
 
     smtcomp.scramble_benchmarks.scramble(competition_track, src, dstdir, scrambler, seed, max_workers)
+
+
+@app.command()
+def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(None)) -> None:
+    def read_submission(file: Path) -> defs.Submission:
+        try:
+            return submission.read(str(file))
+        except Exception as e:
+            rich.print(f"[red]Error during file parsing of {file}[/red]")
+            print(e)
+            exit(1)
+
+    outdir.mkdir(parents=True, exist_ok=True)
+    test_solver.copy_me(outdir)
+
+    trivial_bench = outdir.joinpath("trivial_bench")
+    smtcomp.generate_benchmarks.generate_trivial_benchmarks(trivial_bench)
+
+    l = list(map(read_submission, submissions))
+    script_output = outdir.joinpath("test_script.py")
+    with script_output.open("w") as out:
+        out.write("from test_solver import *\n")
+        out.write("init_test()\n")
+        out.write("\n")
+        out.write("""print("Testing provers")\n""")
+        for sub in l:
+            out.write(f"print({sub.name!r})\n")
+            download_archive_aux(sub, outdir)
+            for part in sub.complete_participations():
+                for track, divisions in part.tracks.items():
+                    match track:
+                        case defs.Track.Incremental:
+                            statuses = [defs.Status.Sat, defs.Status.Unsat]
+                        case defs.Track.ModelValidation:
+                            statuses = [defs.Status.Sat]
+                        case defs.Track.SingleQuery:
+                            statuses = [defs.Status.Sat, defs.Status.Unsat]
+                        case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+                            continue
+                    for _, logics in divisions.items():
+                        for logic in logics:
+                            for status in statuses:
+                                file_sat = smtcomp.generate_benchmarks.path_trivial_benchmark(
+                                    trivial_bench, track, logic, status
+                                ).relative_to(outdir)
+                                cmd = (
+                                    archive.archive_unpack_dir(part.archive, outdir)
+                                    .joinpath(part.command.binary)
+                                    .relative_to(outdir)
+                                )
+                                out.write(f"test({str(cmd)!r},{part.command.arguments!r},{str(file_sat)!r})\n")
