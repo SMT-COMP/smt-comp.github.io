@@ -5,12 +5,12 @@
     ],
     "contacts": ["Michal Hečko <mhecko@proton.me>", "Ondřej Lengál <ondra.lengal@gmail.com>"],
     "archive": {
-        "url": "https://github.com/VeriFIT/amaya-smt-comp/raw/master/archives/amaya-smt-comp-2024.tar.gz",
-        "h": { "sha256": "59b16f8a303ab45ca84c2f69e10e750b8ce80f284cdcc5e8f683595fefb251ce" }
+        "url": "https://github.com/VeriFIT/amaya-smt-comp/raw/master/archives/amaya-smt-comp-2024-v2.tar.gz",
+        "h": { "sha256": "dc38efb4cd351f1f3ea74486ade1e5fd8a2fb9d59c9562743bc16a33927042a4" }
     },
     "website": "https://github.com/MichalHe/amaya",
     "system_description": "https://github.com/VeriFIT/amaya-smt-comp/blob/master/system-description-2024/main.pdf",
-    "command": ["bash run.sh"],
+    "command": ["bash amaya/run.sh"],
     "solver_type": "Standalone",
     "participations": [
         {
