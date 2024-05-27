@@ -5,7 +5,7 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
@@ -394,6 +394,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -591,6 +592,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -780,6 +782,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -903,6 +906,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -1026,6 +1030,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -1086,9 +1091,31 @@ class Archive(BaseModel):
 
 
 class Command(BaseModel, extra="forbid"):
+    """
+    Command with its arguments to run after the extraction of the archive.
+
+    The path are relative to the directory in which the archive is unpacked.
+
+    The input file is added at the end of the list of arguments.
+
+    Two forms are accepted, using a dictionnary (separate binary and arguments) or a list ([binary]+arguments).
+
+    The command run in the given environment
+     https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines
+    """
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                ["relative_cmd", "default_command_line"],
+                {"binary": "relative_cmd", "arguments": ["default_command_line"]},
+            ]
+        }
+    }
+
     binary: str
     arguments: list[str] = []
-    compa_starexec: bool = False
+    compa_starexec: bool = Field(default=False, description="Used only for internal tests")
 
     @model_validator(mode="before")
     @classmethod
@@ -1153,7 +1180,9 @@ class Submission(BaseModel, extra="forbid"):
     contributors: list[Contributor] = Field(min_length=1)
     contacts: list[NameEmail] = Field(min_length=1)
     archive: Archive | None = None
-    command: Command | None = None
+    command: Optional[Command] = Field(
+        default=None, description="Fields command given in participations have priority over this one"
+    )
     website: HttpUrl
     system_description: HttpUrl
     solver_type: SolverType
