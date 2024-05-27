@@ -14,7 +14,7 @@
     ],
     "archive": {
         "url": "https://philipp.ruemmer.org/ostrich-2024.tar.gz",
-        "h": { "sha256": "012345" }
+        "h": { "sha256": "bd9abdeb26c1b4541fee5ad61ef190c6055ef00b306d62739ad5704cb6e0ca4c" }
     },
     "website": "https://github.com/uuverifiers/ostrich",
     "system_description": "https://philipp.ruemmer.org/ostrich-2024.pdf",
