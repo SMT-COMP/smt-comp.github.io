@@ -1,0 +1,9 @@
+{
+    "name": "Z3-alpha",
+    "contributors": [
+        "Zhengyang John Lu", "Stefan Siemer", "Paul Sarnighausen-Cahn", "Florin Manea", "Vijay Ganesh" 
+    ],
+    "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
+    "website": "https://github.com/JohnLyu2/z3alpha",
+    "solver_type": "derived"
+}
