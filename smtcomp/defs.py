@@ -1099,7 +1099,7 @@ class Command(BaseModel, extra="forbid"):
     The input file is added at the end of the list of arguments.
 
     Two forms are accepted, using a dictionnary (separate binary and arguments) or a list ([binary]+arguments).
-    
+
     The command run in the given environment
      https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines
     """
