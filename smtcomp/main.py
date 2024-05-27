@@ -323,7 +323,13 @@ def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False
 
 
 @app.command(rich_help_panel=selection_panel)
-def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = False) -> None:
+def show_sq_selection_stats(
+    data: Path,
+    seed: int,
+    old_criteria: OLD_CRITERIA = False,
+    min_use_benchmarks: int = defs.Config.min_used_benchmarks,
+    ratio_of_used_benchmarks: float = defs.Config.ratio_of_used_benchmarks,
+) -> None:
     """
     Show statistics on the benchmarks selected for single query track
 
@@ -331,6 +337,8 @@ def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = 
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
+    defs.Config.min_used_benchmarks = min_use_benchmarks
+    defs.Config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
     datafiles = defs.DataFiles(data)
     benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
     results = pl.read_ipc(datafiles.cached_previous_results)
