@@ -5,7 +5,7 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict, Optional
+from typing import Any, Dict, cast, Optional
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
@@ -1147,6 +1147,15 @@ class Command(BaseModel, extra="forbid"):
         return h.hexdigest()
 
 
+class ParticipationCompleted(BaseModel, extra="forbid"):
+    """Participation using the default value in the submission root"""
+
+    tracks: dict[Track, dict[Division, set[Logic]]]
+    archive: Archive
+    command: Command
+    experimental: bool
+
+
 class Participation(BaseModel, extra="forbid"):
     tracks: list[Track]
     logics: Logics = Logics(root=[])
@@ -1170,17 +1179,31 @@ class Participation(BaseModel, extra="forbid"):
                         logics.add(logic)
         return d
 
+    def complete(self, archive: Archive | None, command: Command | None) -> ParticipationCompleted:
+        archive = cast(Archive, archive if self.archive is None else self.archive)
+        command = cast(Command, command if self.command is None else self.command)
+        return ParticipationCompleted(
+            tracks=self.get(), archive=archive, command=command, experimental=self.experimental
+        )
+
+
+import itertools
+
 
 class Participations(RootModel):
     root: list[Participation]
 
-    def get_divisions(self, track: Track) -> list[Division]:
+    def get_divisions(self, l: list[Track] = list(Track)) -> set[Division]:
         """ " Return the divisions in which the solver participates"""
-        return []  # TODO
+        tracks = self.get()
+        divs = [set(tracks[track].keys()) for track in l]
+        return functools.reduce(lambda x, y: x | y, divs)
 
-    def get_logics(self, track: Track) -> list[Logic]:
+    def get_logics(self, l: list[Track] = list(Track)) -> set[Logic]:
         """ " Return the logics in which the solver participates"""
-        return []  # TODO
+        tracks = self.get()
+        logics = itertools.chain.from_iterable([iter(tracks[track].values()) for track in l])
+        return functools.reduce(lambda x, y: x | y, logics)
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
@@ -1213,6 +1236,10 @@ class Submission(BaseModel, extra="forbid"):
 
     def uniq_id(self) -> str:
         return hashlib.sha256(self.name.encode()).hexdigest()
+
+    def complete_participations(self) -> list[ParticipationCompleted]:
+        """Push defaults from the submission into participations"""
+        return [p.complete(self.archive, self.command) for p in self.participations.root]
 
 
 class Smt2File(BaseModel):
