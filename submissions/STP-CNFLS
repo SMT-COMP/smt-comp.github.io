@@ -1,0 +1,18 @@
+{
+    "name": "STP-CNFLS",
+    "contributors": [
+        "Jinkun Lin"
+    ],
+    "contacts": ["Jinkun Lin <linjk@seedmath.com>"],
+    "archive": {
+        "url": "https://github.com/jkunlin/STP_CNFLS/blob/main/STP-CNFLS-build.tar.gz",
+        "h": { "sha256": "ae07286e3f59b228de00842837801771b8255f2a8a52e33a5112c30d0a9903eb" }
+    },
+    "website": "https://github.com/jkunlin/STP_CNFLS",
+    "system_description": "https://github.com/jkunlin/STP_CNFLS/blob/main/System-Description.pdf",
+    "command": ["relative_cmd", "default_command_line"],
+    "solver_type": "derived",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Bitvec"] }
+    ]
+}
