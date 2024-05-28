@@ -4,7 +4,7 @@ date = 2024-05-28T08:08:10+02:00
 draft = false
 +++
 
-The single query, incremental, unsat-core, and model-validation tracks we will
+The single query, incremental, unsat-core, and model-validation tracks will be
 run on the [VerifierCloud
 cluster](https://vcloud.sosy-lab.org/cpachecker/webclient/master/info) owned by
 LMU's Software and Computational Systems Lab
