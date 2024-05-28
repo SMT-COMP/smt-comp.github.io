@@ -1,0 +1,28 @@
+{
+    "name": "YicesQS",
+    "contributors": [
+        "Stéphane Graham-Lengrand",
+    ],
+    "contacts": [
+        "Stéphane Graham-Lengrand <stephane.graham-lengrand@sri.com>"
+    ],
+    "archive": {
+        "url": "TBD",
+        "h": { "sha256": "TBD" }
+    },
+    "website": "https://github.com/disteph/yicesQS",
+    "system_description": "https://www.csl.sri.com/users/sgl/Work/Reports/2024-yicesQS.pdf",
+    "solver_type": "Standalone",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["BV",
+                       "LIA",
+                       "LRA",
+                       "NIA",
+                       "NRA",
+                       ],
+            "command": ["./yicesQS"]
+        }
+    ]
+}
