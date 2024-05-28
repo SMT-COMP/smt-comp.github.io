@@ -276,12 +276,12 @@ def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
+    config = defs.Config(seed=None)
+    config.old_criteria = old_criteria
     datafiles = defs.DataFiles(data)
     benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
     results = pl.read_ipc(datafiles.cached_previous_results)
-    benchmarks_with_trivial_info = smtcomp.selection.add_trivial_run_info(
-        benchmarks.lazy(), results.lazy(), old_criteria
-    )
+    benchmarks_with_trivial_info = smtcomp.selection.add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
     b3 = (
         benchmarks_with_trivial_info.group_by(["logic"])
         .agg(
@@ -329,6 +329,7 @@ def show_sq_selection_stats(
     old_criteria: OLD_CRITERIA = False,
     min_use_benchmarks: int = defs.Config.min_used_benchmarks,
     ratio_of_used_benchmarks: float = defs.Config.ratio_of_used_benchmarks,
+    invert_triviality: bool = False,
 ) -> None:
     """
     Show statistics on the benchmarks selected for single query track
@@ -337,13 +338,12 @@ def show_sq_selection_stats(
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
-    defs.Config.min_used_benchmarks = min_use_benchmarks
-    defs.Config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
-    datafiles = defs.DataFiles(data)
-    benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
-    results = pl.read_ipc(datafiles.cached_previous_results)
-    benchmarks_with_info = smtcomp.selection.add_trivial_run_info(benchmarks.lazy(), results.lazy(), old_criteria)
-    benchmarks_with_info = smtcomp.selection.sq_selection(benchmarks_with_info, seed)
+    config = defs.Config(seed=seed)
+    config.min_used_benchmarks = min_use_benchmarks
+    config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
+    config.invert_triviality = invert_triviality
+    config.old_criteria = old_criteria
+    benchmarks_with_info = smtcomp.selection.helper_compute_sq(data, config)
     b3 = (
         benchmarks_with_info.group_by(["logic"])
         .agg(

@@ -20,6 +20,21 @@ class Config:
     cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
+    old_criteria = False
+    """"Do we try to emulate <= 2023 criteria that does not really follow the rules"""
+    invert_triviality = False
+    """Prioritize triviality as much as possible for testing purpose.
+        Look for simple problems instead of hard one"""
+
+    def __init__(self: Config, seed: int | None) -> None:
+        self.__seed = seed
+
+    def seed(self) -> int:
+        if self.__seed is None:
+            raise ValueError("The seed as not been set")
+        s = self.__seed
+        self.__seed = +1
+        return s
 
 
 class DataFiles:
