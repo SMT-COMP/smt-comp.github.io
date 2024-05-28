@@ -1071,6 +1071,10 @@ def logic_used_for_track(t: Track) -> set[Logic]:
 
 
 class Logics(RootModel):
+    """
+    Can be a list of logics or a regexp matched on all the existing logics
+    """
+
     root: list[Logic]
 
     @model_validator(mode="before")
@@ -1095,6 +1099,14 @@ class Logics(RootModel):
 
 
 class Archive(BaseModel):
+    """
+    The url must be record from http://zenodo.org for the final submission. So
+    the hash is not required because zenodo records are immutable.
+
+    The hash can be used if you want to be sure of the archive used during the
+    test runs.
+    """
+
     url: HttpUrl
     h: Hash | None = None
 
@@ -1148,6 +1160,12 @@ class Command(BaseModel, extra="forbid"):
 
 
 class Participation(BaseModel, extra="forbid"):
+    """
+    tracks: select the participation tracks
+    divisions: add all the logics of those divisions in each track
+    logics: add all the specified logics in each selected track it exists
+    """
+
     tracks: list[Track]
     logics: Logics = Logics(root=[])
     divisions: list[Division] = []
@@ -1202,6 +1220,7 @@ class Submission(BaseModel, extra="forbid"):
     system_description: HttpUrl
     solver_type: SolverType
     participations: Participations
+    seed: int | None = None
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
