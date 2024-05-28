@@ -14,11 +14,11 @@
         "Stéphane Graham-Lengrand <stephane.graham-lengrand@sri.com>"
     ],
     "archive": {
-        "url": "TBA",
-        "h": { "sha256": "TBA" }
+        "url": "https://ahmed-irfan.github.io/smtcomp2024/yices2-smtcomp-2024.zip",
+        "h": { "sha256": "aae0e6880ff4601bffae5254f44e073db5f76dec0a7f23d7d4eec36fd01de6a3" }
     },
     "website": "https://yices.csl.sri.com",
-    "system_description": "TBA",
+    "system_description": "https://ahmed-irfan.github.io/smtcomp2024/yices2-smtcomp-2024.pdf",
     "solver_type": "Standalone",
     "participations": [
         {
