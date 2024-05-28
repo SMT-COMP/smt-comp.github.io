@@ -61,10 +61,6 @@
     {
       "tracks": [ "Cloud" ],
       "logics": ".*"
-    },
-    {
-      "tracks": [ "Parallel" ],
-      "logics": ".*"
     }
   ]
 }
