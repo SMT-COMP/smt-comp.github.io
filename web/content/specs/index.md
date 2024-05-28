@@ -9,7 +9,7 @@ run on the [VerifierCloud
 cluster](https://vcloud.sosy-lab.org/cpachecker/webclient/master/info) owned by
 LMU's Software and Computational Systems Lab
 ([SoSy-Lab](https://www.sosy-lab.org/)), who are kind enough to support our
-competition with their computing power. The cluster is also used for 
+competition with their computing power. The cluster is also used for
 [Competition on Software Verification (SV-COMP)](https://sv-comp.sosy-lab.org/).
 
 To be more precise, the competition will be run on the 168 apollon nodes of the
