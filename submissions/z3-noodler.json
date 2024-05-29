@@ -13,7 +13,7 @@
     },
     "website": "https://github.com/VeriFIT/z3-noodler",
     "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2024.pdf",
-    "command": ["z3-noodler_linux smt.string_solver=noodler"],
+    "command": ["z3-noodler_linux", "smt.string_solver=noodler"],
     "solver_type": "derived",
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
