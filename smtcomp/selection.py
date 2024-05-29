@@ -22,8 +22,8 @@ c_all_len = pl.col("all_len")
 c_file = pl.col("file")
 
 
-def find_trivial(results: pl.LazyFrame, old_criteria: bool) -> pl.LazyFrame:
-    incoherence_scope = ["file", "year"] if old_criteria else ["file"]
+def find_trivial(results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
+    incoherence_scope = ["file", "year"] if config.old_criteria else ["file"]
     tally = (
         results
         # Remove incoherent results
@@ -42,26 +42,24 @@ def find_trivial(results: pl.LazyFrame, old_criteria: bool) -> pl.LazyFrame:
         )
         .group_by("file")
         .agg(
-            trivial=c_trivial.any() if old_criteria else c_trivial.all(),
+            trivial=c_trivial.any() if config.old_criteria else c_trivial.all(),
             run=True,
         )
     )
     return tally
 
 
-def add_trivial_run_info(
-    benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, old_criteria: bool = False
-) -> pl.LazyFrame:
+def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
 
-    is_trivial = find_trivial(previous_results, old_criteria)
+    is_trivial = find_trivial(previous_results, config)
     return (
         benchmarks.join(is_trivial, on="file", how="outer_coalesce")
         .fill_null(False)
-        .with_columns(new=pl.col("family").str.starts_with(str(defs.Config.current_year)))
+        .with_columns(new=pl.col("family").str.starts_with(str(config.current_year)))
     )
 
 
-def sq_selection(benchmarks_with_info: pl.LazyFrame, seed: int) -> pl.LazyFrame:
+def sq_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
     used_logics = defs.logic_used_for_track(defs.Track.SingleQuery)
 
     # Keep only logics used by single query
@@ -82,7 +80,7 @@ def sq_selection(benchmarks_with_info: pl.LazyFrame, seed: int) -> pl.LazyFrame:
     sample_size = pl.min_horizontal(
         c_all_len,
         pl.max_horizontal(
-            defs.Config.min_used_benchmarks, (c_all_len * defs.Config.ratio_of_used_benchmarks).floor().cast(pl.UInt32)
+            config.min_used_benchmarks, (c_all_len * config.ratio_of_used_benchmarks).floor().cast(pl.UInt32)
         ),
     )
     new_sample_size = pl.min_horizontal(sample_size, c_new_len).cast(pl.UInt32)
@@ -95,14 +93,14 @@ def sq_selection(benchmarks_with_info: pl.LazyFrame, seed: int) -> pl.LazyFrame:
     new_benchmarks_sampled = (
         pl.col("new_benchmarks")
         .filter(new_sample_size > 0)
-        .list.sample(n=new_sample_size.filter(new_sample_size > 0), seed=seed)
+        .list.sample(n=new_sample_size.filter(new_sample_size > 0), seed=config.seed())
         .list.explode()
         .drop_nulls()
     )
     old_benchmarks_sampled = (
         pl.col("old_benchmarks")
         .filter(old_sample_size > 0)
-        .list.sample(n=old_sample_size.filter(old_sample_size > 0), seed=seed + 1)
+        .list.sample(n=old_sample_size.filter(old_sample_size > 0), seed=config.seed())
         .list.explode()
         .drop_nulls()
     )
@@ -115,3 +113,18 @@ def sq_selection(benchmarks_with_info: pl.LazyFrame, seed: int) -> pl.LazyFrame:
     return benchmarks_with_info.join(selected_benchmarks, on="file", how="outer_coalesce").with_columns(
         pl.col("selected").fill_null(False)
     )
+
+
+def helper_compute_sq(data: Path, config: defs.Config) -> pl.LazyFrame:
+    """
+    Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
+    """
+    datafiles = defs.DataFiles(data)
+    benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
+    results = pl.read_ipc(datafiles.cached_previous_results)
+    benchmarks_with_info = add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
+    if config.invert_triviality:
+        trivial_in_logic = pl.col("trivial").any().over(["logic"])
+        inverted_or_not_trivial = pl.when(trivial_in_logic).then(pl.col("trivial").not_()).otherwise(pl.col("trivial"))
+        benchmarks_with_info = benchmarks_with_info.with_columns(trivial=inverted_or_not_trivial)
+    return sq_selection(benchmarks_with_info, config)
