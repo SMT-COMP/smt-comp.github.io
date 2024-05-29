@@ -1164,6 +1164,10 @@ class Participation(BaseModel, extra="forbid"):
     tracks: select the participation tracks
     divisions: add all the logics of those divisions in each track
     logics: add all the specified logics in each selected track it exists
+
+    aws_dockerfile should be used only in conjunction with Cloud and Parallel track
+
+    archive and command should not be used with Cloud and Parallel track. They superseed the one given at the root.
     """
 
     tracks: list[Track]
@@ -1171,7 +1175,17 @@ class Participation(BaseModel, extra="forbid"):
     divisions: list[Division] = []
     archive: Archive | None = None
     command: Command | None = None
+    aws_dockerfile: str | None = None
     experimental: bool = False
+
+    @model_validator(mode="after")
+    def check_archive(self) -> Participation:
+        aws_track = {Track.Cloud, Track.Parallel}
+        if self.aws_dockerfile is not None and not set(self.tracks).issubset(aws_track):
+            raise ValueError("aws_dockerfile can be used only with Cloud and Parallel track")
+        if (self.archive is not None or self.command is not None) and not set(self.tracks).isdisjoint(aws_track):
+            raise ValueError("archive and command field can't be used with Cloud and Parallel track")
+        return self
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
