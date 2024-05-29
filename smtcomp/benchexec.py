@@ -5,11 +5,11 @@ from typing import List, cast, Dict, Optional
 from yattag import Doc, indent
 
 from smtcomp import defs
-from smtcomp.archive import find_command
+from smtcomp.archive import find_command, archive_unpack_dir
 from pydantic import BaseModel
 
 import shlex
-
+from re import sub
 
 class CmdTask(BaseModel):
     name: str
@@ -17,7 +17,40 @@ class CmdTask(BaseModel):
     includesfiles: List[str]
 
 
-def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: List[CmdTask], file: Path) -> None:
+def tool_module_name(s: defs.Submission) -> str:
+    return sub(r'\W+', '', s.name.lower())
+
+
+def generate_tool_module(s: defs.Submission, cachedir: Path) -> None:
+    name = tool_module_name(s)
+
+    file = cachedir / "tools" / f"{name}.py"
+    with file.open("w") as f:
+
+        f.write("from tools.tool import SMTCompTool\n\n")
+        f.write("class Tool(SMTCompTool):  # type: ignore\n")
+
+        f.write(f"    NAME = '{s.name}'\n")
+        if s.command is not None:
+            assert s.archive is not None
+            executable_path = find_command(s.command, s.archive, cachedir)
+            executable = str(relpath(executable_path, start=str(cachedir)))
+            f.write(f"    EXECUTABLE = '{executable}'\n")
+
+        required_paths = []
+
+        if s.archive is not None:
+            archive_path = relpath(archive_unpack_dir(s.archive, cachedir), start=str(cachedir))
+            required_paths.append(str(archive_path))
+        for p in s.participations.root:
+            if p.archive is not None:
+                archive_path = relpath(archive_unpack_dir(p.archive, cachedir), start=str(cachedir))
+                required_paths.append(str(archive_path))
+        if required_paths:
+            f.write(f"    REQUIRED_PATHS = {required_paths}\n")
+
+
+def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: List[CmdTask], cachedir: Path, tool_module_name: str) -> None:
     doc, tag, text = Doc().tagtext()
 
     doc.asis('<?xml version="1.0"?>')
@@ -27,12 +60,11 @@ def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: Lis
     )
     with tag(
         "benchmark",
-        tool=f"smtcomp.tool",
+        tool=f"tools.{tool_module_name}",
         timelimit=f"{timelimit_s}s",
         hardlimit=f"{timelimit_s+30}s",
         memlimit=f"{memlimit_M} MB",
-        cpuCores=f"{cpuCores}",
-        displayname="SC",
+        cpuCores=f"{cpuCores}"
     ):
         for cmdtask in cmdtasks:
             for includesfile in cmdtask.includesfiles:
@@ -42,10 +74,20 @@ def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: Lis
                             text(option)
                     with tag("tasks", name="task"):
                         with tag("includesfile"):
-                            text(includesfile)
+                            text(f"benchmarks/{includesfile}")
 
+    file = cachedir.joinpath(f"{tool_module_name}.xml")
     file.write_text(indent(doc.getvalue()))
 
+
+def get_suffix(track: defs.Track):
+    match track:
+        case defs.Track.Incremental:
+            return "_inc"
+        case defs.Track.ModelValidation:
+            return "_model"
+        case _:
+            return ""
 
 def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
     res: List[CmdTask] = []
@@ -55,21 +97,21 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
         archive = cast(defs.Archive, p.archive if p.archive else s.archive)
         for track, divisions in p.get().items():
             i = i + 1
+            suffix = get_suffix(track)
             match track:
                 case defs.Track.Incremental:
-                    suffix = "_inc"
                     mode = "trace"
+                    continue
                 case defs.Track.ModelValidation:
-                    suffix = "_model"
                     mode = "direct"
+                    continue
                 case defs.Track.UnsatCore:
-                    suffix = ""
                     mode = "direct"
+                    continue
                 case defs.Track.ProofExhibition:
-                    suffix = ""
                     mode = "direct"
+                    continue
                 case defs.Track.SingleQuery:
-                    suffix = ""
                     mode = "direct"
                 case defs.Track.Cloud | defs.Track.Parallel:
                     continue

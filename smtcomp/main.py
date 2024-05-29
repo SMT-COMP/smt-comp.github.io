@@ -150,7 +150,6 @@ def prepare_execution(dst: Path) -> None:
 @app.command(rich_help_panel=benchexec_panel)
 def generate_benchexec(
     files: List[Path],
-    dst: Path,
     cachedir: Path,
     timelimit_s: int = defs.Config.timelimit_s,
     memlimit_M: int = defs.Config.memlimit_M,
@@ -159,14 +158,19 @@ def generate_benchexec(
     """
     Generate the benchexec file for the given submissions
     """
-    cmdtasks: List[benchexec.CmdTask] = []
     for file in track(files):
         s = submission.read(str(file))
+        tool_module_name = benchexec.tool_module_name(s)
+        benchexec.generate_tool_module(s, cachedir)
+
         res = benchexec.cmdtask_for_submission(s, cachedir)
-        cmdtasks.extend(res)
-    benchexec.generate_xml(
-        timelimit_s=timelimit_s, memlimit_M=memlimit_M, cpuCores=cpuCores, cmdtasks=cmdtasks, file=dst
-    )
+        benchexec.generate_xml(
+            timelimit_s=timelimit_s,
+            memlimit_M=memlimit_M,
+            cpuCores=cpuCores,
+            cmdtasks=res,
+            cachedir=cachedir,
+            tool_module_name=tool_module_name)
 
 
 # Should be moved somewhere else
