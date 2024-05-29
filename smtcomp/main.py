@@ -561,4 +561,11 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
                                     .joinpath(part.command.binary)
                                     .relative_to(outdir)
                                 )
-                                out.write(f"test({str(cmd)!r},{part.command.arguments!r},{str(file_sat)!r})\n")
+                                if status == defs.Status.Sat:
+                                    expected = "sat"
+                                else:
+                                    expected = "unsat"
+                                out.write(
+                                    f"test({str(cmd)!r},{part.command.arguments!r},{str(file_sat)!r},{expected!r})\n"
+                                )
+        out.write("end()\n")
