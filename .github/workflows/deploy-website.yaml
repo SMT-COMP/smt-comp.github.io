@@ -44,6 +44,17 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      #For smtcomp script
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+      - name: Set up the environment
+        uses: ./.github/actions/setup-poetry-env
+      # Generate files using smtcomp tool
+      - name: Files generation
+        run: make submission-doc
+      ###
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
