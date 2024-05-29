@@ -53,7 +53,9 @@ jobs:
         uses: ./.github/actions/setup-poetry-env
       # Generate files using smtcomp tool
       - name: Files generation
-        run: make submission-doc
+        run: |
+          pip install json-schema-for-humans
+          poetry run make submission-doc
       ###
       - name: Setup Pages
         id: pages
