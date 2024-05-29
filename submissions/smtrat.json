@@ -1,0 +1,20 @@
+{
+    "name": "SMT-RAT",
+    "contributors": [
+        "Jasper Nalbach",
+        "Valentin Promies",
+        "Erika Ábrahám"
+    ],
+    "contacts": ["Jasper Nalbach <nalbach@cs.rwth-aachen.de>", "Valentin Promies <promies@cs.rwth-aachen.de>"],
+    "archive": {
+        "url": "https://github.com/ths-rwth/smtrat/releases/download/24.05/smtrat.tgz"
+    },
+    "website": "https://github.com/ths-rwth/smtrat",
+    "system_description": "https://github.com/ths-rwth/smtrat/blob/master/doc/smtcomp-description/smtcomp-2024.pdf",
+    "command": [ "./smtrat" ],
+    "solver_type": "Standalone",
+    "participations": [
+        { "tracks": ["SingleQuery"], "logics": "(QF_)?NRA" },
+        { "tracks": ["ModelValidation"], "logics": "QF_NRA" }
+    ]
+}
