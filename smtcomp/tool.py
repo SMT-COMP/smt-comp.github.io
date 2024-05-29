@@ -3,16 +3,16 @@ import benchexec.util as util
 import benchexec.result as result
 from benchexec.tools.template import BaseTool2
 import sys, re
+import os
 
-fallback_name = "./false"
-
-
-class Tool(BaseTool2):  # type: ignore
+class SMTCompTool(BaseTool2):  # type: ignore
     """
     Generic tool for smtcomp execution
     """
 
-    REQUIRED_PATHS = ["unpack"]
+    REQUIRED_PATHS = ['.']
+    EXECUTABLE = './false'
+    NAME = 'SMT-COMP generic tool'
 
     def determine_result(self, run: BaseTool2.Run) -> Any:  # type: ignore
         """Adaptation of Jochen Hoenicke process script
@@ -62,13 +62,13 @@ class Tool(BaseTool2):  # type: ignore
         return status
 
     def executable(self, _: Any) -> str | Any | None:
-        return util.find_executable("smtlib2_trace_executor", fallback=fallback_name, exitOnError=False)
+        return util.find_executable(self.EXECUTABLE, exitOnError=True)
 
     def version(self, executable: str) -> str:
         return ""
 
     def name(self) -> str:
-        return "SC"
+        return self.NAME
 
     def cmdline(  # type: ignore
         self,
@@ -80,6 +80,25 @@ class Tool(BaseTool2):  # type: ignore
         tasks = task.input_files
         options = options + ([] if task.options is None else task.options)
         assert len(tasks) <= 1, "only one inputfile supported"
-        assert len(options) >= 1, "options give the command to run"
 
-        return [executable, *options, *tasks]
+        if options:
+            # executable and options were overridden by the task definition
+            return [*options, *tasks]
+        else:
+            # using default executable
+            return [executable, *tasks]
+
+    def program_files(self, executable):
+        files =  [executable] + self._program_files_from_executable(
+            executable, self.REQUIRED_PATHS
+        )
+        return files
+
+    @staticmethod
+    def _program_files_from_executable(executable, required_paths):
+        scriptdir = os.path.dirname(os.path.abspath(__file__))
+        basedir = os.path.join(scriptdir, os.path.pardir)
+
+        return util.flatten(
+            util.expand_filename_pattern(path, basedir) for path in required_paths
+        )
