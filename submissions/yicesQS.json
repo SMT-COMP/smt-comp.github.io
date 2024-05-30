@@ -7,12 +7,11 @@
         "Stéphane Graham-Lengrand <stephane.graham-lengrand@sri.com>"
     ],
     "archive": {
-        "url": "TBD",
-        "h": { "sha256": "TBD" }
+        "url": "https://www.csl.sri.com/users/sgl/yicesQS.zip",
     },
     "website": "https://github.com/disteph/yicesQS",
     "system_description": "https://www.csl.sri.com/users/sgl/Work/Reports/2024-yicesQS.pdf",
-    "solver_type": "Standalone",
+    "solver_type": "derived",
     "participations": [
         {
             "tracks": ["SingleQuery"],
@@ -22,7 +21,7 @@
                        "NIA",
                        "NRA",
                        ],
-            "command": ["./yicesQS"]
+            "command": ["./starexec_run_default"]
         }
     ]
 }
