@@ -20,6 +20,7 @@
     "system_description": "https://philipp.ruemmer.org/ostrich-2024.pdf",
     "command": ["ostrich", "-portfolio=strings +quiet"],
     "solver_type": "Standalone",
+    "seed": "753",
     "participations": [
       { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
     ]
