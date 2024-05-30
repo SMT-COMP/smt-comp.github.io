@@ -9,7 +9,7 @@
     ],
     "contacts": ["Lukáš Holík <holik@fit.vutbr.cz>"],
     "archive": {
-        "url": "https://drive.google.com/file/d/1XSj2PiVJLDx-JQyJRt76OEloC0dWFJqH/view?usp=sharing"
+        "url": "https://drive.google.com/uc?export=download&id=1XSj2PiVJLDx-JQyJRt76OEloC0dWFJqH"
     },
     "website": "https://github.com/VeriFIT/z3-noodler",
     "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2024.pdf",
@@ -17,5 +17,6 @@
     "solver_type": "derived",
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
-    ]
+    ],
+    "seed": 1465867
 }
