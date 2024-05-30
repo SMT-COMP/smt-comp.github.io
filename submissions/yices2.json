@@ -130,5 +130,6 @@
                        "QF_UFNRA"],
             "command": ["./yices_smt2"]
         }
-    ]
+    ],
+    "seed": 0
 }
