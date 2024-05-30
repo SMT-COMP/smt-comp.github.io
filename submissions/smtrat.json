@@ -13,6 +13,7 @@
     "system_description": "https://github.com/ths-rwth/smtrat/blob/master/doc/smtcomp-description/smtcomp-2024.pdf",
     "command": [ "./smtrat" ],
     "solver_type": "Standalone",
+    "seed": 174228,
     "participations": [
         { "tracks": ["SingleQuery"], "logics": "(QF_)?NRA" },
         { "tracks": ["ModelValidation"], "logics": "QF_NRA" }
