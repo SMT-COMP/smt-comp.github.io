@@ -19,7 +19,7 @@
                        "LIA",
                        "LRA",
                        "NIA",
-                       "NRA",
+                       "NRA"
                        ],
             "command": ["./starexec_run_default"]
         }
