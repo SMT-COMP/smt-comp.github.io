@@ -17,7 +17,7 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
         for line in output:
             line = line.strip()
             # ignore
-            if re.compile("^\s*(success|;.*)?\s*$").match(line):
+            if re.compile(r"^\s*(success|;.*)?\s*$").match(line):
                 continue
             if line == "unsat":
                 return "unsat"
