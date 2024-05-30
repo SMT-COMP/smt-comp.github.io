@@ -18,5 +18,6 @@
             "divisions": ["Arith"],
             "logics": ["LIA", "NIA"]
         }
-    ]
+    ],
+    "seed": "1337001337"
 }
