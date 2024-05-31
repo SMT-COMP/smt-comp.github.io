@@ -4,6 +4,7 @@ import rich
 from rich.tree import Tree
 
 from smtcomp.defs import Submission
+import smtcomp.defs as defs
 
 
 def read(file: str) -> Submission:
@@ -20,9 +21,17 @@ def tree_summary(s: Submission) -> Tree:
         tree_track = tree_part.add(str(track))
         for div, logics in sorted(divs.items()):
             tree_div = tree_track.add(str(div))
-            slogics = map(str, logics)
-            for logic in sorted(slogics):
-                tree_div.add(logic)
+            not_logics = defs.tracks[track][div].difference(logics)
+            if len(not_logics) == 0:
+                tree_div.add("[italic]all[/italic]")
+            elif len(not_logics) <= 3 and len(not_logics) < len(logics):
+                slogics = map(str, not_logics)
+                for logic in sorted(slogics):
+                    tree_div.add(f"[strike]{logic}[/strike]")
+            else:
+                slogics = map(str, logics)
+                for logic in sorted(slogics):
+                    tree_div.add(logic)
     return tree
 
 
