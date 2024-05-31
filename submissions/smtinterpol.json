@@ -16,6 +16,7 @@
     "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2024.pdf",
     "command": ["bin/smtinterpol"],
     "solver_type": "Standalone",
+    "seed": "4223469823",
     "participations": [
         {
             "tracks": ["SingleQuery"],
