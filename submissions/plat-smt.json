@@ -11,7 +11,7 @@
     "website": "https://github.com/dewert99/plat-smt",
     "system_description": "https://github.com/dewert99/plat-smt/files/15505357/PlatSMT_2024_System_Description.pdf",
     "command": ["./plat-smt"],
-    "solver_type": "Wrapper",
+    "solver_type": "wrapped",
     "seed": 6536,
   "participations": [
     {
