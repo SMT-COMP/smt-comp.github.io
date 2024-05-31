@@ -28,6 +28,7 @@ requests = "*"
 bs4 = "*"
 benchexec = "*"
 polars = "*"
+PyGithub = "*"
 #pystemd is not set as dependency because it is not in the CI
 
 
