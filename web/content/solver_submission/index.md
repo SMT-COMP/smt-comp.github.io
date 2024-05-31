@@ -9,3 +9,5 @@ submit your solver, please follow the
 [instructions](https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions).
 The detailed description of the fields in the solver JSON file is available in
 the [schema](schema.html).
+
+The solver is run in [this docker](https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines) environment.

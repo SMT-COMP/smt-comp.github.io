@@ -39,8 +39,8 @@ help:
 
 .DEFAULT_GOAL := help
 
-GENERATED_SCHEMA_FILE=submission-schema.json
-GENERATED_SCHEMA_HTML=submission-schema.html
+GENERATED_SCHEMA_FILE=web/content/solver_submission/schema.json
+GENERATED_SCHEMA_HTML=web/content/solver_submission/schema.html
 
 .PHONY: submission-doc
 submission-doc:
@@ -48,7 +48,7 @@ submission-doc:
 	@poetry run smtcomp dump-json-schema $(GENERATED_SCHEMA_FILE)
 	@echo "🚀 Generating html doc to $(GENERATED_SCHEMA_HTML)"
 	@echo "    Needs 'pip install json-schema-for-humans'"
-	generate-schema-doc --expand-buttons --no-link-to-reused-ref $(GENERATED_SCHEMA_FILE) $(GENERATED_SCHEMA_HTML)
+	@poetry run generate-schema-doc --expand-buttons --no-link-to-reused-ref $(GENERATED_SCHEMA_FILE) $(GENERATED_SCHEMA_HTML)
 
 hugo-server:
 	(cd web; hugo server)
