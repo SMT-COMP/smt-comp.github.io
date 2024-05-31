@@ -54,15 +54,7 @@ def show(
     if prefix is not None:
         files = list(map(prefix.joinpath, files))
 
-    def read_submission(file: Path) -> defs.Submission:
-        try:
-            return submission.read(str(file))
-        except Exception as e:
-            rich.print(f"[red]Error during file parsing of {file}[/red]")
-            print(e)
-            exit(1)
-
-    l = list(map(read_submission, files))
+    l = list(map(submission.read_submission_or_exit, files))
 
     console = Console(record=into_comment_file is not None)
     if into_comment_file is not None:
@@ -80,6 +72,22 @@ def show(
 
     if into_comment_file is not None:
         into_comment_file.write_text(console.export_text())
+
+
+@app.command(rich_help_panel=submissions_panel)
+def get_contacts(files: list[Path] = typer.Argument(None)) -> None:
+    """
+    Find contact from submissions given as arguments
+    """
+    l = list(map(submission.read_submission_or_exit, files))
+    contacts = list(str(c) for c in itertools.chain.from_iterable([s.contacts for s in l]))
+    contacts.sort()
+    print("\n".join(contacts))
+
+
+@app.command(rich_help_panel=submissions_panel)
+def merge_pull_requests_locally(C: str = ".") -> None:
+    submission.merge_all_submissions(C)
 
 
 @app.command(rich_help_panel=submissions_panel)
