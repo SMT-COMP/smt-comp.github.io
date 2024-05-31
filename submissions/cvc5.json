@@ -56,7 +56,7 @@
           "sha256": "25d7fb5461a5b4b96e75145d95700085db81f3b0f6c7af556b47a2aaf1fbcd96"
         }
       },
-      "command": [ "bin/starexec_run_default" ]
+      "command": [ "bin/smtcomp_run_incremental" ]
     },
     {
       "tracks": [ "Cloud" ],
