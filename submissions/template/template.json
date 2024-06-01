@@ -13,6 +13,7 @@
     "system_description": "http://example.com/system.pdf",
     "command": ["relative_cmd", "default_command_line"],
     "solver_type": "Standalone",
+    "seed": "42",
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["Equality"] },
         {
