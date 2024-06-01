@@ -16,8 +16,7 @@
   "participations": [
     {
       "tracks": ["SingleQuery"],
-      "logics": "ˆQF_UF",
-      "command": ["./plat-smt"]
+      "logics": "ˆQF_UF"
     },
     {
       "tracks": ["Incremental"],
@@ -26,13 +25,11 @@
     },
     {
       "tracks": ["UnsatCore"],
-      "logics": "ˆQF_UF",
-      "command": ["./plat-smt"]
+      "logics": "ˆQF_UF"
     },
     {
       "tracks": ["ModelValidation"],
-      "logics": "ˆQF_UF",
-      "command": ["./plat-smt"]
+      "logics": "ˆQF_UF"
     }
   ]
 }
