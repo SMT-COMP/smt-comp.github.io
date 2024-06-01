@@ -4,6 +4,29 @@
         "Zhengyang John Lu", "Stefan Siemer", "Paul Sarnighausen-Cahn", "Florin Manea", "Vijay Ganesh" 
     ],
     "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
+    "archive": {
+        "url": "https://drive.google.com/file/d/1uQqVQw_DvG7McBxqE_BzjMtrviY1L_bl/view?usp=sharing",
+        "h": { "sha256": "10ea5822dcbd01bed303c6c7c6b283c336019d49ae76a87124a2c8eacaf0aff3" }
+    },
     "website": "https://github.com/JohnLyu2/z3alpha",
-    "solver_type": "derived"
+    "system_description": "https://drive.google.com/file/d/1aJOiNzKac_kwhZm8DoT-EFCa_2RHwVwj/view?usp=drive_link",
+    "solver_type": "derived",
+    "command": ["python3", "z3alpha.py"],
+    "seed": "1231",
+    "participations": [
+        { 
+            "tracks": ["SingleQuery"], 
+            "divisions": [
+                "QF_Bitvec",
+                "QF_LinearIntArith",
+                "QF_LinearRealArith",
+                "QF_NonLinearIntArith",
+                "QF_NonLinearRealArith"
+            ]
+        },
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["QF_S", "QF_SLIA"]
+        }
+    ]
 }
