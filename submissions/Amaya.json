@@ -10,7 +10,7 @@
     },
     "website": "https://github.com/MichalHe/amaya",
     "system_description": "https://github.com/VeriFIT/amaya-smt-comp/blob/master/system-description-2024/main.pdf",
-    "command": ["bash amaya/run.sh"],
+    "command": ["amaya/run.sh"],
     "solver_type": "Standalone",
     "participations": [
         {
