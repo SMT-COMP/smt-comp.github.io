@@ -62,10 +62,18 @@ check_untyped_defs = "True"
 warn_return_any = "True"
 warn_unused_ignores = "True"
 show_error_codes = "True"
-ignore_missing_imports = "True"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[[tool.mypy.overrides]]
+module = [
+    "benchexec","benchexec.util",
+    "benchexec.result","benchexec.tools.template",
+    "bs4","wget"
+]
+ignore_missing_imports = true
+
 
 [tool.ruff]
 target-version = "py37"
