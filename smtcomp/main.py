@@ -81,12 +81,7 @@ def show_json(
     if prefix is not None:
         files = list(map(prefix.joinpath, files))
 
-    l = []
-    for file in files:
-        try:
-            l.append(submission.read(file))
-        except ValidationError as e:
-            pass
+    l = list(map(submission.read_submission_or_exit, files))
 
     data = [submission.raw_summary(s) for s in l]
     print(json.dumps(data, indent=4))
