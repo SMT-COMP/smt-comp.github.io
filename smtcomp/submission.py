@@ -1,9 +1,8 @@
 from pathlib import Path
-
 import rich
 from rich.tree import Tree
 from rich.progress import track
-
+from typing import Any, TextIO
 from smtcomp.defs import Submission
 import smtcomp.defs as defs
 from github import Github
@@ -27,7 +26,7 @@ def read_submission_or_exit(file: Path) -> defs.Submission:
         exit(1)
 
 
-def tree_summary(s: Submission) -> Tree:
+def rich_tree_summary(s: Submission) -> Tree:
     tree = Tree(f"[bold]{s.name}[/bold]")
     tree.add(f"{len(s.contributors)} authors")
     tree.add(f"website: {s.website}")
@@ -51,8 +50,38 @@ def tree_summary(s: Submission) -> Tree:
     return tree
 
 
+def md_item(md: TextIO, s: str, level: int) -> None:
+    md.write("  " * level)
+    md.write("* ")
+    md.write(s)
+    md.write("\n")
+
+
+def markdown_tree_summary(s: Submission, md: TextIO) -> None:
+    md.write(f"#### {s.name}\n\n")
+    md_item(md, f"{len(s.contributors)} authors", level=1)
+    md_item(md, f"website: {s.website}", level=1)
+    tracks = s.participations.get()
+    md_item(md, "Participations", level=1)
+    for track, divs in sorted(tracks.items()):
+        md_item(md, str(track), level=2)
+        for div, logics in sorted(divs.items()):
+            md_item(md, str(div), level=3)
+            not_logics = defs.tracks[track][div].difference(logics)
+            if len(not_logics) == 0:
+                md_item(md, "_all_", level=4)
+            elif len(not_logics) <= 3 and len(not_logics) < len(logics):
+                slogics = map(str, not_logics)
+                for logic in sorted(slogics):
+                    md_item(md, f"~~{logic}~~", level=4)
+            else:
+                slogics = map(str, logics)
+                for logic in sorted(slogics):
+                    md_item(md, logic, level=4)
+
+
 def show(s: Submission) -> None:
-    rich.print(tree_summary(s))
+    rich.print(rich_tree_summary(s))
 
 
 def smtcomp_repo(g: Github) -> Repository:

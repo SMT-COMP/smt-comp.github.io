@@ -56,22 +56,17 @@ def show(
 
     l = list(map(submission.read_submission_or_exit, files))
 
-    console = Console(record=into_comment_file is not None)
-    if into_comment_file is not None:
-        console.print("<details><summary>Summary of modified submissions</summary>")
+    console = Console()
     for s in l:
-        if into_comment_file is not None:
-            console.print("")
-            console.print("```")
-        t = submission.tree_summary(s)
+        t = submission.rich_tree_summary(s)
         console.print(t)
-        if into_comment_file is not None:
-            console.print("```")
-    if into_comment_file is not None:
-        console.print("</details>")
 
     if into_comment_file is not None:
-        into_comment_file.write_text(console.export_text())
+        with into_comment_file.open("w") as md:
+            md.write("<details><summary>Summary of modified submissions</summary>\n\n")
+            for s in l:
+                submission.markdown_tree_summary(s, md)
+            md.write("</details>\n")
 
 
 @app.command(rich_help_panel=submissions_panel)
