@@ -11,6 +11,7 @@ from rich import print
 import typer
 from pydantic import ValidationError
 from collections import defaultdict
+import json
 
 import polars as pl
 
@@ -67,6 +68,28 @@ def show(
             for s in l:
                 submission.markdown_tree_summary(s, md)
             md.write("</details>\n")
+
+@app.command(rich_help_panel=submissions_panel)
+def show_json(
+    files: list[Path] = typer.Argument(None),
+    prefix: Optional[Path] = None
+) -> None:
+    """
+    Show information about solver submissions in JSON format
+    """
+
+    if prefix is not None:
+        files = list(map(prefix.joinpath, files))
+
+    l = []
+    for file in files:
+        try:
+            l.append(submission.read(file))
+        except ValidationError as e:
+            pass
+
+    data = [submission.raw_summary(s) for s in l]
+    print(json.dumps(data, indent=4))
 
 
 @app.command(rich_help_panel=submissions_panel)
