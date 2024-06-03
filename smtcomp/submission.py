@@ -130,4 +130,4 @@ def merge_all_submissions(local_repo_path: str) -> None:
             shas = [p.head.sha for p in fpulls]
             message = "merge submissions\n\n" + "\n".join(f"#{p.number}: {p.title}" for p in fpulls)
             print(shas)
-            subprocess.run(["git", "-C", local_repo_path, "merge", "-m", message, "-s", "ours"] + shas)
+            subprocess.run(["git", "-C", local_repo_path, "merge", "-m", message] + shas)
