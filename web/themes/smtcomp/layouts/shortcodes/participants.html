@@ -1,0 +1,35 @@
+<table class="participants">
+  <colgroup>
+    <col>
+    
+    <col class="track"> <!-- sq -->
+    <col class="track"> <!-- incremental -->
+    <col class="track"> <!-- unsat -->
+    <col class="track"> <!-- model -->
+    <col class="track"> <!-- cloud -->
+    
+    <col class="authors">
+    <col>
+    <col>
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Solver</th>
+
+      <th>Single Query Track</th>
+      <th>Incremental Track</th>
+      <th>Unsat Core Track</th>
+      <th>Model Validation Track</th>
+      <th>Cloud Track</th>
+      
+      <th>Contributors</th>
+      <th>Archive</th>
+      <th>System description</th>
+    </tr>
+  
+    {{ range $.Site.Data.participants }}
+    {{ partial "participant.html" . }}
+    {{ end }}
+    
+    </tbody>
+</table>
