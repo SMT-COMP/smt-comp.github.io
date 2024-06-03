@@ -6,28 +6,28 @@
     "contacts": ["Matthias Heizmann <matthias.heizmann@iste.uni-stuttgart.de>"],
     "archive": {
         "url": "https://www.informatik.uni-freiburg.de/~heizmann/2024smtcomp/UltimateEliminator.zip",
-        "h": { "sha256": "e60f23e4b1a2e051f819a83fecfead28fd1cfdfab5c5522e8644622aa1b3a152" }
+        "h": { "sha256": "ead045ea30153e5db227ba6013fb8e0b90a70e720601558606e5edd8bea02f57" }
     },
     "website": "https://ultimate-pa.org/?ui=tool&tool=eliminator",
     "system_description": "https://www.informatik.uni-freiburg.de/~heizmann/2024smtcomp/2024UltimateEliminator.pdf",
-    "command": ["java -Dosgi.configuration.area=config/ -Xmx4G -Xss4m -jar plugins/org.eclipse.equinox.launcher_1.5.800.v20200727-1323.jar -s ./mathsat.epf -external-solver \"mathsat\""],
+    "command": ["ultimateeliminator.sh"],
     "solver_type": "wrapped",
     "seed": "0",
     "participations": [
         {
             "tracks": ["SingleQuery"],
             "logics": "^((AX?)?(UF)?(BV)?(FP)?(DT)?([LN][IR]*A|[IR]DL)?)$",
-            "command": ["java -Dosgi.configuration.area=config/ -Xmx4G -Xss4m -jar plugins/org.eclipse.equinox.launcher_1.5.800.v20200727-1323.jar -s ./mathsat.epf -external-solver \"mathsat\""]
+            "command": ["ultimateeliminator.sh"]
         },
         {
             "tracks": ["Incremental"],
             "logics": "^((AX?)?(UF)?(BV)?(FP)?(DT)?([LN][IR]*A|[IR]DL)?)$",
-            "command": ["java -Dosgi.configuration.area=config/ -Xmx4G -Xss4m -jar plugins/org.eclipse.equinox.launcher_1.5.800.v20200727-1323.jar -s ./mathsat.epf -external-solver \"mathsat\""]
+            "command": ["ultimateeliminator.sh"]
         },
         {
             "tracks": ["UnsatCore"],
             "logics": "^((AX?)?(UF)?(BV)?(FP)?(DT)?([LN][IR]*A|[IR]DL)?)$",
-            "command": ["java -Dosgi.configuration.area=config/ -Xmx4G -Xss4m -jar plugins/org.eclipse.equinox.launcher_1.5.800.v20200727-1323.jar -s ./mathsat.epf -external-solver \"mathsat\""]
+            "command": ["ultimateeliminator.sh"]
         }
     ]
 }
