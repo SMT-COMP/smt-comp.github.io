@@ -115,7 +115,6 @@ def test_select_and_scramble(
 
 def select_and_scramble(
     competition_track: defs.Track,
-    data: Path,
     config: defs.Config,
     srcdir: Path,
     dstdir: Path,
@@ -126,27 +125,27 @@ def select_and_scramble(
 
     match competition_track:
         case defs.Track.SingleQuery:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
         case defs.Track.Incremental:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.ModelValidation:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.UnsatCore:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )

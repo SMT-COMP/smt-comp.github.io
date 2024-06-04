@@ -115,13 +115,12 @@ def sq_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config) -> pl.
     )
 
 
-def helper_compute_sq(data: Path, config: defs.Config) -> pl.LazyFrame:
+def helper_compute_sq(config: defs.Config) -> pl.LazyFrame:
     """
     Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
     """
-    datafiles = defs.DataFiles(data)
-    benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
-    results = pl.read_ipc(datafiles.cached_previous_results)
+    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks)
+    results = pl.read_ipc(config.cached_previous_results)
     benchmarks_with_info = add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
     if config.invert_triviality:
         trivial_in_logic = pl.col("trivial").any().over(["logic"])
