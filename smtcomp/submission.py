@@ -50,14 +50,14 @@ def rich_tree_summary(s: Submission) -> Tree:
     return tree
 
 
-def raw_summary(s: Submission) -> Tree:
-    data = {}
+def raw_summary(s: Submission) -> dict[str, Any]:
+    data = dict[str, Any]()
     data["name"] = s.name
     data["authors"] = [c.name for c in s.contributors]
     data["website"] = str(s.website)
-    data["archive_url"] = str(s.archive.url)
+    data["archive_url"] = str(s.archive.url if s.archive is not None else "")
     data["system_description"] = str(s.system_description)
-    data["tracks"] = {}
+    data["tracks"] = dict[str, dict[str, list[str]]]()
 
     tracks = s.participations.get()
     for track, divs in sorted(tracks.items()):
