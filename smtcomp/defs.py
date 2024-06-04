@@ -1212,8 +1212,8 @@ class Participation(BaseModel, extra="forbid"):
         return d
 
     def complete(self, archive: Archive | None, command: Command | None) -> ParticipationCompleted:
-        archive = cast(Archive, archive if self.archive is None else self.archive)
-        command = cast(Command, command if self.command is None else self.command)
+        archive = cast(Archive, archive if self.archive is None and self.aws_dockerfile is None else self.archive)
+        command = cast(Command, command if self.command is None and self.aws_dockerfile is None else self.command)
         return ParticipationCompleted(
             tracks=self.get(), archive=archive, command=command, experimental=self.experimental
         )
@@ -1261,10 +1261,10 @@ class Submission(BaseModel, extra="forbid"):
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
-        if self.archive is None and not all(p.archive for p in self.participations.root):
-            raise ValueError("Field archive is needed in all participations if not present at the root")
-        if self.command is None and not all(p.command for p in self.participations.root):
-            raise ValueError("Field command is needed in all participations if not present at the root")
+        if self.archive is None and not all(p.archive or p.aws_dockerfile for p in self.participations.root):
+            raise ValueError("Field archive (or aws_dockerfile) is needed in all participations if not present at the root")
+        if self.command is None and not all(p.command or p.aws_dockerfile for p in self.participations.root):
+            raise ValueError("Field command (or aws_dockerfile) is needed in all participations if not present at the root")
         return self
 
     def uniq_id(self) -> str:
