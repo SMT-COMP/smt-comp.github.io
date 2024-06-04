@@ -1262,9 +1262,13 @@ class Submission(BaseModel, extra="forbid"):
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
         if self.archive is None and not all(p.archive or p.aws_dockerfile for p in self.participations.root):
-            raise ValueError("Field archive (or aws_dockerfile) is needed in all participations if not present at the root")
+            raise ValueError(
+                "Field archive (or aws_dockerfile) is needed in all participations if not present at the root"
+            )
         if self.command is None and not all(p.command or p.aws_dockerfile for p in self.participations.root):
-            raise ValueError("Field command (or aws_dockerfile) is needed in all participations if not present at the root")
+            raise ValueError(
+                "Field command (or aws_dockerfile) is needed in all participations if not present at the root"
+            )
         return self
 
     def uniq_id(self) -> str:
