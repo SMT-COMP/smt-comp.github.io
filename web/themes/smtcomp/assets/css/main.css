@@ -689,16 +689,18 @@ ul li p {
 }
 
 table.participants {
-    table-layout: fixed;
-    width: 200%;
+  table-layout: fixed;
+  width: 200%;
 }
 
-col.authors, td.authors {
-    width: 35%;
-    white-space: normal;
+col.authors,
+td.authors {
+  width: 35%;
+  white-space: normal;
 }
 
-col.track, td.track {
-    width: 6em;
-    white-space: normal;
+col.track,
+td.track {
+  width: 6em;
+  white-space: normal;
 }

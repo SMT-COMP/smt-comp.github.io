@@ -52,19 +52,19 @@ def rich_tree_summary(s: Submission) -> Tree:
 
 def raw_summary(s: Submission) -> Tree:
     data = {}
-    data['name'] = s.name
-    data['authors'] = [c.name for c in s.contributors]
-    data['website'] = str(s.website)
-    data['archive_url'] = str(s.archive.url)
-    data['system_description'] = str(s.system_description)
-    data['tracks'] = {}
+    data["name"] = s.name
+    data["authors"] = [c.name for c in s.contributors]
+    data["website"] = str(s.website)
+    data["archive_url"] = str(s.archive.url)
+    data["system_description"] = str(s.system_description)
+    data["tracks"] = {}
 
     tracks = s.participations.get()
     for track, divs in sorted(tracks.items()):
         divisions = {}
         for div, logics in sorted(divs.items()):
             divisions[str(div)] = [str(l) for l in logics]
-        data['tracks'][str(track)] = divisions
+        data["tracks"][str(track)] = divisions
 
     return data
 

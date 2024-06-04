@@ -69,11 +69,9 @@ def show(
                 submission.markdown_tree_summary(s, md)
             md.write("</details>\n")
 
+
 @app.command(rich_help_panel=submissions_panel)
-def show_json(
-    files: list[Path] = typer.Argument(None),
-    prefix: Optional[Path] = None
-) -> None:
+def show_json(files: list[Path] = typer.Argument(None), prefix: Optional[Path] = None) -> None:
     """
     Show information about solver submissions in JSON format
     """
