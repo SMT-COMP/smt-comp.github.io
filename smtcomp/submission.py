@@ -50,6 +50,25 @@ def rich_tree_summary(s: Submission) -> Tree:
     return tree
 
 
+def raw_summary(s: Submission) -> dict[str, Any]:
+    data = dict[str, Any]()
+    data["name"] = s.name
+    data["authors"] = [c.name for c in s.contributors]
+    data["website"] = str(s.website)
+    data["archive_url"] = str(s.archive.url if s.archive is not None else "")
+    data["system_description"] = str(s.system_description)
+    data["tracks"] = dict[str, dict[str, list[str]]]()
+
+    tracks = s.participations.get()
+    for track, divs in sorted(tracks.items()):
+        divisions = {}
+        for div, logics in sorted(divs.items()):
+            divisions[str(div)] = [str(l) for l in logics]
+        data["tracks"][str(track)] = divisions
+
+    return data
+
+
 def md_item(md: TextIO, s: str, level: int) -> None:
     md.write("  " * level)
     md.write("* ")
@@ -111,4 +130,4 @@ def merge_all_submissions(local_repo_path: str) -> None:
             shas = [p.head.sha for p in fpulls]
             message = "merge submissions\n\n" + "\n".join(f"#{p.number}: {p.title}" for p in fpulls)
             print(shas)
-            subprocess.run(["git", "-C", local_repo_path, "merge", "-m", message] + shas)
+            subprocess.run(["git", "-C", local_repo_path, "merge", "-m", message, "-s", "ours"] + shas)

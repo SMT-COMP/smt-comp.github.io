@@ -1,0 +1,1032 @@
+[
+    {
+        "name": "Algaroba",
+        "authors": ["Amar Shah", "Federico Mora", "Sanjit Seshia"],
+        "website": "https://github.com/uclid-org/algaroba",
+        "archive_url": "https://github.com/uclid-org/algaroba/archive/refs/tags/v1.0.0.tar.gz",
+        "system_description": "https://github.com/uclid-org/algaroba/files/15255360/Algaroba_at_the_2024_SMTCOMP.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"]
+            }
+        }
+    },
+    {
+        "name": "Amaya",
+        "authors": [
+            "Vojt\u011bch Havlena",
+            "Michal He\u010dko",
+            "Luk\u00e1\u0161 Hol\u00edk",
+            "Ond\u0159ej Leng\u00e1l"
+        ],
+        "website": "https://github.com/MichalHe/amaya",
+        "archive_url": "https://github.com/VeriFIT/amaya-smt-comp/raw/master/archives/amaya-smt-comp-2024-v5.tar.gz",
+        "system_description": "https://github.com/VeriFIT/amaya-smt-comp/blob/master/system-description-2024/main.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"]
+            }
+        }
+    },
+    {
+        "name": "Bitwuzla",
+        "authors": ["Aina Niemetz", "Mathias Preiner"],
+        "website": "https://bitwuzla.github.io/",
+        "archive_url": "https://zenodo.org/records/11288326/files/bitwuzla-submission-smtcomp-2024.zip?download=1",
+        "system_description": "https://bitwuzla.github.io/data/smtcomp2024/paper.pdf",
+        "tracks": {
+            "UnsatCore": {
+                "Bitvec": ["BV"],
+                "Equality+MachineArith": [
+                    "ABV",
+                    "ABVFP",
+                    "ABVFPLRA",
+                    "AUFBV",
+                    "AUFBVFP",
+                    "UFBV",
+                    "UFBVFP"
+                ],
+                "FPArith": ["BVFP", "BVFPLRA", "FP", "FPLRA"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ]
+            },
+            "SingleQuery": {
+                "Bitvec": ["BV"],
+                "Equality+MachineArith": [
+                    "ABV",
+                    "ABVFP",
+                    "ABVFPLRA",
+                    "AUFBV",
+                    "AUFBVFP",
+                    "UFBV",
+                    "UFBVFP"
+                ],
+                "FPArith": ["BVFP", "BVFPLRA", "FP", "FPLRA"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ]
+            },
+            "ModelValidation": {
+                "QF_ADT+BitVec": ["QF_AUFBV", "QF_ABV"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality+Bitvec": ["QF_UFBV"],
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ]
+            },
+            "Incremental": {
+                "Bitvec": ["BV"],
+                "Equality+MachineArith": ["ABVFPLRA"],
+                "FPArith": ["BVFP", "BVFPLRA"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_FPArith": [
+                    "QF_UFFP",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ]
+            }
+        }
+    },
+    {
+        "name": "COLIBRI",
+        "authors": ["Bruno Marre", "Fran\u00e7ois Bobot", "Christophe Junke"],
+        "website": "http://colibri.frama-c.com/",
+        "archive_url": "https://drive.google.com/uc?export=download&id=1lJjQNgHRF14sGEW84eJ6tBsZ0-DBPMW2",
+        "system_description": "https://drive.google.com/file/d/13c5E0iNMvpTRjmhWKb286V25Dw4f6JOF/view?usp=sharing",
+        "tracks": {
+            "SingleQuery": {
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_UFFPDTNIRA",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ]
+            }
+        }
+    },
+    {
+        "name": "cvc5",
+        "authors": [
+            "Leni Aniva",
+            "Haniel Barbosa",
+            "Clark Barrett",
+            "Hanna Lachnitt",
+            "Daniel Larraz",
+            "Abdalrhman Mohamed",
+            "Mudathir Mohamed",
+            "Aina Niemetz",
+            "Alex Ozdemir",
+            "Mathias Preiner",
+            "Andrew Reynolds",
+            "Hans-J\u00f6rg Schurr",
+            "Cesare Tinelli",
+            "Amalee Wilson",
+            "Yoni Zohar"
+        ],
+        "website": "https://cvc5.github.io/",
+        "archive_url": "https://homepage.divms.uiowa.edu/~hschrr/smtcomp2024/cvc5-default.zip",
+        "system_description": "https://homepage.divms.uiowa.edu/~hschrr/smtcomp2024/cvc5.pdf",
+        "tracks": {
+            "UnsatCore": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Bitvec": ["BV"],
+                "Equality": ["UF", "UFDT"],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+MachineArith": [
+                    "ABV",
+                    "ABVFP",
+                    "ABVFPLRA",
+                    "AUFBV",
+                    "AUFBVDTLIA",
+                    "AUFBVDTNIA",
+                    "AUFBVDTNIRA",
+                    "AUFBVFP",
+                    "UFBV",
+                    "UFBVDT",
+                    "UFBVFP",
+                    "AUFFPDTNIRA",
+                    "UFBVLIA",
+                    "UFFPDTNIRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ],
+                "FPArith": ["BVFP", "BVFPLRA", "FP", "FPLRA"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"],
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+Bitvec": [
+                    "QF_AUFBV",
+                    "QF_UFBVDT",
+                    "QF_UFBV",
+                    "QF_ABV"
+                ],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_AUFLIA",
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFDTLIA",
+                    "QF_UFDTLIRA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFDTNIA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_UFNRA",
+                    "QF_ANIA"
+                ],
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_UFFPDTNIRA",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"],
+                "QF_Strings": ["QF_SNIA", "QF_S", "QF_SLIA"]
+            },
+            "SingleQuery": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Bitvec": ["BV"],
+                "Equality": ["UF", "UFDT"],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+MachineArith": [
+                    "ABV",
+                    "ABVFP",
+                    "ABVFPLRA",
+                    "AUFBV",
+                    "AUFBVDTLIA",
+                    "AUFBVDTNIA",
+                    "AUFBVDTNIRA",
+                    "AUFBVFP",
+                    "UFBV",
+                    "UFBVDT",
+                    "UFBVFP",
+                    "AUFFPDTNIRA",
+                    "UFBVLIA",
+                    "UFFPDTNIRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ],
+                "FPArith": ["BVFP", "BVFPLRA", "FP", "FPLRA"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"],
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+Bitvec": [
+                    "QF_AUFBV",
+                    "QF_UFBVDT",
+                    "QF_UFBV",
+                    "QF_ABV"
+                ],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_AUFLIA",
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFDTLIA",
+                    "QF_UFDTLIRA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFDTNIA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_UFNRA",
+                    "QF_ANIA"
+                ],
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_UFFPDTNIRA",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"],
+                "QF_Strings": ["QF_SNIA", "QF_S", "QF_SLIA"]
+            },
+            "ModelValidation": {
+                "QF_ADT+BitVec": ["QF_AUFBV", "QF_UFBVDT", "QF_ABV"],
+                "QF_ADT+LinArith": [
+                    "QF_AUFLIA",
+                    "QF_AX",
+                    "QF_ALIA",
+                    "QF_UFDTLIA",
+                    "QF_UFDTLIRA"
+                ],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"],
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+Bitvec": ["QF_UFBV"],
+                "QF_Equality+LinearArith": ["QF_UFIDL", "QF_UFLIA", "QF_UFLRA"],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFDTNIA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_UFNRA",
+                    "QF_ANIA"
+                ],
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_UFFPDTNIRA",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            },
+            "Incremental": {
+                "Arith": ["LRA", "LIA"],
+                "Bitvec": ["BV"],
+                "Equality": ["UF"],
+                "Equality+LinearArith": ["ALIA", "UFLRA"],
+                "Equality+MachineArith": ["ABVFPLRA"],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "UFDTNIA",
+                    "AUFNIRA",
+                    "UFNIA",
+                    "UFNRA"
+                ],
+                "FPArith": ["BVFP", "BVFPLRA"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_Equality+Bitvec+Arith": [
+                    "QF_AUFBVLIA",
+                    "QF_AUFBVNIA",
+                    "QF_UFBVLIA"
+                ],
+                "QF_Equality+LinearArith": [
+                    "QF_AUFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFLIA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFNRA",
+                    "QF_UFNIA",
+                    "QF_ANIA"
+                ],
+                "QF_FPArith": [
+                    "QF_UFFP",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ],
+                "QF_LinearIntArith": ["QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA"],
+                "QF_NonLinearIntArith": ["QF_NIA"]
+            },
+            "Cloud": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Bitvec": ["BV"],
+                "Equality": ["UF", "UFDT"],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+MachineArith": [
+                    "ABV",
+                    "ABVFP",
+                    "ABVFPLRA",
+                    "AUFBV",
+                    "AUFBVDTLIA",
+                    "AUFBVDTNIA",
+                    "AUFBVDTNIRA",
+                    "AUFBVFP",
+                    "UFBV",
+                    "UFBVDT",
+                    "UFBVFP",
+                    "AUFFPDTNIRA",
+                    "UFBVLIA",
+                    "UFFPDTNIRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ],
+                "FPArith": ["BVFP", "BVFPLRA", "FP", "FPLRA"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"],
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+Bitvec": [
+                    "QF_AUFBV",
+                    "QF_UFBVDT",
+                    "QF_UFBV",
+                    "QF_ABV"
+                ],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_AUFLIA",
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFDTLIA",
+                    "QF_UFDTLIRA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFDTNIA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_UFNRA",
+                    "QF_ANIA"
+                ],
+                "QF_FPArith": [
+                    "QF_AUFBVFP",
+                    "QF_UFFP",
+                    "QF_UFFPDTNIRA",
+                    "QF_BVFP",
+                    "QF_BVFPLRA",
+                    "QF_FP",
+                    "QF_FPLRA",
+                    "QF_ABVFP",
+                    "QF_ABVFPLRA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"],
+                "QF_Strings": ["QF_SNIA", "QF_S", "QF_SLIA"]
+            }
+        }
+    },
+    {
+        "name": "iProver v3.9",
+        "authors": ["Konstantin Korovin"],
+        "website": "https://gitlab.com/korovin/iprover",
+        "archive_url": "http://tba/",
+        "system_description": "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2024.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Equality": ["UF", "UFDT"],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ]
+            },
+            "Parallel": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Equality": ["UF", "UFDT"],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ]
+            }
+        }
+    },
+    {
+        "name": "OpenSMT",
+        "authors": ["Tom\u00e1\u0161 Kol\u00e1rik", "Martin Blicha"],
+        "website": "https://github.com/usi-verification-and-security/opensmt",
+        "archive_url": "https://zenodo.org/records/11371847/files/opensmt.tgz",
+        "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/abstract-2024.pdf",
+        "tracks": {
+            "UnsatCore": {
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_AUFLIA",
+                    "QF_ALIA"
+                ],
+                "QF_LinearIntArith": ["QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"]
+            },
+            "SingleQuery": {
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_AUFLIA",
+                    "QF_ALIA"
+                ],
+                "QF_LinearIntArith": ["QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"]
+            },
+            "ModelValidation": {
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+LinearArith": ["QF_UFIDL", "QF_UFLIA", "QF_UFLRA"],
+                "QF_LinearIntArith": ["QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"]
+            },
+            "Incremental": {
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+LinearArith": [
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_AUFLIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA"]
+            }
+        }
+    },
+    {
+        "name": "OSTRICH",
+        "authors": [
+            "Matthew Hague",
+            "Denghang Hu",
+            "Anthony W. Lin",
+            "Oliver Markgraf",
+            "Philipp R\u00fcmmer",
+            "Zhilin Wu"
+        ],
+        "website": "https://github.com/uuverifiers/ostrich",
+        "archive_url": "https://philipp.ruemmer.org/ostrich-2024.tar.gz",
+        "system_description": "https://philipp.ruemmer.org/ostrich-2024.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "QF_Strings": ["QF_SNIA", "QF_S", "QF_SLIA"]
+            }
+        }
+    },
+    {
+        "name": "plat-smt",
+        "authors": ["David Ewert"],
+        "website": "https://github.com/dewert99/plat-smt",
+        "archive_url": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2024/plat-smt.zip",
+        "system_description": "https://github.com/dewert99/plat-smt/files/15505357/PlatSMT_2024_System_Description.pdf",
+        "tracks": {
+            "UnsatCore": {},
+            "SingleQuery": {},
+            "ModelValidation": {},
+            "Incremental": {}
+        }
+    },
+    {
+        "name": "SMTInterpol",
+        "authors": [
+            "Max Barth",
+            "Leon Cacace",
+            "J\u00fcrgen Christ",
+            "Daniel Dietsch",
+            "Leonard Fichtner",
+            "Joanna Greulich",
+            "Elisabeth Henkel",
+            "Matthias Heizmann",
+            "Jochen Hoenicke",
+            "Moritz Mohr",
+            "Alexander Nutz",
+            "Markus Pomrehn",
+            "Pascal Raiola",
+            "Tanja Schindler"
+        ],
+        "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
+        "archive_url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtinterpol-2.5-1338-g35b19d44.tar.gz",
+        "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2024.pdf",
+        "tracks": {
+            "UnsatCore": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Equality": ["UF", "UFDT"],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ],
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"],
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_AUFLIA",
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFDTLIA",
+                    "QF_UFDTLIRA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFDTNIA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_UFNRA",
+                    "QF_ANIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            },
+            "SingleQuery": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Bitvec": ["BV"],
+                "Equality": ["UF", "UFDT"],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+MachineArith": [
+                    "ABV",
+                    "AUFBV",
+                    "AUFBVDTLIA",
+                    "AUFBVDTNIA",
+                    "AUFBVDTNIRA",
+                    "UFBV",
+                    "UFBVDT",
+                    "UFBVLIA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"],
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+Bitvec": [
+                    "QF_AUFBV",
+                    "QF_UFBVDT",
+                    "QF_UFBV",
+                    "QF_ABV"
+                ],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_AUFLIA",
+                    "QF_UFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFDTLIA",
+                    "QF_UFDTLIRA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFDTNIA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_UFNRA",
+                    "QF_ANIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            },
+            "ModelValidation": {
+                "QF_ADT+LinArith": [
+                    "QF_AUFLIA",
+                    "QF_AX",
+                    "QF_ALIA",
+                    "QF_UFDTLIA",
+                    "QF_UFDTLIRA"
+                ],
+                "QF_Datatypes": ["QF_DT", "QF_UFDT"],
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+LinearArith": ["QF_UFIDL", "QF_UFLIA", "QF_UFLRA"],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFDTNIA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_UFNRA",
+                    "QF_ANIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            },
+            "Incremental": {
+                "Arith": ["LRA", "LIA"],
+                "Bitvec": ["BV"],
+                "Equality": ["UF"],
+                "Equality+LinearArith": ["ALIA", "UFLRA"],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "UFDTNIA",
+                    "AUFNIRA",
+                    "UFNIA",
+                    "UFNRA"
+                ],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_Equality+Bitvec+Arith": [
+                    "QF_AUFBVLIA",
+                    "QF_AUFBVNIA",
+                    "QF_UFBVLIA"
+                ],
+                "QF_Equality+LinearArith": [
+                    "QF_AUFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFLIA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFNRA",
+                    "QF_UFNIA",
+                    "QF_ANIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA"],
+                "QF_NonLinearIntArith": ["QF_NIA"]
+            }
+        }
+    },
+    {
+        "name": "SMT-RAT",
+        "authors": [
+            "Jasper Nalbach",
+            "Valentin Promies",
+            "Erika \u00c1brah\u00e1m"
+        ],
+        "website": "https://github.com/ths-rwth/smtrat",
+        "archive_url": "https://github.com/ths-rwth/smtrat/releases/download/24.05/smtrat.tgz",
+        "system_description": "https://github.com/ths-rwth/smtrat/blob/master/doc/smtcomp-description/smtcomp-2024.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "Arith": ["NRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            },
+            "ModelValidation": {
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            }
+        }
+    },
+    {
+        "name": "STP",
+        "authors": [
+            "Vijay Ganesh",
+            "Trevor Hansen",
+            "Mate Soos",
+            "Dan Liew",
+            "Ryan Govostes",
+            "Andrew V. Jones"
+        ],
+        "website": "https://stp.github.io/",
+        "archive_url": "https://github.com/stp/stp/releases/download/smtcomp2024/smtcomp-2024.zip",
+        "system_description": "https://github.com/stp/docs/tree/master/smt2024-descr/descr.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "QF_Bitvec": ["QF_BV"]
+            },
+            "ModelValidation": {
+                "QF_Bitvec": ["QF_BV"]
+            },
+            "Incremental": {
+                "QF_Bitvec": ["QF_BV"]
+            }
+        }
+    },
+    {
+        "name": "Yices2",
+        "authors": [
+            "Bruno Dutertre",
+            "Aman Goel",
+            "St\u00e9phane Graham-Lengrand",
+            "Thomas Hader",
+            "Ahmed Irfan",
+            "Dejan Jovanovic",
+            "Ian A Mason"
+        ],
+        "website": "https://yices.csl.sri.com/",
+        "archive_url": "https://ahmed-irfan.github.io/smtcomp2024/yices2-smtcomp-2024.zip",
+        "system_description": "https://ahmed-irfan.github.io/smtcomp2024/yices2-smtcomp-2024.pdf",
+        "tracks": {
+            "UnsatCore": {
+                "Equality": ["UF"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_AUFLIA",
+                    "QF_UFLRA",
+                    "QF_UFLIA",
+                    "QF_ALIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"]
+            },
+            "SingleQuery": {
+                "Equality": ["UF"],
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality": ["QF_UF", "QF_AX"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_Equality+LinearArith": [
+                    "QF_UFIDL",
+                    "QF_AUFLIA",
+                    "QF_UFLRA",
+                    "QF_UFLIA",
+                    "QF_ALIA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFNRA",
+                    "QF_AUFNIA",
+                    "QF_UFNIA",
+                    "QF_ANIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            },
+            "ModelValidation": {
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+Bitvec": ["QF_UFBV"],
+                "QF_Equality+LinearArith": ["QF_UFIDL", "QF_UFLIA", "QF_UFLRA"],
+                "QF_Equality+NonLinearArith": ["QF_UFNIA", "QF_UFNRA"],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"]
+            },
+            "Incremental": {
+                "QF_Bitvec": ["QF_BV"],
+                "QF_Equality": ["QF_UF"],
+                "QF_Equality+Bitvec": ["QF_AUFBV", "QF_UFBV", "QF_ABV"],
+                "QF_Equality+Bitvec+Arith": [
+                    "QF_AUFBVLIA",
+                    "QF_AUFBVNIA",
+                    "QF_UFBVLIA"
+                ],
+                "QF_Equality+LinearArith": [
+                    "QF_AUFLIA",
+                    "QF_UFLRA",
+                    "QF_ALIA",
+                    "QF_UFLIA"
+                ],
+                "QF_Equality+NonLinearArith": [
+                    "QF_UFNRA",
+                    "QF_UFNIA",
+                    "QF_ANIA"
+                ],
+                "QF_LinearIntArith": ["QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA"],
+                "QF_NonLinearIntArith": ["QF_NIA"]
+            }
+        }
+    },
+    {
+        "name": "YicesQS",
+        "authors": ["St\u00e9phane Graham-Lengrand"],
+        "website": "https://github.com/disteph/yicesQS",
+        "archive_url": "https://www.csl.sri.com/users/sgl/yicesQS.zip",
+        "system_description": "https://www.csl.sri.com/users/sgl/Work/Reports/2024-yicesQS.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "Arith": ["LRA", "NIA", "NRA", "LIA"],
+                "Bitvec": ["BV"]
+            }
+        }
+    },
+    {
+        "name": "Z3-alpha",
+        "authors": [
+            "Zhengyang John Lu",
+            "Stefan Siemer",
+            "Paul Sarnighausen-Cahn",
+            "Florin Manea",
+            "Vijay Ganesh"
+        ],
+        "website": "https://github.com/JohnLyu2/z3alpha",
+        "archive_url": "https://drive.google.com/file/d/1uQqVQw_DvG7McBxqE_BzjMtrviY1L_bl/view?usp=sharing",
+        "system_description": "https://drive.google.com/file/d/1aJOiNzKac_kwhZm8DoT-EFCa_2RHwVwj/view?usp=drive_link",
+        "tracks": {
+            "SingleQuery": {
+                "QF_Bitvec": ["QF_BV"],
+                "QF_LinearIntArith": ["QF_LIRA", "QF_IDL", "QF_LIA"],
+                "QF_LinearRealArith": ["QF_LRA", "QF_RDL"],
+                "QF_NonLinearIntArith": ["QF_NIA", "QF_NIRA"],
+                "QF_NonLinearRealArith": ["QF_NRA"],
+                "QF_Strings": ["QF_S", "QF_SLIA"]
+            }
+        }
+    },
+    {
+        "name": "Z3-Noodler",
+        "authors": [
+            "Vojt\u011bch Havlena",
+            "Juraj S\u00ed\u010d",
+            "David Chocholat\u00fd",
+            "Luk\u00e1\u0161 Hol\u00edk",
+            "Ond\u0159ej Leng\u00e1l"
+        ],
+        "website": "https://github.com/VeriFIT/z3-noodler",
+        "archive_url": "https://drive.google.com/uc?export=download&id=1XSj2PiVJLDx-JQyJRt76OEloC0dWFJqH",
+        "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2024.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "QF_Strings": ["QF_SNIA", "QF_S", "QF_SLIA"]
+            }
+        }
+    }
+]
