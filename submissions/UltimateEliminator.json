@@ -6,7 +6,7 @@
     "contacts": ["Matthias Heizmann <matthias.heizmann@iste.uni-stuttgart.de>"],
     "archive": {
         "url": "https://www.informatik.uni-freiburg.de/~heizmann/2024smtcomp/UltimateEliminator.zip",
-        "h": { "sha256": "ead045ea30153e5db227ba6013fb8e0b90a70e720601558606e5edd8bea02f57" }
+        "h": { "sha256": "08be0e691d5a2399f56c448c13c8937bf4212895c6fa104b4d50bbd3306aef62" }
     },
     "website": "https://ultimate-pa.org/?ui=tool&tool=eliminator",
     "system_description": "https://www.informatik.uni-freiburg.de/~heizmann/2024smtcomp/2024UltimateEliminator.pdf",
