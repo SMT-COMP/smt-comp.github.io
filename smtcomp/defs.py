@@ -5,7 +5,7 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict
+from typing import Any, Dict, cast, Optional
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
@@ -20,6 +20,21 @@ class Config:
     cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
+    old_criteria = False
+    """"Do we try to emulate <= 2023 criteria that does not really follow the rules"""
+    invert_triviality = False
+    """Prioritize triviality as much as possible for testing purpose.
+        Look for simple problems instead of hard one"""
+
+    def __init__(self: Config, seed: int | None) -> None:
+        self.__seed = seed
+
+    def seed(self) -> int:
+        if self.__seed is None:
+            raise ValueError("The seed as not been set")
+        s = self.__seed
+        self.__seed = +1
+        return s
 
 
 class DataFiles:
@@ -394,6 +409,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -591,6 +607,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -780,6 +797,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -903,6 +921,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -1026,6 +1045,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.UFDTNIA,
             Logic.UFDTNIRA,
             Logic.UFNIA,
+            Logic.UFNIRA,
         },
         Division.Arith: {
             Logic.LIA,
@@ -1051,6 +1071,10 @@ def logic_used_for_track(t: Track) -> set[Logic]:
 
 
 class Logics(RootModel):
+    """
+    Can be a list of logics or a regexp matched on all the existing logics
+    """
+
     root: list[Logic]
 
     @model_validator(mode="before")
@@ -1075,6 +1099,14 @@ class Logics(RootModel):
 
 
 class Archive(BaseModel):
+    """
+    The url must be record from http://zenodo.org for the final submission. So
+    the hash is not required because zenodo records are immutable.
+
+    The hash can be used if you want to be sure of the archive used during the
+    test runs.
+    """
+
     url: HttpUrl
     h: Hash | None = None
 
@@ -1086,9 +1118,31 @@ class Archive(BaseModel):
 
 
 class Command(BaseModel, extra="forbid"):
+    """
+    Command with its arguments to run after the extraction of the archive.
+
+    The path are relative to the directory in which the archive is unpacked.
+
+    The input file is added at the end of the list of arguments.
+
+    Two forms are accepted, using a dictionnary (separate binary and arguments) or a list ([binary]+arguments).
+
+    The command run in the given environment
+     https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines
+    """
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                ["relative_cmd", "default_command_line"],
+                {"binary": "relative_cmd", "arguments": ["default_command_line"]},
+            ]
+        }
+    }
+
     binary: str
     arguments: list[str] = []
-    compa_starexec: bool = False
+    compa_starexec: bool = Field(default=False, description="Used only for internal tests")
 
     @model_validator(mode="before")
     @classmethod
@@ -1105,13 +1159,42 @@ class Command(BaseModel, extra="forbid"):
         return h.hexdigest()
 
 
+class ParticipationCompleted(BaseModel, extra="forbid"):
+    """Participation using the default value in the submission root"""
+
+    tracks: dict[Track, dict[Division, set[Logic]]]
+    archive: Archive
+    command: Command
+    experimental: bool
+
+
 class Participation(BaseModel, extra="forbid"):
+    """
+    tracks: select the participation tracks
+    divisions: add all the logics of those divisions in each track
+    logics: add all the specified logics in each selected track it exists
+
+    aws_dockerfile should be used only in conjunction with Cloud and Parallel track
+
+    archive and command should not be used with Cloud and Parallel track. They superseed the one given at the root.
+    """
+
     tracks: list[Track]
     logics: Logics = Logics(root=[])
     divisions: list[Division] = []
     archive: Archive | None = None
     command: Command | None = None
+    aws_dockerfile: str | None = None
     experimental: bool = False
+
+    @model_validator(mode="after")
+    def check_archive(self) -> Participation:
+        aws_track = {Track.Cloud, Track.Parallel}
+        if self.aws_dockerfile is not None and not set(self.tracks).issubset(aws_track):
+            raise ValueError("aws_dockerfile can be used only with Cloud and Parallel track")
+        if (self.archive is not None or self.command is not None) and not set(self.tracks).isdisjoint(aws_track):
+            raise ValueError("archive and command field can't be used with Cloud and Parallel track")
+        return self
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
@@ -1128,17 +1211,31 @@ class Participation(BaseModel, extra="forbid"):
                         logics.add(logic)
         return d
 
+    def complete(self, archive: Archive | None, command: Command | None) -> ParticipationCompleted:
+        archive = cast(Archive, archive if self.archive is None else self.archive)
+        command = cast(Command, command if self.command is None else self.command)
+        return ParticipationCompleted(
+            tracks=self.get(), archive=archive, command=command, experimental=self.experimental
+        )
+
+
+import itertools
+
 
 class Participations(RootModel):
     root: list[Participation]
 
-    def get_divisions(self, track: Track) -> list[Division]:
+    def get_divisions(self, l: list[Track] = list(Track)) -> set[Division]:
         """ " Return the divisions in which the solver participates"""
-        return []  # TODO
+        tracks = self.get()
+        divs = [set(tracks[track].keys()) for track in l]
+        return functools.reduce(lambda x, y: x | y, divs)
 
-    def get_logics(self, track: Track) -> list[Logic]:
+    def get_logics(self, l: list[Track] = list(Track)) -> set[Logic]:
         """ " Return the logics in which the solver participates"""
-        return []  # TODO
+        tracks = self.get()
+        logics = itertools.chain.from_iterable([iter(tracks[track].values()) for track in l])
+        return functools.reduce(lambda x, y: x | y, logics)
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
@@ -1153,11 +1250,14 @@ class Submission(BaseModel, extra="forbid"):
     contributors: list[Contributor] = Field(min_length=1)
     contacts: list[NameEmail] = Field(min_length=1)
     archive: Archive | None = None
-    command: Command | None = None
+    command: Optional[Command] = Field(
+        default=None, description="Fields command given in participations have priority over this one"
+    )
     website: HttpUrl
     system_description: HttpUrl
     solver_type: SolverType
     participations: Participations
+    seed: int | None = None
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
@@ -1169,6 +1269,10 @@ class Submission(BaseModel, extra="forbid"):
 
     def uniq_id(self) -> str:
         return hashlib.sha256(self.name.encode()).hexdigest()
+
+    def complete_participations(self) -> list[ParticipationCompleted]:
+        """Push defaults from the submission into participations"""
+        return [p.complete(self.archive, self.command) for p in self.participations.root]
 
 
 class Smt2File(BaseModel):

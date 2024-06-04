@@ -1,7 +1,7 @@
 import json
 import itertools
 from pathlib import Path
-from typing import List, Optional, cast, Dict, Any, Annotated
+from typing import List, Optional, cast, Dict, Any, Annotated, TextIO
 import rich
 from rich.progress import track
 import rich.style
@@ -27,11 +27,21 @@ import smtcomp.selection
 from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
+import smtcomp.test_solver as test_solver
+
 
 app = typer.Typer()
 
+submissions_panel = "Submissions"
+results_panel = "Results"
+conversion_panel = "Conversion old format"
+benchexec_panel = "Benchexec"
+data_panel = "Data"
+benchmarks_panel = "Benchmarks"
+selection_panel = "Selection process"
 
-@app.command()
+
+@app.command(rich_help_panel=submissions_panel)
 def show(
     files: list[Path] = typer.Argument(None),
     prefix: Optional[Path] = None,
@@ -72,7 +82,7 @@ def show(
         into_comment_file.write_text(console.export_text())
 
 
-@app.command()
+@app.command(rich_help_panel=submissions_panel)
 def validate(file: str) -> None:
     """
     Validate a json defining a solver submission
@@ -84,7 +94,7 @@ def validate(file: str) -> None:
         exit(1)
 
 
-@app.command()
+@app.command(rich_help_panel=conversion_panel)
 def convert_csv(file: str, dstdir: Path) -> None:
     """
     Convert a csv (old submission format) to json files (new format)
@@ -93,7 +103,7 @@ def convert_csv(file: str, dstdir: Path) -> None:
     smtcomp.convert_csv.convert_csv(Path(file), Path(dstdir))
 
 
-@app.command()
+@app.command(rich_help_panel=submissions_panel)
 def dump_json_schema(dst: Path) -> None:
     """
     Dump the json schemas used for submissions at the given file
@@ -102,16 +112,7 @@ def dump_json_schema(dst: Path) -> None:
         f.write(json.dumps(defs.Submission.model_json_schema(), indent=2))
 
 
-@app.command()
-def download_benchmarks(dst: Path, dryrun: bool = False) -> None:
-    """
-    Clone or update all the benchmarks used by the SMTCOMP
-    """
-    clone_group("SMT-LIB-benchmarks", dst.joinpath("non-incremental"), dryrun)
-    clone_group("SMT-LIB-benchmarks-inc", dst.joinpath("incremental"), dryrun)
-
-
-@app.command()
+@app.command(rich_help_panel=benchexec_panel)
 def prepare_execution(dst: Path) -> None:
     """
     Generate or download all scripts and tools that are necessary for the execution in Benchexec
@@ -121,7 +122,7 @@ def prepare_execution(dst: Path) -> None:
     execution.copy_tool_module(dst)
 
 
-@app.command()
+@app.command(rich_help_panel=benchexec_panel)
 def generate_benchexec(
     files: List[Path],
     dst: Path,
@@ -143,21 +144,29 @@ def generate_benchexec(
     )
 
 
-@app.command()
+# Should be moved somewhere else
+def download_archive_aux(s: defs.Submission, dst: Path) -> None:
+    """
+    Download and unpack
+    """
+    dst.mkdir(parents=True, exist_ok=True)
+    if s.archive:
+        archive.download(s.archive, dst)
+        archive.unpack(s.archive, dst)
+    for p in s.participations.root:
+        if p.archive:
+            archive.download(p.archive, dst)
+            archive.unpack(p.archive, dst)
+
+
+@app.command(rich_help_panel=benchexec_panel)
 def download_archive(files: List[Path], dst: Path) -> None:
     """
     Download and unpack
     """
     for file in track(files):
-        dst.mkdir(parents=True, exist_ok=True)
         s = submission.read(str(file))
-        if s.archive:
-            archive.download(s.archive, dst)
-            archive.unpack(s.archive, dst)
-        for p in s.participations.root:
-            if p.archive:
-                archive.download(p.archive, dst)
-                archive.unpack(p.archive, dst)
+        download_archive_aux(s, dst)
 
 
 @app.command()
@@ -176,7 +185,7 @@ def generate_benchmarks(dst: Path, seed: int = 0) -> None:
     smtcomp.generate_benchmarks.generate_benchmarks(dst, seed)
 
 
-@app.command()
+@app.command(rich_help_panel=benchmarks_panel)
 def create_benchmarks_list(src: Path, data: Path, scrambler: Optional[Path] = None, j: int = 8) -> None:
     """
     List the benchmarks found in SMTLIB releases.
@@ -217,7 +226,7 @@ def create_benchmarks_list(src: Path, data: Path, scrambler: Optional[Path] = No
     write_cin(datafiles.benchmarks, benchmarks.model_dump_json(indent=1))
 
 
-@app.command()
+@app.command(rich_help_panel=benchmarks_panel)
 def benchmarks_stats(src: Path) -> None:
     tree = Tree(src.name)
     benchmarks = defs.Benchmarks.model_validate_json(src.read_text())
@@ -237,7 +246,7 @@ def benchmarks_stats(src: Path) -> None:
     print(tree)
 
 
-@app.command()
+@app.command(rich_help_panel=conversion_panel)
 def convert_csv_result(src: Path, dst: Path, track: defs.Track) -> None:
     results = smtcomp.convert_csv.convert_csv_result(src, track)
     write_cin(dst, results.model_dump_json(indent=1))
@@ -251,12 +260,12 @@ def merge_results_aux(files: list[Path]) -> defs.Results:
     return defs.Results(results=results)
 
 
-@app.command()
+@app.command(rich_help_panel=results_panel)
 def merge_results(files: list[Path], dst: Path) -> None:
     write_cin(dst, merge_results_aux(files).model_dump_json(indent=1))
 
 
-@app.command()
+@app.command(rich_help_panel=benchmarks_panel)
 def merge_benchmarks(files: list[Path], dst: Path) -> None:
     incremental: list[defs.InfoIncremental] = []
     non_incremental: list[defs.InfoNonIncremental] = []
@@ -270,19 +279,19 @@ def merge_benchmarks(files: list[Path], dst: Path) -> None:
 OLD_CRITERIA = Annotated[bool, typer.Option(help="Simulate previous year criteria (needs only to be trivial one year)")]
 
 
-@app.command()
+@app.command(rich_help_panel=selection_panel)
 def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False) -> None:
     """
     Show statistics on the trivial benchmarks
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
+    config = defs.Config(seed=None)
+    config.old_criteria = old_criteria
     datafiles = defs.DataFiles(data)
     benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
     results = pl.read_ipc(datafiles.cached_previous_results)
-    benchmarks_with_trivial_info = smtcomp.selection.add_trivial_run_info(
-        benchmarks.lazy(), results.lazy(), old_criteria
-    )
+    benchmarks_with_trivial_info = smtcomp.selection.add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
     b3 = (
         benchmarks_with_trivial_info.group_by(["logic"])
         .agg(
@@ -323,8 +332,15 @@ def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False
     print(table)
 
 
-@app.command()
-def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = False) -> None:
+@app.command(rich_help_panel=selection_panel)
+def show_sq_selection_stats(
+    data: Path,
+    seed: int,
+    old_criteria: OLD_CRITERIA = False,
+    min_use_benchmarks: int = defs.Config.min_used_benchmarks,
+    ratio_of_used_benchmarks: float = defs.Config.ratio_of_used_benchmarks,
+    invert_triviality: bool = False,
+) -> None:
     """
     Show statistics on the benchmarks selected for single query track
 
@@ -332,11 +348,12 @@ def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = 
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
-    datafiles = defs.DataFiles(data)
-    benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
-    results = pl.read_ipc(datafiles.cached_previous_results)
-    benchmarks_with_info = smtcomp.selection.add_trivial_run_info(benchmarks.lazy(), results.lazy(), old_criteria)
-    benchmarks_with_info = smtcomp.selection.sq_selection(benchmarks_with_info, seed)
+    config = defs.Config(seed=seed)
+    config.min_used_benchmarks = min_use_benchmarks
+    config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
+    config.invert_triviality = invert_triviality
+    config.old_criteria = old_criteria
+    benchmarks_with_info = smtcomp.selection.helper_compute_sq(data, config)
     b3 = (
         benchmarks_with_info.group_by(["logic"])
         .agg(
@@ -345,6 +362,7 @@ def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = 
             old_never_ran=pl.col("file").filter(run=False, new=False).len(),
             new=pl.col("new").sum(),
             selected=pl.col("file").filter(selected=True).len(),
+            selected_already_run=pl.col("file").filter(selected=True, run=True).len(),
         )
         .sort(by="logic")
         .collect()
@@ -357,6 +375,7 @@ def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = 
     table.add_column("never compet.", justify="right", style="magenta")
     table.add_column("new", justify="right", style="magenta1")
     table.add_column("selected", justify="right", style="green3")
+    table.add_column("selected already run", justify="right", style="green4")
 
     used_logics = defs.logic_used_for_track(defs.Track.SingleQuery)
     for d in b3.to_dicts():
@@ -373,6 +392,7 @@ def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = 
             str(d["old_never_ran"]),
             str(d["new"]),
             str(d["selected"]),
+            str(d["selected_already_run"]),
         )
 
     table.add_section()
@@ -383,6 +403,7 @@ def show_sq_selection_stats(data: Path, seed: int, old_criteria: OLD_CRITERIA = 
         str(b3["old_never_ran"].sum()),
         str(b3["new"].sum()),
         str(b3["selected"].sum()),
+        str(b3["selected_already_run"].sum()),
     )
 
     print(table)
@@ -397,7 +418,7 @@ def print_iterable(i: int, tree: Tree, a: Any) -> None:
             print_iterable(i - 1, t1, v)
 
 
-@app.command()
+@app.command(rich_help_panel=data_panel)
 def create_cache(data: Path) -> None:
     datafiles = defs.DataFiles(data)
     print("Loading benchmarks")
@@ -477,14 +498,74 @@ def create_cache(data: Path) -> None:
 #     write_cin(dst,benchmarks2.model_dump_json(indent=1))
 
 
-@app.command()
-def scramble_benchmarks(
-    competition_track: defs.Track, data: Path, dstdir: Path, scrambler: Path, seed: int, max_workers: int = 8
+@app.command(rich_help_panel=benchexec_panel)
+def select_and_scramble(
+        competition_track: defs.Track, data: Path, srcdir: Path, dstdir: Path, scrambler: Path, seed: int, max_workers: int = 8
 ) -> None:
     """
     Selects and scrambles the benchmarks and
-    write them to the destination directory.
-    The src file must contain one benchmark path per line.
+    writes them to the destination directory.
+    The srcdir must contain all benchmarks as 
+    outlined in the data.
     """
 
-    smtcomp.scramble_benchmarks.scramble(competition_track, data, dstdir, scrambler, seed, max_workers)
+    config = defs.Config(seed=seed)
+    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, data, config, srcdir, dstdir, scrambler, max_workers)
+
+
+@app.command()
+def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(None)) -> None:
+    def read_submission(file: Path) -> defs.Submission:
+        try:
+            return submission.read(str(file))
+        except Exception as e:
+            rich.print(f"[red]Error during file parsing of {file}[/red]")
+            print(e)
+            exit(1)
+
+    outdir.mkdir(parents=True, exist_ok=True)
+    test_solver.copy_me(outdir)
+
+    trivial_bench = outdir.joinpath("trivial_bench")
+    smtcomp.generate_benchmarks.generate_trivial_benchmarks(trivial_bench)
+
+    l = list(map(read_submission, submissions))
+    script_output = outdir.joinpath("test_script.py")
+    with script_output.open("w") as out:
+        out.write("from test_solver import *\n")
+        out.write("init_test()\n")
+        out.write("\n")
+        out.write("""print("Testing provers")\n""")
+        for sub in l:
+            out.write(f"print({sub.name!r})\n")
+            download_archive_aux(sub, outdir)
+            for part in sub.complete_participations():
+                for track, divisions in part.tracks.items():
+                    match track:
+                        case defs.Track.Incremental:
+                            statuses = [defs.Status.Sat, defs.Status.Unsat]
+                        case defs.Track.ModelValidation:
+                            statuses = [defs.Status.Sat]
+                        case defs.Track.SingleQuery:
+                            statuses = [defs.Status.Sat, defs.Status.Unsat]
+                        case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+                            continue
+                    for _, logics in divisions.items():
+                        for logic in logics:
+                            for status in statuses:
+                                file_sat = smtcomp.generate_benchmarks.path_trivial_benchmark(
+                                    trivial_bench, track, logic, status
+                                ).relative_to(outdir)
+                                cmd = (
+                                    archive.archive_unpack_dir(part.archive, outdir)
+                                    .joinpath(part.command.binary)
+                                    .relative_to(outdir)
+                                )
+                                if status == defs.Status.Sat:
+                                    expected = "sat"
+                                else:
+                                    expected = "unsat"
+                                out.write(
+                                    f"test({str(cmd)!r},{part.command.arguments!r},{str(file_sat)!r},{expected!r})\n"
+                                )
+        out.write("end()\n")
