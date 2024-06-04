@@ -15,7 +15,6 @@
     "participations": [
         {
             "tracks": ["SingleQuery"],
-            "divisions": ["Arith"],
             "logics": ["LIA", "NIA"]
         }
     ],
