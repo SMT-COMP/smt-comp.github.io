@@ -37,7 +37,7 @@ class Tool(BaseTool2):  # type: ignore
             for line in output:
                 line = line.strip()
                 # ignore
-                if re.compile("^\s*(success|;.*)?\s*$").match(line):
+                if re.compile(r"^\s*(success|;.*)?\s*$").match(line):
                     continue
                 if line == "unsat":
                     return result.RESULT_FALSE_PROP
