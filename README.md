@@ -17,6 +17,19 @@ Tools used for the organization of the SMT competition
 git clone git@github.com:smtcomp/smtcomp.github.io.git
 ```
 
+On Debian/Ubuntu installation a virtual env (here in .venv) is needed:
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Poetry is used for handling dependencies:
+
+```
+pip install poetry
+```
+
 Finally, install the environment with
 
 ```bash
@@ -56,10 +69,10 @@ $DIR/zenodo
 Then you can run (very io intensive):
 
 ```
-smtcomp $DIR/zenodo ./data/
+smtcomp create-benchmarks-list $DIR/zenodo ./data/
 ```
 
-The directory `./data/` is the one present in this repository
+The directory `./data/` is the one present in this repository.
 
 ## Using the smtcomp tool for selecting the benchmarks
 
