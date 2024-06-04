@@ -742,6 +742,85 @@
         }
     },
     {
+        "name": "iProver v3.9",
+        "authors": [
+            "Konstantin Korovin"
+        ],
+        "website": "https://gitlab.com/korovin/iprover",
+        "archive_url": "http://tba/",
+        "system_description": "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2024.pdf",
+        "tracks": {
+            "SingleQuery": {
+                "Arith": [
+                    "LRA",
+                    "NIA",
+                    "NRA",
+                    "LIA"
+                ],
+                "Equality": [
+                    "UF",
+                    "UFDT"
+                ],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ]
+            },
+            "Parallel": {
+                "Arith": [
+                    "LRA",
+                    "NIA",
+                    "NRA",
+                    "LIA"
+                ],
+                "Equality": [
+                    "UF",
+                    "UFDT"
+                ],
+                "Equality+LinearArith": [
+                    "ALIA",
+                    "AUFDTLIA",
+                    "AUFDTLIRA",
+                    "AUFLIA",
+                    "AUFLIRA",
+                    "UFDTLIA",
+                    "UFDTLIRA",
+                    "UFIDL",
+                    "UFLIA",
+                    "UFLRA"
+                ],
+                "Equality+NonLinearArith": [
+                    "ANIA",
+                    "AUFDTNIRA",
+                    "AUFNIA",
+                    "AUFNIRA",
+                    "UFDTNIA",
+                    "UFDTNIRA",
+                    "UFNIA",
+                    "UFNIRA"
+                ]
+            }
+        }
+    },
+    {
         "name": "OpenSMT",
         "authors": [
             "Tom\u00e1\u0161 Kol\u00e1rik",
