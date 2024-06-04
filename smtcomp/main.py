@@ -519,17 +519,25 @@ def create_cache(data: Path) -> None:
 
 @app.command(rich_help_panel=benchexec_panel)
 def select_and_scramble(
-        competition_track: defs.Track, data: Path, srcdir: Path, dstdir: Path, scrambler: Path, seed: int, max_workers: int = 8
+    competition_track: defs.Track,
+    data: Path,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    seed: int,
+    max_workers: int = 8,
 ) -> None:
     """
     Selects and scrambles the benchmarks and
     writes them to the destination directory.
-    The srcdir must contain all benchmarks as 
+    The srcdir must contain all benchmarks as
     outlined in the data.
     """
 
     config = defs.Config(seed=seed)
-    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, data, config, srcdir, dstdir, scrambler, max_workers)
+    smtcomp.scramble_benchmarks.select_and_scramble(
+        competition_track, data, config, srcdir, dstdir, scrambler, max_workers
+    )
 
 
 @app.command()
