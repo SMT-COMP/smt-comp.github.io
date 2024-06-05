@@ -17,7 +17,7 @@ ZIP_UNIX_SYSTEM = 3
 def zip_extract_all_with_executable_permission(file: Path, target_dir: Path) -> None:
     # extract by calling `unzip`, because ZipFile does not handle symlinks
     # https://stackoverflow.com/questions/19737570/how-do-i-preserve-symlinks-when-unzipping-an-archive-using-python
-    check_output(['unzip', '-q', str(file), '-d', str(target_dir)], stderr=STDOUT)
+    check_output(["unzip", "-q", str(file), "-d", str(target_dir)], stderr=STDOUT)
 
     with ZipFile(file, "r") as zf:
         for info in zf.infolist():
