@@ -5,13 +5,14 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict, cast, Optional
+from typing import Any, Dict, cast, Optional, Iterable, TypeVar
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
 from datetime import date
 from rich import print
 
+U = TypeVar('U')
 
 class EnumAutoInt(Enum):
     """
@@ -1185,6 +1186,9 @@ class Participation(BaseModel, extra="forbid"):
 
 import itertools
 
+def union(s:Iterable[set[U]]) -> set[U]:
+    return functools.reduce(lambda x, y: x | y,s,set())
+    
 
 class Participations(RootModel):
     root: list[Participation]
@@ -1192,14 +1196,18 @@ class Participations(RootModel):
     def get_divisions(self, l: list[Track] = list(Track)) -> set[Division]:
         """ " Return the divisions in which the solver participates"""
         tracks = self.get()
-        divs = [set(tracks[track].keys()) for track in l]
-        return functools.reduce(lambda x, y: x | y, divs)
+        return union(set(tracks[track].keys()) for track in l if track in tracks)
 
     def get_logics(self, l: list[Track] = list(Track)) -> set[Logic]:
         """ " Return the logics in which the solver participates"""
         tracks = self.get()
-        logics = itertools.chain.from_iterable([iter(tracks[track].values()) for track in l])
-        return functools.reduce(lambda x, y: x | y, logics)
+        return union(itertools.chain.from_iterable([tracks[track].values() for track in l if track in tracks]))
+
+    def get_logics_by_track(self) -> dict[Track,set[Logic]]:
+        """ Return the logics in which the solver participates"""
+        tracks = self.get()
+        return dict( (track, union(tracks[track].values())) for track in tracks)
+        
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
@@ -1348,6 +1356,15 @@ class Config:
     nyse_seed = None
     """The integer part of one hundred times the opening value of the New York Stock Exchange Composite Index on the first day the exchange is open on or after the date specified in nyse_date"""
     nyse_date = date(year=2024, month=6, day=10)
+    
+    aws_timelimit_hard=600
+    """
+    Time in seconds upon which benchmarks are considered hards
+    """
+    aws_num_selected=400
+    """
+    Number of selected benchmarks
+    """
 
     def __init__(self, data: Path) -> None:
         if data.name != "data":
