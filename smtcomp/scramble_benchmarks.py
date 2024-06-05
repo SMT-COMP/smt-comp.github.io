@@ -61,15 +61,14 @@ def scramble_lazyframe(
             )
             exit(1)
 
-    executor = concurrent.futures.ThreadPoolExecutor(max_workers=max_workers)
-    results = list(
-        track(
-            executor.map(lambda fdict: scramble_file(fdict, incremental, srcdir, dstdir, args), files),
-            total=len(files),
-            description="Scrambling selected benchmarks...",
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = list(
+            track(
+                executor.map(lambda fdict: scramble_file(fdict, incremental, srcdir, dstdir, args), files),
+                total=len(files),
+                description="Scrambling selected benchmarks...",
+            )
         )
-    )
-    executor.shutdown()
 
 
 def test_select_and_scramble(
