@@ -13,17 +13,17 @@
         {
             "tracks": ["Cloud"],
             "divisions": ["Equality"],
-            "aws_dockerfile": "https://github.com/project/repository"
+            "aws_repository": "https://github.com/project/repository"
         },
         {
             "tracks": ["Parallel"],
             "logics": "QF_.*LRA.*",
-            "aws_dockerfile": "https://github.com/project/repository"
+            "aws_repository": "https://github.com/project/repository"
         },
         {
             "tracks": ["Cloud"],
             "logics": ["LIA"],
-            "aws_dockerfile": "https://github.com/project/repository"
+            "aws_repository": "https://github.com/project/repository"
         }
     ]
 }
