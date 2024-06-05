@@ -1174,7 +1174,7 @@ class Participation(BaseModel, extra="forbid"):
     divisions: add all the logics of those divisions in each track
     logics: add all the specified logics in each selected track it exists
 
-    aws_dockerfile should be used only in conjunction with Cloud and Parallel track
+    aws_repository should be used only in conjunction with Cloud and Parallel track
 
     archive and command should not be used with Cloud and Parallel track. They superseed the one given at the root.
     """
@@ -1184,14 +1184,14 @@ class Participation(BaseModel, extra="forbid"):
     divisions: list[Division] = []
     archive: Archive | None = None
     command: Command | None = None
-    aws_dockerfile: str | None = None
+    aws_repository: str | None = None
     experimental: bool = False
 
     @model_validator(mode="after")
     def check_archive(self) -> Participation:
         aws_track = {Track.Cloud, Track.Parallel}
-        if self.aws_dockerfile is not None and not set(self.tracks).issubset(aws_track):
-            raise ValueError("aws_dockerfile can be used only with Cloud and Parallel track")
+        if self.aws_repository is not None and not set(self.tracks).issubset(aws_track):
+            raise ValueError("aws_repository can be used only with Cloud and Parallel track")
         if (self.archive is not None or self.command is not None) and not set(self.tracks).isdisjoint(aws_track):
             raise ValueError("archive and command field can't be used with Cloud and Parallel track")
         return self
@@ -1212,8 +1212,10 @@ class Participation(BaseModel, extra="forbid"):
         return d
 
     def complete(self, archive: Archive | None, command: Command | None) -> ParticipationCompleted:
-        archive = cast(Archive, archive if self.archive is None and self.aws_dockerfile is None else self.archive)
-        command = cast(Command, command if self.command is None and self.aws_dockerfile is None else self.command)
+        archive = cast(Archive, archive if self.archive is None else self.archive)
+        command = cast(Command, command if self.command is None else self.command)
+        if (self.aws_repository is not None) or set(self.tracks).issubset(aws_track):
+            raise ValueError("can't complete Cloud and Parallel track participations")
         return ParticipationCompleted(
             tracks=self.get(), archive=archive, command=command, experimental=self.experimental
         )
@@ -1261,13 +1263,13 @@ class Submission(BaseModel, extra="forbid"):
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
-        if self.archive is None and not all(p.archive or p.aws_dockerfile for p in self.participations.root):
+        if self.archive is None and not all(p.archive or p.aws_repository for p in self.participations.root):
             raise ValueError(
-                "Field archive (or aws_dockerfile) is needed in all participations if not present at the root"
+                "Field archive (or aws_repository) is needed in all participations if not present at the root"
             )
-        if self.command is None and not all(p.command or p.aws_dockerfile for p in self.participations.root):
+        if self.command is None and not all(p.command or p.aws_repository for p in self.participations.root):
             raise ValueError(
-                "Field command (or aws_dockerfile) is needed in all participations if not present at the root"
+                "Field command (or aws_repository) is needed in all participations if not present at the root"
             )
         return self
 

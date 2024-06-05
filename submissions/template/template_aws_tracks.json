@@ -1,0 +1,14 @@
+{
+    "name": "<solver name>",
+    "contributors": ["First Smith", {"name": "Second Baker", "website": "http://baker.com/"}],
+    "contacts": ["contact name <contact@email.com>"],
+    "website": "http://example.com/",
+    "system_description": "http://example.com/system.pdf",
+    "solver_type": "Standalone",
+    "seed": "42",
+    "participations": [
+        {"tracks": ["Cloud"], "divisions": ["Equality"], "aws_dockerfile": "https://github.com/project/repository"},
+        {"tracks": ["Parallel"], "logics": "QF_.*LRA.*", "aws_dockerfile": "https://github.com/project/repository"},
+        {"tracks": ["Cloud"], "logics": ["LIA"], "aws_dockerfile": "https://github.com/project/repository"},
+    ],
+}
