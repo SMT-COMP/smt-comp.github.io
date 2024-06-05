@@ -8,14 +8,20 @@ from stat import S_IXUSR
 import gzip
 import io
 from typing import AnyStr, cast, IO
+from subprocess import check_output, STDOUT
+import os
 
 ZIP_UNIX_SYSTEM = 3
 
 
 def zip_extract_all_with_executable_permission(file: Path, target_dir: Path) -> None:
+    # extract by calling `unzip`, because ZipFile does not handle symlinks
+    # https://stackoverflow.com/questions/19737570/how-do-i-preserve-symlinks-when-unzipping-an-archive-using-python
+    check_output(['unzip', '-q', str(file), '-d', str(target_dir)], stderr=STDOUT)
+
     with ZipFile(file, "r") as zf:
         for info in zf.infolist():
-            extracted_path = Path(zf.extract(info, target_dir))
+            extracted_path = target_dir / Path(info.filename)
 
             if info.create_system == ZIP_UNIX_SYSTEM and extracted_path.is_file():
                 unix_attributes = info.external_attr >> 16
