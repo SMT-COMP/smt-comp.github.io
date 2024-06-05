@@ -1214,7 +1214,7 @@ class Participation(BaseModel, extra="forbid"):
     def complete(self, archive: Archive | None, command: Command | None) -> ParticipationCompleted:
         archive = cast(Archive, archive if self.archive is None else self.archive)
         command = cast(Command, command if self.command is None else self.command)
-        if (self.aws_repository is not None) or set(self.tracks).issubset(aws_track):
+        if (self.aws_repository is not None) or set(self.tracks).issubset({Track.Cloud, Track.Parallel}):
             raise ValueError("can't complete Cloud and Parallel track participations")
         return ParticipationCompleted(
             tracks=self.get(), archive=archive, command=command, experimental=self.experimental
