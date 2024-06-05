@@ -1,0 +1,19 @@
+{
+    "name": "cvc5-cloud",
+    "contributors": [
+        "Amalee Wilson",
+        { "name": "Andres Noetzli", "name": "Andrew Reynolds", "name": "Cesare Tinelli", "name": "Clark Barrett" }
+    ],
+    "contacts": ["Amalee Wilson <amalee@cs.stanford.edu>"],
+    "website": "https://cvc5.github.io/",
+    "system_description": "https://github.com/amaleewilson/smtcomp24/blob/main/system_description.pdf",
+    "solver_type": "cloud",
+    "seed": "42",
+    "participations": [
+        { "tracks": ["cloud"] },
+        {
+            "tracks": ["cloud"],
+            "logics": "QF_.*LRA.*", "QF_.*LIA.*", "QF_.*NIA.*", "QF_.*NRA.*", "QF_.*DL.*",
+        }
+    ]
+}
