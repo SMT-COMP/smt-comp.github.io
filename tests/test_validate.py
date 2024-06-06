@@ -9,7 +9,7 @@ from smtcomp.main import app
 from smtcomp.submission import read
 
 runner = CliRunner()
-good_cases = ["tests/test1.json", "submissions/template/template.json"]
+good_cases = ["tests/test1.json", "submissions/template/template.json", "submissions/template/template_aws_tracks.json"]
 bad_cases = ["test_bad.json"]
 
 

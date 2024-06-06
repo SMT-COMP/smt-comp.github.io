@@ -2,6 +2,7 @@
 title = 'Parallel and Cloud Tracks'
 date = 2024-05-07T10:09:02+01:00
 draft = false
+aliases = ['/parallel-and-cloud-tracks.html']
 +++
 
 ## Parallel and Cloud Tracks
