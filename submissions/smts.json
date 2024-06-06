@@ -1,0 +1,30 @@
+{
+    "name": "SMTS",
+    "contributors": [
+        { "name": "Tomáš Kolárik", "website": "https://github.com/Tomaqa" }
+        ,
+        { "name": "Antti E. J. Hyvärinen", "website": "https://github.com/aehyvari" }
+        ,
+        { "name": "Seyedmasoud Asadzadeh", "website": "https://masoudasadzade.github.io" }
+    ],
+    "contacts": [
+        "Tomáš Kolárik <tomas.kolarik@usi.ch>"
+    ],
+    "website": "https://github.com/usi-verification-and-security/SMTS/tree/cube-and-conquer",
+    "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/abstract-2024.pdf",
+    "solver_type": "Standalone",
+    "participations": [
+        {
+            "tracks": ["Parallel", "Cloud"],
+            "logics": [
+                "QF_UF", "QF_AX",
+                "QF_IDL", "QF_RDL", "QF_LIA", "QF_LRA",
+                "QF_UFIDL", "QF_UFLIA", "QF_UFLRA",
+                "QF_ALIA",
+                "QF_AUFLIA"
+            ],
+            "aws_repository": "https://github.com/usi-verification-and-security/smts-smtcomp-aws"
+        }
+    ],
+    "seed": 13
+}
