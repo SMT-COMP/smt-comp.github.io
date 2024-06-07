@@ -12,7 +12,8 @@ from pydantic.networks import HttpUrl, validate_email
 from datetime import date
 from rich import print
 
-U = TypeVar('U')
+U = TypeVar("U")
+
 
 class EnumAutoInt(Enum):
     """
@@ -1187,9 +1188,10 @@ class Participation(BaseModel, extra="forbid"):
 
 import itertools
 
-def union(s:Iterable[set[U]]) -> set[U]:
-    return functools.reduce(lambda x, y: x | y,s,set())
-    
+
+def union(s: Iterable[set[U]]) -> set[U]:
+    return functools.reduce(lambda x, y: x | y, s, set())
+
 
 class Participations(RootModel):
     root: list[Participation]
@@ -1204,11 +1206,10 @@ class Participations(RootModel):
         tracks = self.get()
         return union(itertools.chain.from_iterable([tracks[track].values() for track in l if track in tracks]))
 
-    def get_logics_by_track(self) -> dict[Track,set[Logic]]:
-        """ Return the logics in which the solver participates"""
+    def get_logics_by_track(self) -> dict[Track, set[Logic]]:
+        """Return the logics in which the solver participates"""
         tracks = self.get()
-        return dict( (track, union(tracks[track].values())) for track in tracks)
-        
+        return dict((track, union(tracks[track].values())) for track in tracks)
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
@@ -1358,12 +1359,12 @@ class Config:
     nyse_seed = None
     """The integer part of one hundred times the opening value of the New York Stock Exchange Composite Index on the first day the exchange is open on or after the date specified in nyse_date"""
     nyse_date = date(year=2024, month=6, day=10)
-    
-    aws_timelimit_hard=600
+
+    aws_timelimit_hard = 600
     """
     Time in seconds upon which benchmarks are considered hards
     """
-    aws_num_selected=400
+    aws_num_selected = 400
     """
     Number of selected benchmarks
     """
@@ -1390,7 +1391,8 @@ class Config:
             Submission.model_validate_json(Path(file).read_text()) for file in self.data.glob("../submissions/*.json")
         ]
 
-    def init_seed(self) -> int:
+    @functools.cached_property
+    def seed(self) -> int:
         unknown_seed = 0
         seed = 0
         for s in self.submissions:
@@ -1406,10 +1408,3 @@ class Config:
                 raise ValueError(f"{unknown_seed} submissions are missing a seed")
             seed += self.nyse_seed
         return seed
-
-    def seed(self) -> int:
-        if self.__seed is None:
-            self.__seed = self.init_seed()
-        else:
-            self.__seed += 1
-        return self.__seed

@@ -48,18 +48,16 @@ def find_trivial(results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
     )
     return tally
 
-def join_default_with_False(original:pl.LazyFrame, new: pl.LazyFrame,
-                            on:str) -> pl.LazyFrame:
-    return (original.join(new, on="file", how="left", coalesce=True)
-        .fill_null(False))
+
+def join_default_with_False(original: pl.LazyFrame, new: pl.LazyFrame, on: str) -> pl.LazyFrame:
+    return original.join(new, on="file", how="left", coalesce=True).fill_null(False)
 
 
 def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
 
     is_trivial = find_trivial(previous_results, config)
-    return (
-        join_default_with_False(benchmarks,is_trivial, on="file")
-        .with_columns(new=pl.col("family").str.starts_with(str(config.current_year)))
+    return join_default_with_False(benchmarks, is_trivial, on="file").with_columns(
+        new=pl.col("family").str.starts_with(str(config.current_year))
     )
 
 
@@ -79,7 +77,7 @@ def sq_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config) -> pl.
         new_benchmarks=c_file.filter(c_new == True),
         old_benchmarks=c_file.filter(c_new == False),
     )
-    
+
     # Expression computing the number of sample to take for each logic
     sample_size = pl.min_horizontal(
         c_all_len,
@@ -97,14 +95,14 @@ def sq_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config) -> pl.
     new_benchmarks_sampled = (
         pl.col("new_benchmarks")
         .filter(new_sample_size > 0)
-        .list.sample(n=new_sample_size.filter(new_sample_size > 0), seed=config.seed())
+        .list.sample(n=new_sample_size.filter(new_sample_size > 0), seed=config.seed)
         .list.explode()
         .drop_nulls()
     )
     old_benchmarks_sampled = (
         pl.col("old_benchmarks")
         .filter(old_sample_size > 0)
-        .list.sample(n=old_sample_size.filter(old_sample_size > 0), seed=config.seed())
+        .list.sample(n=old_sample_size.filter(old_sample_size > 0), seed=config.seed)
         .list.explode()
         .drop_nulls()
     )
@@ -132,72 +130,72 @@ def helper_compute_sq(config: defs.Config) -> pl.LazyFrame:
         benchmarks_with_info = benchmarks_with_info.with_columns(trivial=inverted_or_not_trivial)
     return sq_selection(benchmarks_with_info, config)
 
+
 def competitive_logics(config: defs.Config) -> pl.LazyFrame:
     """
     returned columns track, logic, competitive:bool
     """
-    l=(s.participations.get_logics_by_track() for s in config.submissions)
-    dd=list(itertools.chain.from_iterable(map((lambda x: ((int(k), list(map(int,s))) for k,s in x.items())),l)))
-    return (pl.DataFrame(dd,schema=["track","logic"])
-            .lazy()
-            .explode("logic")
-            .group_by("track","logic")
-            .agg(competitive=(pl.col("logic").len() > 1)))
+    l = (s.participations.get_logics_by_track() for s in config.submissions)
+    dd = list(itertools.chain.from_iterable(map((lambda x: ((int(k), list(map(int, s))) for k, s in x.items())), l)))
+    return (
+        pl.DataFrame(dd, schema=["track", "logic"])
+        .lazy()
+        .explode("logic")
+        .group_by("track", "logic")
+        .agg(competitive=(pl.col("logic").len() > 1))
+    )
+
 
 @functools.cache
 def tracks() -> pl.LazyFrame:
     """
     returned columns track, division, logic
     """
-    l = ((int(track),int(division),int(logic)) for track, divisions in defs.tracks.items() for division,logics in divisions.items() for logic in logics )
-    return pl.DataFrame(l,schema=["track","division","logic"]).lazy()
+    l = (
+        (int(track), int(division), int(logic))
+        for track, divisions in defs.tracks.items()
+        for division, logics in divisions.items()
+        for logic in logics
+    )
+    return pl.DataFrame(l, schema=["track", "division", "logic"]).lazy()
+
 
 def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
-    aws_track=[defs.Track.Cloud,defs.Track.Parallel]
+    aws_track = [defs.Track.Cloud, defs.Track.Parallel]
 
     # Add division information to competitive logic
-    logics=competitive_logics(config).filter(pl.col("track").is_in(list(map(int,aws_track))),competitive=True)
-    logics = logics.join(tracks(),on=["track","logic"],how="inner")
+    logics = competitive_logics(config).filter(pl.col("track").is_in(list(map(int, aws_track))), competitive=True)
+    logics = logics.join(tracks(), on=["track", "logic"], how="inner")
 
-    #Keep only competitive logic from this track
-    b=benchmarks.join(logics,on="logic",how="inner")
-    previous_results=previous_results.join(b,on="file",how="semi")
-    
-    #Keep only hard and unsolved benchmarks
-    solved=(c_result.is_in({int(defs.Status.Sat),int(defs.Status.Unsat)}))
-    solved_within_timelimit= (solved & (c_cpu_time <= config.aws_timelimit_hard))
-    
-    hard_unsolved = (previous_results
+    # Keep only competitive logic from this track
+    b = benchmarks.join(logics, on="logic", how="inner")
+    previous_results = previous_results.join(b, on="file", how="semi")
+
+    # Keep only hard and unsolved benchmarks
+    solved = c_result.is_in({int(defs.Status.Sat), int(defs.Status.Unsat)})
+    solved_within_timelimit = solved & (c_cpu_time <= config.aws_timelimit_hard)
+
+    hard_unsolved = (
+        previous_results
         # Remove bench solved within the timelimit by any solver
         .filter(solved_within_timelimit.not_().all().over("file"))
         .group_by("file")
-        .agg(
-            hard=solved.any(),
-            unsolved=solved.not_().all()
-        ))
-        
+        .agg(hard=solved.any(), unsolved=solved.not_().all())
+    )
+
     b = b.join(hard_unsolved, how="inner", on="file")
 
-    def sample(lf:pl.LazyFrame) -> pl.LazyFrame:
-        n=pl.min_horizontal(pl.col("file").list.len(),config.aws_num_selected)
-        return lf.with_columns(file=pl.col("file").list.sample(n=n,seed=config.seed()))
-    
-    #Sample at the logic level
-    b = sample(b
-                  .group_by("track","division","logic")
-                  .agg(file=c_file)
-                  )
+    def sample(lf: pl.LazyFrame) -> pl.LazyFrame:
+        n = pl.min_horizontal(pl.col("file").list.len(), config.aws_num_selected)
+        return lf.with_columns(file=pl.col("file").list.sample(n=n, seed=config.seed))
 
-    #Sample at the division level
-    b = sample(b
-                  .group_by("track","division")
-                  .agg(file=c_file.flatten()))
+    # Sample at the logic level
+    b = sample(b.group_by("track", "division", "logic").agg(file=c_file))
 
-    #Sample at the track level
-    b = sample(b
-                  .group_by("track")
-                  .agg(file=c_file.flatten())
-                  )
-    
+    # Sample at the division level
+    b = sample(b.group_by("track", "division").agg(file=c_file.flatten()))
 
-    return b.explode("file").join(benchmarks,on="file",how="inner")
+    # Sample at the track level
+    b = sample(b.group_by("track").agg(file=c_file.flatten()))
+
+    return b.explode("file").join(benchmarks, on="file", how="inner")
