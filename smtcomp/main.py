@@ -166,14 +166,15 @@ def generate_benchexec(
             benchexec.generate_tool_module(s, cachedir, target_track)
 
             res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
-            benchexec.generate_xml(
-                timelimit_s=timelimit_s,
-                memlimit_M=memlimit_M,
-                cpuCores=cpuCores,
-                cmdtasks=res,
-                cachedir=cachedir,
-                tool_module_name=tool_module_name,
-            )
+            if res:
+                benchexec.generate_xml(
+                    timelimit_s=timelimit_s,
+                    memlimit_M=memlimit_M,
+                    cpuCores=cpuCores,
+                    cmdtasks=res,
+                    cachedir=cachedir,
+                    tool_module_name=tool_module_name,
+                )
 
 
 # Should be moved somewhere else
