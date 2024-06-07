@@ -80,6 +80,9 @@ def generate_xml(
         memlimit=f"{memlimit_M} MB",
         cpuCores=f"{cpuCores}",
     ):
+        with tag("resultfiles"):
+            text("**/error.log")
+
         for cmdtask in cmdtasks:
             for includesfile in cmdtask.includesfiles:
                 with tag("rundefinition", name=f"{cmdtask.name},{includesfile}"):
