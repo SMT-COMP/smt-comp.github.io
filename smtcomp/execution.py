@@ -36,4 +36,5 @@ def copy_tool_module(dst: Path) -> None:
     tools = dst / "tools"
     tools.mkdir(parents=True, exist_ok=True)
     subprocess.run(["cp", script_path / "tool.py", tools])
+    subprocess.run(["cp", script_path / "incremental_tool.py", tools])
     subprocess.run(["touch", "__init__.py"])

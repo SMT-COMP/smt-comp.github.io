@@ -13,6 +13,7 @@ import os
 
 ZIP_UNIX_SYSTEM = 3
 
+
 def is_zip(file: Path) -> bool:
     try:
         with ZipFile(file, "r") as zf:

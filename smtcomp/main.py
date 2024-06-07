@@ -160,17 +160,20 @@ def generate_benchexec(
     """
     for file in track(files):
         s = submission.read(str(file))
-        tool_module_name = benchexec.tool_module_name(s)
-        benchexec.generate_tool_module(s, cachedir)
 
-        res = benchexec.cmdtask_for_submission(s, cachedir)
-        benchexec.generate_xml(
-            timelimit_s=timelimit_s,
-            memlimit_M=memlimit_M,
-            cpuCores=cpuCores,
-            cmdtasks=res,
-            cachedir=cachedir,
-            tool_module_name=tool_module_name)
+        for target_track in [defs.Track.SingleQuery, defs.Track.Incremental]:
+            tool_module_name = benchexec.tool_module_name(s, target_track)
+            benchexec.generate_tool_module(s, cachedir, target_track)
+
+            res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
+            benchexec.generate_xml(
+                timelimit_s=timelimit_s,
+                memlimit_M=memlimit_M,
+                cpuCores=cpuCores,
+                cmdtasks=res,
+                cachedir=cachedir,
+                tool_module_name=tool_module_name,
+            )
 
 
 # Should be moved somewhere else

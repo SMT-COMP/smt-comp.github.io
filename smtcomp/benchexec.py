@@ -11,24 +11,36 @@ from pydantic import BaseModel
 import shlex
 from re import sub
 
+
 class CmdTask(BaseModel):
     name: str
     options: List[str]
     includesfiles: List[str]
 
 
-def tool_module_name(s: defs.Submission) -> str:
-    return sub(r'\W+', '', s.name.lower())
+def tool_module_name(s: defs.Submission, track: defs.Track) -> str:
+    return sub(r"\W+", "", s.name.lower()) + get_suffix(track)
 
 
-def generate_tool_module(s: defs.Submission, cachedir: Path) -> None:
-    name = tool_module_name(s)
-
+def generate_tool_module(s: defs.Submission, cachedir: Path, track: defs.Track) -> None:
+    name = tool_module_name(s, track)
     file = cachedir / "tools" / f"{name}.py"
-    with file.open("w") as f:
 
-        f.write("from tools.tool import SMTCompTool\n\n")
-        f.write("class Tool(SMTCompTool):  # type: ignore\n")
+    with file.open("w") as f:
+        match track:
+            case defs.Track.Incremental:
+                base_module = "incremental_tool"
+                base_class = "IncrementalSMTCompTool"
+            case defs.Track.SingleQuery:
+                base_module = "tool"
+                base_class = "SMTCompTool"
+            case _:
+                rich.print(
+                    f"[red]generate_tool_module command does not yet work for the competition track: {track}[/red]"
+                )
+                exit(1)
+        f.write(f"from tools.{base_module} import {base_class}\n\n")
+        f.write(f"class Tool({base_class}):  # type: ignore\n")
 
         f.write(f"    NAME = '{s.name}'\n")
         if s.command is not None:
@@ -50,7 +62,9 @@ def generate_tool_module(s: defs.Submission, cachedir: Path) -> None:
             f.write(f"    REQUIRED_PATHS = {required_paths}\n")
 
 
-def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: List[CmdTask], cachedir: Path, tool_module_name: str) -> None:
+def generate_xml(
+    timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: List[CmdTask], cachedir: Path, tool_module_name: str
+) -> None:
     doc, tag, text = Doc().tagtext()
 
     doc.asis('<?xml version="1.0"?>')
@@ -64,7 +78,7 @@ def generate_xml(timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: Lis
         timelimit=f"{timelimit_s}s",
         hardlimit=f"{timelimit_s+30}s",
         memlimit=f"{memlimit_M} MB",
-        cpuCores=f"{cpuCores}"
+        cpuCores=f"{cpuCores}",
     ):
         for cmdtask in cmdtasks:
             for includesfile in cmdtask.includesfiles:
@@ -89,32 +103,19 @@ def get_suffix(track: defs.Track):
         case _:
             return ""
 
-def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
+
+def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: defs.Track) -> List[CmdTask]:
     res: List[CmdTask] = []
     i = -1
     for p in s.participations.root:
         command = cast(defs.Command, p.command if p.command else s.command)
         archive = cast(defs.Archive, p.archive if p.archive else s.archive)
         for track, divisions in p.get().items():
+            if track != target_track:
+                continue
+
             i = i + 1
             suffix = get_suffix(track)
-            match track:
-                case defs.Track.Incremental:
-                    mode = "trace"
-                    continue
-                case defs.Track.ModelValidation:
-                    mode = "direct"
-                    continue
-                case defs.Track.UnsatCore:
-                    mode = "direct"
-                    continue
-                case defs.Track.ProofExhibition:
-                    mode = "direct"
-                    continue
-                case defs.Track.SingleQuery:
-                    mode = "direct"
-                case defs.Track.Cloud | defs.Track.Parallel:
-                    continue
             tasks: list[str] = []
             for _, logics in divisions.items():
                 tasks.extend([str(logic) + suffix for logic in logics])
@@ -132,19 +133,8 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path) -> List[CmdTask]:
                             f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec ./{shlex.quote(executable_path.name)} "$FILE")',
                             "compa_starexec",
                         ]
-                    else:
-                        assert mode == "trace"
-                        options = [
-                            "bash",
-                            "-c",
-                            f'ROOT=$(pwd); FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec $ROOT/smtlib2_trace_executor ./{shlex.quote(executable_path.name)} "$FILE")',
-                            "compa_starexec",
-                        ]
                 else:
-                    if mode == "direct":
-                        options = [executable] + command.arguments
-                    else:
-                        options = ["./smtlib2_trace_executor", executable] + command.arguments
+                    options = [executable] + command.arguments
                 cmdtask = CmdTask(
                     name=f"{s.name},{i},{track}",
                     options=options,

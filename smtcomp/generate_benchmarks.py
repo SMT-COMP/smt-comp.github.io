@@ -45,7 +45,7 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                     file_incremental = path_trivial_benchmark(dst, track, theory, defs.Status.Incremental)
 
                     file.write_text(str(file_incremental.relative_to(dst)))
-                    benchmark = '\n'.join([
+                    benchmark = "\n".join([
                         "sat",
                         "sat",
                         "unsat",
@@ -56,7 +56,8 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                         "(assert true)",
                         "(check-sat)",
                         "(assert false)",
-                        "(check-sat)\n"])
+                        "(check-sat)\n",
+                    ])
                     file_incremental.write_text(benchmark)
                     print(str(file_incremental))
                 else:
