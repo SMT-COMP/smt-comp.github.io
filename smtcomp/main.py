@@ -99,7 +99,7 @@ def get_contacts(files: list[Path] = typer.Argument(None)) -> None:
 @app.command(rich_help_panel=submissions_panel)
 def get_seed(data: Path) -> None:
     conf = defs.Config(data)
-    print(conf.seed())
+    print(conf.seed)
 
 
 @app.command(rich_help_panel=submissions_panel)
@@ -208,7 +208,7 @@ def generate_benchmarks(dst: Path, data: Path) -> None:
     Generate benchmarks for smtcomp
     """
     config = defs.Config(data)
-    smtcomp.generate_benchmarks.generate_benchmarks(dst, config.seed())
+    smtcomp.generate_benchmarks.generate_benchmarks(dst, config.seed)
 
 
 @app.command(rich_help_panel=benchmarks_panel)
@@ -539,9 +539,7 @@ def select_and_scramble(
     """
 
     config = defs.Config(data)
-    smtcomp.scramble_benchmarks.select_and_scramble(
-        competition_track, data, config, srcdir, dstdir, scrambler, max_workers
-    )
+    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, dstdir, scrambler, max_workers)
 
 
 @app.command()
