@@ -18,6 +18,8 @@ def path_trivial_benchmark(dst: Path, track: defs.Track, logic: defs.Logic, stat
             return dst.joinpath("files", str(logic) + suffix + ".sat.smt2")
         case defs.Status.Unsat:
             return dst.joinpath("files", str(logic) + suffix + ".unsat.smt2")
+        case defs.Status.Incremental:
+            return dst.joinpath("files", str(logic) + suffix + ".incremental.smt2")
         case defs.Status.Unknown:
             raise (ValueError("No trivial benchmarks yet for unknown"))
 
@@ -37,13 +39,34 @@ def generate_trivial_benchmarks(dst: Path) -> None:
         for _, theories in divisions.items():
             for theory in theories:
                 file = dst.joinpath(str(theory) + suffix)
-                file_sat = path_trivial_benchmark(dst, track, theory, defs.Status.Sat)
-                file_unsat = path_trivial_benchmark(dst, track, theory, defs.Status.Unsat)
+                print(str(file))
 
-                file.write_text("\n".join([str(file_sat.relative_to(dst)), str(file_unsat.relative_to(dst))]))
+                if track == defs.Track.Incremental:
+                    file_incremental = path_trivial_benchmark(dst, track, theory, defs.Status.Incremental)
 
-                file_sat.write_text(f"(set-logic {theory.value})(check-sat)")
-                file_unsat.write_text(f"(set-logic {theory.value})(assert false)(check-sat)")
+                    file.write_text(str(file_incremental.relative_to(dst)))
+                    benchmark = '\n'.join([
+                        "sat",
+                        "sat",
+                        "unsat",
+                        "--- BENCHMARK BEGINS HERE ---",
+                        f"(set-logic {theory.value})",
+                        "(assert true)",
+                        "(check-sat)",
+                        "(assert true)",
+                        "(check-sat)",
+                        "(assert false)",
+                        "(check-sat)\n"])
+                    file_incremental.write_text(benchmark)
+                    print(str(file_incremental))
+                else:
+                    file_sat = path_trivial_benchmark(dst, track, theory, defs.Status.Sat)
+                    file_unsat = path_trivial_benchmark(dst, track, theory, defs.Status.Unsat)
+
+                    file.write_text("\n".join([str(file_sat.relative_to(dst)), str(file_unsat.relative_to(dst))]))
+
+                    file_sat.write_text(f"(set-logic {theory.value})(check-sat)")
+                    file_unsat.write_text(f"(set-logic {theory.value})(assert false)(check-sat)")
 
 
 def generate_benchmarks(dst: Path, seed: int) -> None:
