@@ -43,6 +43,7 @@ class IncrementalSMTCompTool(BaseTool2):  # type: ignore
             status = "KILLED"
         else:
             status = "ERROR"
+            
         return f"{status} ({correct} correct)"
 
     def executable(self, _: Any) -> str | Any | None:
