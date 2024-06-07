@@ -535,7 +535,7 @@ def select_and_scramble(
     """
 
     config = defs.Config(seed=seed)
-    smtcomp.scramble_benchmarks.test_select_and_scramble(
+    smtcomp.scramble_benchmarks.select_and_scramble(
         competition_track, data, config, srcdir, dstdir, scrambler, max_workers
     )
 
