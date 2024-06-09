@@ -7,10 +7,13 @@
         "Jochen Hoenicke", "Moritz Mohr", "Alexander Nutz",
         "Markus Pomrehn", "Pascal Raiola", "Tanja Schindler"
     ],
-    "contacts": ["Jochen Hoenicke <jochen@certora.com>"],
+    "contacts": [
+        "Max Barth <max.barth@lmu.de>",
+        "Jochen Hoenicke <jochen@certora.com>"
+    ],
     "archive": {
-        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtinterpol-2.5-1338-g35b19d44.tar.gz",
-        "h": { "sha256": "7f860df4c5c1a8f2ff5518a672f5803e3d14e56266fd9ba475189fa25edb3a12" }
+        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtinterpol-2.5-1373-gde02de5f.tar.gz",
+        "h": { "sha256": "0aa5ef2d0d44bbd53c5f9123c841fcf300279bd5e492f1eacd8ea4817c141c1b" }
     },
     "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
     "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2024.pdf",
