@@ -43,7 +43,7 @@
         },
         {
             "tracks": ["ModelValidation"],
-            "logics": "(QF_)(AX?)?(UF)?(DT)?([IR]DL|[NL][IR]*A)?",
+            "logics": "(QF_)(AX?)?(UF)?(BV)?(DT)?([IR]DL|[NL][IR]*A)?",
             "command": ["smtinterpol"]
         },
         {
