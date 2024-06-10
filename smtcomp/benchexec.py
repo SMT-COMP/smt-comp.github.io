@@ -22,7 +22,11 @@ def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], ori
     ymlfile = benchmark.with_suffix('.yml')
     with ymlfile.open("w") as f:
         f.write("format_version: '2.0'\n\n")
+
         f.write(f"input_files: '{str(benchmark.name)}'\n\n")
+
+        if orig_file is not None:
+            f.write(f"# original_files: '{str(orig_file)}'\n\n")
 
         if expected_result is not None:
             expected_str = 'true' if expected_result else 'false'

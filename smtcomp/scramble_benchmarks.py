@@ -4,8 +4,21 @@ from rich.progress import track
 import subprocess
 import concurrent.futures
 import smtcomp.defs as defs
+from smtcomp.benchexec import generate_benchmark_yml
 import polars as pl
 import smtcomp.selection
+from typing import Optional
+import re
+
+status_pattern = re.compile(r'(set-info :status (sat|unsat|unknown))')
+
+def get_expected_result(benchmark: Path) -> Optional[bool]:
+    for line in open(benchmark).readlines():
+        m = status_pattern.search(line)
+        if m and m.group(2) != 'unknown':
+            return m.group(2) == "sat"
+
+    return None
 
 
 def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, args: list) -> None:
@@ -23,6 +36,8 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
     fdst = dstdir.joinpath("scrambled" + str(fdict["scramble_id"]) + ".smt2")
     dstdir.mkdir(parents=True, exist_ok=True)
     subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"))
+
+    generate_benchmark_yml(fdst, get_expected_result(fsrc), fsrc.relative_to(srcdir))
 
 
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
