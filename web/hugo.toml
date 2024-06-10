@@ -64,8 +64,3 @@ theme = 'smtcomp'
     name = 'Parallel & Cloud Tracks'
     pageRef = 'parallel_cloud'
     weight = 30
-
-[[menu.year]]
-    name = 'Participants'
-    pageRef = 'participants'
-    weight = 50
