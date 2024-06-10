@@ -97,6 +97,9 @@ def generate_xml(
         memlimit=f"{memlimit_M} MB",
         cpuCores=f"{cpuCores}",
     ):
+        with tag("require", cpuModel="Intel Xeon E3-1230 v5 @ 3.40 GHz"):
+            text()
+
         with tag("resultfiles"):
             text("**/error.log")
 

@@ -522,6 +522,7 @@ def select_and_scramble(
     dstdir: Path,
     scrambler: Path,
     max_workers: int = 8,
+    test: bool = False
 ) -> None:
     """
     Selects and scrambles the benchmarks and
@@ -531,6 +532,13 @@ def select_and_scramble(
     """
 
     config = defs.Config(data)
+
+    if test:
+        config.min_used_benchmarks = 20
+        config.ratio_of_used_benchmarks = 0.0
+        config.invert_triviality = True
+        config.seed = 0
+
     smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, dstdir, scrambler, max_workers)
 
 

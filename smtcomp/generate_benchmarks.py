@@ -79,5 +79,25 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                     generate_benchmark_yml(file_sat, True, None)
                     generate_benchmark_yml(file_unsat, False, None)
 
+
 def generate_benchmarks(dst: Path, seed: int) -> None:
-    return
+    prop_dir = dst.joinpath("properties")
+    prop_dir.mkdir(parents=True, exist_ok=True)
+    (prop_dir / "SingleQuery.prp").touch()
+
+    dst.joinpath("files").mkdir(parents=True, exist_ok=True)
+    for track, divisions in defs.tracks.items():
+        match track:
+            case defs.Track.Incremental:
+                suffix = "_inc"
+            case defs.Track.ModelValidation:
+                suffix = "_model"
+            case defs.Track.SingleQuery:
+                suffix = ""
+            case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+                continue
+        for _, theories in divisions.items():
+            for theory in theories:
+                theory_name = str(theory) + suffix
+                file = dst.joinpath(theory_name)
+                file.write_text(f"files/{theory_name}/*.yml\n")
