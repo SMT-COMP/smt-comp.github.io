@@ -18,6 +18,19 @@ class CmdTask(BaseModel):
     includesfiles: List[str]
 
 
+def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]) -> None:
+    ymlfile = benchmark.with_suffix('.yml')
+    with ymlfile.open("w") as f:
+        f.write("format_version: '2.0'\n\n")
+        f.write(f"input_files: '{str(benchmark.name)}'\n\n")
+
+        if expected_result is not None:
+            expected_str = 'true' if expected_result else 'false'
+            f.write("properties:\n")
+            f.write("  - property_file: '../../properties/SingleQuery.prp'\n")
+            f.write(f"    expected_verdict: {expected_str}\n")
+
+
 def tool_module_name(s: defs.Submission, track: defs.Track) -> str:
     return sub(r"\W+", "", s.name.lower()) + get_suffix(track)
 
