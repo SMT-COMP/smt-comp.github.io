@@ -518,18 +518,26 @@ def create_cache(data: Path) -> None:
 
 
 @app.command(rich_help_panel=benchexec_panel)
-def scramble_benchmarks(
-    competition_track: str, src: Path, dstdir: Path, scrambler: Path, seed: int, max_workers: int = 8
+def select_and_scramble(
+    competition_track: defs.Track,
+    data: Path,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    seed: int,
+    max_workers: int = 8,
 ) -> None:
     """
-    Use the scrambler to scramble the listed benchmarks and
-    write them to the destination directory.
-    Acceptable competition track names are single-query,
-    incremental, unsat-core, and model-validation.
-    The src file must contain one benchmark path per line.
+    Selects and scrambles the benchmarks and
+    writes them to the destination directory.
+    The srcdir must contain all benchmarks as
+    outlined in the data.
     """
 
-    smtcomp.scramble_benchmarks.scramble(competition_track, src, dstdir, scrambler, seed, max_workers)
+    config = defs.Config(seed=seed)
+    smtcomp.scramble_benchmarks.select_and_scramble(
+        competition_track, data, config, srcdir, dstdir, scrambler, max_workers
+    )
 
 
 @app.command()

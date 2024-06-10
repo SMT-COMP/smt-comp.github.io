@@ -167,6 +167,7 @@ class SolverType(EnumAutoInt):
     wrapped = "wrapped"
     derived = "derived"
     standalone = "Standalone"
+    portfolio = "Portfolio"
 
 
 class Status(EnumAutoInt):
@@ -1260,6 +1261,7 @@ class Submission(BaseModel, extra="forbid"):
     solver_type: SolverType
     participations: Participations
     seed: int | None = None
+    competitive: bool = True
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
