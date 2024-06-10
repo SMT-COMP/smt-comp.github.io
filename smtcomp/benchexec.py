@@ -106,6 +106,9 @@ def generate_xml(
                         with tag("includesfile"):
                             text(f"benchmarks/{includesfile}")
 
+        with tag("propertyfile"):
+            text("benchmarks/properties/SingleQuery.prp")
+
     file = cachedir.joinpath(f"{tool_module_name}.xml")
     file.write_text(indent(doc.getvalue()))
 

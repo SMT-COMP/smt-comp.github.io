@@ -26,6 +26,10 @@ def path_trivial_benchmark(dst: Path, track: defs.Track, logic: defs.Logic, stat
 
 
 def generate_trivial_benchmarks(dst: Path) -> None:
+    prop_dir = dst.joinpath("properties")
+    prop_dir.mkdir(parents=True, exist_ok=True)
+    (prop_dir / "SingleQuery.prp").touch()
+
     dst.joinpath("files").mkdir(parents=True, exist_ok=True)
     for track, divisions in defs.tracks.items():
         match track:
