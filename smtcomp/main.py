@@ -522,7 +522,7 @@ def select_and_scramble(
     dstdir: Path,
     scrambler: Path,
     max_workers: int = 8,
-    test: bool = False
+    test: bool = False,
 ) -> None:
     """
     Selects and scrambles the benchmarks and

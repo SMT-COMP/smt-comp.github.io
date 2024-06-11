@@ -72,7 +72,6 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                     file_unsat = path_trivial_benchmark(theory_dir, track, theory, defs.Status.Unsat)
                     file.write_text(f"files/{theory_name}/*.yml\n")
 
-
                     file_sat.write_text(f"(set-logic {theory.value})(check-sat)")
                     file_unsat.write_text(f"(set-logic {theory.value})(assert false)(check-sat)")
 

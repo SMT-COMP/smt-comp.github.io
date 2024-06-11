@@ -10,12 +10,13 @@ import smtcomp.selection
 from typing import Optional
 import re
 
-status_pattern = re.compile(r'(set-info :status (sat|unsat|unknown))')
+status_pattern = re.compile(r"(set-info :status (sat|unsat|unknown))")
+
 
 def get_expected_result(benchmark: Path) -> Optional[bool]:
     for line in open(benchmark).readlines():
         m = status_pattern.search(line)
-        if m and m.group(2) != 'unknown':
+        if m and m.group(2) != "unknown":
             return m.group(2) == "sat"
 
     return None

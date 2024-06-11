@@ -7,19 +7,21 @@ import os
 
 TRACE_EXECUTOR = "./smtlib2_trace_executor"
 
+
 class IncrementalSMTCompTool(BaseTool2):  # type: ignore
     """
     Generic incremental tool for smtcomp execution
     """
-    REQUIRED_PATHS = ['.']
-    EXECUTABLE = './false'
-    NAME = 'SMT-COMP generic incremental tool'
+
+    REQUIRED_PATHS = ["."]
+    EXECUTABLE = "./false"
+    NAME = "SMT-COMP generic incremental tool"
 
     def determine_result(self, run: BaseTool2.Run) -> Any:  # type: ignore
         returncode: int = run.exit_code.value
         returnsignal: int = run.exit_code.signal
         output: List[str] = run.output
-        isTimeout: bool = run.was_timeout        
+        isTimeout: bool = run.was_timeout
 
         correct = 0
         status = None
@@ -43,7 +45,7 @@ class IncrementalSMTCompTool(BaseTool2):  # type: ignore
             status = "KILLED"
         else:
             status = "ERROR"
-            
+
         return f"{status} ({correct} correct)"
 
     def executable(self, _: Any) -> str | Any | None:
@@ -73,9 +75,7 @@ class IncrementalSMTCompTool(BaseTool2):  # type: ignore
             return [TRACE_EXECUTOR, executable, *tasks]
 
     def program_files(self, executable):
-        files =  [TRACE_EXECUTOR, executable] + self._program_files_from_executable(
-            executable, self.REQUIRED_PATHS
-        )
+        files = [TRACE_EXECUTOR, executable] + self._program_files_from_executable(executable, self.REQUIRED_PATHS)
         return files
 
     @staticmethod
@@ -83,6 +83,4 @@ class IncrementalSMTCompTool(BaseTool2):  # type: ignore
         scriptdir = os.path.dirname(os.path.abspath(__file__))
         basedir = os.path.join(scriptdir, os.path.pardir)
 
-        return util.flatten(
-            util.expand_filename_pattern(path, basedir) for path in required_paths
-        )
+        return util.flatten(util.expand_filename_pattern(path, basedir) for path in required_paths)

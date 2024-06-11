@@ -19,7 +19,7 @@ class CmdTask(BaseModel):
 
 
 def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]) -> None:
-    ymlfile = benchmark.with_suffix('.yml')
+    ymlfile = benchmark.with_suffix(".yml")
     with ymlfile.open("w") as f:
         f.write("format_version: '2.0'\n\n")
 
@@ -28,7 +28,7 @@ def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], ori
         if orig_file is not None:
             f.write(f"# original_files: '{str(orig_file)}'\n\n")
 
-        expected_str = 'true' if expected_result else 'false'
+        expected_str = "true" if expected_result else "false"
         f.write("properties:\n")
         f.write("  - property_file: '../../properties/SingleQuery.prp'\n")
         if expected_result is not None:
