@@ -24,8 +24,12 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
     dstdir.mkdir(parents=True, exist_ok=True)
 
     if incremental:
-        subprocess.run(["grep", "-o", "(set-info :status \\(sat\\|unsat\\|unknown\\))"], stdin=fsrc.open("r"), stdout=fdst.open("w"))
-        subprocess.run(["sed", "-i", 's/(set-info :status \\(.*\\))/\\1/', str(fdst)])
+        subprocess.run(
+            ["grep", "-o", "(set-info :status \\(sat\\|unsat\\|unknown\\))"],
+            stdin=fsrc.open("r"),
+            stdout=fdst.open("w"),
+        )
+        subprocess.run(["sed", "-i", "s/(set-info :status \\(.*\\))/\\1/", str(fdst)])
         with fdst.open("a") as dstfile:
             dstfile.write("--- BENCHMARK BEGINS HERE ---\n")
         subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
@@ -96,10 +100,10 @@ def test_select_and_scramble(
         case defs.Track.Incremental:
             datafiles = defs.DataFiles(data)
             selected = pl.read_ipc(datafiles.cached_incremental_benchmarks).lazy()
-#            rich.print(
-#                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-#            )
-#            exit(1)
+        #            rich.print(
+        #                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+        #            )
+        #            exit(1)
         case defs.Track.ModelValidation:
             selected = smtcomp.selection.helper_compute_sq(data, config)
             rich.print(
