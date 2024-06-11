@@ -74,12 +74,12 @@ class IncrementalSMTCompTool(BaseTool2):  # type: ignore
             # using default executable
             return [TRACE_EXECUTOR, executable, *tasks]
 
-    def program_files(self, executable: str) -> list[str]:
+    def program_files(self, executable: str) -> Any:
         files = [TRACE_EXECUTOR, executable] + self._program_files_from_executable(executable, self.REQUIRED_PATHS)
         return files
 
     @staticmethod
-    def _program_files_from_executable(executable: str, required_paths: list[str]) -> list[str]:
+    def _program_files_from_executable(executable: str, required_paths: list[str]) -> Any:
         scriptdir = os.path.dirname(os.path.abspath(__file__))
         basedir = os.path.join(scriptdir, os.path.pardir)
 
