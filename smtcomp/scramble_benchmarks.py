@@ -4,8 +4,22 @@ from rich.progress import track
 import subprocess
 import concurrent.futures
 import smtcomp.defs as defs
+from smtcomp.benchexec import generate_benchmark_yml
 import polars as pl
 import smtcomp.selection
+from typing import Optional
+import re
+
+status_pattern = re.compile(r"(set-info :status (sat|unsat|unknown))")
+
+
+def get_expected_result(benchmark: Path) -> Optional[bool]:
+    for line in open(benchmark).readlines():
+        m = status_pattern.search(line)
+        if m and m.group(2) != "unknown":
+            return m.group(2) == "sat"
+
+    return None
 
 
 def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, args: list) -> None:
@@ -35,6 +49,9 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
         subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
     else:
         subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"))
+
+    expected = get_expected_result(fsrc) if not incremental else None
+    generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
 
 
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
@@ -134,11 +151,7 @@ def select_and_scramble(
         case defs.Track.SingleQuery:
             selected = smtcomp.selection.helper_compute_sq(config)
         case defs.Track.Incremental:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
+            selected = smtcomp.selection.helper_compute_incremental(config)
         case defs.Track.ModelValidation:
             selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(

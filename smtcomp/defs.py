@@ -138,6 +138,7 @@ class Status(EnumAutoInt):
     Unsat = "unsat"
     Sat = "sat"
     Unknown = "unknown"
+    Incremental = "incremental"
 
 
 class Track(EnumAutoInt):

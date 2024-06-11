@@ -61,8 +61,8 @@ def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFram
     )
 
 
-def sq_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
-    used_logics = defs.logic_used_for_track(defs.Track.SingleQuery)
+def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, target_track: defs.Track) -> pl.LazyFrame:
+    used_logics = defs.logic_used_for_track(target_track)
 
     # Keep only logics used by single query
     b = benchmarks_with_info.filter(c_logic.is_in(set(map(int, used_logics))))
@@ -128,7 +128,21 @@ def helper_compute_sq(config: defs.Config) -> pl.LazyFrame:
         trivial_in_logic = pl.col("trivial").any().over(["logic"])
         inverted_or_not_trivial = pl.when(trivial_in_logic).then(pl.col("trivial").not_()).otherwise(pl.col("trivial"))
         benchmarks_with_info = benchmarks_with_info.with_columns(trivial=inverted_or_not_trivial)
-    return sq_selection(benchmarks_with_info, config)
+    return track_selection(benchmarks_with_info, config, defs.Track.SingleQuery)
+
+
+def helper_compute_incremental(config: defs.Config) -> pl.LazyFrame:
+    """
+    Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
+    """
+    benchmarks = pl.read_ipc(config.cached_incremental_benchmarks)
+    results = pl.read_ipc(config.cached_previous_results)
+    benchmarks_with_info = add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
+    if config.invert_triviality:
+        trivial_in_logic = pl.col("trivial").any().over(["logic"])
+        inverted_or_not_trivial = pl.when(trivial_in_logic).then(pl.col("trivial").not_()).otherwise(pl.col("trivial"))
+        benchmarks_with_info = benchmarks_with_info.with_columns(trivial=inverted_or_not_trivial)
+    return track_selection(benchmarks_with_info, config, defs.Track.Incremental)
 
 
 def competitive_logics(config: defs.Config) -> pl.LazyFrame:
