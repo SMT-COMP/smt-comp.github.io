@@ -50,7 +50,8 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
     else:
         subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"))
 
-    generate_benchmark_yml(fdst, get_expected_result(fsrc), fsrc.relative_to(srcdir))
+    expected = get_expected_result(fsrc) if not incremental else None
+    generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
 
 
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
@@ -150,11 +151,7 @@ def select_and_scramble(
         case defs.Track.SingleQuery:
             selected = smtcomp.selection.helper_compute_sq(config)
         case defs.Track.Incremental:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
+            selected = smtcomp.selection.helper_compute_incremental(config)
         case defs.Track.ModelValidation:
             selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(

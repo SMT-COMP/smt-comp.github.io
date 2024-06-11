@@ -30,7 +30,7 @@ def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], ori
 
         expected_str = "true" if expected_result else "false"
         f.write("properties:\n")
-        f.write("  - property_file: '../../properties/SingleQuery.prp'\n")
+        f.write(f"  - property_file: '../../properties/SMT.prp'\n")
         if expected_result is not None:
             f.write(f"    expected_verdict: {expected_str}\n")
 
@@ -114,7 +114,7 @@ def generate_xml(
                             text(f"benchmarks/{includesfile}")
 
         with tag("propertyfile"):
-            text("benchmarks/properties/SingleQuery.prp")
+            text("benchmarks/properties/SMT.prp")
 
     file = cachedir.joinpath(f"{tool_module_name}.xml")
     file.write_text(indent(doc.getvalue()))

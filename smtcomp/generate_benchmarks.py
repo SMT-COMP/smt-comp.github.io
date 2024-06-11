@@ -31,6 +31,7 @@ def generate_trivial_benchmarks(dst: Path) -> None:
     (prop_dir / "SingleQuery.prp").touch()
 
     dst.joinpath("files").mkdir(parents=True, exist_ok=True)
+    dst.joinpath("files_inc").mkdir(parents=True, exist_ok=True)
     for track, divisions in defs.tracks.items():
         match track:
             case defs.Track.Incremental:
@@ -43,15 +44,15 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                 continue
         for _, theories in divisions.items():
             for theory in theories:
-                theory_name = str(theory) + suffix
-                theory_dir = dst.joinpath("files", theory_name)
+                theory_name = str(theory)
+                theory_dir = dst.joinpath(f"files{suffix}", theory_name)
                 theory_dir.mkdir(parents=True, exist_ok=True)
-                file = dst.joinpath(theory_name)
+                file = dst.joinpath(theory_name + suffix)
 
                 if track == defs.Track.Incremental:
                     file_incremental = path_trivial_benchmark(theory_dir, track, theory, defs.Status.Incremental)
 
-                    file.write_text(f"files/{theory_name}/*.smt2\n")
+                    file.write_text(f"files{suffix}/{theory_name}/*.smt2\n")
 
                     benchmark = "\n".join([
                         "sat",
@@ -70,7 +71,7 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                 else:
                     file_sat = path_trivial_benchmark(theory_dir, track, theory, defs.Status.Sat)
                     file_unsat = path_trivial_benchmark(theory_dir, track, theory, defs.Status.Unsat)
-                    file.write_text(f"files/{theory_name}/*.yml\n")
+                    file.write_text(f"files{suffix}/{theory_name}/*.yml\n")
 
                     file_sat.write_text(f"(set-logic {theory.value})(check-sat)")
                     file_unsat.write_text(f"(set-logic {theory.value})(assert false)(check-sat)")
@@ -82,9 +83,10 @@ def generate_trivial_benchmarks(dst: Path) -> None:
 def generate_benchmarks(dst: Path, seed: int) -> None:
     prop_dir = dst.joinpath("properties")
     prop_dir.mkdir(parents=True, exist_ok=True)
-    (prop_dir / "SingleQuery.prp").touch()
+    (prop_dir / "SMT.prp").touch()
 
     dst.joinpath("files").mkdir(parents=True, exist_ok=True)
+    dst.joinpath("files_inc").mkdir(parents=True, exist_ok=True)
     for track, divisions in defs.tracks.items():
         match track:
             case defs.Track.Incremental:
@@ -97,6 +99,6 @@ def generate_benchmarks(dst: Path, seed: int) -> None:
                 continue
         for _, theories in divisions.items():
             for theory in theories:
-                theory_name = str(theory) + suffix
-                file = dst.joinpath(theory_name)
-                file.write_text(f"files/{theory_name}/*.yml\n")
+                theory_name = str(theory)
+                file = dst.joinpath(theory_name + suffix)
+                file.write_text(f"files{suffix}/{theory_name}/*.yml\n")
