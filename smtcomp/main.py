@@ -537,7 +537,7 @@ def select_and_scramble(
         config.min_used_benchmarks = 20
         config.ratio_of_used_benchmarks = 0.0
         config.invert_triviality = True
-        config.seed = 0
+        config.seed = 1
 
     smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, dstdir, scrambler, max_workers)
 
