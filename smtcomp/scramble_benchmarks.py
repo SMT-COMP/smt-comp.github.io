@@ -53,7 +53,7 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
     expected = get_expected_result(fsrc) if not incremental else None
     generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
 
-
+    
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
     files = benchmarks.sort("file").select(pl.col("file").shuffle(seed=config.seed))
     files = files.with_row_index(name="scramble_id")
