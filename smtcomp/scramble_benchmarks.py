@@ -95,8 +95,7 @@ def test_select_and_scramble(
         case defs.Track.SingleQuery:
             selected = smtcomp.selection.helper_compute_sq(config)
         case defs.Track.Incremental:
-            datafiles = defs.DataFiles(data)
-            selected = pl.read_ipc(datafiles.cached_incremental_benchmarks).lazy()
+            selected = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
         #            rich.print(
         #                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
         #            )
