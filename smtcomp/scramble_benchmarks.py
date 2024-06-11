@@ -22,7 +22,19 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
     dstdir = dstdir.joinpath(str(defs.Logic.of_int(fdict["logic"])))
     fdst = dstdir.joinpath("scrambled" + str(fdict["scramble_id"]) + ".smt2")
     dstdir.mkdir(parents=True, exist_ok=True)
-    subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"))
+
+    if incremental:
+        subprocess.run(
+            ["grep", "-o", "(set-info :status \\(sat\\|unsat\\|unknown\\))"],
+            stdin=fsrc.open("r"),
+            stdout=fdst.open("w"),
+        )
+        subprocess.run(["sed", "-i", "s/(set-info :status \\(.*\\))/\\1/", str(fdst)])
+        with fdst.open("a") as dstfile:
+            dstfile.write("--- BENCHMARK BEGINS HERE ---\n")
+        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
+    else:
+        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"))
 
 
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
@@ -83,11 +95,11 @@ def test_select_and_scramble(
         case defs.Track.SingleQuery:
             selected = smtcomp.selection.helper_compute_sq(config)
         case defs.Track.Incremental:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
+            selected = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
+        #            rich.print(
+        #                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+        #            )
+        #            exit(1)
         case defs.Track.ModelValidation:
             selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
@@ -106,7 +118,7 @@ def test_select_and_scramble(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
-    selected = create_scramble_id(selected, config).filter(selected=True).filter(pl.col("logic") < 3)
+    selected = create_scramble_id(selected, config).filter(pl.col("logic") == int(defs.Logic.BVFP))
     scramble_lazyframe(selected, competition_track, config, srcdir, dstdir, scrambler, max_workers)
 
 
