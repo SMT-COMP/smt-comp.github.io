@@ -89,12 +89,12 @@ class SMTCompTool(BaseTool2):  # type: ignore
             # using default executable
             return [executable, *tasks]
 
-    def program_files(self, executable):
+    def program_files(self, executable: str) -> list(str):
         files = [executable] + self._program_files_from_executable(executable, self.REQUIRED_PATHS)
         return files
 
     @staticmethod
-    def _program_files_from_executable(executable, required_paths):
+    def _program_files_from_executable(executable: str, required_paths: list(str)) -> list(str):
         scriptdir = os.path.dirname(os.path.abspath(__file__))
         basedir = os.path.join(scriptdir, os.path.pardir)
 

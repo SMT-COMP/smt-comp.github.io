@@ -1,4 +1,5 @@
 from pathlib import Path
+import rich
 from os.path import relpath
 from typing import List, cast, Dict, Optional
 
@@ -120,7 +121,7 @@ def generate_xml(
     file.write_text(indent(doc.getvalue()))
 
 
-def get_suffix(track: defs.Track):
+def get_suffix(track: defs.Track) -> str:
     match track:
         case defs.Track.Incremental:
             return "_inc"
@@ -152,13 +153,12 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: def
                     assert command.arguments == []
                     dirname = str(relpath(executable_path.parent, start=str(cachedir)))
 
-                    if mode == "direct":
-                        options = [
-                            "bash",
-                            "-c",
-                            f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec ./{shlex.quote(executable_path.name)} "$FILE")',
-                            "compa_starexec",
-                        ]
+                    options = [
+                        "bash",
+                        "-c",
+                        f'FILE=$(realpath $1); (cd {shlex.quote(dirname)}; exec ./{shlex.quote(executable_path.name)} "$FILE")',
+                        "compa_starexec",
+                    ]
                 else:
                     options = [executable] + command.arguments
                 cmdtask = CmdTask(
