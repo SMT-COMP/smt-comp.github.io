@@ -38,7 +38,7 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
 
 
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
-    files = benchmarks.sort("file").select(pl.col("file").shuffle(seed=config.seed()))
+    files = benchmarks.sort("file").select(pl.col("file").shuffle(seed=config.seed))
     files = files.with_row_index(name="scramble_id")
     return benchmarks.join(files, on="file")
 
@@ -55,7 +55,7 @@ def scramble_lazyframe(
     args = []
     files = benchmarks.select("scramble_id", "logic", "family", "name").collect().to_dicts()
     incremental = False
-    seed = config.seed()
+    seed = config.seed
 
     match competition_track:
         case defs.Track.SingleQuery:
@@ -85,18 +85,15 @@ def scramble_lazyframe(
 
 def test_select_and_scramble(
     competition_track: defs.Track,
-    data: Path,
     config: defs.Config,
     srcdir: Path,
     dstdir: Path,
     scrambler: Path,
     max_workers: int,
 ) -> None:
-    seed = config.seed()
-
     match competition_track:
         case defs.Track.SingleQuery:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
         case defs.Track.Incremental:
             datafiles = defs.DataFiles(data)
             selected = pl.read_ipc(datafiles.cached_incremental_benchmarks).lazy()
@@ -105,19 +102,19 @@ def test_select_and_scramble(
         #            )
         #            exit(1)
         case defs.Track.ModelValidation:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.UnsatCore:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
@@ -128,38 +125,35 @@ def test_select_and_scramble(
 
 def select_and_scramble(
     competition_track: defs.Track,
-    data: Path,
     config: defs.Config,
     srcdir: Path,
     dstdir: Path,
     scrambler: Path,
     max_workers: int,
 ) -> None:
-    seed = config.seed()
-
     match competition_track:
         case defs.Track.SingleQuery:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
         case defs.Track.Incremental:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.ModelValidation:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.UnsatCore:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )
             exit(1)
         case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
-            selected = smtcomp.selection.helper_compute_sq(data, config)
+            selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(
                 f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
             )

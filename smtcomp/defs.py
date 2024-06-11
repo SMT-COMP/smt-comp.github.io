@@ -5,50 +5,14 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict, cast, Optional
+from typing import Any, Dict, cast, Optional, Iterable, TypeVar
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
+from datetime import date
+from rich import print
 
-
-## Parameters that can change each year
-class Config:
-    current_year = 2024
-    oldest_previous_results = 2018
-    timelimit_s = 60
-    memlimit_M = 1024 * 20
-    cpuCores = 4
-    min_used_benchmarks = 300
-    ratio_of_used_benchmarks = 0.5
-    old_criteria = False
-    """"Do we try to emulate <= 2023 criteria that does not really follow the rules"""
-    invert_triviality = False
-    """Prioritize triviality as much as possible for testing purpose.
-        Look for simple problems instead of hard one"""
-
-    def __init__(self: Config, seed: int | None) -> None:
-        self.__seed = seed
-
-    def seed(self) -> int:
-        if self.__seed is None:
-            raise ValueError("The seed as not been set")
-        s = self.__seed
-        self.__seed = +1
-        return s
-
-
-class DataFiles:
-    def __init__(self, data: Path) -> None:
-        self.previous_results = [
-            (year, data.joinpath(f"results-sq-{year}.json.gz"))
-            for year in range(Config.oldest_previous_results, Config.current_year)
-        ]
-        self.benchmarks = data.joinpath(f"benchmarks-{Config.current_year}.json.gz")
-        self.cached_non_incremental_benchmarks = data.joinpath(
-            f"benchmarks-non-incremental-{Config.current_year}.feather"
-        )
-        self.cached_incremental_benchmarks = data.joinpath(f"benchmarks-incremental-{Config.current_year}.feather")
-        self.cached_previous_results = data.joinpath(f"previous-sq-results-{Config.current_year}.feather")
+U = TypeVar("U")
 
 
 class EnumAutoInt(Enum):
@@ -167,6 +131,7 @@ class SolverType(EnumAutoInt):
     wrapped = "wrapped"
     derived = "derived"
     standalone = "Standalone"
+    portfolio = "Portfolio"
 
 
 class Status(EnumAutoInt):
@@ -1224,20 +1189,27 @@ class Participation(BaseModel, extra="forbid"):
 import itertools
 
 
+def union(s: Iterable[set[U]]) -> set[U]:
+    return functools.reduce(lambda x, y: x | y, s, set())
+
+
 class Participations(RootModel):
     root: list[Participation]
 
     def get_divisions(self, l: list[Track] = list(Track)) -> set[Division]:
         """ " Return the divisions in which the solver participates"""
         tracks = self.get()
-        divs = [set(tracks[track].keys()) for track in l]
-        return functools.reduce(lambda x, y: x | y, divs)
+        return union(set(tracks[track].keys()) for track in l if track in tracks)
 
     def get_logics(self, l: list[Track] = list(Track)) -> set[Logic]:
         """ " Return the logics in which the solver participates"""
         tracks = self.get()
-        logics = itertools.chain.from_iterable([iter(tracks[track].values()) for track in l])
-        return functools.reduce(lambda x, y: x | y, logics)
+        return union(itertools.chain.from_iterable([tracks[track].values() for track in l if track in tracks]))
+
+    def get_logics_by_track(self) -> dict[Track, set[Logic]]:
+        """Return the logics in which the solver participates"""
+        tracks = self.get()
+        return dict((track, union(tracks[track].values())) for track in tracks)
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
         if d is None:
@@ -1260,6 +1232,7 @@ class Submission(BaseModel, extra="forbid"):
     solver_type: SolverType
     participations: Participations
     seed: int | None = None
+    competitive: bool = True
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
@@ -1366,3 +1339,72 @@ class Result(BaseModel):
 
 class Results(BaseModel):
     results: list[Result]
+
+
+## Parameters that can change each year
+class Config:
+    current_year = 2024
+    oldest_previous_results = 2018
+    timelimit_s = 60
+    memlimit_M = 1024 * 20
+    cpuCores = 4
+    min_used_benchmarks = 300
+    ratio_of_used_benchmarks = 0.5
+    old_criteria = False
+    """"Do we try to emulate <= 2023 criteria that does not really follow the rules"""
+    invert_triviality = False
+    """Prioritize triviality as much as possible for testing purpose.
+        Look for simple problems instead of hard one"""
+
+    nyse_seed = None
+    """The integer part of one hundred times the opening value of the New York Stock Exchange Composite Index on the first day the exchange is open on or after the date specified in nyse_date"""
+    nyse_date = date(year=2024, month=6, day=10)
+
+    aws_timelimit_hard = 600
+    """
+    Time in seconds upon which benchmarks are considered hards
+    """
+    aws_num_selected = 400
+    """
+    Number of selected benchmarks
+    """
+
+    def __init__(self, data: Path) -> None:
+        if data.name != "data":
+            raise ValueError("Consistency check, data directory must be named 'data'")
+        self.previous_results = [
+            (year, data.joinpath(f"results-sq-{year}.json.gz"))
+            for year in range(Config.oldest_previous_results, Config.current_year)
+        ]
+        self.benchmarks = data.joinpath(f"benchmarks-{Config.current_year}.json.gz")
+        self.cached_non_incremental_benchmarks = data.joinpath(
+            f"benchmarks-non-incremental-{Config.current_year}.feather"
+        )
+        self.cached_incremental_benchmarks = data.joinpath(f"benchmarks-incremental-{Config.current_year}.feather")
+        self.cached_previous_results = data.joinpath(f"previous-sq-results-{Config.current_year}.feather")
+        self.data = data
+        self.__seed: int | None = None
+
+    @functools.cached_property
+    def submissions(self) -> list[Submission]:
+        return [
+            Submission.model_validate_json(Path(file).read_text()) for file in self.data.glob("../submissions/*.json")
+        ]
+
+    @functools.cached_property
+    def seed(self) -> int:
+        unknown_seed = 0
+        seed = 0
+        for s in self.submissions:
+            if s.seed is None:
+                unknown_seed += 1
+            else:
+                seed += s.seed
+        seed = seed % (2**30)
+        if self.nyse_seed is None:
+            print(f"[red]Warning[/red] NYSE seed not set, and {unknown_seed} submissions are missing a seed")
+        else:
+            if unknown_seed > 0:
+                raise ValueError(f"{unknown_seed} submissions are missing a seed")
+            seed += self.nyse_seed
+        return seed
