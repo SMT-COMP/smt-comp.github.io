@@ -1351,6 +1351,10 @@ class Config:
     cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
+    use_previous_results_for_status = True
+    """
+    Complete the status given in the benchmarks using previous results
+    """
     old_criteria = False
     """"Do we try to emulate <= 2023 criteria that does not really follow the rules"""
     invert_triviality = False

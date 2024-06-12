@@ -38,12 +38,23 @@ def find_trivial(results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
         .agg(
             trivial=
             # All the results are sat or unsat and the time is below 1s
-            ((c_result != int(defs.Status.Unknown)) & (c_cpu_time <= 1.0)).all()
+            ((c_result != int(defs.Status.Unknown)) & (c_cpu_time <= 1.0)).all(),
+            # Compute the full result by year
+            result=pl.when((c_result == int(defs.Status.Sat)).sum() >= 2)
+            .then(int(defs.Status.Sat))
+            .when((c_result == int(defs.Status.Unsat)).sum() >= 2)
+            .then(int(defs.Status.Unsat))
+            .otherwise(int(defs.Status.Unknown)),
         )
         .group_by("file")
         .agg(
             trivial=c_trivial.any() if config.old_criteria else c_trivial.all(),
             run=True,
+            result=pl.when((c_result == int(defs.Status.Sat)).any())
+            .then(int(defs.Status.Sat))
+            .when((c_result == int(defs.Status.Unsat)).any())
+            .then(int(defs.Status.Unsat))
+            .otherwise(int(defs.Status.Unknown)),
         )
     )
     return tally
@@ -56,9 +67,16 @@ def join_default_with_False(original: pl.LazyFrame, new: pl.LazyFrame, on: str) 
 def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
 
     is_trivial = find_trivial(previous_results, config)
-    return join_default_with_False(benchmarks, is_trivial, on="file").with_columns(
+    with_info = join_default_with_False(benchmarks, is_trivial, on="file").with_columns(
         new=pl.col("family").str.starts_with(str(config.current_year))
     )
+
+    if config.use_previous_results_for_status:
+        with_info = with_info.with_columns(
+            status=pl.when(pl.col("status") != int(defs.Status.Unknown)).then(pl.col("status")).otherwise(c_result)
+        )
+
+    return with_info
 
 
 def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, target_track: defs.Track) -> pl.LazyFrame:

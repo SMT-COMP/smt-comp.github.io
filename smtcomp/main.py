@@ -382,6 +382,7 @@ def show_sq_selection_stats(
     min_use_benchmarks: int = defs.Config.min_used_benchmarks,
     ratio_of_used_benchmarks: float = defs.Config.ratio_of_used_benchmarks,
     invert_triviality: bool = False,
+    use_previous_results_for_status: bool = defs.Config.use_previous_results_for_status,
 ) -> None:
     """
     Show statistics on the benchmarks selected for single query track
@@ -395,6 +396,7 @@ def show_sq_selection_stats(
     config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
     config.invert_triviality = invert_triviality
     config.old_criteria = old_criteria
+    config.use_previous_results_for_status = use_previous_results_for_status
     benchmarks_with_info = smtcomp.selection.helper_compute_sq(config)
     b3 = (
         benchmarks_with_info.group_by(["logic"])
