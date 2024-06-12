@@ -404,6 +404,8 @@ def show_sq_selection_stats(
             old_never_ran=pl.col("file").filter(run=False, new=False).len(),
             new=pl.col("new").sum(),
             selected=pl.col("file").filter(selected=True).len(),
+            selected_sat=pl.col("file").filter(selected=True, status=int(defs.Status.Sat)).len(),
+            selected_unsat=pl.col("file").filter(selected=True, status=int(defs.Status.Unsat)).len(),
             selected_already_run=pl.col("file").filter(selected=True, run=True).len(),
         )
         .sort(by="logic")
@@ -417,6 +419,8 @@ def show_sq_selection_stats(
     table.add_column("never compet.", justify="right", style="magenta")
     table.add_column("new", justify="right", style="magenta1")
     table.add_column("selected", justify="right", style="green3")
+    table.add_column("selected sat", justify="right", style="green4")
+    table.add_column("selected unsat", justify="right", style="green4")
     table.add_column("selected already run", justify="right", style="green4")
 
     used_logics = defs.logic_used_for_track(defs.Track.SingleQuery)
@@ -434,6 +438,8 @@ def show_sq_selection_stats(
             str(d["old_never_ran"]),
             str(d["new"]),
             str(d["selected"]),
+            str(d["selected_sat"]),
+            str(d["selected_unsat"]),
             str(d["selected_already_run"]),
         )
 
@@ -445,6 +451,8 @@ def show_sq_selection_stats(
         str(b3["old_never_ran"].sum()),
         str(b3["new"].sum()),
         str(b3["selected"].sum()),
+        str(b3["selected_sat"].sum()),
+        str(b3["selected_unsat"].sum()),
         str(b3["selected_already_run"].sum()),
     )
 
