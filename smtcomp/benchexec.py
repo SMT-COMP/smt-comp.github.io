@@ -6,7 +6,7 @@ from typing import List, cast, Dict, Optional
 from yattag import Doc, indent
 
 from smtcomp import defs
-from smtcomp.archive import find_command, archive_unpack_dir
+from smtcomp.archive import find_command, archive_unpack_dir, command_path
 from pydantic import BaseModel
 
 import shlex
@@ -63,8 +63,11 @@ def generate_tool_module(s: defs.Submission, cachedir: Path, track: defs.Track) 
         f.write(f"    NAME = '{s.name}'\n")
         if s.command is not None:
             assert s.archive is not None
-            executable_path = find_command(s.command, s.archive, cachedir)
-            executable = str(relpath(executable_path, start=str(cachedir)))
+            if s.command.compa_starexec:
+                executable_path = find_command(s.command, s.archive, cachedir)
+                executable = str(relpath(executable_path, start=str(cachedir)))
+            else:
+                executable = str(command_path(s.command, s.archive, Path()))
             f.write(f"    EXECUTABLE = '{executable}'\n")
 
         required_paths = []
@@ -147,10 +150,10 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: def
             for _, logics in divisions.items():
                 tasks.extend([str(logic) + suffix for logic in logics])
             if tasks:
-                executable_path = find_command(command, archive, cachedir)
-                executable = str(relpath(executable_path, start=str(cachedir)))
                 if command.compa_starexec:
                     assert command.arguments == []
+                    executable_path = find_command(command, archive, cachedir)
+                    executable = str(relpath(executable_path, start=str(cachedir)))
                     dirname = str(relpath(executable_path.parent, start=str(cachedir)))
 
                     options = [
@@ -160,6 +163,7 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: def
                         "compa_starexec",
                     ]
                 else:
+                    executable = str(command_path(command, archive, Path()))
                     options = [executable] + command.arguments
                 cmdtask = CmdTask(
                     name=f"{s.name},{i},{track}",
