@@ -163,19 +163,26 @@ def generate_benchexec(
     (cachedir / "tools").mkdir(parents=True, exist_ok=True)
     for file in track(files):
         s = submission.read(str(file))
+        benchexec.generate_tool_modules(s, cachedir)
 
-        for target_track in [defs.Track.SingleQuery, defs.Track.Incremental]:
-            tool_module_name = benchexec.tool_module_name(s, target_track)
-            benchexec.generate_tool_module(s, cachedir, target_track)
+        for target_track in [
+            defs.Track.SingleQuery,
+            defs.Track.Incremental,
+            defs.Track.ModelValidation,
+            defs.Track.UnsatCore,
+        ]:
+            tool_module_name = benchexec.tool_module_name(s, target_track == defs.Track.Incremental)
 
             res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
             if res:
+                basename = benchexec.get_xml_name(s, target_track)
+                file = cachedir / basename
                 benchexec.generate_xml(
                     timelimit_s=timelimit_s,
                     memlimit_M=memlimit_M,
                     cpuCores=cpuCores,
                     cmdtasks=res,
-                    cachedir=cachedir,
+                    file=file,
                     tool_module_name=tool_module_name,
                 )
 
