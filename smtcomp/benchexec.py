@@ -13,6 +13,30 @@ import shlex
 from re import sub
 
 
+def get_suffix(track: defs.Track) -> str:
+    match track:
+        case defs.Track.Incremental:
+            return "_inc"
+        case defs.Track.ModelValidation:
+            return "_model"
+        case defs.Track.UnsatCore:
+            return "_unsatcore"
+        case defs.Track.SingleQuery:
+            return ""
+        case _:
+            raise ValueError("No Cloud or Parallel")
+
+
+def get_xml_name(s: defs.Submission, track: defs.Track) -> str:
+    suffix = get_suffix(track)
+    return sub(r"\W+", "", s.name.lower()) + suffix + ".xml"
+
+
+def tool_module_name(s: defs.Submission, incremental: bool) -> str:
+    suffix = "_inc" if incremental else ""
+    return sub(r"\W+", "", s.name.lower()) + suffix
+
+
 class CmdTask(BaseModel):
     name: str
     options: List[str]
@@ -36,27 +60,17 @@ def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], ori
             f.write(f"    expected_verdict: {expected_str}\n")
 
 
-def tool_module_name(s: defs.Submission, track: defs.Track) -> str:
-    return sub(r"\W+", "", s.name.lower()) + get_suffix(track)
-
-
-def generate_tool_module(s: defs.Submission, cachedir: Path, track: defs.Track) -> None:
-    name = tool_module_name(s, track)
+def generate_tool_module(s: defs.Submission, cachedir: Path, incremental: bool) -> None:
+    name = tool_module_name(s, incremental)
     file = cachedir / "tools" / f"{name}.py"
 
     with file.open("w") as f:
-        match track:
-            case defs.Track.Incremental:
-                base_module = "incremental_tool"
-                base_class = "IncrementalSMTCompTool"
-            case defs.Track.SingleQuery:
-                base_module = "tool"
-                base_class = "SMTCompTool"
-            case _:
-                rich.print(
-                    f"[red]generate_tool_module command does not yet work for the competition track: {track}[/red]"
-                )
-                exit(1)
+        if incremental:
+            base_module = "incremental_tool"
+            base_class = "IncrementalSMTCompTool"
+        else:
+            base_module = "tool"
+            base_class = "SMTCompTool"
         f.write(f"from tools.{base_module} import {base_class}\n\n")
         f.write(f"class Tool({base_class}):  # type: ignore\n")
 
@@ -83,8 +97,13 @@ def generate_tool_module(s: defs.Submission, cachedir: Path, track: defs.Track) 
             f.write(f"    REQUIRED_PATHS = {required_paths}\n")
 
 
+def generate_tool_modules(s: defs.Submission, cachedir: Path) -> None:
+    generate_tool_module(s, cachedir, True)
+    generate_tool_module(s, cachedir, False)
+
+
 def generate_xml(
-    timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: List[CmdTask], cachedir: Path, tool_module_name: str
+    timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: List[CmdTask], file: Path, tool_module_name: str
 ) -> None:
     doc, tag, text = Doc().tagtext()
 
@@ -120,18 +139,7 @@ def generate_xml(
         with tag("propertyfile"):
             text("benchmarks/properties/SMT.prp")
 
-    file = cachedir.joinpath(f"{tool_module_name}.xml")
     file.write_text(indent(doc.getvalue()))
-
-
-def get_suffix(track: defs.Track) -> str:
-    match track:
-        case defs.Track.Incremental:
-            return "_inc"
-        case defs.Track.ModelValidation:
-            return "_model"
-        case _:
-            return ""
 
 
 def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: defs.Track) -> List[CmdTask]:
