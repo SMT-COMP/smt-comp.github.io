@@ -7,11 +7,11 @@
     ],
     "contacts": ["Amar Shah <amarshah@cmu.edu>"],
     "archive": {
-        "url": "https://github.com/uclid-org/algaroba/archive/refs/tags/v1.0.0.tar.gz"
+        "url": "https://github.com/user-attachments/files/15804020/algaroba.tar.gz"
     },
     "website": "https://github.com/uclid-org/algaroba",
     "system_description": "https://github.com/uclid-org/algaroba/files/15255360/Algaroba_at_the_2024_SMTCOMP.pdf",
-    "command": ["algaroba"],
+    "command": ["algaroba/algaroba.exe"],
     "solver_type": "wrapped",
     "participations": [
         { "tracks": ["SingleQuery"], "logics": ["QF_DT", "QF_UFDT"], "divisions": ["QF_Datatypes"] }
