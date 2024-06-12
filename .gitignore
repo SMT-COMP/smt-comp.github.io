@@ -170,3 +170,4 @@ cython_debug/
 schema_doc.css
 schema_doc.min.js
 *.feather
+tmp/
