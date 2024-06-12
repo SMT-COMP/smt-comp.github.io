@@ -5,22 +5,29 @@ from smtcomp.benchexec import generate_benchmark_yml
 
 
 def path_trivial_benchmark(dst: Path, track: defs.Track, logic: defs.Logic, status: defs.Status) -> Path:
+    """
+    dst is the root of the generated benchmarks directory
+    """
     match track:
         case defs.Track.Incremental:
+            assert status == defs.Status.Incremental
             suffix = "_inc"
         case defs.Track.ModelValidation:
+            assert status != defs.Status.Incremental
             suffix = "_model"
         case defs.Track.SingleQuery:
+            assert status != defs.Status.Incremental
             suffix = ""
         case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
             raise (ValueError("No trivial benchmarks yet for f{track}"))
+    logic_dir = dst.joinpath(f"files{suffix}", str(logic))
     match status:
         case defs.Status.Sat:
-            return dst.joinpath(str(logic) + suffix + ".sat.smt2")
+            return logic_dir.joinpath(str(logic) + suffix + ".sat.smt2")
         case defs.Status.Unsat:
-            return dst.joinpath(str(logic) + suffix + ".unsat.smt2")
+            return logic_dir.joinpath(str(logic) + suffix + ".unsat.smt2")
         case defs.Status.Incremental:
-            return dst.joinpath(str(logic) + suffix + ".incremental.smt2")
+            return logic_dir.joinpath(str(logic) + suffix + ".incremental.smt2")
         case defs.Status.Unknown:
             raise (ValueError("No trivial benchmarks yet for unknown"))
 
@@ -42,24 +49,24 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                 suffix = ""
             case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
                 continue
-        for _, theories in divisions.items():
-            for theory in theories:
-                theory_name = str(theory)
-                theory_dir = dst.joinpath(f"files{suffix}", theory_name)
-                theory_dir.mkdir(parents=True, exist_ok=True)
-                file = dst.joinpath(theory_name + suffix)
+        for _, logics in divisions.items():
+            for logic in logics:
+                logic_name = str(logic)
+                logic_dir = dst.joinpath(f"files{suffix}", logic_name)
+                logic_dir.mkdir(parents=True, exist_ok=True)
+                file = dst.joinpath(logic_name + suffix)
 
                 if track == defs.Track.Incremental:
-                    file_incremental = path_trivial_benchmark(theory_dir, track, theory, defs.Status.Incremental)
+                    file_incremental = path_trivial_benchmark(dst, track, logic, defs.Status.Incremental)
 
-                    file.write_text(f"files{suffix}/{theory_name}/*.smt2\n")
+                    file.write_text(f"files{suffix}/{logic_name}/*.smt2\n")
 
                     benchmark = "\n".join([
                         "sat",
                         "sat",
                         "unsat",
                         "--- BENCHMARK BEGINS HERE ---",
-                        f"(set-logic {theory.value})",
+                        f"(set-logic {logic.value})",
                         "(assert true)",
                         "(check-sat)",
                         "(assert true)",
@@ -69,12 +76,12 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                     ])
                     file_incremental.write_text(benchmark)
                 else:
-                    file_sat = path_trivial_benchmark(theory_dir, track, theory, defs.Status.Sat)
-                    file_unsat = path_trivial_benchmark(theory_dir, track, theory, defs.Status.Unsat)
-                    file.write_text(f"files{suffix}/{theory_name}/*.yml\n")
+                    file_sat = path_trivial_benchmark(dst, track, logic, defs.Status.Sat)
+                    file_unsat = path_trivial_benchmark(dst, track, logic, defs.Status.Unsat)
+                    file.write_text(f"files{suffix}/{logic_name}/*.yml\n")
 
-                    file_sat.write_text(f"(set-logic {theory.value})(check-sat)")
-                    file_unsat.write_text(f"(set-logic {theory.value})(assert false)(check-sat)")
+                    file_sat.write_text(f"(set-logic {logic.value})(check-sat)")
+                    file_unsat.write_text(f"(set-logic {logic.value})(assert false)(check-sat)")
 
                     generate_benchmark_yml(file_sat, True, None)
                     generate_benchmark_yml(file_unsat, False, None)
