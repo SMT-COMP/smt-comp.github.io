@@ -38,6 +38,10 @@ def is_unpack_present(archive: defs.Archive, dst: Path) -> bool:
     return any(True for _ in d.iterdir())
 
 
+def command_path(command: defs.Command, archive: defs.Archive, dst: Path) -> Path:
+    return archive_unpack_dir(archive, dst).joinpath(command.binary)
+
+
 def find_command(command: defs.Command, archive: defs.Archive, dst: Path) -> Path:
     d = archive_unpack_dir(archive, dst)
     if not (d.exists()):

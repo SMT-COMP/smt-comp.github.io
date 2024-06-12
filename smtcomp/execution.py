@@ -6,13 +6,11 @@ from rich import print
 
 
 def trace_executor_url() -> str:
-    return (
-        "https://github.com/SMT-COMP/trace-executor/releases/download/smtcomp2022/SMT-COMP-2022-trace-executor.tar.gz"
-    )
+    return "https://github.com/SMT-COMP/trace-executor/releases/download/smtcomp2024-rc1/SMT-COMP-2024-trace-executor.tar.gz"
 
 
 def trace_executor_filename() -> str:
-    return "SMT-COMP-2022-trace-executor.tar.gz"
+    return "SMT-COMP-2024-trace-executor.tar.gz"
 
 
 def download_trace_executor(dst: Path) -> None:

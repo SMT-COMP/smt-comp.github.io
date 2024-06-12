@@ -154,16 +154,10 @@ def select_and_scramble(
             selected = smtcomp.selection.helper_compute_incremental(config)
         case defs.Track.ModelValidation:
             selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
+            selected = selected.filter(status=int(defs.Status.Sat))
         case defs.Track.UnsatCore:
             selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
+            selected = selected.filter(status=int(defs.Status.Unsat))
         case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
             selected = smtcomp.selection.helper_compute_sq(config)
             rich.print(

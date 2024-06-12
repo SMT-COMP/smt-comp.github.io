@@ -5,7 +5,7 @@ from pathlib import Path
 from zipfile import ZipFile
 import tarfile
 from stat import S_IXUSR
-import gzip
+import gzip, bz2
 import io
 from typing import AnyStr, cast, IO
 from subprocess import check_output, STDOUT
@@ -61,6 +61,9 @@ def write_cin(file: Path, content: str) -> None:
 def read_cin(file: Path) -> str:
     if file.name.endswith(".gz"):
         with gzip.open(file, "rt") as f:
+            return f.read()
+    elif file.name.endswith(".bz2"):
+        with bz2.open(file, "rt") as f:
             return f.read()
     else:
         return file.read_text()

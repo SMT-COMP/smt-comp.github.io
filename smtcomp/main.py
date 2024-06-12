@@ -157,22 +157,32 @@ def generate_benchexec(
 ) -> None:
     """
     Generate the benchexec file for the given submissions
+
+    (The cachedir directory need to contain unpacked archive only with compa_starexec command)
     """
+    (cachedir / "tools").mkdir(parents=True, exist_ok=True)
     for file in track(files):
         s = submission.read(str(file))
+        benchexec.generate_tool_modules(s, cachedir)
 
-        for target_track in [defs.Track.SingleQuery, defs.Track.Incremental]:
-            tool_module_name = benchexec.tool_module_name(s, target_track)
-            benchexec.generate_tool_module(s, cachedir, target_track)
+        for target_track in [
+            defs.Track.SingleQuery,
+            defs.Track.Incremental,
+            defs.Track.ModelValidation,
+            defs.Track.UnsatCore,
+        ]:
+            tool_module_name = benchexec.tool_module_name(s, target_track == defs.Track.Incremental)
 
             res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
             if res:
+                basename = benchexec.get_xml_name(s, target_track)
+                file = cachedir / basename
                 benchexec.generate_xml(
                     timelimit_s=timelimit_s,
                     memlimit_M=memlimit_M,
                     cpuCores=cpuCores,
                     cmdtasks=res,
-                    cachedir=cachedir,
+                    file=file,
                     tool_module_name=tool_module_name,
                 )
 
@@ -372,6 +382,7 @@ def show_sq_selection_stats(
     min_use_benchmarks: int = defs.Config.min_used_benchmarks,
     ratio_of_used_benchmarks: float = defs.Config.ratio_of_used_benchmarks,
     invert_triviality: bool = False,
+    use_previous_results_for_status: bool = defs.Config.use_previous_results_for_status,
 ) -> None:
     """
     Show statistics on the benchmarks selected for single query track
@@ -385,6 +396,7 @@ def show_sq_selection_stats(
     config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
     config.invert_triviality = invert_triviality
     config.old_criteria = old_criteria
+    config.use_previous_results_for_status = use_previous_results_for_status
     benchmarks_with_info = smtcomp.selection.helper_compute_sq(config)
     b3 = (
         benchmarks_with_info.group_by(["logic"])
@@ -394,6 +406,8 @@ def show_sq_selection_stats(
             old_never_ran=pl.col("file").filter(run=False, new=False).len(),
             new=pl.col("new").sum(),
             selected=pl.col("file").filter(selected=True).len(),
+            selected_sat=pl.col("file").filter(selected=True, status=int(defs.Status.Sat)).len(),
+            selected_unsat=pl.col("file").filter(selected=True, status=int(defs.Status.Unsat)).len(),
             selected_already_run=pl.col("file").filter(selected=True, run=True).len(),
         )
         .sort(by="logic")
@@ -407,6 +421,8 @@ def show_sq_selection_stats(
     table.add_column("never compet.", justify="right", style="magenta")
     table.add_column("new", justify="right", style="magenta1")
     table.add_column("selected", justify="right", style="green3")
+    table.add_column("selected sat", justify="right", style="green4")
+    table.add_column("selected unsat", justify="right", style="green4")
     table.add_column("selected already run", justify="right", style="green4")
 
     used_logics = defs.logic_used_for_track(defs.Track.SingleQuery)
@@ -424,6 +440,8 @@ def show_sq_selection_stats(
             str(d["old_never_ran"]),
             str(d["new"]),
             str(d["selected"]),
+            str(d["selected_sat"]),
+            str(d["selected_unsat"]),
             str(d["selected_already_run"]),
         )
 
@@ -435,6 +453,8 @@ def show_sq_selection_stats(
         str(b3["old_never_ran"].sum()),
         str(b3["new"].sum()),
         str(b3["selected"].sum()),
+        str(b3["selected_sat"].sum()),
+        str(b3["selected_unsat"].sum()),
         str(b3["selected_already_run"].sum()),
     )
 
@@ -587,13 +607,17 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
             for part in sub.complete_participations():
                 for track, divisions in part.tracks.items():
                     match track:
-                        case defs.Track.Incremental:
-                            statuses = [defs.Status.Sat, defs.Status.Unsat]
                         case defs.Track.ModelValidation:
                             statuses = [defs.Status.Sat]
                         case defs.Track.SingleQuery:
                             statuses = [defs.Status.Sat, defs.Status.Unsat]
-                        case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+                        case (
+                            defs.Track.Incremental
+                            | defs.Track.UnsatCore
+                            | defs.Track.ProofExhibition
+                            | defs.Track.Cloud
+                            | defs.Track.Parallel
+                        ):
                             continue
                     for _, logics in divisions.items():
                         for logic in logics:
