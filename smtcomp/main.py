@@ -11,6 +11,7 @@ from rich import print
 import typer
 from pydantic import ValidationError
 from collections import defaultdict
+import json
 
 import polars as pl
 
@@ -54,32 +55,56 @@ def show(
     if prefix is not None:
         files = list(map(prefix.joinpath, files))
 
-    def read_submission(file: Path) -> defs.Submission:
-        try:
-            return submission.read(str(file))
-        except Exception as e:
-            rich.print(f"[red]Error during file parsing of {file}[/red]")
-            print(e)
-            exit(1)
+    l = list(map(submission.read_submission_or_exit, files))
 
-    l = list(map(read_submission, files))
-
-    console = Console(record=into_comment_file is not None)
-    if into_comment_file is not None:
-        console.print("<details><summary>Summary of modified submissions</summary>")
+    console = Console()
     for s in l:
-        if into_comment_file is not None:
-            console.print("")
-            console.print("```")
-        t = submission.tree_summary(s)
+        t = submission.rich_tree_summary(s)
         console.print(t)
-        if into_comment_file is not None:
-            console.print("```")
-    if into_comment_file is not None:
-        console.print("</details>")
 
     if into_comment_file is not None:
-        into_comment_file.write_text(console.export_text())
+        with into_comment_file.open("w") as md:
+            md.write("<details><summary>Summary of modified submissions</summary>\n\n")
+            for s in l:
+                submission.markdown_tree_summary(s, md)
+            md.write("</details>\n")
+
+
+@app.command(rich_help_panel=submissions_panel)
+def show_json(files: list[Path] = typer.Argument(None), prefix: Optional[Path] = None) -> None:
+    """
+    Show information about solver submissions in JSON format
+    """
+
+    if prefix is not None:
+        files = list(map(prefix.joinpath, files))
+
+    l = list(map(submission.read_submission_or_exit, files))
+
+    data = [submission.raw_summary(s) for s in l]
+    print(json.dumps(data, indent=4))
+
+
+@app.command(rich_help_panel=submissions_panel)
+def get_contacts(files: list[Path] = typer.Argument(None)) -> None:
+    """
+    Find contact from submissions given as arguments
+    """
+    l = list(map(submission.read_submission_or_exit, files))
+    contacts = list(str(c) for c in itertools.chain.from_iterable([s.contacts for s in l]))
+    contacts.sort()
+    print("\n".join(contacts))
+
+
+@app.command(rich_help_panel=submissions_panel)
+def get_seed(data: Path) -> None:
+    conf = defs.Config(data)
+    print(conf.seed)
+
+
+@app.command(rich_help_panel=submissions_panel)
+def merge_pull_requests_locally(C: str = ".") -> None:
+    submission.merge_all_submissions(C)
 
 
 @app.command(rich_help_panel=submissions_panel)
@@ -125,7 +150,6 @@ def prepare_execution(dst: Path) -> None:
 @app.command(rich_help_panel=benchexec_panel)
 def generate_benchexec(
     files: List[Path],
-    dst: Path,
     cachedir: Path,
     timelimit_s: int = defs.Config.timelimit_s,
     memlimit_M: int = defs.Config.memlimit_M,
@@ -134,14 +158,23 @@ def generate_benchexec(
     """
     Generate the benchexec file for the given submissions
     """
-    cmdtasks: List[benchexec.CmdTask] = []
     for file in track(files):
         s = submission.read(str(file))
-        res = benchexec.cmdtask_for_submission(s, cachedir)
-        cmdtasks.extend(res)
-    benchexec.generate_xml(
-        timelimit_s=timelimit_s, memlimit_M=memlimit_M, cpuCores=cpuCores, cmdtasks=cmdtasks, file=dst
-    )
+
+        for target_track in [defs.Track.SingleQuery, defs.Track.Incremental]:
+            tool_module_name = benchexec.tool_module_name(s, target_track)
+            benchexec.generate_tool_module(s, cachedir, target_track)
+
+            res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
+            if res:
+                benchexec.generate_xml(
+                    timelimit_s=timelimit_s,
+                    memlimit_M=memlimit_M,
+                    cpuCores=cpuCores,
+                    cmdtasks=res,
+                    cachedir=cachedir,
+                    tool_module_name=tool_module_name,
+                )
 
 
 # Should be moved somewhere else
@@ -178,11 +211,12 @@ def generate_trivial_benchmarks(dst: Path) -> None:
 
 
 @app.command()
-def generate_benchmarks(dst: Path, seed: int = 0) -> None:
+def generate_benchmarks(dst: Path, data: Path) -> None:
     """
     Generate benchmarks for smtcomp
     """
-    smtcomp.generate_benchmarks.generate_benchmarks(dst, seed)
+    config = defs.Config(data)
+    smtcomp.generate_benchmarks.generate_benchmarks(dst, config.seed)
 
 
 @app.command(rich_help_panel=benchmarks_panel)
@@ -221,9 +255,9 @@ def create_benchmarks_list(src: Path, data: Path, scrambler: Optional[Path] = No
         incremental=cast(List[defs.InfoIncremental], files_incremental),
         non_incremental=cast(List[defs.InfoNonIncremental], files_non_incremental),
     )
-    datafiles = defs.DataFiles(data)
+    config = defs.Config(data)
     print("Writing benchmarks file")
-    write_cin(datafiles.benchmarks, benchmarks.model_dump_json(indent=1))
+    write_cin(config.benchmarks, benchmarks.model_dump_json(indent=1))
 
 
 @app.command(rich_help_panel=benchmarks_panel)
@@ -286,11 +320,10 @@ def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
-    config = defs.Config(seed=None)
+    config = defs.Config(data)
     config.old_criteria = old_criteria
-    datafiles = defs.DataFiles(data)
-    benchmarks = pl.read_ipc(datafiles.cached_non_incremental_benchmarks)
-    results = pl.read_ipc(datafiles.cached_previous_results)
+    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks)
+    results = pl.read_ipc(config.cached_previous_results)
     benchmarks_with_trivial_info = smtcomp.selection.add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
     b3 = (
         benchmarks_with_trivial_info.group_by(["logic"])
@@ -335,7 +368,6 @@ def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False
 @app.command(rich_help_panel=selection_panel)
 def show_sq_selection_stats(
     data: Path,
-    seed: int,
     old_criteria: OLD_CRITERIA = False,
     min_use_benchmarks: int = defs.Config.min_used_benchmarks,
     ratio_of_used_benchmarks: float = defs.Config.ratio_of_used_benchmarks,
@@ -348,12 +380,12 @@ def show_sq_selection_stats(
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
-    config = defs.Config(seed=seed)
+    config = defs.Config(data)
     config.min_used_benchmarks = min_use_benchmarks
     config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
     config.invert_triviality = invert_triviality
     config.old_criteria = old_criteria
-    benchmarks_with_info = smtcomp.selection.helper_compute_sq(data, config)
+    benchmarks_with_info = smtcomp.selection.helper_compute_sq(config)
     b3 = (
         benchmarks_with_info.group_by(["logic"])
         .agg(
@@ -420,9 +452,9 @@ def print_iterable(i: int, tree: Tree, a: Any) -> None:
 
 @app.command(rich_help_panel=data_panel)
 def create_cache(data: Path) -> None:
-    datafiles = defs.DataFiles(data)
+    config = defs.Config(data)
     print("Loading benchmarks")
-    bench = defs.Benchmarks.model_validate_json(read_cin(datafiles.benchmarks))
+    bench = defs.Benchmarks.model_validate_json(read_cin(config.benchmarks))
     bd: Dict[defs.Smt2File, int] = {}
     for i, smtfile in enumerate(
         itertools.chain(map(lambda x: x.file, bench.non_incremental), map(lambda x: x.file, bench.incremental))
@@ -445,7 +477,7 @@ def create_cache(data: Path) -> None:
     df = pl.DataFrame(bench_simplified)
     # df["family"] = df["family"].astype("string")
     # df["name"] = df["name"].astype("string")
-    df.write_ipc(datafiles.cached_non_incremental_benchmarks)
+    df.write_ipc(config.cached_non_incremental_benchmarks)
 
     print("Creating incremental benchmarks cache as feather file")
     bench_simplified = map(
@@ -461,7 +493,7 @@ def create_cache(data: Path) -> None:
     df = pl.DataFrame(bench_simplified)
     # df["family"] = df["family"].astype("string")
     # df["name"] = df["name"].astype("string")
-    df.write_ipc(datafiles.cached_incremental_benchmarks)
+    df.write_ipc(config.cached_incremental_benchmarks)
 
     def convert(x: defs.Result, year: int) -> dict[str, int | str | float] | None:
         if x.file not in bd:
@@ -478,14 +510,14 @@ def create_cache(data: Path) -> None:
         }
 
     results_filtered: list[Any] = []
-    for year, file in track(datafiles.previous_results, description="Loading json results"):
+    for year, file in track(config.previous_results, description="Loading json results"):
         results = defs.Results.model_validate_json(read_cin(file))
         results_filtered.extend(filter(lambda x: x is not None, map(lambda r: convert(r, year), results.results)))
 
     print("Creating old results cache as feather file")
     df = pl.DataFrame(results_filtered)
     # df["solver"] = df["solver"].astype("string")
-    df.write_ipc(datafiles.cached_previous_results)
+    df.write_ipc(config.cached_previous_results)
 
 
 # def conv(x:defs.Smt2FileOld) -> defs.Info:
@@ -499,18 +531,31 @@ def create_cache(data: Path) -> None:
 
 
 @app.command(rich_help_panel=benchexec_panel)
-def scramble_benchmarks(
-    competition_track: str, src: Path, dstdir: Path, scrambler: Path, seed: int, max_workers: int = 8
+def select_and_scramble(
+    competition_track: defs.Track,
+    data: Path,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    max_workers: int = 8,
+    test: bool = False,
 ) -> None:
     """
-    Use the scrambler to scramble the listed benchmarks and
-    write them to the destination directory.
-    Acceptable competition track names are single-query,
-    incremental, unsat-core, and model-validation.
-    The src file must contain one benchmark path per line.
+    Selects and scrambles the benchmarks and
+    writes them to the destination directory.
+    The srcdir must contain all benchmarks as
+    outlined in the data.
     """
 
-    smtcomp.scramble_benchmarks.scramble(competition_track, src, dstdir, scrambler, seed, max_workers)
+    config = defs.Config(data)
+
+    if test:
+        config.min_used_benchmarks = 20
+        config.ratio_of_used_benchmarks = 0.0
+        config.invert_triviality = True
+        config.seed = 1
+
+    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, dstdir, scrambler, max_workers)
 
 
 @app.command()

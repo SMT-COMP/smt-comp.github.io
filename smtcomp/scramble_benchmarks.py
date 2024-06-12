@@ -3,38 +3,173 @@ import rich
 from rich.progress import track
 import subprocess
 import concurrent.futures
+import smtcomp.defs as defs
+from smtcomp.benchexec import generate_benchmark_yml
+import polars as pl
+import smtcomp.selection
+from typing import Optional
+import re
+
+status_pattern = re.compile(r"(set-info :status (sat|unsat|unknown))")
 
 
-def scramble_file(files: list, line: int, dstdir: Path, args: list) -> None:
-    dst = Path.joinpath(dstdir, "scrambled" + str(line) + ".smt2")
-    subprocess.run(args, stdin=Path(str(files[line]).strip()).open("r"), stdout=dst.open("w"))
+def get_expected_result(benchmark: Path) -> Optional[bool]:
+    for line in open(benchmark).readlines():
+        m = status_pattern.search(line)
+        if m and m.group(2) != "unknown":
+            return m.group(2) == "sat"
+
+    return None
 
 
-def scramble(
-    competition_track: str, benchmark_list: Path, dstdir: Path, scrambler: Path, seed: int, max_workers: int
+def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, args: list) -> None:
+    if incremental:
+        i = "incremental"
+    else:
+        i = "non-incremental"
+    fsrc = (
+        srcdir.joinpath(i)
+        .joinpath(str(defs.Logic.of_int(fdict["logic"])))
+        .joinpath(Path(fdict["family"]))
+        .joinpath(fdict["name"])
+    )
+    dstdir = dstdir.joinpath(str(defs.Logic.of_int(fdict["logic"])))
+    fdst = dstdir.joinpath("scrambled" + str(fdict["scramble_id"]) + ".smt2")
+    dstdir.mkdir(parents=True, exist_ok=True)
+
+    if incremental:
+        subprocess.run(
+            ["grep", "-o", "(set-info :status \\(sat\\|unsat\\|unknown\\))"],
+            stdin=fsrc.open("r"),
+            stdout=fdst.open("w"),
+        )
+        subprocess.run(["sed", "-i", "s/(set-info :status \\(.*\\))/\\1/", str(fdst)])
+        with fdst.open("a") as dstfile:
+            dstfile.write("--- BENCHMARK BEGINS HERE ---\n")
+        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
+    else:
+        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"))
+
+    expected = get_expected_result(fsrc) if not incremental else None
+    generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
+
+
+def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
+    files = benchmarks.sort("file").select(pl.col("file").shuffle(seed=config.seed))
+    files = files.with_row_index(name="scramble_id")
+    return benchmarks.join(files, on="file")
+
+
+def scramble_lazyframe(
+    benchmarks: pl.LazyFrame,
+    competition_track: defs.Track,
+    config: defs.Config,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    max_workers: int,
 ) -> None:
     args = []
-    if competition_track == "single-query":
-        args = [scrambler, "-term_annot", "pattern", "-seed", str(seed)]
-    elif competition_track == "incremental":
-        args = [scrambler, "-term_annot", "pattern", "-incremental", "true", "-seed", str(seed)]
-    elif competition_track == "model-validation":
-        args = [scrambler, "-term_annot", "pattern", "-gen-model-val", "true", "-seed", str(seed)]
-    elif competition_track == "unsat-core":
-        args = [scrambler, "-term_annot", "pattern", "-gen-unsat-core", "true", "-seed", str(seed)]
-    else:
-        rich.print(f"[red]Not a known track name: {track}[/red]")
-        exit(1)
+    files = benchmarks.select("scramble_id", "logic", "family", "name").collect().to_dicts()
+    incremental = False
+    seed = config.seed
 
-    line = int(0)
-    files = benchmark_list.open().readlines()
-    dstdir.mkdir(parents=True, exist_ok=True)
-    executor = concurrent.futures.ThreadPoolExecutor(max_workers=max_workers)
-    results = list(
-        track(
-            executor.map(lambda line: scramble_file(files, line, dstdir, args), range(len(files))),
-            total=len(files),
-            description="Scrambling selected benchmarks...",
+    match competition_track:
+        case defs.Track.SingleQuery:
+            args = [scrambler, "-term_annot", "pattern", "-seed", str(seed)]
+        case defs.Track.Incremental:
+            args = [scrambler, "-term_annot", "pattern", "-incremental", "true", "-seed", str(seed)]
+            incremental = True
+        case defs.Track.ModelValidation:
+            args = [scrambler, "-term_annot", "pattern", "-gen-model-val", "true", "-seed", str(seed)]
+        case defs.Track.UnsatCore:
+            args = [scrambler, "-term_annot", "pattern", "-gen-unsat-core", "true", "-seed", str(seed)]
+        case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+            )
+            exit(1)
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = list(
+            track(
+                executor.map(lambda fdict: scramble_file(fdict, incremental, srcdir, dstdir, args), files),
+                total=len(files),
+                description="Scrambling selected benchmarks...",
+            )
         )
-    )
-    executor.shutdown()
+
+
+def test_select_and_scramble(
+    competition_track: defs.Track,
+    config: defs.Config,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    max_workers: int,
+) -> None:
+    match competition_track:
+        case defs.Track.SingleQuery:
+            selected = smtcomp.selection.helper_compute_sq(config)
+        case defs.Track.Incremental:
+            selected = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
+        #            rich.print(
+        #                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+        #            )
+        #            exit(1)
+        case defs.Track.ModelValidation:
+            selected = smtcomp.selection.helper_compute_sq(config)
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+            )
+            exit(1)
+        case defs.Track.UnsatCore:
+            selected = smtcomp.selection.helper_compute_sq(config)
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+            )
+            exit(1)
+        case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+            selected = smtcomp.selection.helper_compute_sq(config)
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+            )
+            exit(1)
+    selected = create_scramble_id(selected, config).filter(pl.col("logic") == int(defs.Logic.BVFP))
+    scramble_lazyframe(selected, competition_track, config, srcdir, dstdir, scrambler, max_workers)
+
+
+def select_and_scramble(
+    competition_track: defs.Track,
+    config: defs.Config,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    max_workers: int,
+) -> None:
+    match competition_track:
+        case defs.Track.SingleQuery:
+            selected = smtcomp.selection.helper_compute_sq(config)
+        case defs.Track.Incremental:
+            selected = smtcomp.selection.helper_compute_incremental(config)
+        case defs.Track.ModelValidation:
+            selected = smtcomp.selection.helper_compute_sq(config)
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+            )
+            exit(1)
+        case defs.Track.UnsatCore:
+            selected = smtcomp.selection.helper_compute_sq(config)
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+            )
+            exit(1)
+        case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+            selected = smtcomp.selection.helper_compute_sq(config)
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
+            )
+            exit(1)
+
+    selected = create_scramble_id(selected, config).filter(selected=True)
+    scramble_lazyframe(selected, competition_track, config, srcdir, dstdir, scrambler, max_workers)
