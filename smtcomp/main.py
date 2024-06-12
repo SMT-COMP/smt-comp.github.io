@@ -587,13 +587,11 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
             for part in sub.complete_participations():
                 for track, divisions in part.tracks.items():
                     match track:
-                        case defs.Track.Incremental:
-                            statuses = [defs.Status.Sat, defs.Status.Unsat]
                         case defs.Track.ModelValidation:
                             statuses = [defs.Status.Sat]
                         case defs.Track.SingleQuery:
                             statuses = [defs.Status.Sat, defs.Status.Unsat]
-                        case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+                        case defs.Track.Incremental | defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
                             continue
                     for _, logics in divisions.items():
                         for logic in logics:
