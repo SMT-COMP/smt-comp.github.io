@@ -157,7 +157,10 @@ def generate_benchexec(
 ) -> None:
     """
     Generate the benchexec file for the given submissions
+
+    (The cachedir directory need to contain unpacked archive only with compa_starexec command)
     """
+    (cachedir / "tools").mkdir(parents=True, exist_ok=True)
     for file in track(files):
         s = submission.read(str(file))
 
