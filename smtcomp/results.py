@@ -1,4 +1,5 @@
-from typing import Optional, Iterator
+from typing import Optional, Iterator, Any
+import functools
 import smtcomp.defs as defs
 import polars as pl
 import xml.etree.ElementTree as ET
@@ -144,6 +145,20 @@ def log_filename(dir: Path) -> Path:
     return l[0]
 
 
+### Benchexec add this header
+# output_file.write(
+#     " ".join(map(util.escape_string_shell, args))
+#     + "\n\n\n"
+#     + "-" * 80
+#     + "\n\n\n"
+# )
+
+
+@functools.cache
+def benchexec_log_separator() -> str:
+    return "\n\n\n" + "-" * 80 + "\n\n\n"
+
+
 class LogFile:
     def __init__(self: "LogFile", dir: Path) -> None:
         filename = log_filename(dir)
@@ -153,9 +168,26 @@ class LogFile:
     def __enter__(self: "LogFile") -> "LogFile":
         return self
 
-    def __exit__(self: "LogFile") -> None:
+    def __exit__(self: "LogFile", exc_type: Any, exc_value: Any, traceback: Any) -> None:
+        self.close()
+
+    def close(self) -> None:
         self.logfiles.close()
 
     def get_log(self: "LogFile", r: RunId, basename: str) -> str:
+        """
+        Return the output of the prover and the header with the commandline used
+        """
         p = str(self.name.joinpath(".".join([r.mangle(), basename, "log"])))
         return self.logfiles.read(p).decode()
+
+    def get_output(self: "LogFile", r: RunId, basename: str) -> str:
+        """
+        Return the output of the prover
+        """
+        s = self.get_log(r, basename)
+        index = s.find(benchexec_log_separator())
+        if index == -1:
+            raise ValueError(f"Log Header not found {r!r} {basename!r}")
+        index += len(benchexec_log_separator())
+        return s[index:]
