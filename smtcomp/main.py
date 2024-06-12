@@ -150,7 +150,6 @@ def prepare_execution(dst: Path) -> None:
 @app.command(rich_help_panel=benchexec_panel)
 def generate_benchexec(
     files: List[Path],
-    dst: Path,
     cachedir: Path,
     timelimit_s: int = defs.Config.timelimit_s,
     memlimit_M: int = defs.Config.memlimit_M,
@@ -159,14 +158,23 @@ def generate_benchexec(
     """
     Generate the benchexec file for the given submissions
     """
-    cmdtasks: List[benchexec.CmdTask] = []
     for file in track(files):
         s = submission.read(str(file))
-        res = benchexec.cmdtask_for_submission(s, cachedir)
-        cmdtasks.extend(res)
-    benchexec.generate_xml(
-        timelimit_s=timelimit_s, memlimit_M=memlimit_M, cpuCores=cpuCores, cmdtasks=cmdtasks, file=dst
-    )
+
+        for target_track in [defs.Track.SingleQuery, defs.Track.Incremental]:
+            tool_module_name = benchexec.tool_module_name(s, target_track)
+            benchexec.generate_tool_module(s, cachedir, target_track)
+
+            res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
+            if res:
+                benchexec.generate_xml(
+                    timelimit_s=timelimit_s,
+                    memlimit_M=memlimit_M,
+                    cpuCores=cpuCores,
+                    cmdtasks=res,
+                    cachedir=cachedir,
+                    tool_module_name=tool_module_name,
+                )
 
 
 # Should be moved somewhere else
@@ -530,6 +538,7 @@ def select_and_scramble(
     dstdir: Path,
     scrambler: Path,
     max_workers: int = 8,
+    test: bool = False,
 ) -> None:
     """
     Selects and scrambles the benchmarks and
@@ -539,6 +548,13 @@ def select_and_scramble(
     """
 
     config = defs.Config(data)
+
+    if test:
+        config.min_used_benchmarks = 20
+        config.ratio_of_used_benchmarks = 0.0
+        config.invert_triviality = True
+        config.seed = 1
+
     smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, dstdir, scrambler, max_workers)
 
 
