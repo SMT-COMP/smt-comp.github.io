@@ -189,8 +189,6 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
         defs.Track.ModelValidation,
         defs.Track.UnsatCore,
     ]:
-        tool_module_name = tool_module_name(s, target_track == defs.Track.Incremental)
-
         res = cmdtask_for_submission(s, cachedir, target_track)
         if res:
             basename = get_xml_name(s, target_track)
@@ -199,5 +197,5 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
                 config=config,
                 cmdtasks=res,
                 file=file,
-                tool_module_name=tool_module_name,
+                tool_module_name=tool_module_name(s, target_track == defs.Track.Incremental),
             )
