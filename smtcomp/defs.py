@@ -1374,21 +1374,39 @@ class Config:
     Number of selected benchmarks
     """
 
-    def __init__(self, data: Path) -> None:
-        if data.name != "data":
+    def __init__(self, data: Path | None) -> None:
+        if data is not None and data.name != "data":
             raise ValueError("Consistency check, data directory must be named 'data'")
-        self.previous_results = [
-            (year, data.joinpath(f"results-sq-{year}.json.gz"))
+        self._data = data
+
+    @functools.cached_property
+    def data(self) -> Path:
+        if self._data is None:
+            raise ValueError("Configuration without data")
+        return self._data
+
+    @functools.cached_property
+    def previous_results(self) -> list[tuple[int, Path]]:
+        return [
+            (year, self.data.joinpath(f"results-sq-{year}.json.gz"))
             for year in range(Config.oldest_previous_results, Config.current_year)
         ]
-        self.benchmarks = data.joinpath(f"benchmarks-{Config.current_year}.json.gz")
-        self.cached_non_incremental_benchmarks = data.joinpath(
-            f"benchmarks-non-incremental-{Config.current_year}.feather"
-        )
-        self.cached_incremental_benchmarks = data.joinpath(f"benchmarks-incremental-{Config.current_year}.feather")
-        self.cached_previous_results = data.joinpath(f"previous-sq-results-{Config.current_year}.feather")
-        self.data = data
-        self.__seed: int | None = None
+
+    @functools.cached_property
+    def benchmarks(self) -> Path:
+        return self.data.joinpath(f"benchmarks-{Config.current_year}.json.gz")
+
+    @functools.cached_property
+    def cached_non_incremental_benchmarks(self) -> Path:
+        return self.data.joinpath(f"benchmarks-non-incremental-{Config.current_year}.feather")
+
+    @functools.cached_property
+    def cached_incremental_benchmarks(self) -> Path:
+        return self.data.joinpath(f"benchmarks-incremental-{Config.current_year}.feather")
+
+    @functools.cached_property
+    def cached_previous_results(self) -> Path:
+        return self.data.joinpath(f"previous-sq-results-{Config.current_year}.feather")
 
     @functools.cached_property
     def submissions(self) -> list[Submission]:

@@ -102,9 +102,7 @@ def generate_tool_modules(s: defs.Submission, cachedir: Path) -> None:
     generate_tool_module(s, cachedir, False)
 
 
-def generate_xml(
-    timelimit_s: int, memlimit_M: int, cpuCores: int, cmdtasks: List[CmdTask], file: Path, tool_module_name: str
-) -> None:
+def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str) -> None:
     doc, tag, text = Doc().tagtext()
 
     doc.asis('<?xml version="1.0"?>')
@@ -115,10 +113,10 @@ def generate_xml(
     with tag(
         "benchmark",
         tool=f"tools.{tool_module_name}",
-        timelimit=f"{timelimit_s}s",
-        hardlimit=f"{timelimit_s+30}s",
-        memlimit=f"{memlimit_M} MB",
-        cpuCores=f"{cpuCores}",
+        timelimit=f"{config.timelimit_s}s",
+        hardlimit=f"{config.timelimit_s+30}s",
+        memlimit=f"{config.memlimit_M} MB",
+        cpuCores=f"{config.cpuCores}",
     ):
         with tag("require", cpuModel="Intel Xeon E3-1230 v5 @ 3.40 GHz"):
             text()
@@ -180,3 +178,26 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: def
                 )
                 res.append(cmdtask)
     return res
+
+
+def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
+    generate_tool_modules(s, cachedir)
+
+    for target_track in [
+        defs.Track.SingleQuery,
+        defs.Track.Incremental,
+        defs.Track.ModelValidation,
+        defs.Track.UnsatCore,
+    ]:
+        tool_module_name = tool_module_name(s, target_track == defs.Track.Incremental)
+
+        res = cmdtask_for_submission(s, cachedir, target_track)
+        if res:
+            basename = get_xml_name(s, target_track)
+            file = cachedir / basename
+            generate_xml(
+                config=config,
+                cmdtasks=res,
+                file=file,
+                tool_module_name=tool_module_name,
+            )

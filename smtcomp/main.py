@@ -17,6 +17,7 @@ import polars as pl
 
 import smtcomp.archive as archive
 import smtcomp.benchexec as benchexec
+import smtcomp.benchexec
 import smtcomp.defs as defs
 import smtcomp.submission as submission
 import smtcomp.execution as execution
@@ -160,46 +161,15 @@ def generate_benchexec(
 
     (The cachedir directory need to contain unpacked archive only with compa_starexec command)
     """
+    config = defs.Config(data=None)
+    config.timelimit_s = timelimit_s
+    config.memlimit_M = memlimit_M
+    config.cpuCores = cpuCores
+
     (cachedir / "tools").mkdir(parents=True, exist_ok=True)
     for file in track(files):
         s = submission.read(str(file))
-        benchexec.generate_tool_modules(s, cachedir)
-
-        for target_track in [
-            defs.Track.SingleQuery,
-            defs.Track.Incremental,
-            defs.Track.ModelValidation,
-            defs.Track.UnsatCore,
-        ]:
-            tool_module_name = benchexec.tool_module_name(s, target_track == defs.Track.Incremental)
-
-            res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
-            if res:
-                basename = benchexec.get_xml_name(s, target_track)
-                file = cachedir / basename
-                benchexec.generate_xml(
-                    timelimit_s=timelimit_s,
-                    memlimit_M=memlimit_M,
-                    cpuCores=cpuCores,
-                    cmdtasks=res,
-                    file=file,
-                    tool_module_name=tool_module_name,
-                )
-
-
-# Should be moved somewhere else
-def download_archive_aux(s: defs.Submission, dst: Path) -> None:
-    """
-    Download and unpack
-    """
-    dst.mkdir(parents=True, exist_ok=True)
-    if s.archive:
-        archive.download(s.archive, dst)
-        archive.unpack(s.archive, dst)
-    for p in s.participations.root:
-        if p.archive:
-            archive.download(p.archive, dst)
-            archive.unpack(p.archive, dst)
+        smtcomp.benchexec.generate(s, cachedir, config)
 
 
 @app.command(rich_help_panel=benchexec_panel)
@@ -209,7 +179,7 @@ def download_archive(files: List[Path], dst: Path) -> None:
     """
     for file in track(files):
         s = submission.read(str(file))
-        download_archive_aux(s, dst)
+        archive.download_unpack(s, dst)
 
 
 @app.command()
@@ -541,7 +511,7 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
         out.write("""print("Testing provers")\n""")
         for sub in l:
             out.write(f"print({sub.name!r})\n")
-            download_archive_aux(sub, outdir)
+            archive.download_unpack(sub, outdir)
             for part in sub.complete_participations():
                 for track, divisions in part.tracks.items():
                     match track:
