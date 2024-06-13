@@ -3,7 +3,7 @@ import itertools
 from pathlib import Path
 from typing import List, Optional, cast, Dict, Any, Annotated, TextIO
 import rich
-from rich.progress import track
+from rich.progress import track, Progress
 import rich.style
 from rich.tree import Tree
 from rich.table import Table
@@ -21,6 +21,8 @@ import smtcomp.benchexec
 import smtcomp.defs as defs
 import smtcomp.submission as submission
 import smtcomp.execution as execution
+import smtcomp.model_validation as model_validation
+import smtcomp.results as results
 from smtcomp.benchmarks import clone_group
 import smtcomp.convert_csv
 import smtcomp.generate_benchmarks
@@ -30,6 +32,7 @@ from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
 import smtcomp.test_solver as test_solver
+from concurrent.futures import ThreadPoolExecutor
 
 
 app = typer.Typer()
@@ -545,3 +548,16 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
                                     f"test({str(cmd)!r},{part.command.arguments!r},{str(file_sat)!r},{expected!r})\n"
                                 )
         out.write("end()\n")
+
+
+@app.command()
+def check_model_locally(cachedir: Path, resultdirs: list[Path], max_workers: int = 8) -> None:
+    l: list[tuple[results.RunId, results.Run, model_validation.ValidationResult]] = []
+    with Progress() as progress:
+        with ThreadPoolExecutor(max_workers) as executor:
+            for resultdir in resultdirs:
+                l2 = model_validation.check_results_locally(cachedir, resultdir, executor, progress)
+                for rid, r, result in l2:
+                    if result.status != defs.Status.Sat:
+                        l.append((rid, r, result))
+    print(l)
