@@ -55,7 +55,8 @@ def test(cmd: str, args: list[str], file: str, expected: str) -> None:
     global exit_code
     all = [cmd] + args + [file]
     print(all, flush=True)
-    result = subprocess.run(all, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+   # result = subprocess.run(all, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    result = subprocess.run(all, stdout=subprocess.PIPE, stderr=subprocess.STDERR)
     if result.returncode < 0:
         returnsignal = -result.returncode
     else:
