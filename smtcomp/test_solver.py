@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil
 import subprocess, os
 import re
-
+import sys
 
 def copy_me(dstdir: Path) -> None:
     shutil.copyfile(src=__file__, dst=dstdir.joinpath("test_solver.py"), follow_symlinks=True)
