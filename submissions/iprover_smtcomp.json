@@ -3,10 +3,11 @@
       "h" : {
          "sha256" : "8f7f4bad13e87d6aaa1bb8ca78b102edaa5495caf65d5fe39c3c16d6f70003d6"
       },
-      "url" : "https://zenodo.org/records/11636244/files/iprover_v3.9_smt_comp_2024.zip"
+       "url" : "https://zenodo.org/records/11640297/files/iprover_v3.9_smt_comp_2024.zip"
+
    },
    "command" : [
-      "cd bin; iprover_smtcomp.sh"
+      "bin/iprover_smtcomp.sh"
    ],
    "contacts" : [
       "Konstantin Korovin <kostyakor@gmail.com>"
