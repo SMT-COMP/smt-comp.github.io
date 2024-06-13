@@ -12,8 +12,8 @@
         "Trevor Hansen <trev_abroad@yahoo.com>"
     ],
     "archive": {
-        "url": "https://github.com/stp/stp/releases/download/2.3.4_cadical/stp",
-        "h": { "sha256": "cfae1bb11406d5c2cc59903a39b7d37cd4bd4da7965b93b1e43a19cd58b7cb6d" }
+        "url": "https://github.com/stp/stp/releases/download/2.3.4_cadical/stp.tar",
+        "h": { "sha256": "33fa567fcc2467107dc147bace4324fe751ca9d65752264d624b7b4c1b52b432" }
     },
     "website": "https://stp.github.io/",
     "system_description": "https://github.com/stp/docs/tree/master/smt2024-descr/descr.pdf",
