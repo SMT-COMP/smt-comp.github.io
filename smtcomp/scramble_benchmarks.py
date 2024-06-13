@@ -4,7 +4,7 @@ from rich.progress import track
 import subprocess
 import concurrent.futures
 import smtcomp.defs as defs
-from smtcomp.benchexec import generate_benchmark_yml
+from smtcomp.benchexec import generate_benchmark_yml, get_suffix
 import polars as pl
 import smtcomp.selection
 from typing import Optional
@@ -143,10 +143,12 @@ def select_and_scramble(
     competition_track: defs.Track,
     config: defs.Config,
     srcdir: Path,
-    dstdir: Path,
+    cachedir: Path,
     scrambler: Path,
     max_workers: int,
 ) -> None:
+    suffix = get_suffix(competition_track)
+    dstdir = cachedir / "benchmarks" / f"files{suffix}"
     match competition_track:
         case defs.Track.SingleQuery:
             selected = smtcomp.selection.helper_compute_sq(config)

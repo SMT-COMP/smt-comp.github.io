@@ -191,12 +191,11 @@ def generate_trivial_benchmarks(dst: Path) -> None:
 
 
 @app.command()
-def generate_benchmarks(dst: Path, data: Path) -> None:
+def generate_benchmarks(cachedir: Path) -> None:
     """
     Generate benchmarks for smtcomp
     """
-    config = defs.Config(data)
-    smtcomp.generate_benchmarks.generate_benchmarks(dst, config.seed)
+    smtcomp.generate_benchmarks.generate_benchmarks(cachedir)
 
 
 @app.command(rich_help_panel=benchmarks_panel)
@@ -463,7 +462,7 @@ def select_and_scramble(
     competition_track: defs.Track,
     data: Path,
     srcdir: Path,
-    dstdir: Path,
+    cachedir: Path,
     scrambler: Path,
     max_workers: int = 8,
     test: bool = False,
@@ -483,7 +482,7 @@ def select_and_scramble(
         config.invert_triviality = True
         config.seed = 1
 
-    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, dstdir, scrambler, max_workers)
+    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, cachedir, scrambler, max_workers)
 
 
 @app.command()

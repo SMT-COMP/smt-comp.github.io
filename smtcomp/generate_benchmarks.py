@@ -83,10 +83,11 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                     generate_benchmark_yml(file_unsat, False, None)
 
 
-def generate_benchmarks(dst: Path, seed: int) -> None:
+def generate_benchmarks(cachedir: Path) -> None:
     """
     Generate files included by benchexec
     """
+    dst = cachedir / "benchmarks"
     prop_dir = dst.joinpath("properties")
     prop_dir.mkdir(parents=True, exist_ok=True)
     (prop_dir / "SMT.prp").touch()
