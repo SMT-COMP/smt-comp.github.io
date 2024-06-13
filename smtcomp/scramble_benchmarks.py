@@ -70,7 +70,9 @@ def scramble_lazyframe(
     max_workers: int,
 ) -> None:
     args = []
-    files = benchmarks.select("scramble_id", "logic", "family", "name").collect().to_dicts()
+    df = benchmarks.select("scramble_id", "logic", "family", "name", "file").collect()
+    df.select("scramble_id", "file").write_csv(dstdir / "original_id.csv")
+    files = df.to_dicts()
     incremental = False
     seed = config.seed
 
