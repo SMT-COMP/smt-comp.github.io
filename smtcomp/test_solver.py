@@ -56,7 +56,7 @@ def test(cmd: str, args: list[str], file: str, expected: str) -> None:
     all = [cmd] + args + [file]
     print(all, flush=True)
    # result = subprocess.run(all, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    result = subprocess.run(all, stdout=subprocess.PIPE, stderr=subprocess.STDERR)
+    result = subprocess.run(all, stdout=subprocess.PIPE)
     if result.returncode < 0:
         returnsignal = -result.returncode
     else:
