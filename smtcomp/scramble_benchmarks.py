@@ -10,6 +10,12 @@ import smtcomp.selection
 from typing import Optional
 import re
 
+
+def benchmark_files_dir(cachedir: Path, track: defs.Track) -> Path:
+    suffix = get_suffix(track)
+    return cachedir / "benchmarks" / f"files{suffix}"
+
+
 status_pattern = re.compile(r"(set-info :status (sat|unsat|unknown))")
 
 
@@ -110,8 +116,7 @@ def select_and_scramble(
     scrambler: Path,
     max_workers: int,
 ) -> None:
-    suffix = get_suffix(competition_track)
-    dstdir = cachedir / "benchmarks" / f"files{suffix}"
+    dstdir = benchmark_files_dir(cachedir, competition_track)
     dstdir.mkdir(parents=True, exist_ok=True)
     match competition_track:
         case defs.Track.SingleQuery:
