@@ -110,6 +110,7 @@ def select_and_scramble(
 ) -> None:
     suffix = get_suffix(competition_track)
     dstdir = cachedir / "benchmarks" / f"files{suffix}"
+    dstdir.mkdir(parents=True, exist_ok=True)
     match competition_track:
         case defs.Track.SingleQuery:
             selected = smtcomp.selection.helper_compute_sq(config)
