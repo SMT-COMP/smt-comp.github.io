@@ -51,11 +51,11 @@
                        "UF"],
             "command": ["./yices_smt2"]
         },
-	{
-	    "tracks": ["SingleQuery"],
+        {
+            "tracks": ["SingleQuery"],
             "logics": ["QF_BV"],
-	    "command": ["./yices_smt2", "--delegate=kissat"]
-	},
+            "command": ["./yices_smt2", "--delegate=kissat"]
+        },
         {
             "tracks": ["Incremental"],
             "logics": ["QF_ABV",
