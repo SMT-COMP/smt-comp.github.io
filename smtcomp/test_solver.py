@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil
 import subprocess, os
 import re
-
+import sys
 
 def copy_me(dstdir: Path) -> None:
     shutil.copyfile(src=__file__, dst=dstdir.joinpath("test_solver.py"), follow_symlinks=True)
@@ -16,6 +16,7 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
         status = None
         for line in output:
             line = line.strip()
+            print(line, file=sys.stderr)
             # ignore
             if re.compile(r"^\s*(success|;.*)?\s*$").match(line):
                 continue
