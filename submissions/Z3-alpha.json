@@ -5,19 +5,18 @@
     ],
     "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
     "archive": {
-        "url": "https://drive.google.com/uc?export=download&id=16WDivwx35jRj-DnC_7anjcqMHH0WIifL",
-        "h": { "sha256": "6a184d56bb8ba643202742f9d0159057b6dae5db5741ebbfb6298bfd9a68719b" }
+        "url": "https://zenodo.org/records/11643334/files/z3alpha.tar.gz?download=1"
     },
     "website": "https://github.com/JohnLyu2/z3alpha",
-    "system_description": "https://drive.google.com/file/d/1aJOiNzKac_kwhZm8DoT-EFCa_2RHwVwj/view?usp=drive_link",
+    "system_description": "https://drive.google.com/uc?export=download&id=17IULX6QpcqKJ51BzeT6XttAtyRwJIFyY",
     "solver_type": "derived",
-    "command": ["z3alpha.py"],
+    "command": ["z3alpha_submission/z3alpha.py"],
     "seed": "1231",
     "participations": [
         { 
             "tracks": ["SingleQuery"], 
             "divisions": [
-                "Equality",
+                "Bitvec",
                 "QF_Bitvec",
                 "QF_Datatypes",
                 "QF_Equality",
