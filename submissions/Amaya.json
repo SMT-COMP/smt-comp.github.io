@@ -5,7 +5,7 @@
     ],
     "contacts": ["Michal Hečko <mhecko@proton.me>", "Ondřej Lengál <ondra.lengal@gmail.com>"],
     "archive": {
-        "url": "https://github.com/VeriFIT/amaya-smt-comp/raw/master/archives/amaya-smt-comp-2024-v6.tar.gz",
+        "url": "https://zenodo.org/records/11625128/files/amaya-smt-comp-2024-v6.tar.gz",
         "h": { "sha256": "5a2e5051741fa5ab1110bb5829304301f222e3aa23e2124fb8ad4e07041bc630" }
     },
     "website": "https://github.com/MichalHe/amaya",
