@@ -324,58 +324,6 @@ OLD_CRITERIA = Annotated[bool, typer.Option(help="Simulate previous year criteri
 
 
 @app.command(rich_help_panel=selection_panel)
-def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False) -> None:
-    """
-    Show statistics on the trivial benchmarks
-
-    Never compet.: old benchmarks never run competitively (more than one prover)
-    """
-    config = defs.Config(data)
-    config.old_criteria = old_criteria
-    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks)
-    results = pl.read_ipc(config.cached_previous_results)
-    benchmarks_with_trivial_info = smtcomp.selection.add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
-    b3 = (
-        benchmarks_with_trivial_info.group_by(["logic"])
-        .agg(
-            trivial=pl.col("file").filter(trivial=True).len(),
-            not_trivial=pl.col("file").filter(trivial=False, run=True).len(),
-            old_never_ran=pl.col("file").filter(run=False, new=False).len(),
-            new=pl.col("file").filter(new=True).len(),
-        )
-        .sort(by="logic")
-        .collect()
-    )
-    table = Table(title="Statistics on the benchmark pruning")
-
-    table.add_column("Logic", justify="left", style="cyan", no_wrap=True)
-    table.add_column("trivial", justify="right", style="green")
-    table.add_column("not trivial", justify="right", style="orange_red1")
-    table.add_column("never compet.", justify="right", style="magenta")
-    table.add_column("new", justify="right", style="magenta1")
-
-    for d in b3.to_dicts():
-        table.add_row(
-            str(defs.Logic.of_int(d["logic"])),
-            str(d["trivial"]),
-            str(d["not_trivial"]),
-            str(d["old_never_ran"]),
-            str(d["new"]),
-        )
-
-    table.add_section()
-    table.add_row(
-        "Total",
-        str(b3["trivial"].sum()),
-        str(b3["not_trivial"].sum()),
-        str(b3["old_never_ran"].sum()),
-        str(b3["new"].sum()),
-    )
-
-    print(table)
-
-
-@app.command(rich_help_panel=selection_panel)
 def show_sq_selection_stats(
     data: Path,
     old_criteria: OLD_CRITERIA = False,
@@ -538,16 +486,6 @@ def create_cache(data: Path) -> None:
     df = pl.DataFrame(results_filtered)
     # df["solver"] = df["solver"].astype("string")
     df.write_ipc(config.cached_previous_results)
-
-
-# def conv(x:defs.Smt2FileOld) -> defs.Info:
-#     return defs.Info( file = defs.Smt2File(logic=x.logic,family=x.family,name=x.name), status= x.status, asserts = x.asserts, check_sats = x.check_sats)
-
-# @app.command()
-# def convert(src:Path,dst:Path) -> None:
-#     benchmarks = defs.BenchmarksOld.model_validate_json(read_cin(src))
-#     benchmarks2 = defs.Benchmarks(files=list(map(conv,benchmarks.files)))
-#     write_cin(dst,benchmarks2.model_dump_json(indent=1))
 
 
 @app.command(rich_help_panel=benchexec_panel)
