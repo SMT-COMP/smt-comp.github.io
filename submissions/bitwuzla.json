@@ -5,7 +5,7 @@
 
   "archive": {
     "url": "https://zenodo.org/records/11288326/files/bitwuzla-submission-smtcomp-2024.zip?download=1",
-    "h": {"sha256": "2396c5dbb5a377e9b399a688d711918004cfea83e1f7a6f4e7bf8eb9b369854a"}
+    "h": {"sha256": "3060804e2bc9131c82edb52edf03beb40375ea5f314a7f9524b0a71b0584a340"}
   },
 
   "command": ["bin/bitwuzla"],
@@ -23,7 +23,7 @@
     {
       "tracks": ["Incremental"],
       "logics": "^((QF_)?(A)?(UF)?(BV|FP|FPLRA)+)$",
-      "command": ["bin/bitwuzla"]
+      "command": ["bin/bitwuzla", "--no-pp-normalize"]
     },
     {
       "tracks": ["UnsatCore"],
