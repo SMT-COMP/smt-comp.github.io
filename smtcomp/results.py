@@ -129,6 +129,10 @@ def parse_xml(file: Path) -> Results:
     return Results(runid=RunId.unmangle(result.attrib["name"]), options=result.attrib["options"], runs=runs)
 
 
+def parse_results(resultdir: Path) -> Iterator[Results]:
+    return map(parse_xml, (resultdir.glob("*.xml.bz2")))
+
+
 def to_pl(r: Results) -> pl.LazyFrame:
     lf = pl.LazyFrame(r.runs)
     return lf.with_columns(solver=pl.lit(r.runid.solver), participation=r.runid.participation, track=int(r.runid.track))

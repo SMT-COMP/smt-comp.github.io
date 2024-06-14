@@ -105,3 +105,17 @@ def unpack(archive: defs.Archive, dst: Path) -> None:
     if not (is_unpack_present(archive, dst)):
         print("[red]Empty archive", archive_file)
         exit(1)
+
+
+def download_unpack(s: defs.Submission, dst: Path) -> None:
+    """
+    Download and unpack
+    """
+    dst.mkdir(parents=True, exist_ok=True)
+    if s.archive:
+        download(s.archive, dst)
+        unpack(s.archive, dst)
+    for p in s.participations.root:
+        if p.archive:
+            download(p.archive, dst)
+            unpack(p.archive, dst)
