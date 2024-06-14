@@ -33,7 +33,10 @@ import smtcomp.scramble_benchmarks
 from rich.console import Console
 import smtcomp.test_solver as test_solver
 from concurrent.futures import ThreadPoolExecutor
-
+from smtcomp.benchexec import get_suffix
+from smtcomp.scramble_benchmarks import benchmark_files_dir
+from smtcomp.utils import *
+import re
 
 app = typer.Typer()
 
@@ -551,13 +554,35 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
 
 
 @app.command()
-def check_model_locally(cachedir: Path, resultdirs: list[Path], max_workers: int = 8) -> None:
-    l: list[tuple[results.RunId, results.Run, model_validation.ValidationResult]] = []
+def check_model_locally(
+    cachedir: Path, resultdirs: list[Path], max_workers: int = 8, outdir: Optional[Path] = None
+) -> None:
+    l: list[tuple[results.RunId, results.Run, model_validation.ValidationError]] = []
     with Progress() as progress:
         with ThreadPoolExecutor(max_workers) as executor:
             for resultdir in resultdirs:
                 l2 = model_validation.check_results_locally(cachedir, resultdir, executor, progress)
-                for rid, r, result in l2:
-                    if result.status != defs.Status.Sat:
-                        l.append((rid, r, result))
-    print(l)
+                l.extend(filter_map(map_none3(model_validation.is_error), l2))
+    keyfunc = lambda v: v[0].solver
+    l.sort(key=keyfunc)
+    d = itertools.groupby(l, key=keyfunc)
+    t = Tree("Unvalidated models")
+    for solver, rs in d:
+        t2 = t.add(solver)
+        for rid, r, result in rs:
+            stderr = result.stderr.strip().replace("\n", ", ")
+            t2.add(f"{r.basename}: {stderr}")
+    print(t)
+    if outdir is not None:
+        for solver, models in d:
+            dst = outdir / solver
+            dst.mkdir(parents=True, exist_ok=True)
+            for rid, r, result in models:
+                filedir = benchmark_files_dir(cachedir, rid.track)
+                logic = rid.includefile.removesuffix(get_suffix(rid.track))
+                basename = r.basename.removesuffix(".yml") + ".smt2"
+                basename_model = r.basename.removesuffix(".yml") + ".rsmt2"
+                smt2_file = filedir / logic / basename
+                (dst / basename).unlink(missing_ok=True)
+                (dst / basename).symlink_to(smt2_file)
+                (dst / basename_model).write_text(result.model)

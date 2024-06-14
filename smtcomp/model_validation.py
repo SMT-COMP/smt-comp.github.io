@@ -33,12 +33,36 @@ from rich.progress import Progress
 
 
 @dataclass
-class ValidationResult:
-    status: defs.Status
+class ValidationOk:
     stderr: str
 
 
-def check_locally(smt2_file: Path, model: str) -> ValidationResult:
+@dataclass
+class ValidationError:
+    status: defs.Status
+    stderr: str
+    model: str | None
+
+
+@dataclass
+class NoValidation:
+    """No validation possible"""
+
+
+noValidation = NoValidation()
+
+Validation = ValidationOk | ValidationError | NoValidation
+
+
+def is_error(x: Validation) -> ValidationError | None:
+    match x:
+        case ValidationError(_):
+            return x
+        case ValidationOk(_) | NoValidation():
+            return None
+
+
+def check_locally(smt2_file: Path, model: str) -> Validation:
     r = subprocess.run(
         [
             "dolmen",
@@ -54,7 +78,7 @@ def check_locally(smt2_file: Path, model: str) -> ValidationResult:
     )
     match r.returncode:
         case 0:
-            status = defs.Status.Sat
+            return ValidationOk(r.stderr.decode())
         case 5:
             status = defs.Status.Unsat
         case 2:
@@ -62,12 +86,10 @@ def check_locally(smt2_file: Path, model: str) -> ValidationResult:
             status = defs.Status.Unknown
         case _:
             status = defs.Status.Unknown
-    return ValidationResult(status, r.stderr.decode())
+    return ValidationError(status, r.stderr.decode(), model)
 
 
-def check_result_locally(
-    cachedir: Path, logfiles: results.LogFile, rid: results.RunId, r: results.Run
-) -> ValidationResult:
+def check_result_locally(cachedir: Path, logfiles: results.LogFile, rid: results.RunId, r: results.Run) -> Validation:
     if r.status == "true":
         filedir = benchmark_files_dir(cachedir, rid.track)
         logic = rid.includefile.removesuffix(get_suffix(rid.track))
@@ -75,18 +97,18 @@ def check_result_locally(
         model = logfiles.get_output(rid, r.basename)
         return check_locally(smt2_file, model)
     else:
-        return ValidationResult(defs.Status.Unknown, "")
+        return noValidation
 
 
 def check_results_locally(
     cachedir: Path, resultdir: Path, executor: ThreadPoolExecutor, progress: Progress
-) -> list[tuple[results.RunId, results.Run, ValidationResult]]:
+) -> list[tuple[results.RunId, results.Run, Validation]]:
     with results.LogFile(resultdir) as logfiles:
         l = [(r.runid, b) for r in results.parse_results(resultdir) for b in r.runs if b.status == "true"]
         return list(
             progress.track(
                 executor.map((lambda v: (v[0], v[1], check_result_locally(cachedir, logfiles, v[0], v[1]))), l),
                 total=len(l),
-                description="checking models",
+                description=f"checking models for {resultdir.name}",
             )
         )
