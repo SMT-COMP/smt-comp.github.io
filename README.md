@@ -1,4 +1,4 @@
-# smtcomp
+# SMT Competition
 
 [![Release](https://img.shields.io/github/v/release/smtcomp/smtcomp.github.io)](https://img.shields.io/github/v/release/smtcomp/smtcomp.github.io)
 [![Build status](https://img.shields.io/github/actions/workflow/status/smtcomp/smtcomp.github.io/main.yml?branch=main)](https://github.com/smtcomp/smtcomp.github.io/actions/workflows/main.yml?query=branch%3Amain)
@@ -38,7 +38,7 @@ make install
 
 ## For starting a new SMT-COMP year
 
-Edit the file `smtcomp/defs.py`, in particular `Config.current_year`, `Logic` for adding new logics and `tracks` for new divisions.
+Edit the file `smtcomp/defs.py`, in particular `Config.current_year`, `Logic` for adding new logics and `tracks` for new divisions. Reset `Config.NYSE_seed` to `None`, and set the date the New York Stock Exchange Index will be used in `Config.NYSE_date`.
 
 Download the new benchmarks from zenodo, unpack them, unpack the .tar.zst, you should get something like:
 
@@ -74,10 +74,9 @@ smtcomp create-benchmarks-list $DIR/zenodo ./data/
 
 The directory `./data/` is the one present in this repository.
 
-## Using the smtcomp tool for selecting the benchmarks
+## Using the `smtcomp` tool for selecting the benchmarks
 
-The list of benchmarks and the previous results are in json which are human
-readable, but slow to parse (1min). So locally the tool use the feather format. The
+The list of benchmarks and the previous results are in `json` which are human-readable, but slow to parse (1min). So locally the tool use the feather format. The
 feather files are generated with:
 
 ```
@@ -87,7 +86,7 @@ smtcomp create-cache ./data/
 Working with the feather files with [polars](https://docs.pola.rs/) is very fast,
 so no more intermediate files are needed.
 
-However statistics can be shown, for example for the selection of single track:
+However, statistics can be shown, for example for the selection of single track:
 
 ```
 smtcomp show-sq-selection-stats ./data/ 0
@@ -110,7 +109,7 @@ Which outputs:
 ...
 ```
 
-## Using the smtcomp tool for generating benchexec
+## Using the `smtcomp` tool for generating `benchexec` configuration
 
 #### Generate submissions [Optional]
 
@@ -129,37 +128,37 @@ smtcomp show ../tmp/submissions/YicesQS.json
 The solver downloaded using:
 
 ```
-smtcomp download-archive ../tmp/submissions/*.json ../tmp/benchexec/execution
+smtcomp download-archive submissions/*.json ../tmp/execution
 ```
 
 Trivial tests benchmarks generated with:
 
 ```
-smtcomp generate-benchmarks ../tmp/benchexec/includes/
+smtcomp generate-trivial-benchmarks ../tmp/execution/benchmarks
 ```
 
 The benchexec tasks generated using:
 
 ```
-smtcomp generate-benchexec ../tmp/submissions/*.json ../tmp/benchexec/includes/all.xml ../tmp/benchexec/execution
+smtcomp generate-benchexec submissions/*.json ../tmp/execution
 ```
 
 The benchexec execution environment generated using:
 
 ```
-smtcomp prepare-execution ../tmp/benchexec/execution
+smtcomp prepare-execution ../tmp/execution
 ```
 
 Benchexec started using:
 
 ```
-(cd ../tmp/benchexec/execution; benchexec ../includes/all.xml  --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1)
+(cd ../tmp/execution; PYTHONPATH=$(pwd) benchexec SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1)
 ```
 
 Benchexec in verifier cloud started using:
 
 ```
-(cd ../tmp/benchexec/execution; PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py ../includes/all.xml  --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
+(cd ../tmp/execution; PYTHONPATH=$(pwd) PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
 ```
 
 ---

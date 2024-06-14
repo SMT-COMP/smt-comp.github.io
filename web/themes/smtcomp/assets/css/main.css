@@ -687,3 +687,20 @@ ul li ul {
 ul li p {
   margin: 0;
 }
+
+table.participants {
+  table-layout: fixed;
+  width: 200%;
+}
+
+col.authors,
+td.authors {
+  width: 35%;
+  white-space: normal;
+}
+
+col.track,
+td.track {
+  width: 6em;
+  white-space: normal;
+}

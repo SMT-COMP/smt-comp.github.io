@@ -1,0 +1,13 @@
+<tr>
+  <td><a href="{{ .website }}">{{ .name }}</a></td>
+
+  <td>{{ if (gt (len .tracks.SingleQuery) 0) }}X{{ end }}</td>
+  <td>{{ with .tracks.Incremental }}X{{ end }}</td>
+  <td>{{ with .tracks.UnsatCore }}X{{ end }}</td>
+  <td>{{ with .tracks.ModelValidation }}X{{ end }}</td>
+  <td>{{ with .tracks.Cloud }}X{{ end }}</td>
+
+  <td class="authors">{{ delimit .authors ",\n" }}</td>
+  <td><a href="{{ .archive_url }}">Archive</a></td>
+  <td><a href="{{ .system_description }}">System description</a></td>
+</tr>

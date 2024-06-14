@@ -38,6 +38,10 @@ def is_unpack_present(archive: defs.Archive, dst: Path) -> bool:
     return any(True for _ in d.iterdir())
 
 
+def command_path(command: defs.Command, archive: defs.Archive, dst: Path) -> Path:
+    return archive_unpack_dir(archive, dst).joinpath(command.binary)
+
+
 def find_command(command: defs.Command, archive: defs.Archive, dst: Path) -> Path:
     d = archive_unpack_dir(archive, dst)
     if not (d.exists()):
@@ -101,3 +105,17 @@ def unpack(archive: defs.Archive, dst: Path) -> None:
     if not (is_unpack_present(archive, dst)):
         print("[red]Empty archive", archive_file)
         exit(1)
+
+
+def download_unpack(s: defs.Submission, dst: Path) -> None:
+    """
+    Download and unpack
+    """
+    dst.mkdir(parents=True, exist_ok=True)
+    if s.archive:
+        download(s.archive, dst)
+        unpack(s.archive, dst)
+    for p in s.participations.root:
+        if p.archive:
+            download(p.archive, dst)
+            unpack(p.archive, dst)
