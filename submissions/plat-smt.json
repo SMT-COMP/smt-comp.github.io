@@ -5,11 +5,11 @@
     ],
     "contacts": ["David Ewert <dewert10@gmail.com>"],
     "archive": {
-        "url": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2024/plat-smt.zip",
-        "h": { "sha256": "93a9814e42ab2c903a1c7c3e267127e69e64c7f1650f3c694502d790f087638a" }
+        "url": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2024-v2/plat-smt.zip",
+        "h": { "sha256": "6f209d0fe11e3aca548a769d39cf5bb8294fda64e3a3667514246ec2b3d95966" }
     },
     "website": "https://github.com/dewert99/plat-smt",
-    "system_description": "https://github.com/dewert99/plat-smt/files/15505357/PlatSMT_2024_System_Description.pdf",
+    "system_description": "https://github.com/user-attachments/files/15831637/PlatSMT_2024_System_Description.pdf",
     "command": ["./plat-smt"],
     "solver_type": "wrapped",
     "seed": 6536,
