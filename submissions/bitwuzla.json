@@ -4,8 +4,8 @@
   "contacts": ["Mathias Preiner <preiner@cs.stanford.edu>"],
 
   "archive": {
-    "url": "https://zenodo.org/records/11648223/files/bitwuzla-submission-smtcomp-2024.zip?download=1",
-    "h": {"sha256": "3060804e2bc9131c82edb52edf03beb40375ea5f314a7f9524b0a71b0584a340"}
+    "url": "https://zenodo.org/records/11650877/files/bitwuzla-submission-smtcomp-2024.zip?download=1",
+    "h": {"sha256": "30b91aeb4b53852c5bb2181b876a7b2680042f6dfa3f53a3b091fb5accc717d4"}
   },
 
   "command": ["bin/bitwuzla"],
