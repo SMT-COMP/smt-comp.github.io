@@ -27,6 +27,7 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
             else:
                 return "unknown"
         return "unknown"
+        print(line, file=sys.stderr)
 
     elif (returnsignal == 9) or (returnsignal == 15):
         status = "timeout"
