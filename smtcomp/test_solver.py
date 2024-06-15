@@ -17,7 +17,7 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
         status = None
         for line in output:
             line = line.strip()
-            print(line, file=sys.stderr)
+            print(line, file=sys.stdout)
             # ignore
             if re.compile(r"^\s*(success|;.*)?\s*$").match(line):
                 continue
