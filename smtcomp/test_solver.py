@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil
 import subprocess, os
 import re
-import sys
+
 
 def copy_me(dstdir: Path) -> None:
     shutil.copyfile(src=__file__, dst=dstdir.joinpath("test_solver.py"), follow_symlinks=True)
@@ -12,12 +12,10 @@ def copy_me(dstdir: Path) -> None:
 
 # copied from tools.py should be factorized
 def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -> str:
-    print(returnsignal, file=sys.stderr)
     if returnsignal is None:
         status = None
         for line in output:
             line = line.strip()
-            print(line, file=sys.stderr)
             # ignore
             if re.compile(r"^\s*(success|;.*)?\s*$").match(line):
                 continue
@@ -25,8 +23,8 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
                 return "unsat"
             elif line == "sat":
                 return "sat"
-           # else:
-           #     return "unknown"
+            else:
+                return "unknown"
         return "unknown"
 
     elif (returnsignal == 9) or (returnsignal == 15):
