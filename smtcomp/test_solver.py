@@ -17,7 +17,7 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
         status = None
         for line in output:
             line = line.strip()
-            print(line, file=sys.stdout)
+            print(line, file=sys.stderr)
             # ignore
             if re.compile(r"^\s*(success|;.*)?\s*$").match(line):
                 continue
@@ -25,8 +25,8 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
                 return "unsat"
             elif line == "sat":
                 return "sat"
-            else:
-                return "unknown"
+           # else:
+           #     return "unknown"
         return "unknown"
 
     elif (returnsignal == 9) or (returnsignal == 15):
