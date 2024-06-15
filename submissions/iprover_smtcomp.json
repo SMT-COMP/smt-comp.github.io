@@ -3,7 +3,7 @@
       "h" : {
          "sha256" : "8f7f4bad13e87d6aaa1bb8ca78b102edaa5495caf65d5fe39c3c16d6f70003d6"
       },
-       "url" : "https://zenodo.org/records/11670006/files/iprover_v3.9_smt_comp_2024.zip"
+       "url" : "https://zenodo.org/records/11670026/files/iprover_v3.9_smt_comp_2024.zip"
    },
    "command" : [
       "bin/iprover_smtcomp.sh"
