@@ -12,6 +12,7 @@ def copy_me(dstdir: Path) -> None:
 
 # copied from tools.py should be factorized
 def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -> str:
+    print(returnsignal, file=sys.stderr)
     if returnsignal is None:
         status = None
         for line in output:
@@ -27,7 +28,6 @@ def parse_result(returnsignal: int | None, returncode: int, output: list[str]) -
             else:
                 return "unknown"
         return "unknown"
-        print(line, file=sys.stderr)
 
     elif (returnsignal == 9) or (returnsignal == 15):
         status = "timeout"
