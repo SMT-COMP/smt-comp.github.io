@@ -12,6 +12,7 @@
     "system_description": "https://www.informatik.uni-freiburg.de/~heizmann/2024smtcomp/2024UltimateEliminator.pdf",
     "command": ["ultimateeliminator.sh"],
     "solver_type": "wrapped",
+    "competitive": False,
     "seed": "0",
     "participations": [
         {
