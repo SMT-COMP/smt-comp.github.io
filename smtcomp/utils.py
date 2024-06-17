@@ -1,3 +1,7 @@
+from dataclasses import dataclass
+import polars as pl
+from rich.table import Table
+import rich
 from typing import *
 
 U = TypeVar("U")
@@ -21,3 +25,63 @@ def map_none3(f: Callable[[U], V | None]) -> Callable[[Tuple[W1, W2, U]], Tuple[
             return (x[0], x[1], y)
 
     return g
+
+
+def add_columns(dst: pl.LazyFrame, from_: pl.LazyFrame, on: list[str], defaults: Dict[str, Any]) -> pl.LazyFrame:
+    dst_cols = set(dst.columns)
+    from_cols = set(from_.columns)
+    on_cols = set(on)
+    assert on_cols.issubset(dst_cols)
+    assert on_cols.issubset(from_cols)
+    assert dst_cols.isdisjoint(from_cols.difference(on_cols))
+    assert from_cols.difference(on_cols) == defaults.keys()
+    fill_nulls = [pl.col(k).fill_null(value=v) for k, v in defaults.items()]
+    return dst.join(from_, how="left", on=on, coalesce=True).with_columns(*fill_nulls)
+
+
+def intersect(dst: pl.LazyFrame, from_: pl.LazyFrame, on: list[str]) -> pl.LazyFrame:
+    """
+    All the possible matches in the two given tables
+    """
+    dst_cols = set(dst.columns)
+    from_cols = set(from_.columns)
+    on_cols = set(on)
+    assert on_cols.issubset(dst_cols)
+    assert on_cols.issubset(from_cols)
+    assert dst_cols.isdisjoint(from_cols.difference(on_cols))
+    return dst.join(from_, how="inner", on=on, coalesce=True)
+
+
+def filter_with(a: pl.LazyFrame, b: pl.LazyFrame, on: list[str]) -> pl.LazyFrame:
+    return a.join(b, how="semi", on=on)
+
+
+@dataclass
+class Col:
+    name: str
+    header: str
+    footer: str | None = None
+    justify: Literal["default", "left", "center", "right", "full"] = "right"
+    style: str | None = None
+    no_wrap: bool = False
+    custom: Callable[[int], str] = str
+
+
+def rich_print_pl(title: str, df: pl.DataFrame, *cols: Col) -> None:
+    """Print DataFrame of integers"""
+
+    table = Table(title="Statistics on the benchmark selection for single query")
+
+    for col in cols:
+        table.add_column(col.header, justify=col.justify, style=col.style, no_wrap=col.no_wrap)
+
+    for d in df.to_dicts():
+        l = list(map(lambda col: col.custom(d[col.name]), cols))
+        table.add_row(*l)
+
+    table.add_section()
+
+    l = list(map(lambda col: col.footer if col.footer is not None else str(df[col.name].sum()), cols))
+    table.add_row(*l)
+
+    rich.print(table)
