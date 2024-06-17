@@ -1367,7 +1367,7 @@ class Config:
     """The integer part of one hundred times the opening value of the New York Stock Exchange Composite Index on the first day the exchange is open on or after the date specified in nyse_date"""
     nyse_date = date(year=2024, month=6, day=17)
 
-    aws_timelimit_hard = 600
+    aws_timelimit_hard = 180
     """
     Time in seconds upon which benchmarks are considered hards
     """

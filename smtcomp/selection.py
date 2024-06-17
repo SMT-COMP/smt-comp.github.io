@@ -8,6 +8,7 @@ from rich import progress
 from rich import print
 from pydantic import BaseModel
 import polars as pl
+from smtcomp.utils import *
 
 c_logic = pl.col("logic")
 c_result = pl.col("result")
@@ -197,11 +198,14 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
 
     # Add division information to competitive logic
     logics = competitive_logics(config).filter(pl.col("track").is_in(list(map(int, aws_track))), competitive=True)
-    logics = logics.join(tracks(), on=["track", "logic"], how="inner")
+    df_logics = logics.collect()
+    if len(df_logics) == 0:
+        raise ValueError("No logics selected")
+    logics = df_logics.lazy().join(tracks(), on=["track", "logic"], how="left")
 
-    # Keep only competitive logic from this track
-    b = benchmarks.join(logics, on="logic", how="inner")
-    previous_results = previous_results.join(b, on="file", how="semi")
+    # Keep only competitive logic from the tracks
+    benchmarks = intersect(benchmarks, logics, on=["logic"])
+    previous_results = filter_with(previous_results, benchmarks, on=["file"])
 
     # Keep only hard and unsolved benchmarks
     solved = c_result.is_in({int(defs.Status.Sat), int(defs.Status.Unsat)})
@@ -212,22 +216,41 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
         # Remove bench solved within the timelimit by any solver
         .filter(solved_within_timelimit.not_().all().over("file"))
         .group_by("file")
-        .agg(hard=solved.any(), unsolved=solved.not_().all())
+        .agg(hard=solved.any())
     )
 
-    b = b.join(hard_unsolved, how="inner", on="file")
+    hard_unsolved = intersect(hard_unsolved, benchmarks, on=["file"])
 
     def sample(lf: pl.LazyFrame) -> pl.LazyFrame:
-        n = pl.min_horizontal(pl.col("file").list.len(), config.aws_num_selected)
+        n = pl.min_horizontal(pl.col("file").list.len(), config.aws_num_selected / 2)
         return lf.with_columns(file=pl.col("file").list.sample(n=n, seed=config.seed))
 
+    b = hard_unsolved
+
     # Sample at the logic level
-    b = sample(b.group_by("track", "division", "logic").agg(file=c_file))
+    b = sample(b.group_by("track", "hard", "division", "logic").agg(file=c_file.sort()))
 
     # Sample at the division level
-    b = sample(b.group_by("track", "division").agg(file=c_file.flatten()))
+    b = sample(b.group_by("track", "hard", "division").agg(file=c_file.flatten().sort()))
 
     # Sample at the track level
-    b = sample(b.group_by("track").agg(file=c_file.flatten()))
+    b = sample(b.group_by("track", "hard").agg(file=c_file.flatten().sort()))
 
-    return b.explode("file").join(benchmarks, on="file", how="inner")
+    b = b.explode("file").with_columns(selected=True)
+
+    b = add_columns(
+        hard_unsolved.select("file", "hard", "track"), b, on=["track", "hard", "file"], defaults={"selected": False}
+    ).with_columns(unsolved=pl.col("hard").not_())
+
+    return add_columns(
+        benchmarks, b, on=["track", "file"], defaults={"hard": False, "unsolved": False, "selected": False}
+    )
+
+
+def helper_aws_selection(config: defs.Config) -> pl.LazyFrame:
+    """
+    Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
+    """
+    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks)
+    results = pl.read_ipc(config.cached_previous_results)
+    return aws_selection(benchmarks.lazy(), results.lazy(), config)

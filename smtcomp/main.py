@@ -336,52 +336,80 @@ def show_sq_selection_stats(
         .sort(by="logic")
         .collect()
     )
-    table = Table(title="Statistics on the benchmark selection for single query")
-
-    table.add_column("Logic", justify="left", style="cyan", no_wrap=True)
-    table.add_column("trivial", justify="right", style="green")
-    table.add_column("not trivial", justify="right", style="orange_red1")
-    table.add_column("never compet.", justify="right", style="magenta")
-    table.add_column("new", justify="right", style="magenta1")
-    table.add_column("selected", justify="right", style="green3")
-    table.add_column("selected sat", justify="right", style="green4")
-    table.add_column("selected unsat", justify="right", style="green4")
-    table.add_column("selected already run", justify="right", style="green4")
 
     used_logics = defs.logic_used_for_track(defs.Track.SingleQuery)
-    for d in b3.to_dicts():
-        logic = defs.Logic.of_int(d["logic"])
+
+    def print_logic(id: int) -> str:
+        logic = defs.Logic.of_int(id)
         if logic in used_logics:
-            slogic = f"{str(logic)}"
+            return f"{str(logic)}"
         else:
-            slogic = f"[bold red]{str(logic)}[/bold red]"
+            return f"[bold red]{str(logic)}[/bold red]"
 
-        table.add_row(
-            slogic,
-            str(d["trivial"]),
-            str(d["not_trivial"]),
-            str(d["old_never_ran"]),
-            str(d["new"]),
-            str(d["selected"]),
-            str(d["selected_sat"]),
-            str(d["selected_unsat"]),
-            str(d["selected_already_run"]),
-        )
-
-    table.add_section()
-    table.add_row(
-        "Total",
-        str(b3["trivial"].sum()),
-        str(b3["not_trivial"].sum()),
-        str(b3["old_never_ran"].sum()),
-        str(b3["new"].sum()),
-        str(b3["selected"].sum()),
-        str(b3["selected_sat"].sum()),
-        str(b3["selected_unsat"].sum()),
-        str(b3["selected_already_run"].sum()),
+    rich_print_pl(
+        "Statistics on the benchmark selection for single query",
+        b3,
+        Col("logic", "Logic", footer="Total", justify="left", style="cyan", no_wrap=True, custom=print_logic),
+        Col("trivial", "trivial", justify="right", style="green"),
+        Col("not_trivial", "not trivial", justify="right", style="orange_red1"),
+        Col("old_never_ran", "never compet.", justify="right", style="magenta"),
+        Col("new", "new", justify="right", style="magenta1"),
+        Col("selected", "selected", justify="right", style="green3"),
+        Col("selected_sat", "selected sat", justify="right", style="green4"),
+        Col("selected_unsat", "selected unsat", justify="right", style="green4"),
+        Col("selected_already_run", "selected already run", justify="right", style="green4"),
     )
 
-    print(table)
+
+@app.command(rich_help_panel=selection_panel)
+def show_aws_stats(
+    data: Path,
+) -> None:
+    """
+    Show statistics on the benchmarks selected for aws tracks
+    """
+    config = defs.Config(data)
+    benchmarks = smtcomp.selection.helper_aws_selection(config)
+    b3 = (
+        benchmarks.group_by(["track", "logic"])
+        .agg(
+            n=pl.len(),
+            hard=(pl.col("hard") == True).sum(),
+            unsolved=(pl.col("unsolved") == True).sum(),
+            hard_selected=((pl.col("hard") == True) & pl.col("selected") == True).sum(),
+            unsolved_selected=((pl.col("unsolved") == True) & pl.col("selected") == True).sum(),
+        )
+        .sort(by=["track", "logic"])
+        .collect()
+    )
+
+    rich_print_pl(
+        "Statistics on the benchmark selection for AWS tracks",
+        b3,
+        Col(
+            "track",
+            "Track",
+            footer="Total",
+            justify="left",
+            style="cyan",
+            no_wrap=True,
+            custom=lambda x: str(defs.Track.of_int(x)),
+        ),
+        Col(
+            "logic",
+            "Logic",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=True,
+            custom=lambda x: str(defs.Logic.of_int(x)),
+        ),
+        Col("n", "Benchmarks", justify="right", style="magenta"),
+        Col("hard", "Hard", justify="right", style="green"),
+        Col("unsolved", "Unsolved", justify="right", style="orange_red1"),
+        Col("hard_selected", "Hard", justify="right", style="green"),
+        Col("unsolved_selected", "Unsolved", justify="right", style="orange_red1"),
+    )
 
 
 def print_iterable(i: int, tree: Tree, a: Any) -> None:
