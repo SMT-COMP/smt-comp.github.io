@@ -1363,9 +1363,9 @@ class Config:
     """Prioritize triviality as much as possible for testing purpose.
         Look for simple problems instead of hard one"""
 
-    nyse_seed = None
+    nyse_seed = 17817
     """The integer part of one hundred times the opening value of the New York Stock Exchange Composite Index on the first day the exchange is open on or after the date specified in nyse_date"""
-    nyse_date = date(year=2024, month=6, day=10)
+    nyse_date = date(year=2024, month=6, day=17)
 
     aws_timelimit_hard = 600
     """
