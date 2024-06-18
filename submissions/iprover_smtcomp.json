@@ -33,5 +33,6 @@
    ],
    "solver_type" : "wrapped",
    "system_description" : "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2024.pdf",
-   "website" : "https://gitlab.com/korovin/iprover"
+   "website" : "https://gitlab.com/korovin/iprover",
+   "seed": 0
 }

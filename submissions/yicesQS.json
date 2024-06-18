@@ -23,5 +23,6 @@
                        ],
             "command": ["./starexec_run_default"]
         }
-    ]
+    ],
+    "seed": 0
 }

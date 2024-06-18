@@ -15,5 +15,6 @@
     "solver_type": "wrapped",
     "participations": [
         { "tracks": ["SingleQuery"], "logics": ["QF_DT", "QF_UFDT"], "divisions": ["QF_Datatypes"] }
-    ]
+    ],
+    "seed": 0
 }

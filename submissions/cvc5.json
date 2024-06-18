@@ -58,5 +58,6 @@
       },
       "command": [ "bin/smtcomp_run_incremental" ]
     }
-  ]
+  ],
+  "seed": 0
 }
