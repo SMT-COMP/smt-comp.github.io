@@ -137,28 +137,39 @@ Trivial tests benchmarks generated with:
 smtcomp generate-trivial-benchmarks ../tmp/execution/benchmarks
 ```
 
-The benchexec tasks generated using:
-
-```
-smtcomp generate-benchexec submissions/*.json ../tmp/execution
-```
-
 The benchexec execution environment generated using:
 
 ```
 smtcomp prepare-execution ../tmp/execution
 ```
 
+The benchmarks can be selected by running
+
+```
+smtcomp select-and-scramble SingleQuery ./data/ $DIR/zenodo ../tmp/execution SCRAMBLER_EXECUTABLE [--test]
+smtcomp select-and-scramble Incremental ./data/ $DIR/zenodo ../tmp/execution SCRAMBLER_EXECUTABLE [--test]
+smtcomp select-and-scramble ModelValidation ./data/ $DIR/zenodo ../tmp/execution SCRAMBLER_EXECUTABLE [--test]
+smtcomp select-and-scramble UnsatCore ./data/ $DIR/zenodo ../tmp/execution SCRAMBLER_EXECUTABLE  [--test]
+```
+Use the `--test` switch if you want to select and scramble only a small number of easy benchmarks for each logic.
+
+The benchexec tasks generated using:
+
+```
+smtcomp generate-benchexec submissions/*.json ../tmp/execution
+```
+
+
 Benchexec started using:
 
 ```
-(cd ../tmp/execution; PYTHONPATH=$(pwd) benchexec SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1)
+(cd ../tmp/execution; PYTHONPATH=$(pwd) benchexec run_definitions/SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1)
 ```
 
 Benchexec in verifier cloud started using:
 
 ```
-(cd ../tmp/execution; PYTHONPATH=$(pwd) PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
+(cd ../tmp/execution; PYTHONPATH=$(pwd) PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py run_definitions/SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
 ```
 
 ---

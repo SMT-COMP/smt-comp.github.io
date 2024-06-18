@@ -196,14 +196,6 @@ def generate_trivial_benchmarks(dst: Path) -> None:
     smtcomp.generate_benchmarks.generate_trivial_benchmarks(dst)
 
 
-@app.command()
-def generate_benchmarks(cachedir: Path) -> None:
-    """
-    Generate benchmarks for smtcomp
-    """
-    smtcomp.generate_benchmarks.generate_benchmarks(cachedir)
-
-
 @app.command(rich_help_panel=benchmarks_panel)
 def create_benchmarks_list(src: Path, data: Path, scrambler: Optional[Path] = None, j: int = 8) -> None:
     """

@@ -27,9 +27,9 @@ def get_suffix(track: defs.Track) -> str:
             raise ValueError("No Cloud or Parallel")
 
 
-def get_xml_name(s: defs.Submission, track: defs.Track) -> str:
+def get_xml_name(s: defs.Submission, track: defs.Track, division: defs.Division) -> str:
     suffix = get_suffix(track)
-    return sub(r"\W+", "", s.name.lower()) + suffix + ".xml"
+    return sub(r"\W+", "", s.name.lower()) + suffix + "_" + str(division) + ".xml"
 
 
 def tool_module_name(s: defs.Submission, incremental: bool) -> str:
@@ -40,7 +40,7 @@ def tool_module_name(s: defs.Submission, incremental: bool) -> str:
 class CmdTask(BaseModel):
     name: str
     options: List[str]
-    includesfiles: List[str]
+    taskdirs: List[str]
 
 
 def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]) -> None:
@@ -124,14 +124,14 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
             text("**/error.log")
 
         for cmdtask in cmdtasks:
-            for includesfile in cmdtask.includesfiles:
-                with tag("rundefinition", name=f"{cmdtask.name},{includesfile}"):
-                    for option in cmdtask.options:
-                        with tag("option"):
-                            text(option)
-                    with tag("tasks", name="task"):
-                        with tag("includesfile"):
-                            text(f"benchmarks/{includesfile}")
+            with tag("rundefinition", name=f"{cmdtask.name}"):
+                for option in cmdtask.options:
+                    with tag("option"):
+                        text(option)
+                with tag("tasks", name="task"):
+                    for taskdir in cmdtask.taskdirs:
+                        with tag("include"):
+                            text(f"{taskdir}/*.yml")
 
         with tag("propertyfile"):
             text("benchmarks/properties/SMT.prp")
@@ -139,7 +139,7 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
     file.write_text(indent(doc.getvalue()))
 
 
-def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: defs.Track) -> List[CmdTask]:
+def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: defs.Track, target_division: defs.Division) -> List[CmdTask]:
     res: List[CmdTask] = []
     i = -1
     for p in s.participations.root:
@@ -151,10 +151,9 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: def
 
             i = i + 1
             suffix = get_suffix(track)
-            tasks: list[str] = []
-            for _, logics in divisions.items():
-                tasks.extend([str(logic) + suffix for logic in logics])
-            if tasks:
+            taskdirs: list[str] = [f"../benchmarks/files{suffix}/{logic}" for logic in divisions.get(target_division, [])]
+
+            if taskdirs:
                 if command.compa_starexec:
                     assert command.arguments == []
                     executable_path = find_command(command, archive, cachedir)
@@ -173,7 +172,7 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: def
                 cmdtask = CmdTask(
                     name=f"{s.name},{i},{track}",
                     options=options,
-                    includesfiles=tasks,
+                    taskdirs=taskdirs,
                 )
                 res.append(cmdtask)
     return res
@@ -182,19 +181,23 @@ def cmdtask_for_submission(s: defs.Submission, cachedir: Path, target_track: def
 def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
     generate_tool_modules(s, cachedir)
 
-    for target_track in [
-        defs.Track.SingleQuery,
-        defs.Track.Incremental,
-        defs.Track.ModelValidation,
-        defs.Track.UnsatCore,
-    ]:
-        res = cmdtask_for_submission(s, cachedir, target_track)
-        if res:
-            basename = get_xml_name(s, target_track)
-            file = cachedir / basename
-            generate_xml(
-                config=config,
-                cmdtasks=res,
-                file=file,
-                tool_module_name=tool_module_name(s, target_track == defs.Track.Incremental),
-            )
+    dst = cachedir / "benchmarks"
+    prop_dir = dst.joinpath("properties")
+    prop_dir.mkdir(parents=True, exist_ok=True)
+    (prop_dir / "SMT.prp").touch()
+
+    run_defs = cachedir / "run_definitions"
+    run_defs.mkdir(parents=True, exist_ok=True)
+
+    for target_track, divisions in defs.tracks.items():
+        for division in divisions.keys():
+            res = cmdtask_for_submission(s, cachedir, target_track, division)
+            if res:
+                basename = get_xml_name(s, target_track, division)
+                file = run_defs / basename
+                generate_xml(
+                    config=config,
+                    cmdtasks=res,
+                    file=file,
+                    tool_module_name=tool_module_name(s, target_track == defs.Track.Incremental),
+                )
