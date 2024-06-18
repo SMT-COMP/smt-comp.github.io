@@ -113,8 +113,7 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
     with tag(
         "benchmark",
         tool=f"tools.{tool_module_name}",
-        timelimit=f"{config.timelimit_s}s",
-        hardlimit=f"{config.timelimit_s+30}s",
+        walltimelimit=f"{config.timelimit_s}s",
         memlimit=f"{config.memlimit_M} MB",
         cpuCores=f"{config.cpuCores}",
     ):

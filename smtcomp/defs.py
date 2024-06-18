@@ -1352,7 +1352,7 @@ class Results(BaseModel):
 class Config:
     current_year = 2024
     oldest_previous_results = 2018
-    timelimit_s = 60
+    timelimit_s = 60 * 20
     memlimit_M = 1024 * 20
     cpuCores = 4
     min_used_benchmarks = 300
