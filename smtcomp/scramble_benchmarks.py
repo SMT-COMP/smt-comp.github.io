@@ -68,7 +68,9 @@ def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.Lazy
 
 
 def create_scramble_id_v2(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
-    return benchmarks.sort("file").with_columns(scramble_id=pl.int_range(0, pl.len()).shuffle(seed=config.seed))
+    return benchmarks.sort("track", "file").with_columns(
+        scramble_id=pl.int_range(0, pl.len()).shuffle(seed=config.seed)
+    )
 
 
 def scramble_lazyframe(
@@ -164,11 +166,17 @@ def select_and_scramble_aws(
     all = intersect(solvers, selected, on=["track", "logic"]).collect().lazy()
 
     for name, track in [("cloud", defs.Track.Cloud), ("parallel", defs.Track.Parallel)]:
-        dst = dstdir / name
+        dst = dstdir / name / "non-incremental"
         dst.mkdir(parents=True, exist_ok=True)
 
         scramble_lazyframe(
-            selected.filter(track=(int(track))), defs.Track.SingleQuery, config, srcdir, dst, scrambler, max_workers
+            selected.filter(track=(int(track))),
+            defs.Track.SingleQuery,
+            config,
+            srcdir,
+            dst,
+            scrambler,
+            max_workers,
         )
 
         # Generate csv files
@@ -177,7 +185,7 @@ def select_and_scramble_aws(
         # Define original file, and input file
         pairs = pairs.with_columns(logic=pl_name_of_logic)
         input_file = pl.concat_str(
-            pl.lit("non-incremental/"), "logic", pl.lit("/smt-comp-"), "scramble_id", pl.lit(".smt2")
+            pl.lit("non-incremental/"), "logic", pl.lit("/scrambled"), "scramble_id", pl.lit(".smt2")
         )
         original_file = pl.concat_str(pl.lit("non-incremental/"), "logic", pl.lit("/"), "family", pl.lit("/"), "name")
         pairs = pairs.select("solver", input_file.alias("input file"), original_file.alias("original file"))
