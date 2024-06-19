@@ -164,19 +164,24 @@ def helper_compute_incremental(config: defs.Config) -> pl.LazyFrame:
     return track_selection(benchmarks_with_info, config, defs.Track.Incremental)
 
 
+def solver_competing_logics(config: defs.Config) -> pl.LazyFrame:
+    """
+    returned columns solver, track, logic
+    """
+    l = (
+        (s.name, int(track), int(logic))
+        for s in config.submissions
+        for (track, logics) in s.participations.get_logics_by_track().items()
+        for logic in logics
+    )
+    return pl.LazyFrame(l, schema=["solver", "track", "logic"])
+
+
 def competitive_logics(config: defs.Config) -> pl.LazyFrame:
     """
     returned columns track, logic, competitive:bool
     """
-    l = (s.participations.get_logics_by_track() for s in config.submissions)
-    dd = list(itertools.chain.from_iterable(map((lambda x: ((int(k), list(map(int, s))) for k, s in x.items())), l)))
-    return (
-        pl.DataFrame(dd, schema=["track", "logic"])
-        .lazy()
-        .explode("logic")
-        .group_by("track", "logic")
-        .agg(competitive=(pl.col("logic").len() > 1))
-    )
+    return solver_competing_logics(config).group_by("track", "logic").agg(competitive=(pl.len() > 1))
 
 
 @functools.cache
@@ -197,7 +202,11 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
     aws_track = [defs.Track.Cloud, defs.Track.Parallel]
 
     # Add division information to competitive logic
-    logics = competitive_logics(config).filter(pl.col("track").is_in(list(map(int, aws_track))), competitive=True)
+    logics = (
+        competitive_logics(config)
+        .filter(pl.col("track").is_in(list(map(int, aws_track))), competitive=True)
+        .drop("competitive")
+    )
     df_logics = logics.collect()
     if len(df_logics) == 0:
         raise ValueError("No logics selected")
@@ -227,14 +236,27 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
 
     b = hard_unsolved
 
-    # Sample at the logic level
-    b = sample(b.group_by("track", "hard", "division", "logic").agg(file=c_file.sort()))
+    b = sample(b.group_by("track", "hard", "logic").agg(file=c_file.sort())).sort(by="logic")
 
-    # Sample at the division level
-    b = sample(b.group_by("track", "hard", "division").agg(file=c_file.flatten().sort()))
+    b = b.group_by("track", "hard", maintain_order=True).agg(file=pl.col("file"))
 
-    # Sample at the track level
-    b = sample(b.group_by("track", "hard").agg(file=c_file.flatten().sort()))
+    def round_robbin(files: list[list[int]]) -> list[int]:
+        result: list[int] = []
+        while True:
+            empty = True
+            for l in files:
+                if 0 < len(l):
+                    result.append(l.pop())
+                    empty = False
+                    if len(result) >= config.aws_num_selected / 2:
+                        return result
+            if empty:
+                raise (ValueError("Not enough elements, decrease aws_timelimit_hard"))
+
+    d = b.collect().to_dict(as_series=False)
+    d["file"] = list(map(round_robbin, d["file"]))
+
+    b = pl.LazyFrame(d)
 
     b = b.explode("file").with_columns(selected=True)
 

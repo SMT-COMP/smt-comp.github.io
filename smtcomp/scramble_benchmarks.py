@@ -7,6 +7,7 @@ import smtcomp.defs as defs
 from smtcomp.benchexec import generate_benchmark_yml, get_suffix
 import polars as pl
 import smtcomp.selection
+from smtcomp.utils import *
 from typing import Optional
 import re
 
@@ -64,6 +65,10 @@ def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.Lazy
     files = benchmarks.sort("file").select(pl.col("file").shuffle(seed=config.seed))
     files = files.with_row_index(name="scramble_id")
     return benchmarks.join(files, on="file")
+
+
+def create_scramble_id_v2(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
+    return benchmarks.with_columns(scramble_id=pl.int_range(0, pl.len()).shuffle(seed=config.seed))
 
 
 def scramble_lazyframe(
@@ -138,3 +143,44 @@ def select_and_scramble(
 
     selected = create_scramble_id(selected, config).filter(selected=True)
     scramble_lazyframe(selected, competition_track, config, srcdir, dstdir, scrambler, max_workers)
+
+
+pl_name_of_track = pl.col("track").map_elements(defs.Track.name_of_int, return_dtype=pl.String)
+pl_name_of_logic = pl.col("logic").map_elements(defs.Logic.name_of_int, return_dtype=pl.String)
+pl_name_of_status = pl.col("status").map_elements(defs.Status.name_of_int, return_dtype=pl.String)
+
+
+def select_and_scramble_aws(
+    config: defs.Config,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    max_workers: int,
+) -> None:
+    selected = smtcomp.selection.helper_aws_selection(config)
+    selected = create_scramble_id_v2(selected, config).filter(selected=True).drop("selected").collect().lazy()
+    solvers = smtcomp.selection.solver_competing_logics(config)
+    # Add a line for each solver that compet
+    selected = intersect(solvers, selected, on=["track", "logic"]).collect().lazy()
+
+    for name, track in [("cloud", defs.Track.Cloud), ("parallel", defs.Track.Parallel)]:
+        dst = dstdir / name
+        dst.mkdir(parents=True, exist_ok=True)
+        pairs = selected.filter(track=int(track))
+
+        # Define original file, and input file
+        pairs = pairs.with_columns(logic=pl_name_of_logic)
+        input_file = pl.concat_str(
+            pl.lit("non-incremental/"), "logic", pl.lit("/smt-comp-"), "scramble_id", pl.lit(".smt2")
+        )
+        original_file = pl.concat_str(pl.lit("non-incremental/"), "logic", pl.lit("/"), "family", pl.lit("/"), "name")
+        pairs = pairs.select("solver", input_file.alias("input file"), original_file.alias("original file"))
+        pairs.collect().write_csv(file=dstdir / f"{name}-pairs.csv")
+
+        scramble_lazyframe(selected.lazy(), defs.Track.SingleQuery, config, srcdir, dst, scrambler, max_workers)
+
+    selected.with_columns(
+        track=pl_name_of_track,
+        logic=pl_name_of_logic,
+        status=pl_name_of_status,
+    ).collect().write_csv(dstdir / "all.csv")
