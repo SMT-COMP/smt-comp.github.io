@@ -1156,6 +1156,8 @@ class Participation(BaseModel, extra="forbid"):
     @model_validator(mode="after")
     def check_archive(self) -> Participation:
         aws_track = {Track.Cloud, Track.Parallel}
+        if self.aws_repository is None and not set(self.tracks).isdisjoint(aws_track):
+            raise ValueError("aws_repository is required by Cloud and Parallel track")
         if self.aws_repository is not None and not set(self.tracks).issubset(aws_track):
             raise ValueError("aws_repository can be used only with Cloud and Parallel track")
         if (self.archive is not None or self.command is not None) and not set(self.tracks).isdisjoint(aws_track):
@@ -1252,7 +1254,7 @@ class Submission(BaseModel, extra="forbid"):
 
     def complete_participations(self) -> list[ParticipationCompleted]:
         """Push defaults from the submission into participations"""
-        return [p.complete(self.archive, self.command) for p in self.participations.root]
+        return [p.complete(self.archive, self.command) for p in self.participations.root if p.aws_repository is None]
 
 
 class Smt2File(BaseModel):
