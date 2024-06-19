@@ -55,7 +55,7 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
             dstfile.write("--- BENCHMARK BEGINS HERE ---\n")
         subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
     else:
-        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"))
+        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"), check=True)
 
     expected = get_expected_result(fsrc) if not incremental else None
     generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
