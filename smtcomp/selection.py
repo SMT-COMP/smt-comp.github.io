@@ -269,10 +269,15 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
     )
 
 
+def removed_benchmarks(config: defs.Config) -> pl.LazyFrame:
+    return pl.LazyFrame(config.removed_benchmarks)
+
+
 def helper_aws_selection(config: defs.Config) -> pl.LazyFrame:
     """
     Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
     """
-    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks)
+    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks).lazy()
+    benchmarks = benchmarks.join(removed_benchmarks(config), on=["logic", "family", "name"], how="anti")
     results = pl.read_ipc(config.cached_previous_results)
-    return aws_selection(benchmarks.lazy(), results.lazy(), config)
+    return aws_selection(benchmarks, results.lazy(), config)

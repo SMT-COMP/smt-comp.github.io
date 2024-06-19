@@ -1380,6 +1380,12 @@ class Config:
     Number of selected benchmarks
     """
 
+    removed_benchmarks = [{
+        "logic": int(Logic.QF_LIA),
+        "family": "20210219-Dartagnan/ConcurrencySafety-Main",
+        "name": "39_rand_lock_p0_vs-O0.smt2",
+    }]
+
     def __init__(self, data: Path | None) -> None:
         if data is not None and data.name != "data":
             raise ValueError("Consistency check, data directory must be named 'data'")
