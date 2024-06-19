@@ -12,7 +12,7 @@
     "participations": [
         {
             "tracks": ["Cloud"],
-            "logics": ["QF_UF", "QF_AX", "QF_IDL", "QF_RDL", "QF_LIA", "QF_LRA", "QF_UFIDL", "QF_UFLIA", "QF_UFLRA", "QF_ALIA", "QF_AUFLIA”, "QF_NRA", "QF_NIA", "QF_SLIA"],
+            "logics": ["QF_UF", "QF_AX", "QF_IDL", "QF_RDL", "QF_LIA", "QF_LRA", "QF_UFIDL", "QF_UFLIA", "QF_UFLRA", "QF_ALIA", "QF_AUFLIA", "QF_NRA", "QF_NIA", "QF_SLIA"],
             "aws_repository": "https://github.com/amaleewilson/smtcomp24"
         }
     ]
