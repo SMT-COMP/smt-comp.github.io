@@ -370,14 +370,20 @@ def show_aws_stats(
     """
     config = defs.Config(data)
     benchmarks = smtcomp.selection.helper_aws_selection(config)
+    solvers = smtcomp.selection.solver_competing_logics(config).group_by(["track", "logic"]).agg("solver")
     b3 = (
-        benchmarks.group_by(["track", "logic"])
-        .agg(
-            n=pl.len(),
-            hard=(pl.col("hard") == True).sum(),
-            unsolved=(pl.col("unsolved") == True).sum(),
-            hard_selected=((pl.col("hard") == True) & pl.col("selected") == True).sum(),
-            unsolved_selected=((pl.col("unsolved") == True) & pl.col("selected") == True).sum(),
+        add_columns(
+            benchmarks.group_by(["track", "logic"]).agg(
+                n=pl.len(),
+                hard=(pl.col("hard") == True).sum(),
+                unsolved=(pl.col("unsolved") == True).sum(),
+                selected=(pl.col("selected") == True).sum(),
+                hard_selected=((pl.col("hard") == True) & (pl.col("selected") == True)).sum(),
+                unsolved_selected=((pl.col("unsolved") == True) & (pl.col("selected") == True)).sum(),
+            ),
+            solvers,
+            on=["track", "logic"],
+            defaults={"solver": []},
         )
         .sort(by=["track", "logic"])
         .collect()
@@ -393,7 +399,7 @@ def show_aws_stats(
             justify="left",
             style="cyan",
             no_wrap=True,
-            custom=lambda x: str(defs.Track.of_int(x)),
+            custom=defs.Track.name_of_int,
         ),
         Col(
             "logic",
@@ -402,14 +408,42 @@ def show_aws_stats(
             justify="left",
             style="cyan",
             no_wrap=True,
-            custom=lambda x: str(defs.Logic.of_int(x)),
+            custom=defs.Logic.name_of_int,
         ),
         Col("n", "Benchmarks", justify="right", style="magenta"),
         Col("hard", "Hard", justify="right", style="green"),
         Col("unsolved", "Unsolved", justify="right", style="orange_red1"),
-        Col("hard_selected", "Hard", justify="right", style="green"),
-        Col("unsolved_selected", "Unsolved", justify="right", style="orange_red1"),
+        Col("hard_selected", "Sel. Hard", justify="right", style="green"),
+        Col("unsolved_selected", "Sel. Unsolved", justify="right", style="orange_red1"),
+        Col("selected", "Selected", justify="right", style="orange_red1"),
+        Col(
+            "solver",
+            "Solvers",
+            justify="left",
+            custom=lambda x: ", ".join(x),
+            footer=lambda df: str(
+                (df.select(n=pl.col("solver").list.len() * (pl.col("hard_selected") + pl.col("unsolved_selected"))))[
+                    "n"
+                ].sum()
+            ),
+        ),
     )
+
+
+@app.command(rich_help_panel=selection_panel)
+def scramble_aws(
+    data: Path,
+    srcdir: Path,
+    dstdir: Path,
+    scrambler: Path,
+    max_workers: int = 8,
+) -> None:
+    """
+    Show statistics on the benchmarks selected for aws tracks
+    """
+    config = defs.Config(data)
+
+    smtcomp.scramble_benchmarks.select_and_scramble_aws(config, srcdir, dstdir, scrambler, max_workers)
 
 
 def print_iterable(i: int, tree: Tree, a: Any) -> None:

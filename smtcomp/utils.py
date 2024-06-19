@@ -3,6 +3,7 @@ import polars as pl
 from rich.table import Table
 import rich
 from typing import *
+from smtcomp import defs
 
 U = TypeVar("U")
 V = TypeVar("V")
@@ -60,11 +61,11 @@ def filter_with(a: pl.LazyFrame, b: pl.LazyFrame, on: list[str]) -> pl.LazyFrame
 class Col:
     name: str
     header: str
-    footer: str | None = None
+    footer: str | Callable[[pl.DataFrame], str] | None = None
     justify: Literal["default", "left", "center", "right", "full"] = "right"
     style: str | None = None
     no_wrap: bool = False
-    custom: Callable[[int], str] = str
+    custom: Callable[[Any], str] = str
 
 
 def rich_print_pl(title: str, df: pl.DataFrame, *cols: Col) -> None:
@@ -81,7 +82,15 @@ def rich_print_pl(title: str, df: pl.DataFrame, *cols: Col) -> None:
 
     table.add_section()
 
-    l = list(map(lambda col: col.footer if col.footer is not None else str(df[col.name].sum()), cols))
+    def compute_footer(col: Col) -> str:
+        if isinstance(col.footer, str):
+            return col.footer
+        elif col.footer is None:
+            return str(df[col.name].sum())
+        else:
+            return col.footer(df)
+
+    l = list(map(compute_footer, cols))
     table.add_row(*l)
 
     rich.print(table)

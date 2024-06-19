@@ -43,6 +43,10 @@ class EnumAutoInt(Enum):
     def of_int(cls, id: int) -> EnumAutoInt:
         return cls.__ordered__[id]
 
+    @classmethod
+    def name_of_int(cls, id: int) -> str:
+        return cls.__ordered__[id].name
+
     def __hash__(self) -> int:
         return self.id
 
