@@ -3,7 +3,7 @@ import itertools
 from pathlib import Path
 from typing import List, Optional, cast, Dict, Any, Annotated, TextIO
 import rich
-from rich.progress import track
+from rich.progress import track, Progress
 import rich.style
 from rich.tree import Tree
 from rich.table import Table
@@ -17,9 +17,12 @@ import polars as pl
 
 import smtcomp.archive as archive
 import smtcomp.benchexec as benchexec
+import smtcomp.benchexec
 import smtcomp.defs as defs
 import smtcomp.submission as submission
 import smtcomp.execution as execution
+import smtcomp.model_validation as model_validation
+import smtcomp.results as results
 from smtcomp.benchmarks import clone_group
 import smtcomp.convert_csv
 import smtcomp.generate_benchmarks
@@ -29,6 +32,7 @@ from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
 import smtcomp.test_solver as test_solver
+from concurrent.futures import ThreadPoolExecutor
 
 
 app = typer.Typer()
@@ -160,46 +164,15 @@ def generate_benchexec(
 
     (The cachedir directory need to contain unpacked archive only with compa_starexec command)
     """
+    config = defs.Config(data=None)
+    config.timelimit_s = timelimit_s
+    config.memlimit_M = memlimit_M
+    config.cpuCores = cpuCores
+
     (cachedir / "tools").mkdir(parents=True, exist_ok=True)
     for file in track(files):
         s = submission.read(str(file))
-        benchexec.generate_tool_modules(s, cachedir)
-
-        for target_track in [
-            defs.Track.SingleQuery,
-            defs.Track.Incremental,
-            defs.Track.ModelValidation,
-            defs.Track.UnsatCore,
-        ]:
-            tool_module_name = benchexec.tool_module_name(s, target_track == defs.Track.Incremental)
-
-            res = benchexec.cmdtask_for_submission(s, cachedir, target_track)
-            if res:
-                basename = benchexec.get_xml_name(s, target_track)
-                file = cachedir / basename
-                benchexec.generate_xml(
-                    timelimit_s=timelimit_s,
-                    memlimit_M=memlimit_M,
-                    cpuCores=cpuCores,
-                    cmdtasks=res,
-                    file=file,
-                    tool_module_name=tool_module_name,
-                )
-
-
-# Should be moved somewhere else
-def download_archive_aux(s: defs.Submission, dst: Path) -> None:
-    """
-    Download and unpack
-    """
-    dst.mkdir(parents=True, exist_ok=True)
-    if s.archive:
-        archive.download(s.archive, dst)
-        archive.unpack(s.archive, dst)
-    for p in s.participations.root:
-        if p.archive:
-            archive.download(p.archive, dst)
-            archive.unpack(p.archive, dst)
+        smtcomp.benchexec.generate(s, cachedir, config)
 
 
 @app.command(rich_help_panel=benchexec_panel)
@@ -209,7 +182,7 @@ def download_archive(files: List[Path], dst: Path) -> None:
     """
     for file in track(files):
         s = submission.read(str(file))
-        download_archive_aux(s, dst)
+        archive.download_unpack(s, dst)
 
 
 @app.command()
@@ -221,12 +194,11 @@ def generate_trivial_benchmarks(dst: Path) -> None:
 
 
 @app.command()
-def generate_benchmarks(dst: Path, data: Path) -> None:
+def generate_benchmarks(cachedir: Path) -> None:
     """
     Generate benchmarks for smtcomp
     """
-    config = defs.Config(data)
-    smtcomp.generate_benchmarks.generate_benchmarks(dst, config.seed)
+    smtcomp.generate_benchmarks.generate_benchmarks(cachedir)
 
 
 @app.command(rich_help_panel=benchmarks_panel)
@@ -321,58 +293,6 @@ def merge_benchmarks(files: list[Path], dst: Path) -> None:
 
 
 OLD_CRITERIA = Annotated[bool, typer.Option(help="Simulate previous year criteria (needs only to be trivial one year)")]
-
-
-@app.command(rich_help_panel=selection_panel)
-def show_benchmarks_trivial_stats(data: Path, old_criteria: OLD_CRITERIA = False) -> None:
-    """
-    Show statistics on the trivial benchmarks
-
-    Never compet.: old benchmarks never run competitively (more than one prover)
-    """
-    config = defs.Config(data)
-    config.old_criteria = old_criteria
-    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks)
-    results = pl.read_ipc(config.cached_previous_results)
-    benchmarks_with_trivial_info = smtcomp.selection.add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
-    b3 = (
-        benchmarks_with_trivial_info.group_by(["logic"])
-        .agg(
-            trivial=pl.col("file").filter(trivial=True).len(),
-            not_trivial=pl.col("file").filter(trivial=False, run=True).len(),
-            old_never_ran=pl.col("file").filter(run=False, new=False).len(),
-            new=pl.col("file").filter(new=True).len(),
-        )
-        .sort(by="logic")
-        .collect()
-    )
-    table = Table(title="Statistics on the benchmark pruning")
-
-    table.add_column("Logic", justify="left", style="cyan", no_wrap=True)
-    table.add_column("trivial", justify="right", style="green")
-    table.add_column("not trivial", justify="right", style="orange_red1")
-    table.add_column("never compet.", justify="right", style="magenta")
-    table.add_column("new", justify="right", style="magenta1")
-
-    for d in b3.to_dicts():
-        table.add_row(
-            str(defs.Logic.of_int(d["logic"])),
-            str(d["trivial"]),
-            str(d["not_trivial"]),
-            str(d["old_never_ran"]),
-            str(d["new"]),
-        )
-
-    table.add_section()
-    table.add_row(
-        "Total",
-        str(b3["trivial"].sum()),
-        str(b3["not_trivial"].sum()),
-        str(b3["old_never_ran"].sum()),
-        str(b3["new"].sum()),
-    )
-
-    print(table)
 
 
 @app.command(rich_help_panel=selection_panel)
@@ -540,22 +460,12 @@ def create_cache(data: Path) -> None:
     df.write_ipc(config.cached_previous_results)
 
 
-# def conv(x:defs.Smt2FileOld) -> defs.Info:
-#     return defs.Info( file = defs.Smt2File(logic=x.logic,family=x.family,name=x.name), status= x.status, asserts = x.asserts, check_sats = x.check_sats)
-
-# @app.command()
-# def convert(src:Path,dst:Path) -> None:
-#     benchmarks = defs.BenchmarksOld.model_validate_json(read_cin(src))
-#     benchmarks2 = defs.Benchmarks(files=list(map(conv,benchmarks.files)))
-#     write_cin(dst,benchmarks2.model_dump_json(indent=1))
-
-
 @app.command(rich_help_panel=benchexec_panel)
 def select_and_scramble(
     competition_track: defs.Track,
     data: Path,
     srcdir: Path,
-    dstdir: Path,
+    cachedir: Path,
     scrambler: Path,
     max_workers: int = 8,
     test: bool = False,
@@ -575,7 +485,7 @@ def select_and_scramble(
         config.invert_triviality = True
         config.seed = 1
 
-    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, dstdir, scrambler, max_workers)
+    smtcomp.scramble_benchmarks.select_and_scramble(competition_track, config, srcdir, cachedir, scrambler, max_workers)
 
 
 @app.command()
@@ -603,7 +513,7 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
         out.write("""print("Testing provers")\n""")
         for sub in l:
             out.write(f"print({sub.name!r})\n")
-            download_archive_aux(sub, outdir)
+            archive.download_unpack(sub, outdir)
             for part in sub.complete_participations():
                 for track, divisions in part.tracks.items():
                     match track:
@@ -638,3 +548,16 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
                                     f"test({str(cmd)!r},{part.command.arguments!r},{str(file_sat)!r},{expected!r})\n"
                                 )
         out.write("end()\n")
+
+
+@app.command()
+def check_model_locally(cachedir: Path, resultdirs: list[Path], max_workers: int = 8) -> None:
+    l: list[tuple[results.RunId, results.Run, model_validation.ValidationResult]] = []
+    with Progress() as progress:
+        with ThreadPoolExecutor(max_workers) as executor:
+            for resultdir in resultdirs:
+                l2 = model_validation.check_results_locally(cachedir, resultdir, executor, progress)
+                for rid, r, result in l2:
+                    if result.status != defs.Status.Sat:
+                        l.append((rid, r, result))
+    print(l)

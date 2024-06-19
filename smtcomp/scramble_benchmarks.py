@@ -4,11 +4,17 @@ from rich.progress import track
 import subprocess
 import concurrent.futures
 import smtcomp.defs as defs
-from smtcomp.benchexec import generate_benchmark_yml
+from smtcomp.benchexec import generate_benchmark_yml, get_suffix
 import polars as pl
 import smtcomp.selection
 from typing import Optional
 import re
+
+
+def benchmark_files_dir(cachedir: Path, track: defs.Track) -> Path:
+    suffix = get_suffix(track)
+    return cachedir / "benchmarks" / f"files{suffix}"
+
 
 status_pattern = re.compile(r"(set-info :status (sat|unsat|unknown))")
 
@@ -70,7 +76,9 @@ def scramble_lazyframe(
     max_workers: int,
 ) -> None:
     args = []
-    files = benchmarks.select("scramble_id", "logic", "family", "name").collect().to_dicts()
+    df = benchmarks.select("scramble_id", "logic", "family", "name", "file").collect()
+    df.select("scramble_id", "file").write_csv(dstdir / "original_id.csv")
+    files = df.to_dicts()
     incremental = False
     seed = config.seed
 
@@ -100,53 +108,16 @@ def scramble_lazyframe(
         )
 
 
-def test_select_and_scramble(
-    competition_track: defs.Track,
-    config: defs.Config,
-    srcdir: Path,
-    dstdir: Path,
-    scrambler: Path,
-    max_workers: int,
-) -> None:
-    match competition_track:
-        case defs.Track.SingleQuery:
-            selected = smtcomp.selection.helper_compute_sq(config)
-        case defs.Track.Incremental:
-            selected = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
-        #            rich.print(
-        #                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-        #            )
-        #            exit(1)
-        case defs.Track.ModelValidation:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
-        case defs.Track.UnsatCore:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
-        case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
-    selected = create_scramble_id(selected, config).filter(pl.col("logic") == int(defs.Logic.BVFP))
-    scramble_lazyframe(selected, competition_track, config, srcdir, dstdir, scrambler, max_workers)
-
-
 def select_and_scramble(
     competition_track: defs.Track,
     config: defs.Config,
     srcdir: Path,
-    dstdir: Path,
+    cachedir: Path,
     scrambler: Path,
     max_workers: int,
 ) -> None:
+    dstdir = benchmark_files_dir(cachedir, competition_track)
+    dstdir.mkdir(parents=True, exist_ok=True)
     match competition_track:
         case defs.Track.SingleQuery:
             selected = smtcomp.selection.helper_compute_sq(config)

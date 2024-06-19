@@ -1,7 +1,7 @@
 from typing import Set, Dict
 from pathlib import Path
 from smtcomp import defs
-from smtcomp.benchexec import generate_benchmark_yml
+from smtcomp.benchexec import generate_benchmark_yml, get_suffix
 
 
 def path_trivial_benchmark(dst: Path, track: defs.Track, logic: defs.Logic, status: defs.Status) -> Path:
@@ -11,13 +11,13 @@ def path_trivial_benchmark(dst: Path, track: defs.Track, logic: defs.Logic, stat
     match track:
         case defs.Track.Incremental:
             assert status == defs.Status.Incremental
-            suffix = "_inc"
+            suffix = get_suffix(track)
         case defs.Track.ModelValidation:
             assert status != defs.Status.Incremental
-            suffix = "_model"
+            suffix = get_suffix(track)
         case defs.Track.SingleQuery:
             assert status != defs.Status.Incremental
-            suffix = ""
+            suffix = get_suffix(track)
         case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
             raise (ValueError("No trivial benchmarks yet for f{track}"))
     logic_dir = dst.joinpath(f"files{suffix}", str(logic))
@@ -41,12 +41,8 @@ def generate_trivial_benchmarks(dst: Path) -> None:
     dst.joinpath("files_inc").mkdir(parents=True, exist_ok=True)
     for track, divisions in defs.tracks.items():
         match track:
-            case defs.Track.Incremental:
-                suffix = "_inc"
-            case defs.Track.ModelValidation:
-                suffix = "_model"
-            case defs.Track.SingleQuery:
-                suffix = ""
+            case defs.Track.Incremental | defs.Track.ModelValidation | defs.Track.SingleQuery:
+                suffix = get_suffix(track)
             case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
                 continue
         for _, logics in divisions.items():
@@ -87,7 +83,11 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                     generate_benchmark_yml(file_unsat, False, None)
 
 
-def generate_benchmarks(dst: Path, seed: int) -> None:
+def generate_benchmarks(cachedir: Path) -> None:
+    """
+    Generate files included by benchexec
+    """
+    dst = cachedir / "benchmarks"
     prop_dir = dst.joinpath("properties")
     prop_dir.mkdir(parents=True, exist_ok=True)
     (prop_dir / "SMT.prp").touch()
@@ -96,12 +96,8 @@ def generate_benchmarks(dst: Path, seed: int) -> None:
     dst.joinpath("files_inc").mkdir(parents=True, exist_ok=True)
     for track, divisions in defs.tracks.items():
         match track:
-            case defs.Track.Incremental:
-                suffix = "_inc"
-            case defs.Track.ModelValidation:
-                suffix = "_model"
-            case defs.Track.SingleQuery:
-                suffix = ""
+            case defs.Track.Incremental | defs.Track.ModelValidation | defs.Track.SingleQuery:
+                suffix = get_suffix(track)
             case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
                 continue
         for _, theories in divisions.items():

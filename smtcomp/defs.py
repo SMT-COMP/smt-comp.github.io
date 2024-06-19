@@ -1156,6 +1156,8 @@ class Participation(BaseModel, extra="forbid"):
     @model_validator(mode="after")
     def check_archive(self) -> Participation:
         aws_track = {Track.Cloud, Track.Parallel}
+        if self.aws_repository is None and not set(self.tracks).isdisjoint(aws_track):
+            raise ValueError("aws_repository is required by Cloud and Parallel track")
         if self.aws_repository is not None and not set(self.tracks).issubset(aws_track):
             raise ValueError("aws_repository can be used only with Cloud and Parallel track")
         if (self.archive is not None or self.command is not None) and not set(self.tracks).isdisjoint(aws_track):
@@ -1252,7 +1254,7 @@ class Submission(BaseModel, extra="forbid"):
 
     def complete_participations(self) -> list[ParticipationCompleted]:
         """Push defaults from the submission into participations"""
-        return [p.complete(self.archive, self.command) for p in self.participations.root]
+        return [p.complete(self.archive, self.command) for p in self.participations.root if p.aws_repository is None]
 
 
 class Smt2File(BaseModel):
@@ -1374,21 +1376,39 @@ class Config:
     Number of selected benchmarks
     """
 
-    def __init__(self, data: Path) -> None:
-        if data.name != "data":
+    def __init__(self, data: Path | None) -> None:
+        if data is not None and data.name != "data":
             raise ValueError("Consistency check, data directory must be named 'data'")
-        self.previous_results = [
-            (year, data.joinpath(f"results-sq-{year}.json.gz"))
+        self._data = data
+
+    @functools.cached_property
+    def data(self) -> Path:
+        if self._data is None:
+            raise ValueError("Configuration without data")
+        return self._data
+
+    @functools.cached_property
+    def previous_results(self) -> list[tuple[int, Path]]:
+        return [
+            (year, self.data.joinpath(f"results-sq-{year}.json.gz"))
             for year in range(Config.oldest_previous_results, Config.current_year)
         ]
-        self.benchmarks = data.joinpath(f"benchmarks-{Config.current_year}.json.gz")
-        self.cached_non_incremental_benchmarks = data.joinpath(
-            f"benchmarks-non-incremental-{Config.current_year}.feather"
-        )
-        self.cached_incremental_benchmarks = data.joinpath(f"benchmarks-incremental-{Config.current_year}.feather")
-        self.cached_previous_results = data.joinpath(f"previous-sq-results-{Config.current_year}.feather")
-        self.data = data
-        self.__seed: int | None = None
+
+    @functools.cached_property
+    def benchmarks(self) -> Path:
+        return self.data.joinpath(f"benchmarks-{Config.current_year}.json.gz")
+
+    @functools.cached_property
+    def cached_non_incremental_benchmarks(self) -> Path:
+        return self.data.joinpath(f"benchmarks-non-incremental-{Config.current_year}.feather")
+
+    @functools.cached_property
+    def cached_incremental_benchmarks(self) -> Path:
+        return self.data.joinpath(f"benchmarks-incremental-{Config.current_year}.feather")
+
+    @functools.cached_property
+    def cached_previous_results(self) -> Path:
+        return self.data.joinpath(f"previous-sq-results-{Config.current_year}.feather")
 
     @functools.cached_property
     def submissions(self) -> list[Submission]:
