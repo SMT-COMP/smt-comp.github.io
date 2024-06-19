@@ -68,7 +68,7 @@ def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.Lazy
 
 
 def create_scramble_id_v2(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
-    return benchmarks.with_columns(scramble_id=pl.int_range(0, pl.len()).shuffle(seed=config.seed))
+    return benchmarks.sort("file").with_columns(scramble_id=pl.int_range(0, pl.len()).shuffle(seed=config.seed))
 
 
 def scramble_lazyframe(
@@ -161,12 +161,18 @@ def select_and_scramble_aws(
     selected = create_scramble_id_v2(selected, config).filter(selected=True).drop("selected").collect().lazy()
     solvers = smtcomp.selection.solver_competing_logics(config)
     # Add a line for each solver that compet
-    selected = intersect(solvers, selected, on=["track", "logic"]).collect().lazy()
+    all = intersect(solvers, selected, on=["track", "logic"]).collect().lazy()
 
     for name, track in [("cloud", defs.Track.Cloud), ("parallel", defs.Track.Parallel)]:
         dst = dstdir / name
         dst.mkdir(parents=True, exist_ok=True)
-        pairs = selected.filter(track=int(track))
+
+        scramble_lazyframe(
+            selected.filter(track=(int(track))), defs.Track.SingleQuery, config, srcdir, dst, scrambler, max_workers
+        )
+
+        # Generate csv files
+        pairs = all.filter(track=int(track))
 
         # Define original file, and input file
         pairs = pairs.with_columns(logic=pl_name_of_logic)
@@ -177,9 +183,7 @@ def select_and_scramble_aws(
         pairs = pairs.select("solver", input_file.alias("input file"), original_file.alias("original file"))
         pairs.collect().write_csv(file=dstdir / f"{name}-pairs.csv")
 
-        scramble_lazyframe(selected.lazy(), defs.Track.SingleQuery, config, srcdir, dst, scrambler, max_workers)
-
-    selected.with_columns(
+    all.with_columns(
         track=pl_name_of_track,
         logic=pl_name_of_logic,
         status=pl_name_of_status,
