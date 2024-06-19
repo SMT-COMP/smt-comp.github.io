@@ -2,6 +2,7 @@
 title = 'Model Validation Track'
 date = 2023-12-11T21:09:02+01:00
 draft = false
+aliases = ['/model.html']
 +++
 
 ## Experimental model validation track
