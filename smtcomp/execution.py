@@ -6,13 +6,11 @@ from rich import print
 
 
 def trace_executor_url() -> str:
-    return (
-        "https://github.com/SMT-COMP/trace-executor/releases/download/smtcomp2022/SMT-COMP-2022-trace-executor.tar.gz"
-    )
+    return "https://github.com/SMT-COMP/trace-executor/releases/download/smtcomp2024-rc1/SMT-COMP-2024-trace-executor.tar.gz"
 
 
 def trace_executor_filename() -> str:
-    return "SMT-COMP-2022-trace-executor.tar.gz"
+    return "SMT-COMP-2024-trace-executor.tar.gz"
 
 
 def download_trace_executor(dst: Path) -> None:
@@ -33,4 +31,8 @@ import subprocess
 
 def copy_tool_module(dst: Path) -> None:
     script_path = Path(__file__).parent
-    subprocess.run(["cp", script_path / "tool.py", dst])
+    tools = dst / "tools"
+    tools.mkdir(parents=True, exist_ok=True)
+    subprocess.run(["cp", script_path / "tool.py", tools])
+    subprocess.run(["cp", script_path / "incremental_tool.py", tools])
+    subprocess.run(["touch", "__init__.py"])
