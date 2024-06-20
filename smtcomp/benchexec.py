@@ -84,7 +84,7 @@ def generate_tool_module(s: defs.Submission, cachedir: Path, incremental: bool) 
                 executable = str(command_path(s.command, s.archive, Path()))
             f.write(f"    EXECUTABLE = '{executable}'\n")
 
-        required_paths = []
+        required_paths = ["benchexec"]
 
         if s.archive is not None:
             archive_path = relpath(archive_unpack_dir(s.archive, cachedir), start=str(cachedir))
@@ -113,6 +113,7 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
     with tag(
         "benchmark",
         tool=f"tools.{tool_module_name}",
+        timelimit=f"{config.timelimit_s * config.cpuCores}s",
         walltimelimit=f"{config.timelimit_s}s",
         memlimit=f"{config.memlimit_M} MB",
         cpuCores=f"{config.cpuCores}",

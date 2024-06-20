@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.ERROR)
 def main():
     if len(sys.argv) < 3:
         print("Usage: ./walltime_killer.py WALLTIME COMMAND")
-    
+
     outfile = "runexec_output.log"
 
     executor = RunExecutor(use_namespaces=False)
@@ -28,13 +28,13 @@ def main():
                 print(line)
     except Exception as e:
         pass
-    
+
     if result.get('terminationreason') == "walltime":
         print("TIMEOUT")
         exit(9)
 
     exit(result['exitcode'].raw)
 
-    
+
 if __name__ == "__main__":
     main()
