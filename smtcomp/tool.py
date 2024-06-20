@@ -6,8 +6,7 @@ import sys, re
 import os
 
 TIMEOUT_COMMAND = "./walltime_killer.py"
-TIMEOUT = "1200"  # needs to be refactored!
-
+TIMEOUT = "1200" # needs to be refactored!
 
 class SMTCompTool(BaseTool2):  # type: ignore
     """
