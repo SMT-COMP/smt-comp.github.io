@@ -10,7 +10,7 @@ import smtcomp.selection
 from smtcomp.utils import *
 from typing import Optional
 import re
-
+from rich import print
 
 def benchmark_files_dir(cachedir: Path, track: defs.Track) -> Path:
     suffix = get_suffix(track)
@@ -55,7 +55,11 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
             dstfile.write("--- BENCHMARK BEGINS HERE ---\n")
         subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
     else:
-        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"), check=True)
+        try:
+            subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"), check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"[red]Warning[/red] scrambler crashed on {fsrc}")
+
 
     expected = get_expected_result(fsrc) if not incremental else None
     generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
