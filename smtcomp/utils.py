@@ -3,7 +3,6 @@ import polars as pl
 from rich.table import Table
 import rich
 from typing import *
-from smtcomp import defs
 
 U = TypeVar("U")
 V = TypeVar("V")
@@ -71,7 +70,7 @@ class Col:
 def rich_print_pl(title: str, df: pl.DataFrame, *cols: Col) -> None:
     """Print DataFrame of integers"""
 
-    table = Table(title="Statistics on the benchmark selection for single query")
+    table = Table(title=title)
 
     for col in cols:
         table.add_column(col.header, justify=col.justify, style=col.style, no_wrap=col.no_wrap)

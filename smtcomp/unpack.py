@@ -7,7 +7,7 @@ import tarfile
 from stat import S_IXUSR
 import gzip, bz2
 import io
-from typing import AnyStr, cast, IO
+from typing import AnyStr, cast, IO, TextIO, BinaryIO
 from subprocess import check_output, STDOUT
 import os
 
@@ -59,11 +59,23 @@ def write_cin(file: Path, content: str) -> None:
 
 
 def read_cin(file: Path) -> str:
+    with read_cin_file_object(file) as f:
+        return f.read()
+
+
+def read_cin_file_object(file: Path) -> TextIO:
     if file.name.endswith(".gz"):
-        with gzip.open(file, "rt") as f:
-            return f.read()
+        return gzip.open(file, "rt")
     elif file.name.endswith(".bz2"):
-        with bz2.open(file, "rt") as f:
-            return f.read()
+        return bz2.open(file, "rt")
     else:
-        return file.read_text()
+        return file.open(mode="r")
+
+
+def byte_read_cin_file_object(file: Path) -> BinaryIO:
+    if file.name.endswith(".gz"):
+        return cast(BinaryIO, gzip.open(file, "rb"))  # truncate missing
+    elif file.name.endswith(".bz2"):
+        return cast(BinaryIO, bz2.open(file, "rb"))  # truncate missing
+    else:
+        return file.open("rb")
