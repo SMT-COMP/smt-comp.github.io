@@ -235,7 +235,8 @@ def stats_of_benchexec_results(
         selected.group_by("logic")
         .agg(
             n=pl.len(),
-            sum=sum_answer,
+            done=pl.len()-sum_answer,
+            sum_missing=sum_answer,
             missing=pl.struct(sum=sum_answer, waiting=waiting),
             solver=pl.col("solver").filter((pl.col("answer") == -1)).value_counts(),
         )
@@ -267,7 +268,8 @@ def stats_of_benchexec_results(
             custom=defs.Logic.name_of_int,
         ),
         Col("n", "Selected"),
-        Col("missing", "Missing", custom=print_missing, footer=(lambda df: str(df["sum"].sum()))),
+        Col("done", "Done"),
+        Col("missing", "Missing", custom=print_missing, footer=(lambda df: str(df["sum_missing"].sum()))),
         Col("solver", "Missing", footer="", custom=print_solver),
     )
 
