@@ -12,6 +12,21 @@ from typing import Optional
 import re
 from rich import print
 
+
+csv_original_id_name = "original_id.csv"
+
+
+def scramble_basename(id: int) -> str:
+    return "scrambled" + str(id) + ".smt2"
+
+
+def unscramble_basename(basename: str) -> int:
+    # We are unscrabling scrambled%i.yml
+    assert basename[0:9] == "scrambled"
+    assert basename[-4:] == ".yml"
+    return int(basename[9:-4])
+
+
 def benchmark_files_dir(cachedir: Path, track: defs.Track) -> Path:
     suffix = get_suffix(track)
     return cachedir / "benchmarks" / f"files{suffix}"
@@ -41,7 +56,7 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
         .joinpath(fdict["name"])
     )
     dstdir = dstdir.joinpath(str(defs.Logic.of_int(fdict["logic"])))
-    fdst = dstdir.joinpath("scrambled" + str(fdict["scramble_id"]) + ".smt2")
+    fdst = dstdir.joinpath(scramble_basename(fdict["scramble_id"]))
     dstdir.mkdir(parents=True, exist_ok=True)
 
     if incremental:
@@ -59,7 +74,6 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
             subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"), check=True)
         except subprocess.CalledProcessError as e:
             print(f"[red]Warning[/red] scrambler crashed on {fsrc}")
-
 
     expected = get_expected_result(fsrc) if not incremental else None
     generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
@@ -88,7 +102,7 @@ def scramble_lazyframe(
 ) -> None:
     args = []
     df = benchmarks.select("scramble_id", "logic", "family", "name", "file").collect()
-    df.select("scramble_id", "file").write_csv(dstdir / "original_id.csv")
+    df.select("scramble_id", "file").write_csv(dstdir / csv_original_id_name)
     files = df.to_dicts()
     incremental = False
     seed = config.seed
@@ -129,23 +143,7 @@ def select_and_scramble(
 ) -> None:
     dstdir = benchmark_files_dir(cachedir, competition_track)
     dstdir.mkdir(parents=True, exist_ok=True)
-    match competition_track:
-        case defs.Track.SingleQuery:
-            selected = smtcomp.selection.helper_compute_sq(config)
-        case defs.Track.Incremental:
-            selected = smtcomp.selection.helper_compute_incremental(config)
-        case defs.Track.ModelValidation:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            selected = selected.filter(status=int(defs.Status.Sat))
-        case defs.Track.UnsatCore:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            selected = selected.filter(status=int(defs.Status.Unsat))
-        case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
-            selected = smtcomp.selection.helper_compute_sq(config)
-            rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {competition_track}[/red]"
-            )
-            exit(1)
+    selected = smtcomp.selection.helper(config, competition_track)
 
     selected = create_scramble_id(selected, config).filter(selected=True)
     scramble_lazyframe(selected, competition_track, config, srcdir, dstdir, scrambler, max_workers)

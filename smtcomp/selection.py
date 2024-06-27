@@ -164,17 +164,41 @@ def helper_compute_incremental(config: defs.Config) -> pl.LazyFrame:
     return track_selection(benchmarks_with_info, config, defs.Track.Incremental)
 
 
+def helper(config: defs.Config, track: defs.Track) -> pl.LazyFrame:
+    match track:
+        case defs.Track.SingleQuery:
+            selected = helper_compute_sq(config)
+        case defs.Track.Incremental:
+            selected = helper_compute_incremental(config)
+        case defs.Track.ModelValidation:
+            selected = helper_compute_sq(config)
+            selected = selected.filter(status=int(defs.Status.Sat))
+        case defs.Track.UnsatCore:
+            selected = helper_compute_sq(config)
+            selected = selected.filter(status=int(defs.Status.Unsat))
+        case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+            selected = helper_compute_sq(config)
+            rich.print(
+                f"[red]The scramble_benchmarks command does not yet work for the competition track: {track}[/red]"
+            )
+            exit(1)
+    return selected
+
+
 def solver_competing_logics(config: defs.Config) -> pl.LazyFrame:
     """
     returned columns solver, track, logic
     """
     l = (
-        (s.name, int(track), int(logic))
+        (s.name, int(track), int(logic), p_id)
         for s in config.submissions
-        for (track, logics) in s.participations.get_logics_by_track().items()
+        for p_id, p in enumerate(s.participations.root)
+        for (track, logics) in p.get_logics_by_track().items()
         for logic in logics
     )
-    return pl.LazyFrame(l, schema=["solver", "track", "logic"])
+    return pl.LazyFrame(
+        l, schema={"solver": pl.String, "track": pl.Int32, "logic": pl.Int64, "participation": pl.Int32}
+    )
 
 
 def competitive_logics(config: defs.Config) -> pl.LazyFrame:

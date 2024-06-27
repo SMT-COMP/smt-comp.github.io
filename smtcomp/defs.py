@@ -145,6 +145,15 @@ class Status(EnumAutoInt):
     Incremental = "incremental"
 
 
+class Answer(EnumAutoInt):
+    Unsat = "unsat"
+    Sat = "sat"
+    Unknown = "unknown"
+    Incremental = "incremental"
+    OOM = "OutOfMemory"
+    Timeout = "Timeout"
+
+
 class Track(EnumAutoInt):
     UnsatCore = "UnsatCore"
     SingleQuery = "SingleQuery"
@@ -1183,6 +1192,11 @@ class Participation(BaseModel, extra="forbid"):
                         logics.add(logic)
         return d
 
+    def get_logics_by_track(self) -> dict[Track, set[Logic]]:
+        """Return the logics in which the solver participates"""
+        tracks = self.get()
+        return dict((track, union(tracks[track].values())) for track in tracks)
+
     def complete(self, archive: Archive | None, command: Command | None) -> ParticipationCompleted:
         archive = cast(Archive, archive if self.archive is None else self.archive)
         command = cast(Command, command if self.command is None else self.command)
@@ -1338,7 +1352,7 @@ class Result(BaseModel):
     track: Track
     solver: str
     file: Smt2File
-    result: Status
+    result: Answer
     cpu_time: float
     wallclock_time: float
     memory_usage: float
@@ -1380,11 +1394,13 @@ class Config:
     Number of selected benchmarks
     """
 
-    removed_benchmarks = [{
-        "logic": int(Logic.QF_LIA),
-        "family": "20210219-Dartagnan/ConcurrencySafety-Main",
-        "name": "39_rand_lock_p0_vs-O0.smt2",
-    }]
+    removed_benchmarks = [
+        {
+            "logic": int(Logic.QF_LIA),
+            "family": "20210219-Dartagnan/ConcurrencySafety-Main",
+            "name": "39_rand_lock_p0_vs-O0.smt2",
+        }
+    ]
 
     def __init__(self, data: Path | None) -> None:
         if data is not None and data.name != "data":

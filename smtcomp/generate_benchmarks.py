@@ -57,19 +57,21 @@ def generate_trivial_benchmarks(dst: Path) -> None:
 
                     file.write_text(f"files{suffix}/{logic_name}/*.smt2\n")
 
-                    benchmark = "\n".join([
-                        "sat",
-                        "sat",
-                        "unsat",
-                        "--- BENCHMARK BEGINS HERE ---",
-                        f"(set-logic {logic.value})",
-                        "(assert true)",
-                        "(check-sat)",
-                        "(assert true)",
-                        "(check-sat)",
-                        "(assert false)",
-                        "(check-sat)\n",
-                    ])
+                    benchmark = "\n".join(
+                        [
+                            "sat",
+                            "sat",
+                            "unsat",
+                            "--- BENCHMARK BEGINS HERE ---",
+                            f"(set-logic {logic.value})",
+                            "(assert true)",
+                            "(check-sat)",
+                            "(assert true)",
+                            "(check-sat)",
+                            "(assert false)",
+                            "(check-sat)\n",
+                        ]
+                    )
                     file_incremental.write_text(benchmark)
                 else:
                     file_sat = path_trivial_benchmark(dst, track, logic, defs.Status.Sat)

@@ -19,6 +19,7 @@ import smtcomp.archive as archive
 import smtcomp.benchexec as benchexec
 import smtcomp.benchexec
 import smtcomp.defs as defs
+import smtcomp.results
 import smtcomp.submission as submission
 import smtcomp.execution as execution
 import smtcomp.model_validation as model_validation
@@ -176,6 +177,99 @@ def generate_benchexec(
     for file in track(files):
         s = submission.read(str(file))
         smtcomp.benchexec.generate(s, cachedir, config)
+
+
+@app.command(rich_help_panel=benchexec_panel)
+def convert_benchexec_results(
+    data: Path,
+    results: Path,
+) -> None:
+    """
+    Load benchexec results and print some results about them
+    """
+
+    lf = smtcomp.results.parse_dir(results)
+    lf.collect().write_ipc(results / "parsed.feather")
+
+
+@app.command(rich_help_panel=benchexec_panel)
+def stats_of_benchexec_results(
+    data: Path,
+    results: Path,
+    only_started: bool = False,
+) -> None:
+    """
+    Load benchexec results and print some results about them
+    """
+    config = defs.Config(data)
+    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(defs.Track.SingleQuery))
+    selected = (smtcomp.selection
+                .helper(config, defs.Track.SingleQuery)
+                .filter(selected=True)
+                .with_columns(track=int(defs.Track.SingleQuery)))
+    
+    
+    
+    selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+
+    selected = add_columns(
+        selected,
+        lf.drop("logic"),
+        on=["file", "solver", "track", "participation"],
+        defaults={
+            "answer": -1,
+            "scramble_id": 1,
+            "cputime_s": -1,
+            "memory_B": -1,
+            "walltime_s": -1,
+        },
+    )
+
+    sum_answer = (pl.col("answer") == -1).sum()
+    waiting = (pl.col("answer") == -1).all()
+
+    if only_started:
+        selected = selected.filter(waiting.over("logic").not_())
+
+    df = (
+        selected.group_by("logic")
+        .agg(
+            n=pl.len(),
+            sum=sum_answer,
+            missing=pl.struct(sum=sum_answer, waiting=waiting),
+            solver=pl.col("solver").filter((pl.col("answer") == -1)).value_counts(),
+        )
+        .sort("logic")
+        .collect()
+    )
+
+    def print_solver(d: List[Dict[str, Any]]) -> str:
+        return ",".join(map(lambda x: f"{x["solver"]}({x["count"]})", d))
+
+    def print_missing(d: Dict[str, Any]) -> str:
+        if d["waiting"]:
+            return f"[bold red]{d["sum"]}[/bold red]"
+        elif d["sum"] == 0:
+            return f"[bold green]{d["sum"]}[/bold green]"
+        else:
+            return f"[bold orange1]{d["sum"]}[/bold orange1]"
+
+    rich_print_pl(
+        "Results",
+        df,
+        Col(
+            "logic",
+            "Logic",
+            footer="Total",
+            justify="left",
+            style="cyan",
+            no_wrap=True,
+            custom=defs.Logic.name_of_int,
+        ),
+        Col("n", "Selected"),
+        Col("missing", "Missing", custom=print_missing, footer=(lambda df: str(df["sum"].sum()))),
+        Col("solver", "Missing", footer="", custom=print_solver),
+    )
 
 
 @app.command(rich_help_panel=benchexec_panel)
