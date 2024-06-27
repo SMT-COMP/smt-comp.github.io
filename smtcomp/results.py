@@ -2,14 +2,11 @@ from typing import Optional, Iterator, Any
 import functools, concurrent
 import smtcomp.defs as defs
 import polars as pl
-import lxml.etree as etree
-import xml.dom.pulldom as pulldom
-import xml.dom.minidom as minidom
+import xml.etree.ElementTree as ET
 from pathlib import Path
-from smtcomp.unpack import byte_read_cin_file_object
+from smtcomp.unpack import read_cin
 import smtcomp.scramble_benchmarks
 from pydantic import BaseModel
-from datetime import timedelta
 from zipfile import ZipFile
 from rich.progress import track
 from smtcomp.utils import *
@@ -114,89 +111,44 @@ def parse_result(s: str) -> defs.Answer:
             raise ValueError(f"Unknown result value {s}")
 
 
-class ResultsParserTarget:
-    name = None
-    options = None
-    runs: List[Run] = []
-
-    scramble_id: Optional[int] = None
-    logic: Optional[defs.Logic] = None
+def convert_run(r: ET.Element) -> Run:
+    parts = r.attrib["name"].split("/")
+    logic = defs.Logic(parts[-2])
+    scramble_id = smtcomp.scramble_benchmarks.unscramble_basename(parts[-1])
     cputime_s: Optional[float] = None
     memory_B: Optional[int] = None
     answer: Optional[defs.Answer] = None
     walltime_s: Optional[float] = None
 
-    def start(self, tag: str, attrib: Dict[str, str]) -> None:
-        match tag:
-            case "result":
-                assert len(self.runs) == 0
-                self.name = attrib["name"]
-                self.options = attrib["options"]
-            case "run":
-                parts = attrib["name"].split("/")
-                basename = parts[-1]
-                self.logic = defs.Logic(parts[-2])
-                self.scramble_id = smtcomp.scramble_benchmarks.unscramble_basename(basename)
-            case "column":
-                if self.scramble_id is None:
-                    return
-                value = attrib["value"]
-                match attrib["title"]:
-                    case "cputime":
-                        self.cputime_s = parse_time(value)
-                    case "memory":
-                        self.memory_B = parse_size(value)
-                    case "status":
-                        self.answer = parse_result(value)
-                    case "walltime":
-                        self.walltime_s = parse_time(value)
-            case _:
-                pass
+    for col in r.iterfind("column"):
+        value = col.attrib["value"]
+        match col.attrib["title"]:
+            case "cputime":
+                cputime_s = parse_time(value)
+            case "memory":
+                memory_B = parse_size(value)
+            case "status":
+                answer = parse_result(value)
+            case "walltime":
+                walltime_s = parse_time(value)
 
-    def end(self, tag: str) -> None:
-        match tag:
-            case "run":
-                if (
-                    self.cputime_s is None
-                    or self.memory_B is None
-                    or self.answer is None
-                    or self.walltime_s is None
-                    or self.scramble_id is None
-                    or self.logic is None
-                ):
-                    raise ValueError("xml of results doesn't contains some expected column")
-                r = Run(
-                    scramble_id=self.scramble_id,
-                    logic=self.logic,
-                    cputime_s=self.cputime_s,
-                    memory_B=self.memory_B,
-                    answer=self.answer,
-                    walltime_s=self.walltime_s,
-                )
-                self.scramble_id = None
-                self.cputime_s = None
-                self.memory_B = None
-                self.answer = None
-                self.walltime_s = None
-                self.logic = None
-                self.runs.append(r)
-            case _:
-                pass
+    if cputime_s is None or memory_B is None or answer is None or walltime_s is None:
+        raise ValueError("xml of results doesn't contains some expected column")
 
-    def close(self) -> Results:
-        if self.name is None or self.options is None:
-            raise ValueError("results mallformed xml")
-        r = Results(runid=RunId.unmangle(self.name), options=self.options, runs=self.runs)
-        self.name = None
-        self.options = None
-        self.runs = []
-        return r
+    return Run(
+        scramble_id=scramble_id,
+        logic=logic,
+        cputime_s=cputime_s,
+        memory_B=memory_B,
+        answer=answer,
+        walltime_s=walltime_s,
+    )
 
 
 def parse_xml(file: Path) -> Results:
-    results_parser = etree.XMLParser(target=cast(Any, ResultsParserTarget()))
-    with byte_read_cin_file_object(file) as fo:
-        return cast(Results, etree.parse(fo, results_parser))
+    result = ET.fromstring(read_cin(file))
+    runs = list(map(convert_run, result.iterfind("run")))
+    return Results(runid=RunId.unmangle(result.attrib["name"]), options=result.attrib["options"], runs=runs)
 
 
 def parse_results(resultdir: Path) -> Iterator[Results]:
