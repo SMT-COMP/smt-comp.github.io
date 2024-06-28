@@ -224,6 +224,16 @@ def stats_of_benchexec_results(
             "walltime_s": -1,
         },
     )
+        
+    selected = add_columns(
+        selected,
+        smtcomp.selection.tracks(),
+        on=["track","logic"],
+        defaults={
+            "division": -1
+        }
+        
+    )
 
     sum_answer = (pl.col("answer") == -1).sum()
     waiting = (pl.col("answer") == -1).all()
@@ -232,7 +242,7 @@ def stats_of_benchexec_results(
         selected = selected.filter(waiting.over("logic").not_())
 
     df = (
-        selected.group_by("logic")
+        selected.group_by("division","logic")
         .agg(
             n=pl.len(),
             done=pl.len()-sum_answer,
@@ -240,7 +250,7 @@ def stats_of_benchexec_results(
             missing=pl.struct(sum=sum_answer, waiting=waiting),
             solver=pl.col("solver").filter((pl.col("answer") == -1)).value_counts(),
         )
-        .sort("logic")
+        .sort("division","logic")
         .collect()
     )
 
@@ -259,9 +269,18 @@ def stats_of_benchexec_results(
         "Results",
         df,
         Col(
+            "division",
+            "Division",
+            footer="Total",
+            justify="left",
+            style="cyan",
+            no_wrap=True,
+            custom=defs.Division.name_of_int,
+        ),
+        Col(
             "logic",
             "Logic",
-            footer="Total",
+            footer="",
             justify="left",
             style="cyan",
             no_wrap=True,
@@ -272,6 +291,74 @@ def stats_of_benchexec_results(
         Col("missing", "Missing", custom=print_missing, footer=(lambda df: str(df["sum_missing"].sum()))),
         Col("solver", "Missing", footer="", custom=print_solver),
     )
+
+@app.command(rich_help_panel=benchexec_panel)
+def find_disagreement_results(
+    data: Path,
+    results: Path,
+) -> None:
+    """
+    Load benchexec results and print some results about them
+    """
+    config = defs.Config(data)
+    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(defs.Track.SingleQuery))
+    selected = (smtcomp.selection
+                .helper(config, defs.Track.SingleQuery)
+                .filter(selected=True)
+                .with_columns(track=int(defs.Track.SingleQuery)))
+    
+    
+    
+    selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+
+    selected = add_columns(
+        selected,
+        lf.drop("logic"),
+        on=["file", "solver", "track", "participation"],
+        defaults={
+            "answer": -1,
+            "scramble_id": 1,
+            "cputime_s": -1,
+            "memory_B": -1,
+            "walltime_s": -1,
+        },
+    )
+
+    slash = pl.lit("/")
+
+    df = (
+        selected
+        .filter(pl.col("answer").is_in([int(defs.Answer.Sat),int(defs.Answer.Unsat)]))
+        .filter(((pl.col("answer")==int(defs.Answer.Sat)).any().over("file")) &
+                ((pl.col("answer")==int(defs.Answer.Unsat)).any().over("file"))               
+                )
+        .group_by("logic","file")
+        .agg(
+            answers=pl.struct("solver","answer"),
+            name=pl.concat_str(pl.col("logic").first().apply(defs.Logic.name_of_int),slash,pl.col("family").first(),slash,pl.col("name").first())
+        )
+        .sort("logic","file")
+        .collect()
+    )
+
+    def print_answers(d: List[Dict[str, Any]]) -> str:
+        return ",".join(map(lambda x: f"{x["solver"]}({defs.Answer.name_of_int(x["answer"])})", d))
+
+    rich_print_pl(
+        "Disagreements",
+        df,
+        Col(
+            "name",
+            "Name",
+            footer=lambda df: str(len(df)),
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=str,
+        ),
+        Col("answers", "Disagreement",custom=print_answers,footer=""),
+    )
+    
 
 
 @app.command(rich_help_panel=benchexec_panel)
