@@ -68,9 +68,12 @@ def join_default_with_False(original: pl.LazyFrame, new: pl.LazyFrame, on: str) 
 def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
 
     is_trivial = find_trivial(previous_results, config)
-    with_info = join_default_with_False(benchmarks, is_trivial, on="file").with_columns(
-        new=pl.col("family").str.starts_with(str(config.current_year))
-    )
+    with_info = add_columns(
+        benchmarks,
+        is_trivial,
+        on=["file"],
+        defaults={"trivial": False, "run": False, "result": int(defs.Status.Unknown)},
+    ).with_columns(new=pl.col("family").str.starts_with(str(config.current_year)))
 
     if config.use_previous_results_for_status:
         with_info = with_info.with_columns(

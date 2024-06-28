@@ -335,6 +335,7 @@ def find_disagreement_results(
         .group_by("logic","file")
         .agg(
             answers=pl.struct("solver","answer"),
+            status=pl.col("status").first(),
             name=pl.concat_str(pl.col("logic").first().apply(defs.Logic.name_of_int),slash,pl.col("family").first(),slash,pl.col("name").first())
         )
         .sort("logic","file")
@@ -355,6 +356,15 @@ def find_disagreement_results(
             style="cyan",
             no_wrap=False,
             custom=str,
+        ),
+        Col(
+            "status",
+            "Expected",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=defs.Status.name_of_int,
         ),
         Col("answers", "Disagreement",custom=print_answers,footer=""),
     )
