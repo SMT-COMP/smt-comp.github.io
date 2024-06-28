@@ -219,7 +219,7 @@ def tracks() -> pl.LazyFrame:
         for division, logics in divisions.items()
         for logic in logics
     )
-    return pl.DataFrame(l, schema=["track", "division", "logic"]).lazy()
+    return pl.DataFrame(l, schema={"track": pl.Int32, "division": pl.Int32, "logic": pl.Int64}).lazy()
 
 
 def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
