@@ -20,6 +20,7 @@ import smtcomp.benchexec as benchexec
 import smtcomp.benchexec
 import smtcomp.defs as defs
 import smtcomp.results
+import smtcomp.scoring
 import smtcomp.submission as submission
 import smtcomp.execution as execution
 import smtcomp.model_validation as model_validation
@@ -48,6 +49,7 @@ benchexec_panel = "Benchexec"
 data_panel = "Data"
 benchmarks_panel = "Benchmarks"
 selection_panel = "Selection process"
+scoring_panel = "Scoring process"
 
 
 @app.command(rich_help_panel=submissions_panel)
@@ -202,38 +204,8 @@ def stats_of_benchexec_results(
     Load benchexec results and print some results about them
     """
     config = defs.Config(data)
-    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(defs.Track.SingleQuery))
-    selected = (smtcomp.selection
-                .helper(config, defs.Track.SingleQuery)
-                .filter(selected=True)
-                .with_columns(track=int(defs.Track.SingleQuery)))
     
-    
-    
-    selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
-
-    selected = add_columns(
-        selected,
-        lf.drop("logic"),
-        on=["file", "solver", "track", "participation"],
-        defaults={
-            "answer": -1,
-            "scramble_id": 1,
-            "cputime_s": -1,
-            "memory_B": -1,
-            "walltime_s": -1,
-        },
-    )
-        
-    selected = add_columns(
-        selected,
-        smtcomp.selection.tracks(),
-        on=["track","logic"],
-        defaults={
-            "division": -1
-        }
-        
-    )
+    selected = smtcomp.results.helper_get_results(config,results)
 
     sum_answer = (pl.col("answer") == -1).sum()
     waiting = (pl.col("answer") == -1).all()
@@ -296,41 +268,26 @@ def stats_of_benchexec_results(
 def find_disagreement_results(
     data: Path,
     results: Path,
+    use_previous_year_results: bool = defs.Config.use_previous_results_for_status
 ) -> None:
     """
     Load benchexec results and print some results about them
     """
     config = defs.Config(data)
-    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(defs.Track.SingleQuery))
-    selected = (smtcomp.selection
-                .helper(config, defs.Track.SingleQuery)
-                .filter(selected=True)
-                .with_columns(track=int(defs.Track.SingleQuery)))
-    
-    
-    
-    selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
-
-    selected = add_columns(
-        selected,
-        lf.drop("logic"),
-        on=["file", "solver", "track", "participation"],
-        defaults={
-            "answer": -1,
-            "scramble_id": 1,
-            "cputime_s": -1,
-            "memory_B": -1,
-            "walltime_s": -1,
-        },
-    )
+    config.use_previous_results_for_status = use_previous_year_results
+    selected = smtcomp.results.helper_get_results(config,results)
 
     slash = pl.lit("/")
 
     df = (
         selected
         .filter(pl.col("answer").is_in([int(defs.Answer.Sat),int(defs.Answer.Unsat)]))
-        .filter(((pl.col("answer")==int(defs.Answer.Sat)).any().over("file")) &
-                ((pl.col("answer")==int(defs.Answer.Unsat)).any().over("file"))               
+        .filter((((pl.col("answer")==int(defs.Answer.Sat)).any().over("file")) |
+                 (pl.col("status")==int(defs.Status.Sat))
+        )
+                &
+                (((pl.col("answer")==int(defs.Answer.Unsat)).any().over("file"))| 
+                 (pl.col("status")==int(defs.Status.Unsat)))               
                 )
         .group_by("logic","file")
         .agg(
@@ -369,6 +326,12 @@ def find_disagreement_results(
         Col("answers", "Disagreement",custom=print_answers,footer=""),
     )
     
+@app.command(rich_help_panel=scoring_panel)
+def scoring_stats(data:Path, src:Path) -> None:
+    config = defs.Config(data)
+    results = smtcomp.results.helper_get_results(config,src)
+    
+    smtcomp.scoring.sanity_check(config,results)
 
 
 @app.command(rich_help_panel=benchexec_panel)

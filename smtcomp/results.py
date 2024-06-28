@@ -247,3 +247,38 @@ class LogFile:
             raise ValueError(f"Log Header not found {r!r} {basename!r}")
         index += len(benchexec_log_separator())
         return s[index:]
+
+
+def helper_get_results(config: defs.Config, results: Path) -> pl.LazyFrame:
+    """
+    Return on all the selected benchmarks for each solver that should run it
+    "track", "file", "scrambled_id", "logic", "division", "status", "solver", "answer", "cputime_s", "memory_B", "walltime_s".
+
+    -1 is used when no answer is available.
+
+    """
+    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(defs.Track.SingleQuery))
+    selected = (
+        smtcomp.selection.helper(config, defs.Track.SingleQuery)
+        .filter(selected=True)
+        .with_columns(track=int(defs.Track.SingleQuery))
+    )
+
+    selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+
+    selected = add_columns(
+        selected,
+        lf.drop("logic"),
+        on=["file", "solver", "track", "participation"],
+        defaults={
+            "answer": -1,
+            "scramble_id": 1,
+            "cputime_s": -1,
+            "memory_B": -1,
+            "walltime_s": -1,
+        },
+    )
+
+    selected = add_columns(selected, smtcomp.selection.tracks(), on=["track", "logic"], defaults={"division": -1})
+
+    return selected
