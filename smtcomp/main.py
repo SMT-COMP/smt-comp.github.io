@@ -264,6 +264,9 @@ def stats_of_benchexec_results(
         Col("solver", "Missing", footer="", custom=print_solver),
     )
 
+slash = pl.lit("/")
+path_of_logic_family_name=pl.concat_str(pl.col("logic").first().apply(defs.Logic.name_of_int,return_dtype=pl.String),slash,pl.col("family").first(),slash,pl.col("name").first())
+
 @app.command(rich_help_panel=benchexec_panel)
 def find_disagreement_results(
     data: Path,
@@ -277,7 +280,6 @@ def find_disagreement_results(
     config.use_previous_results_for_status = use_previous_year_results
     selected = smtcomp.results.helper_get_results(config,results)
 
-    slash = pl.lit("/")
 
     df = (
         selected
@@ -289,13 +291,13 @@ def find_disagreement_results(
                 (((pl.col("answer")==int(defs.Answer.Unsat)).any().over("file"))| 
                  (pl.col("status")==int(defs.Status.Unsat)))               
                 )
-        .group_by("logic","file")
+        .group_by("track","logic","file")
         .agg(
             answers=pl.struct("solver","answer"),
             status=pl.col("status").first(),
-            name=pl.concat_str(pl.col("logic").first().apply(defs.Logic.name_of_int),slash,pl.col("family").first(),slash,pl.col("name").first())
+            name=path_of_logic_family_name
         )
-        .sort("logic","file")
+        .sort("track","logic","file")
         .collect()
     )
 
@@ -325,13 +327,105 @@ def find_disagreement_results(
         ),
         Col("answers", "Disagreement",custom=print_answers,footer=""),
     )
-    
+
 @app.command(rich_help_panel=scoring_panel)
-def scoring_stats(data:Path, src:Path) -> None:
+def scoring_removed_benchmarks(data:Path, src:Path,    use_previous_year_results: bool = defs.Config.use_previous_results_for_status
+) -> None:
+    config = defs.Config(data)
+    config.use_previous_results_for_status = use_previous_year_results
+    results = smtcomp.results.helper_get_results(config,src)
+    
+    results = smtcomp.scoring.add_disagreements_info(results)
+    
+    df = (results.filter(disagreements=True).group_by("track","file").agg(name=path_of_logic_family_name).collect()
+    )
+    
+    rich_print_pl(
+        "Removed results (disagrements)",
+        df,
+        Col(
+            "name",
+            "Name",
+            footer=lambda df: str(len(df)),
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=str,
+        ),
+        )
+
+@app.command(rich_help_panel=scoring_panel)
+def show_scores(data:Path, src:Path) -> None:
     config = defs.Config(data)
     results = smtcomp.results.helper_get_results(config,src)
     
     smtcomp.scoring.sanity_check(config,results)
+    
+    results = smtcomp.scoring.add_disagreements_info(results).filter(disagreements=False).drop("disagreements")
+    
+    results = smtcomp.scoring.benchmark_scoring(config,results)
+    
+    divisions = smtcomp.scoring.division_score(config,results)
+    
+    divisions = divisions.sort("division","parallel_score")
+    
+    def print_parallel_score(d:Dict[str,Any]) -> str:
+        return f"({d["error"]},{d["correct"]},{d["wallclock"]},{d["cputime"]})"
+
+    def print_sequential_score(d:Dict[str,Any]) -> str:
+        return f"({d["error"]},{d["correct"]},{d["cputime"]})"
+    
+    rich_print_pl(
+        "Scores",
+        divisions.collect(),
+        Col(
+            "division",
+            "divisions",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=defs.Division.name_of_int,
+        ),
+        Col(
+            "solver",
+            "Name",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=str,
+        ),
+        Col(
+            "parallel_score",
+            "Parallel score",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=print_parallel_score,
+        ),
+        Col(
+            "sequential_score",
+            "Sequential score",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=print_sequential_score,
+        ),
+        Col(
+            "s24_score",
+            "24s score",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=print_parallel_score,
+        ),
+        )
+    
+
 
 
 @app.command(rich_help_panel=benchexec_panel)

@@ -90,6 +90,7 @@ def rich_print_pl(title: str, df: pl.DataFrame, *cols: Col) -> None:
             return col.footer(df)
 
     l = list(map(compute_footer, cols))
-    table.add_row(*l)
+    if any(map(lambda x: len(x) != 0, l)):
+        table.add_row(*l)
 
     rich.print(table)
