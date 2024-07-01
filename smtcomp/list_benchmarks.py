@@ -34,7 +34,7 @@ def get_nb_asserts_with_scrambler(src: Path, scrambler: Path) -> int:
 def get_nb_asserts_with_grep(src: Path) -> int:
     with src.open() as fd_src:
         grep = subprocess.run(
-            ["grep", "-c", "([[:space:]]*assert\([[:space:]]\|$\)"], capture_output=True, text=True, stdin=fd_src
+            ["grep", "-c", r"([[:space:]]*assert\([[:space:]]\|$\)"], capture_output=True, text=True, stdin=fd_src
         )
     return int(grep.stdout)
 

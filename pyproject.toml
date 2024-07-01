@@ -41,8 +41,6 @@ pre-commit = "^3.4.0"
 tox = "^4.11.1"
 types-requests = "*"
 
-
-
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
@@ -70,6 +68,7 @@ testpaths = ["tests"]
 module = [
     "benchexec","benchexec.util",
     "benchexec.result","benchexec.tools.template",
+    "benchexec.runexecutor",
     "bs4","wget"
 ]
 ignore_missing_imports = true

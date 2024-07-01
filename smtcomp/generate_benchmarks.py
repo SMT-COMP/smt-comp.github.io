@@ -35,7 +35,7 @@ def path_trivial_benchmark(dst: Path, track: defs.Track, logic: defs.Logic, stat
 def generate_trivial_benchmarks(dst: Path) -> None:
     prop_dir = dst.joinpath("properties")
     prop_dir.mkdir(parents=True, exist_ok=True)
-    (prop_dir / "SingleQuery.prp").touch()
+    (prop_dir / "SMT.prp").touch()
 
     dst.joinpath("files").mkdir(parents=True, exist_ok=True)
     dst.joinpath("files_inc").mkdir(parents=True, exist_ok=True)
@@ -57,19 +57,21 @@ def generate_trivial_benchmarks(dst: Path) -> None:
 
                     file.write_text(f"files{suffix}/{logic_name}/*.smt2\n")
 
-                    benchmark = "\n".join([
-                        "sat",
-                        "sat",
-                        "unsat",
-                        "--- BENCHMARK BEGINS HERE ---",
-                        f"(set-logic {logic.value})",
-                        "(assert true)",
-                        "(check-sat)",
-                        "(assert true)",
-                        "(check-sat)",
-                        "(assert false)",
-                        "(check-sat)\n",
-                    ])
+                    benchmark = "\n".join(
+                        [
+                            "sat",
+                            "sat",
+                            "unsat",
+                            "--- BENCHMARK BEGINS HERE ---",
+                            f"(set-logic {logic.value})",
+                            "(assert true)",
+                            "(check-sat)",
+                            "(assert true)",
+                            "(check-sat)",
+                            "(assert false)",
+                            "(check-sat)\n",
+                        ]
+                    )
                     file_incremental.write_text(benchmark)
                 else:
                     file_sat = path_trivial_benchmark(dst, track, logic, defs.Status.Sat)
@@ -81,27 +83,3 @@ def generate_trivial_benchmarks(dst: Path) -> None:
 
                     generate_benchmark_yml(file_sat, True, None)
                     generate_benchmark_yml(file_unsat, False, None)
-
-
-def generate_benchmarks(cachedir: Path) -> None:
-    """
-    Generate files included by benchexec
-    """
-    dst = cachedir / "benchmarks"
-    prop_dir = dst.joinpath("properties")
-    prop_dir.mkdir(parents=True, exist_ok=True)
-    (prop_dir / "SMT.prp").touch()
-
-    dst.joinpath("files").mkdir(parents=True, exist_ok=True)
-    dst.joinpath("files_inc").mkdir(parents=True, exist_ok=True)
-    for track, divisions in defs.tracks.items():
-        match track:
-            case defs.Track.Incremental | defs.Track.ModelValidation | defs.Track.SingleQuery:
-                suffix = get_suffix(track)
-            case defs.Track.UnsatCore | defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
-                continue
-        for _, theories in divisions.items():
-            for theory in theories:
-                theory_name = str(theory)
-                file = dst.joinpath(theory_name + suffix)
-                file.write_text(f"files{suffix}/{theory_name}/*.yml\n")
