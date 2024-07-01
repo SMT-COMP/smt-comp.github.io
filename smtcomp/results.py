@@ -105,7 +105,7 @@ def parse_result(s: str) -> defs.Answer:
             return defs.Answer.Sat
         case "unknown":
             return defs.Answer.Unknown
-        case "OUT OF MEMORY":
+        case "OUT OF MEMORY" | "OUT OF JAVA MEMORY":
             return defs.Answer.OOM
         case _:
             raise ValueError(f"Unknown result value {s}")
