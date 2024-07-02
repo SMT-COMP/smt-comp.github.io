@@ -5,7 +5,7 @@
     ],
     "contacts": ["Michal Hečko <mhecko@proton.me>", "Ondřej Lengál <ondra.lengal@gmail.com>"],
     "archive": {
-        "url": "https://zenodo.org/records/11625128/files/amaya-smt-comp-2024-v7.tar.gz",
+        "url": "https://zenodo.org/records/12627374/files/amaya-smt-comp-2024-v7.tar.gz",
         "h": { "sha256": "b3c22a524448ea7ca95e703256d329c1b620505f80924635a281feb8dc385804" }
     },
     "website": "https://github.com/MichalHe/amaya",
