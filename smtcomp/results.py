@@ -114,7 +114,7 @@ def parse_result(s: str) -> defs.Answer:
 def convert_run(r: ET.Element) -> Run:
     parts = r.attrib["name"].split("/")
     logic = defs.Logic(parts[-2])
-    scramble_id = smtcomp.scramble_benchmarks.unscramble_basename(parts[-1])
+    scramble_id = smtcomp.scramble_benchmarks.unscramble_yml_basename(parts[-1])
     cputime_s: Optional[float] = None
     memory_B: Optional[int] = None
     answer: Optional[defs.Answer] = None

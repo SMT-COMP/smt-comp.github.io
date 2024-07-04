@@ -16,11 +16,11 @@ from rich import print
 csv_original_id_name = "original_id.csv"
 
 
-def scramble_basename(id: int) -> str:
-    return "scrambled" + str(id) + ".smt2"
+def scramble_basename(id: int, suffix: str = "smt2") -> str:
+    return "scrambled" + str(id) + "." + suffix
 
 
-def unscramble_basename(basename: str) -> int:
+def unscramble_yml_basename(basename: str) -> int:
     # We are unscrabling scrambled%i.yml
     assert basename[0:9] == "scrambled"
     assert basename[-4:] == ".yml"

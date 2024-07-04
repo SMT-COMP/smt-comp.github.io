@@ -204,8 +204,8 @@ def stats_of_benchexec_results(
     Load benchexec results and print some results about them
     """
     config = defs.Config(data)
-    
-    selected = smtcomp.results.helper_get_results(config,results)
+
+    selected = smtcomp.results.helper_get_results(config, results)
 
     sum_answer = (pl.col("answer") == -1).sum()
     waiting = (pl.col("answer") == -1).all()
@@ -214,15 +214,15 @@ def stats_of_benchexec_results(
         selected = selected.filter(waiting.over("logic").not_())
 
     df = (
-        selected.group_by("division","logic")
+        selected.group_by("division", "logic")
         .agg(
             n=pl.len(),
-            done=pl.len()-sum_answer,
+            done=pl.len() - sum_answer,
             sum_missing=sum_answer,
             missing=pl.struct(sum=sum_answer, waiting=waiting),
             solver=pl.col("solver").filter((pl.col("answer") == -1)).value_counts(),
         )
-        .sort("division","logic")
+        .sort("division", "logic")
         .collect()
     )
 
@@ -264,40 +264,43 @@ def stats_of_benchexec_results(
         Col("solver", "Missing", footer="", custom=print_solver),
     )
 
+
 slash = pl.lit("/")
-path_of_logic_family_name=pl.concat_str(pl.col("logic").first().apply(defs.Logic.name_of_int,return_dtype=pl.String),slash,pl.col("family").first(),slash,pl.col("name").first())
+path_of_logic_family_name = pl.concat_str(
+    pl.col("logic").first().apply(defs.Logic.name_of_int, return_dtype=pl.String),
+    slash,
+    pl.col("family").first(),
+    slash,
+    pl.col("name").first(),
+)
+
 
 @app.command(rich_help_panel=benchexec_panel)
 def find_disagreement_results(
-    data: Path,
-    results: Path,
-    use_previous_year_results: bool = defs.Config.use_previous_results_for_status
+    data: Path, results: Path, use_previous_year_results: bool = defs.Config.use_previous_results_for_status
 ) -> None:
     """
     Load benchexec results and print some results about them
     """
     config = defs.Config(data)
     config.use_previous_results_for_status = use_previous_year_results
-    selected = smtcomp.results.helper_get_results(config,results)
-
+    selected = smtcomp.results.helper_get_results(config, results)
 
     df = (
-        selected
-        .filter(pl.col("answer").is_in([int(defs.Answer.Sat),int(defs.Answer.Unsat)]))
-        .filter((((pl.col("answer")==int(defs.Answer.Sat)).any().over("file")) |
-                 (pl.col("status")==int(defs.Status.Sat))
+        selected.filter(pl.col("answer").is_in([int(defs.Answer.Sat), int(defs.Answer.Unsat)]))
+        .filter(
+            (
+                ((pl.col("answer") == int(defs.Answer.Sat)).any().over("file"))
+                | (pl.col("status") == int(defs.Status.Sat))
+            )
+            & (
+                ((pl.col("answer") == int(defs.Answer.Unsat)).any().over("file"))
+                | (pl.col("status") == int(defs.Status.Unsat))
+            )
         )
-                &
-                (((pl.col("answer")==int(defs.Answer.Unsat)).any().over("file"))| 
-                 (pl.col("status")==int(defs.Status.Unsat)))               
-                )
-        .group_by("track","logic","file")
-        .agg(
-            answers=pl.struct("solver","answer"),
-            status=pl.col("status").first(),
-            name=path_of_logic_family_name
-        )
-        .sort("track","logic","file")
+        .group_by("track", "logic", "file")
+        .agg(answers=pl.struct("solver", "answer"), status=pl.col("status").first(), name=path_of_logic_family_name)
+        .sort("track", "logic", "file")
         .collect()
     )
 
@@ -325,21 +328,22 @@ def find_disagreement_results(
             no_wrap=False,
             custom=defs.Status.name_of_int,
         ),
-        Col("answers", "Disagreement",custom=print_answers,footer=""),
+        Col("answers", "Disagreement", custom=print_answers, footer=""),
     )
 
+
 @app.command(rich_help_panel=scoring_panel)
-def scoring_removed_benchmarks(data:Path, src:Path,    use_previous_year_results: bool = defs.Config.use_previous_results_for_status
+def scoring_removed_benchmarks(
+    data: Path, src: Path, use_previous_year_results: bool = defs.Config.use_previous_results_for_status
 ) -> None:
     config = defs.Config(data)
     config.use_previous_results_for_status = use_previous_year_results
-    results = smtcomp.results.helper_get_results(config,src)
-    
+    results = smtcomp.results.helper_get_results(config, src)
+
     results = smtcomp.scoring.add_disagreements_info(results)
-    
-    df = (results.filter(disagreements=True).group_by("track","file").agg(name=path_of_logic_family_name).collect()
-    )
-    
+
+    df = results.filter(disagreements=True).group_by("track", "file").agg(name=path_of_logic_family_name).collect()
+
     rich_print_pl(
         "Removed results (disagrements)",
         df,
@@ -352,29 +356,30 @@ def scoring_removed_benchmarks(data:Path, src:Path,    use_previous_year_results
             no_wrap=False,
             custom=str,
         ),
-        )
+    )
+
 
 @app.command(rich_help_panel=scoring_panel)
-def show_scores(data:Path, src:Path) -> None:
+def show_scores(data: Path, src: Path) -> None:
     config = defs.Config(data)
-    results = smtcomp.results.helper_get_results(config,src)
-    
-    smtcomp.scoring.sanity_check(config,results)
-    
+    results = smtcomp.results.helper_get_results(config, src)
+
+    smtcomp.scoring.sanity_check(config, results)
+
     results = smtcomp.scoring.add_disagreements_info(results).filter(disagreements=False).drop("disagreements")
-    
-    results = smtcomp.scoring.benchmark_scoring(config,results)
-    
-    divisions = smtcomp.scoring.division_score(config,results)
-    
-    divisions = divisions.sort("division","parallel_score")
-    
-    def print_parallel_score(d:Dict[str,Any]) -> str:
+
+    results = smtcomp.scoring.benchmark_scoring(config, results)
+
+    divisions = smtcomp.scoring.division_score(config, results)
+
+    divisions = divisions.sort("division", "parallel_score")
+
+    def print_parallel_score(d: Dict[str, Any]) -> str:
         return f"({d["error"]},{d["correct"]},{d["wallclock"]},{d["cputime"]})"
 
-    def print_sequential_score(d:Dict[str,Any]) -> str:
+    def print_sequential_score(d: Dict[str, Any]) -> str:
         return f"({d["error"]},{d["correct"]},{d["cputime"]})"
-    
+
     rich_print_pl(
         "Scores",
         divisions.collect(),
@@ -423,9 +428,7 @@ def show_scores(data:Path, src:Path) -> None:
             no_wrap=False,
             custom=print_parallel_score,
         ),
-        )
-    
-
+    )
 
 
 @app.command(rich_help_panel=benchexec_panel)
@@ -875,7 +878,8 @@ def check_model_locally(
         t2 = t.add(solver)
         for rid, r, result in rs:
             stderr = result.stderr.strip().replace("\n", ", ")
-            t2.add(f"{r.basename}: {stderr}")
+            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+            t2.add(f"{basename}: {stderr}")
     print(t)
     if outdir is not None:
         for solver, models in d:
@@ -883,10 +887,9 @@ def check_model_locally(
             dst.mkdir(parents=True, exist_ok=True)
             for rid, r, result in models:
                 filedir = benchmark_files_dir(cachedir, rid.track)
-                logic = rid.includefile.removesuffix(get_suffix(rid.track))
-                basename = r.basename.removesuffix(".yml") + ".smt2"
-                basename_model = r.basename.removesuffix(".yml") + ".rsmt2"
-                smt2_file = filedir / logic / basename
+                basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+                basename_model = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="rsmt2")
+                smt2_file = filedir / str(r.logic) / basename
                 (dst / basename).unlink(missing_ok=True)
                 (dst / basename).symlink_to(smt2_file)
                 (dst / basename_model).write_text(result.model)

@@ -24,7 +24,7 @@ test: generation ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
 	@poetry run pytest
 
-generation: submission-generation #Generation for the website
+generation: submission-generation ## Files generation for the website
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
