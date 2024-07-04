@@ -4,7 +4,7 @@ import smtcomp.defs as defs
 import subprocess
 import smtcomp.results as results
 from smtcomp.benchexec import get_suffix
-from smtcomp.scramble_benchmarks import benchmark_files_dir
+import smtcomp.scramble_benchmarks
 from concurrent.futures import ThreadPoolExecutor
 from rich.progress import Progress
 
@@ -90,21 +90,22 @@ def check_locally(smt2_file: Path, model: str) -> Validation:
 
 
 def check_result_locally(cachedir: Path, logfiles: results.LogFile, rid: results.RunId, r: results.Run) -> Validation:
-    if r.status == "true":
-        filedir = benchmark_files_dir(cachedir, rid.track)
-        logic = rid.includefile.removesuffix(get_suffix(rid.track))
-        smt2_file = filedir / logic / (r.basename.removesuffix(".yml") + ".smt2")
-        model = logfiles.get_output(rid, r.basename)
-        return check_locally(smt2_file, model)
-    else:
-        return noValidation
+    match r.answer:
+        case defs.Answer.Sat:
+            filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
+            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+            smt2_file = filedir / str(r.logic) / basename
+            model = logfiles.get_output(rid, smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="yml"))
+            return check_locally(smt2_file, model)
+        case _:
+            return noValidation
 
 
 def check_results_locally(
     cachedir: Path, resultdir: Path, executor: ThreadPoolExecutor, progress: Progress
 ) -> list[tuple[results.RunId, results.Run, Validation]]:
     with results.LogFile(resultdir) as logfiles:
-        l = [(r.runid, b) for r in results.parse_results(resultdir) for b in r.runs if b.status == "true"]
+        l = [(r.runid, b) for r in results.parse_results(resultdir) for b in r.runs if b.answer == defs.Answer.Sat]
         return list(
             progress.track(
                 executor.map((lambda v: (v[0], v[1], check_result_locally(cachedir, logfiles, v[0], v[1]))), l),

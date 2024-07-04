@@ -206,7 +206,7 @@ def convert_csv_result(file: Path, track: defs.Track) -> defs.Results:
                     cpu_time=float(row["cpu time"]),
                     wallclock_time=float(row["wallclock time"]),
                     memory_usage=float(row["memory usage"]),
-                    result=defs.Status(row["result"]),
+                    result=defs.Answer(row["result"]),
                 )
             )
 
