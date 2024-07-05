@@ -360,7 +360,8 @@ def scoring_removed_benchmarks(
 
 
 @app.command(rich_help_panel=scoring_panel)
-def show_scores(data: Path, src: Path) -> None:
+def show_scores(data: Path, src: Path,
+                kind:smtcomp.scoring.Kind = typer.Argument(default="par")) -> None:
     config = defs.Config(data)
     results = smtcomp.results.helper_get_results(config, src)
 
@@ -368,17 +369,13 @@ def show_scores(data: Path, src: Path) -> None:
 
     results = smtcomp.scoring.add_disagreements_info(results).filter(disagreements=False).drop("disagreements")
 
-    results = smtcomp.scoring.benchmark_scoring(config, results)
+    results = smtcomp.scoring.benchmark_scoring(results)
+    
+    results = smtcomp.scoring.filter_for(kind,config,results)
 
-    divisions = smtcomp.scoring.division_score(config, results)
+    divisions = smtcomp.scoring.division_score(results)
 
-    divisions = divisions.sort("division", "parallel_score")
-
-    def print_parallel_score(d: Dict[str, Any]) -> str:
-        return f"({d["error"]},{d["correct"]},{d["wallclock"]},{d["cputime"]})"
-
-    def print_sequential_score(d: Dict[str, Any]) -> str:
-        return f"({d["error"]},{d["correct"]},{d["cputime"]})"
+    divisions = divisions.sort("division", *smtcomp.scoring.scores,descending=[False]+[True]*len(smtcomp.scoring.scores))
 
     rich_print_pl(
         "Scores",
@@ -402,31 +399,32 @@ def show_scores(data: Path, src: Path) -> None:
             custom=str,
         ),
         Col(
-            "parallel_score",
-            "Parallel score",
-            footer="",
+            "error_score",
+            "Error Score",
             justify="left",
-            style="cyan",
+            style="red",
             no_wrap=False,
-            custom=print_parallel_score,
         ),
         Col(
-            "sequential_score",
-            "Sequential score",
-            footer="",
+            "correctly_solved_score",
+            "Correct Score",
             justify="left",
-            style="cyan",
+            style="green",
             no_wrap=False,
-            custom=print_sequential_score,
         ),
         Col(
-            "s24_score",
-            "24s score",
-            footer="",
+            "wallclock_time_score",
+            "Wallclock Score",
             justify="left",
             style="cyan",
             no_wrap=False,
-            custom=print_parallel_score,
+        ),
+        Col(
+            "cpu_time_score",
+            "Cpu Time Score ",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
         ),
     )
 
