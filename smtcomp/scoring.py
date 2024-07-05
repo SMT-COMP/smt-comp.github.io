@@ -1,10 +1,4 @@
-import functools, itertools
-from typing import Set, Dict, Optional, cast, List, DefaultDict
-from pathlib import Path, PurePath
 from smtcomp import defs
-from rich import progress
-from rich import print
-from pydantic import BaseModel
 import polars as pl
 from smtcomp.utils import *
 
@@ -20,6 +14,17 @@ unsat_status = c_status == int(defs.Status.Unsat)
 
 c_walltime_s = pl.col("walltime_s")
 c_cputime_s = pl.col("cputime_s")
+twentyfour = c_walltime_s <= 24
+
+scores = ["error_score", "correctly_solved_score", "wallclock_time_score", "cpu_time_score"]
+
+
+class Kind(defs.EnumAutoInt):
+    par = "par"
+    seq = "seq"
+    sat = "sat"
+    unsat = "unsat"
+    twentyfour = "24"
 
 
 def sanity_check(config: defs.Config, result: pl.LazyFrame) -> None:
@@ -45,9 +50,9 @@ def add_disagreements_info(results: pl.LazyFrame) -> pl.LazyFrame:
     return results.with_columns(disagreements=disagreements).drop("sound_solvers")
 
 
-def benchmark_scoring(config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
+def benchmark_scoring(results: pl.LazyFrame) -> pl.LazyFrame:
     """
-    Add "parallel_score", "sequential_score" column for each results
+    Add "error_score", "correctly_solved_score", "wallclock_time_score","cpu_time_score"
     """
 
     error_score = pl.when((sat_status & unsat_answer) | (unsat_status & sat_answer)).then(-1).otherwise(0)
@@ -60,35 +65,52 @@ def benchmark_scoring(config: defs.Config, results: pl.LazyFrame) -> pl.LazyFram
     """Time if answered"""
     cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)
 
-    def virtual_cpu(e: pl.Expr, default: Any) -> pl.Expr:
-        return pl.when(c_cputime_s <= config.timelimit_s).then(e).otherwise(default)
+    return results.with_columns(
+        error_score=error_score,
+        correctly_solved_score=correctly_solved_score,
+        wallclock_time_score=wallclock_time_score,
+        cpu_time_score=cpu_time_score,
+    )
+
+
+def virtual_sequential_score(config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
+    """
+    Apply a virtual cpu filter on parallel score
+    """
+
+    def virtual_cpu(e: str, default: Any) -> pl.Expr:
+        return pl.when(c_cputime_s <= config.timelimit_s).then(pl.col(e)).otherwise(default)
 
     return results.with_columns(
-        parallel_score=pl.struct(
-            error=error_score,
-            correct=correctly_solved_score,
-            wallclock=wallclock_time_score,
-            cputime=cpu_time_score,
-        ),
-        sequential_score=pl.struct(
-            error=virtual_cpu(error_score, 0),
-            correct=virtual_cpu(correctly_solved_score, 0),
-            cputime=virtual_cpu(cpu_time_score, 0.0),
-        ),
+        error_score=virtual_cpu("error_score", 0),
+        correctly_solved_score=virtual_cpu("correctly_solved_score", 0),
+        cpu_time_score=virtual_cpu("cpu_time_score", 0.0),
+        wallclock_time_score=virtual_cpu("wallclock_time_score", 0.0),
     )
 
 
-def division_score(config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
+def division_score(results: pl.LazyFrame) -> pl.LazyFrame:
     """
-    Compute the score of each solver for each division
+    Sum the benchmarks score of each solver for each division
     """
-
-    def struct_sum(e: pl.Expr, size: int) -> pl.Expr:
-        l = [e.struct[i].sum() for i in range(0, size)]
-        return pl.struct(*l)
 
     return results.group_by("track", "division", "solver").agg(
-        parallel_score=struct_sum(pl.col("parallel_score"), 4),
-        sequential_score=struct_sum(pl.col("sequential_score"), 3),
-        s24_score=struct_sum(pl.col("parallel_score").filter(c_walltime_s <= 24), 4),
+        pl.sum("error_score"),
+        pl.sum("correctly_solved_score"),
+        pl.sum("cpu_time_score"),
+        pl.sum("wallclock_time_score"),
     )
+
+
+def filter_for(kind: Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
+    match kind:
+        case Kind.par:
+            return results
+        case Kind.seq:
+            return virtual_sequential_score(config, results)
+        case Kind.sat:
+            return results.filter(sat_answer)
+        case Kind.unsat:
+            return results.filter(unsat_answer)
+        case Kind.twentyfour:
+            return results.filter(twentyfour)
