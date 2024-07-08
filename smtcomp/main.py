@@ -606,38 +606,15 @@ def show_selection_stats(
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
-
-    match track:
-        case defs.Track.SingleQuery | defs.Track.ModelValidation | defs.Track.UnsatCore:
-            pass
-        case _:
-            print("Only SingleQuery,ModelValidation,UnsatCore")
-            exit(1)
-
     config = defs.Config(data)
     config.min_used_benchmarks = min_use_benchmarks
     config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
     config.invert_triviality = invert_triviality
     config.old_criteria = old_criteria
     config.use_previous_results_for_status = use_previous_results_for_status
-    benchmarks_with_info = smtcomp.selection.helper_compute_non_incremental(config, track)
-    b3 = (
-        benchmarks_with_info.group_by(["logic"])
-        .agg(
-            trivial=pl.col("file").filter(trivial=True).len(),
-            not_trivial=pl.col("file").filter(trivial=False, run=True).len(),
-            old_never_ran=pl.col("file").filter(run=False, new=False).len(),
-            new=pl.col("new").sum(),
-            selected=pl.col("file").filter(selected=True).len(),
-            selected_sat=pl.col("file").filter(selected=True, status=int(defs.Status.Sat)).len(),
-            selected_unsat=pl.col("file").filter(selected=True, status=int(defs.Status.Unsat)).len(),
-            selected_already_run=pl.col("file").filter(selected=True, run=True).len(),
-        )
-        .sort(by="logic")
-        .collect()
-    )
+    benchmarks_with_info = smtcomp.selection.helper(config, track)
 
-    used_logics = defs.logic_used_for_track(defs.Track.SingleQuery)
+    used_logics = defs.logic_used_for_track(track)
 
     def print_logic(id: int) -> str:
         logic = defs.Logic.of_int(id)
@@ -646,19 +623,62 @@ def show_selection_stats(
         else:
             return f"[bold red]{str(logic)}[/bold red]"
 
-    rich_print_pl(
-        f"Statistics on the benchmark selection for {track!s}",
-        b3,
-        Col("logic", "Logic", footer="Total", justify="left", style="cyan", no_wrap=True, custom=print_logic),
-        Col("trivial", "trivial", justify="right", style="green"),
-        Col("not_trivial", "not trivial", justify="right", style="orange_red1"),
-        Col("old_never_ran", "never compet.", justify="right", style="magenta"),
-        Col("new", "new", justify="right", style="magenta1"),
-        Col("selected", "selected", justify="right", style="green3"),
-        Col("selected_sat", "selected sat", justify="right", style="green4"),
-        Col("selected_unsat", "selected unsat", justify="right", style="green4"),
-        Col("selected_already_run", "selected already run", justify="right", style="green4"),
-    )
+    if track == defs.Track.Incremental:
+        b3 = (
+            benchmarks_with_info.group_by(["logic"])
+            .agg(
+                trivial=pl.col("file").filter(trivial=True).len(),
+                not_trivial=pl.col("file").filter(trivial=False, run=True).len(),
+                old_never_ran=pl.col("file").filter(run=False, new=False).len(),
+                new=pl.col("new").sum(),
+                selected=pl.col("file").filter(selected=True).len(),
+                selected_already_run=pl.col("file").filter(selected=True, run=True).len(),
+            )
+            .sort(by="logic")
+            .collect()
+        )
+
+        rich_print_pl(
+            f"Statistics on the benchmark selection for {track!s}",
+            b3,
+            Col("logic", "Logic", footer="Total", justify="left", style="cyan", no_wrap=True, custom=print_logic),
+            Col("trivial", "trivial", justify="right", style="green"),
+            Col("not_trivial", "not trivial", justify="right", style="orange_red1"),
+            Col("old_never_ran", "never compet.", justify="right", style="magenta"),
+            Col("new", "new", justify="right", style="magenta1"),
+            Col("selected", "selected", justify="right", style="green3"),
+            Col("selected_already_run", "selected already run", justify="right", style="green4"),
+        )
+    else:
+        b3 = (
+            benchmarks_with_info.group_by(["logic"])
+            .agg(
+                trivial=pl.col("file").filter(trivial=True).len(),
+                not_trivial=pl.col("file").filter(trivial=False, run=True).len(),
+                old_never_ran=pl.col("file").filter(run=False, new=False).len(),
+                new=pl.col("new").sum(),
+                selected=pl.col("file").filter(selected=True).len(),
+                selected_sat=pl.col("file").filter(selected=True, status=int(defs.Status.Sat)).len(),
+                selected_unsat=pl.col("file").filter(selected=True, status=int(defs.Status.Unsat)).len(),
+                selected_already_run=pl.col("file").filter(selected=True, run=True).len(),
+            )
+            .sort(by="logic")
+            .collect()
+        )
+
+        rich_print_pl(
+            f"Statistics on the benchmark selection for {track!s}",
+            b3,
+            Col("logic", "Logic", footer="Total", justify="left", style="cyan", no_wrap=True, custom=print_logic),
+            Col("trivial", "trivial", justify="right", style="green"),
+            Col("not_trivial", "not trivial", justify="right", style="orange_red1"),
+            Col("old_never_ran", "never compet.", justify="right", style="magenta"),
+            Col("new", "new", justify="right", style="magenta1"),
+            Col("selected", "selected", justify="right", style="green3"),
+            Col("selected_sat", "selected sat", justify="right", style="green4"),
+            Col("selected_unsat", "selected unsat", justify="right", style="green4"),
+            Col("selected_already_run", "selected already run", justify="right", style="green4"),
+        )
 
 
 @app.command(rich_help_panel=selection_panel)
