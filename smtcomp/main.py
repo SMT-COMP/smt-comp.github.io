@@ -255,7 +255,7 @@ def stats_of_benchexec_results(
     """
     config = defs.Config(data)
 
-    selected = smtcomp.results.helper_get_results(config, results, track)
+    selected, _ = smtcomp.results.helper_get_results(config, results, track)
 
     sum_answer = (pl.col("answer") == -1).sum()
     waiting = (pl.col("answer") == -1).all()
@@ -336,7 +336,7 @@ def find_disagreement_results(
     """
     config = defs.Config(data)
     config.use_previous_results_for_status = use_previous_year_results
-    selected = smtcomp.results.helper_get_results(config, results)
+    selected, _ = smtcomp.results.helper_get_results(config, results)
 
     df = (
         selected.filter(pl.col("answer").is_in([int(defs.Answer.Sat), int(defs.Answer.Unsat)]))
@@ -392,7 +392,7 @@ def scoring_removed_benchmarks(
 ) -> None:
     config = defs.Config(data)
     config.use_previous_results_for_status = use_previous_year_results
-    results = smtcomp.results.helper_get_results(config, src)
+    results, _ = smtcomp.results.helper_get_results(config, src)
 
     results = smtcomp.scoring.add_disagreements_info(results)
 
@@ -423,7 +423,7 @@ def show_scores(
     If src is empty use results in data
     """
     config = defs.Config(data)
-    results = smtcomp.results.helper_get_results(config, src)
+    results, _ = smtcomp.results.helper_get_results(config, src)
 
     smtcomp.scoring.sanity_check(config, results)
 
@@ -1001,7 +1001,7 @@ def export_results_pages(data: Path, results: list[Path] = typer.Argument(None))
     Generate page for results pages in web directory
     """
     config = defs.Config(data)
-    lf = smtcomp.results.helper_get_results(config, results)
+    lf, selection = smtcomp.results.helper_get_results(config, results)
     lf = smtcomp.scoring.add_disagreements_info(lf)
     lf = smtcomp.scoring.benchmark_scoring(lf)
-    smtcomp.generate_website_page.export_results(config, lf)
+    smtcomp.generate_website_page.export_results(config, selection, lf)
