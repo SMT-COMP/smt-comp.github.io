@@ -4,6 +4,7 @@ import smtcomp.defs as defs
 import polars as pl
 import xml.etree.ElementTree as ET
 from pathlib import Path
+import smtcomp.selection
 from smtcomp.unpack import read_cin
 import smtcomp.scramble_benchmarks
 from pydantic import BaseModel
@@ -98,6 +99,10 @@ def parse_result(s: str) -> defs.Answer:
     if s.startswith("TIMEOUT"):
         # TIMEOUT (true), TIMEOUT (false), TIMEOUT
         return defs.Answer.Timeout
+    if s.startswith("DONE"):
+        return defs.Answer.Incremental
+    if s.startswith("OUT OF MEMORY"):
+        return defs.Answer.OOM
     match s:
         case "false":
             return defs.Answer.Unsat
@@ -249,7 +254,7 @@ class LogFile:
         return s[index:]
 
 
-def helper_get_results(config: defs.Config, results: Path) -> pl.LazyFrame:
+def helper_get_results(config: defs.Config, results: Path, track: defs.Track = defs.Track.SingleQuery) -> pl.LazyFrame:
     """
     Return on all the selected benchmarks for each solver that should run it
     "track", "file", "scrambled_id", "logic", "division", "status", "solver", "answer", "cputime_s", "memory_B", "walltime_s".
@@ -257,19 +262,15 @@ def helper_get_results(config: defs.Config, results: Path) -> pl.LazyFrame:
     -1 is used when no answer is available.
 
     """
-    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(defs.Track.SingleQuery))
-    selected = (
-        smtcomp.selection.helper(config, defs.Track.SingleQuery)
-        .filter(selected=True)
-        .with_columns(track=int(defs.Track.SingleQuery))
-    )
+    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(track))
+    selected = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
     selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
 
     selected = add_columns(
         selected,
-        lf.drop("logic"),
-        on=["file", "solver", "track", "participation"],
+        lf.drop("logic", "participation"),  # Hack for participation 0 bug move "participation" to on= for 2025
+        on=["file", "solver", "track"],
         defaults={
             "answer": -1,
             "scramble_id": 1,

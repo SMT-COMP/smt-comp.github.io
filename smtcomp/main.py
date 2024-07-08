@@ -183,11 +183,10 @@ def generate_benchexec(
 
 @app.command(rich_help_panel=benchexec_panel)
 def convert_benchexec_results(
-    data: Path,
     results: Path,
 ) -> None:
     """
-    Load benchexec results and print some results about them
+    Load benchexec results and aggregates results in feather format
     """
 
     lf = smtcomp.results.parse_dir(results)
@@ -195,17 +194,65 @@ def convert_benchexec_results(
 
 
 @app.command(rich_help_panel=benchexec_panel)
-def stats_of_benchexec_results(
+def store_results(
     data: Path,
-    results: Path,
-    only_started: bool = False,
+    lresults: List[Path],
+) -> None:
+    """
+    Load benchexec results in feather formats and store them in data for adding them to git
+    """
+
+    config = defs.Config(data)
+    lf = pl.concat(pl.read_ipc(results / "parsed.feather").lazy() for results in lresults)
+    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks).lazy()
+    benchmarks_inc = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
+    for track, dst in config.current_results.items():
+        match track:
+            case defs.Track.Incremental:
+                b = benchmarks_inc
+                incremental = True
+            case _:
+                b = benchmarks
+                incremental = False
+        df = add_columns(
+            lf.filter(track=int(track)).drop("logic"),
+            b.select("file", "logic", "family", "name"),
+            on=["file"],
+            defaults={"logic": -1, "family": "", "name": ""},
+        ).collect()
+        if len(df) > 0:
+            results_track = defs.Results(
+                results=[
+                    defs.Result(
+                        track=track,
+                        solver=d["solver"],
+                        file=defs.Smt2File.of_tuple(
+                            incremental=incremental,
+                            logic=defs.Logic.of_int(d["logic"]),
+                            family=d["family"],
+                            name=d["name"],
+                        ),
+                        result=defs.Answer.of_int(d["answer"]),
+                        cpu_time=d["cputime_s"],
+                        wallclock_time=d["walltime_s"],
+                        memory_usage=d["memory_B"],
+                    )
+                    for d in df.to_dicts()
+                ]
+            )
+            write_cin(dst, results_track.model_dump_json(indent=1))
+
+
+@app.command(rich_help_panel=benchexec_panel)
+def stats_of_benchexec_results(
+    data: Path, results: Path, only_started: bool = False, track: defs.Track = defs.Track.SingleQuery
 ) -> None:
     """
     Load benchexec results and print some results about them
     """
     config = defs.Config(data)
 
-    selected = smtcomp.results.helper_get_results(config, results)
+    selected = smtcomp.results.helper_get_results(config, results, track)
 
     sum_answer = (pl.col("answer") == -1).sum()
     waiting = (pl.col("answer") == -1).all()
@@ -360,8 +407,7 @@ def scoring_removed_benchmarks(
 
 
 @app.command(rich_help_panel=scoring_panel)
-def show_scores(data: Path, src: Path,
-                kind:smtcomp.scoring.Kind = typer.Argument(default="par")) -> None:
+def show_scores(data: Path, src: Path, kind: smtcomp.scoring.Kind = typer.Argument(default="par")) -> None:
     config = defs.Config(data)
     results = smtcomp.results.helper_get_results(config, src)
 
@@ -370,12 +416,14 @@ def show_scores(data: Path, src: Path,
     results = smtcomp.scoring.add_disagreements_info(results).filter(disagreements=False).drop("disagreements")
 
     results = smtcomp.scoring.benchmark_scoring(results)
-    
-    results = smtcomp.scoring.filter_for(kind,config,results)
+
+    results = smtcomp.scoring.filter_for(kind, config, results)
 
     divisions = smtcomp.scoring.division_score(results)
 
-    divisions = divisions.sort("division", *smtcomp.scoring.scores,descending=[False]+[True]*len(smtcomp.scoring.scores))
+    divisions = divisions.sort(
+        "division", *smtcomp.scoring.scores, descending=[False] + [True] * len(smtcomp.scoring.scores)
+    )
 
     rich_print_pl(
         "Scores",
@@ -699,7 +747,7 @@ def print_iterable(i: int, tree: Tree, a: Any) -> None:
 
 
 @app.command(rich_help_panel=data_panel)
-def create_cache(data: Path) -> None:
+def create_cache(data: Path, only_current: bool = False) -> None:
     config = defs.Config(data)
     print("Loading benchmarks")
     bench = defs.Benchmarks.model_validate_json(read_cin(config.benchmarks))
@@ -710,38 +758,39 @@ def create_cache(data: Path) -> None:
         assert smtfile not in bd
         bd[smtfile] = i
 
-    print("Creating non-incremental benchmarks cache as feather file")
-    bench_simplified = map(
-        lambda x: {
-            "file": bd[x.file],
-            "logic": int(x.file.logic),
-            "family": str(x.file.family_path()),
-            "name": x.file.name,
-            "status": int(x.status),
-            "asserts": x.asserts,
-        },
-        bench.non_incremental,
-    )
-    df = pl.DataFrame(bench_simplified)
-    # df["family"] = df["family"].astype("string")
-    # df["name"] = df["name"].astype("string")
-    df.write_ipc(config.cached_non_incremental_benchmarks)
+    if not only_current:
+        print("Creating non-incremental benchmarks cache as feather file")
+        bench_simplified = map(
+            lambda x: {
+                "file": bd[x.file],
+                "logic": int(x.file.logic),
+                "family": str(x.file.family_path()),
+                "name": x.file.name,
+                "status": int(x.status),
+                "asserts": x.asserts,
+            },
+            bench.non_incremental,
+        )
+        df = pl.DataFrame(bench_simplified)
+        # df["family"] = df["family"].astype("string")
+        # df["name"] = df["name"].astype("string")
+        df.write_ipc(config.cached_non_incremental_benchmarks)
 
-    print("Creating incremental benchmarks cache as feather file")
-    bench_simplified = map(
-        lambda x: {
-            "file": bd[x.file],
-            "logic": int(x.file.logic),
-            "family": str(x.file.family_path()),
-            "name": x.file.name,
-            "check_sats": x.check_sats,
-        },
-        bench.incremental,
-    )
-    df = pl.DataFrame(bench_simplified)
-    # df["family"] = df["family"].astype("string")
-    # df["name"] = df["name"].astype("string")
-    df.write_ipc(config.cached_incremental_benchmarks)
+        print("Creating incremental benchmarks cache as feather file")
+        bench_simplified = map(
+            lambda x: {
+                "file": bd[x.file],
+                "logic": int(x.file.logic),
+                "family": str(x.file.family_path()),
+                "name": x.file.name,
+                "check_sats": x.check_sats,
+            },
+            bench.incremental,
+        )
+        df = pl.DataFrame(bench_simplified)
+        # df["family"] = df["family"].astype("string")
+        # df["name"] = df["name"].astype("string")
+        df.write_ipc(config.cached_incremental_benchmarks)
 
     def convert(x: defs.Result, year: int) -> dict[str, int | str | float] | None:
         if x.file not in bd:
@@ -757,15 +806,25 @@ def create_cache(data: Path) -> None:
             "year": year,
         }
 
-    results_filtered: list[Any] = []
-    for year, file in track(config.previous_results, description="Loading json results"):
-        results = defs.Results.model_validate_json(read_cin(file))
-        results_filtered.extend(filter(lambda x: x is not None, map(lambda r: convert(r, year), results.results)))
+    if not only_current:
+        results_filtered: list[Any] = []
+        for year, file in track(config.previous_results, description="Loading json results"):
+            results = defs.Results.model_validate_json(read_cin(file))
+            results_filtered.extend(filter(lambda x: x is not None, map(lambda r: convert(r, year), results.results)))
 
-    print("Creating old results cache as feather file")
-    df = pl.DataFrame(results_filtered)
-    # df["solver"] = df["solver"].astype("string")
-    df.write_ipc(config.cached_previous_results)
+        print("Creating old results cached as feather file")
+        df = pl.DataFrame(results_filtered)
+        # df["solver"] = df["solver"].astype("string")
+        df.write_ipc(config.cached_previous_results)
+
+    for tra, file in config.current_results.items():
+        if file.exists():
+            print(f"Creating current results for {tra!s} cached as feather file")
+            results = defs.Results.model_validate_json(read_cin(file))
+            df = pl.DataFrame(
+                filter(lambda x: x is not None, map(lambda r: convert(r, config.current_year), results.results))
+            )
+            df.write_ipc(config.cached_current_results[tra])
 
 
 @app.command(rich_help_panel=benchexec_panel)

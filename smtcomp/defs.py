@@ -5,7 +5,7 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict, cast, Optional, Iterable, TypeVar
+from typing import Any, Dict, cast, Optional, Iterable, TypeVar, Self, ClassVar
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
@@ -20,16 +20,18 @@ class EnumAutoInt(Enum):
     Normal enum with strings, but each enum is associated to an int
     """
 
+    __ordered__: ClassVar[list[Self]]
+
     def __str__(self) -> str:
         return str(self.value)
 
-    def __new__(cls, id: str) -> EnumAutoInt:
-        obj = object.__new__(cls)
+    def __new__(cls, id: str) -> Self:
+        obj: Self = object.__new__(cls)
         obj._value_ = id
         value = len(cls.__members__)
         obj.id = value
         if "__ordered__" not in cls.__dict__:
-            cls.__ordered__: list[EnumAutoInt] = []
+            cls.__ordered__: list[Self] = []
         cls.__ordered__.append(obj)
         return obj
 
@@ -40,8 +42,8 @@ class EnumAutoInt(Enum):
         return self.id
 
     @classmethod
-    def of_int(cls, id: int) -> EnumAutoInt:
-        return cls.__ordered__[id]
+    def of_int(cls, id: int) -> Self:
+        return cast(Self, cls.__ordered__[id])
 
     @classmethod
     def name_of_int(cls, id: int) -> str:
@@ -162,6 +164,23 @@ class Track(EnumAutoInt):
     Incremental = "Incremental"
     Cloud = "Cloud"
     Parallel = "Parallel"
+
+    def short_cut(self: Track) -> str:
+        match self:
+            case Track.UnsatCore:
+                return "uc"
+            case Track.SingleQuery:
+                return "sq"
+            case Track.ProofExhibition:
+                return "pe"
+            case Track.ModelValidation:
+                return "mv"
+            case Track.Incremental:
+                return "inc"
+            case Track.Cloud:
+                return "cloud"
+            case Track.Parallel:
+                return "parallel"
 
 
 class Division(EnumAutoInt):
@@ -1303,7 +1322,7 @@ class Smt2File(BaseModel):
         return Path(*self.family)
 
     @classmethod
-    def of_tuple(cls, incremental: bool, logic: Logic, family: Path, name: str) -> Smt2File:
+    def of_tuple(cls, incremental: bool, logic: Logic, family: Path | str, name: str) -> Smt2File:
         parts = PurePath(family).parts
 
         return Smt2File(
@@ -1419,6 +1438,18 @@ class Config:
             (year, self.data.joinpath(f"results-sq-{year}.json.gz"))
             for year in range(Config.oldest_previous_results, Config.current_year)
         ]
+
+    @functools.cached_property
+    def current_results(self) -> dict[Track, Path]:
+        return dict(
+            (track, self.data.joinpath(f"results-{track.short_cut()}-{self.current_year}.json.gz")) for track in Track
+        )
+
+    @functools.cached_property
+    def cached_current_results(self) -> dict[Track, Path]:
+        return dict(
+            (track, self.data.joinpath(f"results-{track.short_cut()}-{self.current_year}.feather")) for track in Track
+        )
 
     @functools.cached_property
     def benchmarks(self) -> Path:
