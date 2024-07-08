@@ -1412,6 +1412,10 @@ class Config:
     """
     Number of selected benchmarks
     """
+    unsat_core_min_num_asserts = 2
+    """
+    Minimum number of assertions for unsat core
+    """
 
     removed_benchmarks = [
         {

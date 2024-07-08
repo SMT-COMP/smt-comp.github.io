@@ -10,8 +10,13 @@ from pydantic import BaseModel
 import polars as pl
 from smtcomp.utils import *
 
+SimpleNonIncrementalTrack = Literal[defs.Track.SingleQuery, defs.Track.ModelValidation, defs.Track.UnsatCore]
+SimpleTrack = Literal[defs.Track.SingleQuery, defs.Track.ModelValidation, defs.Track.UnsatCore, defs.Track.Incremental]
+
 c_logic = pl.col("logic")
 c_result = pl.col("result")
+c_current_result = pl.col("current_result")
+c_status = pl.col("status")
 c_cpu_time = pl.col("cpu_time")
 c_sat = pl.col("sat")
 c_unsat = pl.col("unsat")
@@ -21,6 +26,7 @@ c_new = pl.col("new")
 c_new_len = pl.col("new_len")
 c_all_len = pl.col("all_len")
 c_file = pl.col("file")
+c_year = pl.col("year")
 
 
 def find_trivial(results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
@@ -56,6 +62,11 @@ def find_trivial(results: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
             .when((c_result == int(defs.Status.Unsat)).any())
             .then(int(defs.Status.Unsat))
             .otherwise(int(defs.Status.Unknown)),
+            current_result=pl.when(((c_result == int(defs.Status.Sat)) & (c_year == config.current_year)).any())
+            .then(int(defs.Status.Sat))
+            .when(((c_result == int(defs.Status.Unsat)) & (c_year == config.current_year)).any())
+            .then(int(defs.Status.Unsat))
+            .otherwise(int(defs.Status.Unknown)),
         )
     )
     return tally
@@ -72,7 +83,12 @@ def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFram
         benchmarks,
         is_trivial,
         on=["file"],
-        defaults={"trivial": False, "run": False, "result": int(defs.Status.Unknown)},
+        defaults={
+            "trivial": False,
+            "run": False,
+            "result": int(defs.Status.Unknown),
+            "current_result": int(defs.Status.Unknown),
+        },
     ).with_columns(new=pl.col("family").str.starts_with(str(config.current_year)))
 
     if config.use_previous_results_for_status:
@@ -83,14 +99,28 @@ def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFram
     return with_info
 
 
-def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, target_track: defs.Track) -> pl.LazyFrame:
+def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, target_track: SimpleTrack) -> pl.LazyFrame:
     used_logics = defs.logic_used_for_track(target_track)
 
-    # Keep only logics used by single query
+    # Keep only logics used by the track
     b = benchmarks_with_info.filter(c_logic.is_in(set(map(int, used_logics))))
 
-    # Remove trivial benchmarks
-    b = b.filter(c_trivial == False).drop("trivial", "run")
+    # Specific track filter
+    match target_track:
+        case defs.Track.SingleQuery | defs.Track.Incremental:
+            # Remove trivial benchmarks
+            # TODO: Incremental track doesn't normally remove trivial benchmarks
+            b = b.filter(trivial=False)
+        case defs.Track.ModelValidation:
+            # Remove benchmarks with status sat and the one where solvers said sat
+            b = b.filter((c_status == int(defs.Answer.Sat)) | (c_current_result == int(defs.Answer.Sat)))
+        case defs.Track.UnsatCore:
+            # Remove benchmarks with status unsat and the one where solvers said unsat
+            # Remove benchmarks with 1 assertions
+            b = b.filter((c_status == int(defs.Answer.Unsat)) | (c_current_result == int(defs.Answer.Unsat)))
+            b = b.filter(pl.col("asserts") >= config.unsat_core_min_num_asserts)
+
+    b = b.drop("trivial", "run")
 
     # Count number of benchmarks in each logic (all and new benchmarks)
     logics = b.group_by("logic", maintain_order=True).agg(
@@ -139,18 +169,29 @@ def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, tar
     )
 
 
-def helper_compute_sq(config: defs.Config) -> pl.LazyFrame:
+def helper_compute_non_incremental(config: defs.Config, track: SimpleNonIncrementalTrack) -> pl.LazyFrame:
     """
     Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
     """
-    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks)
-    results = pl.read_ipc(config.cached_previous_results)
-    benchmarks_with_info = add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
+    benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks).lazy()
+    results = pl.read_ipc(config.cached_previous_results).lazy()
+
+    match track:
+        case defs.Track.SingleQuery:
+            pass
+        case defs.Track.ModelValidation | defs.Track.UnsatCore:
+            current_sq_result = config.cached_current_results[defs.Track.SingleQuery]
+            if current_sq_result.exists():
+                results = pl.concat([results, pl.read_ipc(current_sq_result).lazy()])
+            else:
+                print("[bold][red]Current results not available[/red][/bold]")
+
+    benchmarks_with_info = add_trivial_run_info(benchmarks, results, config)
     if config.invert_triviality:
         trivial_in_logic = pl.col("trivial").any().over(["logic"])
         inverted_or_not_trivial = pl.when(trivial_in_logic).then(pl.col("trivial").not_()).otherwise(pl.col("trivial"))
         benchmarks_with_info = benchmarks_with_info.with_columns(trivial=inverted_or_not_trivial)
-    return track_selection(benchmarks_with_info, config, defs.Track.SingleQuery)
+    return track_selection(benchmarks_with_info, config, track)
 
 
 def helper_compute_incremental(config: defs.Config) -> pl.LazyFrame:
@@ -170,19 +211,17 @@ def helper_compute_incremental(config: defs.Config) -> pl.LazyFrame:
 def helper(config: defs.Config, track: defs.Track) -> pl.LazyFrame:
     match track:
         case defs.Track.SingleQuery:
-            selected = helper_compute_sq(config)
+            selected = helper_compute_non_incremental(config, track)
         case defs.Track.Incremental:
             selected = helper_compute_incremental(config)
         case defs.Track.ModelValidation:
-            selected = helper_compute_sq(config)
-            selected = selected.filter(status=int(defs.Status.Sat))
+            selected = helper_compute_non_incremental(config, track)
         case defs.Track.UnsatCore:
-            selected = helper_compute_sq(config)
-            selected = selected.filter(status=int(defs.Status.Unsat))
+            selected = helper_compute_non_incremental(config, track)
         case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
-            selected = helper_compute_sq(config)
+            selected = helper_compute_non_incremental(config, defs.Track.SingleQuery)
             rich.print(
-                f"[red]The scramble_benchmarks command does not yet work for the competition track: {track}[/red]"
+                f"[red]The selection and scramble_benchmarks command does not yet work for the competition track: {track}[/red]"
             )
             exit(1)
     return selected

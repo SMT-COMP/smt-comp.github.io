@@ -590,28 +590,37 @@ OLD_CRITERIA = Annotated[bool, typer.Option(help="Simulate previous year criteri
 
 
 @app.command(rich_help_panel=selection_panel)
-def show_sq_selection_stats(
+def show_selection_stats(
     data: Path,
     old_criteria: OLD_CRITERIA = False,
     min_use_benchmarks: int = defs.Config.min_used_benchmarks,
     ratio_of_used_benchmarks: float = defs.Config.ratio_of_used_benchmarks,
     invert_triviality: bool = False,
     use_previous_results_for_status: bool = defs.Config.use_previous_results_for_status,
+    track: defs.Track = defs.Track.SingleQuery,
 ) -> None:
     """
-    Show statistics on the benchmarks selected for single query track
+    Show statistics on the benchmarks selected
 
     Logics that are not in any division are printed in red.
 
     Never compet.: old benchmarks never run competitively (more than one prover)
     """
+
+    match track:
+        case defs.Track.SingleQuery | defs.Track.ModelValidation | defs.Track.UnsatCore:
+            pass
+        case _:
+            print("Only SingleQuery,ModelValidation,UnsatCore")
+            exit(1)
+
     config = defs.Config(data)
     config.min_used_benchmarks = min_use_benchmarks
     config.ratio_of_used_benchmarks = ratio_of_used_benchmarks
     config.invert_triviality = invert_triviality
     config.old_criteria = old_criteria
     config.use_previous_results_for_status = use_previous_results_for_status
-    benchmarks_with_info = smtcomp.selection.helper_compute_sq(config)
+    benchmarks_with_info = smtcomp.selection.helper_compute_non_incremental(config, track)
     b3 = (
         benchmarks_with_info.group_by(["logic"])
         .agg(
@@ -638,7 +647,7 @@ def show_sq_selection_stats(
             return f"[bold red]{str(logic)}[/bold red]"
 
     rich_print_pl(
-        "Statistics on the benchmark selection for single query",
+        f"Statistics on the benchmark selection for {track!s}",
         b3,
         Col("logic", "Logic", footer="Total", justify="left", style="cyan", no_wrap=True, custom=print_logic),
         Col("trivial", "trivial", justify="right", style="green"),
