@@ -1384,6 +1384,7 @@ class Results(BaseModel):
 
 ## Parameters that can change each year
 class Config:
+    __next_id__: ClassVar[int] = 0
     current_year = 2024
     oldest_previous_results = 2018
     timelimit_s = 60 * 20
@@ -1427,9 +1428,19 @@ class Config:
     ]
 
     def __init__(self, data: Path | None) -> None:
+        self.id = self.__class__.__next_id__
+        self.__class__.__next_id__ += 1
         if data is not None and data.name != "data":
             raise ValueError("Consistency check, data directory must be named 'data'")
         self._data = data
+
+    def __eq__(self, other: Any) -> bool:
+        if isinstance(other, Config):
+            return self.id == other.id
+        return False
+
+    def __hash__(self: Config) -> int:
+        return self.id
 
     @functools.cached_property
     def data(self) -> Path:

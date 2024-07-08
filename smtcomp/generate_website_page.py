@@ -86,7 +86,7 @@ def podium_division(config: defs.Config, d: dict[str, Any]) -> PodiumDivision:
         disagreements=f"disagreements_{config.current_year}",
         division=defs.Division.name_of_int(d["division"]),
         track="track_single_query",
-        n_benchmarks=d["n"],
+        n_benchmarks=d["total"],
         time_limit=config.timelimit_s,
         mem_limit=config.memlimit_M,
         logics=dict((defs.Logic.name_of_int(d2["logic"]), d2["n"]) for d2 in d["logics"]),
@@ -103,17 +103,23 @@ def podium_division(config: defs.Config, d: dict[str, Any]) -> PodiumDivision:
     )
 
 
-def sq_generate_divisions(config: defs.Config, results: pl.LazyFrame) -> dict[defs.Division, PodiumDivision]:
+def sq_generate_divisions(
+    config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame
+) -> dict[defs.Division, PodiumDivision]:
     """
     With disagreements
     """
     assert "disagreements" in results.columns
     results = results.filter(track=int(defs.Track.SingleQuery)).drop("track")
 
+    selection = selection.filter(selected=True)
+
+    len_by_division = selection.group_by("division").agg(total=pl.len())
+
     def info_for_podium_step(kind: smtcomp.scoring.Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
         results = smtcomp.scoring.filter_for(kind, config, results)
         return (
-            results.with_columns(total=pl.n_unique("file").over("division"))
+            intersect(results, len_by_division, on=["division"])
             .group_by("division", "solver")
             .agg(
                 pl.sum("error_score"),
@@ -149,15 +155,16 @@ def sq_generate_divisions(config: defs.Config, results: pl.LazyFrame) -> dict[de
         )
 
     lf_info = (
-        results.group_by("division", "logic")
-        .agg(n=pl.n_unique("file"), disagreements=(pl.col("disagreements") == True).sum())
-        .group_by("division")
-        .agg(pl.sum("n"), pl.sum("disagreements"), logics=pl.struct("logic", "n"))
+        selection.group_by("division", "logic").agg(n=pl.len()).group_by("division").agg(logics=pl.struct("logic", "n"))
     )
+
+    lf_info2 = results.group_by("division").agg(disagreements=(pl.col("disagreements") == True).sum())
 
     results = results.filter(disagreements=False).drop("disagreements")
 
-    l = [lf_info] + [info_for_podium_step(kind, config, results) for kind in smtcomp.scoring.Kind]
+    l = [len_by_division, lf_info, lf_info2] + [
+        info_for_podium_step(kind, config, results) for kind in smtcomp.scoring.Kind
+    ]
 
     r = functools.reduce(lambda x, y: x.join(y, validate="1:1", on=["division"]), l)
 
@@ -166,9 +173,9 @@ def sq_generate_divisions(config: defs.Config, results: pl.LazyFrame) -> dict[de
     return dict((defs.Division.of_int(d["division"]), podium_division(config, d)) for d in df.to_dicts())
 
 
-def export_results(config: defs.Config, results: pl.LazyFrame) -> None:
+def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame) -> None:
 
-    datas = sq_generate_divisions(config, results)
+    datas = sq_generate_divisions(config, selection, results)
 
     dst = config.web_results
 

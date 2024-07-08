@@ -256,7 +256,7 @@ class LogFile:
 
 def helper_get_results(
     config: defs.Config, results: List[Path], track: defs.Track = defs.Track.SingleQuery
-) -> pl.LazyFrame:
+) -> Tuple[pl.LazyFrame, pl.LazyFrame]:
     """
     If results is empty use the one in data
 
@@ -284,9 +284,15 @@ def helper_get_results(
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
         lf = lf.filter(track=int(track)).drop("scrambled_id")
-    selected = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
+    selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
-    selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+    selection = (
+        add_columns(selection, smtcomp.selection.tracks(), on=["track", "logic"], defaults={"division": -1})
+        .collect()  # Improve later works
+        .lazy()
+    )
+
+    selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
 
     selected = add_columns(
         selected,
@@ -300,6 +306,4 @@ def helper_get_results(
         },
     )
 
-    selected = add_columns(selected, smtcomp.selection.tracks(), on=["track", "logic"], defaults={"division": -1})
-
-    return selected
+    return selected, selection
