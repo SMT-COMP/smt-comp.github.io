@@ -51,12 +51,21 @@ jobs:
           key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Set up the environment
         uses: ./.github/actions/setup-poetry-env
+      #For smtcomp data cache
+      - uses: actions/cache@v3
+        id: data-cache
+        with:
+          path: data/*.feather
+          key: data-cache-${{ hashFiles('data/*.json.gz') }}
+      - name: Cache generation if needed
+        if: steps.data-cache.outputs.cache-hit != 'true'
+        run: |
+          poetry run make cache
       # Generate files using smtcomp tool
       - name: Files generation
         run: |
           pip install json-schema-for-humans
-          poetry run make submission-doc
-          poetry run make participant-data
+          poetry run make submission-doc generation
       ###
       - name: Setup Pages
         id: pages
