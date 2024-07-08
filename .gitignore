@@ -172,3 +172,4 @@ schema_doc.min.js
 *.feather
 tmp/
 /web/public/
+/web/content/results/*.md

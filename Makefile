@@ -24,7 +24,7 @@ test: generation ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
 	@poetry run pytest
 
-generation: submission-generation participant-data ## Files generation for the website
+generation: submission-generation participant-data results-generation ## Files generation for the website
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
@@ -45,7 +45,7 @@ GENERATED_SCHEMA_FILE=web/content/solver_submission/schema.json
 GENERATED_SCHEMA_HTML=web/content/solver_submission/schema.html
 PARTICIPANT_DATA_FILE=web/data/participants.json
 
-.PHONY: submission-doc submission-generation participant-data
+.PHONY: submission-doc submission-generation participant-data results-generation cache
 submission-generation:
 	@echo "🚀 Generating schema to $(GENERATED_SCHEMA_FILE)"
 	@poetry run smtcomp dump-json-schema $(GENERATED_SCHEMA_FILE)
@@ -58,6 +58,14 @@ submission-doc: submission-generation
 participant-data:
 	@echo "🚀 Generating participant data to $(PARTICIPANT_DATA_FILE)"
 	@poetry run smtcomp show-json submissions/*.json $(PARTICIPANT_DATA_FILE)
+
+results-generation:
+	@echo "🚀 Generating results to web/content/results"
+	@poetry run smtcomp export-results-pages data
+
+cache:
+	@echo "🚀 Generating cache"
+	@poetry run smtcomp create-cache data
 
 hugo-server:
 	(cd web; hugo server)
