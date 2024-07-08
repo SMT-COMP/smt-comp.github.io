@@ -274,15 +274,15 @@ def stats_of_benchexec_results(
     )
 
     def print_solver(d: List[Dict[str, Any]]) -> str:
-        return ",".join(map(lambda x: f"{x["solver"]}({x["count"]})", d))
+        return ",".join(map(lambda x: "{}({})".format(x["solver"], x["count"]), d))
 
     def print_missing(d: Dict[str, Any]) -> str:
         if d["waiting"]:
-            return f"[bold red]{d["sum"]}[/bold red]"
+            return "[bold red]{}[/bold red]".format(d["sum"])
         elif d["sum"] == 0:
-            return f"[bold green]{d["sum"]}[/bold green]"
+            return "[bold green]{}[/bold green]".format(d["sum"])
         else:
-            return f"[bold orange1]{d["sum"]}[/bold orange1]"
+            return "[bold orange1]{}[/bold orange1]".format(d["sum"])
 
     rich_print_pl(
         "Results",
@@ -352,7 +352,7 @@ def find_disagreement_results(
     )
 
     def print_answers(d: List[Dict[str, Any]]) -> str:
-        return ",".join(map(lambda x: f"{x["solver"]}({defs.Answer.name_of_int(x["answer"])})", d))
+        return ",".join(map(lambda x: "{}({})".format(x["solver"], defs.Answer.name_of_int(x["answer"])), d))
 
     rich_print_pl(
         "Disagreements",
