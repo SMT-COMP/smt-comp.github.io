@@ -6,7 +6,9 @@ c_answer = pl.col("answer")
 sat_answer = c_answer == int(defs.Answer.Sat)
 unsat_answer = c_answer == int(defs.Answer.Unsat)
 known_answer = sat_answer | unsat_answer
-not_known_answer = known_answer.not_()
+unknown_answer = known_answer.not_()
+timeout_answer = c_answer == int(defs.Answer.Timeout)
+memout_answer = c_answer == int(defs.Answer.OOM)
 
 c_status = pl.col("status")
 sat_status = c_status == int(defs.Status.Sat)
