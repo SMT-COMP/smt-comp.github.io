@@ -449,6 +449,7 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.QF_AUFBVLIA,
             Logic.QF_AUFBVNIA,
             Logic.QF_UFBVLIA,
+            Logic.QF_BVLRA,
         },
         Division.QF_LinearIntArith: {
             Logic.QF_LIA,
