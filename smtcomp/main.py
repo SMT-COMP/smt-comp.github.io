@@ -30,6 +30,7 @@ import smtcomp.convert_csv
 import smtcomp.generate_benchmarks
 import smtcomp.list_benchmarks
 import smtcomp.selection
+import smtcomp.generate_website_page
 from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
@@ -244,7 +245,10 @@ def store_results(
 
 @app.command(rich_help_panel=benchexec_panel)
 def stats_of_benchexec_results(
-    data: Path, results: Path, only_started: bool = False, track: defs.Track = defs.Track.SingleQuery
+    data: Path,
+    results: List[Path] = typer.Argument(None),
+    only_started: bool = False,
+    track: defs.Track = defs.Track.SingleQuery,
 ) -> None:
     """
     Load benchexec results and print some results about them
@@ -323,7 +327,9 @@ path_of_logic_family_name = pl.concat_str(
 
 @app.command(rich_help_panel=benchexec_panel)
 def find_disagreement_results(
-    data: Path, results: Path, use_previous_year_results: bool = defs.Config.use_previous_results_for_status
+    data: Path,
+    results: List[Path] = typer.Argument(None),
+    use_previous_year_results: bool = defs.Config.use_previous_results_for_status,
 ) -> None:
     """
     Load benchexec results and print some results about them
@@ -380,7 +386,9 @@ def find_disagreement_results(
 
 @app.command(rich_help_panel=scoring_panel)
 def scoring_removed_benchmarks(
-    data: Path, src: Path, use_previous_year_results: bool = defs.Config.use_previous_results_for_status
+    data: Path,
+    src: List[Path] = typer.Argument(None),
+    use_previous_year_results: bool = defs.Config.use_previous_results_for_status,
 ) -> None:
     config = defs.Config(data)
     config.use_previous_results_for_status = use_previous_year_results
@@ -406,7 +414,14 @@ def scoring_removed_benchmarks(
 
 
 @app.command(rich_help_panel=scoring_panel)
-def show_scores(data: Path, src: Path, kind: smtcomp.scoring.Kind = typer.Argument(default="par")) -> None:
+def show_scores(
+    data: Path,
+    src: List[Path] = typer.Argument(None),
+    kind: smtcomp.scoring.Kind = typer.Argument(default="par"),
+) -> None:
+    """
+    If src is empty use results in data
+    """
     config = defs.Config(data)
     results = smtcomp.results.helper_get_results(config, src)
 
@@ -978,3 +993,15 @@ def check_model_locally(
                 (dst / basename).unlink(missing_ok=True)
                 (dst / basename).symlink_to(smt2_file)
                 (dst / basename_model).write_text(result.model)
+
+
+@app.command()
+def export_results_pages(data: Path, results: list[Path] = typer.Argument(None)) -> None:
+    """
+    Generate page for results pages in web directory
+    """
+    config = defs.Config(data)
+    lf = smtcomp.results.helper_get_results(config, results)
+    lf = smtcomp.scoring.add_disagreements_info(lf)
+    lf = smtcomp.scoring.benchmark_scoring(lf)
+    smtcomp.generate_website_page.export_results(config, lf)

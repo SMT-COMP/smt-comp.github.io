@@ -254,15 +254,36 @@ class LogFile:
         return s[index:]
 
 
-def helper_get_results(config: defs.Config, results: Path, track: defs.Track = defs.Track.SingleQuery) -> pl.LazyFrame:
+def helper_get_results(
+    config: defs.Config, results: List[Path], track: defs.Track = defs.Track.SingleQuery
+) -> pl.LazyFrame:
     """
+    If results is empty use the one in data
+
     Return on all the selected benchmarks for each solver that should run it
-    "track", "file", "scrambled_id", "logic", "division", "status", "solver", "answer", "cputime_s", "memory_B", "walltime_s".
+    "track", "file", "logic", "division", "status", "solver", "answer", "cputime_s", "memory_B", "walltime_s".
 
     -1 is used when no answer is available.
 
     """
-    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(track))
+    if len(results) == 0:
+        lf = (
+            pl.read_ipc(config.cached_current_results[track])
+            .lazy()
+            .with_columns(track=int(track))
+            .rename(
+                {
+                    "result": "answer",
+                    "memory_usage": "memory_B",
+                    "cpu_time": "cputime_s",
+                    "wallclock_time": "walltime_s",
+                }
+            )
+            .drop("year")
+        )
+    else:
+        lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
+        lf = lf.filter(track=int(track)).drop("scrambled_id")
     selected = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
     selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
@@ -273,7 +294,6 @@ def helper_get_results(config: defs.Config, results: Path, track: defs.Track = d
         on=["file", "solver", "track"],
         defaults={
             "answer": -1,
-            "scramble_id": 1,
             "cputime_s": -1,
             "memory_B": -1,
             "walltime_s": -1,

@@ -14,6 +14,11 @@ c_status = pl.col("status")
 sat_status = c_status == int(defs.Status.Sat)
 unsat_status = c_status == int(defs.Status.Unsat)
 
+c_sound_status = pl.col("sound_status")
+sat_sound_status = c_sound_status == int(defs.Status.Sat)
+unsat_sound_status = c_sound_status == int(defs.Status.Unsat)
+
+
 c_walltime_s = pl.col("walltime_s")
 c_cputime_s = pl.col("cputime_s")
 twentyfour = c_walltime_s <= 24
@@ -49,15 +54,24 @@ def add_disagreements_info(results: pl.LazyFrame) -> pl.LazyFrame:
     disagreements = (pl.col("sound_solvers") & sat_answer).any().over("track", "file") & (
         pl.col("sound_solvers") & unsat_answer
     ).any().over("track", "file")
-    return results.with_columns(disagreements=disagreements).drop("sound_solvers")
+    sound_status = (
+        pl.when((pl.col("sound_solvers") & sat_answer).any().over("track", "file"))
+        .then(int(defs.Answer.Sat))
+        .when((pl.col("sound_solvers") & unsat_answer).any().over("track", "file"))
+        .then(int(defs.Answer.Unsat))
+        .otherwise(c_status)
+    )
+
+    return results.with_columns(disagreements=disagreements, sound_status=sound_status).drop("sound_solvers")
 
 
 def benchmark_scoring(results: pl.LazyFrame) -> pl.LazyFrame:
     """
+    Requires disagreements
     Add "error_score", "correctly_solved_score", "wallclock_time_score","cpu_time_score"
     """
 
-    error_score = pl.when((sat_status & unsat_answer) | (unsat_status & sat_answer)).then(-1).otherwise(0)
+    error_score = pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(-1).otherwise(0)
     """
     Use -1 instead of 1 for error so that we can use lexicographic comparison
     """
@@ -111,8 +125,8 @@ def filter_for(kind: Kind, config: defs.Config, results: pl.LazyFrame) -> pl.Laz
         case Kind.seq:
             return virtual_sequential_score(config, results)
         case Kind.sat:
-            return results.filter(sat_answer)
+            return results.filter(sat_sound_status)
         case Kind.unsat:
-            return results.filter(unsat_answer)
+            return results.filter(unsat_sound_status)
         case Kind.twentyfour:
             return results.filter(twentyfour)

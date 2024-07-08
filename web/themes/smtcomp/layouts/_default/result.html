@@ -4,7 +4,7 @@
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format ":date_long" }}
 
-  {{ $trueDivision := and (isset .Params "logics") (index .Params.logics 0 | len | ne 0) }}
+  {{ $trueDivision := and (isset .Params "logics") (.Params.logics | len | ne 0) }}
 
   <h2>{{ .Params.division }} ({{ .Params.track }})</h2>
 
@@ -23,9 +23,9 @@
 </p>
 
 {{ if $trueDivision }}
-<b>Logics: </b><ul>
-  {{ range $logic, $benchmarks := index .Params.logics 0 }}
-  <li><a href="../{{ $logic | lower }}-{{ replace ($.Params.track | strings.TrimPrefix "track_") "_" "-" }}">{{ $logic }}</a> : {{ $benchmarks }} benchmarks</li>
+<b>Logics:</b><ul>
+  {{ range $logic, $benchmarks := .Params.logics }}
+  <li><a href="../{{ $logic | lower }}-{{ replace ($.Params.track | strings.TrimPrefix "track_") "_" "-" }}">{{ $logic | upper }}</a> : {{ $benchmarks }} benchmarks</li>
   {{ end }}
 </ul>
 {{ end }}
@@ -38,7 +38,7 @@
     <tr>
     {{ range $cat := $winner_categories }}
       {{ if isset $.Params $cat }}
-      <th class="center">Sequential Performance</th>
+      <th class="center">{{$cat}}</th>
       {{ end }}
     {{ end }}
     </tr>

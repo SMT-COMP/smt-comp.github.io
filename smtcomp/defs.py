@@ -1479,6 +1479,10 @@ class Config:
         ]
 
     @functools.cached_property
+    def web_results(self) -> Path:
+        return self.data / ".." / "web" / "content" / "results"
+
+    @functools.cached_property
     def seed(self) -> int:
         unknown_seed = 0
         seed = 0
