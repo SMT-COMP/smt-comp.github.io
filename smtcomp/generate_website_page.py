@@ -267,6 +267,8 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
 
     dst = config.web_results
 
+    results = results.collect().lazy()
+
     for div, data in sq_generate_divisions(config, selection, results).items():
         (dst / f"{str(div).lower()}-single-query.md").write_text(data.model_dump_json(indent=1))
 
