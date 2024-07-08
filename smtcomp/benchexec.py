@@ -144,15 +144,13 @@ def cmdtask_for_submission(
     s: defs.Submission, cachedir: Path, target_track: defs.Track, target_division: defs.Division
 ) -> List[CmdTask]:
     res: List[CmdTask] = []
-    i = -1
-    for p in s.participations.root:
+    for i, p in enumerate(s.participations.root):
         command = cast(defs.Command, p.command if p.command else s.command)
         archive = cast(defs.Archive, p.archive if p.archive else s.archive)
         for track, divisions in p.get().items():
             if track != target_track:
                 continue
 
-            i = i + 1
             suffix = get_suffix(track)
             taskdirs: list[str] = [
                 f"../benchmarks/files{suffix}/{logic}" for logic in divisions.get(target_division, [])
