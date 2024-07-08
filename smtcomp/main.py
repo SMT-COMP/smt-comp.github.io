@@ -314,7 +314,7 @@ def stats_of_benchexec_results(
 
 slash = pl.lit("/")
 path_of_logic_family_name = pl.concat_str(
-    pl.col("logic").first().apply(defs.Logic.name_of_int, return_dtype=pl.String),
+    pl.col("logic").first().map_elements(defs.Logic.name_of_int, return_dtype=pl.String),
     slash,
     pl.col("family").first(),
     slash,
