@@ -103,6 +103,32 @@ def podium_division(config: defs.Config, d: dict[str, Any]) -> PodiumDivision:
     )
 
 
+def podium_logic(config: defs.Config, d: dict[str, Any]) -> PodiumDivision:
+    return PodiumDivision(
+        resultdate="2024-07-08",
+        year=config.current_year,
+        divisions=f"divisions_{config.current_year}",
+        participants=f"participants_{config.current_year}",
+        disagreements=f"disagreements_{config.current_year}",
+        division=defs.Logic.name_of_int(d["logic"]),
+        track="track_single_query",
+        n_benchmarks=d["total"],
+        time_limit=config.timelimit_s,
+        mem_limit=config.memlimit_M,
+        logics=dict(),
+        winner_seq=d[smtcomp.scoring.Kind.seq.name][0]["solver"],  # TODO select only participating
+        winner_par=d[smtcomp.scoring.Kind.par.name][0]["solver"],
+        winner_sat=d[smtcomp.scoring.Kind.sat.name][0]["solver"],
+        winner_unsat=d[smtcomp.scoring.Kind.unsat.name][0]["solver"],
+        winner_24s=d[smtcomp.scoring.Kind.twentyfour.name][0]["solver"],
+        sequential=podium_steps(d[smtcomp.scoring.Kind.seq.name]),
+        parallel=podium_steps(d[smtcomp.scoring.Kind.par.name]),
+        sat=podium_steps(d[smtcomp.scoring.Kind.sat.name]),
+        unsat=podium_steps(d[smtcomp.scoring.Kind.unsat.name]),
+        twentyfour=podium_steps(d[smtcomp.scoring.Kind.twentyfour.name]),
+    )
+
+
 def sq_generate_divisions(
     config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame
 ) -> dict[defs.Division, PodiumDivision]:
@@ -173,11 +199,76 @@ def sq_generate_divisions(
     return dict((defs.Division.of_int(d["division"]), podium_division(config, d)) for d in df.to_dicts())
 
 
-def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame) -> None:
+def sq_generate_logics(
+    config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame
+) -> dict[defs.Logic, PodiumDivision]:
+    """
+    With disagreements
+    """
+    assert "disagreements" in results.columns
+    results = results.filter(track=int(defs.Track.SingleQuery)).drop("track")
 
-    datas = sq_generate_divisions(config, selection, results)
+    selection = selection.filter(selected=True)
+
+    len_by_division = selection.group_by("logic").agg(total=pl.len())
+
+    def info_for_podium_step(kind: smtcomp.scoring.Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
+        results = smtcomp.scoring.filter_for(kind, config, results)
+        return (
+            intersect(results, len_by_division, on=["logic"])
+            .group_by("logic", "solver")
+            .agg(
+                pl.sum("error_score"),
+                pl.sum("correctly_solved_score"),
+                pl.sum("cpu_time_score"),
+                pl.sum("wallclock_time_score"),
+                solved=(smtcomp.scoring.known_answer).sum(),
+                solved_sat=(smtcomp.scoring.sat_answer).sum(),
+                solved_unsat=(smtcomp.scoring.unsat_answer).sum(),
+                unsolved=(smtcomp.scoring.unknown_answer).sum(),
+                timeout=(smtcomp.scoring.timeout_answer).sum(),
+                memout=(smtcomp.scoring.memout_answer).sum(),
+                abstained=pl.col("total").first() - pl.len(),
+            )
+            .sort(["logic"] + smtcomp.scoring.scores, descending=True)
+            .group_by("logic", maintain_order=True)
+            .agg(
+                pl.struct(
+                    "solver",
+                    "error_score",
+                    "correctly_solved_score",
+                    "cpu_time_score",
+                    "wallclock_time_score",
+                    "solved",
+                    "solved_sat",
+                    "solved_unsat",
+                    "unsolved",
+                    "timeout",
+                    "memout",
+                    "abstained",
+                ).alias(kind.name)
+            )
+        )
+
+    lf_info2 = results.group_by("logic").agg(disagreements=(pl.col("disagreements") == True).sum())
+
+    results = results.filter(disagreements=False).drop("disagreements")
+
+    l = [len_by_division, lf_info2] + [info_for_podium_step(kind, config, results) for kind in smtcomp.scoring.Kind]
+
+    r = functools.reduce(lambda x, y: x.join(y, validate="1:1", on=["logic"]), l)
+
+    df = r.collect()
+
+    return dict((defs.Logic.of_int(d["logic"]), podium_logic(config, d)) for d in df.to_dicts())
+
+
+def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame) -> None:
 
     dst = config.web_results
 
-    for div, data in datas.items():
+    for div, data in sq_generate_divisions(config, selection, results).items():
         (dst / f"{str(div).lower()}-single-query.md").write_text(data.model_dump_json(indent=1))
+
+    for logic, data in sq_generate_logics(config, selection, results).items():
+        (dst / f"{str(logic).lower()}-single-query.md").write_text(data.model_dump_json(indent=1))
