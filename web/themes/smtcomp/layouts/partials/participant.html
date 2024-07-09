@@ -1,7 +1,7 @@
 <tr>
   <td><a href="{{ .website }}">{{ .name }}</a></td>
 
-  <td>{{ if (gt (len .tracks.SingleQuery) 0) }}X{{ end }}</td>
+  <td>{{ with .tracks.SingleQuery }}X{{ end }}</td>
   <td>{{ with .tracks.Incremental }}X{{ end }}</td>
   <td>{{ with .tracks.UnsatCore }}X{{ end }}</td>
   <td>{{ with .tracks.ModelValidation }}X{{ end }}</td>
