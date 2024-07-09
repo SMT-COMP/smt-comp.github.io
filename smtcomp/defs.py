@@ -1465,7 +1465,7 @@ class Config:
     current_year = 2024
     oldest_previous_results = 2018
     timelimit_s = 60 * 20
-    memlimit_M = 1024 * 20
+    memlimit_M = 1024 * 30
     cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
