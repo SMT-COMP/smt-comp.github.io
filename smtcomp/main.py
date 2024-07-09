@@ -92,7 +92,7 @@ def show_json(files: list[Path] = typer.Argument(None), prefix: Optional[Path] =
     l = list(map(submission.read_submission_or_exit, files))
 
     data = [submission.raw_summary(s) for s in l]
-    print(json.dumps(data, indent=4))
+    print(json.dumps(data))
 
 
 @app.command(rich_help_panel=submissions_panel)
