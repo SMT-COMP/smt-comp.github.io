@@ -27,7 +27,7 @@
       <th>System description</th>
     </tr>
 
-    {{ range $.Site.Data.participants }}
+    {{ range (sort $.Site.Data.participants "name" "asc") }}
     {{ partial "participant.html" . }}
     {{ end }}
 
