@@ -189,6 +189,9 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
     run_defs.mkdir(parents=True, exist_ok=True)
 
     for target_track, divisions in defs.tracks.items():
+        if target_track in (defs.Track.Cloud, defs.Track.Parallel):
+            continue
+
         for division in divisions.keys():
             res = cmdtask_for_submission(s, cachedir, target_track, division)
             if res:
