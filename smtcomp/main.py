@@ -81,18 +81,17 @@ def show(
 
 
 @app.command(rich_help_panel=submissions_panel)
-def show_json(files: list[Path] = typer.Argument(None), prefix: Optional[Path] = None) -> None:
+def show_json(files: list[Path], target_file: Path) -> None:
     """
     Show information about solver submissions in JSON format
     """
 
-    if prefix is not None:
-        files = list(map(prefix.joinpath, files))
-
     l = list(map(submission.read_submission_or_exit, files))
 
     data = [submission.raw_summary(s) for s in l]
-    print(json.dumps(data, indent=4))
+
+    with open(target_file, "w") as f:
+        json.dump(data, f)
 
 
 @app.command(rich_help_panel=submissions_panel)
