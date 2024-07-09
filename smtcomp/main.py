@@ -81,9 +81,7 @@ def show(
 
 
 @app.command(rich_help_panel=submissions_panel)
-def show_json(
-        files: list[Path],
-        target_file: Path) -> None:
+def show_json(files: list[Path], target_file: Path) -> None:
     """
     Show information about solver submissions in JSON format
     """
