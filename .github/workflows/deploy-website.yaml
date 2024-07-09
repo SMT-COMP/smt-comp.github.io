@@ -57,6 +57,7 @@ jobs:
           pip install json-schema-for-humans
           poetry run make submission-doc
           poetry run make participant-data
+          cat web/data/participants.json
       ###
       - name: Setup Pages
         id: pages
