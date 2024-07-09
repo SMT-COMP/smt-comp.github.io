@@ -57,7 +57,7 @@ submission-doc: submission-generation
 
 participant-data:
 	@echo "🚀 Generating participant data to $(PARTICIPANT_DATA_FILE)"
-	@poetry run smtcomp show-json submissions/*.json > $(PARTICIPANT_DATA_FILE)
+	@poetry run smtcomp show-json submissions/*.json $(PARTICIPANT_DATA_FILE)
 
 hugo-server:
 	(cd web; hugo server)
