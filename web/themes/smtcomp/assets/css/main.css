@@ -704,3 +704,9 @@ td.track {
   width: 6em;
   white-space: normal;
 }
+
+col.archive,
+td.archive {
+  width: 6em;
+  white-space: normal;
+}
