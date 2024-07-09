@@ -248,7 +248,7 @@ def stats_of_benchexec_results(
     data: Path,
     results: List[Path] = typer.Argument(None),
     only_started: bool = False,
-    track: defs.Track = defs.Track.SingleQuery,
+    track: defs.Track = typer.Argument(defs.Track.SingleQuery.name),
 ) -> None:
     """
     Load benchexec results and print some results about them
