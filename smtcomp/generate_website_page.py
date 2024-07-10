@@ -210,6 +210,7 @@ def sq_generate_datas(
 def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame) -> None:
 
     dst = config.web_results
+    dst.mkdir(parents=True, exist_ok=True)
 
     results = results.collect().lazy()
 
