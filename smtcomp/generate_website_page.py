@@ -516,3 +516,18 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
 
             largedata = largest_contribution(config, selection, scores)
             (dst / f"largest-contribution-single-query.md").write_text(largedata.model_dump_json(indent=1))
+
+    (dst / "results-single-query.md").write_text(
+        f"""
+---
+layout: results_summary
+track: track_single_query
+scores: sequential,parallel,sat,unsat,twentyfour
+year: {config.current_year}
+results: results
+divisions: divisions
+participants: participants
+disagreements: disagreements
+---
+"""
+    )
