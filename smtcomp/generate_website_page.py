@@ -124,10 +124,8 @@ def sq_generate_datas(
     config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, for_division: bool
 ) -> dict[str, PodiumDivision]:
     """
-    Input with disagreements
     Generate datas for divisions or for logics
     """
-    assert "disagreements" in results.columns
 
     if for_division:
         group_by = "division"
@@ -190,15 +188,7 @@ def sq_generate_datas(
     else:
         lf_logics = []
 
-    lf_info2 = results.group_by(group_by).agg(disagreements=(pl.col("disagreements") == True).sum())
-
-    results = results.filter(disagreements=False).drop("disagreements")
-
-    l = (
-        [len_by_division, lf_info2]
-        + lf_logics
-        + [info_for_podium_step(kind, config, results) for kind in smtcomp.scoring.Kind]
-    )
+    l = [len_by_division] + lf_logics + [info_for_podium_step(kind, config, results) for kind in smtcomp.scoring.Kind]
 
     r = functools.reduce(lambda x, y: x.join(y, validate="1:1", on=[group_by], how="left"), l)
 
@@ -212,6 +202,7 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     dst = config.web_results
     dst.mkdir(parents=True, exist_ok=True)
 
+    results = results.filter(disagreements=False).drop("disagreements")
     results = results.collect().lazy()
 
     for for_division in [True, False]:
