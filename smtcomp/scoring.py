@@ -47,22 +47,22 @@ def add_disagreements_info(results: pl.LazyFrame) -> pl.LazyFrame:
       - Disagreements are benchmarks where sound solvers disagree (so status unknown)
     """
 
-    sound_solvers = (
+    sound_solver = (
         ((sat_status & unsat_answer) | (unsat_status & sat_answer)).any().over("track", "division", "solver").not_()
     )
-    results = results.with_columns(sound_solvers=sound_solvers)
-    disagreements = (pl.col("sound_solvers") & sat_answer).any().over("track", "file") & (
-        pl.col("sound_solvers") & unsat_answer
+    results = results.with_columns(sound_solver=sound_solver)
+    disagreements = (pl.col("sound_solver") & sat_answer).any().over("track", "file") & (
+        pl.col("sound_solver") & unsat_answer
     ).any().over("track", "file")
     sound_status = (
-        pl.when((pl.col("sound_solvers") & sat_answer).any().over("track", "file"))
+        pl.when((pl.col("sound_solver") & sat_answer).any().over("track", "file"))
         .then(int(defs.Answer.Sat))
-        .when((pl.col("sound_solvers") & unsat_answer).any().over("track", "file"))
+        .when((pl.col("sound_solver") & unsat_answer).any().over("track", "file"))
         .then(int(defs.Answer.Unsat))
         .otherwise(c_status)
     )
 
-    return results.with_columns(disagreements=disagreements, sound_status=sound_status).drop("sound_solvers")
+    return results.with_columns(disagreements=disagreements, sound_status=sound_status)
 
 
 def benchmark_scoring(results: pl.LazyFrame) -> pl.LazyFrame:

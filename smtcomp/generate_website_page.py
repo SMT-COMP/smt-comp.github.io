@@ -194,6 +194,7 @@ def sq_generate_datas(
 
     selection = selection.filter(selected=True)
 
+    # TODO it should be done after filter_for
     len_by_division = selection.group_by(group_by).agg(total=pl.len())
 
     def info_for_podium_step(kind: smtcomp.scoring.Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
@@ -371,6 +372,8 @@ def largest_contribution_ranking(
         if not v_steps:
             assert not vws_steps
             return []
+        if len(vws_steps) <= 2:
+            return []
         virtual = v_steps[0]
         assert virtual.name == "virtual"
         ratio = ratio_by_division[div]
@@ -424,21 +427,24 @@ def largest_contribution_ranking(
 
 
 def largest_contribution(
-    config: defs.Config, selection: pl.LazyFrame, scores: pl.LazyFrame, total_len: int
+    config: defs.Config, selection: pl.LazyFrame, scores: pl.LazyFrame
 ) -> PodiumLargestContribution:
     for_division = True
     # For each solver compute its corresponding best solver
     # TODO: check what is competitive solver (unsound?)
+
+    scores = scores.filter(error_score=0, sound_solver=True).filter(smtcomp.scoring.known_answer)
+    scores_col = scores.collect()
+    total_len = len(scores_col)
+    scores = scores_col.lazy()
     ratio_by_division_ = scores.group_by("division").agg(total=(pl.len() / float(total_len))).collect().to_dict()
     ratio_by_division = dict(
         zip(map(defs.Division.name_of_int, ratio_by_division_["division"]), ratio_by_division_["total"])
     )
 
-    filtered_score = scores.filter(error_score=0).filter(smtcomp.scoring.known_answer)
-
     # Virtual solver
     virtual_scores = (
-        filtered_score.group_by("division", "file")
+        scores.group_by("division", "file")
         .agg(
             pl.max("correctly_solved_score"),
             pl.min("walltime_s"),
@@ -455,7 +461,7 @@ def largest_contribution(
     # For each solver Compute virtual solver without the solver
     solvers = scores.select("division", "solver").unique()
     virtual_without_solver_scores = (
-        intersect(filtered_score.rename({"solver": "other_solver"}), solvers, on=["division"])
+        intersect(scores.rename({"solver": "other_solver"}), solvers, on=["division"])
         .filter(pl.col("solver") != pl.col("other_solver"))
         .drop("other_solver")
         .group_by("division", "solver", "file")
@@ -472,12 +478,19 @@ def largest_contribution(
     )
     virtual_without_solver_datas = sq_generate_datas(config, selection, virtual_without_solver_scores, for_division)
 
-    return largest_contribution_ranking(
+    large = largest_contribution_ranking(
         config,
         virtual_datas,
         virtual_without_solver_datas,
         ratio_by_division,
     )
+
+    if False:
+        print(virtual_datas)
+        print(virtual_without_solver_datas)
+        print(large)
+
+    return large
 
 
 def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame) -> None:
@@ -489,9 +502,7 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     scores = smtcomp.scoring.benchmark_scoring(scores)
     scores = scores.filter(disagreements=False).drop("disagreements")
     scores = scores.filter(track=int(defs.Track.SingleQuery)).drop("track")
-    scores_col = scores.collect()
-    total_len = len(scores_col)
-    scores = scores_col.lazy()
+    scores = scores.collect().lazy()
 
     for for_division in [True, False]:
         datas = sq_generate_datas(config, selection, scores, for_division)
@@ -503,5 +514,5 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             bigdata = biggest_lead_ranking(config, datas)
             (dst / f"biggest-lead-single-query.md").write_text(bigdata.model_dump_json(indent=1))
 
-            largedata = largest_contribution(config, selection, scores, total_len)
+            largedata = largest_contribution(config, selection, scores)
             (dst / f"largest-contribution-single-query.md").write_text(largedata.model_dump_json(indent=1))
