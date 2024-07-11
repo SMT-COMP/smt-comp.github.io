@@ -83,7 +83,7 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
 def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool) -> PodiumDivision:
     def get_winner(l: List[dict[str, str]] | None) -> str:
         # TODO select only participating
-        if l is None:
+        if l is None or l[0]["correctly_solved_score"] == 0:
             return "-"
         else:
             return l[0]["solver"]
@@ -106,7 +106,7 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool) -> P
         n_benchmarks=d["total"],
         time_limit=config.timelimit_s,
         mem_limit=config.memlimit_M,
-        logics=logics,
+        logics=dict(sorted(logics.items())),
         winner_seq=get_winner(d[smtcomp.scoring.Kind.seq.name]),
         winner_par=get_winner(d[smtcomp.scoring.Kind.par.name]),
         winner_sat=get_winner(d[smtcomp.scoring.Kind.sat.name]),
@@ -160,7 +160,7 @@ def sq_generate_datas(
                 memout=(smtcomp.scoring.memout_answer).sum(),
                 abstained=pl.col("total").first() - pl.len(),
             )
-            .sort([group_by] + smtcomp.scoring.scores, descending=True)
+            .sort([group_by] + smtcomp.scoring.scores + ["solver"], descending=True)
             .group_by(group_by, maintain_order=True)
             .agg(
                 pl.struct(
