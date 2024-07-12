@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 import smtcomp.defs as defs
-import subprocess
+import subprocess, resource
 import smtcomp.results as results
 from smtcomp.benchexec import get_suffix
 import smtcomp.scramble_benchmarks
@@ -41,7 +41,7 @@ class ValidationOk:
 class ValidationError:
     status: defs.Status
     stderr: str
-    model: str | None
+    model: str
 
 
 @dataclass
@@ -62,6 +62,12 @@ def is_error(x: Validation) -> ValidationError | None:
             return None
 
 
+def raise_stack_limit() -> None:
+    soft, hard = resource.getrlimit(resource.RLIMIT_STACK)
+    soft = min(40_000_000_000, hard)
+    resource.setrlimit(resource.RLIMIT_STACK, (soft, hard))
+
+
 def check_locally(config: defs.Config, smt2_file: Path, model: str) -> Validation:
     r = subprocess.run(
         [
@@ -75,6 +81,7 @@ def check_locally(config: defs.Config, smt2_file: Path, model: str) -> Validatio
         ],
         input=model.encode(),
         capture_output=True,
+        preexec_fn=raise_stack_limit,
     )
     match r.returncode:
         case 0:

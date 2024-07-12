@@ -19,6 +19,7 @@ import smtcomp.archive as archive
 import smtcomp.benchexec as benchexec
 import smtcomp.benchexec
 import smtcomp.defs as defs
+import smtcomp.model_validation
 import smtcomp.results
 import smtcomp.scoring
 import smtcomp.submission as submission
@@ -971,11 +972,18 @@ def check_model_locally(
             for resultdir in resultdirs:
                 l2 = model_validation.check_results_locally(config, cachedir, resultdir, executor, progress)
                 l.extend(filter_map(map_none3(model_validation.is_error), l2))
-    keyfunc = lambda v: v[0].solver
+    if not l:
+        print("[green]All models validated[/green]")
+        return
+
+    def keyfunc(
+        v: tuple[smtcomp.results.RunId, smtcomp.results.Run, smtcomp.model_validation.ValidationError],
+    ) -> str:
+        return v[0].solver
+
     l.sort(key=keyfunc)
-    d = itertools.groupby(l, key=keyfunc)
-    t = Tree("Unvalidated models")
-    for solver, rs in d:
+    t = Tree("[red]Unvalidated models[/red]")
+    for solver, rs in itertools.groupby(l, key=keyfunc):
         t2 = t.add(solver)
         for rid, r, result in rs:
             stderr = result.stderr.strip().replace("\n", ", ")
@@ -983,17 +991,16 @@ def check_model_locally(
             t2.add(f"{basename}: {stderr}")
     print(t)
     if outdir is not None:
-        for solver, models in d:
-            dst = outdir / solver
+        for rid, r, result in l:
+            dst = outdir / rid.solver
             dst.mkdir(parents=True, exist_ok=True)
-            for rid, r, result in models:
-                filedir = benchmark_files_dir(cachedir, rid.track)
-                basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
-                basename_model = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="rsmt2")
-                smt2_file = filedir / str(r.logic) / basename
-                (dst / basename).unlink(missing_ok=True)
-                (dst / basename).symlink_to(smt2_file)
-                (dst / basename_model).write_text(result.model)
+            filedir = benchmark_files_dir(cachedir, rid.track)
+            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+            basename_model = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="rsmt2")
+            smt2_file = filedir / str(r.logic) / basename
+            (dst / basename).unlink(missing_ok=True)
+            (dst / basename).symlink_to(smt2_file.absolute())
+            (dst / basename_model).write_text(result.model)
 
 
 @app.command()
