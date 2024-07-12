@@ -962,13 +962,14 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
 
 @app.command()
 def check_model_locally(
-    cachedir: Path, resultdirs: list[Path], max_workers: int = 8, outdir: Optional[Path] = None
+    data: Path, cachedir: Path, resultdirs: list[Path], max_workers: int = 8, outdir: Optional[Path] = None
 ) -> None:
+    config = defs.Config(data)
     l: list[tuple[results.RunId, results.Run, model_validation.ValidationError]] = []
     with Progress() as progress:
         with ThreadPoolExecutor(max_workers) as executor:
             for resultdir in resultdirs:
-                l2 = model_validation.check_results_locally(cachedir, resultdir, executor, progress)
+                l2 = model_validation.check_results_locally(config, cachedir, resultdir, executor, progress)
                 l.extend(filter_map(map_none3(model_validation.is_error), l2))
     keyfunc = lambda v: v[0].solver
     l.sort(key=keyfunc)

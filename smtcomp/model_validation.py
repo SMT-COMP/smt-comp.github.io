@@ -62,10 +62,10 @@ def is_error(x: Validation) -> ValidationError | None:
             return None
 
 
-def check_locally(smt2_file: Path, model: str) -> Validation:
+def check_locally(config: defs.Config, smt2_file: Path, model: str) -> Validation:
     r = subprocess.run(
         [
-            "dolmen",
+            config.dolmen_binary,
             "--time=1h",
             "--size=40G",
             "--strict=false",
@@ -89,26 +89,28 @@ def check_locally(smt2_file: Path, model: str) -> Validation:
     return ValidationError(status, r.stderr.decode(), model)
 
 
-def check_result_locally(cachedir: Path, logfiles: results.LogFile, rid: results.RunId, r: results.Run) -> Validation:
+def check_result_locally(
+    config: defs.Config, cachedir: Path, logfiles: results.LogFile, rid: results.RunId, r: results.Run
+) -> Validation:
     match r.answer:
         case defs.Answer.Sat:
             filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
             basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
             smt2_file = filedir / str(r.logic) / basename
             model = logfiles.get_output(rid, smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="yml"))
-            return check_locally(smt2_file, model)
+            return check_locally(config, smt2_file, model)
         case _:
             return noValidation
 
 
 def check_results_locally(
-    cachedir: Path, resultdir: Path, executor: ThreadPoolExecutor, progress: Progress
+    config: defs.Config, cachedir: Path, resultdir: Path, executor: ThreadPoolExecutor, progress: Progress
 ) -> list[tuple[results.RunId, results.Run, Validation]]:
     with results.LogFile(resultdir) as logfiles:
         l = [(r.runid, b) for r in results.parse_results(resultdir) for b in r.runs if b.answer == defs.Answer.Sat]
         return list(
             progress.track(
-                executor.map((lambda v: (v[0], v[1], check_result_locally(cachedir, logfiles, v[0], v[1]))), l),
+                executor.map((lambda v: (v[0], v[1], check_result_locally(config, cachedir, logfiles, v[0], v[1]))), l),
                 total=len(l),
                 description=f"checking models for {resultdir.name}",
             )
