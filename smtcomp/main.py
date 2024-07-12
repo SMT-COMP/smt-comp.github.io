@@ -11,7 +11,7 @@ from rich import print
 import typer
 from pydantic import ValidationError
 from collections import defaultdict
-import json
+import json, subprocess
 
 import polars as pl
 
@@ -1002,6 +1002,30 @@ def export_results_pages(data: Path, results: list[Path] = typer.Argument(None))
     """
     config = defs.Config(data)
     lf, selection = smtcomp.results.helper_get_results(config, results)
-    lf = smtcomp.scoring.add_disagreements_info(lf)
-    lf = smtcomp.scoring.benchmark_scoring(lf)
     smtcomp.generate_website_page.export_results(config, selection, lf)
+
+
+@app.command()
+def build_dolmen(data: Path) -> None:
+    f"""
+    build dolmen at version {defs.Config.dolmen_commit}
+    """
+
+    config = defs.Config(data)
+
+    if config.dolmen_binary.is_file():
+        print("[green]Binary already built[/green]")
+        return
+
+    r = subprocess.run(["./build.sh", config.dolmen_commit], cwd=config.dolmen_dir)
+
+    if r.returncode != 0:
+        print("[red]Build failed[/red]")
+        exit(1)
+
+    if config.dolmen_binary.is_file():
+        print("[green]Binary successfully built[/green]")
+        return
+    else:
+        print("[red]Binary still missing[/red]")
+        exit(1)

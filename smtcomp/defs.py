@@ -1418,6 +1418,10 @@ class Config:
     """
     Minimum number of assertions for unsat core
     """
+    dolmen_commit = "871b9de26643052dfcfa5b47ee23785f0b983219"
+    """
+    Commit of the model validator dolmen (branch smtcomp-2023)
+    """
 
     removed_benchmarks = [
         {
@@ -1492,6 +1496,14 @@ class Config:
     @functools.cached_property
     def web_results(self) -> Path:
         return self.data / ".." / "web" / "content" / "results"
+
+    @functools.cached_property
+    def dolmen_dir(self) -> Path:
+        return self.data / "../external-tools/dolmen"
+
+    @functools.cached_property
+    def dolmen_binary(self) -> Path:
+        return self.dolmen_dir / "binaries" / self.dolmen_commit / "dolmen"
 
     @functools.cached_property
     def seed(self) -> int:
