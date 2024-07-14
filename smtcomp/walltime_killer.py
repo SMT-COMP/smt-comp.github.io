@@ -8,6 +8,7 @@ import logging
 
 logging.basicConfig(level=logging.ERROR)
 
+
 def main() -> None:
     if len(sys.argv) < 3:
         print("Usage: ./walltime_killer.py WALLTIME COMMAND")

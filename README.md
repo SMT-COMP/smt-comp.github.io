@@ -151,6 +151,7 @@ smtcomp select-and-scramble Incremental ./data/ $DIR/zenodo ../tmp/execution SCR
 smtcomp select-and-scramble ModelValidation ./data/ $DIR/zenodo ../tmp/execution SCRAMBLER_EXECUTABLE [--test]
 smtcomp select-and-scramble UnsatCore ./data/ $DIR/zenodo ../tmp/execution SCRAMBLER_EXECUTABLE  [--test]
 ```
+
 Use the `--test` switch if you want to select and scramble only a small number of easy benchmarks for each logic.
 
 The benchexec tasks generated using:
