@@ -36,7 +36,7 @@ from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
 import smtcomp.test_solver as test_solver
-from concurrent.futures import ThreadPoolExecutor
+from multiprocessing.pool import ThreadPool
 from smtcomp.benchexec import get_suffix
 from smtcomp.scramble_benchmarks import benchmark_files_dir
 from smtcomp.utils import *
@@ -968,9 +968,9 @@ def check_model_locally(
     config = defs.Config(data)
     l: list[tuple[results.RunId, results.Run, model_validation.ValidationError]] = []
     with Progress() as progress:
-        with ThreadPoolExecutor(max_workers) as executor:
+        with ThreadPool(max_workers) as executor:
             for resultdir in resultdirs:
-                l2 = model_validation.check_results_locally(config, cachedir, resultdir, executor, progress)
+                l2 = model_validation.check_all_results_locally(config, cachedir, resultdir, executor, progress)
                 l.extend(filter_map(map_none3(model_validation.is_error), l2))
     if not l:
         print("[green]All models validated[/green]")
@@ -992,7 +992,7 @@ def check_model_locally(
     print(t)
     if outdir is not None:
         for rid, r, result in l:
-            dst = outdir / rid.solver
+            dst = outdir / f"{rid.solver}.{rid.participation}"
             dst.mkdir(parents=True, exist_ok=True)
             filedir = benchmark_files_dir(cachedir, rid.track)
             basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)

@@ -52,8 +52,8 @@ def extract_all_with_executable_permission(file: Path, target_dir: Path) -> None
 def write_cin(file: Path, content: str) -> None:
     if file.name.endswith(".gz"):
         with gzip.GzipFile(file, "w", compresslevel=9, mtime=0.0) as binary_file:
-            f = io.TextIOWrapper(cast(IO[bytes], binary_file))
-            f.write(content)
+            with io.TextIOWrapper(cast(IO[bytes], binary_file)) as f:
+                f.write(content)
     else:
         file.write_text(content)
 
