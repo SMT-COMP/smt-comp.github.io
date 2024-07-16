@@ -421,7 +421,7 @@ def largest_contribution_ranking(
             k,
             sorted(
                 itertools.chain.from_iterable(aux(k, div) for div in ratio_by_division),
-                key=lambda k: (k.correctScore, k.timeScore),
+                key=lambda k: (k.correctScore, k.timeScore, k.division),
                 reverse=True,
             ),
         )
