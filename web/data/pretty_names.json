@@ -1,0 +1,24 @@
+{
+    "performance": {
+	"sequential": "Sequential",
+	"parallel": "Parallel",
+	"sat": "SAT",
+	"unsat": "UNSAT",
+	"twentyfour": "24 seconds"
+    },
+    "winner_performance": {
+	"winner_seq": "Sequential Performance",
+	"winner_par": "Parallel Performance",
+	"winner_sat": "SAT Performance (parallel)",
+	"winner_unsat": "UNSAT Performance (parallel)",
+	"winner_24s": "24 seconds Performance (parallel)"
+    },
+    "track": {
+	"track_single_query": "Single Query Track",
+	"track_incremental": "Incremental Track",
+	"track_unsatcore": "Unsat Core Track",
+	"track_model": "Model Validation Track",
+	"track_cloud": "Cloud Track",
+	"track_parallel": "Parallel Track"
+    }
+}
