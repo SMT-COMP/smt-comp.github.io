@@ -50,12 +50,15 @@ def extract_all_with_executable_permission(file: Path, target_dir: Path) -> None
 
 
 def write_cin(file: Path, content: str) -> None:
+    file_tmp = file.with_suffix(file.suffix + ".tmp")
     if file.name.endswith(".gz"):
-        with gzip.GzipFile(file, "w", compresslevel=9, mtime=0.0) as binary_file:
+        with gzip.GzipFile(file_tmp, "w", compresslevel=9, mtime=0.0) as binary_file:
             with io.TextIOWrapper(cast(IO[bytes], binary_file)) as f:
                 f.write(content)
+        file_tmp.rename(file)
     else:
         file.write_text(content)
+        file_tmp.rename(file)
 
 
 def read_cin(file: Path) -> str:

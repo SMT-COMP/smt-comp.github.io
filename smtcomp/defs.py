@@ -5,7 +5,7 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict, cast, Optional, Iterable, TypeVar, Self, ClassVar
+from typing import Any, Dict, cast, Optional, Iterable, TypeVar, Self, ClassVar, Union
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
@@ -154,6 +154,13 @@ class Answer(EnumAutoInt):
     Incremental = "incremental"
     OOM = "OutOfMemory"
     Timeout = "Timeout"
+    ModelNotValidated = "ModelNotValidated"
+    ModelUnsat = "ModelUnsat"
+    ModelParsingError = "ModelParsingError"
+    ModelPartialFunctionMissing = "ModelPartialFunctionMissing"
+    ModelValidatorException = "ModelValidatorException"
+    ModelValidatorBenchmarkStrictTyping = "ModelValidatorBenchmarkStrictTyping"
+    ModelValidatorTimeout = "ModelValidatorTimeout"
 
 
 class Track(EnumAutoInt):
@@ -1422,6 +1429,11 @@ class Config:
     """
     Commit of the model validator dolmen (branch smtcomp-2023)
     """
+    dolmen_force_logic_ALL = False
+    """
+    Some benchmarks are not accepted by dolmen in their current logic.
+    During model validation we can rerun by forcing logic ALL to accept more models
+    """
 
     removed_benchmarks = [
         {
@@ -1522,3 +1534,26 @@ class Config:
                 raise ValueError(f"{unknown_seed} submissions are missing a seed")
             seed += self.nyse_seed
         return seed
+
+
+class ValidationOk(BaseModel):
+    stderr: str
+
+
+class ValidationError(BaseModel):
+    status: Answer
+    stderr: str
+    model: str
+
+
+class NoValidation(BaseModel):
+    """No validation possible"""
+
+
+noValidation = NoValidation()
+
+Validation = ValidationError | ValidationOk | NoValidation
+
+
+class ValidationResult(RootModel):
+    root: Union[ValidationError, ValidationOk, NoValidation] = Field(union_mode="left_to_right")

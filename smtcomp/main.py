@@ -19,7 +19,6 @@ import smtcomp.archive as archive
 import smtcomp.benchexec as benchexec
 import smtcomp.benchexec
 import smtcomp.defs as defs
-import smtcomp.model_validation
 import smtcomp.results
 import smtcomp.scoring
 import smtcomp.submission as submission
@@ -965,8 +964,13 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
 def check_model_locally(
     data: Path, cachedir: Path, resultdirs: list[Path], max_workers: int = 8, outdir: Optional[Path] = None
 ) -> None:
+    """
+    Check the model of the given results, store the validation results in "model_validation_results".
+
+    Requires `smtcomp build-dolmen`
+    """
     config = defs.Config(data)
-    l: list[tuple[results.RunId, results.Run, model_validation.ValidationError]] = []
+    l: list[tuple[results.RunId, results.Run, defs.ValidationError]] = []
     with Progress() as progress:
         with ThreadPool(max_workers) as executor:
             for resultdir in resultdirs:
@@ -977,7 +981,7 @@ def check_model_locally(
         return
 
     def keyfunc(
-        v: tuple[smtcomp.results.RunId, smtcomp.results.Run, smtcomp.model_validation.ValidationError],
+        v: tuple[smtcomp.results.RunId, smtcomp.results.Run, defs.ValidationError],
     ) -> str:
         return v[0].solver
 
@@ -988,7 +992,24 @@ def check_model_locally(
         for rid, r, result in rs:
             stderr = result.stderr.strip().replace("\n", ", ")
             basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
-            t2.add(f"{basename}: {stderr}")
+            match result.status:
+                case defs.Answer.Unsat:
+                    status = "[red]unsat[/red]"
+                case defs.Answer.ModelUnsat:
+                    status = "[red]unsat model[/red]"
+                case defs.Answer.ModelNotValidated:
+                    status = "[red]not validated[/red]"
+                case defs.Answer.ModelParsingError:
+                    status = "[orange1]model parsing error[/orange1]"
+                case defs.Answer.ModelPartialFunctionMissing:
+                    status = "[orange1]interpretation of a partial function is missing[/orange1]"
+                case defs.Answer.ModelValidatorException:
+                    status = "[blue]model validator failed with an exception[/blue]"
+                case defs.Answer.ModelValidatorBenchmarkStrictTyping:
+                    status = "[blue]model validator refused benchmarks[/blue]"
+                case _:
+                    status = f"[orange1]{result.status}[/orange1]"
+            t2.add(f"{str(r.logic)} {basename} {status}: {stderr}")
     print(t)
     if outdir is not None:
         for rid, r, result in l:
@@ -1001,6 +1022,7 @@ def check_model_locally(
             (dst / basename).unlink(missing_ok=True)
             (dst / basename).symlink_to(smt2_file.absolute())
             (dst / basename_model).write_text(result.model)
+            (dst / basename).with_suffix(".output").write_text(result.stderr)
 
 
 @app.command()
