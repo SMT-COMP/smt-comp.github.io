@@ -1,7 +1,6 @@
 from pathlib import Path
-import rich
 from os.path import relpath
-from typing import List, cast, Dict, Optional
+from typing import List, cast, Optional
 
 from yattag import Doc, indent
 
