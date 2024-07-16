@@ -4,7 +4,7 @@ from pathlib import Path, PurePath
 from smtcomp import defs
 from rich import progress
 from rich import print
-from pydantic import BaseModel, RootModel, Field
+from pydantic import BaseModel, RootModel, Field, PlainSerializer
 import polars as pl
 import smtcomp.scoring
 from smtcomp.utils import *
@@ -12,14 +12,23 @@ import smtcomp.results
 
 # Warning: Hugo lowercase all dict keys
 
+float_6dig = Annotated[
+    float,
+    PlainSerializer(
+        lambda x: round(x, 6),
+        return_type=float,
+        when_used="json",
+    ),
+]
+
 
 class PodiumStep(BaseModel):
     name: str
     competing: str  # yes or no
     errorScore: int
     correctScore: int
-    CPUScore: float
-    WallScore: float
+    CPUScore: float_6dig
+    WallScore: float_6dig
     solved: int
     solved_sat: int
     solved_unsat: int
@@ -59,8 +68,8 @@ class PodiumDivision(BaseModel):
 class PodiumStepBiggestLead(BaseModel):
     name: str
     second: str
-    correctScore: float
-    timeScore: float
+    correctScore: float_6dig
+    timeScore: float_6dig
     division: str
 
 
@@ -86,8 +95,8 @@ class PodiumBiggestLead(BaseModel):
 
 class PodiumStepLargestContribution(BaseModel):
     name: str
-    correctScore: float
-    timeScore: float
+    correctScore: float_6dig
+    timeScore: float_6dig
     division: str
     experimental: str = "false"
 
