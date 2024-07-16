@@ -38,6 +38,7 @@ import smtcomp.test_solver as test_solver
 from multiprocessing.pool import ThreadPool
 from smtcomp.benchexec import get_suffix
 from smtcomp.scramble_benchmarks import benchmark_files_dir
+import smtcomp.certificates
 from smtcomp.utils import *
 import re
 
@@ -1042,7 +1043,7 @@ def export_results_pages(data: Path, results: list[Path] = typer.Argument(None))
 
 @app.command()
 def build_dolmen(data: Path) -> None:
-    f"""
+    """
     build dolmen at version {defs.Config.dolmen_commit}
     """
 
@@ -1064,3 +1065,18 @@ def build_dolmen(data: Path) -> None:
     else:
         print("[red]Binary still missing[/red]")
         exit(1)
+
+
+@app.command()
+def generate_certificates(
+    website_results: Path = Path("web/content/results"),
+    input_for_certificates: Path = Path("data/latex-certificates/input_for_certificates.tex"),
+    pretty_names: Path = Path("data/latex-certificates/solvers_pretty_name.csv"),
+    experimental_division: Path = Path("data/latex-certificates/experimental.csv"),
+) -> None:
+    """
+    generates the input data for the tex certificate generator.
+    """
+    smtcomp.certificates.generate_certificates(
+        website_results, input_for_certificates, pretty_names, experimental_division
+    )

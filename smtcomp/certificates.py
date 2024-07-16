@@ -191,7 +191,9 @@ def parse_experimental_division(solvers: Any, experimental_division: Path) -> di
     return res
 
 
-def main(website_results: Path, input_for_certificates: Path, pretty_names: Path, experimental_division: Path) -> None:
+def generate_certificates(
+    website_results: Path, input_for_certificates: Path, pretty_names: Path, experimental_division: Path
+) -> None:
     solvers: defaultdict[str, info] = defaultdict(info)
 
     parse_pretty_names(solvers, pretty_names)
@@ -253,11 +255,3 @@ def main(website_results: Path, input_for_certificates: Path, pretty_names: Path
                     output.flush()
             else:
                 print("solver: ", key, "( no certificate )")
-
-
-main(
-    Path("../../../smt-comp.github.io/_results_2023"),
-    Path("input_for_certificates.tex"),
-    Path("solvers_pretty_name.csv"),
-    Path("../experimental.csv"),
-)
