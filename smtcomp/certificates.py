@@ -132,31 +132,31 @@ class info:
 def update(
     solvers: defaultdict[str, info],
     select: Callable[[info, str], None],
-    yaml: page.PodiumDivision | page.PodiumBiggestLead | page.PodiumLargestContribution,
+    podium: page.PodiumDivision | page.PodiumBiggestLead | page.PodiumLargestContribution,
 ) -> None:
-    if yaml.track == "track_single_query":
-        select(solvers[yaml.winner_seq], "sq_seq")
-        select(solvers[yaml.winner_par], "sq_par")
-        select(solvers[yaml.winner_sat], "sq_sat")
-        select(solvers[yaml.winner_unsat], "sq_unsat")
-        select(solvers[yaml.winner_24s], "sq_24")
+    if podium.track == "track_single_query":
+        select(solvers[podium.winner_seq], "sq_seq")
+        select(solvers[podium.winner_par], "sq_par")
+        select(solvers[podium.winner_sat], "sq_sat")
+        select(solvers[podium.winner_unsat], "sq_unsat")
+        select(solvers[podium.winner_24s], "sq_24")
 
-    if yaml.track == "track_incremental":
-        select(solvers[yaml.winner_par], "inc")
+    if podium.track == "track_incremental":
+        select(solvers[podium.winner_par], "inc")
 
-    if yaml.track == "track_unsat_core":
-        select(solvers[yaml.winner_par], "uc_par")
-        select(solvers[yaml.winner_seq], "uc_seq")
+    if podium.track == "track_unsat_core":
+        select(solvers[podium.winner_par], "uc_par")
+        select(solvers[podium.winner_seq], "uc_seq")
 
-    if yaml.track == "track_model_validation":
-        select(solvers[yaml.winner_par], "mv_par")
-        select(solvers[yaml.winner_seq], "mv_seq")
+    if podium.track == "track_model_validation":
+        select(solvers[podium.winner_par], "mv_par")
+        select(solvers[podium.winner_seq], "mv_seq")
 
-    if show_experimental and yaml.track == "track_cloud":
-        select(solvers[yaml.winner_par], "cloud")
+    if show_experimental and podium.track == "track_cloud":
+        select(solvers[podium.winner_par], "cloud")
 
-    if show_experimental and yaml.track == "track_parallel":
-        select(solvers[yaml.winner_par], "parallel")
+    if show_experimental and podium.track == "track_parallel":
+        select(solvers[podium.winner_par], "parallel")
 
 
 def select_division(division: str, logics: dict[str, int]) -> Callable[[info, str], None]:
