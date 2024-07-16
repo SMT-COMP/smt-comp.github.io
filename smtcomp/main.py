@@ -220,12 +220,16 @@ def store_results(
             if len(df) > 0:
                 print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
                 exit(1)
-        df = add_columns(
-            lf.filter(track=int(track)).drop("logic"),
-            b.select("file", "logic", "family", "name"),
-            on=["file"],
-            defaults={"logic": -1, "family": "", "name": ""},
-        ).collect()
+        df = (
+            add_columns(
+                lf.filter(track=int(track)).drop("logic"),
+                b.select("file", "logic", "family", "name"),
+                on=["file"],
+                defaults={"logic": -1, "family": "", "name": ""},
+            )
+            .sort("file", "solver")
+            .collect()
+        )
         if len(df) > 0:
             results_track = defs.Results(
                 results=[
