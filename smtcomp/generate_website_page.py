@@ -4,7 +4,7 @@ from pathlib import Path, PurePath
 from smtcomp import defs
 from rich import progress
 from rich import print
-from pydantic import BaseModel
+from pydantic import BaseModel, RootModel, Field
 import polars as pl
 import smtcomp.scoring
 from smtcomp.utils import *
@@ -53,7 +53,7 @@ class PodiumDivision(BaseModel):
     unsat: list[PodiumStep]
     twentyfour: list[PodiumStep]
 
-    layout: str = "result"
+    layout: Literal["result"] = "result"
 
 
 class PodiumStepBiggestLead(BaseModel):
@@ -70,7 +70,7 @@ class PodiumBiggestLead(BaseModel):
     results: str
     participants: str
     track: str
-    recognition: str = "biggest_lead"
+    recognition: Literal["biggest_lead"] = "biggest_lead"
     winner_seq: str
     winner_par: str
     winner_sat: str
@@ -81,7 +81,7 @@ class PodiumBiggestLead(BaseModel):
     sat: list[PodiumStepBiggestLead]
     unsat: list[PodiumStepBiggestLead]
     twentyfour: list[PodiumStepBiggestLead]
-    layout: str = "result_comp"
+    layout: Literal["result_comp"] = "result_comp"
 
 
 class PodiumStepLargestContribution(BaseModel):
@@ -98,7 +98,7 @@ class PodiumLargestContribution(BaseModel):
     results: str
     participants: str
     track: str
-    recognition: str = "largest_contribution"
+    recognition: Literal["largest_contribution"] = "largest_contribution"
     winner_seq: str
     winner_par: str
     winner_sat: str
@@ -109,7 +109,26 @@ class PodiumLargestContribution(BaseModel):
     sat: list[PodiumStepLargestContribution]
     unsat: list[PodiumStepLargestContribution]
     twentyfour: list[PodiumStepLargestContribution]
-    layout: str = "result_comp"
+    layout: Literal["result_comp"] = "result_comp"
+
+
+class PodiumCrossDivision(RootModel):
+    root: PodiumLargestContribution | PodiumBiggestLead = Field(..., discriminator="recognition")
+
+
+class Summary(BaseModel):
+    layout: Literal["results_summary"] = "results_summary"
+    track: str
+    scores: str = "sequential,parallel,sat,unsat,twentyfour"
+    year: int
+    results: str = "results"
+    divisions: str = "divisions"
+    participants: str = "participants"
+    disagreements: str = "disagreements"
+
+
+class Podium(RootModel):
+    root: PodiumDivision | PodiumCrossDivision | Summary = Field(..., discriminator="layout")
 
 
 def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
@@ -518,16 +537,5 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             (dst / f"largest-contribution-single-query.md").write_text(largedata.model_dump_json(indent=1))
 
     (dst / "results-single-query.md").write_text(
-        f"""
----
-layout: results_summary
-track: track_single_query
-scores: sequential,parallel,sat,unsat,twentyfour
-year: {config.current_year}
-results: results
-divisions: divisions
-participants: participants
-disagreements: disagreements
----
-"""
+        Summary(year=config.current_year, track="track_single_query").model_dump_json(indent=1)
     )

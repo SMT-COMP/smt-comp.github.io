@@ -1,0 +1,208 @@
+\documentclass[a4paper,landscape,12pt]{article}
+\usepackage[svgnames]{xcolor}
+\usepackage{adjustbox}
+\usepackage{wallpaper}
+\usepackage{ragged2e}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage[object=pgfhan]{pgfornament}
+\usetikzlibrary{chains}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.text,decorations.markings}
+\usetikzlibrary{decorations.pathmorphing,shadows}
+
+\usepackage{geometry}
+\geometry{hmargin=1in,vmargin=0.8in,headheight=25pt}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrule}{}
+
+\newpgfornamentfamily{pgfhan}
+\newbox{\fortyseven}
+\savebox{\fortyseven}{
+    \tikzset{every node/.append style={inner sep=0pt,color=MidnightBlue!50}}
+    \tikzset{pgfornamentstyle/.style={draw=green!20!black,
+    fill=orange,fill opacity=.5,thick}}%
+\pgfornament[scale=0.50]{32}}
+
+\newbox{\myfancyhead}
+\AtBeginDocument{
+\savebox{\myfancyhead}{
+\newpgfornamentfamily{pgfhan}
+\begin{tikzpicture}[overlay,remember picture]
+    \tikzset{every node/.append style={inner sep=0pt,color=MidnightBlue!50}}
+    \tikzset{pgfornamentstyle/.style={draw=green!20!black,
+    fill=orange,fill opacity=.5,thick}}%
+    \node[anchor=north west,shift={(14.5pt,-14.5pt)}] at (current page.north west)
+  (nw) {\pgfornament[scale=0.5]{12}};
+    \node[anchor=north east,shift={(-14.5pt,-14.5pt)}] at (current page.north east)
+    (ne) {\pgfornament[scale=0.5,symmetry=v]{12}};
+  \node[anchor=south west,shift={(14.5pt,14.5pt)}] at (current page.south west)
+    (sw) {\pgfornament[scale=0.5,symmetry=h]{12}};
+  \node[anchor=south east,shift={(-14.5pt,14.5pt)}] at (current page.south east)
+    (se) {\pgfornament[scale=0.5,symmetry=c]{12}};
+%    \pgfornamentline[scale=0.25,shift={(0pt,-14.5pt)}]{nw.north west}{ne}{20}{32};
+% \begin{scope}[start chain,node distance=-1pt]
+%     \node[anchor=north west,on chain] at (nw.north east)
+%     {\usebox{\fortyseven}};
+%     \foreach \i in {1,...,9} {\node[on chain]{\usebox{\fortyseven}};}
+%     \end{scope}
+\foreach \i in {0,...,6}
+   \node[anchor=north west,shift={($\i*(100bp,0)-(50bp,0)$)}] at (nw.north east)
+    {\usebox{\fortyseven}};
+\foreach \i in {0,...,3}
+    \node[anchor=south east,shift={($\i*(0,-100bp)+(0,25bp)$)},rotate=90] at (ne.south east)
+     {\usebox{\fortyseven}};
+\foreach \i in {0,...,6}
+     \node[anchor=south west,shift={($\i*(100bp,0)-(50bp,0)$)}] at (sw.south east)
+      {\usebox{\fortyseven}};
+\foreach \i in {0,...,3}
+      \node[anchor=south west,shift={($\i*(0,-100bp)+(0,25bp)$)},rotate=-90] at (nw.south west)
+       {\usebox{\fortyseven}};
+   %         \foreach \i in {0,...,22}
+% \node[anchor=south west,rotate=-90,
+% shift={($\i*(31bp,0)$)}] at (nw.south west)
+% {\usebox{\fortyseven}};
+    %   \node[anchor=north west] at (nw.north east) {\pgfornament[scale=0.25]{32}};
+%    \draw [scale=0.25] (nw) to [ornament=12] (ne);
+%   \node[anchor=north west] at (nw.north east)%
+%     {\pgfornament[scale=0.25]{32}};
+%     \node[anchor=south west] at (sw.south east)%
+%     {\pgfornament[scale=0.25]{32}};
+%     \node[anchor=south west,rotate=-90] at (nw.south west)
+%     {\pgfornament[scale=0.25]{32}};
+%     \node[anchor=south east,rotate=90] at (ne.south east)
+%     {\pgfornament[scale=0.25]{32}};
+%     \node[anchor=center,shift={(25bp,-25bp)}] at (nw.south east)
+%     {\pgfornament[scale=0.5]{57}};
+\end{tikzpicture}
+}}
+
+
+\fancyhead[L]{\usebox{\myfancyhead}}
+
+% \node[anchor=north west,shift={(14.5pt,-14.5pt)}] at (current page.north west)
+%   (nw) {\pgfornamenthan[scale=0.2]{25}};
+
+\pagestyle{fancy}
+\fancypagestyle{plain}{\pagestyle{fancy}}
+
+\usepackage{environ}
+
+\NewEnviron{myframe}{%
+\newpgfornamentfamily{vectorian}
+    \begin{tikzpicture}[color=Maroon,
+        every node/.style={inner sep=0pt}]
+        \node[minimum size=12cm](vecbox){%
+            \begin{minipage}{\textwidth}
+            \centering
+        \BODY
+    \end{minipage}};
+        \node[anchor=north west] at (vecbox.north west)
+        {\pgfornament[width=2.5cm,symmetry=h]{3}};
+        \node[anchor=north east] at (vecbox.north east)
+        {\pgfornament[width=2.5cm,symmetry=c]{3}};
+        \node[anchor=south west] at (vecbox.south west)
+        {\pgfornament[width=2.5cm,symmetry=none]{3}};
+        \node[anchor=south east] at (vecbox.south east)
+        {\pgfornament[width=2.5cm,symmetry=v]{3}};
+        \end{tikzpicture}
+}
+
+\newcommand{\seq}{\texttt{;}}
+\newcommand{\paral}{\textbardbl}
+\newcommand{\sat}{$\top$}
+\newcommand{\unsat}{$\bot$}
+\newcommand{\fast}{\texttt{24}}
+\newcommand{\inc}{inc}
+\newcommand{\uc}{uc}
+\newcommand{\mv}{mv}
+\newcommand{\cloud}{cloud}
+\newcommand{\paralTrack}{parallel}
+%\newcommand{\all}{{\footnotesize (\seq,\paral,\sat,\unsat,\fast,\inc,\uc\seq,\uc\paral,\mv)}}
+\newcommand{\withtrack}[2]{\textsc{#1}{{\footnotesize (#2)}}}
+
+\newcommand{\MakeOnePage}[6]{
+    {\centering
+    {
+
+    \begin{minipage}{\textwidth}
+    \centering
+
+    \begin{tikzpicture}
+      \node [circular drop shadow={shadow scale=1.05},
+             decorate, decoration=zigzag,
+             fill=blue!20,draw,thick,circle,text width=3.5cm,align=center,xshift=2cm]
+              {\large\textbf{SMT-COMP\\ 2023}};
+    \end{tikzpicture}
+    \end{minipage}
+
+    \begin{myframe}
+
+    \textcolor{red!10!black!90}
+    {\Huge #1}\\
+
+    \textcolor{green!10!black!90}{
+    \large In honor of the results achieved in the SMT-competition}
+
+    \medskip
+    \ifstrempty{#2}{}{
+    \textcolor{red!30!black!90}
+    {\textit{Overall Winner}}
+
+
+    \textcolor{black}{\large #2}
+
+     \medskip
+    }
+
+    \ifstrempty{#3}{}{
+    \textcolor{red!30!black!90} {\textit{Winner of the Division#5}}
+
+     \textcolor{black}{\large#3}
+
+     \medskip
+    }
+
+    \ifstrempty{#4}{}{
+     \textcolor{red!30!black!90}  {\textit{Winner of the Logic#6
+      \ifstrempty{#3}{}{(where it did not win the corresponding division)}}}
+
+     \textcolor{black}{\large #4}
+    }
+    \vspace{2mm}
+
+
+    \vspace{1cm}
+
+    {\color{blue!40!black}
+%    \scalebox{.7}{
+    {\tiny
+    \begin{tabular}{ccccc}
+        \includegraphics[scale=0.5,trim=0pt 0.60cm 0pt 0pt]{signature-blank-crop-jochen.pdf} &&
+        \includegraphics[scale=0.25,trim=1.5cm 2.75cm 0pt 0pt]{signature-bobot.png} &&
+        \includegraphics[trim=0pt 0.10cm 0pt 0pt]{signature-MB.png} \\
+    \cline{1-1}
+    \cline{3-3}
+    \cline{5-5}
+    \\ \
+    Jochen Hoenicke  & &  Bobot François & & Martin Bromberger \\
+    Organizer & & Chair & & Organizer \\
+    \end{tabular}
+    }}
+    \end{myframe}
+
+    }}
+
+}
+
+\begin{document}
+
+\TileWallPaper{4cm}{2cm}{tiling.png}
+
+\input{input_for_certificates.tex}
+
+\end{document}

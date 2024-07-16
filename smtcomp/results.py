@@ -160,9 +160,35 @@ def parse_results(resultdir: Path) -> Iterator[Results]:
     return map(parse_xml, (resultdir.glob("*.xml.bz2")))
 
 
-def to_pl(r: Results) -> pl.LazyFrame:
-    def convert(r: Run) -> Dict[str, Any]:
-        d = dict(r)
+def get_cached_results(resultdir: Path, scramble_id: int) -> defs.Validation | None:
+    d = resultdir / "model_validation_results"
+    file_cache = d / f"{str(scramble_id)}.json.gz"
+    if file_cache.is_file():
+        return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
+    else:
+        return None
+
+
+def get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
+    val = get_cached_results(resultdir, scramble_id)
+    if val is None:
+        return defs.Answer.ModelNotValidated
+    else:
+        match val:
+            case defs.ValidationOk():
+                return defs.Answer.Sat
+            case defs.NoValidation():
+                return defs.Answer.ModelNotValidated
+            case defs.ValidationError():
+                return val.status
+
+
+def to_pl(resultdir: Path, r: Results) -> pl.LazyFrame:
+    def convert(a: Run) -> Dict[str, Any]:
+        if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
+            a.answer = get_cached_answer(resultdir, a.scramble_id)
+
+        d = dict(a)
         d["answer"] = int(d["answer"])
         d["logic"] = int(d["logic"])
         return d
@@ -175,7 +201,7 @@ def parse_to_pl(file: Path) -> pl.LazyFrame:
     feather = file.with_suffix(".feather")
     if feather.exists():
         return pl.read_ipc(feather).lazy()
-    r = to_pl(parse_xml(file)).collect()
+    r = to_pl(file.parent, parse_xml(file)).collect()
     r.write_ipc(feather)
     return r.lazy()
 
@@ -283,7 +309,7 @@ def helper_get_results(
         )
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
-        lf = lf.filter(track=int(track)).drop("scrambled_id")
+        lf = lf.filter(track=int(track)).drop("scramble_id")
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
     selection = (

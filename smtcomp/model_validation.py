@@ -8,39 +8,17 @@ from smtcomp.benchexec import get_suffix
 import smtcomp.scramble_benchmarks
 from multiprocessing.pool import ThreadPool
 from rich.progress import Progress, TaskID
-from pydantic import BaseModel, RootModel
+from pydantic import BaseModel, RootModel, Field
+from typing import Union
 import pydantic
 from smtcomp.unpack import write_cin, read_cin
 
 
-class ValidationOk(BaseModel):
-    stderr: str
-
-
-class ValidationError(BaseModel):
-    status: defs.Status
-    stderr: str
-    model: str
-
-
-class NoValidation(BaseModel):
-    """No validation possible"""
-
-
-noValidation = NoValidation()
-
-Validation = ValidationOk | ValidationError | NoValidation
-
-
-class ValidationResult(RootModel):
-    root: Validation
-
-
-def is_error(x: Validation) -> ValidationError | None:
+def is_error(x: defs.Validation) -> defs.ValidationError | None:
     match x:
-        case ValidationError():
+        case defs.ValidationError():
             return x
-        case ValidationOk() | NoValidation():
+        case defs.ValidationOk() | defs.NoValidation():
             return None
 
 
@@ -50,32 +28,56 @@ def raise_stack_limit() -> None:
     resource.setrlimit(resource.RLIMIT_STACK, (soft, hard))
 
 
-def check_locally(config: defs.Config, smt2_file: Path, model: str) -> Validation:
-    r = subprocess.run(
+def check_locally(config: defs.Config, smt2_file: Path, model: str) -> defs.Validation:
+    opts: list[str | Path] = []
+    opts.append(config.dolmen_binary)
+    opts.extend(
         [
-            config.dolmen_binary,
             "--time=1h",
             "--size=40G",
             "--strict=false",
             "--check-model=true",
             "--report-style=minimal",
-            smt2_file,
-        ],
+            "--warn=-all",
+        ]
+    )
+    if config.dolmen_force_logic_ALL:
+        opts.append("--force-smtlib2-logic=ALL")
+    opts.append(smt2_file)
+
+    r = subprocess.run(
+        opts,
         input=model.encode(),
         capture_output=True,
-        preexec_fn=raise_stack_limit,
+        # preexec_fn slows a lot the execution, and is not safe with threads (cf python doc)
     )
     match r.returncode:
         case 0:
-            return ValidationOk(stderr=r.stderr.decode())
-        case 5:
-            status = defs.Status.Unsat
+            return defs.ValidationOk(stderr=r.stderr.decode())
         case 2:
             # LimitReached
-            status = defs.Status.Unknown
+            status = defs.Answer.ModelValidatorTimeout
         case _:
-            status = defs.Status.Unknown
-    return ValidationError(status=status, stderr=r.stderr.decode(), model=model)
+            if r.stderr.endswith(b"E:bad-model\n"):
+                status = defs.Answer.ModelUnsat
+            elif r.stderr.endswith(b"E:timeout\n"):
+                status = defs.Answer.ModelValidatorTimeout
+            elif r.stderr.endswith(b"E:uncaught-exn\n"):
+                status = defs.Answer.ModelValidatorException
+            elif r.stderr.endswith(b"E:forbidden-array-sort\n") or r.stderr.endswith(b"E:non-linear-expr\n"):
+                status = defs.Answer.ModelValidatorBenchmarkStrictTyping
+            elif (
+                r.stderr.endswith(b"E:id-def-conflict\n")
+                or r.stderr.endswith(b"E:parsing-error\n")
+                or r.stderr.endswith(b"E:unbound-id\n")
+                or r.stderr.endswith(b"E:undefined-constant\n")
+            ):
+                status = defs.Answer.ModelParsingError
+            elif r.stderr.endswith(b"E:partial-dstr\n"):
+                status = defs.Answer.ModelPartialFunctionMissing
+            else:
+                raise (ValueError("Unknown validator error"))
+    return defs.ValidationError(status=status, stderr=r.stderr.decode(), model=model)
 
 
 def check_result_locally(
@@ -85,16 +87,23 @@ def check_result_locally(
     rid: results.RunId,
     r: results.Run,
     model: str,
-) -> Validation:
+) -> defs.Validation:
     d = resultdir / "model_validation_results"
     file_cache = d / f"{str(r.scramble_id)}.json.gz"
     if file_cache.is_file():
-        try:
-            val = ValidationResult.model_validate_json(read_cin(file_cache)).root
-            return val
-        except pydantic.ValidationError:
-            file_cache.unlink()
-            return check_result_locally(config, resultdir, cachedir, rid, r, model)
+        val = defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
+        match val:
+            case defs.ValidationError():
+                if val.stderr.endswith("E:timeout\n"):
+                    val.status = defs.Answer.ModelValidatorTimeout
+                    s = defs.ValidationResult(val).model_dump_json(indent=1)
+                    write_cin(file_cache, s)
+                    return val
+                else:
+                    file_cache.unlink()
+                    return check_result_locally(config, resultdir, cachedir, rid, r, model)
+            case _:
+                return val
     else:
         match r.answer:
             case defs.Answer.Sat:
@@ -103,9 +112,9 @@ def check_result_locally(
                 smt2_file = filedir / str(r.logic) / basename
                 val = check_locally(config, smt2_file, model)
             case _:
-                val = noValidation
+                val = defs.noValidation
         d.mkdir(parents=True, exist_ok=True)
-        s = ValidationResult(val).model_dump_json(indent=1)
+        s = defs.ValidationResult(val).model_dump_json(indent=1)
         write_cin(file_cache, s)
         return val
 
@@ -132,7 +141,8 @@ def prepare_model_validation_tasks(
 
 def check_all_results_locally(
     config: defs.Config, cachedir: Path, resultdir: Path, executor: ThreadPool, progress: Progress
-) -> list[tuple[results.RunId, results.Run, Validation]]:
+) -> list[tuple[results.RunId, results.Run, defs.Validation]]:
+    raise_stack_limit()
     l = list(
         itertools.chain.from_iterable(
             prepare_model_validation_tasks(d.parent)
@@ -140,7 +150,7 @@ def check_all_results_locally(
                 list(resultdir.glob("**/*.logfiles.zip")),
                 description="Preparing tasks",
             )
-        )
+        ),
     )
     return list(
         progress.track(
