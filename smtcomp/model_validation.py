@@ -91,19 +91,7 @@ def check_result_locally(
     d = resultdir / "model_validation_results"
     file_cache = d / f"{str(r.scramble_id)}.json.gz"
     if file_cache.is_file():
-        val = defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
-        match val:
-            case defs.ValidationError():
-                if val.stderr.endswith("E:timeout\n"):
-                    val.status = defs.Answer.ModelValidatorTimeout
-                    s = defs.ValidationResult(val).model_dump_json(indent=1)
-                    write_cin(file_cache, s)
-                    return val
-                else:
-                    file_cache.unlink()
-                    return check_result_locally(config, resultdir, cachedir, rid, r, model)
-            case _:
-                return val
+        return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
     else:
         match r.answer:
             case defs.Answer.Sat:
