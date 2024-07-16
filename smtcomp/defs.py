@@ -186,7 +186,7 @@ class Track(EnumAutoInt):
             case Track.UnsatCore:
                 return "uc"
             case Track.UnsatCoreValidation:
-                return "ucv"
+                return "uc_val"
             case Track.SingleQuery:
                 return "sq"
             case Track.ProofExhibition:
@@ -1467,6 +1467,9 @@ class Config:
     timelimit_s = 60 * 20
     memlimit_M = 1024 * 30
     cpuCores = 4
+    unsatcore_validation_timelimit_s = 60 * 5
+    unsatcore_validation_memlimit_M = 1024 * 30
+    unsatcore_validation_cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
     use_previous_results_for_status = False

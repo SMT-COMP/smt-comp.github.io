@@ -181,6 +181,7 @@ def generate_benchexec(
     for file in track(files):
         s = submission.read(str(file))
         smtcomp.benchexec.generate(s, cachedir, config)
+        smtcomp.benchexec.generate_unsatcore_validation(s, cachedir, config)
 
 
 @app.command(rich_help_panel=benchexec_panel)
