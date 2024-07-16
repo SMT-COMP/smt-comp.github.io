@@ -139,7 +139,7 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
             PodiumStep(
                 name=s["solver"],
                 competing="yes",  # TODO
-                errorScore=-s["error_score"],
+                errorScore=s["error_score"],
                 correctScore=s["correctly_solved_score"],
                 CPUScore=s["cpu_time_score"],
                 WallScore=s["wallclock_time_score"],
