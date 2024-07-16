@@ -23,7 +23,15 @@ c_walltime_s = pl.col("walltime_s")
 c_cputime_s = pl.col("cputime_s")
 twentyfour = c_walltime_s <= 24
 
-scores = ["error_score", "correctly_solved_score", "wallclock_time_score", "cpu_time_score"]
+scores = [
+    ("error_score", True),
+    ("correctly_solved_score", True),
+    ("wallclock_time_score", False),
+    ("cpu_time_score", False),
+]
+"""
+Columns to sort with and if it should be sorted in descending order
+"""
 
 
 class Kind(defs.EnumAutoInt):

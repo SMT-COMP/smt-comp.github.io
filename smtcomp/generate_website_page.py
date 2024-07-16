@@ -219,22 +219,24 @@ def sq_generate_datas(
     def info_for_podium_step(kind: smtcomp.scoring.Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
         results = smtcomp.scoring.filter_for(kind, config, results)
         return (
-            intersect(results, len_by_division, on=[group_by])
-            .group_by(group_by, "solver")
-            .agg(
-                pl.sum("error_score"),
-                pl.sum("correctly_solved_score"),
-                pl.sum("cpu_time_score"),
-                pl.sum("wallclock_time_score"),
-                solved=(smtcomp.scoring.known_answer).sum(),
-                solved_sat=(smtcomp.scoring.sat_answer).sum(),
-                solved_unsat=(smtcomp.scoring.unsat_answer).sum(),
-                unsolved=(smtcomp.scoring.unknown_answer).sum(),
-                timeout=(smtcomp.scoring.timeout_answer).sum(),
-                memout=(smtcomp.scoring.memout_answer).sum(),
-                abstained=pl.col("total").first() - pl.len(),
+            sort(
+                intersect(results, len_by_division, on=[group_by])
+                .group_by(group_by, "solver")
+                .agg(
+                    pl.sum("error_score"),
+                    pl.sum("correctly_solved_score"),
+                    pl.sum("cpu_time_score"),
+                    pl.sum("wallclock_time_score"),
+                    solved=(smtcomp.scoring.known_answer).sum(),
+                    solved_sat=(smtcomp.scoring.sat_answer).sum(),
+                    solved_unsat=(smtcomp.scoring.unsat_answer).sum(),
+                    unsolved=(smtcomp.scoring.unknown_answer).sum(),
+                    timeout=(smtcomp.scoring.timeout_answer).sum(),
+                    memout=(smtcomp.scoring.memout_answer).sum(),
+                    abstained=pl.col("total").first() - pl.len(),
+                ),
+                [(group_by, False)] + smtcomp.scoring.scores + [("solver", False)],
             )
-            .sort([group_by] + smtcomp.scoring.scores + ["solver"], descending=True)
             .group_by(group_by, maintain_order=True)
             .agg(
                 pl.struct(
