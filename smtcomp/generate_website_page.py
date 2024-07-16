@@ -432,7 +432,7 @@ def largest_contribution_ranking(
                 itertools.chain.from_iterable(aux(k, div) for div in ratio_by_division),
                 key=lambda k: (k.correctScore, k.timeScore, k.division),
                 reverse=True,
-            ),
+            )[0:19],
         )
         for k in smtcomp.scoring.Kind
     )
