@@ -445,9 +445,7 @@ def show_scores(
 
     divisions = smtcomp.scoring.division_score(results)
 
-    divisions = divisions.sort(
-        "division", *smtcomp.scoring.scores, descending=[False] + [True] * len(smtcomp.scoring.scores)
-    )
+    divisions = sort(divisions, [("division", False)] + smtcomp.scoring.scores)
 
     rich_print_pl(
         "Scores",
