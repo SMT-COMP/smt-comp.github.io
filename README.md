@@ -172,6 +172,88 @@ Benchexec in verifier cloud started using:
 (cd ../tmp/execution; PYTHONPATH=$(pwd) PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py run_definitions/SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
 ```
 
+## Using the `smtcomp` tool for handling `benchexec` results
+
+All the track are similar, except model validation and unsat core needs some additional work to check the output of the solvers. Lets start with the simple case:
+
+## Single Query
+
+We will suppose that the results are locally available in directory `tmp/final_results`:
+
+For example using rsync if `sosy` is configured in `.ssh/config`:
+
+```
+rsync sosy:/localhome/smt-comp/final_results -ra tmp/ --progress --exclude="*.logfiles"
+```
+
+The `original_id.csv` file generated at the same time that the scrambled benchmarks is needed in the results directory (even if we can recompute it, we use this one for safety):
+
+```
+scp sosy:/localhome/smt-comp/execution/benchmarks/files/original_id.csv tmp/final_results/
+```
+
+In order to allow looking at the results incrementally, the first step is to translate each `.xml` into a faster `.feather` file. The translation is done only for `.xml` without a corresponding `.feather` file.
+
+```
+smtcomp convert-benchexec-results tmp/final_results
+```
+
+Information on missing results can be obtained using:
+
+```
+smtcomp stats-of-benchexec-results data tmp/final_results SingleQuery
+```
+
+Computation of the scores can be obtained for the different way (parallel, sequential, sat, unsat, twenty-four seconds):
+
+```
+smtcomp show-scores data tmp/final_results/ [par|seq|sat|unsat|24]
+```
+
+Once all the results are available, they can be stored in `data/results-sq-{year}.json.gz`:
+
+```
+smtcomp store-results data tmp/final_results
+```
+
+(If the results of a track are in multiple directories they should all be given at the same time)
+
+As usual the `.feather` cache need to be computed (`--only-current` create only the cache of the current year):
+
+```
+smtcomp create-cache data --only-current
+```
+
+Now the `tmp/final_results` directory is not needed anymore, since it will look into `data` for the current year results.
+
+# Model Validation
+
+It is the same than Single Query except we need to check the models. It is done using dolmen.
+
+Compilation of dolmen (requires docker):
+
+```
+smtcomp build-dolmen data
+```
+
+The model validation needs the scrambled files:
+
+```
+rsync -ra sosy:/localhome/smt-comp/execution/benchmarks/files_model tmp/benchmarks/ --progress
+```
+
+The verification takes around 4hours (mainly because the validation of some models timeout):
+
+```
+smtcomp check-model-locally data tmp/ tmp/final_results_model/ --outdir tmp/bad_models_final/ --max-workers 13
+```
+
+(Only the validation of new results is computed)
+
+The directory `tmp/bad_models_final/` contains for each solver the models that are not validated with the corresponding scrambled benchmark and the output of dolmen.
+
+The step from Single Query can be followed with the model validation results whenever you want partial results (even before validating the models), but `store-results` should be done only when the model validation has been attempted for all the results. Moreover the "\*.feather" file in the subdirectories must be manually removed after validating new models before `convert-benchexec-results` (TODO invalidate the feather file cache automatically?)
+
 ---
 
 Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).

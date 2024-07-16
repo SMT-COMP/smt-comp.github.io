@@ -214,6 +214,11 @@ def store_results(
             case _:
                 b = benchmarks
                 incremental = False
+        if track == defs.Track.ModelValidation:
+            df = lf.filter(track=int(track), answer=int(defs.Answer.ModelNotValidated)).collect()
+            if len(df) > 0:
+                print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
+                exit(1)
         df = add_columns(
             lf.filter(track=int(track)).drop("logic"),
             b.select("file", "logic", "family", "name"),
