@@ -1044,11 +1044,11 @@ def export_results_pages(data: Path, results: list[Path] = typer.Argument(None))
     smtcomp.generate_website_page.export_results(config, selection, lf)
 
 
+@app.command()
 def export_tracks(target_file: Path) -> None:
     with open(target_file, "w") as f:
         data = sorted(str(t) for t in defs.tracks.keys() if t != defs.Track.ProofExhibition)
         json.dump(data, f)
-
 
 @app.command()
 def export_division_tracks(target_file: Path) -> None:
