@@ -1050,6 +1050,7 @@ def export_tracks(target_file: Path) -> None:
         data = sorted(str(t) for t in defs.tracks.keys() if t != defs.Track.ProofExhibition)
         json.dump(data, f)
 
+
 @app.command()
 def export_division_tracks(target_file: Path) -> None:
     division_tracks: dict[str, list[str]] = {}
