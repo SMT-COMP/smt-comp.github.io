@@ -510,7 +510,7 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     scores = scores.filter(track=int(defs.Track.SingleQuery)).drop("track")
     scores = scores.collect().lazy()
 
-    all_divisions : list[PodiumDivision] = []
+    all_divisions: list[PodiumDivision] = []
 
     for for_division in [True, False]:
         datas = sq_generate_datas(config, selection, scores, for_division)
@@ -528,5 +528,5 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             largedata = largest_contribution(config, selection, scores)
             (dst / f"largest-contribution-single-query.md").write_text(largedata.model_dump_json(indent=1))
 
-    summary_results = PodiumSummaryResults(track="track_single_query", divisions = all_divisions)
+    summary_results = PodiumSummaryResults(track="track_single_query", divisions=all_divisions)
     (dst / "results-single-query.md").write_text(summary_results.model_dump_json(indent=1))
