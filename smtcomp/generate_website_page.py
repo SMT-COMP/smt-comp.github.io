@@ -68,7 +68,7 @@ class PodiumDivision(BaseModel):
 class PodiumSummaryResults(BaseModel):
     track: str
     divisions: list[PodiumDivision]
-    layout: str = "results_summary"
+    layout: Literal["result"] = "results_summary"
 
 
 class PodiumStepBiggestLead(BaseModel):
