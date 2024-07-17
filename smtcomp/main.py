@@ -998,6 +998,7 @@ def check_model_locally(
 @app.command()
 def export_results_pages(data: Path, results: list[Path] = typer.Argument(None)) -> None:
     """
+
     Generate page for results pages in web directory
     """
     config = defs.Config(data)
@@ -1005,3 +1006,30 @@ def export_results_pages(data: Path, results: list[Path] = typer.Argument(None))
     lf = smtcomp.scoring.add_disagreements_info(lf)
     lf = smtcomp.scoring.benchmark_scoring(lf)
     smtcomp.generate_website_page.export_results(config, selection, lf)
+
+
+@app.command()
+def export_tracks(target_file: Path) -> None:
+    with open(target_file, "w") as f:
+        data = sorted(str(t) for t in defs.tracks.keys() if t != defs.Track.ProofExhibition)
+        json.dump(data, f)
+
+
+@app.command()
+def export_division_tracks(target_file: Path) -> None:
+    division_tracks: dict[str, list[str]] = {}
+
+    for track, divisions in defs.tracks.items():
+        if track == defs.Track.ProofExhibition:
+            continue
+
+        for division in divisions:
+            division_str = str(division)
+            if division_str not in division_tracks:
+                division_tracks[division_str] = []
+
+            division_tracks[division_str].append(str(track))
+
+    with open(target_file, "w") as f:
+        data = sorted((d, sorted(ts)) for (d, ts) in division_tracks.items())
+        json.dump(data, f)

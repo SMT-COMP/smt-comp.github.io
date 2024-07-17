@@ -56,6 +56,12 @@ class PodiumDivision(BaseModel):
     layout: str = "result"
 
 
+class PodiumSummaryResults(BaseModel):
+    track: str
+    divisions: list[PodiumDivision]
+    layout: str = "results_summary"
+
+
 class PodiumStepBiggestLead(BaseModel):
     name: str
     second: str
@@ -504,11 +510,16 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     scores = scores.filter(track=int(defs.Track.SingleQuery)).drop("track")
     scores = scores.collect().lazy()
 
+    all_divisions : list[PodiumDivision] = []
+
     for for_division in [True, False]:
         datas = sq_generate_datas(config, selection, scores, for_division)
 
         for name, data in datas.items():
             (dst / f"{name.lower()}-single-query.md").write_text(data.model_dump_json(indent=1))
+
+            if data.logics:
+                all_divisions.append(data)
 
         if for_division:
             bigdata = biggest_lead_ranking(config, datas)
@@ -517,17 +528,5 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             largedata = largest_contribution(config, selection, scores)
             (dst / f"largest-contribution-single-query.md").write_text(largedata.model_dump_json(indent=1))
 
-    (dst / "results-single-query.md").write_text(
-        f"""
----
-layout: results_summary
-track: track_single_query
-scores: sequential,parallel,sat,unsat,twentyfour
-year: {config.current_year}
-results: results
-divisions: divisions
-participants: participants
-disagreements: disagreements
----
-"""
-    )
+    summary_results = PodiumSummaryResults(track="track_single_query", divisions = all_divisions)
+    (dst / "results-single-query.md").write_text(summary_results.model_dump_json(indent=1))

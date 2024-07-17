@@ -1,0 +1,75 @@
+{{ define "main" }}
+
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+
+{{ $tracks := .Site.Data.tracks }}
+
+{{ $track_urls := dict
+"Cloud" "cloud"
+"Incremental" "incremental"
+"Parallel" "parallel"
+"SingleQuery" "single-query"
+"UnsatCore" "unsat-core"
+}}
+
+<h1>SMT-COMP 2024 Results</h1>
+
+<h3>Competition-Wide Recognitions</h3>
+
+<h4>Largest Contribution Ranking</h4>
+
+<ul>
+  {{ range $track := $tracks }}
+  {{ $prettyTrack := index site.Data.pretty_names.track $track }}
+  {{ $url := printf "../results/largest-contribution-%s" (index $track_urls $track) }}
+  {{ with page.GetPage $url }}
+  <li><a href="{{ $url }}">{{ $prettyTrack }}</a></li>
+  {{ end }}
+  {{ end }}
+</ul>
+
+<h4>Biggest Lead Ranking</h4>
+
+<ul>
+  {{ range $track := $tracks }}
+  {{ $prettyTrack := index site.Data.pretty_names.track $track }}
+  {{ $url := printf "../results/biggest-lead-%s" (index $track_urls $track) }}
+  {{ with page.GetPage $url }}
+  <li><a href="{{ $url }}">{{ $prettyTrack }}</a></li>
+  {{ end }}
+  {{ end }}
+</ul>
+
+<h3>Tracks Summary</h3>
+
+<ul>
+  {{ range $track := $tracks }}
+  {{ $prettyTrack := index site.Data.pretty_names.track $track }}
+  {{ $url := printf "../results/results-%s" (index $track_urls $track) }}
+  {{ with page.GetPage $url }}
+  <li><a href="{{ $url }}">{{ $prettyTrack }}</a></li>
+  {{ end }}
+  {{ end }}
+</ul>
+
+<h3>Divisions</h3>
+
+<ul>
+  {{ range $dt := .Site.Data.division_tracks }}
+  {{ $division := index $dt 0 }}
+  <li><b>{{ $division }}</b></li>
+  <ul>
+    {{ range $track := index $dt 1 }}
+    {{ $prettyTrack := index site.Data.pretty_names.track $track }}
+    {{ $url := printf "../results/%s-%s" (replace $division "+" "_"  | lower) (index $track_urls $track) }}
+    {{ with page.GetPage $url }}
+    <li><a href="{{ $url }}">{{ $prettyTrack }}</a></li>
+    {{ end }}
+    {{ end }}
+  </ul>
+  {{ end  }}
+</ul>
+
+{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{ end }}

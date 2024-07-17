@@ -19,6 +19,12 @@
 	"track_unsatcore": "Unsat Core Track",
 	"track_model": "Model Validation Track",
 	"track_cloud": "Cloud Track",
-	"track_parallel": "Parallel Track"
+	"track_parallel": "Parallel Track",
+	"SingleQuery": "Single Query Track",
+	"Incremental": "Incremental Track",
+	"UnsatCore": "Unsat Core Track",
+	"Model": "Model Validation Track",
+	"Cloud": "Cloud Track",
+	"Parallel": "Parallel Track"
     }
 }
