@@ -1108,4 +1108,3 @@ def generate_certificates(
     smtcomp.certificates.generate_certificates(
         website_results, input_for_certificates, pretty_names, experimental_division
     )
->>>>>>> master
