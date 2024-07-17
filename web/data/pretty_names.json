@@ -1,10 +1,10 @@
 {
     "performance": {
-	"sequential": "Sequential",
-	"parallel": "Parallel",
-	"sat": "SAT",
-	"unsat": "UNSAT",
-	"twentyfour": "24 seconds"
+	"sequential": "Sequential Performance",
+	"parallel": "Parallel Performance",
+	"sat": "SAT Performance",
+	"unsat": "UNSAT Performance",
+	"twentyfour": "24 seconds Performance"
     },
     "winner_performance": {
 	"winner_seq": "Sequential Performance",
