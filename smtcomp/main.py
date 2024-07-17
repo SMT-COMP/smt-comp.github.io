@@ -11,7 +11,7 @@ from rich import print
 import typer
 from pydantic import ValidationError
 from collections import defaultdict
-import json
+import json, subprocess
 
 import polars as pl
 
@@ -35,9 +35,10 @@ from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
 import smtcomp.test_solver as test_solver
-from concurrent.futures import ThreadPoolExecutor
+from multiprocessing.pool import ThreadPool
 from smtcomp.benchexec import get_suffix
 from smtcomp.scramble_benchmarks import benchmark_files_dir
+import smtcomp.certificates
 from smtcomp.utils import *
 import re
 
@@ -214,12 +215,21 @@ def store_results(
             case _:
                 b = benchmarks
                 incremental = False
-        df = add_columns(
-            lf.filter(track=int(track)).drop("logic"),
-            b.select("file", "logic", "family", "name"),
-            on=["file"],
-            defaults={"logic": -1, "family": "", "name": ""},
-        ).collect()
+        if track == defs.Track.ModelValidation:
+            df = lf.filter(track=int(track), answer=int(defs.Answer.ModelNotValidated)).collect()
+            if len(df) > 0:
+                print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
+                exit(1)
+        df = (
+            add_columns(
+                lf.filter(track=int(track)).drop("logic"),
+                b.select("file", "logic", "family", "name"),
+                on=["file"],
+                defaults={"logic": -1, "family": "", "name": ""},
+            )
+            .sort("file", "solver")
+            .collect()
+        )
         if len(df) > 0:
             results_track = defs.Results(
                 results=[
@@ -435,9 +445,7 @@ def show_scores(
 
     divisions = smtcomp.scoring.division_score(results)
 
-    divisions = divisions.sort(
-        "division", *smtcomp.scoring.scores, descending=[False] + [True] * len(smtcomp.scoring.scores)
-    )
+    divisions = sort(divisions, [("division", False)] + smtcomp.scoring.scores)
 
     rich_print_pl(
         "Scores",
@@ -962,37 +970,67 @@ def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(
 
 @app.command()
 def check_model_locally(
-    cachedir: Path, resultdirs: list[Path], max_workers: int = 8, outdir: Optional[Path] = None
+    data: Path, cachedir: Path, resultdirs: list[Path], max_workers: int = 8, outdir: Optional[Path] = None
 ) -> None:
-    l: list[tuple[results.RunId, results.Run, model_validation.ValidationError]] = []
+    """
+    Check the model of the given results, store the validation results in "model_validation_results".
+
+    Requires `smtcomp build-dolmen`
+    """
+    config = defs.Config(data)
+    l: list[tuple[results.RunId, results.Run, defs.ValidationError]] = []
     with Progress() as progress:
-        with ThreadPoolExecutor(max_workers) as executor:
+        with ThreadPool(max_workers) as executor:
             for resultdir in resultdirs:
-                l2 = model_validation.check_results_locally(cachedir, resultdir, executor, progress)
+                l2 = model_validation.check_all_results_locally(config, cachedir, resultdir, executor, progress)
                 l.extend(filter_map(map_none3(model_validation.is_error), l2))
-    keyfunc = lambda v: v[0].solver
+    if not l:
+        print("[green]All models validated[/green]")
+        return
+
+    def keyfunc(
+        v: tuple[smtcomp.results.RunId, smtcomp.results.Run, defs.ValidationError],
+    ) -> str:
+        return v[0].solver
+
     l.sort(key=keyfunc)
-    d = itertools.groupby(l, key=keyfunc)
-    t = Tree("Unvalidated models")
-    for solver, rs in d:
+    t = Tree("[red]Unvalidated models[/red]")
+    for solver, rs in itertools.groupby(l, key=keyfunc):
         t2 = t.add(solver)
         for rid, r, result in rs:
             stderr = result.stderr.strip().replace("\n", ", ")
             basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
-            t2.add(f"{basename}: {stderr}")
+            match result.status:
+                case defs.Answer.Unsat:
+                    status = "[red]unsat[/red]"
+                case defs.Answer.ModelUnsat:
+                    status = "[red]unsat model[/red]"
+                case defs.Answer.ModelNotValidated:
+                    status = "[red]not validated[/red]"
+                case defs.Answer.ModelParsingError:
+                    status = "[orange1]model parsing error[/orange1]"
+                case defs.Answer.ModelPartialFunctionMissing:
+                    status = "[orange1]interpretation of a partial function is missing[/orange1]"
+                case defs.Answer.ModelValidatorException:
+                    status = "[blue]model validator failed with an exception[/blue]"
+                case defs.Answer.ModelValidatorBenchmarkStrictTyping:
+                    status = "[blue]model validator refused benchmarks[/blue]"
+                case _:
+                    status = f"[orange1]{result.status}[/orange1]"
+            t2.add(f"{str(r.logic)} {basename} {status}: {stderr}")
     print(t)
     if outdir is not None:
-        for solver, models in d:
-            dst = outdir / solver
+        for rid, r, result in l:
+            dst = outdir / f"{rid.solver}.{rid.participation}"
             dst.mkdir(parents=True, exist_ok=True)
-            for rid, r, result in models:
-                filedir = benchmark_files_dir(cachedir, rid.track)
-                basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
-                basename_model = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="rsmt2")
-                smt2_file = filedir / str(r.logic) / basename
-                (dst / basename).unlink(missing_ok=True)
-                (dst / basename).symlink_to(smt2_file)
-                (dst / basename_model).write_text(result.model)
+            filedir = benchmark_files_dir(cachedir, rid.track)
+            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+            basename_model = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="rsmt2")
+            smt2_file = filedir / str(r.logic) / basename
+            (dst / basename).unlink(missing_ok=True)
+            (dst / basename).symlink_to(smt2_file.absolute())
+            (dst / basename_model).write_text(result.model)
+            (dst / basename).with_suffix(".output").write_text(result.stderr)
 
 
 @app.command()
@@ -1003,12 +1041,9 @@ def export_results_pages(data: Path, results: list[Path] = typer.Argument(None))
     """
     config = defs.Config(data)
     lf, selection = smtcomp.results.helper_get_results(config, results)
-    lf = smtcomp.scoring.add_disagreements_info(lf)
-    lf = smtcomp.scoring.benchmark_scoring(lf)
     smtcomp.generate_website_page.export_results(config, selection, lf)
 
 
-@app.command()
 def export_tracks(target_file: Path) -> None:
     with open(target_file, "w") as f:
         data = sorted(str(t) for t in defs.tracks.keys() if t != defs.Track.ProofExhibition)
@@ -1033,3 +1068,44 @@ def export_division_tracks(target_file: Path) -> None:
     with open(target_file, "w") as f:
         data = sorted((d, sorted(ts)) for (d, ts) in division_tracks.items())
         json.dump(data, f)
+
+
+def build_dolmen(data: Path) -> None:
+    """
+    build dolmen at version {defs.Config.dolmen_commit}
+    """
+
+    config = defs.Config(data)
+
+    if config.dolmen_binary.is_file():
+        print("[green]Binary already built[/green]")
+        return
+
+    r = subprocess.run(["./build.sh", config.dolmen_commit], cwd=config.dolmen_dir)
+
+    if r.returncode != 0:
+        print("[red]Build failed[/red]")
+        exit(1)
+
+    if config.dolmen_binary.is_file():
+        print("[green]Binary successfully built[/green]")
+        return
+    else:
+        print("[red]Binary still missing[/red]")
+        exit(1)
+
+
+@app.command()
+def generate_certificates(
+    website_results: Path = Path("web/content/results"),
+    input_for_certificates: Path = Path("data/latex-certificates/input_for_certificates.tex"),
+    pretty_names: Path = Path("data/latex-certificates/solvers_pretty_name.csv"),
+    experimental_division: Path = Path("data/latex-certificates/experimental.csv"),
+) -> None:
+    """
+    generates the input data for the tex certificate generator.
+    """
+    smtcomp.certificates.generate_certificates(
+        website_results, input_for_certificates, pretty_names, experimental_division
+    )
+>>>>>>> master

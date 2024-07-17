@@ -23,7 +23,15 @@ c_walltime_s = pl.col("walltime_s")
 c_cputime_s = pl.col("cputime_s")
 twentyfour = c_walltime_s <= 24
 
-scores = ["error_score", "correctly_solved_score", "wallclock_time_score", "cpu_time_score"]
+scores = [
+    ("error_score", False),
+    ("correctly_solved_score", True),
+    ("wallclock_time_score", False),
+    ("cpu_time_score", False),
+]
+"""
+Columns to sort with and if it should be sorted in descending order
+"""
 
 
 class Kind(defs.EnumAutoInt):
@@ -71,10 +79,8 @@ def benchmark_scoring(results: pl.LazyFrame) -> pl.LazyFrame:
     Add "error_score", "correctly_solved_score", "wallclock_time_score","cpu_time_score"
     """
 
-    error_score = pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(-1).otherwise(0)
-    """
-    Use -1 instead of 1 for error so that we can use lexicographic comparison
-    """
+    error_score = pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(1).otherwise(0)
+
     correctly_solved_score = pl.when(known_answer).then(1).otherwise(0)
     """Even if said correct, it is just solved """
     wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)

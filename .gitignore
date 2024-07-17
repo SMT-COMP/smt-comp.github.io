@@ -173,3 +173,7 @@ schema_doc.min.js
 tmp/
 /web/public/
 /web/content/results/*.md
+/web/data/participants.json
+/external-tools/dolmen/binaries
+# We don't want the signature commited
+/data/latex-certificates/signature-*

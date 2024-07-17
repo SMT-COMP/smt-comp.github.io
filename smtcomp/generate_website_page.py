@@ -4,7 +4,7 @@ from pathlib import Path, PurePath
 from smtcomp import defs
 from rich import progress
 from rich import print
-from pydantic import BaseModel
+from pydantic import BaseModel, RootModel, Field, PlainSerializer
 import polars as pl
 import smtcomp.scoring
 from smtcomp.utils import *
@@ -12,14 +12,23 @@ import smtcomp.results
 
 # Warning: Hugo lowercase all dict keys
 
+float_6dig = Annotated[
+    float,
+    PlainSerializer(
+        lambda x: round(x, 6),
+        return_type=float,
+        when_used="json",
+    ),
+]
+
 
 class PodiumStep(BaseModel):
     name: str
     competing: str  # yes or no
     errorScore: int
     correctScore: int
-    CPUScore: float
-    WallScore: float
+    CPUScore: float_6dig
+    WallScore: float_6dig
     solved: int
     solved_sat: int
     solved_unsat: int
@@ -53,7 +62,7 @@ class PodiumDivision(BaseModel):
     unsat: list[PodiumStep]
     twentyfour: list[PodiumStep]
 
-    layout: str = "result"
+    layout: Literal["result"] = "result"
 
 
 class PodiumSummaryResults(BaseModel):
@@ -65,8 +74,8 @@ class PodiumSummaryResults(BaseModel):
 class PodiumStepBiggestLead(BaseModel):
     name: str
     second: str
-    correctScore: float
-    timeScore: float
+    correctScore: float_6dig
+    timeScore: float_6dig
     division: str
 
 
@@ -76,7 +85,7 @@ class PodiumBiggestLead(BaseModel):
     results: str
     participants: str
     track: str
-    recognition: str = "biggest_lead"
+    recognition: Literal["biggest_lead"] = "biggest_lead"
     winner_seq: str
     winner_par: str
     winner_sat: str
@@ -87,13 +96,13 @@ class PodiumBiggestLead(BaseModel):
     sat: list[PodiumStepBiggestLead]
     unsat: list[PodiumStepBiggestLead]
     twentyfour: list[PodiumStepBiggestLead]
-    layout: str = "result_comp"
+    layout: Literal["result_comp"] = "result_comp"
 
 
 class PodiumStepLargestContribution(BaseModel):
     name: str
-    correctScore: float
-    timeScore: float
+    correctScore: float_6dig
+    timeScore: float_6dig
     division: str
     experimental: str = "false"
 
@@ -104,7 +113,7 @@ class PodiumLargestContribution(BaseModel):
     results: str
     participants: str
     track: str
-    recognition: str = "largest_contribution"
+    recognition: Literal["largest_contribution"] = "largest_contribution"
     winner_seq: str
     winner_par: str
     winner_sat: str
@@ -115,7 +124,15 @@ class PodiumLargestContribution(BaseModel):
     sat: list[PodiumStepLargestContribution]
     unsat: list[PodiumStepLargestContribution]
     twentyfour: list[PodiumStepLargestContribution]
-    layout: str = "result_comp"
+    layout: Literal["result_comp"] = "result_comp"
+
+
+class PodiumCrossDivision(RootModel):
+    root: PodiumLargestContribution | PodiumBiggestLead = Field(..., discriminator="recognition")
+
+
+class Podium(RootModel):
+    root: PodiumDivision | PodiumCrossDivision | Summary = Field(..., discriminator="layout")
 
 
 def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
@@ -126,7 +143,7 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
             PodiumStep(
                 name=s["solver"],
                 competing="yes",  # TODO
-                errorScore=-s["error_score"],
+                errorScore=s["error_score"],
                 correctScore=s["correctly_solved_score"],
                 CPUScore=s["cpu_time_score"],
                 WallScore=s["wallclock_time_score"],
@@ -206,22 +223,24 @@ def sq_generate_datas(
     def info_for_podium_step(kind: smtcomp.scoring.Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
         results = smtcomp.scoring.filter_for(kind, config, results)
         return (
-            intersect(results, len_by_division, on=[group_by])
-            .group_by(group_by, "solver")
-            .agg(
-                pl.sum("error_score"),
-                pl.sum("correctly_solved_score"),
-                pl.sum("cpu_time_score"),
-                pl.sum("wallclock_time_score"),
-                solved=(smtcomp.scoring.known_answer).sum(),
-                solved_sat=(smtcomp.scoring.sat_answer).sum(),
-                solved_unsat=(smtcomp.scoring.unsat_answer).sum(),
-                unsolved=(smtcomp.scoring.unknown_answer).sum(),
-                timeout=(smtcomp.scoring.timeout_answer).sum(),
-                memout=(smtcomp.scoring.memout_answer).sum(),
-                abstained=pl.col("total").first() - pl.len(),
+            sort(
+                intersect(results, len_by_division, on=[group_by])
+                .group_by(group_by, "solver")
+                .agg(
+                    pl.sum("error_score"),
+                    pl.sum("correctly_solved_score"),
+                    pl.sum("cpu_time_score"),
+                    pl.sum("wallclock_time_score"),
+                    solved=(smtcomp.scoring.known_answer).sum(),
+                    solved_sat=(smtcomp.scoring.sat_answer).sum(),
+                    solved_unsat=(smtcomp.scoring.unsat_answer).sum(),
+                    unsolved=(smtcomp.scoring.unknown_answer).sum(),
+                    timeout=(smtcomp.scoring.timeout_answer).sum(),
+                    memout=(smtcomp.scoring.memout_answer).sum(),
+                    abstained=pl.col("total").first() - pl.len(),
+                ),
+                [(group_by, False)] + smtcomp.scoring.scores + [("solver", False)],
             )
-            .sort([group_by] + smtcomp.scoring.scores + ["solver"], descending=True)
             .group_by(group_by, maintain_order=True)
             .agg(
                 pl.struct(
@@ -406,9 +425,9 @@ def largest_contribution_ranking(
             k,
             sorted(
                 itertools.chain.from_iterable(aux(k, div) for div in ratio_by_division),
-                key=lambda k: (k.correctScore, k.timeScore),
+                key=lambda k: (k.correctScore, k.timeScore, k.division),
                 reverse=True,
-            ),
+            )[0:19],
         )
         for k in smtcomp.scoring.Kind
     )
