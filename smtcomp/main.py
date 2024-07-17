@@ -1034,14 +1034,18 @@ def check_model_locally(
 
 
 @app.command()
-def export_results_pages(data: Path, results: list[Path] = typer.Argument(None)) -> None:
+def export_results_pages(
+    data: Path,
+    track: defs.Track,
+    results: list[Path] = typer.Argument(None),
+) -> None:
     """
 
     Generate page for results pages in web directory
     """
     config = defs.Config(data)
-    lf, selection = smtcomp.results.helper_get_results(config, results)
-    smtcomp.generate_website_page.export_results(config, selection, lf)
+    lf, selection = smtcomp.results.helper_get_results(config, results, track)
+    smtcomp.generate_website_page.export_results(config, selection, lf, track)
 
 
 @app.command()
