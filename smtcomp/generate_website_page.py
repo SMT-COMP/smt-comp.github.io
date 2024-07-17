@@ -4,11 +4,75 @@ from pathlib import Path, PurePath
 from smtcomp import defs
 from rich import progress
 from rich import print
-from pydantic import BaseModel, RootModel, Field, PlainSerializer
+from pydantic import BaseModel, RootModel, Field, PlainSerializer, PlainValidator
 import polars as pl
 import smtcomp.scoring
 from smtcomp.utils import *
 import smtcomp.results
+
+
+def to_track_name(track: defs.Track) -> str:
+    match track:
+        case defs.Track.SingleQuery:
+            return "track_single_query"
+        case defs.Track.Incremental:
+            return "track_incremental"
+        case defs.Track.ModelValidation:
+            return "track_model_validation"
+        case defs.Track.ProofExhibition:
+            return "track_proof_exhibition"
+        case defs.Track.UnsatCore:
+            return "track_unsat_core"
+        case defs.Track.Cloud:
+            return "track_cloud"
+        case defs.Track.Parallel:
+            return "track_parallel"
+
+
+def of_track_name(track: str | defs.Track) -> defs.Track:
+    if isinstance(track, defs.Track):
+        return track
+    match track:
+        case "track_single_query":
+            return defs.Track.SingleQuery
+        case "track_incremental":
+            return defs.Track.Incremental
+        case "track_model_validation":
+            return defs.Track.ModelValidation
+        case "track_proof_exhibition":
+            return defs.Track.ProofExhibition
+        case "track_unsat_core":
+            return defs.Track.UnsatCore
+        case "track_cloud":
+            return defs.Track.Cloud
+        case "track_parallel":
+            return defs.Track.Parallel
+        case _:
+            raise (ValueError("Unknown track name"))
+
+
+track_name = Annotated[
+    defs.Track, PlainSerializer(to_track_name, return_type=str, when_used="json"), PlainValidator(of_track_name)
+]
+
+
+def page_track_suffix(track: defs.Track) -> str:
+    match track:
+        case defs.Track.SingleQuery:
+            return "single-query"
+        case defs.Track.Incremental:
+            return "incremental"
+        case defs.Track.ModelValidation:
+            return "model-validation"
+        case defs.Track.ProofExhibition:
+            return "proof-exhibition"
+        case defs.Track.UnsatCore:
+            return "unsat-core"
+        case defs.Track.Cloud:
+            return "cloud"
+        case defs.Track.Parallel:
+            return "parallel"
+
 
 # Warning: Hugo lowercase all dict keys
 
@@ -45,7 +109,7 @@ class PodiumDivision(BaseModel):
     participants: str  # participants_2023
     disagreements: str  # disagreements_2023
     division: str  # Arith
-    track: str  # track_single_query
+    track: track_name
     n_benchmarks: int
     time_limit: int
     mem_limit: int
@@ -66,7 +130,7 @@ class PodiumDivision(BaseModel):
 
 
 class PodiumSummaryResults(BaseModel):
-    track: str
+    track: track_name
     divisions: list[PodiumDivision]
     layout: Literal["results_summary"] = "results_summary"
 
@@ -84,7 +148,7 @@ class PodiumBiggestLead(BaseModel):
     year: int
     results: str
     participants: str
-    track: str
+    track: track_name
     recognition: Literal["biggest_lead"] = "biggest_lead"
     winner_seq: str
     winner_par: str
@@ -112,7 +176,7 @@ class PodiumLargestContribution(BaseModel):
     year: int
     results: str
     participants: str
-    track: str
+    track: track_name
     recognition: Literal["largest_contribution"] = "largest_contribution"
     winner_seq: str
     winner_par: str
@@ -159,10 +223,10 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
         ]
 
 
-def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool) -> PodiumDivision:
+def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track) -> PodiumDivision:
     def get_winner(l: List[dict[str, str]] | None) -> str:
         # TODO select only participating
-        if l is None or l[0]["correctly_solved_score"] == 0:
+        if l is None or not l or l[0]["correctly_solved_score"] == 0:
             return "-"
         else:
             return l[0]["solver"]
@@ -181,7 +245,7 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool) -> P
         participants=f"participants_{config.current_year}",
         disagreements=f"disagreements_{config.current_year}",
         division=division,
-        track="track_single_query",
+        track=track,
         n_benchmarks=d["total"],
         time_limit=config.timelimit_s,
         mem_limit=config.memlimit_M,
@@ -200,7 +264,7 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool) -> P
 
 
 def sq_generate_datas(
-    config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, for_division: bool
+    config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, for_division: bool, track: defs.Track
 ) -> dict[str, PodiumDivision]:
     """
     Generate datas for divisions or for logics
@@ -212,8 +276,6 @@ def sq_generate_datas(
     else:
         group_by = "logic"
         name_of_int = defs.Logic.name_of_int
-
-    # results = results.filter(track=int(defs.Track.SingleQuery)).drop("track")
 
     selection = selection.filter(selected=True)
 
@@ -276,7 +338,7 @@ def sq_generate_datas(
 
     df = r.collect()
 
-    return dict((name_of_int(d[group_by]), make_podium(config, d, for_division)) for d in df.to_dicts())
+    return dict((name_of_int(d[group_by]), make_podium(config, d, for_division, track)) for d in df.to_dicts())
 
 
 def get_kind(a: PodiumDivision, k: smtcomp.scoring.Kind) -> list[PodiumStep]:
@@ -343,11 +405,11 @@ def biggest_lead_ranking_for_kind(
     return scores
 
 
-def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision]) -> PodiumBiggestLead:
+def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], track: defs.Track) -> PodiumBiggestLead:
 
     def get_winner(l: List[PodiumStepBiggestLead] | None) -> str:
         # TODO select only participating
-        if l is None:
+        if l is None or not l:
             return "-"
         else:
             return l[0].name
@@ -361,7 +423,7 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision]) -
     return PodiumBiggestLead(
         resultdate="2024-07-08",
         year=config.current_year,
-        track="track_single_query",
+        track=track,
         results=f"results_{config.current_year}",
         participants=f"participants_{config.current_year}",
         winner_seq=get_winner(sequential),
@@ -382,11 +444,12 @@ def largest_contribution_ranking(
     virtual_datas: Dict[str, PodiumDivision],
     virtual_without_solver_datas: Dict[str, PodiumDivision],
     ratio_by_division: Dict[str, float],
+    track: defs.Track,
 ) -> PodiumLargestContribution:
 
     def get_winner(l: List[PodiumStepLargestContribution] | None) -> str:
         # TODO select only participating
-        if l is None:
+        if l is None or not l:
             return "-"
         else:
             return l[0].name
@@ -435,7 +498,7 @@ def largest_contribution_ranking(
     return PodiumLargestContribution(
         resultdate="2024-07-08",
         year=config.current_year,
-        track="track_single_query",
+        track=track,
         results=f"results_{config.current_year}",
         participants=f"participants_{config.current_year}",
         winner_seq=get_winner(ld[smtcomp.scoring.Kind.seq]),
@@ -452,7 +515,7 @@ def largest_contribution_ranking(
 
 
 def largest_contribution(
-    config: defs.Config, selection: pl.LazyFrame, scores: pl.LazyFrame
+    config: defs.Config, selection: pl.LazyFrame, scores: pl.LazyFrame, track: defs.Track
 ) -> PodiumLargestContribution:
     for_division = True
     # For each solver compute its corresponding best solver
@@ -481,7 +544,7 @@ def largest_contribution(
         )
         .with_columns(solver=pl.lit("virtual"), error_score=0)
     )
-    virtual_datas = sq_generate_datas(config, selection, virtual_scores, for_division)
+    virtual_datas = sq_generate_datas(config, selection, virtual_scores, for_division, track)
 
     # For each solver Compute virtual solver without the solver
     solvers = scores.select("division", "solver").unique()
@@ -501,14 +564,11 @@ def largest_contribution(
             answer=pl.col("answer").first(),
         )
     )
-    virtual_without_solver_datas = sq_generate_datas(config, selection, virtual_without_solver_scores, for_division)
-
-    large = largest_contribution_ranking(
-        config,
-        virtual_datas,
-        virtual_without_solver_datas,
-        ratio_by_division,
+    virtual_without_solver_datas = sq_generate_datas(
+        config, selection, virtual_without_solver_scores, for_division, track
     )
+
+    large = largest_contribution_ranking(config, virtual_datas, virtual_without_solver_datas, ratio_by_division, track)
 
     if False:
         print(virtual_datas)
@@ -518,7 +578,9 @@ def largest_contribution(
     return large
 
 
-def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame) -> None:
+def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, track: defs.Track) -> None:
+
+    page_suffix = page_track_suffix(track)
 
     dst = config.web_results
     dst.mkdir(parents=True, exist_ok=True)
@@ -526,26 +588,29 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     scores = smtcomp.scoring.add_disagreements_info(results)
     scores = smtcomp.scoring.benchmark_scoring(scores)
     scores = scores.filter(disagreements=False).drop("disagreements")
-    scores = scores.filter(track=int(defs.Track.SingleQuery)).drop("track")
+    scores = scores.filter(track=int(track)).drop("track")
     scores = scores.collect().lazy()
 
     all_divisions: list[PodiumDivision] = []
 
     for for_division in [True, False]:
-        datas = sq_generate_datas(config, selection, scores, for_division)
+        datas = sq_generate_datas(config, selection, scores, for_division, track)
 
         for name, data in datas.items():
-            (dst / f"{name.lower()}-single-query.md").write_text(data.model_dump_json(indent=1))
+            (dst / f"{name.lower()}-{page_suffix}.md").write_text(data.model_dump_json(indent=1))
+
+            if data.logics:
+                all_divisions.append(data)
 
             if data.logics:
                 all_divisions.append(data)
 
         if for_division:
-            bigdata = biggest_lead_ranking(config, datas)
-            (dst / f"biggest-lead-single-query.md").write_text(bigdata.model_dump_json(indent=1))
+            bigdata = biggest_lead_ranking(config, datas, track)
+            (dst / f"biggest-lead-{page_suffix}.md").write_text(bigdata.model_dump_json(indent=1))
 
-            largedata = largest_contribution(config, selection, scores)
-            (dst / f"largest-contribution-single-query.md").write_text(largedata.model_dump_json(indent=1))
+            largedata = largest_contribution(config, selection, scores, track)
+            (dst / f"largest-contribution-{page_suffix}.md").write_text(largedata.model_dump_json(indent=1))
 
-    summary_results = PodiumSummaryResults(track="track_single_query", divisions=all_divisions)
+    summary_results = PodiumSummaryResults(track=track, divisions=all_divisions)
     (dst / "results-single-query.md").write_text(summary_results.model_dump_json(indent=1))

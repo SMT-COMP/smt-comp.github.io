@@ -134,28 +134,28 @@ def update(
     select: Callable[[info, str], None],
     podium: page.PodiumDivision | page.PodiumBiggestLead | page.PodiumLargestContribution,
 ) -> None:
-    if podium.track == "track_single_query":
+    if podium.track == defs.Track.SingleQuery:
         select(solvers[podium.winner_seq], "sq_seq")
         select(solvers[podium.winner_par], "sq_par")
         select(solvers[podium.winner_sat], "sq_sat")
         select(solvers[podium.winner_unsat], "sq_unsat")
         select(solvers[podium.winner_24s], "sq_24")
 
-    if podium.track == "track_incremental":
+    if podium.track == defs.Track.Incremental:
         select(solvers[podium.winner_par], "inc")
 
-    if podium.track == "track_unsat_core":
+    if podium.track == defs.Track.UnsatCore:
         select(solvers[podium.winner_par], "uc_par")
         select(solvers[podium.winner_seq], "uc_seq")
 
-    if podium.track == "track_model_validation":
+    if podium.track == defs.Track.ModelValidation:
         select(solvers[podium.winner_par], "mv_par")
         select(solvers[podium.winner_seq], "mv_seq")
 
-    if show_experimental and podium.track == "track_cloud":
+    if show_experimental and podium.track == defs.Track.Cloud:
         select(solvers[podium.winner_par], "cloud")
 
-    if show_experimental and podium.track == "track_parallel":
+    if show_experimental and podium.track == defs.Track.Parallel:
         select(solvers[podium.winner_par], "parallel")
 
 
@@ -168,7 +168,7 @@ def select_division(division: str, logics: dict[str, int]) -> Callable[[info, st
     return select
 
 
-def add_logic(logics: dict[Tuple[str, str], bool], list: dict[str, int], track: str) -> None:
+def add_logic(logics: dict[Tuple[str, defs.Track], bool], list: dict[str, int], track: defs.Track) -> None:
     for v, _ in list.items():
         logics[v, track] = True
 
@@ -205,7 +205,7 @@ def generate_certificates(
     else:
         experimental_divisions = parse_experimental_division(solvers, experimental_division)
 
-    existing_logics: dict[Tuple[str, str], bool] = {}
+    existing_logics: dict[Tuple[str, defs.Track], bool] = {}
     delayed_logic: list[page.PodiumDivision] = []  # we wait to know which logic are competitive
 
     list_dir = list(os.listdir(website_results))

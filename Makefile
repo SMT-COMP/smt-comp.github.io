@@ -70,8 +70,10 @@ division-track-data:
 	@poetry run smtcomp export-division-tracks $(DIVISION_TRACK_DATA_FILE)
 
 results-generation:
-	@echo "🚀 Generating results to web/content/results"
-	@poetry run smtcomp export-results-pages data
+	@echo "🚀 Generating results to web/content/results for SingleQuery"
+	@poetry run smtcomp export-results-pages data SingleQuery
+	@echo "🚀 Generating results to web/content/results for ModelValidation"
+	@poetry run smtcomp export-results-pages data ModelValidation
 
 cache:
 	@echo "🚀 Generating cache"
