@@ -24,7 +24,7 @@ test: generation ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
 	@poetry run pytest
 
-generation: submission-generation participant-data results-generation ## Files generation for the website
+generation: submission-generation participant-data track-data division-track-data results-generation ## Files generation for the website
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
@@ -44,6 +44,8 @@ help:
 GENERATED_SCHEMA_FILE=web/content/solver_submission/schema.json
 GENERATED_SCHEMA_HTML=web/content/solver_submission/schema.html
 PARTICIPANT_DATA_FILE=web/data/participants.json
+TRACK_DATA_FILE=web/data/tracks.json
+DIVISION_TRACK_DATA_FILE=web/data/division_tracks.json
 
 .PHONY: submission-doc submission-generation participant-data results-generation cache
 submission-generation:
@@ -58,6 +60,14 @@ submission-doc: submission-generation
 participant-data:
 	@echo "🚀 Generating participant data to $(PARTICIPANT_DATA_FILE)"
 	@poetry run smtcomp show-json submissions/*.json $(PARTICIPANT_DATA_FILE)
+
+track-data:
+	@echo "🚀 Generating track data to $(TRACK_DATA_FILE)"
+	@poetry run smtcomp export-tracks $(TRACK_DATA_FILE)
+
+division-track-data:
+	@echo "🚀 Generating track data to $(DIVISION_TRACK_DATA_FILE)"
+	@poetry run smtcomp export-division-tracks $(DIVISION_TRACK_DATA_FILE)
 
 results-generation:
 	@echo "🚀 Generating results to web/content/results"

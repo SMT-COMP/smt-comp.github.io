@@ -65,6 +65,12 @@ class PodiumDivision(BaseModel):
     layout: Literal["result"] = "result"
 
 
+class PodiumSummaryResults(BaseModel):
+    track: str
+    divisions: list[PodiumDivision]
+    layout: Literal["results_summary"] = "results_summary"
+
+
 class PodiumStepBiggestLead(BaseModel):
     name: str
     second: str
@@ -125,19 +131,8 @@ class PodiumCrossDivision(RootModel):
     root: PodiumLargestContribution | PodiumBiggestLead = Field(..., discriminator="recognition")
 
 
-class Summary(BaseModel):
-    layout: Literal["results_summary"] = "results_summary"
-    track: str
-    scores: str = "sequential,parallel,sat,unsat,twentyfour"
-    year: int
-    results: str = "results"
-    divisions: str = "divisions"
-    participants: str = "participants"
-    disagreements: str = "disagreements"
-
-
 class Podium(RootModel):
-    root: PodiumDivision | PodiumCrossDivision | Summary = Field(..., discriminator="layout")
+    root: PodiumDivision | PodiumCrossDivision | PodiumSummaryResults = Field(..., discriminator="layout")
 
 
 def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
@@ -534,11 +529,16 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     scores = scores.filter(track=int(defs.Track.SingleQuery)).drop("track")
     scores = scores.collect().lazy()
 
+    all_divisions: list[PodiumDivision] = []
+
     for for_division in [True, False]:
         datas = sq_generate_datas(config, selection, scores, for_division)
 
         for name, data in datas.items():
             (dst / f"{name.lower()}-single-query.md").write_text(data.model_dump_json(indent=1))
+
+            if data.logics:
+                all_divisions.append(data)
 
         if for_division:
             bigdata = biggest_lead_ranking(config, datas)
@@ -547,6 +547,5 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             largedata = largest_contribution(config, selection, scores)
             (dst / f"largest-contribution-single-query.md").write_text(largedata.model_dump_json(indent=1))
 
-    (dst / "results-single-query.md").write_text(
-        Summary(year=config.current_year, track="track_single_query").model_dump_json(indent=1)
-    )
+    summary_results = PodiumSummaryResults(track="track_single_query", divisions=all_divisions)
+    (dst / "results-single-query.md").write_text(summary_results.model_dump_json(indent=1))

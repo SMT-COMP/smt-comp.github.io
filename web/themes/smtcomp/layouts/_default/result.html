@@ -1,17 +1,16 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
 
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
   {{ $dateHuman := .Date | time.Format ":date_long" }}
 
   {{ $trueDivision := and (isset .Params "logics") (.Params.logics | len | ne 0) }}
+  {{ $prettyTrack := index .Site.Data.pretty_names.track .Params.track }}
 
-  <h2>{{ .Params.division }} ({{ .Params.track }})</h2>
-
+  <h1>{{ .Params.division }} ({{ $prettyTrack }})</h1>
 <p>
   Competition results for the {{ .Params.division }}
   {{ if $trueDivision }} division {{ else }} logic {{ end }}
-  in the {{ .Params.track }}.
+  in the {{ $prettyTrack }}.
 </p>
 
 <p>Results were generated on {{ .Params.resultdate }}</p>
