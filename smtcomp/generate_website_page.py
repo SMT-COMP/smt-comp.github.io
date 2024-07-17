@@ -132,7 +132,7 @@ class PodiumCrossDivision(RootModel):
 
 
 class Podium(RootModel):
-    root: PodiumDivision | PodiumCrossDivision | Summary = Field(..., discriminator="layout")
+    root: PodiumDivision | PodiumCrossDivision | PodiumSummaryResults = Field(..., discriminator="layout")
 
 
 def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
