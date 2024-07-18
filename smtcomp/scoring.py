@@ -47,13 +47,19 @@ def sanity_check(config: defs.Config, result: pl.LazyFrame) -> None:
     assert result.select(n=pl.len()).collect()["n"][0] == 0
 
 
-def add_disagreements_info(results: pl.LazyFrame) -> pl.LazyFrame:
+def add_disagreements_info(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
     """
     Add column "disagreements"
     For each division:
       - Sound solver are solvers that agree with the status of the benchmarks
       - Disagreements are benchmarks where sound solvers disagree (so status unknown)
     """
+
+    if track == defs.Track.Incremental:
+        sound_solver = (c_answer == int(defs.Answer.IncrementalError)).any().over("track", "division", "solver").not_()
+        results = results.with_columns(sound_solver=sound_solver)
+        # All the benchmarks have a status
+        return results.with_columns(disagreements=False, sound_status=int(defs.Answer.Incremental))
 
     sound_solver = (
         ((sat_status & unsat_answer) | (unsat_status & sat_answer)).any().over("track", "division", "solver").not_()
@@ -73,19 +79,29 @@ def add_disagreements_info(results: pl.LazyFrame) -> pl.LazyFrame:
     return results.with_columns(disagreements=disagreements, sound_status=sound_status)
 
 
-def benchmark_scoring(results: pl.LazyFrame) -> pl.LazyFrame:
+def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
     """
     Requires disagreements
     Add "error_score", "correctly_solved_score", "wallclock_time_score","cpu_time_score"
     """
 
-    error_score = pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(1).otherwise(0)
+    if track == defs.Track.Incremental:
+        # Since in Incremental track all the status are known, the values are already correct
+        error_score = pl.when(c_answer == int(defs.Answer.IncrementalError)).then(1).otherwise(0)
+        correctly_solved_score = pl.col("nb_answers")
+        wallclock_time_score = c_walltime_s
+        cpu_time_score = c_cputime_s
+    else:
+        error_score = (
+            pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(1).otherwise(0)
+        )
 
-    correctly_solved_score = pl.when(known_answer).then(1).otherwise(0)
-    """Even if said correct, it is just solved """
-    wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)
-    """Time if answered"""
-    cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)
+        correctly_solved_score = pl.when(known_answer).then("nb_answers").otherwise(0)
+        """Even if it named as correctly solved, it is just solved """
+
+        wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)
+        """Time if answered"""
+        cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)
 
     return results.with_columns(
         error_score=error_score,
