@@ -12,6 +12,7 @@ from zipfile import ZipFile
 from rich.progress import track
 from smtcomp.utils import *
 import re
+import json
 
 
 class RunId(BaseModel):
@@ -259,6 +260,32 @@ def inc_get_nb_answers(logfiles: LogFile, runid: RunId, scramble_id: int) -> Tup
     return (defs.Answer.Incremental, nb_answers)
 
 
+## Copied from branch final-execution
+unsat_core_re = re.compile(r"\(\s*((smtcomp(\d+)\s*)+)\)")
+core_item_re = re.compile(r"smtcomp(\d+)(\s|$)")
+
+UnsatCore = list[int]
+FrozenUnsatCore = Sequence[int]
+
+
+def get_unsat_core(output: str) -> UnsatCore | None:
+    answers = unsat_core_re.findall(output)
+    assert len(answers) <= 1, "Multiple unsat cores!"
+
+    if not answers:
+        return None
+
+    core = answers[0][0]
+    items = sorted([int(m[0]) for m in core_item_re.findall(core)])
+    return items
+
+
+def uc_get_uc(logfiles: LogFile, runid: RunId, scramble_id: int) -> UnsatCore | None:
+    output = logfiles.get_output(runid, smtcomp.scramble_benchmarks.scramble_basename(scramble_id, suffix="yml"))
+
+    return get_unsat_core(output)
+
+
 def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
     def convert(a: Run) -> Dict[str, Any]:
         d = dict(a)
@@ -269,6 +296,23 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             answer, nb_answers = inc_get_nb_answers(logfiles, r.runid, a.scramble_id)
             a.answer = answer
             d["nb_answers"] = nb_answers
+            # TODO: Since we forgot to readd timestamp for each answer
+            # we don't have the time of the last answer for now
+            # So we take the total for now
+
+        if r.runid.track == defs.Track.UnsatCore:
+            if d["answer"] == defs.Answer.Unsat:
+                uc = uc_get_uc(logfiles, r.runid, a.scramble_id)
+                if uc is None:
+                    d["answer"] = defs.Answer.Unknown
+                    d["unsat_core"] = []
+                    d["nb_answers"] = 0
+                else:
+                    d["unsat_core"] = uc
+                    d["nb_answers"] = len(uc)
+            else:
+                d["unsat_core"] = []
+                d["nb_answers"] = 0
             # TODO: Since we forgot to readd timestamp for each answer
             # we don't have the time of the last answer for now
             # So we take the total for now
@@ -292,22 +336,71 @@ def parse_to_pl(file: Path) -> pl.LazyFrame:
         return r.lazy()
 
 
+def parse_mapping(p: Path) -> pl.LazyFrame:
+    with p.open("rt") as o:
+        d = json.load(o)
+
+    return pl.LazyFrame(
+        (
+            (
+                smtcomp.scramble_benchmarks.unscramble_yml_basename(Path(k).name),
+                sorted(v["core"]),
+                smtcomp.scramble_benchmarks.unscramble_yml_basename(Path(v["file"]).name),
+            )
+            for k, l in d.items()
+            for v in l
+        ),
+        {
+            "scramble_id_orig": pl.Int64,
+            "unsat_core": pl.List(pl.Int64),
+            "scramble_id": pl.Int64,
+        },
+    )
+
+
+json_mapping_name = "mapping.json"
+
+
 def parse_dir(dir: Path) -> pl.LazyFrame:
     """
     output columns: solver, participation, track, basename, cputime_s, memory_B, status, walltime_s, scramble_id, file
     """
     csv = dir / smtcomp.scramble_benchmarks.csv_original_id_name
-    if not csv.exists():
-        raise (ValueError(f"No file {csv!s} in the directory"))
+    json = dir / json_mapping_name
+    if not csv.exists() and not json.exists():
+        raise (ValueError(f"No file {csv!s} or {json!s} in the directory"))
 
-    lf = pl.read_csv(csv).lazy()
+    if csv.exists():
+        lf = pl.read_csv(csv).lazy()
+        defaults: dict[str, Any] = {"file": -1}
+    else:
+        lf = parse_mapping(json)
+        defaults = {"unsat_core": [], "scramble_id_orig": -1}
 
     l = list(dir.glob("**/*.xml.bz2"))
     if len(l) == 0:
         raise (ValueError(f"No results in the directory {dir!s}"))
     l_parsed = list(track(map(parse_to_pl, l), total=len(l)))
     results = pl.concat(l_parsed)
-    results = add_columns(results, lf, on=["scramble_id"], defaults={"file": -1})
+    results = add_columns(results, lf, on=["scramble_id"], defaults=defaults)
+
+    ucvr = dir / "../unsat_core_validation_results" / "parsed.feather"
+    if (dir.name).endswith("unsatcore") and ucvr.is_file():
+        vr = pl.read_ipc(ucvr).lazy()
+        vr = (
+            vr.select("answer", "unsat_core", scramble_id="scramble_id_orig")
+            .group_by("scramble_id", "unsat_core")
+            .agg(unsat=(pl.col("answer") == int(defs.Answer.Unsat)).any(), validation_attempted=True)
+        )
+        results = add_columns(
+            results, vr, on=["scramble_id", "unsat_core"], defaults={"unsat": False, "validation_attempted": False}
+        )
+        results = results.with_columns(
+            answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("unsat")).not_())
+            .then(int(defs.Answer.UnsatCoreNotValidated))
+            .otherwise("answer")
+        ).drop("unsat", "unsat_core")
+
     return results
 
 

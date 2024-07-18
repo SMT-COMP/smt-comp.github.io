@@ -91,6 +91,19 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
         correctly_solved_score = pl.col("nb_answers")
         wallclock_time_score = c_walltime_s
         cpu_time_score = c_cputime_s
+    elif track == defs.Track.UnsatCore:
+        error_score = (
+            pl.when(
+                (sat_sound_status & unsat_answer)
+                | (unsat_sound_status & sat_answer)
+                | (c_answer == int(defs.Answer.UnsatCoreNotValidated))
+            )
+            .then(1)
+            .otherwise(0)
+        )
+        correctly_solved_score = pl.col("asserts") - pl.col("nb_answers")
+        wallclock_time_score = c_walltime_s
+        cpu_time_score = c_cputime_s
     else:
         error_score = (
             pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(1).otherwise(0)
