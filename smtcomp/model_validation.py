@@ -1,115 +1,151 @@
+import itertools
 from dataclasses import dataclass
 from pathlib import Path
 import smtcomp.defs as defs
-import subprocess
+import subprocess, resource
 import smtcomp.results as results
 from smtcomp.benchexec import get_suffix
 import smtcomp.scramble_benchmarks
-from concurrent.futures import ThreadPoolExecutor
-from rich.progress import Progress
+from multiprocessing.pool import ThreadPool
+from rich.progress import Progress, TaskID
+from pydantic import BaseModel, RootModel, Field
+from typing import Union
+import pydantic
+from smtcomp.unpack import write_cin, read_cin
 
 
-# ./dolmen --time=1h --size=40G --strict=false --check-model=true --report-style=minimal "$2" < "$1" &> error.txt
-# EXITSTATUS=$?
-
-# if [ "$EXITSTATUS" = "0" ]; then
-#     echo "starexec-result=sat"
-#     echo "model_validator_status=VALID"
-# elif [ "$EXITSTATUS" = "2" ]; then
-#     echo "starexec-result=unknown"
-#     echo "model_validator_status=LIMITREACHED"
-# elif [ "$EXITSTATUS" = "5" ]; then
-#     echo "starexec-result=unsat"
-#     echo "model_validator_status=INVALID"
-# else
-#     echo "starexec-result=unknown"
-#     echo "model_validator_status=UNKNOWN"
-# fi
-# echo "dolmenexit=$EXITSTATUS"
-# if grep -q '^[EF]:' error.txt; then
-#     echo "model_validator_error="$(grep '^[EF]:' error.txt | head -1)
-# fi
-# exit 0
-
-
-@dataclass
-class ValidationOk:
-    stderr: str
-
-
-@dataclass
-class ValidationError:
-    status: defs.Status
-    stderr: str
-    model: str | None
-
-
-@dataclass
-class NoValidation:
-    """No validation possible"""
-
-
-noValidation = NoValidation()
-
-Validation = ValidationOk | ValidationError | NoValidation
-
-
-def is_error(x: Validation) -> ValidationError | None:
+def is_error(x: defs.Validation) -> defs.ValidationError | None:
     match x:
-        case ValidationError(_):
+        case defs.ValidationError():
             return x
-        case ValidationOk(_) | NoValidation():
+        case defs.ValidationOk() | defs.NoValidation():
             return None
 
 
-def check_locally(smt2_file: Path, model: str) -> Validation:
-    r = subprocess.run(
+def raise_stack_limit() -> None:
+    soft, hard = resource.getrlimit(resource.RLIMIT_STACK)
+    soft = min(40_000_000_000, hard)
+    resource.setrlimit(resource.RLIMIT_STACK, (soft, hard))
+
+
+def check_locally(config: defs.Config, smt2_file: Path, model: str) -> defs.Validation:
+    opts: list[str | Path] = []
+    opts.append(config.dolmen_binary)
+    opts.extend(
         [
-            "dolmen",
             "--time=1h",
             "--size=40G",
             "--strict=false",
             "--check-model=true",
             "--report-style=minimal",
-            smt2_file,
-        ],
+            "--warn=-all",
+        ]
+    )
+    if config.dolmen_force_logic_ALL:
+        opts.append("--force-smtlib2-logic=ALL")
+    opts.append(smt2_file)
+
+    r = subprocess.run(
+        opts,
         input=model.encode(),
         capture_output=True,
+        # preexec_fn slows a lot the execution, and is not safe with threads (cf python doc)
     )
     match r.returncode:
         case 0:
-            return ValidationOk(r.stderr.decode())
-        case 5:
-            status = defs.Status.Unsat
+            return defs.ValidationOk(stderr=r.stderr.decode())
         case 2:
             # LimitReached
-            status = defs.Status.Unknown
+            status = defs.Answer.ModelValidatorTimeout
         case _:
-            status = defs.Status.Unknown
-    return ValidationError(status, r.stderr.decode(), model)
+            if r.stderr.endswith(b"E:bad-model\n"):
+                status = defs.Answer.ModelUnsat
+            elif r.stderr.endswith(b"E:timeout\n"):
+                status = defs.Answer.ModelValidatorTimeout
+            elif r.stderr.endswith(b"E:uncaught-exn\n"):
+                status = defs.Answer.ModelValidatorException
+            elif r.stderr.endswith(b"E:forbidden-array-sort\n") or r.stderr.endswith(b"E:non-linear-expr\n"):
+                status = defs.Answer.ModelValidatorBenchmarkStrictTyping
+            elif (
+                r.stderr.endswith(b"E:id-def-conflict\n")
+                or r.stderr.endswith(b"E:parsing-error\n")
+                or r.stderr.endswith(b"E:unbound-id\n")
+                or r.stderr.endswith(b"E:undefined-constant\n")
+            ):
+                status = defs.Answer.ModelParsingError
+            elif r.stderr.endswith(b"E:partial-dstr\n"):
+                status = defs.Answer.ModelPartialFunctionMissing
+            else:
+                raise (ValueError("Unknown validator error"))
+    return defs.ValidationError(status=status, stderr=r.stderr.decode(), model=model)
 
 
-def check_result_locally(cachedir: Path, logfiles: results.LogFile, rid: results.RunId, r: results.Run) -> Validation:
-    match r.answer:
-        case defs.Answer.Sat:
-            filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
-            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
-            smt2_file = filedir / str(r.logic) / basename
-            model = logfiles.get_output(rid, smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="yml"))
-            return check_locally(smt2_file, model)
-        case _:
-            return noValidation
+def check_result_locally(
+    config: defs.Config,
+    resultdir: Path,
+    cachedir: Path,
+    rid: results.RunId,
+    r: results.Run,
+    model: str,
+) -> defs.Validation:
+    d = resultdir / "model_validation_results"
+    file_cache = d / f"{str(r.scramble_id)}.json.gz"
+    if file_cache.is_file():
+        return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
+    else:
+        match r.answer:
+            case defs.Answer.Sat:
+                filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
+                basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+                smt2_file = filedir / str(r.logic) / basename
+                val = check_locally(config, smt2_file, model)
+            case _:
+                val = defs.noValidation
+        d.mkdir(parents=True, exist_ok=True)
+        s = defs.ValidationResult(val).model_dump_json(indent=1)
+        write_cin(file_cache, s)
+        return val
 
 
-def check_results_locally(
-    cachedir: Path, resultdir: Path, executor: ThreadPoolExecutor, progress: Progress
-) -> list[tuple[results.RunId, results.Run, Validation]]:
+def prepare_model_validation_tasks(
+    resultdir: Path,
+) -> list[tuple[results.RunId, results.Run, str, Path]]:
     with results.LogFile(resultdir) as logfiles:
-        l = [(r.runid, b) for r in results.parse_results(resultdir) for b in r.runs if b.answer == defs.Answer.Sat]
-        return list(
-            progress.track(
-                executor.map((lambda v: (v[0], v[1], check_result_locally(cachedir, logfiles, v[0], v[1]))), l),
-                total=len(l),
-                description=f"checking models for {resultdir.name}",
+        l = [
+            (
+                r.runid,
+                b,
+                logfiles.get_output(
+                    r.runid, smtcomp.scramble_benchmarks.scramble_basename(b.scramble_id, suffix="yml")
+                ),
+                resultdir,
             )
-        )
+            for r in results.parse_results(resultdir)
+            for b in r.runs
+            if b.answer == defs.Answer.Sat
+        ]
+        return l
+
+
+def check_all_results_locally(
+    config: defs.Config, cachedir: Path, resultdir: Path, executor: ThreadPool, progress: Progress
+) -> list[tuple[results.RunId, results.Run, defs.Validation]]:
+    raise_stack_limit()
+    l = list(
+        itertools.chain.from_iterable(
+            prepare_model_validation_tasks(d.parent)
+            for d in progress.track(
+                list(resultdir.glob("**/*.logfiles.zip")),
+                description="Preparing tasks",
+            )
+        ),
+    )
+    return list(
+        progress.track(
+            executor.imap_unordered(
+                (lambda v: (v[0], v[1], check_result_locally(config, v[3], cachedir, v[0], v[1], v[2]))), l
+            ),
+            description="Model validation",
+            total=len(l),
+        ),
+    )

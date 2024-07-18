@@ -56,6 +56,11 @@ def filter_with(a: pl.LazyFrame, b: pl.LazyFrame, on: list[str]) -> pl.LazyFrame
     return a.join(b, how="semi", on=on)
 
 
+def sort(a: pl.LazyFrame, cols: list[Tuple[str, bool]]) -> pl.LazyFrame:
+    names, descs = zip(*cols)
+    return a.sort(names, descending=descs)
+
+
 @dataclass
 class Col:
     name: str

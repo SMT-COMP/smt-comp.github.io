@@ -24,8 +24,19 @@ jobs:
       - name: Run checks
         run: make check
 
-      - name: Run tests
-        run: make tests
+      #For smtcomp data cache (TODO unduplicate from deploy-website)
+      - uses: actions/cache@v3
+        id: data-cache
+        with:
+          path: data/*.feather
+          key: data-cache-${{ hashFiles('data/*.json.gz') }}
+      - name: Cache generation if needed
+        if: steps.data-cache.outputs.cache-hit != 'true'
+        run: |
+          poetry run make cache
+
+      - name: Run test
+        run: make test
 
   tox:
     runs-on: ubuntu-latest

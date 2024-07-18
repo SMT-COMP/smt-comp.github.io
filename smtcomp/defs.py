@@ -5,7 +5,7 @@ import hashlib
 import re
 from enum import Enum
 from pathlib import Path, PurePath
-from typing import Any, Dict, cast, Optional, Iterable, TypeVar, Self, ClassVar
+from typing import Any, Dict, cast, Optional, Iterable, TypeVar, Self, ClassVar, Union
 
 from pydantic import BaseModel, Field, RootModel, model_validator, ConfigDict
 from pydantic.networks import HttpUrl, validate_email
@@ -154,6 +154,13 @@ class Answer(EnumAutoInt):
     Incremental = "incremental"
     OOM = "OutOfMemory"
     Timeout = "Timeout"
+    ModelNotValidated = "ModelNotValidated"
+    ModelUnsat = "ModelUnsat"
+    ModelParsingError = "ModelParsingError"
+    ModelPartialFunctionMissing = "ModelPartialFunctionMissing"
+    ModelValidatorException = "ModelValidatorException"
+    ModelValidatorBenchmarkStrictTyping = "ModelValidatorBenchmarkStrictTyping"
+    ModelValidatorTimeout = "ModelValidatorTimeout"
 
 
 class Track(EnumAutoInt):
@@ -1384,6 +1391,7 @@ class Results(BaseModel):
 
 ## Parameters that can change each year
 class Config:
+    __next_id__: ClassVar[int] = 0
     current_year = 2024
     oldest_previous_results = 2018
     timelimit_s = 60 * 20
@@ -1417,6 +1425,15 @@ class Config:
     """
     Minimum number of assertions for unsat core
     """
+    dolmen_commit = "871b9de26643052dfcfa5b47ee23785f0b983219"
+    """
+    Commit of the model validator dolmen (branch smtcomp-2023)
+    """
+    dolmen_force_logic_ALL = False
+    """
+    Some benchmarks are not accepted by dolmen in their current logic.
+    During model validation we can rerun by forcing logic ALL to accept more models
+    """
 
     removed_benchmarks = [
         {
@@ -1427,9 +1444,19 @@ class Config:
     ]
 
     def __init__(self, data: Path | None) -> None:
+        self.id = self.__class__.__next_id__
+        self.__class__.__next_id__ += 1
         if data is not None and data.name != "data":
             raise ValueError("Consistency check, data directory must be named 'data'")
         self._data = data
+
+    def __eq__(self, other: Any) -> bool:
+        if isinstance(other, Config):
+            return self.id == other.id
+        return False
+
+    def __hash__(self: Config) -> int:
+        return self.id
 
     @functools.cached_property
     def data(self) -> Path:
@@ -1479,6 +1506,18 @@ class Config:
         ]
 
     @functools.cached_property
+    def web_results(self) -> Path:
+        return self.data / ".." / "web" / "content" / "results"
+
+    @functools.cached_property
+    def dolmen_dir(self) -> Path:
+        return self.data / "../external-tools/dolmen"
+
+    @functools.cached_property
+    def dolmen_binary(self) -> Path:
+        return self.dolmen_dir / "binaries" / self.dolmen_commit / "dolmen"
+
+    @functools.cached_property
     def seed(self) -> int:
         unknown_seed = 0
         seed = 0
@@ -1495,3 +1534,26 @@ class Config:
                 raise ValueError(f"{unknown_seed} submissions are missing a seed")
             seed += self.nyse_seed
         return seed
+
+
+class ValidationOk(BaseModel):
+    stderr: str
+
+
+class ValidationError(BaseModel):
+    status: Answer
+    stderr: str
+    model: str
+
+
+class NoValidation(BaseModel):
+    """No validation possible"""
+
+
+noValidation = NoValidation()
+
+Validation = ValidationError | ValidationOk | NoValidation
+
+
+class ValidationResult(RootModel):
+    root: Union[ValidationError, ValidationOk, NoValidation] = Field(union_mode="left_to_right")

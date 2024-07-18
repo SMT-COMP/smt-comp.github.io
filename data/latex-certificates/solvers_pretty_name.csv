@@ -1,0 +1,20 @@
+Solver Name,Members
+Algaroba,3
+Amaya,4
+Bitwuzla,2
+COLIBRI,3
+cvc5,15
+cvc5-cloud,5
+iProver v3.9,8
+OpenSMT,2
+OSTRICH,6
+plat-smt,1
+SMTInterpol,5
+SMT-RAT,3
+SMTS,3
+STP,6
+Yices2,7
+YicesQS,1
+Z3-Noodler,5
+Z3-alpha,5
+Z3-Parti-Z3++,2

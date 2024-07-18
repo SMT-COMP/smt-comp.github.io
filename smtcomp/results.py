@@ -160,9 +160,35 @@ def parse_results(resultdir: Path) -> Iterator[Results]:
     return map(parse_xml, (resultdir.glob("*.xml.bz2")))
 
 
-def to_pl(r: Results) -> pl.LazyFrame:
-    def convert(r: Run) -> Dict[str, Any]:
-        d = dict(r)
+def get_cached_results(resultdir: Path, scramble_id: int) -> defs.Validation | None:
+    d = resultdir / "model_validation_results"
+    file_cache = d / f"{str(scramble_id)}.json.gz"
+    if file_cache.is_file():
+        return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
+    else:
+        return None
+
+
+def get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
+    val = get_cached_results(resultdir, scramble_id)
+    if val is None:
+        return defs.Answer.ModelNotValidated
+    else:
+        match val:
+            case defs.ValidationOk():
+                return defs.Answer.Sat
+            case defs.NoValidation():
+                return defs.Answer.ModelNotValidated
+            case defs.ValidationError():
+                return val.status
+
+
+def to_pl(resultdir: Path, r: Results) -> pl.LazyFrame:
+    def convert(a: Run) -> Dict[str, Any]:
+        if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
+            a.answer = get_cached_answer(resultdir, a.scramble_id)
+
+        d = dict(a)
         d["answer"] = int(d["answer"])
         d["logic"] = int(d["logic"])
         return d
@@ -175,7 +201,7 @@ def parse_to_pl(file: Path) -> pl.LazyFrame:
     feather = file.with_suffix(".feather")
     if feather.exists():
         return pl.read_ipc(feather).lazy()
-    r = to_pl(parse_xml(file)).collect()
+    r = to_pl(file.parent, parse_xml(file)).collect()
     r.write_ipc(feather)
     return r.lazy()
 
@@ -254,18 +280,45 @@ class LogFile:
         return s[index:]
 
 
-def helper_get_results(config: defs.Config, results: Path, track: defs.Track = defs.Track.SingleQuery) -> pl.LazyFrame:
+def helper_get_results(
+    config: defs.Config, results: List[Path], track: defs.Track = defs.Track.SingleQuery
+) -> Tuple[pl.LazyFrame, pl.LazyFrame]:
     """
+    If results is empty use the one in data
+
     Return on all the selected benchmarks for each solver that should run it
-    "track", "file", "scrambled_id", "logic", "division", "status", "solver", "answer", "cputime_s", "memory_B", "walltime_s".
+    "track", "file", "logic", "division", "status", "solver", "answer", "cputime_s", "memory_B", "walltime_s".
 
     -1 is used when no answer is available.
 
     """
-    lf = pl.read_ipc(results / "parsed.feather").lazy().filter(track=int(track))
-    selected = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
+    if len(results) == 0:
+        lf = (
+            pl.read_ipc(config.cached_current_results[track])
+            .lazy()
+            .with_columns(track=int(track))
+            .rename(
+                {
+                    "result": "answer",
+                    "memory_usage": "memory_B",
+                    "cpu_time": "cputime_s",
+                    "wallclock_time": "walltime_s",
+                }
+            )
+            .drop("year")
+        )
+    else:
+        lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
+        lf = lf.filter(track=int(track)).drop("scramble_id")
+    selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
-    selected = intersect(selected, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+    selection = (
+        add_columns(selection, smtcomp.selection.tracks(), on=["track", "logic"], defaults={"division": -1})
+        .collect()  # Improve later works
+        .lazy()
+    )
+
+    selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
 
     selected = add_columns(
         selected,
@@ -273,13 +326,10 @@ def helper_get_results(config: defs.Config, results: Path, track: defs.Track = d
         on=["file", "solver", "track"],
         defaults={
             "answer": -1,
-            "scramble_id": 1,
             "cputime_s": -1,
             "memory_B": -1,
             "walltime_s": -1,
         },
     )
 
-    selected = add_columns(selected, smtcomp.selection.tracks(), on=["track", "logic"], defaults={"division": -1})
-
-    return selected
+    return selected, selection

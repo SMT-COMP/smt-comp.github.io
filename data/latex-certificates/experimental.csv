@@ -1,0 +1,8 @@
+track,division
+model_validation,QF_ADT+BitVec
+model_validation,QF_ADT+LinArith
+model_validation,QF_Datatypes
+model_validation,QF_Equality+NonLinearArith
+model_validation,QF_FPArith
+model_validation,QF_NonLinearIntArith
+model_validation,QF_NonLinearRealArith
