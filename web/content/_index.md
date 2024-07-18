@@ -40,4 +40,4 @@ Committee.
   [Mathias Preiner](https://cs.stanford.edu/~preiner/), and
   [Hans-Jörg Schurr](https://team.inria.fr/veridis/schurr/)
   ([smt-lib](http://smtlib.cs.uiowa.edu/index.shtml) maintenance)
-- Jonathan Eidelman and Mike Whalen (Cloud and Parallel Tracks AWS Support)
+- Robert Jones and [Benjamin F Jones](https://github.com/benjaminfjones) (Cloud and Parallel Tracks AWS Support)
