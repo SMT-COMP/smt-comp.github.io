@@ -24,6 +24,7 @@ import smtcomp.scoring
 import smtcomp.submission as submission
 import smtcomp.execution as execution
 import smtcomp.model_validation as model_validation
+import smtcomp.unsat_core_validation as unsat_core_validation
 import smtcomp.results as results
 from smtcomp.benchmarks import clone_group
 import smtcomp.convert_csv
@@ -180,6 +181,7 @@ def generate_benchexec(
     for file in track(files):
         s = submission.read(str(file))
         smtcomp.benchexec.generate(s, cachedir, config)
+        smtcomp.benchexec.generate_unsatcore_validation(s, cachedir, config)
 
 
 @app.command(rich_help_panel=benchexec_panel)
@@ -1031,6 +1033,13 @@ def check_model_locally(
             (dst / basename).symlink_to(smt2_file.absolute())
             (dst / basename_model).write_text(result.model)
             (dst / basename).with_suffix(".output").write_text(result.stderr)
+
+
+@app.command()
+def generate_unsatcore_validation_files(
+    cachedir: Path, scrambler: Path, resultdirs: list[Path], max_workers: int = 8
+) -> None:
+    unsat_core_validation.generate_validation_files(cachedir, resultdirs, scrambler)
 
 
 @app.command()
