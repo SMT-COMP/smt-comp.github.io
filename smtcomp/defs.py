@@ -161,6 +161,10 @@ class Answer(EnumAutoInt):
     ModelValidatorException = "ModelValidatorException"
     ModelValidatorBenchmarkStrictTyping = "ModelValidatorBenchmarkStrictTyping"
     ModelValidatorTimeout = "ModelValidatorTimeout"
+    IncrementalError = "IncrementalError"
+    """
+    At least one wrong answer
+    """
 
 
 class Track(EnumAutoInt):
@@ -1383,6 +1387,10 @@ class Result(BaseModel):
     cpu_time: float
     wallclock_time: float
     memory_usage: float
+    nb_answers: int = 1
+    """
+    For incremental track, number of answered check-sat
+    """
 
 
 class Results(BaseModel):

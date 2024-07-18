@@ -585,8 +585,8 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     dst = config.web_results
     dst.mkdir(parents=True, exist_ok=True)
 
-    scores = smtcomp.scoring.add_disagreements_info(results)
-    scores = smtcomp.scoring.benchmark_scoring(scores)
+    scores = smtcomp.scoring.add_disagreements_info(results, track)
+    scores = smtcomp.scoring.benchmark_scoring(scores, track)
     scores = scores.filter(disagreements=False).drop("disagreements")
     scores = scores.filter(track=int(track)).drop("track")
     scores = scores.collect().lazy()

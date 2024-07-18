@@ -246,6 +246,7 @@ def store_results(
                         cpu_time=d["cputime_s"],
                         wallclock_time=d["walltime_s"],
                         memory_usage=d["memory_B"],
+                        nb_answers=d["nb_answers"] if incremental else 1,
                     )
                     for d in df.to_dicts()
                 ]
@@ -338,6 +339,7 @@ path_of_logic_family_name = pl.concat_str(
 @app.command(rich_help_panel=benchexec_panel)
 def find_disagreement_results(
     data: Path,
+    track: defs.Track,
     results: List[Path] = typer.Argument(None),
     use_previous_year_results: bool = defs.Config.use_previous_results_for_status,
 ) -> None:
@@ -346,7 +348,7 @@ def find_disagreement_results(
     """
     config = defs.Config(data)
     config.use_previous_results_for_status = use_previous_year_results
-    selected, _ = smtcomp.results.helper_get_results(config, results)
+    selected, _ = smtcomp.results.helper_get_results(config, results, track)
 
     df = (
         selected.filter(pl.col("answer").is_in([int(defs.Answer.Sat), int(defs.Answer.Unsat)]))
@@ -397,14 +399,15 @@ def find_disagreement_results(
 @app.command(rich_help_panel=scoring_panel)
 def scoring_removed_benchmarks(
     data: Path,
+    track: defs.Track,
     src: List[Path] = typer.Argument(None),
     use_previous_year_results: bool = defs.Config.use_previous_results_for_status,
 ) -> None:
     config = defs.Config(data)
     config.use_previous_results_for_status = use_previous_year_results
-    results, _ = smtcomp.results.helper_get_results(config, src)
+    results, _ = smtcomp.results.helper_get_results(config, src, track)
 
-    results = smtcomp.scoring.add_disagreements_info(results)
+    results = smtcomp.scoring.add_disagreements_info(results, track)
 
     df = results.filter(disagreements=True).group_by("track", "file").agg(name=path_of_logic_family_name).collect()
 
@@ -426,6 +429,7 @@ def scoring_removed_benchmarks(
 @app.command(rich_help_panel=scoring_panel)
 def show_scores(
     data: Path,
+    track: defs.Track,
     src: List[Path] = typer.Argument(None),
     kind: smtcomp.scoring.Kind = typer.Argument(default="par"),
 ) -> None:
@@ -433,13 +437,13 @@ def show_scores(
     If src is empty use results in data
     """
     config = defs.Config(data)
-    results, _ = smtcomp.results.helper_get_results(config, src)
+    results, _ = smtcomp.results.helper_get_results(config, src, track)
 
     smtcomp.scoring.sanity_check(config, results)
 
-    results = smtcomp.scoring.add_disagreements_info(results).filter(disagreements=False).drop("disagreements")
+    results = smtcomp.scoring.add_disagreements_info(results, track).filter(disagreements=False).drop("disagreements")
 
-    results = smtcomp.scoring.benchmark_scoring(results)
+    results = smtcomp.scoring.benchmark_scoring(results, track)
 
     results = smtcomp.scoring.filter_for(kind, config, results)
 
@@ -855,6 +859,7 @@ def create_cache(data: Path, only_current: bool = False) -> None:
             "wallclock_time": x.wallclock_time,
             "memory_usage": x.memory_usage,
             "year": year,
+            "nb_answers": x.nb_answers,
         }
 
     if not only_current:

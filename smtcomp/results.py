@@ -11,6 +11,7 @@ from pydantic import BaseModel
 from zipfile import ZipFile
 from rich.progress import track
 from smtcomp.utils import *
+import re
 
 
 class RunId(BaseModel):
@@ -160,7 +161,68 @@ def parse_results(resultdir: Path) -> Iterator[Results]:
     return map(parse_xml, (resultdir.glob("*.xml.bz2")))
 
 
-def get_cached_results(resultdir: Path, scramble_id: int) -> defs.Validation | None:
+def log_filename(dir: Path) -> Path:
+    l = list(dir.glob("*.logfiles.zip"))
+    if len(l) != 1:
+        raise (ValueError(f"Directory {dir!r} doesn't contains *.logfiles.zip archive"))
+    return l[0]
+
+
+@functools.cache
+def benchexec_log_separator() -> str:
+    """
+    #Benchexec add this header
+    output_file.write(
+    " ".join(map(util.escape_string_shell, args))
+    + "\n\n\n"
+    + "-" * 80
+    + "\n\n\n"
+    )
+    """
+    return "\n\n\n" + "-" * 80 + "\n\n\n"
+
+
+class LogFile:
+    def __init__(self: "LogFile", dir: Path) -> None:
+        self.filename = log_filename(dir)
+        self.logfiles: None | ZipFile = None
+        self.name = Path(self.filename.name.removesuffix(".zip"))
+
+    def get_logfiles(self) -> ZipFile:
+        if self.logfiles is None:
+            self.logfiles = ZipFile(self.filename)
+        return self.logfiles
+
+    def __enter__(self: "LogFile") -> "LogFile":
+        return self
+
+    def __exit__(self: "LogFile", exc_type: Any, exc_value: Any, traceback: Any) -> None:
+        self.close()
+
+    def close(self) -> None:
+        if not self.logfiles is None:
+            self.logfiles.close()
+
+    def get_log(self: "LogFile", r: RunId, basename: str) -> str:
+        """
+        Return the output of the prover and the header with the commandline used
+        """
+        p = str(self.name.joinpath(".".join([r.mangle(), basename, "log"])))
+        return self.get_logfiles().read(p).decode()
+
+    def get_output(self: "LogFile", r: RunId, basename: str) -> str:
+        """
+        Return the output of the prover
+        """
+        s = self.get_log(r, basename)
+        index = s.find(benchexec_log_separator())
+        if index == -1:
+            raise ValueError(f"Log Header not found {r!r} {basename!r}")
+        index += len(benchexec_log_separator())
+        return s[index:]
+
+
+def mv_get_cached_results(resultdir: Path, scramble_id: int) -> defs.Validation | None:
     d = resultdir / "model_validation_results"
     file_cache = d / f"{str(scramble_id)}.json.gz"
     if file_cache.is_file():
@@ -169,8 +231,8 @@ def get_cached_results(resultdir: Path, scramble_id: int) -> defs.Validation | N
         return None
 
 
-def get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
-    val = get_cached_results(resultdir, scramble_id)
+def mv_get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
+    val = mv_get_cached_results(resultdir, scramble_id)
     if val is None:
         return defs.Answer.ModelNotValidated
     else:
@@ -183,12 +245,35 @@ def get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
                 return val.status
 
 
-def to_pl(resultdir: Path, r: Results) -> pl.LazyFrame:
-    def convert(a: Run) -> Dict[str, Any]:
-        if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
-            a.answer = get_cached_answer(resultdir, a.scramble_id)
+re_inc_trace_executor_wrong_output = re.compile(r"WRONG solver response: got")
+re_inc_sat_unsat = re.compile(r"^sat|unsat$", flags=re.MULTILINE)
 
+
+def inc_get_nb_answers(logfiles: LogFile, runid: RunId, scramble_id: int) -> Tuple[defs.Answer, int]:
+    output = logfiles.get_output(runid, smtcomp.scramble_benchmarks.scramble_basename(scramble_id, suffix="yml"))
+
+    if re_inc_trace_executor_wrong_output.search(output):
+        return (defs.Answer.IncrementalError, 0)
+
+    nb_answers = sum(1 for _ in re_inc_sat_unsat.finditer(output))
+    return (defs.Answer.Incremental, nb_answers)
+
+
+def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
+    def convert(a: Run) -> Dict[str, Any]:
         d = dict(a)
+        if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
+            a.answer = mv_get_cached_answer(resultdir, a.scramble_id)
+
+        if r.runid.track == defs.Track.Incremental:
+            answer, nb_answers = inc_get_nb_answers(logfiles, r.runid, a.scramble_id)
+            a.answer = answer
+            d["nb_answers"] = nb_answers
+            # Since we forgot to readd timestamp for each answer
+            # we don't have the time of the last answer for now
+            d["cputime_s"] = 0.0
+            d["walltime_s"] = 0.0
+
         d["answer"] = int(d["answer"])
         d["logic"] = int(d["logic"])
         return d
@@ -201,9 +286,11 @@ def parse_to_pl(file: Path) -> pl.LazyFrame:
     feather = file.with_suffix(".feather")
     if feather.exists():
         return pl.read_ipc(feather).lazy()
-    r = to_pl(file.parent, parse_xml(file)).collect()
-    r.write_ipc(feather)
-    return r.lazy()
+
+    with LogFile(file.parent) as logfiles:
+        r = to_pl(file.parent, logfiles, parse_xml(file)).collect()
+        r.write_ipc(feather)
+        return r.lazy()
 
 
 def parse_dir(dir: Path) -> pl.LazyFrame:
@@ -225,63 +312,8 @@ def parse_dir(dir: Path) -> pl.LazyFrame:
     return results
 
 
-def log_filename(dir: Path) -> Path:
-    l = list(dir.glob("*.logfiles.zip"))
-    if len(l) != 1:
-        raise (ValueError(f"Directory {dir!r} doesn't contains *.logfiles.zip archive"))
-    return l[0]
-
-
-### Benchexec add this header
-# output_file.write(
-#     " ".join(map(util.escape_string_shell, args))
-#     + "\n\n\n"
-#     + "-" * 80
-#     + "\n\n\n"
-# )
-
-
-@functools.cache
-def benchexec_log_separator() -> str:
-    return "\n\n\n" + "-" * 80 + "\n\n\n"
-
-
-class LogFile:
-    def __init__(self: "LogFile", dir: Path) -> None:
-        filename = log_filename(dir)
-        self.logfiles = ZipFile(filename)
-        self.name = Path(filename.name.removesuffix(".zip"))
-
-    def __enter__(self: "LogFile") -> "LogFile":
-        return self
-
-    def __exit__(self: "LogFile", exc_type: Any, exc_value: Any, traceback: Any) -> None:
-        self.close()
-
-    def close(self) -> None:
-        self.logfiles.close()
-
-    def get_log(self: "LogFile", r: RunId, basename: str) -> str:
-        """
-        Return the output of the prover and the header with the commandline used
-        """
-        p = str(self.name.joinpath(".".join([r.mangle(), basename, "log"])))
-        return self.logfiles.read(p).decode()
-
-    def get_output(self: "LogFile", r: RunId, basename: str) -> str:
-        """
-        Return the output of the prover
-        """
-        s = self.get_log(r, basename)
-        index = s.find(benchexec_log_separator())
-        if index == -1:
-            raise ValueError(f"Log Header not found {r!r} {basename!r}")
-        index += len(benchexec_log_separator())
-        return s[index:]
-
-
 def helper_get_results(
-    config: defs.Config, results: List[Path], track: defs.Track = defs.Track.SingleQuery
+    config: defs.Config, results: List[Path], track: defs.Track
 ) -> Tuple[pl.LazyFrame, pl.LazyFrame]:
     """
     If results is empty use the one in data
@@ -329,6 +361,7 @@ def helper_get_results(
             "cputime_s": -1,
             "memory_B": -1,
             "walltime_s": -1,
+            "nb_answers": -1,
         },
     )
 
