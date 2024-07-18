@@ -269,10 +269,9 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             answer, nb_answers = inc_get_nb_answers(logfiles, r.runid, a.scramble_id)
             a.answer = answer
             d["nb_answers"] = nb_answers
-            # Since we forgot to readd timestamp for each answer
+            # TODO: Since we forgot to readd timestamp for each answer
             # we don't have the time of the last answer for now
-            d["cputime_s"] = 0.0
-            d["walltime_s"] = 0.0
+            # So we take the total for now
 
         d["answer"] = int(d["answer"])
         d["logic"] = int(d["logic"])
