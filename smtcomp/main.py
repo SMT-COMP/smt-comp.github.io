@@ -220,6 +220,13 @@ def store_results(
             if len(df) > 0:
                 print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
                 exit(1)
+        if track == defs.Track.UnsatCore:
+            df = lf.filter(
+                track=int(track), answer=int(defs.Answer.UnsatCoreNotValidated), validation_attempted=False
+            ).collect()
+            if len(df) > 0:
+                print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
+                exit(1)
         df = (
             add_columns(
                 lf.filter(track=int(track)).drop("logic"),
@@ -246,7 +253,7 @@ def store_results(
                         cpu_time=d["cputime_s"],
                         wallclock_time=d["walltime_s"],
                         memory_usage=d["memory_B"],
-                        nb_answers=d["nb_answers"] if incremental else 1,
+                        nb_answers=d["nb_answers"] if track in {defs.Track.Incremental, defs.Track.UnsatCore} else 1,
                     )
                     for d in df.to_dicts()
                 ]

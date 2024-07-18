@@ -165,6 +165,7 @@ class Answer(EnumAutoInt):
     """
     At least one wrong answer
     """
+    UnsatCoreNotValidated = "UnsatCoreNotValidated"
 
 
 class Track(EnumAutoInt):
@@ -175,6 +176,7 @@ class Track(EnumAutoInt):
     Incremental = "Incremental"
     Cloud = "Cloud"
     Parallel = "Parallel"
+    UnsatCoreValidation = "UnsatCoreValidation"
 
     def short_cut(self: Track) -> str:
         match self:
@@ -1390,6 +1392,7 @@ class Result(BaseModel):
     nb_answers: int = 1
     """
     For incremental track, number of answered check-sat
+    For unsat-core, size of unsat-core
     """
 
 
