@@ -221,12 +221,12 @@ def store_results(
                 print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
                 exit(1)
         if track == defs.Track.UnsatCore:
-            df = lf.filter(
-                track=int(track), answer=int(defs.Answer.UnsatCoreNotValidated), validation_attempted=False
-            ).collect()
+            df = lf.filter(track=int(track), answer=int(defs.Answer.UnsatCoreNotValidated)).collect()
             if len(df) > 0:
-                print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
-                exit(1)
+                df = df.filter(validation_attempted=False)
+                if len(df) > 0:
+                    print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
+                    exit(1)
         df = (
             add_columns(
                 lf.filter(track=int(track)).drop("logic"),
