@@ -23,6 +23,8 @@ def to_track_name(track: defs.Track) -> str:
             return "track_proof_exhibition"
         case defs.Track.UnsatCore:
             return "track_unsat_core"
+        case defs.Track.UnsatCoreValidation:
+            raise (ValueError("No results for this internal track"))
         case defs.Track.Cloud:
             return "track_cloud"
         case defs.Track.Parallel:
@@ -68,6 +70,8 @@ def page_track_suffix(track: defs.Track) -> str:
             return "proof-exhibition"
         case defs.Track.UnsatCore:
             return "unsat-core"
+        case defs.Track.UnsatCoreValidation:
+            raise (ValueError("No results for this internal track"))
         case defs.Track.Cloud:
             return "cloud"
         case defs.Track.Parallel:
