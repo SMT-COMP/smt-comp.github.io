@@ -4,6 +4,7 @@ import sys
 
 sys.path.insert(0, "benchexec")
 
+
 from benchexec.runexecutor import RunExecutor
 import logging
 

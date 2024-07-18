@@ -171,11 +171,14 @@ class Track(EnumAutoInt):
     Incremental = "Incremental"
     Cloud = "Cloud"
     Parallel = "Parallel"
+    UnsatCoreValidation = "UnsatCoreValidation"
 
     def short_cut(self: Track) -> str:
         match self:
             case Track.UnsatCore:
                 return "uc"
+            case Track.UnsatCoreValidation:
+                return "uc_val"
             case Track.SingleQuery:
                 return "sq"
             case Track.ProofExhibition:
@@ -1395,8 +1398,11 @@ class Config:
     current_year = 2024
     oldest_previous_results = 2018
     timelimit_s = 60 * 20
-    memlimit_M = 1024 * 20
+    memlimit_M = 1024 * 30
     cpuCores = 4
+    unsatcore_validation_timelimit_s = 60 * 5
+    unsatcore_validation_memlimit_M = 1024 * 30
+    unsatcore_validation_cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
     use_previous_results_for_status = False

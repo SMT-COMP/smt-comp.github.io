@@ -1,0 +1,31 @@
+{
+    "name": "z3",
+    "competitive": false,
+    "contributors": [
+	"Microsoft Research"
+    ],
+    "contacts": [
+	"SMT-COMP 2024 Organizers <martin.jonas@mail.muni.cz>"
+    ],
+    "archive": {
+	"url": "https://github.com/Z3Prover/z3/releases/download/z3-4.13.0/z3-4.13.0-x64-glibc-2.35.zip",
+	"h": {
+	    "sha256": "884e3a411fa11b125522fc35eba3391b772517c047f8064fb4b656d92a73b38c"
+	}
+    },
+  "website": "https://github.com/Z3Prover/z3",
+  "system_description": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
+  "command": [ "z3-4.13.0-x64-glibc-2.35/bin/z3" ],
+  "solver_type": "Standalone",
+  "participations": [
+    {
+      "tracks": [ "SingleQuery" ],
+      "logics": ".*"
+    },
+    {
+      "tracks": [ "UnsatCore" ],
+      "logics": ".*"
+    }
+  ],
+  "seed": 0
+}
