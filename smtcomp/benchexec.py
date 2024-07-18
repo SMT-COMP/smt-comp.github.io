@@ -233,11 +233,16 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
     run_defs = cachedir / "run_definitions"
     run_defs.mkdir(parents=True, exist_ok=True)
 
+    tool = tool_module_name(s, False)
+    run_scripts = cachedir / "run_scripts"
+    run_scripts.mkdir(parents=True, exist_ok=True)
+
     for target_track, divisions in defs.tracks.items():
         # cloud and parallel tracks are not executed via benchexec
-        if target_track in (defs.Track.Cloud, defs.Track.Parallel):
+        if target_track in (defs.Track.Cloud, defs.Track.Parallel, defs.Track.UnsatCoreValidation, defs.Track.ProofExhibition):
             continue
 
+        generated_divisions = []
         for division in divisions.keys():
             res = cmdtask_for_submission(s, cachedir, target_track, division)
             if res:
@@ -249,6 +254,27 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
                     file=file,
                     tool_module_name=tool_module_name(s, target_track == defs.Track.Incremental),
                 )
+                generated_divisions.append(division)
+
+        track_suffix = get_suffix(target_track)
+        script = run_scripts / (f"{tool}{track_suffix}.sh")
+
+        with open(script, "w") as f:
+            out = lambda s: f.write(s + "\n")
+
+            divisions = " ".join('"' + str(d) + '"' for d in generated_divisions)
+
+            out("#!/usr/bin/env bash")
+            out("set -x")
+            out(f"for DIVISION in {divisions}")
+            out("    do\n")
+            out(f'    TARGET="../final_results{track_suffix}/$DIVISION/{tool}"')
+            out("    rm -rf $TARGET")
+            out("    mkdir -p $TARGET")
+            out(
+                f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}{track_suffix}_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess -o $TARGET"
+            )
+            out("done")
 
 
 def generate_unsatcore_validation(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
