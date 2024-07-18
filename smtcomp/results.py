@@ -364,6 +364,13 @@ json_mapping_name = "mapping.json"
 def parse_dir(dir: Path) -> pl.LazyFrame:
     """
     output columns: solver, participation, track, basename, cputime_s, memory_B, status, walltime_s, scramble_id, file
+
+    The track stored in the results is *not* used for some decisions:
+    - if a file mapping.json is present it used and the original_id.csv is not needed
+    - if original_id is present it is used (all the other track)
+    - if it ends with "unsatcore" and the directory "../unsat_core_valisation_results" is present and converted (feather file) it is used to validate the unsat cores
+
+    TODO: streamline the results directory hierarchy
     """
     csv = dir / smtcomp.scramble_benchmarks.csv_original_id_name
     json = dir / json_mapping_name

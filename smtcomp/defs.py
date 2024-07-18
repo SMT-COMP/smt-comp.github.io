@@ -182,6 +182,8 @@ class Track(EnumAutoInt):
         match self:
             case Track.UnsatCore:
                 return "uc"
+            case Track.UnsatCoreValidation:
+                return "ucv"
             case Track.SingleQuery:
                 return "sq"
             case Track.ProofExhibition:
