@@ -602,9 +602,6 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             if data.logics:
                 all_divisions.append(data)
 
-            if data.logics:
-                all_divisions.append(data)
-
         if for_division:
             bigdata = biggest_lead_ranking(config, datas, track)
             (dst / f"biggest-lead-{page_suffix}.md").write_text(bigdata.model_dump_json(indent=1))
