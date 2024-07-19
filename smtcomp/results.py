@@ -248,16 +248,27 @@ def mv_get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
 
 re_inc_trace_executor_wrong_output = re.compile(r"WRONG solver response: got")
 re_inc_sat_unsat = re.compile(r"^sat|unsat$", flags=re.MULTILINE)
+re_inc_time = re.compile(r"^time ([0-9.]*)$", flags=re.MULTILINE)
 
 
-def inc_get_nb_answers(logfiles: LogFile, runid: RunId, scramble_id: int) -> Tuple[defs.Answer, int]:
+def inc_get_nb_answers(logfiles: LogFile, runid: RunId, scramble_id: int) -> Tuple[defs.Answer, int, float | None]:
     output = logfiles.get_output(runid, smtcomp.scramble_benchmarks.scramble_basename(scramble_id, suffix="yml"))
 
     if re_inc_trace_executor_wrong_output.search(output):
-        return (defs.Answer.IncrementalError, 0)
+        return (defs.Answer.IncrementalError, 0, None)
 
     nb_answers = sum(1 for _ in re_inc_sat_unsat.finditer(output))
-    return (defs.Answer.Incremental, nb_answers)
+
+    last_match: Match[str] | None = None
+    for m in re_inc_time.finditer(output):
+        last_match = m
+
+    if last_match is not None:
+        last_time = float(last_match.group(1))
+    else:
+        last_time = None
+
+    return (defs.Answer.Incremental, nb_answers, last_time)
 
 
 ## Copied from branch final-execution
@@ -293,12 +304,15 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             a.answer = mv_get_cached_answer(resultdir, a.scramble_id)
 
         if r.runid.track == defs.Track.Incremental:
-            answer, nb_answers = inc_get_nb_answers(logfiles, r.runid, a.scramble_id)
+            answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.scramble_id)
             a.answer = answer
             d["nb_answers"] = nb_answers
-            # TODO: Since we forgot to readd timestamp for each answer
+            # TODO: Since we forgot to readd timestamp for some answer
             # we don't have the time of the last answer for now
-            # So we take the total for now
+            # So we take the total for nowwhen no time
+            if last_time is not None:
+                d["walltime_s"] = last_time
+                d["cputime_s"] = last_time
 
         if r.runid.track == defs.Track.UnsatCore:
             if d["answer"] == defs.Answer.Unsat:
