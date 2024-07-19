@@ -613,5 +613,6 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             largedata = largest_contribution(config, selection, scores, track)
             (dst / f"largest-contribution-{page_suffix}.md").write_text(largedata.model_dump_json(indent=1))
 
+    all_divisions.sort(key=lambda x: x.division)
     summary_results = PodiumSummaryResults(track=track, divisions=all_divisions)
     (dst / f"results-{page_suffix}.md").write_text(summary_results.model_dump_json(indent=1))
