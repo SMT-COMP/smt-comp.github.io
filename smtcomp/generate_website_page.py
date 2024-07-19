@@ -613,4 +613,4 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             (dst / f"largest-contribution-{page_suffix}.md").write_text(largedata.model_dump_json(indent=1))
 
     summary_results = PodiumSummaryResults(track=track, divisions=all_divisions)
-    (dst / "results-single-query.md").write_text(summary_results.model_dump_json(indent=1))
+    (dst / f"results-{page_suffix}.md").write_text(summary_results.model_dump_json(indent=1))
