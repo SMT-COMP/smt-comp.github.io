@@ -218,7 +218,7 @@ def generate_certificates(
         result = page.Podium.model_validate_json(file.read_text()).root
 
         match result:
-            case page.Summary():
+            case page.PodiumSummaryResults():
                 print("Useless: ", file)
                 continue
             case page.PodiumCrossDivision():
