@@ -23,7 +23,7 @@
         "SingleQuery": "Single Query Track",
         "Incremental": "Incremental Track",
         "UnsatCore": "Unsat Core Track",
-        "Model": "Model Validation Track",
+        "ModelValidation": "Model Validation Track",
         "Cloud": "Cloud Track",
         "Parallel": "Parallel Track"
     }
