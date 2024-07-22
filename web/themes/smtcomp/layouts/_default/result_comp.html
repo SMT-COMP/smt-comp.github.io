@@ -58,7 +58,7 @@
       <th class="center">Time Score</th>
     </tr>
   </thead>
-  {{ range $solver := (sort . "division" "asc") }}
+  {{ range $solver := . }}
   <tr {{ if eq $solver.competing "no" }}class = "non-competing" {{ end }}>
     <td><a href="../{{ $solver.division | lower }}-{{ replace ($.Params.track | strings.TrimPrefix "track_") "_" "-" }}">{{ $solver.division }}</a></td>
     <td>
