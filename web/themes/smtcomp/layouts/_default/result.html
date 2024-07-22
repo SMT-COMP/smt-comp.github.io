@@ -91,7 +91,7 @@
 {{ range $solver := . }}
 <tr {{ if eq $solver.competing "no" }}class = "non-competing" {{ end }}>
     <td>
-      <a href="TODO">{{ $solver.name }}</a>{{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
+      {{ $solver.name }} {{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
     </td>
     <td class="right">{{ $solver.errorScore }}
       {{ if $solver.errorFootnote }}
