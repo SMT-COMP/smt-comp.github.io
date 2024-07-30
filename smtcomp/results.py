@@ -473,10 +473,10 @@ def helper_get_results(
         on=["file", "solver", "track"],
         defaults={
             "answer": -1,
-            "cputime_s": -1,
-            "memory_B": -1,
-            "walltime_s": -1,
-            "nb_answers": -1,
+            "cputime_s": 0,
+            "memory_B": 0,
+            "walltime_s": 0,
+            "nb_answers": 0,
         },
     )
 
