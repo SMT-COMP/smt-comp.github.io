@@ -411,16 +411,23 @@ def parse_dir(dir: Path) -> pl.LazyFrame:
         vr = (
             vr.select("answer", "unsat_core", scramble_id="scramble_id_orig")
             .group_by("scramble_id", "unsat_core")
-            .agg(unsat=(pl.col("answer") == int(defs.Answer.Unsat)).any(), validation_attempted=True)
+            .agg(
+                sat=(pl.col("answer") == int(defs.Answer.Sat)).count(),
+                unsat=(pl.col("answer") == int(defs.Answer.Unsat)).count(),
+                validation_attempted=True,
+            )
         )
         results = add_columns(
-            results, vr, on=["scramble_id", "unsat_core"], defaults={"unsat": False, "validation_attempted": False}
+            results,
+            vr,
+            on=["scramble_id", "unsat_core"],
+            defaults={"sat": 0, "unsat": 0, "validation_attempted": False},
         )
         results = results.with_columns(
-            answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("unsat")).not_())
+            answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("sat") > pl.col("unsat")))
             .then(int(defs.Answer.UnsatCoreNotValidated))
             .otherwise("answer")
-        ).drop("unsat", "unsat_core")
+        ).drop("sat", "unsat", "unsat_core")
 
     return results
 
@@ -471,10 +478,10 @@ def helper_get_results(
         on=["file", "solver", "track"],
         defaults={
             "answer": -1,
-            "cputime_s": -1,
-            "memory_B": -1,
-            "walltime_s": -1,
-            "nb_answers": -1,
+            "cputime_s": 0,
+            "memory_B": 0,
+            "walltime_s": 0,
+            "nb_answers": 0,
         },
     )
 
