@@ -406,28 +406,31 @@ def parse_dir(dir: Path) -> pl.LazyFrame:
     results = add_columns(results, lf, on=["scramble_id"], defaults=defaults)
 
     ucvr = dir / "../unsat_core_validation_results" / "parsed.feather"
-    if (dir.name).endswith("unsatcore") and ucvr.is_file():
-        vr = pl.read_ipc(ucvr).lazy()
-        vr = (
-            vr.select("answer", "unsat_core", scramble_id="scramble_id_orig")
-            .group_by("scramble_id", "unsat_core")
-            .agg(
-                sat=(pl.col("answer") == int(defs.Answer.Sat)).count(),
-                unsat=(pl.col("answer") == int(defs.Answer.Unsat)).count(),
-                validation_attempted=True,
+    if (dir.name).endswith("unsatcore"):
+        if ucvr.is_file():
+            vr = pl.read_ipc(ucvr).lazy()
+            vr = (
+                vr.select("answer", "unsat_core", scramble_id="scramble_id_orig")
+                .group_by("scramble_id", "unsat_core")
+                .agg(
+                    sat=(pl.col("answer") == int(defs.Answer.Sat)).count(),
+                    unsat=(pl.col("answer") == int(defs.Answer.Unsat)).count(),
+                    validation_attempted=True,
+                )
             )
-        )
-        results = add_columns(
-            results,
-            vr,
-            on=["scramble_id", "unsat_core"],
-            defaults={"sat": 0, "unsat": 0, "validation_attempted": False},
-        )
-        results = results.with_columns(
-            answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("sat") > pl.col("unsat")))
-            .then(int(defs.Answer.UnsatCoreNotValidated))
-            .otherwise("answer")
-        ).drop("sat", "unsat", "unsat_core")
+            results = add_columns(
+                results,
+                vr,
+                on=["scramble_id", "unsat_core"],
+                defaults={"sat": 0, "unsat": 0, "validation_attempted": False},
+            )
+            results = results.with_columns(
+                answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("sat") > pl.col("unsat")))
+                .then(int(defs.Answer.UnsatCoreInvalidated))
+                .otherwise("answer")
+            ).drop("sat", "unsat", "unsat_core")
+        else:
+            results = results.with_columns(validation_attempted=False)
 
     return results
 
