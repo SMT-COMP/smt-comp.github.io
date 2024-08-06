@@ -126,7 +126,7 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
             error_score = (
                 pl.when(sat_answer | (c_answer == int(defs.Answer.UnsatCoreNotValidated))).then(1).otherwise(0)
             )
-            correctly_solved_score = pl.col("asserts") - pl.col("nb_answers")
+            correctly_solved_score = pl.when(unsat_answer).then(pl.col("asserts") - pl.col("nb_answers")).otherwise(0)
         case defs.Track.ModelValidation:
             error_score = pl.when(unsat_answer | (c_answer == int(defs.Answer.ModelUnsat))).then(1).otherwise(0)
             correctly_solved_score = pl.when(known_answer).then("nb_answers").otherwise(0)
