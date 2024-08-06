@@ -129,14 +129,11 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
             correctly_solved_score = pl.when(unsat_answer).then(pl.col("asserts") - pl.col("nb_answers")).otherwise(0)
         case defs.Track.ModelValidation:
             error_score = pl.when(unsat_answer | (c_answer == int(defs.Answer.ModelUnsat))).then(1).otherwise(0)
-            correctly_solved_score = pl.when(known_answer).then("nb_answers").otherwise(0)
+            correctly_solved_score = pl.when(sat_answer).then(1).otherwise(0)
         case defs.Track.SingleQuery | defs.Track.Cloud | defs.Track.Parallel:
-            error_score = (
-                pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(1).otherwise(0)
-            )
-
-            correctly_solved_score = pl.when(known_answer).then("nb_answers").otherwise(0)
-            """Even if it named as correctly solved, it is just solved """
+            error = (sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)
+            error_score = pl.when(error).then(1).otherwise(0)
+            correctly_solved_score = pl.when(error.not_() & known_answer).then(1).otherwise(0)
 
         case defs.Track.UnsatCoreValidation | defs.Track.ProofExhibition:
             raise (ValueError("Can't score those track yet", track))
