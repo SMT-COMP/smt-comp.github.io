@@ -469,22 +469,29 @@ def largest_contribution_ranking(
         virtual = v_steps[0]
         assert virtual.name == "virtual"
         ratio = ratio_by_division[div]
+
+        def timeScore(vws_step: PodiumStep) -> float:
+            assert vws_step.correctScore <= virtual.correctScore
+            if k == smtcomp.scoring.Kind.seq:
+                v_time_score = virtual.CPUScore
+                vws_time_score = vws_step.CPUScore
+            else:
+                v_time_score = virtual.WallScore
+                vws_time_score = vws_step.WallScore
+            if vws_time_score == 0:
+                # The rules do not take into account this case
+                return ratio
+            else:
+                return ratio * (1.0 - ((v_time_score / vws_time_score)))
+
         return [
             PodiumStepLargestContribution(
-                name=step.name,
-                correctScore=ratio * (1.0 - (step.correctScore / virtual.correctScore)),
-                timeScore=ratio
-                * (
-                    1.0
-                    - (
-                        (virtual.CPUScore / step.CPUScore)
-                        if k == smtcomp.scoring.Kind.seq
-                        else (virtual.WallScore / step.WallScore)
-                    )
-                ),
+                name=vws_step.name,
+                correctScore=ratio * (1.0 - (vws_step.correctScore / virtual.correctScore)),
+                timeScore=timeScore(vws_step),
                 division=div,
             )
-            for step in vws_steps
+            for vws_step in vws_steps
         ]
 
     ld = dict(
@@ -525,7 +532,7 @@ def largest_contribution(
     # For each solver compute its corresponding best solver
     # TODO: check what is competitive solver (unsound?)
 
-    scores = scores.filter(error_score=0, sound_solver=True).filter(smtcomp.scoring.known_answer)
+    scores = scores.filter(error_score=0, sound_solver=True).filter(pl.col("correctly_solved_score") > 0)
     scores_col = scores.collect()
     total_len = len(scores_col)
     scores = scores_col.lazy()
