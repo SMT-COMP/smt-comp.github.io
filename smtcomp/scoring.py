@@ -1,6 +1,7 @@
 from smtcomp import defs
 import polars as pl
 from smtcomp.utils import *
+from typing import assert_never
 
 c_answer = pl.col("answer")
 sat_answer = c_answer == int(defs.Answer.Sat)
@@ -55,11 +56,36 @@ def add_disagreements_info(results: pl.LazyFrame, track: defs.Track) -> pl.LazyF
       - Disagreements are benchmarks where sound solvers disagree (so status unknown)
     """
 
-    if track == defs.Track.Incremental:
-        sound_solver = (c_answer == int(defs.Answer.IncrementalError)).any().over("track", "division", "solver").not_()
-        results = results.with_columns(sound_solver=sound_solver)
-        # All the benchmarks have a status
-        return results.with_columns(disagreements=False, sound_status=int(defs.Answer.Incremental))
+    match track:
+        case defs.Track.Incremental:
+            sound_solver = (
+                (c_answer == int(defs.Answer.IncrementalError)).any().over("track", "division", "solver").not_()
+            )
+            results = results.with_columns(sound_solver=sound_solver)
+            # All the benchmarks have a status
+            return results.with_columns(disagreements=False, sound_status=int(defs.Answer.Incremental))
+
+        case defs.Track.UnsatCore:
+            sound_solver = (
+                ((c_answer == int(defs.Answer.UnsatCoreNotValidated)) | sat_answer)
+                .any()
+                .over("track", "division", "solver")
+                .not_()
+            )
+            results = results.with_columns(sound_solver=sound_solver)
+            # All the benchmarks have a status
+            return results.with_columns(disagreements=False, sound_status=int(defs.Answer.Unsat))
+
+        case defs.Track.ModelValidation:
+            sound_solver = (
+                ((c_answer == int(defs.Answer.ModelUnsat)) | unsat_answer)
+                .any()
+                .over("track", "division", "solver")
+                .not_()
+            )
+            results = results.with_columns(sound_solver=sound_solver)
+            # All the benchmarks have a status
+            return results.with_columns(disagreements=False, sound_status=int(defs.Answer.Sat))
 
     sound_solver = (
         ((sat_status & unsat_answer) | (unsat_status & sat_answer)).any().over("track", "division", "solver").not_()
@@ -85,36 +111,38 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
     Add "error_score", "correctly_solved_score", "wallclock_time_score","cpu_time_score"
     """
 
-    if track == defs.Track.Incremental:
-        # Since in Incremental track all the status are known, the values are already correct
-        error_score = pl.when(c_answer == int(defs.Answer.IncrementalError)).then(1).otherwise(0)
-        correctly_solved_score = pl.col("nb_answers")
-        wallclock_time_score = c_walltime_s
-        cpu_time_score = c_cputime_s
-    elif track == defs.Track.UnsatCore:
-        error_score = (
-            pl.when(
-                (sat_sound_status & unsat_answer)
-                | (unsat_sound_status & sat_answer)
-                | (c_answer == int(defs.Answer.UnsatCoreNotValidated))
+    wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)
+    """Time if answered"""
+    cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)
+
+    match track:
+        case defs.Track.Incremental:
+            # Since in Incremental track all the status are known, the values are already correct
+            error_score = pl.when(c_answer == int(defs.Answer.IncrementalError)).then(1).otherwise(0)
+            correctly_solved_score = pl.col("nb_answers")
+            wallclock_time_score = c_walltime_s
+            cpu_time_score = c_cputime_s
+        case defs.Track.UnsatCore:
+            error_score = (
+                pl.when(sat_answer | (c_answer == int(defs.Answer.UnsatCoreNotValidated))).then(1).otherwise(0)
             )
-            .then(1)
-            .otherwise(0)
-        )
-        correctly_solved_score = pl.col("asserts") - pl.col("nb_answers")
-        wallclock_time_score = c_walltime_s
-        cpu_time_score = c_cputime_s
-    else:
-        error_score = (
-            pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(1).otherwise(0)
-        )
+            correctly_solved_score = pl.col("asserts") - pl.col("nb_answers")
+        case defs.Track.ModelValidation:
+            error_score = pl.when(unsat_answer | (c_answer == int(defs.Answer.ModelUnsat))).then(1).otherwise(0)
+            correctly_solved_score = pl.when(known_answer).then("nb_answers").otherwise(0)
+        case defs.Track.SingleQuery | defs.Track.Cloud | defs.Track.Parallel:
+            error_score = (
+                pl.when((sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)).then(1).otherwise(0)
+            )
 
-        correctly_solved_score = pl.when(known_answer).then("nb_answers").otherwise(0)
-        """Even if it named as correctly solved, it is just solved """
+            correctly_solved_score = pl.when(known_answer).then("nb_answers").otherwise(0)
+            """Even if it named as correctly solved, it is just solved """
 
-        wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)
-        """Time if answered"""
-        cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)
+        case defs.Track.UnsatCoreValidation | defs.Track.ProofExhibition:
+            raise (ValueError("Can't score those track yet", track))
+        case _:
+            # Because mypy can't automatically check match exhaustiveness
+            assert_never(track)
 
     return results.with_columns(
         error_score=error_score,
