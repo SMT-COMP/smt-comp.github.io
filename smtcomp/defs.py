@@ -165,7 +165,10 @@ class Answer(EnumAutoInt):
     """
     At least one wrong answer
     """
-    UnsatCoreNotValidated = "UnsatCoreNotValidated"
+    UnsatCoreInvalidated = "UnsatCoreNotValidated"
+    """
+    More solver said sat than unsat
+    """
 
 
 class Track(EnumAutoInt):

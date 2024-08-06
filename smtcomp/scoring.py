@@ -67,7 +67,7 @@ def add_disagreements_info(results: pl.LazyFrame, track: defs.Track) -> pl.LazyF
 
         case defs.Track.UnsatCore:
             sound_solver = (
-                ((c_answer == int(defs.Answer.UnsatCoreNotValidated)) | sat_answer)
+                ((c_answer == int(defs.Answer.UnsatCoreInvalidated)) | sat_answer)
                 .any()
                 .over("track", "division", "solver")
                 .not_()
@@ -123,9 +123,7 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
             wallclock_time_score = c_walltime_s
             cpu_time_score = c_cputime_s
         case defs.Track.UnsatCore:
-            error_score = (
-                pl.when(sat_answer | (c_answer == int(defs.Answer.UnsatCoreNotValidated))).then(1).otherwise(0)
-            )
+            error_score = pl.when(sat_answer | (c_answer == int(defs.Answer.UnsatCoreInvalidated))).then(1).otherwise(0)
             correctly_solved_score = pl.when(unsat_answer).then(pl.col("asserts") - pl.col("nb_answers")).otherwise(0)
         case defs.Track.ModelValidation:
             error_score = pl.when(unsat_answer | (c_answer == int(defs.Answer.ModelUnsat))).then(1).otherwise(0)
