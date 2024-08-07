@@ -205,6 +205,7 @@ def store_results(
 
     config = defs.Config(data)
     lf = pl.concat(pl.read_ipc(results / "parsed.feather").lazy() for results in lresults)
+
     benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks).lazy()
     benchmarks_inc = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
     for track, dst in config.current_results.items():
@@ -221,11 +222,15 @@ def store_results(
                 print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
                 exit(1)
         if track == defs.Track.UnsatCore:
-            df = lf.filter(track=int(track), answer=int(defs.Answer.Unsat), validation_attempted=False).collect()
+            df = lf.filter(track=int(track), answer=int(defs.Answer.Unsat)).collect()
             if len(df) > 0:
-                print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
-                print(df["answer"].unique())
-                exit(1)
+                # Tested in two phases, because validation_attempted is not always present
+                df = df.filter(validation_attempted=False)
+                if len(df) > 0:
+                    print("[bold][red]Validation as not been attempted for all the results[/red][/bold]")
+                    print(df.select("logic", "solver"))
+                    exit(1)
+        removed_results = pl.LazyFrame(config.removed_results)
         df = (
             add_columns(
                 lf.filter(track=int(track)).drop("logic"),
@@ -233,6 +238,7 @@ def store_results(
                 on=["file"],
                 defaults={"logic": -1, "family": "", "name": ""},
             )
+            .join(removed_results, on=["logic", "family", "name"], how="anti")
             .sort("file", "solver")
             .collect()
         )
@@ -257,7 +263,12 @@ def store_results(
                     for d in df.to_dicts()
                 ]
             )
-            write_cin(dst, results_track.model_dump_json(indent=1))
+            write_cin(
+                dst,
+                results_track.model_dump_json(
+                    indent=1, exclude_defaults=(track not in [defs.Track.Incremental, defs.Track.UnsatCore])
+                ),
+            )
 
 
 @app.command(rich_help_panel=benchexec_panel)
