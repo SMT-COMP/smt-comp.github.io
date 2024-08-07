@@ -1481,11 +1481,12 @@ class Config:
         return self._data
 
     @functools.cached_property
+    def previous_years(self) -> list[int]:
+        return list(range(self.oldest_previous_results, self.current_year))
+
+    @functools.cached_property
     def previous_results(self) -> list[tuple[int, Path]]:
-        return [
-            (year, self.data.joinpath(f"results-sq-{year}.json.gz"))
-            for year in range(Config.oldest_previous_results, Config.current_year)
-        ]
+        return [(year, self.data.joinpath(f"results-sq-{year}.json.gz")) for year in self.previous_years]
 
     @functools.cached_property
     def current_results(self) -> dict[Track, Path]:

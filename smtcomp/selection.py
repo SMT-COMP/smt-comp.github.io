@@ -164,7 +164,7 @@ def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, tar
     )
 
     # Filter with the selected benchmarks
-    return benchmarks_with_info.join(selected_benchmarks, on="file", how="outer_coalesce").with_columns(
+    return benchmarks_with_info.join(selected_benchmarks, on="file", how="full").with_columns(
         pl.col("selected").fill_null(False)
     )
 
