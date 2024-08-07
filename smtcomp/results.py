@@ -446,6 +446,8 @@ def helper_get_results(
 
     -1 is used when no answer is available.
 
+    The second value returned is the selection
+
     """
     if len(results) == 0:
         lf = (
