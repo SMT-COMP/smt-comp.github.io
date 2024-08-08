@@ -8,11 +8,20 @@
 
 {{ $categories := slice "sequential" "parallel" "sat" "unsat" "twentyfour" }}
 {{ $winner_categories := dict
-"sequential" "winner_seq"
-"parallel" "winner_par"
-"sat" "winner_sat"
-"unsat" "winner_unsat"
-"twentyfour" "winner_24s" }}
+        "sequential" "winner_seq"
+        "parallel" "winner_par"
+        "sat" "winner_sat"
+        "unsat" "winner_unsat"
+        "twentyfour" "winner_24s" }}
+
+{{ if eq $.Params.track "track_incremental" }}
+{{ $categories = slice "parallel" "sat" "unsat" "twentyfour" }}
+{{ $winner_categories := dict
+        "parallel" "winner_par"
+        "sat" "winner_sat"
+        "unsat" "winner_unsat"
+        "twentyfour" "winner_24s" }}
+{{ end }}
 
 {{ $categories_pretty := .Site.Data.pretty_names.performance }}
 
