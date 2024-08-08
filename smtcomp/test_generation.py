@@ -22,6 +22,7 @@ file_sat = defs.Smt2File(incremental=False, logic=defs.Logic.QF_ABV, family=dais
 file_unsat = defs.Smt2File(incremental=False, logic=defs.Logic.QF_ABV, family=daisy_family, name="unsat.smt2")
 
 file_unknown = defs.Smt2File(incremental=False, logic=defs.Logic.QF_ABV, family=daisy_family, name="unkown.smt2")
+""" This file is unsat in the generated single query results"""
 
 file_incremental = defs.Smt2File(
     incremental=True, logic=defs.Logic.QF_ABV, family=daisy_family, name="incremental.smt2"
@@ -45,7 +46,12 @@ def mk_submissions() -> list[defs.Submission]:
             participations=defs.Participations(
                 [
                     defs.Participation(
-                        tracks=[defs.Track.SingleQuery, defs.Track.UnsatCore, defs.Track.Incremental],
+                        tracks=[
+                            defs.Track.SingleQuery,
+                            defs.Track.UnsatCore,
+                            defs.Track.Incremental,
+                            defs.Track.ModelValidation,
+                        ],
                         logics=defs.Logics([defs.Logic.QF_ABV]),
                     )
                 ]
@@ -120,6 +126,15 @@ def mk_uc_results() -> defs.Results:
     )
 
 
+def mk_mv_results() -> defs.Results:
+
+    return defs.Results(
+        results=mk_results(defs.Track.SingleQuery, solver_best, [(file_sat, defs.Answer.Sat, 1)])
+        + mk_results(defs.Track.SingleQuery, solver_sound, [(file_sat, defs.Answer.ModelParsingError, 1)])
+        + mk_results(defs.Track.SingleQuery, solver_error, [(file_sat, defs.Answer.ModelUnsat, 1)])
+    )
+
+
 def mk_inc_results() -> defs.Results:
     results = [(file_incremental, defs.Answer.Incremental, 7)]
 
@@ -142,6 +157,7 @@ def write_test_files(data: Path) -> None:
     for track, gen in [
         (defs.Track.SingleQuery, mk_sq_results),
         (defs.Track.UnsatCore, mk_uc_results),
+        (defs.Track.ModelValidation, mk_mv_results),
         (defs.Track.Incremental, mk_inc_results),
     ]:
         write_cin(config.current_results[track], gen().model_dump_json(indent=2))
