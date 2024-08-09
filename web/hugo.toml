@@ -61,6 +61,11 @@ theme = 'smtcomp'
     weight = 30
 
 [[menu.year]]
+    name = 'Validation of the Models'
+    pageRef = 'model_validation'
+    weight = 30
+
+[[menu.year]]
     name = 'Parallel & Cloud Tracks'
     pageRef = 'parallel_cloud'
     weight = 30
