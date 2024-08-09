@@ -74,17 +74,11 @@ def config(tmp_path_factory: pytest.TempPathFactory) -> defs.Config:
 
 def test_results_sq_export(config: defs.Config) -> None:
     print(config.data)
-    track = defs.Track.SingleQuery
-    results, selection = smtcomp.results.helper_get_results(config, [], track)
-    scores = smtcomp.scoring.add_disagreements_info(results, track)
-    sound_solvers = scores.filter(sound_solver=True).select("solver").unique().collect()["solver"].sort().to_list()
-    assert sound_solvers == [gtests.solver_best, gtests.solver_sound]
-    smtcomp.generate_website_page.export_results(config, selection, results, track)
-    page_suffix = smtcomp.generate_website_page.page_track_suffix(track)
-    podium = smtcomp.generate_website_page.PodiumDivision.model_validate_json(
-        (config.web_results / f"{gtests.logic.name.lower()}-{page_suffix}.md").read_text()
+    podium = gtests.compute_results_read_podium_division(
+        config, defs.Track.SingleQuery, check_sound_solvers=[gtests.solver_best, gtests.solver_sound]
     )
-    print(podium)
+
+    print(podium.model_dump_json(indent=1))
     assert podium.winner_seq == gtests.solver_best
 
     assert podium.sequential[0].name == gtests.solver_best
@@ -100,17 +94,11 @@ def test_results_sq_export(config: defs.Config) -> None:
 
 def test_results_uc_export(config: defs.Config) -> None:
     print(config.data)
-    track = defs.Track.UnsatCore
-    results, selection = smtcomp.results.helper_get_results(config, [], track)
-    scores = smtcomp.scoring.add_disagreements_info(results, track)
-    sound_solvers = scores.filter(sound_solver=True).select("solver").unique().collect()["solver"].sort().to_list()
-    assert sound_solvers == [gtests.solver_best, gtests.solver_sound]
-    smtcomp.generate_website_page.export_results(config, selection, results, track)
-    page_suffix = smtcomp.generate_website_page.page_track_suffix(track)
-    podium = smtcomp.generate_website_page.PodiumDivision.model_validate_json(
-        (config.web_results / f"{gtests.logic.name.lower()}-{page_suffix}.md").read_text()
+    podium = gtests.compute_results_read_podium_division(
+        config, defs.Track.UnsatCore, check_sound_solvers=[gtests.solver_best, gtests.solver_sound]
     )
-    print(podium)
+    print(podium.model_dump_json(indent=1))
+
     assert podium.winner_seq == gtests.solver_best
 
     assert podium.sequential[0].name == gtests.solver_best
@@ -126,17 +114,11 @@ def test_results_uc_export(config: defs.Config) -> None:
 
 def test_results_mv_export(config: defs.Config) -> None:
     print(config.data)
-    track = defs.Track.ModelValidation
-    results, selection = smtcomp.results.helper_get_results(config, [], track)
-    scores = smtcomp.scoring.add_disagreements_info(results, track)
-    sound_solvers = scores.filter(sound_solver=True).select("solver").unique().collect()["solver"].sort().to_list()
-    assert sound_solvers == [gtests.solver_best, gtests.solver_sound]
-    smtcomp.generate_website_page.export_results(config, selection, results, track)
-    page_suffix = smtcomp.generate_website_page.page_track_suffix(track)
-    podium = smtcomp.generate_website_page.PodiumDivision.model_validate_json(
-        (config.web_results / f"{gtests.logic.name.lower()}-{page_suffix}.md").read_text()
+    podium = gtests.compute_results_read_podium_division(
+        config, defs.Track.ModelValidation, check_sound_solvers=[gtests.solver_best, gtests.solver_sound]
     )
-    print(podium)
+    print(podium.model_dump_json(indent=1))
+
     assert podium.winner_seq == gtests.solver_best
 
     assert podium.sequential[0].name == gtests.solver_best
@@ -152,14 +134,9 @@ def test_results_mv_export(config: defs.Config) -> None:
 
 def test_results_inc_export(config: defs.Config) -> None:
     print(config.data)
-    track = defs.Track.Incremental
-    results, selection = smtcomp.results.helper_get_results(config, [], track)
-    smtcomp.generate_website_page.export_results(config, selection, results, track)
-    page_suffix = smtcomp.generate_website_page.page_track_suffix(track)
-    podium = smtcomp.generate_website_page.PodiumDivision.model_validate_json(
-        (config.web_results / f"{gtests.logic.name.lower()}-{page_suffix}.md").read_text()
-    )
-    print(podium)
+    podium = gtests.compute_results_read_podium_division(config, defs.Track.Incremental)
+    print(podium.model_dump_json(indent=1))
+
     assert podium.winner_seq == gtests.solver_best
 
     assert podium.sequential[0].name == gtests.solver_best

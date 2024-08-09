@@ -2,6 +2,7 @@ import smtcomp.defs as defs
 from pydantic.networks import HttpUrl
 from pathlib import Path
 from smtcomp.unpack import write_cin
+import smtcomp.generate_website_page
 
 logic = defs.Logic.QF_ABV
 """ An arbitrary logic present in all tested tracks """
@@ -17,16 +18,14 @@ solver_error = "SolverError"
 
 daisy_family = tuple(["daisy"])
 
-file_sat = defs.Smt2File(incremental=False, logic=defs.Logic.QF_ABV, family=daisy_family, name="sat.smt2")
+file_sat = defs.Smt2File(incremental=False, logic=logic, family=daisy_family, name="sat.smt2")
 
-file_unsat = defs.Smt2File(incremental=False, logic=defs.Logic.QF_ABV, family=daisy_family, name="unsat.smt2")
+file_unsat = defs.Smt2File(incremental=False, logic=logic, family=daisy_family, name="unsat.smt2")
 
-file_unknown = defs.Smt2File(incremental=False, logic=defs.Logic.QF_ABV, family=daisy_family, name="unkown.smt2")
+file_unknown = defs.Smt2File(incremental=False, logic=logic, family=daisy_family, name="unkown.smt2")
 """ This file is unsat in the generated single query results"""
 
-file_incremental = defs.Smt2File(
-    incremental=True, logic=defs.Logic.QF_ABV, family=daisy_family, name="incremental.smt2"
-)
+file_incremental = defs.Smt2File(incremental=True, logic=logic, family=daisy_family, name="incremental.smt2")
 
 
 def mk_submissions() -> list[defs.Submission]:
@@ -52,7 +51,7 @@ def mk_submissions() -> list[defs.Submission]:
                             defs.Track.Incremental,
                             defs.Track.ModelValidation,
                         ],
-                        logics=defs.Logics([defs.Logic.QF_ABV]),
+                        logics=defs.Logics([logic]),
                     )
                 ]
             ),
@@ -120,18 +119,18 @@ def mk_uc_results() -> defs.Results:
     results = [(file_unknown, defs.Answer.Unsat, 7), (file_unsat, defs.Answer.Unsat, 7)]
 
     return defs.Results(
-        results=mk_results(defs.Track.SingleQuery, solver_best, results)
-        + mk_results(defs.Track.SingleQuery, solver_sound, results[:-1] + [(file_unsat, defs.Answer.Unknown, 1)])
-        + mk_results(defs.Track.SingleQuery, solver_error, results[:-1] + [(file_unsat, defs.Answer.Sat, 1)])
+        results=mk_results(defs.Track.UnsatCore, solver_best, results)
+        + mk_results(defs.Track.UnsatCore, solver_sound, results[:-1] + [(file_unsat, defs.Answer.Unknown, 1)])
+        + mk_results(defs.Track.UnsatCore, solver_error, results[:-1] + [(file_unsat, defs.Answer.Sat, 1)])
     )
 
 
 def mk_mv_results() -> defs.Results:
 
     return defs.Results(
-        results=mk_results(defs.Track.SingleQuery, solver_best, [(file_sat, defs.Answer.Sat, 1)])
-        + mk_results(defs.Track.SingleQuery, solver_sound, [(file_sat, defs.Answer.ModelParsingError, 1)])
-        + mk_results(defs.Track.SingleQuery, solver_error, [(file_sat, defs.Answer.ModelUnsat, 1)])
+        results=mk_results(defs.Track.ModelValidation, solver_best, [(file_sat, defs.Answer.Sat, 1)])
+        + mk_results(defs.Track.ModelValidation, solver_sound, [(file_sat, defs.Answer.ModelParsingError, 1)])
+        + mk_results(defs.Track.ModelValidation, solver_error, [(file_sat, defs.Answer.ModelUnsat, 1)])
     )
 
 
@@ -139,9 +138,9 @@ def mk_inc_results() -> defs.Results:
     results = [(file_incremental, defs.Answer.Incremental, 7)]
 
     return defs.Results(
-        results=mk_results(defs.Track.SingleQuery, solver_best, results)
-        + mk_results(defs.Track.SingleQuery, solver_sound, [(file_incremental, defs.Answer.Incremental, 5)])
-        + mk_results(defs.Track.SingleQuery, solver_error, [(file_incremental, defs.Answer.IncrementalError, 0)])
+        results=mk_results(defs.Track.Incremental, solver_best, results)
+        + mk_results(defs.Track.Incremental, solver_sound, [(file_incremental, defs.Answer.Incremental, 5)])
+        + mk_results(defs.Track.Incremental, solver_error, [(file_incremental, defs.Answer.IncrementalError, 0)])
     )
 
 
@@ -161,3 +160,19 @@ def write_test_files(data: Path) -> None:
         (defs.Track.Incremental, mk_inc_results),
     ]:
         write_cin(config.current_results[track], gen().model_dump_json(indent=2))
+
+
+def compute_results_read_podium_division(
+    config: defs.Config, track: defs.Track, check_sound_solvers: list[str] = []
+) -> smtcomp.generate_website_page.PodiumDivision:
+    results, selection = smtcomp.results.helper_get_results(config, [], track)
+    if check_sound_solvers:
+        scores = smtcomp.scoring.add_disagreements_info(results, track)
+        sound_solvers = scores.filter(sound_solver=True).select("solver").unique().collect()["solver"].sort().to_list()
+        assert sound_solvers == check_sound_solvers
+    smtcomp.generate_website_page.export_results(config, selection, results, track)
+    page_suffix = smtcomp.generate_website_page.page_track_suffix(track)
+    podium = smtcomp.generate_website_page.PodiumDivision.model_validate_json(
+        (config.web_results / f"{logic.name.lower()}-{page_suffix}.md").read_text()
+    )
+    return podium
