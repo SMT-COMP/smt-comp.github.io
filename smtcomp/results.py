@@ -431,7 +431,7 @@ def parse_dir(dir: Path) -> pl.LazyFrame:
             ).drop("sat", "unsat", "unsat_core")
         else:
             results = results.with_columns(validation_attempted=False)
-
+            
     return results
 
 
@@ -467,16 +467,19 @@ def helper_get_results(
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
         lf = lf.filter(track=int(track)).drop("scramble_id")
+    
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
+
+    selection = selection.unique()
 
     selection = (
         add_columns(selection, smtcomp.selection.tracks(), on=["track", "logic"], defaults={"division": -1})
         .collect()  # Improve later works
         .lazy()
     )
-
+    
     selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
-
+    
     selected = add_columns(
         selected,
         lf.drop("logic", "participation"),  # Hack for participation 0 bug move "participation" to on= for 2025
@@ -489,5 +492,49 @@ def helper_get_results(
             "nb_answers": 0,
         },
     )
-
+    
     return selected, selection
+
+
+def parse_aws_csv(dir: Path) -> pl.LazyFrame:
+    """
+    output columns: solver, participation, track, cputime_s, memory_B, status, walltime_s, scramble_id, file, answer
+
+    The track stored in the results is *not* used for some decisions:
+    - if a file mapping.json is present it used and the original_id.csv is not needed
+    - if original_id is present it is used (all the other track)
+    - if it ends with "unsatcore" and the directory "../unsat_core_valisation_results" is present and converted (feather file) it is used to validate the unsat cores
+    """
+    def aws_logic(logic: str) -> int:
+        return int(defs.Logic(logic))
+    def aws_track(track: str) -> int:
+        return int(defs.Track(track))
+    def aws_result(res: str) -> int:
+        match res:
+            case "unsat":
+                return int(defs.Answer.Unsat)
+            case "sat":
+                return int(defs.Answer.Sat)
+            case _:
+                return int(defs.Answer.Unknown)
+
+    csv = dir / "results.csv"
+    if not csv.exists():
+        raise (ValueError(f"results.csv missing in the directory"))
+    lf = pl.scan_csv(csv).select(pl.col("solver"),
+                                 pl.col("scramble_id"),
+                                 pl.col("logic").apply(aws_logic,return_dtype=pl.Int64).alias("logic"),
+                                 pl.col("solver_time").alias("walltime_s"),
+                                 pl.col("solver_time").alias("cputime_s"),
+                                 pl.col("file"),
+                                 pl.col("track").apply(aws_track,return_dtype=pl.Int32).alias("track"),
+                                 pl.col("solver_result").map_elements(aws_result,return_dtype=pl.Int64).alias("answer")
+                                 )
+
+    results = lf.with_columns((pl.col("logic") * 0).alias("participation"),
+                              (pl.col("logic") * 0).alias("memory_B"),
+                              (pl.col("logic") * 0).alias("nb_answers"))
+
+    print(results.collect())
+    
+    return results
