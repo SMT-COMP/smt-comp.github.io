@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Benchmark Selection | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Benchmark Selection" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2011/benchmark_selection.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2011/benchmark_selection.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Benchmark Selection" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Benchmark Selection","url":"https://smt-comp.github.io/2011/benchmark_selection.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #D9A360; } </style>
+
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2011/">SMT-COMP 2011</a>
+    </h3>
+    <a href="/2011/rules.html"><b>Rules</b></a><br/><a href="/2011/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2011/tools.html"><b>Tools</b></a><br/><a href="/2011/specs.html"><b>Specs</b></a><br/><a href="/2011/participants.html"><b>Participants</b></a><br/><a href="/2011/results.html"><b>Results</b></a><br/>
+  </p>
+
+
+</header>
+
+
+      <section>
+
+	<h2 id="benchmark-selection">Benchmark Selection</h2>
+
+	
+<p>
+The benchmark selector will likely be the same as the one used for 2010.
+</p>
+
+<h3>Benchmark Eligibility</h3>
+
+<p>
+First, benchmarks that are of <tt>unknown</tt> status are ineligible.
+</p>
+
+<p>
+Benchmarks that are &ldquo;too easy&rdquo; are similarly ineligible.  &ldquo;Too easy&rdquo;
+is understood to mean that all of last year's solvers can solve the benchmark correctly
+in 5 seconds or less.  However, if removing such benchmarks leaves a division with fewer
+than 300 eligible (non-check) benchmarks, then the easiest benchmarks are removed until
+300 non-check benchmarks remain.
+</p>
+
+<p>
+The organizers reserve the right to remove from competition eligibility
+uninteresting or over-represented benchmarks.
+</p>
+
+<h3>Selection Algorithm</h3>
+
+<p>For each division, the <tt>check</tt> benchmarks are always included. In addition, the selection script will randomly select 200 benchmarks from each division with the following distribution (when possible): 170 <tt>industrial</tt>, 20 <tt>crafted</tt>, and 10 <tt>random</tt>.
+In each category, the script selects (when possible):</p>
+<ul>
+<li>10% <tt>sat</tt> with difficulty on the interval [0,1].</li>
+<li>10% <tt>sat</tt> with difficulty on the interval (1,2].</li>
+<li>10% <tt>sat</tt> with difficulty on the interval (2,3].</li>
+<li>10% <tt>sat</tt> with difficulty on the interval (3,4].</li>
+<li>10% <tt>sat</tt> with difficulty on the interval (4,5].</li>
+<li>10% <tt>unsat</tt> with difficulty on the interval [0,1].</li>
+<li>10% <tt>unsat</tt> with difficulty on the interval (1,2].</li>
+<li>10% <tt>unsat</tt> with difficulty on the interval (2,3].</li>
+<li>10% <tt>unsat</tt> with difficulty on the interval (3,4].</li>
+<li>10% <tt>unsat</tt> with difficulty on the interval (4,5].</li>
+</ul>
+
+<p>
+If there aren't enough <tt>random</tt> and <tt>crafted</tt>, then 
+the slack is &ldquo;inherited&rdquo; by the <tt>industrial</tt> category. 
+It there aren't enough <tt>industrial</tt>, then the slack 
+is &ldquo;inherited&rdquo; by the <tt>crafted</tt> category.
+As a last resort, and only if necessary (as in divisions with only random
+benchmarks), <tt>random</tt> benchmarks are allocated additional slots.
+</p>
+
+<p>
+More detail on this procedure is included in a comment at the top of the
+source file.  A less algorithmic description can be found in the
+<a href="rules.html">official rules</a>.
+</p>
+
+<h3>Tool Download</h3>
+
+<ul>
+<li> <strong>select_benchmarks</strong>: given an input file of benchmarks, selects benchmarks according to the rules; statistics on stderr, benchmarks on stdout.  Some changes may be made to this program before it is used officially for the competition benchmark selection; it is intended that these changes be limited to bug fixes, removal of obsolete debugging code, and documentation cleanups.
+<a href="tools/select_benchmarks_2011.c">Source</a>. </li>
+<li> <strong>smtcomp2011-benchs.txt</strong>: these are the eligible 2011 benchmarks for inclusion.  This file lists SMT-COMP 2011 benchmarks and their metadata; the file format is described in the C source above.
+<i>Not yet available.</i>
+<!--<a href="smtcomp2011-benchs.txt">Download</a>.--> </li>
+<li> <strong>smtcomp2011-allbenchs.txt</strong>: this is the total list of 2011 benchmarks, including ineligible benchmarks.
+<i>Not yet available.</i>
+<!--<a href="smtcomp2011-allbenchs.txt">Download</a>.--> </li>
+</ul>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+  </body>
+</html>

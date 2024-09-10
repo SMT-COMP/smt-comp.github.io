@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Benchmark Selection | SMT-COMP</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Benchmark Selection" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<meta property="og:description" content="The International Satisfiability Modulo Theories (SMT) Competition." />
+<link rel="canonical" href="https://smt-comp.github.io/2007/benchmark_selection.html" />
+<meta property="og:url" content="https://smt-comp.github.io/2007/benchmark_selection.html" />
+<meta property="og:site_name" content="SMT-COMP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Benchmark Selection" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The International Satisfiability Modulo Theories (SMT) Competition.","headline":"Benchmark Selection","url":"https://smt-comp.github.io/2007/benchmark_selection.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css?v=ca87ca498acb8424db393bc72e2497c3e747f945">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style> a { color: #D9A360; } </style>
+
+  </head>
+  <body>
+    <div class="wrapper">
+        <header>
+  <h1>
+    <a href="/">SMT-COMP</a>
+  </h1>
+
+
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp"><b>GitHub</b></a>
+  </p>
+  <p class="view">
+    <a href="/index.html"><b>Home</b></a><br/>
+    <a href="/introduction.html"><b>Introduction</b></a><br/>
+    <a href="/benchmark_submission.html"><b>Benchmark Submission</b></a><br/>
+    <a href="/publications.html"><b>Publications</b></a><br/>
+    <a class="hl" href="https://smtlib.cs.uiowa.edu/"><b>SMT-LIB</b></a></br>
+    <a class="hl" href="/previous.html"><b>Previous Editions</b></a></br>
+  </p>
+  <p class="view">
+    <h3><a href="/2007/">SMT-COMP 2007</a>
+    </h3>
+    <a href="/2007/rules.html"><b>Rules</b></a><br/><a href="/2007/benchmarks.html"><b>Benchmarks</b></a><br/><a href="/2007/tools.html"><b>Tools</b></a><br/><a href="/2007/specs.html"><b>Specs</b></a><br/><a href="/2007/participants.html"><b>Participants</b></a><br/><a href="/2007/results.html"><b>Results</b></a><br/><a href="report/SMTCOMP2007.pdf"><b>Report</b></a><br/>
+  </p>
+
+
+</header>
+
+
+      <section>
+
+	<h2 id="benchmark-selection">Benchmark Selection</h2>
+
+
+<h3>Benchmark Attributes</h3>
+
+<p>
+The benchmark selection program is somewhat different from last year's.
+It uses the status, difficulty, and category of the benchmarks, but
+doesn't read them from the benchmark files themselves.  Rather, this
+information is extracted from a MySQL database used for SMT-COMP'07,
+and a benchmark selection program is run on this extracted metadata to
+form the final list of selected benchmarks.
+</p>
+
+<p>
+The metadata differs from the values encoded in the benchmark files
+in three ways:
+</p>
+
+<ul>
+<li> Where the status encoded in a benchmark file is &ldquo;unknown&rdquo;
+but we can verify that the benchmark is in fact satisfiable or
+unsatisfiable. </li>
+<li> Where the category is missing from the benchmark file (as it is
+in some of QF_UFIDL's uclid benchmarks). </li>
+<li> Where the difficulty in the benchmark file is obsolete.  The
+difficulty values have been recomputed for SMT-COMP'07 (based on
+the SMT-COMP'06 solvers Ario 1.2, Barcelogic 1.1, CVC, CVC3, HTP,
+MathSAT 3.4, Sateen, and Yices 1.0).  For the new divisions QF_BV and
+QF_AUFBV, difficulty values have been estimated rather than computed. </li>
+</ul>
+
+<h3>Selection Algorithm</h3>
+
+<p>For each division, the <tt>check</tt> benchmarks are always included. In addition, the selection script will randomly select 100 benchmarks from each division with the following distribution (when possible): 85 <tt>industrial</tt>, 10 <tt>crafted</tt>, and 5 <tt>random</tt>.
+In each category, the script selects (when possible) 25% <tt>easy-sat</tt>, 25% <tt>easy-unsat</tt>, 25% <tt>hard-sat</tt>, and 25% <tt>hard-unsat</tt>. 
+A benchmark is <strong>easy</strong> if it has difficulty 0, 1, or 2. 
+A benchmark is <strong>hard</strong> if it has difficulty 3, 4, or 5. 
+</p>
+
+<p>
+If there aren't enough <tt>random</tt> and <tt>crafted</tt>, then 
+the slack is &ldquo;inherited&rdquo; by the <tt>industrial</tt> category. 
+It there aren't enough <tt>industrial</tt>, then the slack 
+is &ldquo;inherited&rdquo; by the <tt>crafted</tt> category. 
+</p>
+
+<p>
+More detail on this procedure is included in a comment at the top of the
+source file, and in the <a href="rules.html">rules PDF</a> for this year's
+competition.
+</p>
+
+<p>
+The actual benchmarks selected for competition this year are listed
+on the <a href="benchmarks.html">selected benchmarks</a> page.
+</p>
+
+<h3>Tool Download</h3>
+
+<ul>
+<li> <strong>select_benchmarks</strong>: given an input file of benchmarks, selects benchmarks according to the rules; statistics on stderr, benchmarks on stdout.  Some changes may be made to this program before it is used officially for the competition benchmark selection; it is intended that these changes be limited to bug fixes, removal of obsolete debugging code, and documentation cleanups.
+<b>Source</b>. </li>
+<li> <strong>smtcomp2007-benchs.txt</strong>: input to the above script.  Some changes may be made before the final selection, and the official input file will be posted here then.  This file lists SMT-COMP'07 benchmarks and their metadata; the file format is described in the C source above.
+<b>Download</b>. </li>
+</ul>
+
+      </section>
+      <footer>
+        <!--
+
+<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
+
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+  </body>
+</html>

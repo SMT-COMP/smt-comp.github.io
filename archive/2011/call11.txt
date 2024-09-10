@@ -1,0 +1,216 @@
+======================================================================
+
+    7th International Satisfiability Modulo Theories Competition
+                            (SMT-COMP'11)
+
+                          July 14 - 20, 2011
+                            Snowbird, Utah
+
+                          CALL FOR BENCHMARKS
+                           CALL FOR ENTRANTS
+
+======================================================================
+
+SMT-COMP is the annual competition for Satisfiability Modulo Theories
+(SMT). The goals of SMT-COMP are to spur solver advances, collect of
+benchmarks, and encourage adoption of the SMT-LIB standard, through
+friendly competition. Highlights of SMT-COMP 2011 are covered below.
+For the latest information, please see the SMT-COMP web page at:
+
+http://www.smtcomp.org/
+
+------------------------------------------
+Main changes with respect to SMT-COMP 2010
+------------------------------------------
+
+- introduction of an "application track", based on (simulated) 
+  incremental model-checking queries, to promote the integration of 
+  SMT solvers within actual verification frameworks;
+
+- divisions without two competitors will not be run as part of the
+  competition; however, divisions may be combined more aggressively
+  than in years past to ensure competitiveness.  This will largely
+  depend on the final submissions, and will be done with the input
+  of the community.
+
+For more detailed information please refer to the rules posted at
+http://www.smtcomp.org/.
+
+--------------------------------------
+Benchmarks for Main and Parallel Track
+--------------------------------------
+
+The potential benchmark divisions for this year include all of the
+divisions represented last year. We do not anticipate new divisions
+this year unless quality benchmarks are collected. For detailed
+descriptions of the divisions, refer to the SMT-LIB web page at
+http://www.smtlib.org/
+
+* QF_UF (Uninterpreted Functions): quantifier-free formulas whose
+  satisfiability is to be decided modulo the empty theory. Each
+  benchmark may introduce its own uninterpreted function and predicate
+  symbols.
+
+* QF_IDL (Integer Difference Logic): quantifier-free formulas to be
+  tested for satisfiability modulo a background theory of integer
+  arithmetic.  The syntax of atomic formulas is restricted to
+  difference logic, i.e. x - y op c, where op is either equality or
+  inequality and c is an integer constant.
+
+* QF_RDL (Real Difference Logic): this division is like QF_IDL, except
+  that the background theory is real arithmetic.
+
+* QF_UFIDL (Integer Difference Logic with Uninterpreted Functions):
+  this division contains benchmarks in a logic which is similar to
+  QF_IDL, except that it also allows uninterpreted functions and
+  predicates.
+
+* QF_LIA (Linear Integer Arithmetic): quantifier-free formulas to be
+  tested for satisfiability modulo a background theory of integer
+  arithmetic.  The syntax of atomic formulas is restricted to contain
+  only linear terms.
+
+* QF_LRA (Linear Real Arithmetic): this division is like QF_LIA,
+  except that the background theory is real arithmetic.
+
+* QF_NIA (Nonlinear Integer Arithmetic): quantifier-free formulas to be
+  tested for satisfiability modulo a background theory of integer
+  arithmetic.  There is no restriction to linear terms.
+
+* QF_UFLIA (Linear Integer Arithmetic with Uninterpreted Functions):
+  this division contains benchmarks in a logic which is similar to
+  QF_LIA, except that it also allows uninterpreted functions and
+  predicates.
+
+* QF_UFLRA (Linear Real Arithmetic with Uninterpreted Functions):
+  this division is similar to QF_LRA, except that it also allows
+  uninterpreted functions and predicates.
+
+* QF_AX (Arrays with Extensionality): quantifier-free formulas to be
+  tested for satisfiability modulo a background theory of arrays which
+  includes the extensionality axiom.
+
+* QF_AUFLIA (Linear Integer Arithmetic with Uninterpreted Functions
+  and Arrays): quantifier-free formulas to be tested for
+  satisfiability modulo a background theory combining linear integer
+  arithmetic, uninterpreted function and predicate symbols, and
+  extensional arrays.
+
+* QF_BV (Fixed-size Bit-vectors): quantifier-free formulas over bit
+  vectors of fixed size.
+
+* QF_AUFBV (Bit-vectors with Arrays and Uninterpreted Functions):
+  quantifier-free formulas over bit vectors of fixed size, with arrays
+  and uninterpreted functions and predicate symbols.
+
+* AUFLIA+p (Linear Integer Arithmetic with Uninterpreted Functions and
+  Arrays, with patterns): quantified formulas to be tested for
+  satisfiability modulo a background theory combining linear integer
+  arithmetic, uninterpreted function and predicate symbols, and
+  extensional arrays. Benchmarks include patterns for guiding
+  instantiation mechanisms.
+
+* AUFLIA-p (Linear Integer Arithmetic with Uninterpreted Functions and
+  Arrays, without patterns): formulas from AUFLIA+p once all patterns
+  have been removed.
+
+* AUFLIRA (Arrays, Uninterpreted Functions, and Linear Arithmetic):
+  quantifier formulas with arrays of reals indexed by integers
+  (Array1), arrays of Array1 indexed by integers (Array2), and linear
+  arithmetic over the integers and reals.
+
+* UFNIA+p (Uninterpreted Functions and Nonlinear Arithmetic, patterns
+  included): quantifier formulas with uninterpreted functions and
+  nonlinear integer arithmetic.
+
+* AUFNIRA (Arrays, Uninterpreted Functions, and Nonlinear Arithmetic):
+  quantifier formulas with arrays of reals indexed by integers
+  (Array1), arrays of Array1 indexed by integers (Array2), and
+  nonlinear arithmetic over the integers and reals.
+
+As with last year, we reserve the right to remove benchmark divisions
+if we do not receive enough quality benchmarks or enough solvers in a
+particular division. If you have access to benchmarks in any of these
+divisions, even if they are not in the SMT-LIB format, please contact
+one of the organizers (see below).
+
+--------------------------------
+Benchmarks for Application Track
+--------------------------------
+
+Benchmarks for this track exploit the incremental capabilities of
+the SMT-LIB2 format, by means of which it is possible to query
+the solver multiple times by adding and retracting assertions.
+Each benchmark can be thought of as a "trace" dumped from the
+interaction of the solver with, e.g., a model-checker. The
+benchmarks will be executed using a "trace executor" which
+simulates (and abstracts away) the online interaction with the 
+model checker.
+
+Please refer to the rules for more details.
+
+*** We strongly encourage submissions of benchmarks for this track. *** 
+
+In order to deliver high-quality benchmarks and to allow participants
+to test their solvers we consider the deadline of May 15 strict. 
+Benchmarks arriving thereafter will be included in the library but
+not used for SMT-COMP 2011.
+
+-------
+Solvers
+-------
+
+Solvers will be submitted via the SMT-Exec service
+(http://www.smtexec.org/).  Please refer to http://www.smtcomp.org/
+for complete details on entering the competition.
+
+---------------
+Important Dates
+---------------
+
+* March 31          First version of the benchmark library for the
+                    application track posted for comment. First version of
+                    the benchmark scrambler, benchmark selector and trace
+                    exector made available.
+                    
+* April 30          Final version of the benchmark scrambler, benchmark
+                    selector and trace exector made available.
+                    
+* May 15            No new benchmarks can be added after this date, but 
+                    problems with existing benchmarks may be fixed.
+                    
+* June 15           Benchmark libraries are frozen.
+                    
+* July 9 (7pm ET)   Solvers due via SMT-Exec (for all tracks), including
+                    system descriptions and magic numbers for benchmark
+                    scrambling.
+
+* July 11 (7pm ET)  Final versions due, fixing any last-minute bugs (this
+                    marks the end of the two day grace period for
+                    submissions).
+
+* July 12           Opening value of NYSE Composite Index used to complete 
+                    random seed.
+
+* July 14-20        Anticipated dates for SMT-COMP 2011.
+
+----------
+Organizers
+----------
+
+Roberto Bruttomesso (University of Lugano, roberto.bruttomesso at usi.ch)
+Morgan  Deters      (New York University, mdeters at cs.nyu.edu)
+Alberto Griggio     (FBK, griggio at fbk.eu)
+
+----------------
+More Information
+----------------
+
+For details on the competition, see
+http://www.smtcomp.org/
+
+For more information on the SMT-LIB format, see
+http://www.smtlib.org/
+
+For more information about the SMT Workshop, see
+http://uclid.eecs.berkeley.edu/smt11
