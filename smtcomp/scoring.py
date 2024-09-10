@@ -110,7 +110,7 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
     Requires disagreements
     Add "error_score", "correctly_solved_score", "wallclock_time_score","cpu_time_score"
     """
-    
+
     wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)
     """Time if answered"""
     cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)

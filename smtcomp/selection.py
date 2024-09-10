@@ -307,7 +307,7 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
     b = sample(b.group_by("track", "hard", "logic").agg(file=c_file.sort())).sort(by="logic")
 
     b = b.group_by("track", "hard", maintain_order=True).agg(file=pl.col("file"))
-    
+
     def round_robbin(files: list[list[int]]) -> list[int]:
         result: list[int] = []
         while True:
@@ -320,7 +320,7 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
                         return result
             if empty:
                 raise (ValueError("Not enough elements, decrease aws_timelimit_hard"))
-    
+
     d = b.collect().to_dict(as_series=False)
     d["file"] = list(map(round_robbin, d["file"]))
 
