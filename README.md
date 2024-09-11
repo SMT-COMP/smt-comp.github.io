@@ -257,3 +257,17 @@ The step from Single Query can be followed with the model validation results whe
 ---
 
 Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).
+
+## Using the `smtcomp` tool for handling results for Cloud and Parallel tracks provided in `csv` format by AWS
+
+Works the same for both Parallel and Cloud track. If only one csv file is provided, the file needs to be split into one just containing the results for the relevant track. Furthermore, the file must be called results.csv, stored in its own local directory (here tmp/cloud_results), and contain at least the columns: solver, scramble_id, logic, solver_time, file, track, and solver_result.
+
+We will suppose that results.csv is locally available in directory `tmp/cloud_results`:
+
+In order to allow looking at the results incrementally, the first step is to translate the `.csv` file into a faster `.feather` file.
+
+```
+smtcomp convert-aws-results tmp/cloud_results
+```
+
+Everything else works the same as for any feather file that was converted by `smtcomp convert-benchexec-results`.

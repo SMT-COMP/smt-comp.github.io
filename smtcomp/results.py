@@ -470,7 +470,9 @@ def helper_get_results(
 
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
-    selection = selection.unique()
+    selection = (
+        selection.unique()
+    )  # Needed because smtcomp.selection.helper(...) returns the selected benchmarks for both Cloud and Parallel track at once if track equals either of them. This can lead to dublipcates! Should be improved later.
 
     selection = (
         add_columns(selection, smtcomp.selection.tracks(), on=["track", "logic"], defaults={"division": -1})
@@ -500,10 +502,8 @@ def parse_aws_csv(dir: Path) -> pl.LazyFrame:
     """
     output columns: solver, participation, track, cputime_s, memory_B, status, walltime_s, scramble_id, file, answer
 
-    The track stored in the results is *not* used for some decisions:
-    - if a file mapping.json is present it used and the original_id.csv is not needed
-    - if original_id is present it is used (all the other track)
-    - if it ends with "unsatcore" and the directory "../unsat_core_valisation_results" is present and converted (feather file) it is used to validate the unsat cores
+    Assumes that there is a file results.csv in the directory dir. The file
+    must contain columns: solver, scramble_id, logic, solver_time, file, track, solver_result
     """
 
     def aws_logic(logic: str) -> int:
@@ -535,10 +535,10 @@ def parse_aws_csv(dir: Path) -> pl.LazyFrame:
     )
 
     results = lf.with_columns(
-        participation = pl.lit(0,dtype=pl.Int64),
-        memory_B = pl.lit(0,dtype=pl.Int64),
-        nb_answers = pl.lit(0,dtype=pl.Int64),
-        cputime_s = pl.lit(0,dtype=pl.Int64),
+        participation=pl.lit(0, dtype=pl.Int64),
+        memory_B=pl.lit(0, dtype=pl.Int64),
+        nb_answers=pl.lit(0, dtype=pl.Int64),
+        cputime_s=pl.lit(0, dtype=pl.Int64),
     )
 
     return results
