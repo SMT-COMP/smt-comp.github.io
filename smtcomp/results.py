@@ -535,10 +535,10 @@ def parse_aws_csv(dir: Path) -> pl.LazyFrame:
     )
 
     results = lf.with_columns(
-        (pl.col("logic") * 0).alias("participation"),
-        (pl.col("logic") * 0).alias("memory_B"),
-        (pl.col("logic") * 0).alias("nb_answers"),
-        (pl.col("logic") * 0).alias("cputime_s"),
+        participation = pl.lit(0,dtype=pl.Int64),
+        memory_B = pl.lit(0,dtype=pl.Int64),
+        nb_answers = pl.lit(0,dtype=pl.Int64),
+        cputime_s = pl.lit(0,dtype=pl.Int64),
     )
 
     return results
