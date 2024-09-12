@@ -218,7 +218,9 @@ def helper(config: defs.Config, track: defs.Track) -> pl.LazyFrame:
             selected = helper_compute_non_incremental(config, track)
         case defs.Track.UnsatCore:
             selected = helper_compute_non_incremental(config, track)
-        case defs.Track.ProofExhibition | defs.Track.Cloud | defs.Track.Parallel:
+        case defs.Track.Cloud | defs.Track.Parallel:
+            selected = helper_aws_selection(config).drop("division")
+        case defs.Track.ProofExhibition:
             selected = helper_compute_non_incremental(config, defs.Track.SingleQuery)
             rich.print(
                 f"[red]The selection and scramble_benchmarks command does not yet work for the competition track: {track}[/red]"
@@ -322,7 +324,7 @@ def aws_selection(benchmarks: pl.LazyFrame, previous_results: pl.LazyFrame, conf
     d = b.collect().to_dict(as_series=False)
     d["file"] = list(map(round_robbin, d["file"]))
 
-    b = pl.LazyFrame(d)
+    b = pl.LazyFrame(d).cast({"track": pl.Int32})
 
     b = b.explode("file").with_columns(selected=True)
 

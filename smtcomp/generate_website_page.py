@@ -242,6 +242,13 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, trac
         division = defs.Logic.name_of_int(d["logic"])
         logics = dict()
 
+    if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):
+        winner_seq = "-"
+        steps_seq = []
+    else:
+        winner_seq = get_winner(d[smtcomp.scoring.Kind.seq.name])
+        steps_seq = podium_steps(d[smtcomp.scoring.Kind.seq.name])
+
     return PodiumDivision(
         resultdate="2024-07-08",
         year=config.current_year,
@@ -254,12 +261,12 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, trac
         time_limit=config.timelimit_s,
         mem_limit=config.memlimit_M,
         logics=dict(sorted(logics.items())),
-        winner_seq=get_winner(d[smtcomp.scoring.Kind.seq.name]),
+        winner_seq=winner_seq,
         winner_par=get_winner(d[smtcomp.scoring.Kind.par.name]),
         winner_sat=get_winner(d[smtcomp.scoring.Kind.sat.name]),
         winner_unsat=get_winner(d[smtcomp.scoring.Kind.unsat.name]),
         winner_24s=get_winner(d[smtcomp.scoring.Kind.twentyfour.name]),
-        sequential=podium_steps(d[smtcomp.scoring.Kind.seq.name]),
+        sequential=steps_seq,
         parallel=podium_steps(d[smtcomp.scoring.Kind.par.name]),
         sat=podium_steps(d[smtcomp.scoring.Kind.sat.name]),
         unsat=podium_steps(d[smtcomp.scoring.Kind.unsat.name]),
@@ -424,13 +431,19 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
     unsat = biggest_lead_ranking_for_kind(data, smtcomp.scoring.Kind.unsat)
     twentyfour = biggest_lead_ranking_for_kind(data, smtcomp.scoring.Kind.twentyfour)
 
+    if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):
+        winner_seq = "-"
+        sequential = []
+    else:
+        winner_seq = get_winner(sequential)
+
     return PodiumBiggestLead(
         resultdate="2024-07-08",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
         participants=f"participants_{config.current_year}",
-        winner_seq=get_winner(sequential),
+        winner_seq=winner_seq,
         winner_par=get_winner(parallel),
         winner_sat=get_winner(sat),
         winner_unsat=get_winner(unsat),
@@ -506,18 +519,25 @@ def largest_contribution_ranking(
         for k in smtcomp.scoring.Kind
     )
 
+    if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):
+        winner_seq = "-"
+        steps_seq = []
+    else:
+        winner_seq = get_winner(ld[smtcomp.scoring.Kind.seq])
+        steps_seq = ld[smtcomp.scoring.Kind.seq]
+
     return PodiumLargestContribution(
         resultdate="2024-07-08",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
         participants=f"participants_{config.current_year}",
-        winner_seq=get_winner(ld[smtcomp.scoring.Kind.seq]),
+        winner_seq=winner_seq,
         winner_par=get_winner(ld[smtcomp.scoring.Kind.par]),
         winner_sat=get_winner(ld[smtcomp.scoring.Kind.sat]),
         winner_unsat=get_winner(ld[smtcomp.scoring.Kind.unsat]),
         winner_24s=get_winner(ld[smtcomp.scoring.Kind.twentyfour]),
-        sequential=ld[smtcomp.scoring.Kind.seq],
+        sequential=steps_seq,
         parallel=ld[smtcomp.scoring.Kind.par],
         sat=ld[smtcomp.scoring.Kind.sat],
         unsat=ld[smtcomp.scoring.Kind.unsat],
