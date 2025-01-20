@@ -25,16 +25,16 @@ Timeline of the organization of the SMTCOMP for year N:
 - Mid May:
     - Final version of competition tools
 
-- End May:
-    - First version of solver
-
 - Early June:
+    - First version of solver (Friday, 8 weeks before Workshop)
+
+- Mid June:
     - Test run with a small selection of benchmarks on every track and theories
 
-- Early-Mid June:
-    - Last version of solver
+- End June:
+    - Last version of solver (Friday, 6 weeks before Workshop)
 
-- Mid June - Mid July:
+- Early July:
     - Run solvers on cluster:
         - Start with single query since results needed for other tracks
 
