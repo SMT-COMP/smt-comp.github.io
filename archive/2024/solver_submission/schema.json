@@ -1,0 +1,492 @@
+{
+  "$defs": {
+    "Archive": {
+      "description": "The url must be record from http://zenodo.org for the final submission. So\nthe hash is not required because zenodo records are immutable.\n\nThe hash can be used if you want to be sure of the archive used during the\ntest runs.",
+      "properties": {
+        "url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "h": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hash"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "Archive",
+      "type": "object"
+    },
+    "Command": {
+      "additionalProperties": false,
+      "description": "Command with its arguments to run after the extraction of the archive.\n\nThe path are relative to the directory in which the archive is unpacked.\n\nThe input file is added at the end of the list of arguments.\n\nTwo forms are accepted, using a dictionnary (separate binary and arguments) or a list ([binary]+arguments).\n\nThe command run in the given environment\n https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines",
+      "examples": [
+        [
+          "relative_cmd",
+          "default_command_line"
+        ],
+        {
+          "arguments": [
+            "default_command_line"
+          ],
+          "binary": "relative_cmd"
+        }
+      ],
+      "properties": {
+        "binary": {
+          "title": "Binary",
+          "type": "string"
+        },
+        "arguments": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Arguments",
+          "type": "array"
+        },
+        "compa_starexec": {
+          "default": false,
+          "description": "Used only for internal tests",
+          "title": "Compa Starexec",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "binary"
+      ],
+      "title": "Command",
+      "type": "object"
+    },
+    "Contributor": {
+      "additionalProperties": false,
+      "description": "Contributors in the developement of the solver. If only name is provided,\nit can be directly given.",
+      "examples": [
+        "Jane Smith",
+        {
+          "name": "Jane Smith",
+          "website": "http://jane.smith.name"
+        }
+      ],
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "website": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "maxLength": 2083,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Website"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Contributor",
+      "type": "object"
+    },
+    "Division": {
+      "enum": [
+        "Arith",
+        "Bitvec",
+        "Equality",
+        "Equality+LinearArith",
+        "Equality+MachineArith",
+        "Equality+NonLinearArith",
+        "FPArith",
+        "QF_ADT+BitVec",
+        "QF_ADT+LinArith",
+        "QF_Bitvec",
+        "QF_Datatypes",
+        "QF_Equality",
+        "QF_Equality+Bitvec",
+        "QF_Equality+Bitvec+Arith",
+        "QF_Equality+LinearArith",
+        "QF_Equality+NonLinearArith",
+        "QF_FPArith",
+        "QF_LinearIntArith",
+        "QF_LinearRealArith",
+        "QF_NonLinearIntArith",
+        "QF_NonLinearRealArith",
+        "QF_Strings"
+      ],
+      "title": "Division",
+      "type": "string"
+    },
+    "Hash": {
+      "additionalProperties": false,
+      "properties": {
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "sha512": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha512"
+        }
+      },
+      "title": "Hash",
+      "type": "object"
+    },
+    "Logic": {
+      "enum": [
+        "ABV",
+        "ABVFP",
+        "ABVFPLRA",
+        "ALIA",
+        "ANIA",
+        "AUFBV",
+        "AUFBVDTLIA",
+        "AUFBVDTNIA",
+        "AUFBVDTNIRA",
+        "AUFBVFP",
+        "AUFDTLIA",
+        "AUFDTLIRA",
+        "AUFDTNIRA",
+        "AUFFPDTNIRA",
+        "AUFLIA",
+        "AUFLIRA",
+        "AUFNIA",
+        "AUFNIRA",
+        "BV",
+        "BVFP",
+        "BVFPLRA",
+        "FP",
+        "FPLRA",
+        "LIA",
+        "LRA",
+        "NIA",
+        "NRA",
+        "QF_ABV",
+        "QF_ABVFP",
+        "QF_ABVFPLRA",
+        "QF_ALIA",
+        "QF_ANIA",
+        "QF_AUFBV",
+        "QF_AUFBVFP",
+        "QF_AUFBVLIA",
+        "QF_AUFBVNIA",
+        "QF_AUFLIA",
+        "QF_AUFNIA",
+        "QF_AX",
+        "QF_BV",
+        "QF_BVFP",
+        "QF_BVFPLRA",
+        "QF_BVLRA",
+        "QF_DT",
+        "QF_FP",
+        "QF_FPLRA",
+        "QF_IDL",
+        "QF_LIA",
+        "QF_LIRA",
+        "QF_LRA",
+        "QF_NIA",
+        "QF_NIRA",
+        "QF_NRA",
+        "QF_RDL",
+        "QF_S",
+        "QF_SLIA",
+        "QF_SNIA",
+        "QF_UF",
+        "QF_UFBV",
+        "QF_UFBVDT",
+        "QF_UFBVLIA",
+        "QF_UFDT",
+        "QF_UFDTLIA",
+        "QF_UFDTLIRA",
+        "QF_UFDTNIA",
+        "QF_UFFP",
+        "QF_UFFPDTNIRA",
+        "QF_UFIDL",
+        "QF_UFLIA",
+        "QF_UFLRA",
+        "QF_UFNIA",
+        "QF_UFNRA",
+        "UF",
+        "UFBV",
+        "UFBVDT",
+        "UFBVFP",
+        "UFBVLIA",
+        "UFDT",
+        "UFDTLIA",
+        "UFDTLIRA",
+        "UFDTNIA",
+        "UFDTNIRA",
+        "UFFPDTNIRA",
+        "UFIDL",
+        "UFLIA",
+        "UFLRA",
+        "UFNIA",
+        "UFNIRA",
+        "UFNRA"
+      ],
+      "title": "Logic",
+      "type": "string"
+    },
+    "Logics": {
+      "description": "Can be a list of logics or a regexp matched on all the existing logics",
+      "items": {
+        "$ref": "#/$defs/Logic"
+      },
+      "title": "Logics",
+      "type": "array"
+    },
+    "NameEmail": {
+      "description": "Name and valide email \"name <email>\"",
+      "examples": [
+        "Jane Smith <jane.smith@edu.world>"
+      ],
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email"
+      ],
+      "title": "NameEmail",
+      "type": "object"
+    },
+    "Participation": {
+      "additionalProperties": false,
+      "description": "tracks: select the participation tracks\ndivisions: add all the logics of those divisions in each track\nlogics: add all the specified logics in each selected track it exists\n\naws_repository should be used only in conjunction with Cloud and Parallel track\n\narchive and command should not be used with Cloud and Parallel track. They superseed the one given at the root.",
+      "properties": {
+        "tracks": {
+          "items": {
+            "$ref": "#/$defs/Track"
+          },
+          "title": "Tracks",
+          "type": "array"
+        },
+        "logics": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/Logics"
+            }
+          ],
+          "default": []
+        },
+        "divisions": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Division"
+          },
+          "title": "Divisions",
+          "type": "array"
+        },
+        "archive": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Archive"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "command": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Command"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "aws_repository": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aws Repository"
+        },
+        "experimental": {
+          "default": false,
+          "title": "Experimental",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "tracks"
+      ],
+      "title": "Participation",
+      "type": "object"
+    },
+    "Participations": {
+      "items": {
+        "$ref": "#/$defs/Participation"
+      },
+      "title": "Participations",
+      "type": "array"
+    },
+    "SolverType": {
+      "enum": [
+        "wrapped",
+        "derived",
+        "Standalone",
+        "Portfolio"
+      ],
+      "title": "SolverType",
+      "type": "string"
+    },
+    "Track": {
+      "enum": [
+        "UnsatCore",
+        "SingleQuery",
+        "ProofExhibition",
+        "ModelValidation",
+        "Incremental",
+        "Cloud",
+        "Parallel",
+        "UnsatCoreValidation"
+      ],
+      "title": "Track",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "contributors": {
+      "items": {
+        "$ref": "#/$defs/Contributor"
+      },
+      "minItems": 1,
+      "title": "Contributors",
+      "type": "array"
+    },
+    "contacts": {
+      "items": {
+        "$ref": "#/$defs/NameEmail"
+      },
+      "minItems": 1,
+      "title": "Contacts",
+      "type": "array"
+    },
+    "archive": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Archive"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "command": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Command"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Fields command given in participations have priority over this one"
+    },
+    "website": {
+      "format": "uri",
+      "maxLength": 2083,
+      "minLength": 1,
+      "title": "Website",
+      "type": "string"
+    },
+    "system_description": {
+      "format": "uri",
+      "maxLength": 2083,
+      "minLength": 1,
+      "title": "System Description",
+      "type": "string"
+    },
+    "solver_type": {
+      "$ref": "#/$defs/SolverType"
+    },
+    "participations": {
+      "$ref": "#/$defs/Participations"
+    },
+    "seed": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Seed"
+    },
+    "competitive": {
+      "default": true,
+      "title": "Competitive",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "contributors",
+    "contacts",
+    "website",
+    "system_description",
+    "solver_type",
+    "participations"
+  ],
+  "title": "Submission",
+  "type": "object"
+}
