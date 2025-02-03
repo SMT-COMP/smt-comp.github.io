@@ -4,6 +4,7 @@
 {{ $dateHuman := .Date | time.Format ":date_long" }}
 
 {{ $tracks := .Site.Data.tracks }}
+{{ $data := .Site.Data.results }}
 
 {{ $track_urls := dict
 "Cloud" "cloud"
@@ -15,6 +16,13 @@
 }}
 
 <h1>SMT-COMP 2024 Results</h1>
+
+{{ if isset $data "processed" }}
+The processed data are available in the <a href="{{ index $data "processed" }}">GitHub repository</a>.
+{{ end }}
+{{ if isset $data "raw" }}
+The raw data obtained during execution are available on <a href="{{ index $data "raw/2" }}">Zenodo</a>.
+{{ end }}
 
 <h3>Competition-Wide Recognitions</h3>
 
