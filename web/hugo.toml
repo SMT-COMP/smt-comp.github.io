@@ -1,6 +1,6 @@
-baseURL = 'https://smt-comp.github.io/2024'
+baseURL = 'https://smt-comp.github.io/2025'
 languageCode = 'en-us'
-title = 'SMT-COMP 2024'
+title = 'SMT-COMP 2025'
 theme = 'smtcomp'
 
 [params]
@@ -35,42 +35,42 @@ theme = 'smtcomp'
     pageRef = 'previous'
     weight = 30
 
-[[menu.year]]
-    name = 'Results'
-    pageRef = 'results'
-    weight = 10
+# [[menu.year]]
+#     name = 'Results'
+#     pageRef = 'results'
+#     weight = 10
 
-[[menu.year]]
-    name = 'Rules'
-    URL = '/rules.pdf'
-    weight = 10
+# [[menu.year]]
+#     name = 'Rules'
+#     URL = '/rules.pdf'
+#     weight = 10
 
-[[menu.year]]
-    name = 'Specs'
-    URL = 'specs'
-    weight = 15
+# [[menu.year]]
+#     name = 'Specs'
+#     URL = 'specs'
+#     weight = 15
 
-[[menu.year]]
-    name = 'Solver Submission'
-    pageRef = 'solver_submission'
-    weight = 20
+# [[menu.year]]
+#     name = 'Solver Submission'
+#     pageRef = 'solver_submission'
+#     weight = 20
 
-[[menu.year]]
-    name = 'Model Validation Track'
-    pageRef = 'model'
-    weight = 30
+# [[menu.year]]
+#     name = 'Model Validation Track'
+#     pageRef = 'model'
+#     weight = 30
 
-[[menu.year]]
-    name = 'Validation of the Models'
-    pageRef = 'model_validation'
-    weight = 30
+# [[menu.year]]
+#     name = 'Validation of the Models'
+#     pageRef = 'model_validation'
+#     weight = 30
 
-[[menu.year]]
-    name = 'Parallel & Cloud Tracks'
-    pageRef = 'parallel_cloud'
-    weight = 30
+# [[menu.year]]
+#     name = 'Parallel & Cloud Tracks'
+#     pageRef = 'parallel_cloud'
+#     weight = 30
 
-[[menu.year]]
-    name = 'Participants'
-    pageRef = 'participants'
-    weight = 50
+# [[menu.year]]
+#     name = 'Participants'
+#     pageRef = 'participants'
+#     weight = 50

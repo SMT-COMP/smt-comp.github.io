@@ -1,11 +1,11 @@
 +++
 layout = 'single'
-title = 'SMT-COMP 2024'
+title = 'SMT-COMP 2025'
 +++
 
-The _19th International Satisfiability Modulo Theories Competition (SMT-COMP 2024)_ is part of the
-[SMT Workshop 2024](https://smt-workshop.cs.uiowa.edu/2024),
-affiliated with [CAV-36](https://i-cav.org/2024).
+The _20th International Satisfiability Modulo Theories Competition (SMT-COMP 2025)_ is part of the
+[SMT Workshop 2025](https://smt-workshop.cs.uiowa.edu/2025),
+affiliated with [SAT-25](http://satisfiability.org/SAT25/).
 The SMT Workshop will include a block of time to
 present the competitors and results of the competition.
 
@@ -15,17 +15,19 @@ present the competitors and results of the competition.
 
 ### Key dates
 
-- **April 13** Deadline for new benchmark contributions
-- **May 11** Final versions of competition tools (used by the organizers to run the participating solvers)
-- **May 27** Deadline for first versions of participating solvers (for all tracks), including preliminary system descriptions
-- **June 8** Deadline for final versions of participating solvers, including final system descriptions
-- **July 22–23** SMT Workshop (presentation of results)
+- **April 12** Deadline for new benchmark contributions
+- **May 31** Final versions of competition tools (used by the organizers to run the participating solvers)
+- **June 13** Deadline for first versions of participating solvers (for all tracks), including preliminary system descriptions
+- **June 27** Deadline for final versions of participating solvers, including final system descriptions
+- **August 10–11** SMT Workshop (presentation of results)
 
 ### Organizers
 
-- [Martin Bromberger](https://www.mpi-inf.mpg.de/departments/automation-of-logic/people/martin-bromberger) (chair) - MPI für Informatik, Germany
+- [Martin Jonáš](https://fi.muni.cz/~xjonas) (chair) - Masaryk University, Czechia
 - [François Bobot](https://github.com/bobot) - CEA List, France
-- [Martin Jonáš](https://fi.muni.cz/~xjonas) - Masaryk University, Czechia
+- [David Déharbe](https://daviddeharbe.github.io/) - CLEARSY, France
+- [Dominik Winterer](https://wintered.github.io/) - ETH Zurich, Switzerland
+
 
 SMT-COMP 2024 is organized under the direction of the SMT Steering
 Committee.
