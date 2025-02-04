@@ -84,7 +84,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/2024"
       - name: Assemble websites
-        run: "mkdir upload && cp -r web/public upload/2024 && cp -r archive/* upload && cp -r web/redirects/* upload"
+        run: "mkdir upload && cp -r web/public upload/2025 && cp -r archive/* upload && cp -r web/redirects/* upload"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
