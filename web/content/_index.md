@@ -33,7 +33,7 @@ Committee.
 
 ### Acknowledgment
 
-- [Dirk Beyer](https://www.sosy-lab.org/people/beyer/) (VerifierCloud)
+- [Dirk Beyer](https://www.sosy-lab.org/people/beyer/) (BenchCloud instance at [LMU](https://www.lmu.de/en/))
 - [Clark Barrett](http://theory.stanford.edu/~barrett/),
   [Pascal Fontaine](https://members.loria.fr/PFontaine/),
   [Aina Niemetz](https://cs.stanford.edu/~niemetz/),
