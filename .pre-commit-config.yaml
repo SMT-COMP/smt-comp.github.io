@@ -9,7 +9,7 @@ repos:
       - id: end-of-file-fixer
         exclude: submissions/.*.json
       - id: trailing-whitespace
-        exclude: submissions/.*.json
+        exclude: submissions/.*.json|organization/mails/.*.md
 
   #  - repo: https://github.com/astral-sh/ruff-pre-commit
   #    # Ruff version.
