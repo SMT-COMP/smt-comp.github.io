@@ -77,12 +77,8 @@ benchmarks with some additional information:
    then new challenging benchmarks are always appreciated.
 
 2. We would appreciate receiving benchmarks that you want solved
-   quickly (e.g.  in under 24 seconds) but currently struggle to.
-   Please add the required solution time as a comment to the
-   benchmark. If we receive many benchmarks of this kind we may
-   consider a new track in the future that specifically focuses on
-   benchmarks requiring short time limits.
-
+   quickly (e.g. in under 24 seconds) but currently struggle to.
+   The competition doesn't have a specific track yet, but specific scores and awards are given for the solver that can solve many benchmarks in under 24s.
 
 
 PRELIMINARY CALL FOR SOLVERS:
