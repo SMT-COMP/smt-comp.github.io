@@ -28,7 +28,6 @@ present the competitors and results of the competition.
 - [David Déharbe](https://daviddeharbe.github.io/) - CLEARSY, France
 - [Dominik Winterer](https://wintered.github.io/) - ETH Zurich, Switzerland
 
-
 SMT-COMP 2024 is organized under the direction of the SMT Steering
 Committee.
 
