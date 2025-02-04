@@ -82,7 +82,7 @@ jobs:
             --source "web" \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/2024"
+            --baseURL "${{ steps.pages.outputs.base_url }}/2025"
       - name: Assemble websites
         run: "mkdir upload && cp -r web/public upload/2025 && cp -r archive/* upload && cp -r web/redirects/* upload"
       - name: Upload artifact
