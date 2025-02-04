@@ -9,9 +9,9 @@ affiliated with [SAT-25](http://satisfiability.org/SAT25/).
 The SMT Workshop will include a block of time to
 present the competitors and results of the competition.
 
-<!-- ### News -->
+### News
 
-<!-- {{< news >}} -->
+{{< news >}}
 
 ### Key dates
 
