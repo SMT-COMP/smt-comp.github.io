@@ -55,7 +55,10 @@ CALL FOR BENCHMARKS:
 
 Have interesting or hard benchmarks that can be made public? Want the
 world's best SMT solvers to compete to solve *your* problems? Submit
-your benchmarks to SMT-LIB and SMT-COMP!
+your benchmarks to SMT-LIB and SMT-COMP! The submission repository is
+simply at:
+
+https://github.com/SMT-LIB/benchmark-submission
 
 
 Please let us know as soon as possible if you are considering
