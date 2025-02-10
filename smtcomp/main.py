@@ -1109,9 +1109,10 @@ def export_division_tracks(target_file: Path) -> None:
         json.dump(data, f)
 
 
+@app.command()
 def build_dolmen(data: Path) -> None:
     """
-    build dolmen at version {defs.Config.dolmen_commit}
+    build dolmen
     """
 
     config = defs.Config(data)
