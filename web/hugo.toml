@@ -40,10 +40,10 @@ theme = 'smtcomp'
 #     pageRef = 'results'
 #     weight = 10
 
-# [[menu.year]]
-#     name = 'Rules'
-#     URL = '/rules.pdf'
-#     weight = 10
+[[menu.year]]
+    name = 'Rules'
+    URL = '/rules.pdf'
+    weight = 10
 
 # [[menu.year]]
 #     name = 'Specs'
