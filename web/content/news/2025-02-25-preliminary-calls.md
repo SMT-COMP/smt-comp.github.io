@@ -5,7 +5,6 @@ title: Call for Comments, Call for Benchmarks, Preliminary Call for Solvers
 date: 2025-02-25T00:00:00+01:00
 ---
 
-
      20th International Satisfiability Modulo Theories Competition
                            (SMT-COMP'25)
 
@@ -15,7 +14,6 @@ date: 2025-02-25T00:00:00+01:00
                          CALL FOR COMMENTS
                         CALL FOR BENCHMARKS
                     PRELIMINARY CALL FOR SOLVERS
-
 
 We are pleased to announce the 2025 edition of SMT-COMP.
 
@@ -42,7 +40,6 @@ committee. The organizing team for SMT-COMP'25 is:
 
 This is a call for three things:
 
-
 ## CALL FOR COMMENTS
 
 The organizing team has prepared the schedule and prelimiary rules for 2025.
@@ -56,13 +53,12 @@ https://smt-comp.github.io/2025/rules.pdf
 Any comments you may have on these proposed changes, on how to improve
 the competition, or to redirect its focus are welcome and will be
 considered by the team. We particularly appreciate comments received
-before * March 9th, 2025 *.
-
+before _ March 9th, 2025 _.
 
 ## CALL FOR BENCHMARKS
 
 Have interesting or hard benchmarks that can be made public? Want the
-world's best SMT solvers to compete to solve *your* problems? Submit
+world's best SMT solvers to compete to solve _your_ problems? Submit
 your benchmarks to SMT-LIB and SMT-COMP!
 
 Please let us know as soon as possible if you are considering
@@ -82,22 +78,20 @@ benchmarks with some additional information:
    then new challenging benchmarks are always appreciated.
 
 2. We would appreciate receiving benchmarks that you want solved
-   quickly (e.g.  in under 24 seconds) but currently struggle to.
+   quickly (e.g. in under 24 seconds) but currently struggle to.
    Please add the required solution time as a comment to the
    benchmark. If we receive many benchmarks of this kind we may
    consider a new track in the future that specifically focuses on
    benchmarks requiring short time limits.
 
-
 ## PRELIMINARY CALL FOR SOLVERS
 
-The submission deadline for solvers is June 13th, 2025.  However, it is
+The submission deadline for solvers is June 13th, 2025. However, it is
 useful to the organizing team to know in advance which and how many
 solvers may be entering. If you have not submitted a solver before,
 or if you think there may be unusual circumstances, we ask that
 you let us know at your earliest convenience if you think you may be
 submitting one or more solvers to SMT-COMP'25.
-
 
 ## COMMUNICATION
 
@@ -111,7 +105,6 @@ Public email regarding the competition may be sent to
 smt-announce@googlegroups.com .
 
 Announcements will be sent to smt-announce@googlegroups.com .
-
 
 Sincerely,
 
