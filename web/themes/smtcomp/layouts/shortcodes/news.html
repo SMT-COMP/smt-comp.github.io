@@ -1,5 +1,5 @@
 {{ range (where .Site.Pages "Section" "news") }}
    {{ range .Pages }}
-      <strong>{{ .Date | time.Format ":date_medium" }}</strong> &ndash; <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <strong>{{ .Date | time.Format ":date_medium" }}</strong> &ndash; <a href="{{ .Permalink }}">{{ .Title }}</a></br>
    {{ end }}
 {{ end }}
