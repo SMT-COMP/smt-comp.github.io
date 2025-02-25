@@ -104,7 +104,7 @@ submitting one or more solvers to SMT-COMP'25.
 The competition website is at
 https://smt-comp.github.io/2025/
 
-The SMT-COMP repository is at 
+The SMT-COMP repository is at
 https://github.com/smt-comp.github.io.
 
 Public email regarding the competition may be sent to
