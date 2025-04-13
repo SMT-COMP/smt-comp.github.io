@@ -14,8 +14,13 @@ import smtcomp.test_generation as gtests
 import smtcomp.results, smtcomp.scoring, smtcomp.generate_website_page
 
 runner = CliRunner()
-good_cases = ["tests/test1.json", "submissions/template/template.json", "submissions/template/template_aws_tracks.json"]
-bad_cases = ["test_bad.json"]
+good_cases = [
+    "tests/test1.json",
+    "submissions/template/template.json",
+    "submissions/template/template_aws_tracks.json",
+    "tests/test_good_final.json",
+]
+bad_cases = ["tests/test_bad.json", "tests/test_bad_final.json"]
 
 
 @pytest.mark.parametrize("name", good_cases)
@@ -27,7 +32,7 @@ def test_good_json(name: str) -> None:
 
 @pytest.mark.parametrize("name", bad_cases)
 def test_bad_json(name: str) -> None:
-    result = runner.invoke(app, ["validate", path.join("tests", name)])
+    result = runner.invoke(app, ["validate", name])
     assert result.exit_code == 1
 
 

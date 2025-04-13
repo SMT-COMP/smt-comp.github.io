@@ -1133,6 +1133,10 @@ class Archive(BaseModel):
     def path(self) -> Path:
         return Path(self.uniq_id())
 
+    def check_final(self) -> None:
+        if self.url.host != "zenodo.org":
+            raise ValueError("Final version should have its archive in zenodo")
+
 
 class Command(BaseModel, extra="forbid"):
     """
@@ -1292,6 +1296,7 @@ class Submission(BaseModel, extra="forbid"):
     participations: Participations
     seed: int | None = None
     competitive: bool = True
+    final: bool = False
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
@@ -1303,6 +1308,16 @@ class Submission(BaseModel, extra="forbid"):
             raise ValueError(
                 "Field command (or aws_repository) is needed in all participations if not present at the root"
             )
+
+        def check_archive(archive: None | Archive) -> None:
+            if archive:
+                archive.check_final()
+
+        if self.final:
+            check_archive(self.archive)
+            for p in self.participations.root:
+                check_archive(p.archive)
+
         return self
 
     def uniq_id(self) -> str:
