@@ -5,7 +5,7 @@ draft = false
 +++
 
 The single query, incremental, unsat-core, and model-validation tracks will be
-run on the [VerifierCloud
+run on the [BenchCloud
 cluster](https://vcloud.sosy-lab.org/cpachecker/webclient/master/info) owned by
 LMU's Software and Computational Systems Lab
 ([SoSy-Lab](https://www.sosy-lab.org/)), who are kind enough to support our

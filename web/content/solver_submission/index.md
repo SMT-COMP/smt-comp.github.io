@@ -20,12 +20,12 @@ in this directory and the submission of a Pull Request.
 It could be done directly from the web-interface and starting with a template:
 [create a new submission](https://github.com/SMT-COMP/smt-comp.github.io/new/master/submissions?value={{< submissions_template >}})
 
-- The filename should start with the name of your solver and end with `.json`
-- The continuous integration will check the format
+- The filename should start with the name of your solver and end with `.json`.
+- The continuous integration will check the format.
 
 ### Fields
 
 - `name`: The solver name should respect the guidelines in the given in the
   rules of the SMT-competition (derived solver, wrapper solver, ...)
-- `authors`: (utf8 can be used? It should be checked. tuple with latin1?)
+- `authors`: UTF8 can be used.
 - `url`: The url should be valid at the time of submission and during all the competition. The url should be at zenodo for the final submission.

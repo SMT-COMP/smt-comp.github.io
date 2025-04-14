@@ -45,30 +45,30 @@ theme = 'smtcomp'
     URL = '/rules.pdf'
     weight = 10
 
-# [[menu.year]]
-#     name = 'Specs'
-#     URL = 'specs'
-#     weight = 15
+[[menu.year]]
+    name = 'Specs'
+    URL = 'specs'
+    weight = 15
 
-# [[menu.year]]
-#     name = 'Solver Submission'
-#     pageRef = 'solver_submission'
-#     weight = 20
+[[menu.year]]
+    name = 'Solver Submission'
+    pageRef = 'solver_submission'
+    weight = 20
 
-# [[menu.year]]
-#     name = 'Model Validation Track'
-#     pageRef = 'model'
-#     weight = 30
+[[menu.year]]
+    name = 'Model Validation Track'
+    pageRef = 'model'
+    weight = 30
 
 # [[menu.year]]
 #     name = 'Validation of the Models'
 #     pageRef = 'model_validation'
 #     weight = 30
 
-# [[menu.year]]
-#     name = 'Parallel & Cloud Tracks'
-#     pageRef = 'parallel_cloud'
-#     weight = 30
+[[menu.year]]
+    name = 'Parallel Track'
+    pageRef = 'parallel_track'
+    weight = 30
 
 # [[menu.year]]
 #     name = 'Participants'
