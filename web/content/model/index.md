@@ -8,10 +8,9 @@ aliases = ['/model.html']
 ## Experimental model validation track
 
 The format for the model output of some theories is not yet defined by the
-SMTLIB. The following document describes our proposal of such definitions.
-This format will be used by the
-model validator of the SMTLIB for the experimental model validation track of the
-SMTCOMP 2024.
+SMT-LIB. The following document describes our proposal of such definitions.
+This format will be used by the model validator for the experimental model
+validation track of the SMTCOMP 2025.
 
 ## Partial functions
 
