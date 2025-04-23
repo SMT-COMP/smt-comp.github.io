@@ -1,36 +1,39 @@
-[tool.poetry]
+[project]
 name = "smtcomp"
 version = "0.0.1"
 description = "Tools used for the organization of the SMT competition"
-authors = ["SMTCOMP organizers <francois.bobot@cea.fr>"]
-repository = "https://github.com/smtcomp/smtcomp.github.io"
-documentation = "https://smtcomp.github.io/smtcomp/"
+authors = [{name="SMTCOMP organizers", email= "francois.bobot@cea.fr"}]
 readme = "README.md"
 packages = [
   {include = "smtcomp"}
 ]
-
-[tool.poetry.scripts]
-smtcomp = "smtcomp.main:app"
-
-[tool.poetry.dependencies]
-python = ">=3.11,<4.0"
-typer = {extras = ["all"], version = "^0.9.0"}
-rich = "^13.7.0"
-pydantic = "^2.7.0"
-email-validator = "^2.1.0"
-python-gitlab = "*"
-gitpython = "*"
-yattag = "*"
-wget = "*"
-option = "*"
-requests = "*"
-bs4 = "*"
-benchexec = "*"
-polars = "*"
-PyGithub = "*"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+"typer >=0.9.0",
+"rich >=13.7",
+"pydantic >=2.7.0",
+"email-validator >=2.1.0",
+"python-gitlab",
+"gitpython",
+"yattag",
+"wget",
+"option",
+"requests",
+"bs4",
+"benchexec",
+"polars",
+"PyGithub"
+]
 #pystemd is not set as dependency because it is not in the CI
 
+
+[project.urls]
+repository = "https://github.com/smtcomp/smtcomp.github.io"
+documentation = "https://smtcomp.github.io/smtcomp/"
+
+
+[project.scripts]
+smtcomp = "smtcomp.main:app"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
@@ -42,7 +45,7 @@ tox = "^4.11.1"
 types-requests = "*"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.1.2"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]

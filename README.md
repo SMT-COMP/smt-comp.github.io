@@ -27,7 +27,7 @@ source .venv/bin/activate
 Poetry is used for handling dependencies:
 
 ```
-pip install poetry
+pip install "poetry >=2.1.2"
 ```
 
 Finally, install the environment with
