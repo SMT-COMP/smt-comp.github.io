@@ -1,7 +1,7 @@
 import math
 import functools, itertools
 from collections import defaultdict
-from typing import Set, Dict, Optional, cast, List, DefaultDict
+from typing import Set, Dict, Optional, cast, List, DefaultDict, Tuple
 from pathlib import Path, PurePath
 from smtcomp import defs
 from rich import progress
@@ -446,7 +446,7 @@ def biggest_lead_ranking_for_kind(
         )
 
         scores = sorted(scores, key=lambda x: (x.correctScore, x.timeScore), reverse=True)
-    
+
     return scores
 
 
@@ -495,7 +495,7 @@ def normalized_correctness_score(
     data: dict[str, PodiumDivision], k: smtcomp.scoring.Kind
 ) -> list[PodiumStepNormalizedCorrectnessScore]:
 
-    scores: list[int] = []
+    scores: list[PodiumStepNormalizedCorrectnessScore] = []
 
     for division, div_data in data.items():
         solvers_in_div = get_kind(div_data, k)
@@ -509,31 +509,39 @@ def normalized_correctness_score(
             else:
                 nn_D = -2
             scores.append(
-                PodiumStepNormalizedCorrectnessScore(name=sol_in_div.name,
-                                      normalizedCorrectnessScore=nn_D,
-                                      tieBreakTimeScore=sol_in_div.WallScore,
-                                      division=division)
+                PodiumStepNormalizedCorrectnessScore(
+                    name=sol_in_div.name,
+                    normalizedCorrectnessScore=nn_D,
+                    tieBreakTimeScore=sol_in_div.WallScore,
+                    division=division,
+                )
             )
         scores = sorted(scores, key=lambda x: (x.normalizedCorrectnessScore, x.tieBreakTimeScore), reverse=True)
     return scores
 
 
+# Computes the best overall ranking as specified in Section 7.3.1 of
+# SMT-COMP 2025 rules. I.e:
+#
+# normalized correctness score: nnD = (nD /ND)**2 if eD == 0
+#                                  = -2          otherwise
+# overall score               : sum_D nnD*log10 ND
+#
+# For the choices see footnote in the rules.
+#
 def best_overall_ranking(config: defs.Config, data: dict[str, PodiumDivision], track: defs.Track) -> PodiumBestOverall:
-    def get_winner(l: List[PodiumStepNormalizedCorrectnessScore] | None) -> str:
+    def get_winner(l: Optional[List[PodiumStepNormalizedCorrectnessScore]]) -> Tuple[str, float]:
         if l is None or not l:
-            return ("-", 0.0) 
-        else: 
-            scores = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0})
+            return ("-", 0.0)
+        else:
+            scores: DefaultDict[str, Dict[str, float]] = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0})
             for entry in l:
                 N_D = data[entry.division].n_benchmarks
                 log10_N_D = math.log10(N_D) if N_D > 0 else 0
                 contribution = entry.normalizedCorrectnessScore * log10_N_D
                 scores[entry.name]["score"] += contribution
                 scores[entry.name]["tie_break_time"] += entry.tieBreakTimeScore
-            winner, winner_data = max(
-                scores.items(),
-                key=lambda item: (item[1]["score"], -item[1]["tie_break_time"])
-            )
+            winner, winner_data = max(scores.items(), key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]))
             return (winner, winner_data["score"])
 
     sequential = normalized_correctness_score(data, smtcomp.scoring.Kind.seq)
@@ -571,7 +579,6 @@ def best_overall_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
         unsat=unsat,
         twentyfour=twentyfour,
     )
-
 
 
 def largest_contribution_ranking(
