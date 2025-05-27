@@ -107,7 +107,7 @@ class Hash(BaseModel, extra="forbid"):
 class Contributor(BaseModel, extra="forbid"):
     """
     Contributors in the developement of the solver. If only name is provided,
-    it can be directly given.
+    it can be directly given. UTF8 can be used.
     """
 
     model_config = {
@@ -1124,7 +1124,9 @@ class Archive(BaseModel):
     test runs.
     """
 
-    url: HttpUrl
+    url: HttpUrl = Field(
+        description="The url should be valid at the time of submission and during all the competition. The url should be at zenodo for the final submission."
+    )
     h: Hash | None = None
 
     def uniq_id(self) -> str:
@@ -1283,9 +1285,13 @@ class Participations(RootModel):
 
 
 class Submission(BaseModel, extra="forbid"):
-    name: str
-    contributors: list[Contributor] = Field(min_length=1)
-    contacts: list[NameEmail] = Field(min_length=1)
+    name: str = Field(
+        description="The solver name should respect the guidelines given in the rules of the SMT-competition (derived solver, wrapper solver, ...)"
+    )
+    contributors: list[Contributor] = Field(
+        min_length=1, description="The contributors will not be contacted except if they are also in contacts"
+    )
+    contacts: list[NameEmail] = Field(min_length=1, description="Used if the organizers need to discuss the submission")
     archive: Archive | None = None
     command: Optional[Command] = Field(
         default=None, description="Fields command given in participations have priority over this one"
@@ -1296,7 +1302,10 @@ class Submission(BaseModel, extra="forbid"):
     participations: Participations
     seed: int | None = None
     competitive: bool = True
-    final: bool = False
+    final: bool = Field(
+        default=False,
+        description="Must be set for the final version of the submission. An archive on zenodo is needed in this case.",
+    )
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
