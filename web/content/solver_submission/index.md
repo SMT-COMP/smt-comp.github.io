@@ -4,13 +4,14 @@ date = 2024-02-16T22:38:03+01:00
 draft = false
 +++
 
-The solvers are submitted via pull requests to the SMT-COMP repository. To
-submit your solver, please follow the
-[instructions](https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions).
-The detailed description of the fields in the solver JSON file is available in
-the [schema](schema.html).
+The solvers are submitted via pull requests to the [SMT-COMP repository](https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions). To
+submit your solver, please follow the instructions that are below.
 
 The solver is run in [this docker](https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines) environment.
+
+## Changes
+
+- 05/2025: the final field must be set for the final version. When final is set, the archive need to come from zenodo.
 
 ## Submissions directory
 
@@ -21,11 +22,11 @@ It could be done directly from the web-interface and starting with a template:
 [create a new submission](https://github.com/SMT-COMP/smt-comp.github.io/new/master/submissions?value={{< submissions_template >}})
 
 - The filename should start with the name of your solver and end with `.json`.
-- The continuous integration will check the format.
+- The continuous integration will:
+- check the format
+- try to download your solver
+- run it inside the docker used by the competition on trivial example
 
-### Fields
+### Examples
 
-- `name`: The solver name should respect the guidelines in the given in the
-  rules of the SMT-competition (derived solver, wrapper solver, ...)
-- `authors`: UTF8 can be used.
-- `url`: The url should be valid at the time of submission and during all the competition. The url should be at zenodo for the final submission.
+The detailed description of the fields in the solver JSON file is available in the [schema](schema.html).
