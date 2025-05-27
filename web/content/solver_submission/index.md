@@ -4,9 +4,9 @@ date = 2024-02-16T22:38:03+01:00
 draft = false
 +++
 
-The solvers are submitted via pull requests to the [SMT-COMP repository](https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions). 
+The solvers are submitted via pull requests to the [SMT-COMP repository](https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions).
 
-The solver is run in [this docker image](https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines), which is based on Ubuntu 24.04. The link also describes the packages that are installed in the image. 
+The solver is run in [this docker image](https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines), which is based on Ubuntu 24.04. The link also describes the packages that are installed in the image.
 
 ## Submissions directory
 
