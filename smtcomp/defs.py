@@ -1302,7 +1302,10 @@ class Submission(BaseModel, extra="forbid"):
     participations: Participations
     seed: int | None = None
     competitive: bool = True
-    final: bool = False
+    final: bool = Field(
+        default=False,
+        description="Must be set for the final version of the submission. An archive on zenodo is needed in this case.",
+    )
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
