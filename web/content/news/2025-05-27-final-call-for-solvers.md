@@ -7,7 +7,7 @@ date: 2025-05-27T00:00:00+01:00
 
 =================================================
 
- 20th International Satisfiability Modulo Theories Competition
+20th International Satisfiability Modulo Theories Competition
 
                          (SMT-COMP'25)
 
@@ -16,9 +16,7 @@ date: 2025-05-27T00:00:00+01:00
 
 =================================================
 
-
 We invite registration of solvers for SMT-COMP 2025.
-
 
 Solvers are entered into the competition via a pull request to the SMT-COMP
 GitHub repository at:
