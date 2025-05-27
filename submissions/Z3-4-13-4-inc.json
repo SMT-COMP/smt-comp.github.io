@@ -8,7 +8,7 @@
     ],
     "contacts": ["TBA"],
     "website": "https://github.com/Z3Prover/z3/wiki",
-    "system_description": "TBA",
+    "system_description": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
     "command": [ "./smtcomp_run_incremental" ],
     "solver_type": "Standalone",
     "seed": 174228,
