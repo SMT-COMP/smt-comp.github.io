@@ -1288,8 +1288,10 @@ class Submission(BaseModel, extra="forbid"):
     name: str = Field(
         description="The solver name should respect the guidelines given in the rules of the SMT-competition (derived solver, wrapper solver, ...)"
     )
-    contributors: list[Contributor] = Field(min_length=1)
-    contacts: list[NameEmail] = Field(min_length=1)
+    contributors: list[Contributor] = Field(
+        min_length=1, description="The contributors will not be contacted except if they are also in contacts"
+    )
+    contacts: list[NameEmail] = Field(min_length=1, description="Used if the organizers need to discuss the submission")
     archive: Archive | None = None
     command: Optional[Command] = Field(
         default=None, description="Fields command given in participations have priority over this one"
