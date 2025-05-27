@@ -19,6 +19,7 @@ It could be done directly from the web interface and starting with a template:
 [create a new submission](https://github.com/SMT-COMP/smt-comp.github.io/new/master/submissions?value={{< submissions_template >}})
 
 The repository contains a continuous integration check that will
+
 - check the format and all the required fields,
 - try to download your solver,
 - run it inside the docker container used by the competition on trivial examples,
