@@ -50,11 +50,11 @@ definitions in the model:
 ```smt2
 (refine-fun div ((a Int) (b Int)) Int
    (ite (= b 0) (ite (= a 0) 5 0) (div a b)))
-(refine-fun car ((a (List Int))) (List Int)
+(refine-fun car ((a (List Int))) Int
    (match a
       ((cons hd tl) hd)
       (nil  42)))
-(refine-fun cdr ((a (List Int))) Int
+(refine-fun cdr ((a (List Int))) (List Int)
    (ite ((_ is cons) a) (cdr a) a))
 ```
 
