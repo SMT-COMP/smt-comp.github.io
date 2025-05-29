@@ -239,7 +239,12 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
 
     for target_track, divisions in defs.tracks.items():
         # cloud and parallel tracks are not executed via benchexec
-        if target_track in (defs.Track.Cloud, defs.Track.Parallel, defs.Track.UnsatCoreValidation, defs.Track.ProofExhibition):
+        if target_track in (
+            defs.Track.Cloud,
+            defs.Track.Parallel,
+            defs.Track.UnsatCoreValidation,
+            defs.Track.ProofExhibition,
+        ):
             continue
 
         generated_divisions = []
