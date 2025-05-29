@@ -172,7 +172,6 @@ Benchexec in verifier cloud started using:
 (cd ../tmp/execution; PYTHONPATH=$(pwd) PATH_TO_BENCHEXEC/contrib/vcloud-benchmark.py run_definitions/SOLVERNAME.xml --read-only-dir / --overlay-dir /home --full-access-dir .. --numOfThreads 8 -M 2GB -c 1 --vcloudMaster VCLOUD_MASTER --vcloudClientHeap 500)
 ```
 
-<<<<<<< HEAD
 ## Using the `smtcomp` tool for handling `benchexec` results
 
 All the track are similar, except model validation and unsat core needs some additional work to check the output of the solvers. Lets start with the simple case:
