@@ -1,7 +1,6 @@
 from pathlib import Path
-import rich
 from os.path import relpath
-from typing import List, cast, Dict, Optional
+from typing import List, cast, Optional
 
 from yattag import Doc, indent
 
@@ -21,6 +20,8 @@ def get_suffix(track: defs.Track) -> str:
             return "_model"
         case defs.Track.UnsatCore:
             return "_unsatcore"
+        case defs.Track.UnsatCoreValidation:
+            return "_unsatcorevalidation"
         case defs.Track.SingleQuery:
             return ""
         case _:
@@ -140,6 +141,43 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
     file.write_text(indent(doc.getvalue()))
 
 
+def generate_unsatcore_validation_xml(
+    config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str
+) -> None:
+    doc, tag, text = Doc().tagtext()
+
+    doc.asis('<?xml version="1.0"?>')
+    doc.asis(
+        '<!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 2.3//EN"'
+        ' "https://www.sosy-lab.org/benchexec/benchmark-2.2.3dtd">'
+    )
+    with tag(
+        "benchmark",
+        tool=f"tools.{tool_module_name}",
+        timelimit=f"{config.unsatcore_validation_timelimit_s * config.unsatcore_validation_cpuCores}s",
+        walltimelimit=f"{config.unsatcore_validation_timelimit_s}s",
+        memlimit=f"{config.unsatcore_validation_memlimit_M} MB",
+        cpuCores=f"{config.unsatcore_validation_cpuCores}",
+    ):
+        with tag("require", cpuModel="Intel Xeon E3-1230 v5 @ 3.40 GHz"):
+            text()
+
+        for cmdtask in cmdtasks:
+            with tag("rundefinition", name=f"{cmdtask.name}"):
+                for option in cmdtask.options:
+                    with tag("option"):
+                        text(option)
+                with tag("tasks", name="task"):
+                    for taskdir in cmdtask.taskdirs:
+                        with tag("include"):
+                            text(f"{taskdir}/*.smt2")
+
+        with tag("propertyfile"):
+            text("benchmarks/properties/SMT.prp")
+
+    file.write_text(indent(doc.getvalue()))
+
+
 def cmdtask_for_submission(
     s: defs.Submission, cachedir: Path, target_track: defs.Track, target_division: defs.Division
 ) -> List[CmdTask]:
@@ -148,10 +186,13 @@ def cmdtask_for_submission(
         command = cast(defs.Command, p.command if p.command else s.command)
         archive = cast(defs.Archive, p.archive if p.archive else s.archive)
         for track, divisions in p.get().items():
-            if track != target_track:
+            # if target track is UnsatCoreValidation, use SingleQuery configuration
+            if track != target_track and not (
+                target_track == defs.Track.UnsatCoreValidation and track == defs.Track.SingleQuery
+            ):
                 continue
 
-            suffix = get_suffix(track)
+            suffix = get_suffix(target_track)
             taskdirs: list[str] = [
                 f"../benchmarks/files{suffix}/{logic}" for logic in divisions.get(target_division, [])
             ]
@@ -173,7 +214,7 @@ def cmdtask_for_submission(
                     executable = str(command_path(command, archive, Path()))
                     options = [executable] + command.arguments
                 cmdtask = CmdTask(
-                    name=f"{s.name},{i},{track}",
+                    name=f"{s.name},{i},{target_track}",
                     options=options,
                     taskdirs=taskdirs,
                 )
@@ -192,7 +233,21 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
     run_defs = cachedir / "run_definitions"
     run_defs.mkdir(parents=True, exist_ok=True)
 
+    tool = tool_module_name(s, False)
+    run_scripts = cachedir / "run_scripts"
+    run_scripts.mkdir(parents=True, exist_ok=True)
+
     for target_track, divisions in defs.tracks.items():
+        # cloud and parallel tracks are not executed via benchexec
+        if target_track in (
+            defs.Track.Cloud,
+            defs.Track.Parallel,
+            defs.Track.UnsatCoreValidation,
+            defs.Track.ProofExhibition,
+        ):
+            continue
+
+        generated_divisions = []
         for division in divisions.keys():
             res = cmdtask_for_submission(s, cachedir, target_track, division)
             if res:
@@ -204,3 +259,66 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
                     file=file,
                     tool_module_name=tool_module_name(s, target_track == defs.Track.Incremental),
                 )
+                generated_divisions.append(division)
+
+        track_suffix = get_suffix(target_track)
+        script = run_scripts / (f"{tool}{track_suffix}.sh")
+
+        with open(script, "w") as f:
+            out = lambda s: f.write(s + "\n")
+
+            division_list = " ".join('"' + str(d) + '"' for d in generated_divisions)
+
+            out("#!/usr/bin/env bash")
+            out("set -x")
+            out(f"for DIVISION in {division_list}")
+            out("    do\n")
+            out(f'    TARGET="../final_results{track_suffix}/$DIVISION/{tool}"')
+            out("    rm -rf $TARGET")
+            out("    mkdir -p $TARGET")
+            out(
+                f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}{track_suffix}_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess -o $TARGET"
+            )
+            out("done")
+
+
+def generate_unsatcore_validation(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
+    run_defs = cachedir / "run_definitions"
+    divisions = defs.tracks[defs.Track.UnsatCore]
+
+    generated_divisions = []
+    for division in divisions.keys():
+        res = cmdtask_for_submission(s, cachedir, defs.Track.UnsatCoreValidation, division)
+        if res:
+            basename = get_xml_name(s, defs.Track.UnsatCoreValidation, division)
+            file = run_defs / basename
+            generate_unsatcore_validation_xml(
+                config=config,
+                cmdtasks=res,
+                file=file,
+                tool_module_name=tool_module_name(s, False),
+            )
+            generated_divisions.append(division)
+
+    run_scripts = cachedir / "run_scripts"
+    run_scripts.mkdir(parents=True, exist_ok=True)
+
+    tool = tool_module_name(s, False)
+    script = run_scripts / (tool + "_unsatcorevalidation.sh")
+
+    with open(script, "w") as f:
+        out = lambda s: f.write(s + "\n")
+
+        division_list = " ".join('"' + str(d) + '"' for d in generated_divisions)
+
+        out("#!/usr/bin/env bash")
+        out("set -x")
+        out(f"for DIVISION in {division_list}")
+        out("    do\n")
+        out(f'    TARGET="../unsat_core_validation_results/$DIVISION/{tool}"')
+        out("    rm -rf $TARGET")
+        out("    mkdir -p $TARGET")
+        out(
+            f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}_unsatcorevalidation_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess --tryLessMemory -o $TARGET"
+        )
+        out("done")
