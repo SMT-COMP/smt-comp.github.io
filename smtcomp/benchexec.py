@@ -44,8 +44,9 @@ class CmdTask(BaseModel):
     taskdirs: List[str]
 
 
-def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]) -> None:
-    ymlfile = benchmark.with_suffix(".yml")
+def generate_benchmark_yml(
+    ymlfile: Path, benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]
+) -> None:
     with ymlfile.open("w") as f:
         f.write("format_version: '2.0'\n\n")
 
