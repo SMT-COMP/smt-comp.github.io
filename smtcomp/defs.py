@@ -236,6 +236,7 @@ class Logic(EnumAutoInt):
     AUFBVDTLIA = "AUFBVDTLIA"
     AUFBVDTNIA = "AUFBVDTNIA"
     AUFBVDTNIRA = "AUFBVDTNIRA"
+    AUFBVFPDTNIRA = "AUFBVFPDTNIRA"
     AUFBVFP = "AUFBVFP"
     AUFDTLIA = "AUFDTLIA"
     AUFDTLIRA = "AUFDTLIRA"
@@ -302,7 +303,11 @@ class Logic(EnumAutoInt):
     UF = "UF"
     UFBV = "UFBV"
     UFBVDT = "UFBVDT"
+    UFBVDTLIA = "UFBVDTLIA"
+    UFBVDTNIA = "UFBVDTNIA"
+    UFBVDTNIRA = "UFBVDTNIRA"
     UFBVFP = "UFBVFP"
+    UFBVFPDTNIRA = "UFBVFPDTNIRA"
     UFBVLIA = "UFBVLIA"
     UFDT = "UFDT"
     UFDTLIA = "UFDTLIA"
@@ -410,10 +415,15 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.AUFBVDTNIA,
             Logic.AUFBVDTNIRA,
             Logic.AUFBVFP,
+            Logic.AUFBVFPDTNIRA,
             Logic.AUFFPDTNIRA,
             Logic.UFBV,
             Logic.UFBVDT,
+            Logic.UFBVDTLIA,
+            Logic.UFBVDTNIA,
+            Logic.UFBVDTNIRA,
             Logic.UFBVFP,
+            Logic.UFBVFPDTNIRA,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
         },
@@ -609,10 +619,15 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.AUFBVDTNIA,
             Logic.AUFBVDTNIRA,
             Logic.AUFBVFP,
+            Logic.AUFBVFPDTNIRA,
             Logic.AUFFPDTNIRA,
             Logic.UFBV,
             Logic.UFBVDT,
+            Logic.UFBVDTLIA,
+            Logic.UFBVDTNIA,
+            Logic.UFBVDTNIRA,
             Logic.UFBVFP,
+            Logic.UFBVFPDTNIRA,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
         },
@@ -799,10 +814,15 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.AUFBVDTNIA,
             Logic.AUFBVDTNIRA,
             Logic.AUFBVFP,
+            Logic.AUFBVFPDTNIRA,
             Logic.AUFFPDTNIRA,
             Logic.UFBV,
             Logic.UFBVDT,
+            Logic.UFBVDTLIA,
+            Logic.UFBVDTNIA,
+            Logic.UFBVDTNIRA,
             Logic.UFBVFP,
+            Logic.UFBVFPDTNIRA,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
         },
@@ -923,10 +943,15 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.AUFBVDTNIA,
             Logic.AUFBVDTNIRA,
             Logic.AUFBVFP,
+            Logic.AUFBVFPDTNIRA,
             Logic.AUFFPDTNIRA,
             Logic.UFBV,
             Logic.UFBVDT,
+            Logic.UFBVDTLIA,
+            Logic.UFBVDTNIA,
+            Logic.UFBVDTNIRA,
             Logic.UFBVFP,
+            Logic.UFBVFPDTNIRA,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
         },
@@ -1047,10 +1072,15 @@ tracks: dict[Track, dict[Division, set[Logic]]] = {
             Logic.AUFBVDTNIA,
             Logic.AUFBVDTNIRA,
             Logic.AUFBVFP,
+            Logic.AUFBVFPDTNIRA,
             Logic.AUFFPDTNIRA,
             Logic.UFBV,
             Logic.UFBVDT,
+            Logic.UFBVDTLIA,
+            Logic.UFBVDTNIA,
+            Logic.UFBVDTNIRA,
             Logic.UFBVFP,
+            Logic.UFBVFPDTNIRA,
             Logic.UFBVLIA,
             Logic.UFFPDTNIRA,
         },
