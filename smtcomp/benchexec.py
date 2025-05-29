@@ -267,11 +267,11 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
         with open(script, "w") as f:
             out = lambda s: f.write(s + "\n")
 
-            divisions = " ".join('"' + str(d) + '"' for d in generated_divisions)
+            division_list = " ".join('"' + str(d) + '"' for d in generated_divisions)
 
             out("#!/usr/bin/env bash")
             out("set -x")
-            out(f"for DIVISION in {divisions}")
+            out(f"for DIVISION in {division_list}")
             out("    do\n")
             out(f'    TARGET="../final_results{track_suffix}/$DIVISION/{tool}"')
             out("    rm -rf $TARGET")
@@ -309,11 +309,11 @@ def generate_unsatcore_validation(s: defs.Submission, cachedir: Path, config: de
     with open(script, "w") as f:
         out = lambda s: f.write(s + "\n")
 
-        divisions = " ".join('"' + str(d) + '"' for d in generated_divisions)
+        division_list = " ".join('"' + str(d) + '"' for d in generated_divisions)
 
         out("#!/usr/bin/env bash")
         out("set -x")
-        out(f"for DIVISION in {divisions}")
+        out(f"for DIVISION in {division_list}")
         out("    do\n")
         out(f'    TARGET="../unsat_core_validation_results/$DIVISION/{tool}"')
         out("    rm -rf $TARGET")

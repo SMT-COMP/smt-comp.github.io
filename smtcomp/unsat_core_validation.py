@@ -40,7 +40,7 @@ def create_validation_file(benchmark: Path, core: UnsatCore, scrambler: Path, ou
         corefile.flush()
 
         # remove all assert commands that are not in unsat core and remove named terms, do not scramble again (seed 0)
-        args = [scrambler, "-seed", "0", "-term_annot", "false", "-core", corefile.name]
+        args = [str(scrambler), "-seed", "0", "-term_annot", "false", "-core", str(corefile.name)]
         subprocess.run(args, stdin=fsrc, stdout=fdst, check=True)
 
 
