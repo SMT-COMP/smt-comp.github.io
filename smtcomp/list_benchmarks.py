@@ -12,7 +12,7 @@ def get_status(src: Path) -> defs.Status:
         grep = subprocess.run(
             ["grep", "([ \t]*set-info[ \t][ \t]*:status[ \t].*[ \t]*)"], capture_output=True, text=True, stdin=fd_src
         )
-    l = re.findall(r"[ \t](unsat|sat|unknown)", grep.stdout)
+    l = re.findall(r'[ \t]"?(unsat|sat|unknown)"?', grep.stdout)
     if len(l) == 1:
         return defs.Status(l[0])
     else:
