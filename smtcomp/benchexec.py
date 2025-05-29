@@ -273,7 +273,7 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
             out("set -x")
             out(f"for DIVISION in {division_list}")
             out("    do\n")
-            out(f'    TARGET="../final_results{track_suffix}/$DIVISION/{tool}"')
+            out(f'    TARGET="../results{track_suffix}/$DIVISION/{tool}"')
             out("    rm -rf $TARGET")
             out("    mkdir -p $TARGET")
             out(
