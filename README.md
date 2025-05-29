@@ -89,7 +89,7 @@ so no more intermediate files are needed.
 However, statistics can be shown, for example for the selection of single track:
 
 ```
-smtcomp show-sq-selection-stats ./data/ 0
+smtcomp show-selection-stats --track SingleQuery ./data/
 ```
 
 Which outputs:
