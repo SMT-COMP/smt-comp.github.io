@@ -26,6 +26,19 @@ The raw data obtained during execution are available on <a href="{{ index $data 
 
 <h3>Competition-Wide Recognitions</h3>
 
+<h4>Best Overall Ranking</h4>
+
+<ul>
+  {{ range $track := $tracks }}
+  {{ $prettyTrack := index site.Data.pretty_names.track $track }}
+  {{ $url := printf "../results/best-overall-%s" (index $track_urls $track) }}
+  {{ with page.GetPage $url }}
+  <li><a href="{{ $url }}">{{ $prettyTrack }}</a></li>
+  {{ end }}
+  {{ end }}
+</ul>
+
+
 <h4>Largest Contribution Ranking</h4>
 
 <ul>

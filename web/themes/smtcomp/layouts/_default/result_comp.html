@@ -3,10 +3,12 @@
 {{ $dateHuman := .Date | time.Format ":date_long" }}
 {{ $prettyTrack := index .Site.Data.pretty_names.track .Params.track }}
 
-{{ if eq .Params.recognition "biggest_lead" }}
-<h1>Biggest Lead Ranking - {{ $prettyTrack }}</h2>
+{{ if eq .Params.recognition "best_overall" }}
+  <h1>Best Overall Ranking - {{ $prettyTrack }}</h1>
+{{ else if eq .Params.recognition "biggest_lead" }}
+  <h1>Biggest Lead Ranking - {{ $prettyTrack }}</h1>
 {{ else }}
-<h1>Largest Contribution Ranking - {{ $prettyTrack }}</h2>
+  <h1>Largest Contribution Ranking - {{ $prettyTrack }}</h1>
 {{ end }}
 
 <p>
@@ -50,7 +52,32 @@
   </tr>
 </table>
 
+{{ if eq .Params.recognition "best_overall" }}
 
+{{ range $cat := $categories }}
+{{ with index $.Params $cat }}
+<h3>{{ index $category_names $cat }}</h3>
+<table id="{{ $cat }}" class="result sorted">
+  <thead>
+    <tr>
+      <th class="center">Division</th>
+      <th class="center">Solver</th>
+      <th class="center">Normalized correctness score</th>
+    </tr>
+  </thead>
+  {{ range $solver := . }}
+  <tr {{ if eq $solver.competing "no" }}class = "non-competing" {{ end }}>
+    <td><a href="../{{ $solver.division | lower }}-{{ replace ($.Params.track | strings.TrimPrefix "track_") "_" "-" }}">{{ $solver.division }}</a></td>
+    <td>
+      <a href="TODO">{{ $solver.name }}</a>{{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
+      <td class="right">{{ $solver.normalizedCorrectnessScore}}</td>
+    </td>
+  </tr>
+  {{ end }}
+</table>
+{{ end }}
+{{ end }}
+{{ else }}
 {{ range $cat := $categories }}
 {{ with index $.Params $cat }}
 <h3>{{ index $category_names $cat }}</h3>
@@ -74,6 +101,7 @@
   </tr>
   {{ end }}
 </table>
+{{ end }}
 {{ end }}
 {{ end }}
 
