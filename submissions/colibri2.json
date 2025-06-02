@@ -1,0 +1,23 @@
+{
+    "name": "colibri2",
+    "contributors": [
+        "François Bobot",
+        "Hichem Ait El Hara",
+        "Christophe Junke",
+    ],
+    "contacts": ["François Bobot <francois.bobot@cea.fr>"],
+    "archive": {
+        "url": "https://git.frama-c.com/pub/colibrics/-/jobs/1405515/artifacts/raw/colibri2_starexec_3037762e.tar.gz",
+    },
+    "website": "http://colibri.frama-c.com/",
+    "system_description": "http://example.com/system.pdf",
+    "command": ["bin/colibri2"],
+    "solver_type": "Standalone",
+    "seed": "42",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "QF_.*FP.*"
+        }
+    ]
+}
