@@ -490,7 +490,10 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
     )
 
 
-# TODO: make comment
+# Compute normalized correctness score
+#
+# normalized correctness score: nnD = (nD /ND)**2 if eD == 0
+#                                   = -2          otherwise
 def normalized_correctness_score(
     data: dict[str, PodiumDivision], k: smtcomp.scoring.Kind
 ) -> list[PodiumStepNormalizedCorrectnessScore]:

@@ -20,12 +20,48 @@
 
 {{ if eq $.Params.track "track_incremental" }}
 {{ $winner_categories = slice "winner_par" "winner_sat" "winner_unsat" "winner_24s" }}
+
 {{ $categories = slice "parallel" "sat" "unsat" "twentyfour" }}
 {{ end }}
 
 {{ $winner_category_names := .Site.Data.pretty_names.winner_performance }}
 {{ $category_names := .Site.Data.pretty_names.performance }}
 
+<h3>Winners</h3>
+
+
+{{ if eq .Params.recognition "best_overall" }}
+<table>
+  <thead>
+    <tr>
+    {{ range $cat := $winner_categories }}
+      {{ if isset $.Params $cat }}
+      <th class="center">{{index $winner_category_names $cat}}</th>
+      {{ end }}
+    {{ end }}
+    </tr>
+  </thead>
+ <tr>
+    {{ range $cat := $winner_categories }}
+      {{ with index $.Params $cat }}
+        <td class="center">
+          {{ if eq . "-" }}
+            &mdash;
+          {{ else }}
+            {{ . }}
+            {{ $scoreKey := print $cat "_score" }}
+            {{ with index $.Params $scoreKey }}
+              ({{ . }})
+            {{ end }}
+          {{ end }}
+        </td>
+      {{ else }}
+        <td class="center">&mdash;</td>
+      {{ end }}
+    {{ end }}
+  </tr>
+</table>
+{{ else }}
 <h3>Winners</h3>
 <table>
   <thead>
@@ -51,6 +87,8 @@
     {{ end }}
   </tr>
 </table>
+{{ end }}
+
 
 {{ if eq .Params.recognition "best_overall" }}
 
