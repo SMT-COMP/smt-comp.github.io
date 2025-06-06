@@ -528,19 +528,23 @@ def normalized_correctness_score(
 #                  total number of benchmarks                  otherwise
 def get_N_D(results: pl.LazyFrame, data: dict[str, PodiumDivision], division: str, track: defs.Track) -> int:
     if track == defs.Track.Incremental:
-        return (
-            results.group_by(["track", "division"])
-            .agg([pl.col("check_sats").sum().alias("total_check_sats")])
-            .filter(pl.col("division") == int(defs.Division[division]))
-            .collect()
-          )["total_check_sats"][0]
+        return int(
+            (
+                results.group_by(["track", "division"])
+                .agg([pl.col("check_sats").sum().alias("total_check_sats")])
+                .filter(pl.col("division") == int(defs.Division[division]))
+                .collect()
+            )["total_check_sats"][0]
+        )
     elif track == defs.Track.UnsatCore:
-        return (
-            results.group_by(["track", "division"])
-            .agg([pl.col("asserts").sum().alias("total_asserts")])
-            .filter(pl.col("division") == int(defs.Division[division]))
-            .collect()
-          )["total_asserts"][0]
+        return int(
+            (
+                results.group_by(["track", "division"])
+                .agg([pl.col("asserts").sum().alias("total_asserts")])
+                .filter(pl.col("division") == int(defs.Division[division]))
+                .collect()
+            )["total_asserts"][0]
+        )
     return data[division].n_benchmarks
 
 
@@ -553,8 +557,15 @@ def get_N_D(results: pl.LazyFrame, data: dict[str, PodiumDivision], division: st
 #
 # For the choices, see the footnote in the rules.
 #
-def best_overall_ranking(config: defs.Config, results: pl.LazyFrame, data: dict[str, PodiumDivision], track: defs.Track) -> PodiumBestOverall:
-    def get_winner(l: Optional[List[PodiumStepNormalizedCorrectnessScore]], results: pl.LazyFrame, data: dict[str, PodiumDivision], track: defs.Track) -> Tuple[str, float]:
+def best_overall_ranking(
+    config: defs.Config, results: pl.LazyFrame, data: dict[str, PodiumDivision], track: defs.Track
+) -> PodiumBestOverall:
+    def get_winner(
+        l: Optional[List[PodiumStepNormalizedCorrectnessScore]],
+        results: pl.LazyFrame,
+        data: dict[str, PodiumDivision],
+        track: defs.Track,
+    ) -> Tuple[str, float]:
         if l is None or not l:
             return ("-", 0.0)
         else:
