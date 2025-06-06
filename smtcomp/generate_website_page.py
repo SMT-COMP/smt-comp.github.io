@@ -141,9 +141,9 @@ class PodiumSummaryResults(BaseModel):
     layout: Literal["results_summary"] = "results_summary"
 
 
-class PodiumStepNormalizedCorrectnessScore(BaseModel):
+class PodiumStepOverallScore(BaseModel):
     name: str
-    normalizedCorrectnessScore: float_6dig
+    contribution: float_6dig # nn_D * log10 N_D
     division: str
     tieBreakTimeScore: float_6dig
 
@@ -165,11 +165,11 @@ class PodiumBestOverall(BaseModel):
     winner_sat_score: float_6dig
     winner_unsat_score: float_6dig
     winner_24s_score: float_6dig
-    sequential: list[PodiumStepNormalizedCorrectnessScore]
-    parallel: list[PodiumStepNormalizedCorrectnessScore]
-    sat: list[PodiumStepNormalizedCorrectnessScore]
-    unsat: list[PodiumStepNormalizedCorrectnessScore]
-    twentyfour: list[PodiumStepNormalizedCorrectnessScore]
+    sequential: list[PodiumStepOverallScore]
+    parallel: list[PodiumStepOverallScore]
+    sat: list[PodiumStepOverallScore]
+    unsat: list[PodiumStepOverallScore]
+    twentyfour: list[PodiumStepOverallScore]
     layout: Literal["result_comp"] = "result_comp"
 
 
@@ -496,9 +496,9 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
 #                                   = -2          otherwise
 def normalized_correctness_score(
     data: dict[str, PodiumDivision], scores: pl.LazyFrame, track: defs.Track, k: smtcomp.scoring.Kind
-) -> list[PodiumStepNormalizedCorrectnessScore]:
+) -> list[PodiumStepOverallScore]:
 
-    podiumSteps: list[PodiumStepNormalizedCorrectnessScore] = []
+    podiumSteps: list[PodiumStepOverallScore] = []
 
     for division, div_data in data.items():
         solvers_in_div = get_kind(div_data, k)
@@ -513,14 +513,14 @@ def normalized_correctness_score(
                 nn_D = -2
 
             podiumSteps.append(
-                PodiumStepNormalizedCorrectnessScore(
+                PodiumStepOverallScore(
                     name=sol_in_div.name,
-                    normalizedCorrectnessScore=nn_D,
+                    contribution=nn_D*(math.log10(N_D) if N_D > 0 else 0), 
                     tieBreakTimeScore=sol_in_div.CPUScore if k == smtcomp.scoring.Kind.seq else sol_in_div.WallScore,
                     division=division,
                 )
             )
-        podiumSteps = sorted(podiumSteps, key=lambda x: (x.normalizedCorrectnessScore, x.tieBreakTimeScore), reverse=True)
+        podiumSteps = sorted(podiumSteps, key=lambda x: (x.contribution, x.tieBreakTimeScore), reverse=True)
     return podiumSteps
 
 
@@ -560,7 +560,7 @@ def best_overall_ranking(
     config: defs.Config, scores: pl.LazyFrame, data: dict[str, PodiumDivision], track: defs.Track
 ) -> PodiumBestOverall:
     def get_winner(
-        l: Optional[List[PodiumStepNormalizedCorrectnessScore]],
+        l: Optional[List[PodiumStepOverallScore]],
         scores: pl.LazyFrame,
         data: dict[str, PodiumDivision],
         track: defs.Track,
@@ -570,10 +570,7 @@ def best_overall_ranking(
         else:
             podium: DefaultDict[str, Dict[str, float]] = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0})
             for entry in l:
-                N_D = get_N_D(scores, data, entry.division, track)
-                log10_N_D = math.log10(N_D) if N_D > 0 else 0
-                contribution = entry.normalizedCorrectnessScore * log10_N_D
-                podium[entry.name]["score"] += contribution
+                podium[entry.name]["score"] += entry.contribution
                 podium[entry.name]["tie_break_time"] += entry.tieBreakTimeScore
             winner, winner_data = max(podium.items(), key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]))
             return (winner, winner_data["score"])
