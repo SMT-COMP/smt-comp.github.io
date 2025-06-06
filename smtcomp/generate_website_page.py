@@ -143,7 +143,7 @@ class PodiumSummaryResults(BaseModel):
 
 class PodiumStepOverallScore(BaseModel):
     name: str
-    contribution: float_6dig # nn_D * log10 N_D
+    contribution: float_6dig  # nn_D * log10 N_D
     division: str
     tieBreakTimeScore: float_6dig
 
@@ -515,7 +515,7 @@ def normalized_correctness_score(
             podiumSteps.append(
                 PodiumStepOverallScore(
                     name=sol_in_div.name,
-                    contribution=nn_D*(math.log10(N_D) if N_D > 0 else 0), 
+                    contribution=nn_D * (math.log10(N_D) if N_D > 0 else 0),
                     tieBreakTimeScore=sol_in_div.CPUScore if k == smtcomp.scoring.Kind.seq else sol_in_div.WallScore,
                     division=division,
                 )
@@ -529,19 +529,21 @@ def normalized_correctness_score(
 #                  total number of benchmarks                  otherwise
 def get_N_D(scores: pl.LazyFrame, data: dict[str, PodiumDivision], division: str, track: defs.Track) -> int:
     if track == defs.Track.Incremental:
-        return int (scores.unique(["division","file"])
-              .group_by(["division"])
-              .agg([pl.col("check_sats").sum().alias("total_check_sats")])
-              .filter(pl.col("division") == int(defs.Division[division]))
-              .collect()["total_check_sats"][0]
+        return int(
+            scores.unique(["division", "file"])
+            .group_by(["division"])
+            .agg([pl.col("check_sats").sum().alias("total_check_sats")])
+            .filter(pl.col("division") == int(defs.Division[division]))
+            .collect()["total_check_sats"][0]
         )
-        
+
     elif track == defs.Track.UnsatCore:
-        return int (scores.unique(["division","file"])
-              .group_by(["division"])
-              .agg([pl.col("asserts").sum().alias("total_asserts")])
-              .filter(pl.col("division") == int(defs.Division[division]))
-              .collect()["total_asserts"][0]
+        return int(
+            scores.unique(["division", "file"])
+            .group_by(["division"])
+            .agg([pl.col("asserts").sum().alias("total_asserts")])
+            .filter(pl.col("division") == int(defs.Division[division]))
+            .collect()["total_asserts"][0]
         )
 
     return data[division].n_benchmarks
