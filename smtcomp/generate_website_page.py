@@ -495,7 +495,7 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
 # normalized correctness score: nnD = (nD /ND)**2 if eD == 0
 #                                   = -2          otherwise
 def normalized_correctness_score(
-    data: dict[str, PodiumDivision], k: smtcomp.scoring.Kind
+    data: dict[str, PodiumDivision], results: pl.LazyFrame, track: defs.Track, k: smtcomp.scoring.Kind
 ) -> list[PodiumStepNormalizedCorrectnessScore]:
 
     scores: list[PodiumStepNormalizedCorrectnessScore] = []
@@ -505,7 +505,7 @@ def normalized_correctness_score(
         if len(solvers_in_div) <= 1:
             continue
 
-        N_D = div_data.n_benchmarks
+        N_D = get_N_D(results, data, division, track)
         for sol_in_div in solvers_in_div:
             if sol_in_div.errorScore == 0:
                 nn_D = (sol_in_div.correctScore / N_D) ** 2
@@ -523,6 +523,27 @@ def normalized_correctness_score(
     return scores
 
 
+#  N_D  :=         total number of check sats in division D    if Incremental Track
+#                  total number of asserts in division D       if Unsat Core Track
+#                  total number of benchmarks                  otherwise
+def get_N_D(results: pl.LazyFrame, data: dict[str, PodiumDivision], division: str, track: defs.Track) -> int:
+    if track == defs.Track.Incremental:
+        return (
+            results.group_by(["track", "division"])
+            .agg([pl.col("check_sats").sum().alias("total_check_sats")])
+            .filter(pl.col("division") == int(defs.Division[division]))
+            .collect()
+          )["total_check_sats"][0]
+    elif track == defs.Track.UnsatCore:
+        return (
+            results.group_by(["track", "division"])
+            .agg([pl.col("asserts").sum().alias("total_asserts")])
+            .filter(pl.col("division") == int(defs.Division[division]))
+            .collect()
+          )["total_asserts"][0]
+    return data[division].n_benchmarks
+
+
 # Computes the best overall ranking as specified in Section 7.3.1 of
 # SMT-COMP 2025 rules. I.e:
 #
@@ -530,16 +551,16 @@ def normalized_correctness_score(
 #                                  = -2          otherwise
 # overall score               : sum_D nnD*log10 ND
 #
-# For the choices see footnote in the rules.
+# For the choices, see the footnote in the rules.
 #
-def best_overall_ranking(config: defs.Config, data: dict[str, PodiumDivision], track: defs.Track) -> PodiumBestOverall:
-    def get_winner(l: Optional[List[PodiumStepNormalizedCorrectnessScore]]) -> Tuple[str, float]:
+def best_overall_ranking(config: defs.Config, results: pl.LazyFrame, data: dict[str, PodiumDivision], track: defs.Track) -> PodiumBestOverall:
+    def get_winner(l: Optional[List[PodiumStepNormalizedCorrectnessScore]], results: pl.LazyFrame, data: dict[str, PodiumDivision], track: defs.Track) -> Tuple[str, float]:
         if l is None or not l:
             return ("-", 0.0)
         else:
             scores: DefaultDict[str, Dict[str, float]] = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0})
             for entry in l:
-                N_D = data[entry.division].n_benchmarks
+                N_D = get_N_D(results, data, entry.division, track)
                 log10_N_D = math.log10(N_D) if N_D > 0 else 0
                 contribution = entry.normalizedCorrectnessScore * log10_N_D
                 scores[entry.name]["score"] += contribution
@@ -547,17 +568,17 @@ def best_overall_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
             winner, winner_data = max(scores.items(), key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]))
             return (winner, winner_data["score"])
 
-    sequential = normalized_correctness_score(data, smtcomp.scoring.Kind.seq)
-    parallel = normalized_correctness_score(data, smtcomp.scoring.Kind.par)
-    sat = normalized_correctness_score(data, smtcomp.scoring.Kind.sat)
-    unsat = normalized_correctness_score(data, smtcomp.scoring.Kind.unsat)
-    twentyfour = normalized_correctness_score(data, smtcomp.scoring.Kind.twentyfour)
+    sequential = normalized_correctness_score(data, results, track, smtcomp.scoring.Kind.seq)
+    parallel = normalized_correctness_score(data, results, track, smtcomp.scoring.Kind.par)
+    sat = normalized_correctness_score(data, results, track, smtcomp.scoring.Kind.sat)
+    unsat = normalized_correctness_score(data, results, track, smtcomp.scoring.Kind.unsat)
+    twentyfour = normalized_correctness_score(data, results, track, smtcomp.scoring.Kind.twentyfour)
 
     if track in (defs.Track.Cloud, defs.Track.Parallel):
         winner_seq = ("-", 0.0)
         sequential = []
     else:
-        winner_seq = get_winner(sequential)
+        winner_seq = get_winner(sequential, results, data, track)
 
     return PodiumBestOverall(
         resultdate="2024-07-08",
@@ -567,15 +588,15 @@ def best_overall_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
         participants=f"participants_{config.current_year}",
         recognition="best_overall",
         winner_seq=winner_seq[0],
-        winner_par=get_winner(parallel)[0],
-        winner_sat=get_winner(sat)[0],
-        winner_unsat=get_winner(unsat)[0],
-        winner_24s=get_winner(twentyfour)[0],
+        winner_par=get_winner(parallel, results, data, track)[0],
+        winner_sat=get_winner(sat, results, data, track)[0],
+        winner_unsat=get_winner(unsat, results, data, track)[0],
+        winner_24s=get_winner(twentyfour, results, data, track)[0],
         winner_seq_score=winner_seq[1],
-        winner_par_score=get_winner(parallel)[1],
-        winner_sat_score=get_winner(sat)[1],
-        winner_unsat_score=get_winner(unsat)[1],
-        winner_24s_score=get_winner(twentyfour)[1],
+        winner_par_score=get_winner(parallel, results, data, track)[1],
+        winner_sat_score=get_winner(sat, results, data, track)[1],
+        winner_unsat_score=get_winner(unsat, results, data, track)[1],
+        winner_24s_score=get_winner(twentyfour, results, data, track)[1],
         sequential=sequential,
         parallel=parallel,
         sat=sat,
@@ -762,7 +783,7 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
                 all_divisions.append(data)
 
         if for_division:
-            data_best_overall = best_overall_ranking(config, datas, track)
+            data_best_overall = best_overall_ranking(config, results, datas, track)
             (dst / f"best-overall-{page_suffix}.md").write_text(data_best_overall.model_dump_json(indent=1))
 
             bigdata = biggest_lead_ranking(config, datas, track)
