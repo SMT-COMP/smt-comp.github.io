@@ -401,7 +401,7 @@ def get_kind(a: PodiumDivision, k: smtcomp.scoring.Kind) -> list[PodiumStep]:
 
 
 # Computes the new global ranking based on the distance between the winner of a
-# division and the second solver in a division as defined in secion 7.3.1 of
+# division and the second solver in a division as defined in section 7.3.1 of
 # the SMT-COMP'19 rules.
 #
 # data      : The podium as returned by process_csv.
@@ -511,11 +511,12 @@ def normalized_correctness_score(
                 nn_D = (sol_in_div.correctScore / N_D) ** 2
             else:
                 nn_D = -2
+
             scores.append(
                 PodiumStepNormalizedCorrectnessScore(
                     name=sol_in_div.name,
                     normalizedCorrectnessScore=nn_D,
-                    tieBreakTimeScore=sol_in_div.WallScore,
+                    tieBreakTimeScore=sol_in_div.CPUScore if k == smtcomp.scoring.Kind.seq else sol_in_div.WallScore,
                     division=division,
                 )
             )
