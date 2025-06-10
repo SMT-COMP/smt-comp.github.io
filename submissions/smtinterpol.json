@@ -11,8 +11,8 @@
         "Jochen Hoenicke <jochen@certora.com>"
     ],
     "archive": {
-        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtcomp/smtinterpol-2.5-1399-g79018412.tar.gz",
-        "h": { "sha256": "5ce2002583a7035629ff98fc60df75bef1d14110b702ccdb721baa3c62d250b7" }
+        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtcomp/smtinterpol-2.5-1400-g2599b60f.tar.gz",
+        "h": { "sha256": "a73c77c1bbaf9b8d6cd31bdf933df3b6fba02cbb3a6da0eef62649d281a08f6d" }
     },
     "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
     "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2025.pdf",
