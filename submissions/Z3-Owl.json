@@ -1,5 +1,5 @@
 {
-    "name": "<solver name>",
+    "name": "Z3-Owl",
     "contributors": [
         "First Smith",
         { "name": "Second Baker", "website": "http://baker.com/" }
