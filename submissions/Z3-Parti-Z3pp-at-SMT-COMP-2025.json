@@ -1,0 +1,23 @@
+{
+    "name": "Z3-Parti-Z3pp-at-SMT-COMP-2025",
+    "contributors": [
+        "Mengyu Zhao",
+        "Shaowei Cai"
+    ],
+    "contacts": ["Mengyu Zhao <zhaomy@ios.ac.cn>"],
+    "archive": {
+        "url": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025"
+    },
+    "website": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025",
+    "system_description": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025/blob/master/Z3_Parti_Z3pp_at_SMT_COMP_2025.pdf",
+    "command": ["python3 run_AriParti.py", "<instance_path>"],
+    "solver_type": "Derived",
+    "seed": "998244353",
+    "participations": [
+        {
+            "tracks": ["Parallel"],
+            "logics": ["QF_RDL", "QF_IDL", "QF_LRA", "QF_LIA", "QF_NRA", "QF_NIA"],
+            "aws_repository": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025"
+        }
+    ]
+}
