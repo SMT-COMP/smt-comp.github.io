@@ -24,7 +24,7 @@
             "tracks": [
                 "SingleQuery"
             ],
-            "divisions": [
+            "logics": [
                 "QF_BV"
             ]
         }
