@@ -1,0 +1,34 @@
+{
+    "name": "SMTS",
+    "contributors": [
+        { "name": "Tomáš Kolárik", "website": "https://github.com/Tomaqa" }
+        ,
+        { "name": "Antti E. J. Hyvärinen", "website": "https://github.com/aehyvari" }
+        ,
+        { "name": "Seyedmasoud Asadzadeh", "website": "https://masoudasadzade.github.io" }
+    ],
+    "contacts": [
+        "Tomáš Kolárik <tomas.kolarik@usi.ch>"
+    ],
+    "archive": {
+        "url": "https://github.com/usi-verification-and-security/SMTS/archive/refs/tags/tacas26-artifact.tar.gz"
+    },
+    "command": ["./SMTS-tacas26-artifact/server/smts.py", "-l", "-p", "-nt", "32", "-o", "128", "-fp"],
+    "website": "https://github.com/usi-verification-and-security/SMTS",
+    "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/smts-abstract-2026.pdf",
+    "solver_type": "Standalone",
+    "participations": [
+        {
+            "tracks": ["Parallel"],
+            "logics": [
+                "QF_UF", "QF_AX",
+                "QF_IDL", "QF_RDL", "QF_LIA", "QF_LRA",
+                "QF_UFIDL", "QF_UFLIA", "QF_UFLRA",
+                "QF_ALIA",
+                "QF_AUFLIA"
+            ]
+        }
+    ],
+    "seed": 6789,
+    "final": false
+}
