@@ -1227,8 +1227,6 @@ class Participation(BaseModel, extra="forbid"):
     divisions: add all the logics of those divisions in each track
     logics: add all the specified logics in each selected track it exists
 
-    aws_repository should be used only in conjunction with Cloud and Parallel track
-
     archive and command should not be used with Cloud and Parallel track. They superseed the one given at the root.
     """
 
@@ -1237,18 +1235,10 @@ class Participation(BaseModel, extra="forbid"):
     divisions: list[Division] = []
     archive: Archive | None = None
     command: Command | None = None
-    aws_repository: str | None = None
     experimental: bool = False
 
     @model_validator(mode="after")
     def check_archive(self) -> Participation:
-        aws_track = {Track.Cloud, Track.Parallel}
-        if self.aws_repository is None and not set(self.tracks).isdisjoint(aws_track):
-            raise ValueError("aws_repository is required by Cloud and Parallel track")
-        if self.aws_repository is not None and not set(self.tracks).issubset(aws_track):
-            raise ValueError("aws_repository can be used only with Cloud and Parallel track")
-        if (self.archive is not None or self.command is not None) and not set(self.tracks).isdisjoint(aws_track):
-            raise ValueError("archive and command field can't be used with Cloud and Parallel track")
         return self
 
     def get(self, d: None | dict[Track, dict[Division, set[Logic]]] = None) -> dict[Track, dict[Division, set[Logic]]]:
@@ -1274,8 +1264,6 @@ class Participation(BaseModel, extra="forbid"):
     def complete(self, archive: Archive | None, command: Command | None) -> ParticipationCompleted:
         archive = cast(Archive, archive if self.archive is None else self.archive)
         command = cast(Command, command if self.command is None else self.command)
-        if (self.aws_repository is not None) or set(self.tracks).issubset({Track.Cloud, Track.Parallel}):
-            raise ValueError("can't complete Cloud and Parallel track participations")
         return ParticipationCompleted(
             tracks=self.get(), archive=archive, command=command, experimental=self.experimental
         )
@@ -1339,14 +1327,10 @@ class Submission(BaseModel, extra="forbid"):
 
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
-        if self.archive is None and not all(p.archive or p.aws_repository for p in self.participations.root):
-            raise ValueError(
-                "Field archive (or aws_repository) is needed in all participations if not present at the root"
-            )
-        if self.command is None and not all(p.command or p.aws_repository for p in self.participations.root):
-            raise ValueError(
-                "Field command (or aws_repository) is needed in all participations if not present at the root"
-            )
+        if self.archive is None and not all(p.archive for p in self.participations.root):
+            raise ValueError("Field archive is needed in all participations if not present at the root")
+        if self.command is None and not all(p.command for p in self.participations.root):
+            raise ValueError("Field command is needed in all participations if not present at the root")
 
         def check_archive(archive: None | Archive) -> None:
             if archive:
@@ -1364,7 +1348,7 @@ class Submission(BaseModel, extra="forbid"):
 
     def complete_participations(self) -> list[ParticipationCompleted]:
         """Push defaults from the submission into participations"""
-        return [p.complete(self.archive, self.command) for p in self.participations.root if p.aws_repository is None]
+        return [p.complete(self.archive, self.command) for p in self.participations.root]
 
 
 class Smt2File(BaseModel):

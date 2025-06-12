@@ -17,7 +17,7 @@ runner = CliRunner()
 good_cases = [
     "tests/test1.json",
     "submissions/template/template.json",
-    "submissions/template/template_aws_tracks.json",
+    "submissions/template/template_parallel.json",
     "tests/test_good_final.json",
 ]
 bad_cases = ["tests/test_bad.json", "tests/test_bad_final.json"]
