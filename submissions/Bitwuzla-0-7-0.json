@@ -9,6 +9,7 @@
     "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-031-37703-7_1",
     "command": [ "./bitwuzla" ],
     "solver_type": "Standalone",
+    "seed": 42,
     "participations": [
         { "tracks": ["SingleQuery"], "logics": "QF_BV" }
     ],
