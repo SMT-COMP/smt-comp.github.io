@@ -1328,13 +1328,9 @@ class Submission(BaseModel, extra="forbid"):
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
         if self.archive is None and not all(p.archive for p in self.participations.root):
-            raise ValueError(
-                "Field archive is needed in all participations if not present at the root"
-            )
+            raise ValueError("Field archive is needed in all participations if not present at the root")
         if self.command is None and not all(p.command for p in self.participations.root):
-            raise ValueError(
-                "Field command is needed in all participations if not present at the root"
-            )
+            raise ValueError("Field command is needed in all participations if not present at the root")
 
         def check_archive(archive: None | Archive) -> None:
             if archive:
