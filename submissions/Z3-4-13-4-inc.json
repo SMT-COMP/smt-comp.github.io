@@ -1,0 +1,19 @@
+{
+    "name": "Z3-4-13-4-inc",
+    "archive": {
+        "url": "https://zenodo.org/records/15524795/files/z3.zip"
+    },
+    "contributors": [
+        "Nikolaj Bjørner"
+    ],
+    "contacts": ["Nikolaj Bjørner <nbjorner@microsoft.com>"],
+    "website": "https://github.com/Z3Prover/z3/wiki",
+    "system_description": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
+    "command": [ "./smtcomp_run_incremental" ],
+    "solver_type": "Standalone",
+    "seed": 174228,
+    "participations": [
+        { "tracks": ["Incremental"], "logics": "QF_NIA" }
+    ],
+    "competitive": false
+}
