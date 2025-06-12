@@ -1,7 +1,7 @@
 {
     "name": "Bitwuzla-0-7-0",
     "archive": {
-        "url": "https://zenodo.org/records/15649785/files/Bitwuzla-0-7-0.zip?download=1"
+        "url": "https://zenodo.org/records/15649785/files/Bitwuzla-0-7-0.zip"
     },
     "contributors": ["Aina Niemetz", "Mathias Preiner"],
     "contacts": ["Mathias Preiner <preiner@cs.stanford.edu>"],
