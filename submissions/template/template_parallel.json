@@ -6,24 +6,15 @@
     ],
     "contacts": ["contact name <contact@email.com>"],
     "website": "http://example.com/",
+    "archive": { "url": "https://github.com/project/repository" },
+    "command": ["relative_cmd", "default_command_line"],
     "system_description": "http://example.com/system.pdf",
     "solver_type": "Standalone",
     "seed": "42",
     "participations": [
         {
-            "tracks": ["Cloud"],
-            "divisions": ["Equality"],
-            "aws_repository": "https://github.com/project/repository"
-        },
-        {
             "tracks": ["Parallel"],
-            "logics": "QF_.*LRA.*",
-            "aws_repository": "https://github.com/project/repository"
-        },
-        {
-            "tracks": ["Cloud"],
-            "logics": ["LIA"],
-            "aws_repository": "https://github.com/project/repository"
+            "logics": "QF_.*LRA.*"
         }
     ]
 }
