@@ -1,12 +1,12 @@
 {
     "name": "iProver v3.9.3",
-    "contributors": [       
+    "contributors": [
         { "name": "Konstantin Korovin", "website": "https://korovin.gitlab.io/" }
     ],
     "contacts": ["Konstantin Korovin <kostyakor@gmail.com>"],
     "archive": {
         "url": "https://zenodo.org/records/15659520",
-        "h": { "sha256": "0a839572e490ee2028d9dae00a15dd3c7700d73a143f3aa42e2f811cc92b63e5" }
+        "h": { "sha256": "0a839572e490ee2028d9dae00a15dd3c7700d73a143f3aa42e2f811cc92b63e5"}
     },
     "website": "https://gitlab.com/korovin/iprover",
     "system_description": "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2024.pdf",
@@ -18,6 +18,6 @@
           "logics": ["ALIA, ANIA, AUFDTLIA, AUFDTLIRA, AUFDTNIRA, AUFLIA, AUFLIRA, AUFNIA, AUFNIRA, LIA, LRA, NIA, NRA, UF, UFDT, UFDTLIA, UFDTLIRA, UFDTNIA, UFDTNIRA, UFIDL, UFLIA, UFLRA, UFNIA, UFNIRA"] },
         { "tracks": ["Parallel"],
           "divisions" :["Arith","Equality","Equality+LinearArith","Equality+NonLinearArith"],
-            "logics": ["ALIA, ANIA, AUFDTLIA, AUFDTLIRA, AUFDTNIRA, AUFLIA, AUFLIRA, AUFNIA, AUFNIRA, LIA, LRA, NIA, NRA, UF, UFDT, UFDTLIA, UFDTLIRA, UFDTNIA, UFDTNIRA, UFIDL, UFLIA, UFLRA, UFNIA, UFNIRA"]} 
+          "logics": ["ALIA, ANIA, AUFDTLIA, AUFDTLIRA, AUFDTNIRA, AUFLIA, AUFLIRA, AUFNIA, AUFNIRA, LIA, LRA, NIA, NRA, UF, UFDT, UFDTLIA, UFDTLIRA, UFDTNIA, UFDTNIRA, UFIDL, UFLIA, UFLRA, UFNIA, UFNIRA"]}
     ]
 }
