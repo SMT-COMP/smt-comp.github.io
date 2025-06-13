@@ -5,8 +5,7 @@
     ],
     "contacts": ["Peisen Yao <pyaoaa@zju.edu.cn>"],
     "archive": {
-        "url": "https://zenodo.org/records/15656183/files/Z3-Owl.gz?download=1",
-        "h": { "sha256": "a2dd861575cc722b6a5d3ab3234c85c9fb3fdd54519e361f45ac68e3679820d6" }
+        "url": "https://zenodo.org/records/15656183/files/Z3-Owl.gz?download=1"
     },
     "website": "https://rainoftime.github.io/html/owl.html",
     "system_description": "http://example.com/system.pdf",
