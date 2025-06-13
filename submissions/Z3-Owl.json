@@ -1,31 +1,28 @@
 {
     "name": "Z3-Owl",
     "contributors": [
-        "First Smith",
-        { "name": "Second Baker", "website": "http://baker.com/" }
+        "Hanrui Zuo", "Peisen Yao"
     ],
-    "contacts": ["contact name <contact@email.com>"],
+    "contacts": ["Peisen Yao <pyaoaa@zju.edu.cn>"],
     "archive": {
-        "url": "http://example.com/solver.tar.gz",
-        "h": { "sha256": "012345" }
+        "url": "https://drive.usercontent.google.com/download?id=1NvC4K6oGYN6DP40wUh-oL6JiIBvfKG64&export=download",
+        "h": { "sha256": "14481e149fccc581a67691424294113ded5eae104b74615efbd77f6c1fe968fb" }
     },
-    "website": "http://example.com/",
+    "website": "https://rainoftime.github.io/html/owl.html",
     "system_description": "http://example.com/system.pdf",
-    "command": ["relative_cmd", "default_command_line"],
-    "solver_type": "Standalone",
-    "seed": "42",
+    "command": ["Z3-Owl"],
+    "solver_type": "derived",
     "participations": [
-        { "tracks": ["SingleQuery"], "divisions": ["Equality"] },
         {
             "tracks": ["SingleQuery"],
-            "logics": "QF_.*LRA.*",
-            "command": ["relative_cmd", "other_option"]
-        },
-        {
-            "tracks": ["SingleQuery"],
-            "logics": ["LIA"],
-            "archive": { "url": "http://example.com/solver_lia.tar.gz" },
-            "command": ["relative_cmd", "--super-lia"]
+            "logics": [
+                "QF_BV",
+                "QF_UFBV",
+                "QF_ABV",
+                "QF_AUFBV",
+                "QF_FP",
+                "QF_BVFP"
+            ]
         }
     ]
 }
