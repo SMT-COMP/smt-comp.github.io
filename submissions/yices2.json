@@ -7,10 +7,10 @@
         "Thomas Hader",
         "Ahmed Irfan",
         "Dejan Jovanovic",
-	"Enrico Lipparini",
+        "Enrico Lipparini",
         "Ian A Mason",
-	"Karthik Nukala",
-	"Harald Ruess"
+        "Karthik Nukala",
+        "Harald Ruess"
     ],
     "contacts": [
         "Ahmed Irfan <ahmed.irfan@sri.com>",
@@ -58,7 +58,7 @@
             "logics": ["QF_BV"],
             "command": ["./yices_smt2", "--delegate=kissat"]
         },
-	{
+        {
             "tracks": ["SingleQuery"],
             "logics": ["QF_NIA"],
             "command": ["./yices_smt2", "--mcsat-l2o"]
@@ -139,14 +139,14 @@
                        "QF_UFNRA"],
             "command": ["./yices_smt2"]
         },
-	{
+        {
             "tracks": ["ModelValidation"],
             "logics": ["QF_NIA"],
             "command": ["./yices_smt2", "--mcsat-l2o"]
         }
-	{
-	    "tracks": ["Parallel"],
-	    "logics": ["QF_NIA",
+        {
+            "tracks": ["Parallel"],
+            "logics": ["QF_NIA",
                        "QF_ANIA",
                        "QF_AUFBVNIA",
                        "QF_AUFNIA",
@@ -154,8 +154,8 @@
                        "QF_NRA",
                        "QF_UFNIA",
                        "QF_UFNRA"],
-	    "command": ["./yices2_parallel.py", "--yices ./yices_smt2 -n 255"]
-	}
+            "command": ["./yices2_parallel.py", "--yices ./yices_smt2 -n 255"]
+        }
     ],
     "seed": 0
 }
