@@ -1,0 +1,25 @@
+{
+    "name": "OSTRICH",
+    "contributors": [
+        "Matthew Hague",
+        "Denghang Hu",
+        "Anthony W. Lin",
+        "Oliver Markgraf",
+        "Philipp Ruemmer",
+        "Zhilin Wu"
+    ],
+    "contacts": ["Philipp Ruemmer <philipp.ruemmer@it.uu.se>",
+                 "Oliver Markgraf <markgraf@cs.uni-kl.de>"],
+    "archive": {
+        "url": "https://eldarica.org/ostrich-smt-comp-2025.tar.gz",
+        "h": { "sha256": "75e329a21e2eddde40d91eda262a9a2434a4608995ac1710ea70c2d8311fbad8" }
+    },
+    "website": "https://github.com/uuverifiers/ostrich/",
+    "system_description": "",
+    "command": ["ostrich", "+quiet -portfolio=strings"],
+    "solver_type": "Standalone",
+    "seed": "718582",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
+    ]
+}
