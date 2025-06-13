@@ -148,3 +148,35 @@ def test_results_inc_export(config: defs.Config) -> None:
     assert podium.sequential[2].name == gtests.solver_error
     assert podium.sequential[2].errorScore == 1
     assert podium.sequential[2].correctScore == 0
+
+
+def test_overall_ranking(config: defs.Config) -> None:
+    podium = gtests.compute_results_read_podium_best_overall(config, defs.Track.SingleQuery)
+    assert podium.sequential[0].name == gtests.solver_best
+    assert podium.sequential[1].name == gtests.solver_sound
+    assert podium.sequential[2].name == gtests.solver_error
+    assert round(podium.sequential[0].contribution, 2) == 0.48
+    assert round(podium.sequential[1].contribution, 2) == 0.21
+    assert round(podium.sequential[2].contribution, 2) == -0.95
+
+    podium = gtests.compute_results_read_podium_best_overall(config, defs.Track.UnsatCore)
+    assert podium.sequential[0].name == gtests.solver_best
+    assert podium.sequential[1].name == gtests.solver_sound
+    assert podium.sequential[2].name == gtests.solver_error
+    assert round(podium.sequential[0].contribution, 2) == 0.12
+    assert round(podium.sequential[1].contribution, 2) == 0.03
+    assert round(podium.sequential[2].contribution, 2) == -2.60
+
+    podium = gtests.compute_results_read_podium_best_overall(config, defs.Track.ModelValidation)
+    # All zero because only a single benchmark hence log(1) = 0
+    assert round(podium.parallel[0].contribution, 2) == 0.0
+    assert round(podium.parallel[1].contribution, 2) == 0.0
+    assert round(podium.parallel[2].contribution, 2) == 0.0
+
+    podium = gtests.compute_results_read_podium_best_overall(config, defs.Track.Incremental)
+    assert podium.parallel[0].name == gtests.solver_best
+    assert podium.parallel[1].name == gtests.solver_sound
+    assert podium.parallel[2].name == gtests.solver_error
+    assert round(podium.parallel[0].contribution, 2) == 0.49
+    assert round(podium.parallel[1].contribution, 2) == 0.25
+    assert round(podium.parallel[2].contribution, 2) == -2
