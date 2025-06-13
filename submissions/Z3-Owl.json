@@ -1,0 +1,28 @@
+{
+    "name": "Z3-Owl",
+    "contributors": [
+        "Hanrui Zuo", "Peisen Yao"
+    ],
+    "contacts": ["Peisen Yao <pyaoaa@zju.edu.cn>"],
+    "archive": {
+        "url": "https://zenodo.org/records/15659176/files/Z3-Owl.tar?download=1"
+    },
+    "website": "https://rainoftime.github.io/html/owl.html",
+    "system_description": "https://zenodo.org/records/15659176/files/Z3_Owl_at_SMT_COMP_2025.pdf?download=1",
+    "command": ["Z3-Owl"],
+    "solver_type": "derived",
+    "seed": 42,
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": [
+                "QF_BV",
+                "QF_UFBV",
+                "QF_ABV",
+                "QF_AUFBV",
+                "QF_FP",
+                "QF_BVFP"
+            ]
+        }
+    ]
+}
