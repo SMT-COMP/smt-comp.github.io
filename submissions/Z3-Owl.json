@@ -11,6 +11,7 @@
     "system_description": "http://example.com/system.pdf",
     "command": ["Z3-Owl"],
     "solver_type": "derived",
+    "seed": 42,
     "participations": [
         {
             "tracks": ["SingleQuery"],
