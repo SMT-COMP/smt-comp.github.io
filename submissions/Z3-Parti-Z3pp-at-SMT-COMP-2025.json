@@ -16,8 +16,7 @@
     "participations": [
         {
             "tracks": ["Parallel"],
-            "logics": ["QF_RDL", "QF_IDL", "QF_LRA", "QF_LIA", "QF_NRA", "QF_NIA"],
-            "aws_repository": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025"
+            "logics": ["QF_RDL", "QF_IDL", "QF_LRA", "QF_LIA", "QF_NRA", "QF_NIA"]
         }
     ]
 }
