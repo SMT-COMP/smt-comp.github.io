@@ -176,3 +176,20 @@ def compute_results_read_podium_division(
         (config.web_results / f"{logic.name.lower()}-{page_suffix}.md").read_text()
     )
     return podium
+
+
+def compute_results_read_podium_best_overall(
+    config: defs.Config, track: defs.Track, check_sound_solvers: list[str] = []
+) -> smtcomp.generate_website_page.PodiumBestOverall:
+
+    results, selection = smtcomp.results.helper_get_results(config, [], track)
+    if check_sound_solvers:
+        scores = smtcomp.scoring.add_disagreements_info(results, track)
+        sound_solvers = scores.filter(sound_solver=True).select("solver").unique().collect()["solver"].sort().to_list()
+        assert sound_solvers == check_sound_solvers
+    smtcomp.generate_website_page.export_results(config, selection, results, track)
+    page_suffix = smtcomp.generate_website_page.page_track_suffix(track)
+    podium = smtcomp.generate_website_page.PodiumBestOverall.model_validate_json(
+        (config.web_results / f"best-overall-{page_suffix}.md").read_text()
+    )
+    return podium
