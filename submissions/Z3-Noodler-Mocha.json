@@ -1,0 +1,21 @@
+{
+    "name": "Z3-Noodler-Mocha",
+    "contributors": [
+        "Shaoke Cui",
+        "Chuan Luo"
+    ],
+    "contacts": [
+        "Shaoke Cui <cuisk@buaa.edu.cn>"
+    ],
+    "archive": {
+        "url": "https://github.com/Bazoka13/Z3-Noodler-Mocha-at-SMT-COMP-2025/raw/refs/heads/main/noodler-mocha.tar.gz"
+    },
+    "website": "https://github.com/Bazoka13/Z3-Noodler-Mocha-at-SMT-COMP-2025",
+    "system_description": "https://github.com/Bazoka13/Z3-Noodler-Mocha-at-SMT-COMP-2025/blob/main/Z3_Noodler_Mocha_at_SMT_Comp_2025.pdf",
+    "command": ["./noodler-mocha"],
+    "solver_type": "derived",
+    "seed": "13",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
+    ]
+}
