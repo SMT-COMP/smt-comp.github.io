@@ -17,7 +17,7 @@
     "command": ["z3-noodler"],
     "solver_type": "derived",
     "participations": [
-        { "tracks": ["SingleQuery", "Incremental"], "divisions": ["QF_Strings"] }
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
     ],
     "seed": 48655
 }
