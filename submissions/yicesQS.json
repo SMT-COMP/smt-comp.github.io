@@ -23,5 +23,6 @@
                        ],
             "command": ["./yicesQS"]
         }
-    ]
+    ],
+    "seed": 0
 }
