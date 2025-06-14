@@ -16,7 +16,7 @@
     "participations": [
         { 
             "tracks": ["SingleQuery"], 
-            "divisions": ["QF_NIA"] 
+            "divisions": ["QF_NonLinearIntArith"] 
         }
     ]
 }
