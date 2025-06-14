@@ -15,7 +15,7 @@
         "h": { "sha256": "75e329a21e2eddde40d91eda262a9a2434a4608995ac1710ea70c2d8311fbad8" }
     },
     "website": "https://github.com/uuverifiers/ostrich/",
-    "system_description": "",
+    "system_description": "https://arg-git.informatik.uni-kl.de/pub/ostrich-system-description-25/-/blob/main/ostrich-system-description.pdf",
     "command": ["ostrich", "+quiet -portfolio=strings"],
     "solver_type": "Standalone",
     "seed": "718582",
