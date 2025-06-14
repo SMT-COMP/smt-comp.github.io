@@ -12,7 +12,7 @@
                  "Oliver Markgraf <markgraf@cs.uni-kl.de>"],
     "archive": {
         "url": "https://eldarica.org/ostrich-smt-comp-2025.tar.gz",
-        "h": { "sha256": "75e329a21e2eddde40d91eda262a9a2434a4608995ac1710ea70c2d8311fbad8" }
+        "h": { "sha256": "cd83f76dd531d60fab11280970b99b412224087e6d17f6218ff5168ea55919be" }
     },
     "website": "https://github.com/uuverifiers/ostrich/",
     "system_description": "https://arg-git.informatik.uni-kl.de/pub/ostrich-system-description-25/-/blob/main/ostrich-system-description.pdf",
