@@ -16,7 +16,7 @@
         }
     },
     "website": "https://gitlab.com/korovin/iprover",
-    "system_description": "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2024.pdf",
+    "system_description": "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2025.pdf",
     "command": [
         "bin/iprover_smtcomp.sh"
     ],
