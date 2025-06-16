@@ -1,0 +1,63 @@
+{
+  "name": "cvc5",
+  "contributors": [
+    "Haniel Barbosa",
+    "Clark Barrett",
+    "Hanna Lachnitt",
+    "Daniel Larraz",
+    "Abdalrhman Mohamed",
+    "Mudathir Mohamed",
+    "José Neto",
+    "Aina Niemetz",
+    "Alex Ozdemir",
+    "Mathias Preiner",
+    "Andrew Reynolds",
+    "Hans-Jörg Schurr",
+    "Cesare Tinelli",
+    "Amalee Wilson",
+    "Yoni Zohar"
+  ],
+  "contacts": [
+    "Hans-Jörg Schurr <hansjoerg-schurr@uiowa.edu>",
+    "Daniel Larraz <daniel-larraz@uiowa.edu>",
+    "Clark Barrett <barrettc@stanford.edu>"
+  ],
+  "archive": {
+    "url": "https://homepage.cs.uiowa.edu/~hschrr/smtcomp2025/cvc5-default.zip",
+    "h": {
+      "sha256": "736c9e6cf74c5767a4061ba57ea88020202a5aa8018c473a9603bcf3a0368ff2"
+    }
+  },
+  "website": "https://cvc5.github.io/",
+  "system_description": "https://homepage.cs.uiowa.edu/~hschrr/smtcomp2025/cvc5.pdf",
+  "command": [ "bin/starexec_run_sq" ],
+  "solver_type": "Standalone",
+  "participations": [
+    {
+      "tracks": [ "SingleQuery" ],
+      "logics": ".*"
+    },
+    {
+      "tracks": [ "UnsatCore" ],
+      "logics": ".*",
+      "command": [ "bin/starexec_run_uc" ]
+    },
+    {
+      "tracks": [ "ModelValidation" ],
+      "logics": ".*",
+      "command": [ "bin/starexec_run_mv" ]
+    },
+    {
+      "tracks": [ "Incremental" ],
+      "logics": ".*",
+      "archive": {
+        "url": "https://homepage.cs.uiowa.edu/~hschrr/smtcomp2025/cvc5-inc.zip",
+        "h": {
+          "sha256": "19285b411762267ab5270d8b4d103c0bca02816c43016e6ab971d80017ca6dec"
+        }
+      },
+      "command": [ "bin/smtcomp_run_incremental" ]
+    }
+  ],
+"seed": 8465677983
+}
