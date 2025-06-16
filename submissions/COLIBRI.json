@@ -1,0 +1,22 @@
+{
+    "name": "COLIBRI",
+    "contributors": [
+        "Bruno Marre", "François Bobot", "Christophe Junke"
+    ],
+    "contacts": ["Christophe Junke <christophe.junke@cea.fr>"],
+    "archive": {
+        "url": "https://git.frama-c.com/pub/colibri/-/releases/2025.06/downloads/bundle-v5",
+        "h": { "sha256": "f251f170c75a96af9ccde9859ac349e5c1cdd6fa6aeca779cb1ef4b9a8134871" }
+    },
+    "website": "http://colibri.frama-c.com/",
+    "system_description": "https://colibri.frama-c.com/assets/documents/colibri_2025.pdf",
+    "command": ["colibri-2025.06-v5/colibri", "--memlimit", "5000"],
+    "solver_type": "Standalone",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "QF_.*FP.*"
+        }
+    ],
+    "seed": 0
+}
