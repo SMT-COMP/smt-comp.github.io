@@ -18,7 +18,7 @@
     "website": "https://gitlab.com/korovin/iprover",
     "system_description": "http://www.cs.man.ac.uk/~korovink/iprover-smt-comp-2024.pdf",
     "command": [
-        "cd bin; iprover_smtcomp.sh"
+        "cd bin; ./iprover_smtcomp.sh"
     ],
     "solver_type": "wrapped",
     "participations": [
