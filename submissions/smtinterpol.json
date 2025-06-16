@@ -1,0 +1,44 @@
+{
+    "name": "SMTInterpol",
+    "contributors": [
+        "Max Barth", "Leon Cacace",
+        "Jürgen Christ", "Daniel Dietsch", "Leonard Fichtner",
+        "Joanna Greulich", "Elisabeth Henkel", "Matthias Heizmann",
+        "Jochen Hoenicke", "Moritz Mohr", "Alexander Nutz",
+        "Markus Pomrehn", "Pascal Raiola", "Tanja Schindler"
+    ],
+    "contacts": [
+        "Jochen Hoenicke <jochen@certora.com>"
+    ],
+    "archive": {
+        "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtcomp/smtinterpol-2.5-1400-g2599b60f.tar.gz",
+        "h": { "sha256": "a73c77c1bbaf9b8d6cd31bdf933df3b6fba02cbb3a6da0eef62649d281a08f6d" }
+    },
+    "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
+    "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2025.pdf",
+    "command": ["smtinterpol"],
+    "solver_type": "Standalone",
+    "seed": "2030142482",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "(QF_)?(AX?)?(UF)?(BV)?(DT)?([IR]DL|[NL][IR]*A)?",
+            "command": ["smtinterpol"]
+        },
+        {
+            "tracks": ["Incremental"],
+            "logics": "(QF_)?(AX?)?(UF)?(BV)?(DT)?([IR]DL|[NL][IR]*A)?",
+            "command": ["smtinterpol"]
+        },
+        {
+            "tracks": ["ModelValidation"],
+            "logics": "(QF_)(AX?)?(UF)?(BV)?(DT)?([IR]DL|[NL][IR]*A)?",
+            "command": ["smtinterpol"]
+        },
+        {
+            "tracks": ["UnsatCore"],
+            "logics": "(QF_)?(AX?)?(UF)?(BV)?(DT)?([IR]DL|[NL][IR]*A)?",
+            "command": ["smtinterpol"]
+        }
+    ]
+}
