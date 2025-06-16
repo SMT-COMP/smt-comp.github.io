@@ -1,0 +1,19 @@
+{
+    "name": "Z3-Inc-Z3++",
+    "contributors": [
+        "Bohan Li",
+        "Shaowei Cai"
+    ],
+    "contacts": ["Bohan Li <libh@ios.ac.cn>", "Shaowei Cai <caisw@ios.ac.cn>"],
+    "archive": {
+        "url": "https://zenodo.org/records/15516426/files/new.zip"
+    },
+    "website": "https://z3-plus-plus.github.io/",
+    "system_description": "https://github.com/z3-plus-plus/z3-plus-plus.github.io/blob/main/Z3%2B%2B_in_SMT_COMP_2025.pdf",
+    "command": [ "./smtcomp_run_incremental" ],
+    "solver_type": "derived",
+    "seed": "19970530",
+    "participations": [
+        { "tracks": ["Incremental"], "logics": "QF_NIA" }
+    ]
+}
