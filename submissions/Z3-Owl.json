@@ -9,7 +9,7 @@
     },
     "website": "https://rainoftime.github.io/html/owl.html",
     "system_description": "https://zenodo.org/records/15690718/files/Z3_Owl_at_SMT_COMP_2025.pdf",
-    "command": ["Z3-Owl/Z3-Owl"],
+    "command": ["Z3-Owl"],
     "solver_type": "derived",
     "seed": 421,
     "participations": [
