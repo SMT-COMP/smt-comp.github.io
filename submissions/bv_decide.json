@@ -20,9 +20,9 @@
         "Abdalrhman Mohamed <abdal@stanford.edu>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/15652612/files/bv_decide.zip?download=1"
+        "url": "https://zenodo.org/records/15693728/files/bv_decide.zip?download=1"
     },
-    "command": ["bin/leanwuzla.sh"],
+    "command": ["leanwuzla.sh"],
     "website": "https://github.com/hargoniX/Leanwuzla",
     "system_description": "https://github.com/hargoniX/Leanwuzla/releases/download/smtcomp2025/bv_decide.pdf",
     "solver_type": "Standalone",
@@ -32,7 +32,7 @@
             "tracks": ["SingleQuery"],
             "logics": "QF_BV",
             "command": [
-                "bin/leanwuzla.sh",
+                "leanwuzla.sh",
                 "--disableEmbeddedConstraintSubst",
                 "--expthreshold=32768",
                 "--acnf",
