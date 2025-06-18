@@ -11,7 +11,7 @@
     "system_description": "https://zenodo.org/records/15690262/files/Z3_Owl_at_SMT_COMP_2025.pdf",
     "command": ["Z3-Owl"],
     "solver_type": "derived",
-    "seed": 42,
+    "seed": 421,
     "participations": [
         {
             "tracks": ["SingleQuery"],
