@@ -11,6 +11,7 @@
     "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-540-78800-3_24.pdf",
     "solver_type": "Standalone",
     "command": ["./z3"],
+    "seed": "33",
     "participations": [
         { 
             "tracks": ["SingleQuery"], 
