@@ -11,7 +11,7 @@
     "website": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025",
     "system_description": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025/blob/master/Z3_Parti_Z3pp_at_SMT_COMP_2025.pdf",
     "command": ["python3 run_AriParti.py", "<instance_path>"],
-    "solver_type": "derived",
+    "solver_type": "wrapped",
     "seed": "998244353",
     "participations": [
         {
