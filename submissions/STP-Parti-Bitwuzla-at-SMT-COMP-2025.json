@@ -18,8 +18,7 @@
     "participations": [
         {
             "tracks": ["Parallel"],
-            "logics": ["QF_BV"],
-            "aws_repository": "https://github.com/shaowei-cai-group/STP-Parti-Bitwuzla-at-SMT-COMP-2025"
+            "logics": ["QF_BV"]
         }
     ]
 }
