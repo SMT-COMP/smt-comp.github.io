@@ -1,0 +1,33 @@
+{
+    "name": "UltimateEliminator+MathSAT",
+    "contributors": [
+        "Max Barth", "Daniel Dietsch", "Matthias Heizmann"
+    ],
+    "contacts": ["Matthias Heizmann <matthias.heizmann@iste.uni-stuttgart.de>"],
+    "archive": {
+        "url": "https://www.informatik.uni-freiburg.de/~heizmann/2025smtcomp/UltimateEliminator.zip",
+        "h": { "sha256": "55070cab28d8807a22cb7642e274aebfa343fb5ca078884ed1acbbbbc8e591b2" }
+    },
+    "website": "https://www.ultimate-pa.org/eliminator/",
+    "system_description": "https://www.informatik.uni-freiburg.de/~heizmann/2025smtcomp/2025UltimateEliminator.pdf",
+    "command": ["ultimateeliminator.sh"],
+    "solver_type": "wrapped",
+    "seed": "0",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "^((AX?)?(UF)?(BV)?(FP)?([LN][IR]*A|[IR]DL)?)$",
+            "command": ["ultimateeliminator.sh"]
+        },
+        {
+            "tracks": ["Incremental"],
+            "logics": "^((AX?)?(UF)?(BV)?(FP)?([LN][IR]*A|[IR]DL)?)$",
+            "command": ["ultimateeliminator.sh"]
+        },
+        {
+            "tracks": ["UnsatCore"],
+            "logics": "^((AX?)?(UF)?(BV)?(FP)?([LN][IR]*A|[IR]DL)?)$",
+            "command": ["ultimateeliminator.sh"]
+        }
+    ]
+}

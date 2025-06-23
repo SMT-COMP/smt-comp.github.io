@@ -1,0 +1,46 @@
+{
+    "name": "bv_decide",
+    "contributors": [
+        "Henrik Böving",
+        "Siddharth Bhat",
+        "Alex Keizer",
+        "Luisa Cicolini",
+        "Leon Frenot",
+        "Abdalrhman Mohamed",
+        "Léo Stefanesco",
+        "Harun Khan",
+        "Josh Clune",
+        "Clark Barrett",
+        "Tobias Grosser"
+    ],
+    "contacts": [
+        "Henrik Böving <henrik@lean-fro.org>",
+        "Siddharth Bhat <siddharth.bhat@cl.cam.ac.uk>",
+        "Luisa Cicolini <luisa.cicolini@cl.cam.ac.uk>",
+        "Abdalrhman Mohamed <abdal@stanford.edu>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/15693728/files/bv_decide.zip?download=1"
+    },
+    "command": ["leanwuzla.sh"],
+    "website": "https://github.com/hargoniX/Leanwuzla",
+    "system_description": "https://github.com/hargoniX/Leanwuzla/releases/download/smtcomp2025/bv_decide.pdf",
+    "solver_type": "Standalone",
+    "seed": 42,
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "QF_BV",
+            "command": [
+                "leanwuzla.sh",
+                "--disableEmbeddedConstraintSubst",
+                "--expthreshold=32768",
+                "--acnf",
+                "--timeout=1200",
+                "--maxSteps=100000000",
+                "--maxHeartbeats=200000000",
+                "--maxRecDepth=1048576"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Bitwuzla-0-7-0",
+    "archive": {
+        "url": "https://zenodo.org/records/15649785/files/Bitwuzla-0-7-0.zip"
+    },
+    "contributors": ["Aina Niemetz", "Mathias Preiner"],
+    "contacts": ["Mathias Preiner <preiner@cs.stanford.edu>"],
+    "website": "https://bitwuzla.github.io",
+    "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-031-37703-7_1",
+    "command": [ "./bitwuzla" ],
+    "solver_type": "Standalone",
+    "seed": 42,
+    "participations": [
+        { "tracks": ["SingleQuery"], "logics": "QF_BV" }
+    ],
+    "competitive": false
+}
