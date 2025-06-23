@@ -11,13 +11,14 @@
         "Martin Blicha <martin.blicha@usi.ch>"
     ],
     "archive": {
-        "url": "https://github.com/usi-verification-and-security/opensmt/releases/download/v2.9.2/opensmt-x64-linux-static.tar.bz2"
+        "url": "https://zenodo.org/records/15720348/files/opensmt-x64-linux-static.tar.bz2"
+        ,
+        "h": { "sha256": "be4767bf5d6c08bc7f4f49ae1480f2ae2ac8f38a277d0ec39d56badd974b84bd" }
     },
     "command": ["./opensmt"],
     "website": "https://github.com/usi-verification-and-security/opensmt",
     "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/abstract-2025.pdf",
     "solver_type": "Standalone",
-    "seed": 87,
     "participations": [
         {
             "tracks": ["SingleQuery", "Incremental", "UnsatCore"],
@@ -38,5 +39,7 @@
                 "QF_UFIDL", "QF_UFLIA", "QF_UFLRA"
             ]
         }
-    ]
+    ],
+    "seed": 87,
+    "final": true
 }
