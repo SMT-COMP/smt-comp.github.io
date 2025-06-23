@@ -104,7 +104,7 @@ def generate_tool_modules(s: defs.Submission, cachedir: Path) -> None:
     generate_tool_module(s, cachedir, False)
 
 
-def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str) -> None:
+def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str, test: bool) -> None:
     doc, tag, text = Doc().tagtext()
 
     doc.asis('<?xml version="1.0"?>')
@@ -115,12 +115,13 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
     with tag(
         "benchmark",
         tool=f"tools.{tool_module_name}",
-        timelimit=f"{config.timelimit_s * config.cpuCores}s",
-        walltimelimit=f"{config.timelimit_s}s",
-        memlimit=f"{config.memlimit_M} MB",
+        walltimelimit=f"{config.timelimit_s_test if test else config.timelimit_s}s",
+        memlimit=f"{config.memlimit_M_test if test else config.memlimit_M} MB",
         cpuCores=f"{config.cpuCores}",
     ):
-        with tag("require", cpuModel="Intel Xeon E3-1230 v5 @ 3.40 GHz"):
+        # we run the test jobs on different machines (main machines are used)
+        used_cpuModel = "Intel Core i7-6700 @ 3.40 GHz" if test else "Intel Xeon E3-1230 v5 @ 3.40 GHz"
+        with tag("require", cpuModel=used_cpuModel):
             text()
 
         with tag("resultfiles"):
@@ -223,7 +224,7 @@ def cmdtask_for_submission(
     return res
 
 
-def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
+def generate(s: defs.Submission, cachedir: Path, config: defs.Config, test: bool) -> None:
     generate_tool_modules(s, cachedir)
 
     dst = cachedir / "benchmarks"
@@ -259,6 +260,7 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
                     cmdtasks=res,
                     file=file,
                     tool_module_name=tool_module_name(s, target_track == defs.Track.Incremental),
+                    test=test,
                 )
                 generated_divisions.append(division)
 
@@ -277,8 +279,10 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
             out(f'    TARGET="../results{track_suffix}/$DIVISION/{tool}"')
             out("    rm -rf $TARGET")
             out("    mkdir -p $TARGET")
+
+            extra_args = ""
             out(
-                f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}{track_suffix}_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess -o $TARGET"
+                f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}{track_suffix}_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority HIGH --cgroupAccess -o $TARGET"
             )
             out("done")
 

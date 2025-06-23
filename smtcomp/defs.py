@@ -1449,7 +1449,9 @@ class Config:
     current_year = 2024
     oldest_previous_results = 2018
     timelimit_s = 60 * 20
+    timelimit_s_test = 60  # time limit for test runs
     memlimit_M = 1024 * 30
+    memlimit_M_test = 1024 * 8  # memory limit for test runs
     cpuCores = 4
     unsatcore_validation_timelimit_s = 60 * 5
     unsatcore_validation_memlimit_M = 1024 * 30

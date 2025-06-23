@@ -166,6 +166,7 @@ def generate_benchexec(
     timelimit_s: int = defs.Config.timelimit_s,
     memlimit_M: int = defs.Config.memlimit_M,
     cpuCores: int = defs.Config.cpuCores,
+    test: bool = False,
 ) -> None:
     """
     Generate the benchexec file for the given submissions
@@ -180,7 +181,7 @@ def generate_benchexec(
     (cachedir / "tools").mkdir(parents=True, exist_ok=True)
     for file in track(files):
         s = submission.read(str(file))
-        smtcomp.benchexec.generate(s, cachedir, config)
+        smtcomp.benchexec.generate(s, cachedir, config, test)
         smtcomp.benchexec.generate_unsatcore_validation(s, cachedir, config)
 
 
