@@ -98,9 +98,12 @@
             "tracks": ["UnsatCore"],
             "logics": ["QF_ABV",
                        "QF_ALIA",
+                       "QF_ANIA",
                        "QF_AUFBV",
                        "QF_AUFBVLIA",
+                       "QF_AUFBVNIA",
                        "QF_AUFLIA",
+                       "QF_AUFNIA",
                        "QF_AX",
                        "QF_BV",
                        "QF_BVLRA",
@@ -108,6 +111,9 @@
                        "QF_LIA",
                        "QF_LIRA",
                        "QF_LRA",
+                       "QF_NIA",
+                       "QF_NIRA",
+                       "QF_NRA",
                        "QF_RDL",
                        "QF_UF",
                        "QF_UFBV",
@@ -115,6 +121,8 @@
                        "QF_UFIDL",
                        "QF_UFLIA",
                        "QF_UFLRA",
+                       "QF_UFNIA",
+                       "QF_UFNRA",
                        "UF"],
             "command": ["./yices_smt2"]
         },
@@ -144,7 +152,7 @@
             "logics": ["QF_NIA"],
             "command": ["./yices_smt2", "--mcsat-l2o"]
         },
-	{
+        {
             "tracks": ["Parallel"],
             "logics": ["QF_NIA"],
             "command": ["./yices2_parallel.py", "--yices ./yices_smt2 -n 128 --mcsat-l2o"]
