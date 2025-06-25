@@ -11,13 +11,14 @@
         "Tomáš Kolárik <tomas.kolarik@usi.ch>"
     ],
     "archive": {
-        "url": "https://github.com/usi-verification-and-security/SMTS/raw/refs/heads/data/data/smtcomp/smtcomp25-smts.tar.bz2"
+        "url": "https://zenodo.org/records/15736298/files/smts.tar.bz2"
+        ,
+        "h": { "sha256": "863a5a455abace19c74c0cd13e123194633a948fbacead6877ed0361df89b6fe" }
     },
     "command": ["python3 ./server/smts.py -l -p -o 256", "-fp <path>"],
     "website": "https://github.com/usi-verification-and-security/SMTS",
     "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/abstract-2025.pdf",
     "solver_type": "Standalone",
-    "seed": 89,
     "participations": [
         {
             "tracks": ["Parallel"],
@@ -29,5 +30,7 @@
                 "QF_AUFLIA"
             ]
         }
-    ]
+    ],
+    "seed": 89,
+    "final": true
 }
