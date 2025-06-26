@@ -122,8 +122,7 @@
                        "QF_UFLIA",
                        "QF_UFLRA",
                        "QF_UFNIA",
-                       "QF_UFNRA",
-                       "UF"],
+                       "QF_UFNRA"],
             "command": ["./yices_smt2"]
         },
         {
