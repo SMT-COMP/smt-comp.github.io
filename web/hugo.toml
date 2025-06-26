@@ -35,10 +35,10 @@ theme = 'smtcomp'
     pageRef = 'previous'
     weight = 30
 
-# [[menu.year]]
-#     name = 'Results'
-#     pageRef = 'results'
-#     weight = 10
+#[[menu.year]]
+     #name = 'Results'
+     #pageRef = 'results'
+     #weight = 10
 
 [[menu.year]]
     name = 'Rules'

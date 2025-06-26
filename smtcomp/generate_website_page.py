@@ -1,5 +1,7 @@
+import math
 import functools, itertools
-from typing import Set, Dict, Optional, cast, List, DefaultDict
+from collections import defaultdict
+from typing import Set, Dict, Optional, cast, List, DefaultDict, Tuple
 from pathlib import Path, PurePath
 from smtcomp import defs
 from rich import progress
@@ -137,6 +139,38 @@ class PodiumSummaryResults(BaseModel):
     track: track_name
     divisions: list[PodiumDivision]
     layout: Literal["results_summary"] = "results_summary"
+
+
+class PodiumStepOverallScore(BaseModel):
+    name: str
+    contribution: float_6dig  # nn_D * log10 N_D
+    division: str
+    tieBreakTimeScore: float_6dig
+
+
+class PodiumBestOverall(BaseModel):
+    resultdate: str
+    year: int
+    results: str
+    participants: str
+    track: track_name
+    recognition: Literal["best_overall"] = "best_overall"
+    winner_seq: str
+    winner_par: str
+    winner_sat: str
+    winner_unsat: str
+    winner_24s: str
+    winner_seq_score: float_6dig
+    winner_par_score: float_6dig
+    winner_sat_score: float_6dig
+    winner_unsat_score: float_6dig
+    winner_24s_score: float_6dig
+    sequential: list[PodiumStepOverallScore]
+    parallel: list[PodiumStepOverallScore]
+    sat: list[PodiumStepOverallScore]
+    unsat: list[PodiumStepOverallScore]
+    twentyfour: list[PodiumStepOverallScore]
+    layout: Literal["result_comp"] = "result_comp"
 
 
 class PodiumStepBiggestLead(BaseModel):
@@ -367,7 +401,7 @@ def get_kind(a: PodiumDivision, k: smtcomp.scoring.Kind) -> list[PodiumStep]:
 
 
 # Computes the new global ranking based on the distance between the winner of a
-# division and the second solver in a division as defined in secion 7.3.1 of
+# division and the second solver in a division as defined in section 7.3.1 of
 # the SMT-COMP'19 rules.
 #
 # data      : The podium as returned by process_csv.
@@ -448,6 +482,130 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
         winner_sat=get_winner(sat),
         winner_unsat=get_winner(unsat),
         winner_24s=get_winner(twentyfour),
+        sequential=sequential,
+        parallel=parallel,
+        sat=sat,
+        unsat=unsat,
+        twentyfour=twentyfour,
+    )
+
+
+# Compute normalized correctness score
+#
+# normalized correctness score: nnD = (nD /ND)**2 if eD == 0
+#                                   = -2          otherwise
+def normalized_correctness_score(
+    data: dict[str, PodiumDivision], scores: pl.LazyFrame, track: defs.Track, k: smtcomp.scoring.Kind
+) -> list[PodiumStepOverallScore]:
+
+    podiumSteps: list[PodiumStepOverallScore] = []
+
+    for division, div_data in data.items():
+        solvers_in_div = get_kind(div_data, k)
+        if len(solvers_in_div) <= 1:
+            continue
+
+        N_D = get_N_D(scores, data, division, track)
+        for sol_in_div in solvers_in_div:
+            if sol_in_div.errorScore == 0:
+                nn_D = (sol_in_div.correctScore / N_D) ** 2
+            else:
+                nn_D = -2
+
+            podiumSteps.append(
+                PodiumStepOverallScore(
+                    name=sol_in_div.name,
+                    contribution=nn_D * (math.log10(N_D) if N_D > 0 else 0),
+                    tieBreakTimeScore=sol_in_div.CPUScore if k == smtcomp.scoring.Kind.seq else sol_in_div.WallScore,
+                    division=division,
+                )
+            )
+        podiumSteps = sorted(podiumSteps, key=lambda x: (x.contribution, x.tieBreakTimeScore), reverse=True)
+    return podiumSteps
+
+
+#  N_D  :=         total number of check sats in division D    if Incremental Track
+#                  total number of asserts in division D       if Unsat Core Track
+#                  total number of benchmarks                  otherwise
+def get_N_D(scores: pl.LazyFrame, data: dict[str, PodiumDivision], division: str, track: defs.Track) -> int:
+    if track == defs.Track.Incremental:
+        return int(
+            scores.unique(["division", "file"])
+            .group_by(["division"])
+            .agg([pl.col("check_sats").sum().alias("total_check_sats")])
+            .filter(pl.col("division") == int(defs.Division[division]))
+            .collect()["total_check_sats"][0]
+        )
+
+    elif track == defs.Track.UnsatCore:
+        return int(
+            scores.unique(["division", "file"])
+            .group_by(["division"])
+            .agg([pl.col("asserts").sum().alias("total_asserts")])
+            .filter(pl.col("division") == int(defs.Division[division]))
+            .collect()["total_asserts"][0]
+        )
+
+    return data[division].n_benchmarks
+
+
+# Computes the best overall ranking as specified in Section 7.3.1 of
+# SMT-COMP 2025 rules. I.e:
+#
+# normalized correctness score: nnD = (nD /ND)**2 if eD == 0
+#                                  = -2          otherwise
+# overall score               : sum_D nnD*log10 ND
+#
+# For the choices, see the footnote in the rules.
+#
+def best_overall_ranking(
+    config: defs.Config, scores: pl.LazyFrame, data: dict[str, PodiumDivision], track: defs.Track
+) -> PodiumBestOverall:
+    def get_winner(
+        l: Optional[List[PodiumStepOverallScore]],
+        scores: pl.LazyFrame,
+        data: dict[str, PodiumDivision],
+        track: defs.Track,
+    ) -> Tuple[str, float]:
+        if l is None or not l:
+            return ("-", 0.0)
+        else:
+            podium: DefaultDict[str, Dict[str, float]] = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0})
+            for entry in l:
+                podium[entry.name]["score"] += entry.contribution
+                podium[entry.name]["tie_break_time"] += entry.tieBreakTimeScore
+            winner, winner_data = max(podium.items(), key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]))
+            return (winner, winner_data["score"])
+
+    sequential = normalized_correctness_score(data, scores, track, smtcomp.scoring.Kind.seq)
+    parallel = normalized_correctness_score(data, scores, track, smtcomp.scoring.Kind.par)
+    sat = normalized_correctness_score(data, scores, track, smtcomp.scoring.Kind.sat)
+    unsat = normalized_correctness_score(data, scores, track, smtcomp.scoring.Kind.unsat)
+    twentyfour = normalized_correctness_score(data, scores, track, smtcomp.scoring.Kind.twentyfour)
+
+    if track in (defs.Track.Cloud, defs.Track.Parallel):
+        winner_seq = ("-", 0.0)
+        sequential = []
+    else:
+        winner_seq = get_winner(sequential, scores, data, track)
+
+    return PodiumBestOverall(
+        resultdate="2024-07-08",
+        year=config.current_year,
+        track=track,
+        results=f"results_{config.current_year}",
+        participants=f"participants_{config.current_year}",
+        recognition="best_overall",
+        winner_seq=winner_seq[0],
+        winner_par=get_winner(parallel, scores, data, track)[0],
+        winner_sat=get_winner(sat, scores, data, track)[0],
+        winner_unsat=get_winner(unsat, scores, data, track)[0],
+        winner_24s=get_winner(twentyfour, scores, data, track)[0],
+        winner_seq_score=winner_seq[1],
+        winner_par_score=get_winner(parallel, scores, data, track)[1],
+        winner_sat_score=get_winner(sat, scores, data, track)[1],
+        winner_unsat_score=get_winner(unsat, scores, data, track)[1],
+        winner_24s_score=get_winner(twentyfour, scores, data, track)[1],
         sequential=sequential,
         parallel=parallel,
         sat=sat,
@@ -634,6 +792,9 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
                 all_divisions.append(data)
 
         if for_division:
+            data_best_overall = best_overall_ranking(config, scores, datas, track)
+            (dst / f"best-overall-{page_suffix}.md").write_text(data_best_overall.model_dump_json(indent=1))
+
             bigdata = biggest_lead_ranking(config, datas, track)
             (dst / f"biggest-lead-{page_suffix}.md").write_text(bigdata.model_dump_json(indent=1))
 
