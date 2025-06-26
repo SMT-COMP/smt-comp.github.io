@@ -155,7 +155,7 @@
         {
             "tracks": ["Parallel"],
             "logics": ["QF_NIA"],
-            "command": ["./yices2_parallel.py", "--yices ./yices_smt2 -n 128 --mcsat-l2o"]
+            "command": ["./yices2_parallel.py", "--yices", "./yices_smt2", "-n", "128", "--mcsat-l2o"]
         },
         {
             "tracks": ["Parallel"],
@@ -184,7 +184,7 @@
                        "QF_UFLRA",
                        "QF_UFNIA",
                        "QF_UFNRA"],
-            "command": ["./yices2_parallel.py", "--yices ./yices_smt2 -n 128"]
+            "command": ["./yices2_parallel.py", "--yices", "./yices_smt2", "-n", "128"]
         }
     ],
     "seed": 0
