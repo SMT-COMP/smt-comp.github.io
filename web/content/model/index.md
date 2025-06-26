@@ -21,7 +21,7 @@ value of the function can be chosen by the solver. This begs the
 questions how a solver should describe the model it chose.
 
 We propose that solvers should give the values similar as for
-uninterpreted functions using `define-fun`. The given function definition
+uninterpreted functions using `refine-fun`. It should be soon the official choice. The formerly proposed command `define-fun` is kept for compatibility at least in 2025. The given function definition
 must coincide on the defined inputs with the values given by the
 theory. To achieve this, the function definition may call the original theory
 function using the same name as the function that is defined.
@@ -48,22 +48,20 @@ The partially defined theory functions may be defined using the following
 definitions in the model:
 
 ```smt2
-(define-fun div ((a Int) (b Int)) Int
+(refine-fun div ((a Int) (b Int)) Int
    (ite (= b 0) (ite (= a 0) 5 0) (div a b)))
-(define-fun car ((a (List Int))) (List Int)
+(refine-fun car ((a (List Int))) Int
    (match a
       ((cons hd tl) hd)
       (nil  42)))
-(define-fun cdr ((a (List Int))) Int
+(refine-fun cdr ((a (List Int))) (List Int)
    (ite ((_ is cons) a) (cdr a) a))
 ```
 
 The functions `div`/`car`/`cdr` should not be considered to be recursive function.
 Instead the definition shadows the (partially defined) theory function and
 the definition calls the original theory function in the function body.
-The model checker
-is lenient, it will complain only if it needs a value in the uninterpreted
-domain of a partial function. For example for `(assert (= 0.5 (div 1.0 x)))`,
+The model checker conforms to the MUST/SHOULD requirements above. It will complain only if it needs a value in the uninterpreted domain of a partial function. For example for `(assert (= 0.5 (div 1.0 x)))`,
 the definition of `div` can be omitted if the solver chose `2.0` as the
 value for `x` in the model, but it can't be omitted if it chose `0.0`.
 
