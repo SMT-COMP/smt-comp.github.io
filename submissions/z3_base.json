@@ -16,12 +16,14 @@
         { 
             "tracks": ["SingleQuery"], 
             "divisions": [
+                "Arith",
                 "Bitvec",
                 "QF_Bitvec",
                 "QF_LinearIntArith",
                 "QF_LinearRealArith",
                 "QF_NonLinearIntArith",
-                "QF_NonLinearRealArith"
+                "QF_NonLinearRealArith",
+                "QF_Strings"
             ]
         }
     ]

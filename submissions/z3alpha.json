@@ -9,8 +9,8 @@
     ],
     "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
     "archive": {
-        "url": "https://drive.google.com/uc?export=download&id=16B-DpR8xyyyGubQ5lS6-aaUlq0zASur2",
-        "h": { "sha256": "63b32b4f4d9a57672f1a9374a878875848f57a7820a22f5b99810e0c65157a78" }
+        "url": "https://drive.google.com/uc?export=download&id=1iSfJ8DpvWTMNCcpfDfsg2xbE083ciUsp",
+        "h": { "sha256": "abd39df9749066f4a145c595db5a95ace49158ad631df62e18138b6b53e35663" }
     },
     "website": "https://github.com/JohnLyu2/z3alpha",
     "system_description": "https://drive.google.com/uc?export=download&id=193djU1kyWkdRXE-nmOKFZ8IyY6D2d8Kt",
@@ -21,12 +21,14 @@
         { 
             "tracks": ["SingleQuery"], 
             "divisions": [
+                "Arith",
                 "Bitvec",
                 "QF_Bitvec",
                 "QF_LinearIntArith",
                 "QF_LinearRealArith",
                 "QF_NonLinearIntArith",
-                "QF_NonLinearRealArith"
+                "QF_NonLinearRealArith",
+                "QF_Strings"
             ]
         }
     ]
