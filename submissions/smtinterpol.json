@@ -12,7 +12,7 @@
     ],
     "archive": {
         "url": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/smtcomp/smtinterpol-2.5-1405-gae7e68ef.tar.gz",
-        "h": { "sha256": "193ba2a7c2c67e950de57e520414fdbee3c08daa51374e4f8a7aa8857a43805a" }
+        "h": { "sha256": "41a3ce3d38417a807865a389df3b8466492d584070c21888ac2732d8470d601c" }
     },
     "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
     "system_description": "https://ultimate.informatik.uni-freiburg.de/smtinterpol/sysdesc2025.pdf",
