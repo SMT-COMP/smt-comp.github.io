@@ -11,11 +11,11 @@
         "Tomáš Kolárik <tomas.kolarik@usi.ch>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/15736298/files/smts.tar.bz2"
+        "url": "https://zenodo.org/records/15756050/files/smts.tar.bz2"
         ,
-        "h": { "sha256": "863a5a455abace19c74c0cd13e123194633a948fbacead6877ed0361df89b6fe" }
+        "h": { "sha256": "9de09b0fd757b904ef0c0e8bc515bdf1a9a615e3b140279bd41783c24638e2b8" }
     },
-    "command": ["python3 ./server/smts.py -l -p -o 256", "-fp <path>"],
+    "command": ["./SMTS/server/smts.py", "-l", "-p", "-pt", "2", "-nt", "30", "-o", "128", "-fp"],
     "website": "https://github.com/usi-verification-and-security/SMTS",
     "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/abstract-2025.pdf",
     "solver_type": "Standalone",
