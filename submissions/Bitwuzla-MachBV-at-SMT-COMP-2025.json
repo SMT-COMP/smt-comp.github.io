@@ -10,7 +10,8 @@
         "Xiang Zhang <zhangx@ios.ac.cn>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/15739331/files/Bitwuzla-MachBV.zip"
+        "url": "https://zenodo.org/records/15752452/files/Bitwuzla-MachBV.zip",
+        "h": {"sha256": "7267c86005f3c57bf22fccd8b6d868651be109a9231aeaa01a93d07843d14555"}
     },
     "website": "https://github.com/Andeviking/Bitwuzla-MachBV-at-SMT-COMP-2025",
     "system_description": "https://github.com/Andeviking/Bitwuzla-MachBV-at-SMT-COMP-2025/blob/main/Bitwuzla_MachBV_at_SMT_COMP_2025.pdf",
@@ -28,5 +29,6 @@
                 "QF_BV"
             ]
         }
-    ]
+    ],
+    "final": true
 }
