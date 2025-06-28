@@ -6,8 +6,7 @@
     ],
     "contacts": ["HanNan Wang <hannanwang@smail.nju.edu.cn>"],
     "archive": {
-        "url": "https://zenodo.org/records/15662438/files/z3siri.zip?download=1",
-        "h": {"md5": "7b0eec86d86b0a2ddef725f8b61cc8b8"}
+        "url": "https://zenodo.org/records/15662438/files/z3siri.zip?download=1"
     },
     "website": "https://github.com/SoftWiser-group/SiriSMT",
     "system_description": "https://drive.google.com/uc?export=download&id=1Hxt10bbkSHYVLfqG-eeQ4w7NkBMjEMM2",
