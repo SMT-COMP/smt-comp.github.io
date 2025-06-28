@@ -2,6 +2,7 @@
   "name": "Bitwuzla",
   "contributors": ["Aina Niemetz", "Mathias Preiner"],
   "contacts": ["Mathias Preiner <preiner@cs.stanford.edu>"],
+  "final" : true,
 
   "archive": {
     "url": "https://zenodo.org/records/15760031/files/bitwuzla-submission-smtcomp-2025.zip?download=1",
