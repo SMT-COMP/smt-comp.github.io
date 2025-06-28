@@ -22,7 +22,6 @@
             "tracks": ["SingleQuery"], 
             "divisions": [
                 "Arith",
-                "Bitvec",
                 "QF_Bitvec",
                 "QF_LinearIntArith",
                 "QF_LinearRealArith",
