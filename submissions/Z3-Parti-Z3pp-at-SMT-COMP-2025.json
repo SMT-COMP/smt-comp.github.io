@@ -6,11 +6,11 @@
     ],
     "contacts": ["Mengyu Zhao <zhaomy@ios.ac.cn>"],
     "archive": {
-        "url": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025/releases/download/v1.0.0/Z3-Parti-Z3pp-at-SMT-COMP-2025-build.zip"
+        "url": "https://zenodo.org/records/15763079/files/Z3-Parti-Z3pp-at-SMT-COMP-2025-build.zip"
     },
     "website": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025",
     "system_description": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025/blob/master/Z3_Parti_Z3pp_at_SMT_COMP_2025.pdf",
-    "command": ["python3 run_AriParti.py", "<instance_path>"],
+    "command": ["./Z3-Parti-Z3pp-at-SMT-COMP-2025-build/solver/run_AriParti.py"],
     "solver_type": "wrapped",
     "seed": "998244353",
     "participations": [
@@ -18,5 +18,6 @@
             "tracks": ["Parallel"],
             "logics": ["QF_RDL", "QF_IDL", "QF_LRA", "QF_LIA", "QF_NRA", "QF_NIA"]
         }
-    ]
+    ],
+    "final": true
 }
