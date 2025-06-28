@@ -8,11 +8,11 @@
     ],
     "contacts": ["Mengyu Zhao <zhaomy@ios.ac.cn>"],
     "archive": {
-        "url": "https://github.com/shaowei-cai-group/STP-Parti-Bitwuzla-at-SMT-COMP-2025/releases/download/v1.0.0/STP-Parti-Bitwuzla-at-SMT-COMP-2025-build.zip"
+        "url": "https://zenodo.org/records/15640499/files/STP-Parti-Bitwuzla-at-SMT-COMP-2025-build.zip"
     },
     "website": "https://github.com/shaowei-cai-group/STP-Parti-Bitwuzla-at-SMT-COMP-2025",
     "system_description": "https://github.com/shaowei-cai-group/STP-Parti-Bitwuzla-at-SMT-COMP-2025/blob/master/STP_Parti_Bitwuzla_at_SMT_COMP_2025.pdf",
-    "command": ["python3 run_BVParti.py", "<instance_path>"],
+    "command": ["./STP-Parti-Bitwuzla-at-SMT-COMP-2025-build/solver/run_BVParti.py"],
     "solver_type": "wrapped",
     "seed": "998244353",
     "participations": [
@@ -20,5 +20,6 @@
             "tracks": ["Parallel"],
             "logics": ["QF_BV"]
         }
-    ]
+    ],
+    "final": true
 }
