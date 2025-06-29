@@ -9,8 +9,7 @@
     ],
     "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
     "archive": {
-        "url": "https://drive.google.com/uc?export=download&id=1iSfJ8DpvWTMNCcpfDfsg2xbE083ciUsp",
-        "h": { "sha256": "abd39df9749066f4a145c595db5a95ace49158ad631df62e18138b6b53e35663" }
+        "url": "https://zenodo.org/records/15765918/files/submission25.zip?download=1"
     },
     "website": "https://github.com/JohnLyu2/z3alpha",
     "system_description": "https://drive.google.com/uc?export=download&id=17n4WbrukfKz7CxdVBXtSQjU_EYmwo1ZR",
