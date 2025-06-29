@@ -1,0 +1,29 @@
+{
+    "name": "YicesQS",
+    "contributors": [
+        "Stéphane Graham-Lengrand"
+    ],
+    "contacts": [
+        "Stéphane Graham-Lengrand <stephane.graham-lengrand@sri.com>"
+    ],
+    "final" : true,
+    "archive": {
+        "url": "https://zenodo.org/records/15769027/files/yicesQS-2025.zip?download=1"
+    },
+    "website": "https://github.com/disteph/yicesQS",
+    "system_description": "https://www.csl.sri.com/users/sgl/Work/Reports/2025-yicesQS.pdf",
+    "solver_type": "derived",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["BV",
+                       "LIA",
+                       "LRA",
+                       "NIA",
+                       "NRA"
+                       ],
+            "command": ["./yicesQS"]
+        }
+    ],
+    "seed": 0
+}
