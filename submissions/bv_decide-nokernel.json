@@ -20,7 +20,7 @@
         "Abdalrhman Mohamed <abdal@stanford.edu>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/15693728/files/bv_decide.zip?download=1"
+        "url": "https://zenodo.org/records/15766491/files/bv_decide.zip?download=1"
     },
     "command": ["leanwuzla.sh"],
     "website": "https://github.com/hargoniX/Leanwuzla",
