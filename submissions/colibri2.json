@@ -7,13 +7,14 @@
     ],
     "contacts": ["François Bobot <francois.bobot@cea.fr>"],
     "archive": {
-        "url": "https://git.frama-c.com/pub/colibrics/-/jobs/1405515/artifacts/raw/colibri2_starexec_3037762e.tar.gz"
+        "url": "https://zenodo.org/records/15769941/files/colibri2_starexec_3037762e.tar.gz?download=1"
     },
     "website": "http://colibri.frama-c.com/",
     "system_description": "https://drive.google.com/uc?export=download&id=14ZT6msIH9JcleUv6P4ha3Rdpc7mhpGL9",
     "command": ["bin/colibri2"],
     "solver_type": "Standalone",
     "seed": "42",
+    "final":true,
     "participations": [
         {
             "tracks": ["SingleQuery"],
