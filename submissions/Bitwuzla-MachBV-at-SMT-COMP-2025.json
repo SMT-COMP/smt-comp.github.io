@@ -14,7 +14,7 @@
         "h": {"sha256": "7267c86005f3c57bf22fccd8b6d868651be109a9231aeaa01a93d07843d14555"}
     },
     "website": "https://github.com/Andeviking/Bitwuzla-MachBV-at-SMT-COMP-2025",
-    "system_description": "https://github.com/Andeviking/Bitwuzla-MachBV-at-SMT-COMP-2025/blob/main/Bitwuzla_MachBV_at_SMT_COMP_2025.pdf",
+    "system_description": "https://github.com/Andeviking/Bitwuzla-MachBV-at-SMT-COMP-2025/releases/download/v1.0/Bitwuzla_MachBV_at_SMT_COMP_2025.pdf",
     "command": [
         "./MachBV"
     ],
