@@ -6,6 +6,7 @@
     "contacts": [
         "Stéphane Graham-Lengrand <stephane.graham-lengrand@sri.com>"
     ],
+    "final" : true,
     "archive": {
         "url": "https://zenodo.org/records/15769027/files/yicesQS-2025.zip?download=1"
     },
