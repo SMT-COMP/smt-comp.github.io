@@ -19,7 +19,7 @@
         "./MachBV"
     ],
     "solver_type": "derived",
-    "seed": "1126300213",
+    "seed": 1126300213,
     "participations": [
         {
             "tracks": [
