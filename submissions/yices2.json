@@ -16,8 +16,9 @@
         "Ahmed Irfan <ahmed.irfan@sri.com>",
         "Stéphane Graham-Lengrand <stephane.graham-lengrand@sri.com>"
     ],
+    "final" : true,
     "archive": {
-        "url": "https://ahmed-irfan.github.io/smtcomp/yices2-smtcomp-2025.zip"
+        "url": "https://doi.org/10.5281/zenodo.15766478"
     },
     "website": "https://yices.csl.sri.com",
     "system_description": "https://ahmed-irfan.github.io/smtcomp/yices2-smtcomp-2025.pdf",
