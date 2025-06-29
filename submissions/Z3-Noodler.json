@@ -1,7 +1,7 @@
 {
     "name": "Z3-Noodler",
     "archive": {
-        "url": "https://github.com/Bazoka13/Z3-Noodler-Mocha-at-SMT-COMP-2025/raw/refs/heads/main/base_solver.tar.gz"
+        "url": "https://zenodo.org/records/15766150/files/base_solver.tar.gz"
     },
     "contributors": [
         "Vojtěch Havlena",
@@ -20,5 +20,6 @@
     "participations": [
         { "tracks": ["SingleQuery"], "logics": "QF_Strings" }
     ],
-    "competitive": false
+    "competitive": false,
+    "final": true
 }
