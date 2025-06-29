@@ -10,14 +10,18 @@
     ],
     "contacts": ["Lukáš Holík <holik@fit.vutbr.cz>"],
     "archive": {
-        "url": "https://drive.google.com/uc?export=download&id=1UfwTmGetUVdT85KTE9kz7KPIk1VmNGwT"
+        "url": "https://zenodo.org/records/15768998/files/z3-noodler_smt-comp25.zip?download=1"
     },
     "website": "https://github.com/VeriFIT/z3-noodler",
     "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2025.pdf",
-    "command": ["z3-noodler"],
+    "command": ["./z3-noodler_smt-comp25/z3-noodler/z3-noodler"],
     "solver_type": "derived",
     "participations": [
-        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["QF_Strings"]
+        }
     ],
-    "seed": 48655
+    "seed": 48655,
+    "final": true
 }
