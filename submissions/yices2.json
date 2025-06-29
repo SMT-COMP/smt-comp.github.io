@@ -18,7 +18,7 @@
     ],
     "final" : true,
     "archive": {
-        "url": "https://doi.org/10.5281/zenodo.15766478"
+        "url": "https://zenodo.org/records/15766478/files/yices2-smtcomp-2025.zip?download=1"
     },
     "website": "https://yices.csl.sri.com",
     "system_description": "https://ahmed-irfan.github.io/smtcomp/yices2-smtcomp-2025.pdf",
