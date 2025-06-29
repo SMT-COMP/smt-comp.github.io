@@ -1,0 +1,23 @@
+{
+    "name": "Z3-4.13.4",
+    "contributors": [
+        "Nikolaj Bjørner et al."
+    ],
+    "contacts": ["Nikolaj Bjørner <nbjorner@microsoft.com>"],
+    "archive": {
+        "url": "https://zenodo.org/records/15768998/files/z3-noodler_smt-comp25.zip?download=1"
+    },
+    "website": "https://github.com/Z3Prover/z3",
+    "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-540-78800-3_24.pdf",
+    "solver_type": "Standalone",
+    "command": ["./z3-noodler_smt-comp25/z3/z3"],
+    "seed": 4134,
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["QF_Strings"]
+        }
+    ],
+    "competitive": false,
+    "final": true
+}
