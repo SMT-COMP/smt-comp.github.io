@@ -1,0 +1,25 @@
+{
+    "name": "STP-Parti-Bitwuzla-at-SMT-COMP-2025",
+    "contributors": [
+        "Mengyu Zhao",
+        "Zhenghang Xu",
+        "Jinkun Lin",
+        "Shaowei Cai"
+    ],
+    "contacts": ["Mengyu Zhao <zhaomy@ios.ac.cn>"],
+    "archive": {
+        "url": "https://zenodo.org/records/15640499/files/STP-Parti-Bitwuzla-at-SMT-COMP-2025-build.zip"
+    },
+    "website": "https://github.com/shaowei-cai-group/STP-Parti-Bitwuzla-at-SMT-COMP-2025",
+    "system_description": "https://github.com/shaowei-cai-group/STP-Parti-Bitwuzla-at-SMT-COMP-2025/blob/master/STP_Parti_Bitwuzla_at_SMT_COMP_2025.pdf",
+    "command": ["./STP-Parti-Bitwuzla-at-SMT-COMP-2025-build/solver/run_BVParti.py"],
+    "solver_type": "wrapped",
+    "seed": "998244353",
+    "participations": [
+        {
+            "tracks": ["Parallel"],
+            "logics": ["QF_BV"]
+        }
+    ],
+    "final": true
+}
