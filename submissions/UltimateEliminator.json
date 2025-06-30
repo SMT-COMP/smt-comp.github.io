@@ -1,0 +1,34 @@
+{
+    "name": "UltimateEliminator+MathSAT",
+    "contributors": [
+        "Max Barth", "Daniel Dietsch", "Matthias Heizmann"
+    ],
+    "contacts": ["Matthias Heizmann <matthias.heizmann@iste.uni-stuttgart.de>"],
+    "archive": {
+        "url": "https://zenodo.org/records/15769747/files/UltimateEliminator.zip",
+        "h": { "sha256": "e9fa83e79187e9d5af004197447dbb77559cacd9dbc530538c785c4c46589290" }
+    },
+    "website": "https://www.ultimate-pa.org/eliminator/",
+    "system_description": "https://zenodo.org/records/15769747/files/2025UltimateEliminator.pdf",
+    "command": ["ultimateeliminator.sh"],
+    "solver_type": "wrapped",
+    "seed": "0",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "^((AX?)?(UF)?(BV)?(FP)?([LN][IR]*A|[IR]DL)?)$",
+            "command": ["ultimateeliminator.sh"]
+        },
+        {
+            "tracks": ["Incremental"],
+            "logics": "^((AX?)?(UF)?(BV)?(FP)?([LN][IR]*A|[IR]DL)?)$",
+            "command": ["ultimateeliminator.sh"]
+        },
+        {
+            "tracks": ["UnsatCore"],
+            "logics": "^((AX?)?(UF)?(BV)?(FP)?([LN][IR]*A|[IR]DL)?)$",
+            "command": ["ultimateeliminator.sh"]
+        }
+    ],
+    "final" : true
+}
