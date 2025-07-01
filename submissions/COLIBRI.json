@@ -15,7 +15,7 @@
     "participations": [
         {
             "tracks": ["SingleQuery"],
-            "logics": "QF_.*FP.*"
+            "logics": "QF_.*FP(?!DT).*"
         }
     ],
     "seed": 0
