@@ -11,7 +11,7 @@
     "contacts": ["Philipp Ruemmer <philipp.ruemmer@it.uu.se>",
                  "Oliver Markgraf <markgraf@cs.uni-kl.de>"],
     "archive": {
-        "url": "https://eldarica.org/ostrich-smt-comp-2025.tar.gz",
+        "url": "https://zenodo.org/records/15737126/files/ostrich-smt-comp-2025.tar.gz",
         "h": { "sha256": "9c13dd58dec2ef76f9da2b398960e29a71e14ac79e601161cce367344d8b8744" }
     },
     "website": "https://github.com/uuverifiers/ostrich/",
