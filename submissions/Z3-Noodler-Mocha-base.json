@@ -1,5 +1,5 @@
 {
-    "name": "Z3-Noodler",
+    "name": "Z3-Noodler-Mocha-base",
     "archive": {
         "url": "https://zenodo.org/records/15766150/files/base_solver.tar.gz"
     },
