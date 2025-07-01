@@ -5,7 +5,7 @@
     ],
     "contacts": ["Christophe Junke <christophe.junke@cea.fr>"],
     "archive": {
-        "url": "https://git.frama-c.com/pub/colibri/-/releases/2025.06/downloads/bundle-v5",
+        "url": "https://zenodo.org/records/15602589/files/colibri.2025.06-e5.tbz",
         "h": { "sha256": "f251f170c75a96af9ccde9859ac349e5c1cdd6fa6aeca779cb1ef4b9a8134871" }
     },
     "website": "http://colibri.frama-c.com/",
