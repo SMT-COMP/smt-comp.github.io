@@ -695,13 +695,19 @@ table.participants {
 
 col.authors,
 td.authors {
-  width: 25%;
+  width: 20%;
+  white-space: normal;
+}
+
+col.seed,
+td.seed {
+  width: 7em;
   white-space: normal;
 }
 
 col.track,
 td.track {
-  width: 6em;
+  width: 5.6em;
   white-space: normal;
 }
 

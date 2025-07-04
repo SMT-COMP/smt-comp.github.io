@@ -10,6 +10,7 @@
   <td>{{ with .tracks.Cloud }}X{{ end }}</td>
   <td>{{ with .tracks.Parallel }}X{{ end }}</td>
 
+  <td class="seed">{{ .seed | string }}</td>
   <td class="authors">{{ delimit .authors ",\n" }}</td>
   <td><a href="{{ .archive_url }}">Archive</a></td>
   <td><a href="{{ .system_description }}">System description</a></td>

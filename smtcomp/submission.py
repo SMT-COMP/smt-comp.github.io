@@ -59,6 +59,7 @@ def raw_summary(s: Submission) -> dict[str, Any]:
     data["system_description"] = str(s.system_description)
     data["competitive"] = s.competitive
     data["tracks"] = dict[str, dict[str, list[str]]]()
+    data["seed"] = s.seed
 
     tracks = s.participations.get()
     for track, divs in sorted(tracks.items()):
