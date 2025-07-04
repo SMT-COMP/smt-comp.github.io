@@ -14,7 +14,7 @@
     "contacts": ["Lukáš Holík <holik@fit.vutbr.cz>"],
     "website": "https://github.com/VeriFIT/z3-noodler",
     "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2025.pdf",
-    "command": [ "./z3-noodler" ],
+    "command": [ "./z3-noodler/build/z3" ],
     "solver_type": "derived",
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
