@@ -1,5 +1,5 @@
 {
-    "name": "Z3-4.15.2.0",
+    "name": "Z3-Owl-base",
     "contributors": [
         "Nikolaj Bjørner et al."
     ],
@@ -25,5 +25,6 @@
             ]
         }
     ],
-    "final" : true
+    "final" : true,
+    "competitive": false
 }
