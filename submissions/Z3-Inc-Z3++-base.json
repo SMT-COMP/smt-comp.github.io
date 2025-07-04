@@ -11,9 +11,9 @@
     "system_description": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
     "command": [ "./smtcomp_run_incremental" ],
     "solver_type": "Standalone",
-    "seed": 174228,
     "participations": [
         { "tracks": ["Incremental"], "logics": "QF_NIA" }
     ],
-    "competitive": false
+    "competitive": false,
+    "final" : true
 }

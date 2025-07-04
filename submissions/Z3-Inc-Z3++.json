@@ -15,5 +15,6 @@
     "seed": "19970530",
     "participations": [
         { "tracks": ["Incremental"], "logics": "QF_NIA" }
-    ]
+    ],
+    "final" : true
 }

@@ -1,22 +1,29 @@
 {
-    "name": "Z3-Noodler-base",
+    "name": "Z3-Owl-base",
     "contributors": [
         "Nikolaj Bjørner et al."
     ],
     "contacts": ["Nikolaj Bjørner <nbjorner@microsoft.com>"],
     "archive": {
-        "url": "https://zenodo.org/records/15768998/files/z3-noodler_smt-comp25.zip?download=1"
+        "url": "https://zenodo.org/records/15792049/files/Z3.tar?download=1"
     },
     "website": "https://github.com/Z3Prover/z3",
     "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-540-78800-3_24.pdf",
     "solver_type": "Standalone",
-    "command": ["./z3-noodler_smt-comp25/z3/z3"],
+    "command": ["./z3"],
     "participations": [
         {
             "tracks": ["SingleQuery"],
-            "divisions": ["QF_Strings"]
+            "logics": [
+                "QF_BV",
+                "QF_UFBV",
+                "QF_ABV",
+                "QF_AUFBV",
+                "QF_FP",
+                "QF_BVFP"
+            ]
         }
     ],
-    "competitive": false,
-    "final": true
+    "final" : true,
+    "competitive": false
 }

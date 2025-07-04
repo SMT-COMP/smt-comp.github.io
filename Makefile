@@ -55,7 +55,7 @@ submission-doc: submission-generation
 
 participant-data:
 	@echo "🚀 Generating participant data to $(PARTICIPANT_DATA_FILE)"
-	@if [ -e "submissions/*.json" ]; then poetry run smtcomp show-json submissions/*.json $(PARTICIPANT_DATA_FILE); fi
+	@poetry run smtcomp show-json submissions/*.json $(PARTICIPANT_DATA_FILE)
 
 track-data:
 	@echo "🚀 Generating track data to $(TRACK_DATA_FILE)"

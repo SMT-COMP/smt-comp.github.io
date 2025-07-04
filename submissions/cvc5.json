@@ -59,5 +59,6 @@
       "command": [ "bin/smtcomp_run_incremental" ]
     }
   ],
-"seed": 8465677983
+  "seed": 8465677983,
+  "final" : true
 }
