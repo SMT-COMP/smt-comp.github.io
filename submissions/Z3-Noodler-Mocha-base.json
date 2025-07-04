@@ -16,7 +16,6 @@
     "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2025.pdf",
     "command": [ "./z3-noodler" ],
     "solver_type": "derived",
-    "seed": 48655,
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
     ],
