@@ -1,0 +1,25 @@
+{
+    "name": "Z3-Noodler-Mocha-base",
+    "archive": {
+        "url": "https://zenodo.org/records/15766150/files/base_solver.tar.gz"
+    },
+    "contributors": [
+        "Vojtěch Havlena",
+        "Juraj Síč",
+        "David Chocholatý",
+        "Lukáš Holík",
+        "Ondřej Lengál",
+        "Michal Hečko"
+    ],
+    "contacts": ["Lukáš Holík <holik@fit.vutbr.cz>"],
+    "website": "https://github.com/VeriFIT/z3-noodler",
+    "system_description": "https://github.com/VeriFIT/z3-noodler/blob/devel/doc/noodler/z3-noodler-system-description-2025.pdf",
+    "command": [ "./z3-noodler" ],
+    "solver_type": "derived",
+    "seed": 48655,
+    "participations": [
+        { "tracks": ["SingleQuery"], "logics": "QF_Strings" }
+    ],
+    "competitive": false,
+    "final": true
+}

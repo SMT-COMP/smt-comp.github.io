@@ -1,0 +1,22 @@
+{
+    "name": "Amaya",
+    "contributors": [
+        "Vojtěch Havlena", "Michal Hečko", "Lukáš Holík", "Ondřej Lengál"
+    ],
+    "contacts": ["Michal Hečko <mhecko@proton.me>", "Ondřej Lengál <ondra.lengal@gmail.com>"],
+    "archive": {
+        "url": "https://zenodo.org/records/15630432/files/amaya-smtcomp25-v2.tar.gz",
+        "h": { "sha256": "133058d14b7cb1ef45261e9d02ef3e6f76589dd3551c73870e318e2d3a75ad54" }
+    },
+    "website": "https://github.com/MichalHe/amaya",
+    "system_description": "https://raw.githubusercontent.com/VeriFIT/amaya-smt-comp/master/system-description-2025/main.pdf",
+    "command": ["amaya/run.sh"],
+    "solver_type": "Standalone",
+    "seed": "587087",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["LIA", "NIA"]
+        }
+    ]
+}
