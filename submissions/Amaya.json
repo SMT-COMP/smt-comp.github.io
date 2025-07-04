@@ -18,5 +18,6 @@
             "tracks": ["SingleQuery"],
             "logics": ["LIA", "NIA"]
         }
-    ]
+    ],
+    "final" : true
 }

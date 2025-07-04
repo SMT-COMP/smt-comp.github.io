@@ -18,5 +18,6 @@
             "logics": "QF_.*FP(?!DT).*"
         }
     ],
-    "seed": 0
+    "seed": 0,
+    "final" : true
 }

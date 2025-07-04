@@ -21,5 +21,6 @@
     "seed": "718582",
     "participations": [
         { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
-    ]
+    ],
+    "final" : true
 }

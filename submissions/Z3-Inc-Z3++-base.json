@@ -15,5 +15,6 @@
     "participations": [
         { "tracks": ["Incremental"], "logics": "QF_NIA" }
     ],
-    "competitive": false
+    "competitive": false,
+    "final" : true
 }

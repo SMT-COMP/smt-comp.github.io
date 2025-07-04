@@ -42,5 +42,6 @@
                 "--maxRecDepth=1048576"
             ]
         }
-    ]
+    ],
+    "final" : true
 }

@@ -29,5 +29,6 @@
                 "QF_Strings"
             ]
         }
-    ]
+    ],
+    "final" : true
 }

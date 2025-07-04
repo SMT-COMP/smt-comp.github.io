@@ -40,5 +40,6 @@
             "logics": "(QF_)?(AX?)?(UF)?(BV)?(DT)?([IR]DL|[NL][IR]*A)?",
             "command": ["smtinterpol"]
         }
-    ]
+    ],
+    "final" : true
 }
