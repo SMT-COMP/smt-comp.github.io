@@ -57,6 +57,7 @@ def raw_summary(s: Submission) -> dict[str, Any]:
     data["website"] = str(s.website)
     data["archive_url"] = str(s.archive.url if s.archive is not None else "")
     data["system_description"] = str(s.system_description)
+    data["competitive"] = s.competitive
     data["tracks"] = dict[str, dict[str, list[str]]]()
 
     tracks = s.participations.get()
