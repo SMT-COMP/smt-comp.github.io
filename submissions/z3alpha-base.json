@@ -27,5 +27,6 @@
             ]
         }
     ],
-    "final" : true
+    "final" : true,
+    "competitive": false,
 }

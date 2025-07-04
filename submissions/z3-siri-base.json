@@ -18,5 +18,6 @@
             "divisions": ["QF_NonLinearIntArith", "QF_NonLinearRealArith", "QF_Bitvec"]
         }
     ],
-    "final" : true
+    "final" : true,
+    "competitive": false,
 }
