@@ -18,7 +18,7 @@
     "solver_type": "derived",
     "seed": 48655,
     "participations": [
-        { "tracks": ["SingleQuery"], "logics": "QF_Strings" }
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
     ],
     "competitive": false,
     "final": true
