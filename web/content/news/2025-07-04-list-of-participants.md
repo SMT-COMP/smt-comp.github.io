@@ -1,7 +1,7 @@
 ---
 layout: single
 author:
-title: List of participants is final 
+title: List of participants is final
 date: 2025-07-04T00:00:00+01:00
 ---
 
