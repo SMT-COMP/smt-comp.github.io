@@ -1594,6 +1594,9 @@ class Config:
         unknown_seed = 0
         seed = 0
         for s in self.submissions:
+            if not s.competitive:
+                continue
+
             if s.seed is None:
                 unknown_seed += 1
             else:
