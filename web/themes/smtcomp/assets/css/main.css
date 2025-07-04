@@ -695,7 +695,7 @@ table.participants {
 
 col.authors,
 td.authors {
-  width: 35%;
+  width: 25%;
   white-space: normal;
 }
 
@@ -709,4 +709,8 @@ col.archive,
 td.archive {
   width: 6em;
   white-space: normal;
+}
+
+tr.noncompetitive a {
+    color: black;
 }
