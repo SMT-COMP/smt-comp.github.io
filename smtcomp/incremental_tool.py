@@ -30,21 +30,24 @@ class IncrementalSMTCompTool(BaseTool2):  # type: ignore
             line = line.strip()
             if line in ("sat", "unsat"):
                 correct += 1
+            if "error" in line.lower():
+                status = "ERROR"
             if line.startswith("WRONG"):
                 return "WRONG"
 
-        if returnsignal is None:
-            status = "DONE"
-        elif ((returnsignal == 9) or (returnsignal == 15)) and isTimeout:
-            status = "TIMEOUT"
-        elif returnsignal == 9:
-            status = "KILLED BY SIGNAL 9"
-        elif returnsignal == 6:
-            status = "ABORTED"
-        elif returnsignal == 15:
-            status = "KILLED"
-        else:
-            status = "ERROR"
+        if status is None:
+            if returnsignal is None:
+                status = "DONE"
+            elif ((returnsignal == 9) or (returnsignal == 15)) and isTimeout:
+                status = "TIMEOUT"
+            elif returnsignal == 9:
+                status = "KILLED BY SIGNAL 9"
+            elif returnsignal == 6:
+                status = "ABORTED"
+            elif returnsignal == 15:
+                status = "KILLED"
+            else:
+                status = "ERROR"
 
         return f"{status} ({correct} correct)"
 

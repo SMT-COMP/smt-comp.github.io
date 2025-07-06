@@ -44,6 +44,8 @@ class SMTCompTool(BaseTool2):  # type: ignore
                     return result.RESULT_FALSE_PROP
                 elif line == "sat":
                     return result.RESULT_TRUE_PROP
+                elif "error" in line.lower():
+                    return result.RESULT_ERROR
                 elif line == "TIMEOUT":
                     return result.RESULT_TIMEOUT
                 else:
