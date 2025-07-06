@@ -69,10 +69,10 @@ class IncrementalSMTCompTool(BaseTool2):  # type: ignore
         assert len(tasks) <= 1, "only one inputfile supported"
         if options:
             # executable and options were overridden by the task definition
-            return [TRACE_EXECUTOR, *options, *tasks]
+            return [TRACE_EXECUTOR, "--continue-after-unknown", *options, *tasks]
         else:
             # using default executable
-            return [TRACE_EXECUTOR, executable, *tasks]
+            return [TRACE_EXECUTOR, "--continue-after-unknown", executable, *tasks]
 
     def program_files(self, executable: str) -> Any:
         files = [TRACE_EXECUTOR, executable] + self._program_files_from_executable(executable, self.REQUIRED_PATHS)
