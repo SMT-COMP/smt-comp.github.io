@@ -5,9 +5,6 @@ from benchexec.tools.template import BaseTool2
 import sys, re
 import os
 
-TIMEOUT_COMMAND = "./walltime_killer.py"
-TIMEOUT = "1200"  # needs to be refactored!
-
 
 class SMTCompTool(BaseTool2):  # type: ignore
     """
@@ -88,13 +85,13 @@ class SMTCompTool(BaseTool2):  # type: ignore
 
         if options:
             # executable and options were overridden by the task definition
-            return [TIMEOUT_COMMAND, TIMEOUT, *options, *tasks]
+            return [*options, *tasks]
         else:
             # using default executable
-            return [TIMEOUT_COMMAND, TIMEOUT, executable, *tasks]
+            return [executable, *tasks]
 
     def program_files(self, executable: str) -> Any:
-        files = [TIMEOUT_COMMAND, executable] + self._program_files_from_executable(executable, self.REQUIRED_PATHS)
+        files = [executable] + self._program_files_from_executable(executable, self.REQUIRED_PATHS)
         return files
 
     @staticmethod
