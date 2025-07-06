@@ -177,7 +177,7 @@ def select_and_scramble_aws(
     all = intersect(solvers, selected, on=["track", "logic"]).collect().lazy()
 
     for name, track in [("cloud", defs.Track.Cloud), ("parallel", defs.Track.Parallel)]:
-        dst = dstdir / name / "non-incremental"
+        dst = benchmark_files_dir(dstdir, track)
         dst.mkdir(parents=True, exist_ok=True)
 
         scramble_lazyframe(
