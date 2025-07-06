@@ -103,7 +103,7 @@ def get_contacts(files: list[Path] = typer.Argument(None)) -> None:
     Find contact from submissions given as arguments
     """
     l = list(map(submission.read_submission_or_exit, files))
-    contacts = list(str(c) for c in itertools.chain.from_iterable([s.contacts for s in l]))
+    contacts = list(set((str(c) for c in itertools.chain.from_iterable([s.contacts for s in l if s.competitive]))))
     contacts.sort()
     print("\n".join(contacts))
 
