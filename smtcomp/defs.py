@@ -1499,22 +1499,21 @@ class Config:
 
     removed_benchmarks = [
         {
-            "logic": int(Logic.QF_LIA),
-            "family": "20210219-Dartagnan/ConcurrencySafety-Main",
-            "name": "39_rand_lock_p0_vs-O0.smt2",
-        }  # scrambler segfault (perhaps stack limit)
+            "logic": int(Logic.UFDTNIA),
+            "family": "20241211-verus/verismo",
+            "name": "tspec__math__nonlinearverismo_tspec.math.nonlinear.proof_mul_pos_neg_rel._01.smt2",
+        }, # reported by Mathias Preiner as syntactically invalid
+        {
+            "logic": int(Logic.UFDTNIA),
+            "family": "20241211-verus/verismo",
+            "name": "tspec__math__nonlinearverismo_tspec.math.nonlinear.proof_div_pos_neg_rel._01.smt2",
+        }  # reported by Mathias Preiner as syntactically invalid
     ]
     """
-    Benchmarks to remove before selection (currently just for aws)
+    Benchmarks to remove before selection
     """
 
-    removed_results = [
-        {
-            "logic": int(Logic.QF_BV),
-            "family": "20230221-oisc-gurtner",
-            "name": "SLL-NESTED-8-32-sp-not-excluded.smt2",
-        }  # wrong status in SMTLIB
-    ]
+    removed_results = [ ]
     """
     Benchmarks to remove after running the solvers. Can be used when the selection has already been done.
     """
