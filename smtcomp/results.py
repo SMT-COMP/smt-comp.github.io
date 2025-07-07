@@ -30,7 +30,7 @@ class RunId(BaseModel):
 
 
 class Run(BaseModel):
-    scramble_id: int
+    file: int
     logic: defs.Logic
     cputime_s: float
     """ example: 0.211880968s"""
@@ -110,9 +110,9 @@ def parse_result(s: str) -> defs.Answer:
             return defs.Answer.Unsat
         case "true":
             return defs.Answer.Sat
-        case "unknown":
+        case "unknown" | "ERROR":
             return defs.Answer.Unknown
-        case "OUT OF MEMORY" | "OUT OF JAVA MEMORY":
+        case "OUT OF MEMORY" | "OUT OF JAVA MEMORY" | "KILLED BY SIGNAL 9":
             return defs.Answer.OOM
         case _:
             raise ValueError(f"Unknown result value {s}")
@@ -121,7 +121,8 @@ def parse_result(s: str) -> defs.Answer:
 def convert_run(r: ET.Element) -> Run:
     parts = r.attrib["name"].split("/")
     logic = defs.Logic(parts[-2])
-    scramble_id = smtcomp.scramble_benchmarks.unscramble_yml_basename(parts[-1])
+    benchmark_yml = parts[-1]
+    benchmark_file = int(benchmark_yml.split("_", 1)[0])
     cputime_s: Optional[float] = None
     memory_B: Optional[int] = None
     answer: Optional[defs.Answer] = None
@@ -143,7 +144,7 @@ def convert_run(r: ET.Element) -> Run:
         raise ValueError("xml of results doesn't contains some expected column")
 
     return Run(
-        scramble_id=scramble_id,
+        file=benchmark_file,
         logic=logic,
         cputime_s=cputime_s,
         memory_B=memory_B,
@@ -377,7 +378,7 @@ json_mapping_name = "mapping.json"
 
 def parse_dir(dir: Path) -> pl.LazyFrame:
     """
-    output columns: solver, participation, track, basename, cputime_s, memory_B, status, walltime_s, scramble_id, file
+    output columns: solver, participation, track, basename, cputime_s, memory_B, status, walltime_s, file
 
     The track stored in the results is *not* used for some decisions:
     - if a file mapping.json is present it used and the original_id.csv is not needed
@@ -386,27 +387,20 @@ def parse_dir(dir: Path) -> pl.LazyFrame:
 
     TODO: streamline the results directory hierarchy
     """
-    csv = dir / smtcomp.scramble_benchmarks.csv_original_id_name
-    json = dir / json_mapping_name
-    if not csv.exists() and not json.exists():
-        raise (ValueError(f"No file {csv!s} or {json!s} in the directory"))
-
-    if csv.exists():
-        lf = pl.read_csv(csv).lazy()
-        defaults: dict[str, Any] = {"file": -1}
-    else:
-        lf = parse_mapping(json)
-        defaults = {"unsat_core": [], "scramble_id_orig": -1}
-
     l = list(dir.glob("**/*.xml.bz2"))
     if len(l) == 0:
         raise (ValueError(f"No results in the directory {dir!s}"))
     l_parsed = list(track(map(parse_to_pl, l), total=len(l)))
     results = pl.concat(l_parsed)
-    results = add_columns(results, lf, on=["scramble_id"], defaults=defaults)
 
     ucvr = dir / "../unsat_core_validation_results" / "parsed.feather"
     if (dir.name).endswith("unsatcore"):
+        json = dir / json_mapping_name
+        if not json.exists():
+            raise (ValueError(f"No file {json!s} in the directory"))
+        lf = parse_mapping(json)
+        defaults = {"unsat_core": [], "scramble_id_orig": -1}
+
         if ucvr.is_file():
             vr = pl.read_ipc(ucvr).lazy()
             vr = (
@@ -466,7 +460,7 @@ def helper_get_results(
         )
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
-        lf = lf.filter(track=int(track)).drop("scramble_id")
+        lf = lf.filter(track=int(track))
 
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
@@ -491,7 +485,6 @@ def helper_get_results(
             "cputime_s": 0,
             "memory_B": 0,
             "walltime_s": 0,
-            "nb_answers": 0,
         },
     )
 
