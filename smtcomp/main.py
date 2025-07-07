@@ -198,18 +198,6 @@ def convert_benchexec_results(
 
 
 @app.command(rich_help_panel=benchexec_panel)
-def convert_aws_results(
-    results: Path,
-) -> None:
-    """
-    Load aws results in cvs format and aggregates results in feather format
-    """
-
-    lf = smtcomp.results.parse_aws_csv(results)
-    lf.collect().write_ipc(results / "parsed.feather")
-
-
-@app.command(rich_help_panel=benchexec_panel)
 def store_results(
     data: Path,
     lresults: List[Path],
