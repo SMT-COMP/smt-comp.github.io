@@ -10,7 +10,7 @@
     },
     "website": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025",
     "system_description": "https://github.com/shaowei-cai-group/Z3-Parti-Z3pp-at-SMT-COMP-2025/blob/master/Z3_Parti_Z3pp_at_SMT_COMP_2025.pdf",
-    "command": ["./Z3-Parti-Z3pp-at-SMT-COMP-2025-build/solver/run_AriParti.py", "64"],
+    "command": ["./Z3-Parti-Z3pp-at-SMT-COMP-2025-build/solver/run_AriParti.py", "32"],
     "solver_type": "wrapped",
     "seed": "998244353",
     "participations": [
@@ -19,5 +19,6 @@
             "logics": ["QF_RDL", "QF_IDL", "QF_LRA", "QF_LIA", "QF_NRA", "QF_NIA"]
         }
     ],
+    "competitive": false,
     "final": true
 }
