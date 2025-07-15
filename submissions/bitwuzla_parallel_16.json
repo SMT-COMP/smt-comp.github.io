@@ -15,6 +15,7 @@
   "system_description": "https://bitwuzla.github.io/data/smtcomp2025/paper.pdf",
   "solver_type": "Standalone",
   "seed": "42",
+  "competitive": false,
   "participations": [
     {
       "tracks": ["Parallel"],
