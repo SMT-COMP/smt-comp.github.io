@@ -200,7 +200,7 @@ def helper_compute_incremental(config: defs.Config) -> pl.LazyFrame:
     """
     Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
     """
-    benchmarks = pl.read_ipc(config.cached_incremental_benchmarks)
+    benchmarks = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
     benchmarks = benchmarks.join(removed_benchmarks(config), on=["logic", "family", "name"], how="anti")
 
     results = pl.read_ipc(config.cached_previous_results)
