@@ -127,10 +127,12 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
         memlimit=f"{config.memlimit_M_test if test else config.memlimit_M} MB",
         cpuCores=f"{cpuCores}",
     ):
-        # we run the test jobs on different machines (main machines are used)
-        used_cpuModel = "Intel Core i7" if test else "Intel Xeon E3-1230 v5 @ 3.40 GHz"
-        with tag("require", cpuModel=used_cpuModel):
-            text()
+
+        if track != defs.Track.Parallel:
+            # we run the test jobs on different machines (main machines are used)
+            used_cpuModel = "Intel Core i7" if test else "Intel Xeon E3-1230 v5 @ 3.40 GHz"
+            with tag("require", cpuModel=used_cpuModel):
+                text()
 
         with tag("resultfiles"):
             text("**/error.log")
