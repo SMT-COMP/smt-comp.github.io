@@ -117,14 +117,17 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
 
     timelimit = config.timelimit_s_test if test else config.timelimit_s
     cpuCores = config.cpuCores_parallel if track == defs.Track.Parallel else config.cpuCores
+    memlimit = config.memlimit_M_parallel if track == defs.Track.Parallel else config.memlimit_M
+
     if test:
         cpuCores = config.cpuCores_parallel_test if track == defs.Track.Parallel else config.cpuCores_test
+        memlimit = config.memlimit_M_parallel_test if track == defs.Track.Parallel else config.memlimit_M_test
     with tag(
         "benchmark",
         tool=f"tools.{tool_module_name}",
         timelimit=f"{timelimit * cpuCores}s",
         walltimelimit=f"{timelimit}s",
-        memlimit=f"{config.memlimit_M_test if test else config.memlimit_M} MB",
+        memlimit=f"{memlimit} MB",
         cpuCores=f"{cpuCores}",
     ):
 

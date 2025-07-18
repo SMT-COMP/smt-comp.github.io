@@ -1452,6 +1452,8 @@ class Config:
     timelimit_s_test = 60  # time limit for test runs
     memlimit_M = 1024 * 30
     memlimit_M_test = 1024 * 8  # memory limit for test runs
+    memlimit_M_parallel = 1024 * 1000
+    memlimit_M_parallel_test = 1024 * 8
     cpuCores = 4
     cpuCores_test = 2
     cpuCores_parallel = 128
