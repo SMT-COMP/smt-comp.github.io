@@ -1,5 +1,5 @@
 {
-    "name": "SMTS",
+    "name": "SMTS (64 cores)",
     "contributors": [
         { "name": "Tomáš Kolárik", "website": "https://github.com/Tomaqa" }
         ,
@@ -15,7 +15,7 @@
         ,
         "h": { "sha256": "2d8b45c2458493d45f632f9657a735d90957667caf7eb980b17b9b832b8bcc24" }
     },
-    "command": ["./SMTS/server/smts.py", "-l", "-p", "-o", "128", "-fp"],
+    "command": ["./SMTS/server/smts.py", "-l", "-p", "-o", "64", "-fp"],
     "website": "https://github.com/usi-verification-and-security/SMTS",
     "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/abstract-2025.pdf",
     "solver_type": "Standalone",
@@ -32,5 +32,6 @@
         }
     ],
     "seed": 89,
+    "competitive": false,
     "final": true
 }
