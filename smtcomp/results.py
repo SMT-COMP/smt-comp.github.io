@@ -317,6 +317,8 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             if last_time is not None:
                 d["walltime_s"] = last_time
                 d["cputime_s"] = last_time
+        else:
+            d["nb_answers"] = -1
 
         if r.runid.track == defs.Track.UnsatCore:
             if d["answer"] == defs.Answer.Unsat:
@@ -489,6 +491,7 @@ def helper_get_results(
             "cputime_s": 0,
             "memory_B": 0,
             "walltime_s": 0,
+            "nb_answers": -1,
         },
     )
 
