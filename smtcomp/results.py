@@ -40,6 +40,8 @@ class Run(BaseModel):
     """ example: true"""
     walltime_s: float
     """ example: 0.21279739192686975s"""
+    benchmark_yml: str
+    """ example: 467234_QF_ABVFP_20210211-Vector__RTOS_C_73c22d8f.yml"""
 
     # host: str
     # """ example: pontos07"""
@@ -150,6 +152,7 @@ def convert_run(r: ET.Element) -> Run:
         memory_B=memory_B,
         answer=answer,
         walltime_s=walltime_s,
+        benchmark_yml=benchmark_yml
     )
 
 
@@ -252,8 +255,8 @@ re_inc_sat_unsat = re.compile(r"^sat|unsat$", flags=re.MULTILINE)
 re_inc_time = re.compile(r"^time ([0-9.]*)$", flags=re.MULTILINE)
 
 
-def inc_get_nb_answers(logfiles: LogFile, runid: RunId, scramble_id: int) -> Tuple[defs.Answer, int, float | None]:
-    output = logfiles.get_output(runid, smtcomp.scramble_benchmarks.scramble_basename(scramble_id, suffix="yml"))
+def inc_get_nb_answers(logfiles: LogFile, runid: RunId, yml_name: str) -> Tuple[defs.Answer, int, float | None]:
+    output = logfiles.get_output(runid, yml_name)
 
     if re_inc_trace_executor_wrong_output.search(output):
         return (defs.Answer.IncrementalError, 0, None)
@@ -305,7 +308,7 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             a.answer = mv_get_cached_answer(resultdir, a.scramble_id)
 
         if r.runid.track == defs.Track.Incremental:
-            answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.scramble_id)
+            answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.benchmark_yml)
             a.answer = answer
             d["nb_answers"] = nb_answers
             # TODO: Since we forgot to readd timestamp for some answer
@@ -461,6 +464,7 @@ def helper_get_results(
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
         lf = lf.filter(track=int(track))
+    lf = lf.drop("benchmark_yml")
 
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
