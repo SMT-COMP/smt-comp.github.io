@@ -103,7 +103,7 @@ def parse_result(s: str) -> defs.Answer:
         return defs.Answer.Timeout
     if s.startswith("DONE"):
         return defs.Answer.Incremental
-    if s.startswith("OUT OF MEMORY"):
+    if s.startswith("OUT OF MEMORY") or s.startswith("KILLED BY SIGNAL 9"):
         return defs.Answer.OOM
     match s:
         case "false":
