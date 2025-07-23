@@ -289,13 +289,13 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config, test: bool
             out("set -x")
             out(f"for DIVISION in {division_list}")
             out("    do\n")
-            out(f'    TARGET="../results{track_suffix}/$DIVISION/{tool}"')
+            out(f'    TARGET="../results/results{track_suffix}/$DIVISION/{tool}"')
             out("    rm -rf $TARGET")
             out("    mkdir -p $TARGET")
 
             extra_args = ""
             out(
-                f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}{track_suffix}_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority HIGH --cgroupAccess -o $TARGET"
+                f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}{track_suffix}_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess -o $TARGET"
             )
             out("done")
 
@@ -337,6 +337,6 @@ def generate_unsatcore_validation(s: defs.Submission, cachedir: Path, config: de
         out("    rm -rf $TARGET")
         out("    mkdir -p $TARGET")
         out(
-            f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}_unsatcorevalidation_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess --tryLessMemory -o $TARGET"
+            f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}_unsatcorevalidation_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess -o $TARGET"
         )
         out("done")
