@@ -468,8 +468,8 @@ def helper_get_results(
         )
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
-        lf = lf.filter(track=int(track))
-    lf = lf.drop("benchmark_yml")
+        lf = lf.drop("benchmark_yml")
+
 
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
