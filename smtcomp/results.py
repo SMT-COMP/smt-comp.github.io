@@ -120,7 +120,7 @@ def parse_result(s: str) -> defs.Answer:
             raise ValueError(f"Unknown result value {s}")
 
 
-def convert_run(r: ET.Element) -> Run:
+def convert_run(r: ET.Element) -> Run | None:
     parts = r.attrib["name"].split("/")
     logic = defs.Logic(parts[-2])
     benchmark_yml = parts[-1]
@@ -143,7 +143,8 @@ def convert_run(r: ET.Element) -> Run:
                 walltime_s = parse_time(value)
 
     if cputime_s is None or memory_B is None or answer is None or walltime_s is None:
-        raise ValueError("xml of results doesn't contains some expected column")
+        print(f"xml of results doesn't contains some expected column for {r.attrib['name']}")
+        return None
 
     return Run(
         file=benchmark_file,
@@ -158,7 +159,7 @@ def convert_run(r: ET.Element) -> Run:
 
 def parse_xml(file: Path) -> Results:
     result = ET.fromstring(read_cin(file))
-    runs = list(map(convert_run, result.iterfind("run")))
+    runs = list(filter(lambda r: r is not None,  map(convert_run, result.iterfind("run"))))
     return Results(runid=RunId.unmangle(result.attrib["name"]), options=result.attrib["options"], runs=runs)
 
 
