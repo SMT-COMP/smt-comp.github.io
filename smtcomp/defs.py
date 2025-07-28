@@ -1543,7 +1543,7 @@ class Config:
 
     @functools.cached_property
     def previous_years(self) -> list[int]:
-        return list(range(self.oldest_previous_results, self.current_year))
+        return list(range(self.oldest_previous_results, self.current_year-1))
 
     @functools.cached_property
     def previous_results(self) -> list[tuple[int, Path]]:
