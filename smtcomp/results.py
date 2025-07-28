@@ -228,17 +228,17 @@ class LogFile:
         return s[index:]
 
 
-def mv_get_cached_results(resultdir: Path, scramble_id: int) -> defs.Validation | None:
+def mv_get_cached_results(resultdir: Path, benchmark_id: int) -> defs.Validation | None:
     d = resultdir / "model_validation_results"
-    file_cache = d / f"{str(scramble_id)}.json.gz"
+    file_cache = d / f"{str(benchmark_id)}.json.gz"
     if file_cache.is_file():
         return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
     else:
         return None
 
 
-def mv_get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
-    val = mv_get_cached_results(resultdir, scramble_id)
+def mv_get_cached_answer(resultdir: Path, benchmark_id: int) -> defs.Answer:
+    val = mv_get_cached_results(resultdir, benchmark_id)
     if val is None:
         return defs.Answer.ModelNotValidated
     else:
@@ -296,8 +296,8 @@ def get_unsat_core(output: str) -> UnsatCore | None:
     return items
 
 
-def uc_get_uc(logfiles: LogFile, runid: RunId, scramble_id: int) -> UnsatCore | None:
-    output = logfiles.get_output(runid, smtcomp.scramble_benchmarks.scramble_basename(scramble_id, suffix="yml"))
+def uc_get_uc(logfiles: LogFile, runid: RunId, yml_name: str) -> UnsatCore | None:
+    output = logfiles.get_output(runid, yml_name)
 
     return get_unsat_core(output)
 
@@ -306,7 +306,7 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
     def convert(a: Run) -> Dict[str, Any]:
         d = dict(a)
         if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
-            a.answer = mv_get_cached_answer(resultdir, a.scramble_id)
+            a.answer = mv_get_cached_answer(resultdir, a.file)
 
         if r.runid.track == defs.Track.Incremental:
             answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.benchmark_yml)
@@ -323,7 +323,7 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
 
         if r.runid.track == defs.Track.UnsatCore:
             if d["answer"] == defs.Answer.Unsat:
-                uc = uc_get_uc(logfiles, r.runid, a.scramble_id)
+                uc = uc_get_uc(logfiles, r.runid, a.benchmark_yml)
                 if uc is None:
                     d["answer"] = defs.Answer.Unknown
                     d["unsat_core"] = []
