@@ -495,6 +495,7 @@ def helper_get_results(
             "memory_B": 0,
             "walltime_s": 0,
             "nb_answers": -1,
+            "unsat_core": [],
         },
     )
 
