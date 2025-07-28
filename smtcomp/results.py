@@ -337,6 +337,8 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             # TODO: Since we forgot to readd timestamp for each answer
             # we don't have the time of the last answer for now
             # So we take the total for now
+        else:
+            d["unsat_core"] = []
 
         d["answer"] = int(d["answer"])
         d["logic"] = int(d["logic"])
