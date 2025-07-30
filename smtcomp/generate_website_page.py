@@ -242,31 +242,23 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
     if podium is None:
         return []
     else:
-        baseMap = { #TODO: remove hardcode for SMT-COMP 2025
-            "Bitwuzla-MachBV": "Bitwuzla-MachBV-base",
-            "Z3-Inc-Z3++": "Z3-Inc-Z3++-base",
-            "Z3-Noodler-Mocha": "Z3-Noodler-Mocha-base",
-            "Z3-Owl": "Z3-Owl-base",
-            "Z3-Noodler": "Z3-Noodler",
-            "z3siri": "z3siri-base",
-            "Z3-alpha": "Z3-alpha-base"
-        }
         podiums = []
+        base_solvers = []
         for s in podium:
             cscore = s["correctly_solved_score"]
             delta = 0
-            if baseMap.get(s["solver"], "") != "":
-                for sprime in podium: 
-                    if sprime["solver"] == baseMap.get(s["solver"], ""): 
+            derived_solver = defs.baseMapSMTLIB2025.get(s["solver"], "")
+            if derived_solver != "":
+                for sprime in podium:
+                    if sprime["solver"] == defs.baseMapSMTLIB2025.get(s["solver"], ""):
                         delta = cscore - sprime["correctly_solved_score"]
                         break
 
-            podiums.append(
-                PodiumStep(
+            ps = PodiumStep(
                     name=s["solver"],
-                    baseSolver=baseMap.get(s["solver"], ""),
+                    baseSolver=derived_solver,
                     deltaBaseSolver=delta,
-                    competing="yes",  # TODO: Update this if needed
+                    competing="no" if "-base" in s["solver"] else "yes",
                     errorScore=s["error_score"],
                     correctScore=s["correctly_solved_score"],
                     CPUScore=s["cpu_time_score"],
@@ -278,9 +270,14 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
                     abstained=s["abstained"],
                     timeout=s["timeout"],
                     memout=s["memout"],
-               )
-            )
-        return podiums
+                )
+            
+            if "-base" in s["solver"]:
+                base_solvers.append(ps)
+            else:
+                podiums.append(ps)
+                
+        return podiums + base_solvers
 
 
 

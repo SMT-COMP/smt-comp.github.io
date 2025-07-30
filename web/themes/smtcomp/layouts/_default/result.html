@@ -88,42 +88,44 @@
     </tr>
 </thead>
 {{ range $solver := . }}
-<tr {{ if eq $solver.competing "no" }}class = "non-competing" {{ end }}>
-    <td>
+<tr {{ if eq $solver.competing "no" }}class="non-competing" {{ end }}>
+    <td {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>
       {{ $solver.name }} {{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
     </td>
-    <td class="right">{{ $solver.errorScore }}
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.errorScore }}
       {{ if $solver.errorFootnote }}
          <a href="#error{{ $solver.name }}">*</a>
       {{ end }}
     </td>
-    <td class="right">{{ $solver.correctScore }} 
-        <span style="font-size: 0.75em">
-            {{ if not (eq $solver.baseSolver "") }}
-            {{ if not (lt $solver.deltaBaseSolver 0) }}
-                (+{{ $solver.deltaBaseSolver }})
-            {{ else }}
-                (-{{ $solver.deltaBaseSolver }})
-            {{ end }}
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>
+    {{ $solver.correctScore }}
+    {{ if not (eq $solver.baseSolver "") }}
+        {{ if not (lt $solver.deltaBaseSolver 0) }}
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +{{ $solver.deltaBaseSolver }})</span>
+        {{ else }}
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base -{{ $solver.deltaBaseSolver }})</span>
         {{ end }}
-        </span>
+    {{ end }}
     </td>
-    <td class="right">{{ $solver.CPUScore }}</td>
-    <td class="right">{{ $solver.WallScore }}</td>
+    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.CPUScore }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.WallScore }}</td>
 
-    <td class="right">{{ $solver.solved }}</td>
-    <td class="right">{{ $solver.solved_sat }}</td>
-    <td class="right">{{ $solver.solved_unsat }}</td>
-    <td class="right">{{ $solver.unsolved }}</td>
-    <td class="right">{{ $solver.abstained }}</td>
+    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.solved }}</td>
+    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.solved_sat }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.solved_unsat }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.unsolved }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.abstained }}</td>
 
-    <td class="right">{{ $solver.timeout }}</td>
-    <td class="right">{{ $solver.memout }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.timeout }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.memout }}</td>
 </tr>
 {{ end }}
 </table>
-<span style="font-size: 0.75em">
-    (+/- n): for derived solvers: correct score increment over base solver   
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>  
+</span>
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver 
 </span>
 {{ end }}
 {{ end }}
