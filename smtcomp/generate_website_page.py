@@ -258,7 +258,7 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
                     name=s["solver"],
                     baseSolver=derived_solver,
                     deltaBaseSolver=delta,
-                    competing="no" if "-base" in s["solver"] else "yes",
+                    competing="no" if "-base" in s["solver"] else "yes", #TODO: establish s["competing"]
                     errorScore=s["error_score"],
                     correctScore=s["correctly_solved_score"],
                     CPUScore=s["cpu_time_score"],
