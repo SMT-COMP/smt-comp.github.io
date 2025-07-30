@@ -22,7 +22,7 @@ baseMapSMTLIB2025 = {
     "Z3-Owl": "Z3-Owl-base",
     "Z3-Noodler": "Z3-Noodler",
     "z3siri": "z3siri-base",
-    "Z3-alpha": "Z3-alpha-base"
+    "Z3-alpha": "Z3-alpha-base",
 }
 
 
@@ -146,7 +146,7 @@ class Contributor(BaseModel, extra="forbid"):
 
 class SolverType(EnumAutoInt):
     wrapped = "wrapped"
-    derived = "derived" # TODO: put a datatype information on base solver
+    derived = "derived"  # TODO: put a datatype information on base solver
     standalone = "Standalone"
     portfolio = "Portfolio"
 
@@ -1336,7 +1336,8 @@ class Submission(BaseModel, extra="forbid"):
         default=False,
         description="Must be set for the final version of the submission. An archive on zenodo is needed in this case.",
     )
-    # TODO: model validator to check the sanity of the new base_solver field  
+
+    # TODO: model validator to check the sanity of the new base_solver field
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
         if self.archive is None and not all(p.archive for p in self.participations.root):

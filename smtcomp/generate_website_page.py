@@ -12,6 +12,7 @@ import smtcomp.scoring
 from smtcomp.utils import *
 import smtcomp.results
 
+
 def to_track_name(track: defs.Track) -> str:
     match track:
         case defs.Track.SingleQuery:
@@ -255,30 +256,29 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
                         break
 
             ps = PodiumStep(
-                    name=s["solver"],
-                    baseSolver=derived_solver,
-                    deltaBaseSolver=delta,
-                    competing="no" if "-base" in s["solver"] else "yes", #TODO: establish s["competing"]
-                    errorScore=s["error_score"],
-                    correctScore=s["correctly_solved_score"],
-                    CPUScore=s["cpu_time_score"],
-                    WallScore=s["wallclock_time_score"],
-                    solved=s["solved"],
-                    solved_sat=s["solved_sat"],
-                    solved_unsat=s["solved_unsat"],
-                    unsolved=s["unsolved"],
-                    abstained=s["abstained"],
-                    timeout=s["timeout"],
-                    memout=s["memout"],
-                )
-            
+                name=s["solver"],
+                baseSolver=derived_solver,
+                deltaBaseSolver=delta,
+                competing="no" if "-base" in s["solver"] else "yes",  # TODO: establish s["competing"]
+                errorScore=s["error_score"],
+                correctScore=s["correctly_solved_score"],
+                CPUScore=s["cpu_time_score"],
+                WallScore=s["wallclock_time_score"],
+                solved=s["solved"],
+                solved_sat=s["solved_sat"],
+                solved_unsat=s["solved_unsat"],
+                unsolved=s["unsolved"],
+                abstained=s["abstained"],
+                timeout=s["timeout"],
+                memout=s["memout"],
+            )
+
             if "-base" in s["solver"]:
                 base_solvers.append(ps)
             else:
                 podiums.append(ps)
-                
-        return podiums + base_solvers
 
+        return podiums + base_solvers
 
 
 def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track) -> PodiumDivision:
