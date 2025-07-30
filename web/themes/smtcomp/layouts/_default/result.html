@@ -97,7 +97,17 @@
          <a href="#error{{ $solver.name }}">*</a>
       {{ end }}
     </td>
-    <td class="right">{{ $solver.correctScore }}</td>
+    <td class="right">{{ $solver.correctScore }} 
+        <i>
+            {{ if not (eq $solver.baseSolver "") }}
+            {{ if not (lt $solver.deltaBaseSolver 0) }}
+                (+{{ $solver.deltaBaseSolver }})
+            {{ else }}
+                (-{{ $solver.deltaBaseSolver }})
+            {{ end }}
+        {{ end }}
+        </i>
+    </td>
     <td class="right">{{ $solver.CPUScore }}</td>
     <td class="right">{{ $solver.WallScore }}</td>
 

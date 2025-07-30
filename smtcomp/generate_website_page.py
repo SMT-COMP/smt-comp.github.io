@@ -12,7 +12,6 @@ import smtcomp.scoring
 from smtcomp.utils import *
 import smtcomp.results
 
-
 def to_track_name(track: defs.Track) -> str:
     match track:
         case defs.Track.SingleQuery:
@@ -94,6 +93,8 @@ float_6dig = Annotated[
 
 class PodiumStep(BaseModel):
     name: str
+    baseSolver: str
+    deltaBaseSolver: int
     competing: str  # yes or no
     errorScore: int
     correctScore: int
@@ -241,24 +242,46 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
     if podium is None:
         return []
     else:
-        return [
-            PodiumStep(
-                name=s["solver"],
-                competing="yes",  # TODO
-                errorScore=s["error_score"],
-                correctScore=s["correctly_solved_score"],
-                CPUScore=s["cpu_time_score"],
-                WallScore=s["wallclock_time_score"],
-                solved=s["solved"],
-                solved_sat=s["solved_sat"],
-                solved_unsat=s["solved_unsat"],
-                unsolved=s["unsolved"],
-                abstained=s["abstained"],
-                timeout=s["timeout"],
-                memout=s["memout"],
+        baseMap = { #TODO: remove hardcode for SMT-COMP 2025
+            "Bitwuzla-MachBV": "Bitwuzla-MachBV-base",
+            "Z3-Inc-Z3++": "Z3-Inc-Z3++-base",
+            "Z3-Noodler-Mocha": "Z3-Noodler-Mocha-base",
+            "Z3-Owl": "Z3-Owl-base",
+            "Z3-Noodler": "Z3-Noodler",
+            "z3siri": "z3siri-base",
+            "Z3-alpha": "Z3-alpha-base"
+        }
+        podiums = []
+        for s in podium:
+            cscore = s["correctly_solved_score"]
+            delta = 0
+            if baseMap.get(s["solver"], "") != "":
+                for sprime in podium: 
+                    if sprime["solver"] == baseMap.get(s["solver"], ""): 
+                        delta = cscore - sprime["correctly_solved_score"]
+                        break
+
+            podiums.append(
+                PodiumStep(
+                    name=s["solver"],
+                    baseSolver=baseMap.get(s["solver"], ""),
+                    deltaBaseSolver=delta,
+                    competing="yes",  # TODO: Update this if needed
+                    errorScore=s["error_score"],
+                    correctScore=s["correctly_solved_score"],
+                    CPUScore=s["cpu_time_score"],
+                    WallScore=s["wallclock_time_score"],
+                    solved=s["solved"],
+                    solved_sat=s["solved_sat"],
+                    solved_unsat=s["solved_unsat"],
+                    unsolved=s["unsolved"],
+                    abstained=s["abstained"],
+                    timeout=s["timeout"],
+                    memout=s["memout"],
+               )
             )
-            for s in podium
-        ]
+        return podiums
+
 
 
 def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track) -> PodiumDivision:
@@ -768,7 +791,6 @@ def largest_contribution(
 
 
 def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, track: defs.Track) -> None:
-
     page_suffix = page_track_suffix(track)
 
     dst = config.web_results
