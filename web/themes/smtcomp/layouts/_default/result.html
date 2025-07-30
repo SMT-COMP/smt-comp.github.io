@@ -98,7 +98,7 @@
       {{ end }}
     </td>
     <td class="right">{{ $solver.correctScore }} 
-        <i>
+        <span style="font-size: 0.75em">
             {{ if not (eq $solver.baseSolver "") }}
             {{ if not (lt $solver.deltaBaseSolver 0) }}
                 (+{{ $solver.deltaBaseSolver }})
@@ -106,7 +106,7 @@
                 (-{{ $solver.deltaBaseSolver }})
             {{ end }}
         {{ end }}
-        </i>
+        </span>
     </td>
     <td class="right">{{ $solver.CPUScore }}</td>
     <td class="right">{{ $solver.WallScore }}</td>
@@ -122,6 +122,9 @@
 </tr>
 {{ end }}
 </table>
+<span style="font-size: 0.75em">
+    (+/- n): for derived solvers: correct score increment over base solver   
+</span>
 {{ end }}
 {{ end }}
 
