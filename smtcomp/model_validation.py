@@ -89,7 +89,7 @@ def check_result_locally(
     rid: results.RunId,
     r: results.Run,
     model: str,
-    scramble_mapping: dict[int, int]
+    scramble_mapping: dict[int, int],
 ) -> defs.Validation:
     d = resultdir / "model_validation_results"
     file_cache = d / f"{str(r.file)}.json.gz"
@@ -135,9 +135,8 @@ def check_all_results_locally(
 ) -> list[tuple[results.RunId, results.Run, defs.Validation]]:
     benchmark_dir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, defs.Track.ModelValidation)
     mapping_csv = benchmark_dir / smtcomp.scramble_benchmarks.csv_original_id_name
-    assert(mapping_csv.exists())
-    scramble_mapping = dict(
-        pl.read_csv(mapping_csv).select("file", "scramble_id").iter_rows())
+    assert mapping_csv.exists()
+    scramble_mapping = dict(pl.read_csv(mapping_csv).select("file", "scramble_id").iter_rows())
 
     raise_stack_limit()
     l = list(
@@ -152,7 +151,14 @@ def check_all_results_locally(
     return list(
         progress.track(
             executor.imap_unordered(
-                (lambda v: (v[0], v[1], check_result_locally(config, v[3], cachedir, v[0], v[1], v[2], scramble_mapping))), l
+                (
+                    lambda v: (
+                        v[0],
+                        v[1],
+                        check_result_locally(config, v[3], cachedir, v[0], v[1], v[2], scramble_mapping),
+                    )
+                ),
+                l,
             ),
             description="Model validation",
             total=len(l),

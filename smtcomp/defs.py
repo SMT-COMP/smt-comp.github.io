@@ -1504,18 +1504,18 @@ class Config:
             "logic": int(Logic.UFDTNIA),
             "family": "20241211-verus/verismo",
             "name": "tspec__math__nonlinearverismo_tspec.math.nonlinear.proof_mul_pos_neg_rel._01.smt2",
-        }, # reported by Mathias Preiner as syntactically invalid
+        },  # reported by Mathias Preiner as syntactically invalid
         {
             "logic": int(Logic.UFDTNIA),
             "family": "20241211-verus/verismo",
             "name": "tspec__math__nonlinearverismo_tspec.math.nonlinear.proof_div_pos_neg_rel._01.smt2",
-        }  # reported by Mathias Preiner as syntactically invalid
+        },  # reported by Mathias Preiner as syntactically invalid
     ]
     """
     Benchmarks to remove before selection
     """
 
-    removed_results = [ ]
+    removed_results = []
     """
     Benchmarks to remove after running the solvers. Can be used when the selection has already been done.
     """
@@ -1543,7 +1543,7 @@ class Config:
 
     @functools.cached_property
     def previous_years(self) -> list[int]:
-        return list(range(self.oldest_previous_results, self.current_year-1))
+        return list(range(self.oldest_previous_results, self.current_year - 1))
 
     @functools.cached_property
     def previous_results(self) -> list[tuple[int, Path]]:

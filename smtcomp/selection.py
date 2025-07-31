@@ -89,7 +89,7 @@ def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFram
             "result": int(defs.Status.Unknown),
             "current_result": int(defs.Status.Unknown),
         },
-    ).with_columns(new=pl.col("family").str.starts_with(str(config.current_year-1)))
+    ).with_columns(new=pl.col("family").str.starts_with(str(config.current_year - 1)))
 
     if config.use_previous_results_for_status:
         with_info = with_info.with_columns(

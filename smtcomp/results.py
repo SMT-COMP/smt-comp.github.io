@@ -153,13 +153,13 @@ def convert_run(r: ET.Element) -> Run | None:
         memory_B=memory_B,
         answer=answer,
         walltime_s=walltime_s,
-        benchmark_yml=benchmark_yml
+        benchmark_yml=benchmark_yml,
     )
 
 
 def parse_xml(file: Path) -> Results:
     result = ET.fromstring(read_cin(file))
-    runs = list(filter(lambda r: r is not None,  map(convert_run, result.iterfind("run"))))
+    runs = list(filter(lambda r: r is not None, map(convert_run, result.iterfind("run"))))
     return Results(runid=RunId.unmangle(result.attrib["name"]), options=result.attrib["options"], runs=runs)
 
 
@@ -469,9 +469,8 @@ def helper_get_results(
         )
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
-        lf = lf.drop("logic", "participation") # Hack for participation 0 bug move "participation" to on= for 2025,
+        lf = lf.drop("logic", "participation")  # Hack for participation 0 bug move "participation" to on= for 2025,
         lf = lf.drop("benchmark_yml", "unsat_core")
-
 
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
@@ -491,13 +490,7 @@ def helper_get_results(
         selected,
         lf,
         on=["file", "solver", "track"],
-        defaults={
-            "answer": -1,
-            "cputime_s": 0,
-            "memory_B": 0,
-            "walltime_s": 0,
-            "nb_answers": -1
-        },
+        defaults={"answer": -1, "cputime_s": 0, "memory_B": 0, "walltime_s": 0, "nb_answers": -1},
     )
 
     return selected, selection
