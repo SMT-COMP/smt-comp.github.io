@@ -1458,8 +1458,8 @@ class Config:
     cpuCores_test = 2
     cpuCores_parallel = 128
     cpuCores_parallel_test = 8
-    unsatcore_validation_timelimit_s = 60 * 5
-    unsatcore_validation_memlimit_M = 1024 * 30
+    unsatcore_validation_timelimit_s = 60 * 20
+    unsatcore_validation_memlimit_M = 1024 * 15
     unsatcore_validation_cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
