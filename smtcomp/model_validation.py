@@ -70,6 +70,7 @@ def check_locally(config: defs.Config, smt2_file: Path, model: str) -> defs.Vali
             elif (
                 r.stderr.endswith(b"E:id-def-conflict\n")
                 or r.stderr.endswith(b"E:parsing-error\n")
+                or r.stderr.endswith(b"E:lexing-error\n")
                 or r.stderr.endswith(b"E:unbound-id\n")
                 or r.stderr.endswith(b"E:undefined-constant\n")
             ):
