@@ -1028,7 +1028,7 @@ def check_model_locally(
         t2 = t.add(solver)
         for rid, r, result in rs:
             stderr = result.stderr.strip().replace("\n", ", ")
-            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+            basename = r.benchmark_yml
             match result.status:
                 case defs.Answer.Unsat:
                     status = "[red]unsat[/red]"
@@ -1053,8 +1053,8 @@ def check_model_locally(
             dst = outdir / f"{rid.solver}.{rid.participation}"
             dst.mkdir(parents=True, exist_ok=True)
             filedir = benchmark_files_dir(cachedir, rid.track)
-            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
-            basename_model = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="rsmt2")
+            basename = r.benchmark_yml
+            basename_model = r.benchmark_yml.replace(".smt2", ".rsmt2")
             smt2_file = filedir / str(r.logic) / basename
             (dst / basename).unlink(missing_ok=True)
             (dst / basename).symlink_to(smt2_file.absolute())

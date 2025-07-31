@@ -10,6 +10,7 @@ from multiprocessing.pool import ThreadPool
 from rich.progress import Progress, TaskID
 from pydantic import BaseModel, RootModel, Field
 from typing import Union
+import polars as pl
 import pydantic
 from smtcomp.unpack import write_cin, read_cin
 
@@ -87,16 +88,19 @@ def check_result_locally(
     rid: results.RunId,
     r: results.Run,
     model: str,
+    scramble_mapping: dict[int, int]
 ) -> defs.Validation:
     d = resultdir / "model_validation_results"
-    file_cache = d / f"{str(r.scramble_id)}.json.gz"
+    file_cache = d / f"{str(r.file)}.json.gz"
+    scramble_id = scramble_mapping[r.file]
+
     if file_cache.is_file():
         return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
     else:
         match r.answer:
             case defs.Answer.Sat:
                 filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
-                basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+                basename = smtcomp.scramble_benchmarks.scramble_basename(scramble_id)
                 smt2_file = filedir / str(r.logic) / basename
                 val = check_locally(config, smt2_file, model)
             case _:
@@ -115,9 +119,7 @@ def prepare_model_validation_tasks(
             (
                 r.runid,
                 b,
-                logfiles.get_output(
-                    r.runid, smtcomp.scramble_benchmarks.scramble_basename(b.scramble_id, suffix="yml")
-                ),
+                logfiles.get_output(r.runid, b.benchmark_yml),
                 resultdir,
             )
             for r in results.parse_results(resultdir)
@@ -130,6 +132,12 @@ def prepare_model_validation_tasks(
 def check_all_results_locally(
     config: defs.Config, cachedir: Path, resultdir: Path, executor: ThreadPool, progress: Progress
 ) -> list[tuple[results.RunId, results.Run, defs.Validation]]:
+    benchmark_dir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, defs.Track.ModelValidation)
+    mapping_csv = benchmark_dir / smtcomp.scramble_benchmarks.csv_original_id_name
+    assert(mapping_csv.exists())
+    scramble_mapping = dict(
+        pl.read_csv(mapping_csv).select("file", "scramble_id").iter_rows())
+
     raise_stack_limit()
     l = list(
         itertools.chain.from_iterable(
@@ -143,7 +151,7 @@ def check_all_results_locally(
     return list(
         progress.track(
             executor.imap_unordered(
-                (lambda v: (v[0], v[1], check_result_locally(config, v[3], cachedir, v[0], v[1], v[2]))), l
+                (lambda v: (v[0], v[1], check_result_locally(config, v[3], cachedir, v[0], v[1], v[2], scramble_mapping))), l
             ),
             description="Model validation",
             total=len(l),
