@@ -451,7 +451,7 @@ def helper_get_results(
     The second value returned is the selection
 
     """
-    if len(results) == 0:
+    if results is None or len(results) == 0:
         lf = (
             pl.read_ipc(config.cached_current_results[track])
             .lazy()
@@ -468,7 +468,8 @@ def helper_get_results(
         )
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
-        lf = lf.drop("benchmark_yml")
+        lf = lf.drop("logic", "participation") # Hack for participation 0 bug move "participation" to on= for 2025,
+        lf = lf.drop("benchmark_yml", "unsat_core")
 
 
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
@@ -487,15 +488,14 @@ def helper_get_results(
 
     selected = add_columns(
         selected,
-        lf.drop("logic", "participation"),  # Hack for participation 0 bug move "participation" to on= for 2025
+        lf,
         on=["file", "solver", "track"],
         defaults={
             "answer": -1,
             "cputime_s": 0,
             "memory_B": 0,
             "walltime_s": 0,
-            "nb_answers": -1,
-            "unsat_core": [],
+            "nb_answers": -1
         },
     )
 
