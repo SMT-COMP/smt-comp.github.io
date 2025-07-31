@@ -348,9 +348,9 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
     return lf.with_columns(solver=pl.lit(r.runid.solver), participation=r.runid.participation, track=int(r.runid.track))
 
 
-def parse_to_pl(file: Path) -> pl.LazyFrame:
+def parse_to_pl(file: Path, no_cache: bool) -> pl.LazyFrame:
     feather = file.with_suffix(".feather")
-    if feather.exists():
+    if not no_cache and feather.exists():
         return pl.read_ipc(feather).lazy()
 
     with LogFile(file.parent) as logfiles:
@@ -384,7 +384,7 @@ def parse_mapping(p: Path) -> pl.LazyFrame:
 json_mapping_name = "mapping.json"
 
 
-def parse_dir(dir: Path) -> pl.LazyFrame:
+def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
     """
     output columns: solver, participation, track, basename, cputime_s, memory_B, status, walltime_s, file
 
@@ -398,7 +398,7 @@ def parse_dir(dir: Path) -> pl.LazyFrame:
     l = list(dir.glob("**/*.xml.bz2"))
     if len(l) == 0:
         raise (ValueError(f"No results in the directory {dir!s}"))
-    l_parsed = list(track(map(parse_to_pl, l), total=len(l)))
+    l_parsed = list(track((parse_to_pl(f, no_cache) for f in l), total=len(l)))
     results = pl.concat(l_parsed)
 
     ucvr = dir / "../unsat_core_validation_results" / "parsed.feather"
