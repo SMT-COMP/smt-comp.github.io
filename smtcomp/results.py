@@ -344,7 +344,8 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
         d["logic"] = int(d["logic"])
         return d
 
-    lf = pl.LazyFrame(map(convert, r.runs))
+    # compute the list eagerly to avoid problems with 'infer_schema_length'
+    lf = pl.LazyFrame(list(map(convert, r.runs)))
     return lf.with_columns(solver=pl.lit(r.runid.solver), participation=r.runid.participation, track=int(r.runid.track))
 
 
