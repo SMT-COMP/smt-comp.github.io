@@ -186,10 +186,7 @@ def generate_benchexec(
 
 
 @app.command(rich_help_panel=benchexec_panel)
-def convert_benchexec_results(
-    results: Path,
-    no_cache: bool = False
-) -> None:
+def convert_benchexec_results(results: Path, no_cache: bool = False) -> None:
     """
     Load benchexec results and aggregates results in feather format
     """

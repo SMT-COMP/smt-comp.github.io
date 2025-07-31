@@ -106,7 +106,9 @@ def generate_tool_modules(s: defs.Submission, cachedir: Path) -> None:
     generate_tool_module(s, cachedir, False)
 
 
-def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str, track: defs.Track, test: bool) -> None:
+def generate_xml(
+    config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str, track: defs.Track, test: bool
+) -> None:
     doc, tag, text = Doc().tagtext()
 
     doc.asis('<?xml version="1.0"?>')
