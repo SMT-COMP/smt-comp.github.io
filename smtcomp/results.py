@@ -428,7 +428,7 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
                 defaults={"sat": 0, "unsat": 0, "validation_attempted": False},
             )
             results = results.with_columns(
-                answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("sat") > pl.col("unsat")))
+                answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("sat") >= pl.col("unsat")))
                 .then(int(defs.Answer.UnsatCoreInvalidated))
                 .otherwise("answer")
             ).drop("sat", "unsat", "unsat_core")
