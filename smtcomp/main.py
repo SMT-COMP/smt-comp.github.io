@@ -188,12 +188,13 @@ def generate_benchexec(
 @app.command(rich_help_panel=benchexec_panel)
 def convert_benchexec_results(
     results: Path,
+    no_cache: bool = False
 ) -> None:
     """
     Load benchexec results and aggregates results in feather format
     """
 
-    lf = smtcomp.results.parse_dir(results)
+    lf = smtcomp.results.parse_dir(results, no_cache)
     lf.collect().write_ipc(results / "parsed.feather")
 
 
