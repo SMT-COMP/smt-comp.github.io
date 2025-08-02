@@ -103,7 +103,7 @@ def get_contacts(files: list[Path] = typer.Argument(None)) -> None:
     Find contact from submissions given as arguments
     """
     l = list(map(submission.read_submission_or_exit, files))
-    contacts = list(str(c) for c in itertools.chain.from_iterable([s.contacts for s in l]))
+    contacts = list(set((str(c) for c in itertools.chain.from_iterable([s.contacts for s in l if s.competitive]))))
     contacts.sort()
     print("\n".join(contacts))
 
@@ -166,6 +166,7 @@ def generate_benchexec(
     timelimit_s: int = defs.Config.timelimit_s,
     memlimit_M: int = defs.Config.memlimit_M,
     cpuCores: int = defs.Config.cpuCores,
+    test: bool = False,
 ) -> None:
     """
     Generate the benchexec file for the given submissions
@@ -180,31 +181,17 @@ def generate_benchexec(
     (cachedir / "tools").mkdir(parents=True, exist_ok=True)
     for file in track(files):
         s = submission.read(str(file))
-        smtcomp.benchexec.generate(s, cachedir, config)
+        smtcomp.benchexec.generate(s, cachedir, config, test)
         smtcomp.benchexec.generate_unsatcore_validation(s, cachedir, config)
 
 
 @app.command(rich_help_panel=benchexec_panel)
-def convert_benchexec_results(
-    results: Path,
-) -> None:
+def convert_benchexec_results(results: Path, no_cache: bool = False) -> None:
     """
     Load benchexec results and aggregates results in feather format
     """
 
-    lf = smtcomp.results.parse_dir(results)
-    lf.collect().write_ipc(results / "parsed.feather")
-
-
-@app.command(rich_help_panel=benchexec_panel)
-def convert_aws_results(
-    results: Path,
-) -> None:
-    """
-    Load aws results in cvs format and aggregates results in feather format
-    """
-
-    lf = smtcomp.results.parse_aws_csv(results)
+    lf = smtcomp.results.parse_dir(results, no_cache)
     lf.collect().write_ipc(results / "parsed.feather")
 
 
@@ -814,11 +801,14 @@ def scramble_aws(
     dstdir: Path,
     scrambler: Path,
     max_workers: int = 8,
+    test: bool = False,
 ) -> None:
     """
     Show statistics on the benchmarks selected for aws tracks
     """
     config = defs.Config(data)
+    if test:
+        config.seed = 1
 
     smtcomp.scramble_benchmarks.select_and_scramble_aws(config, srcdir, dstdir, scrambler, max_workers)
 
@@ -1035,7 +1025,7 @@ def check_model_locally(
         t2 = t.add(solver)
         for rid, r, result in rs:
             stderr = result.stderr.strip().replace("\n", ", ")
-            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+            basename = r.benchmark_yml
             match result.status:
                 case defs.Answer.Unsat:
                     status = "[red]unsat[/red]"
@@ -1060,8 +1050,8 @@ def check_model_locally(
             dst = outdir / f"{rid.solver}.{rid.participation}"
             dst.mkdir(parents=True, exist_ok=True)
             filedir = benchmark_files_dir(cachedir, rid.track)
-            basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
-            basename_model = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="rsmt2")
+            basename = r.benchmark_yml
+            basename_model = r.benchmark_yml.replace(".smt2", ".rsmt2")
             smt2_file = filedir / str(r.logic) / basename
             (dst / basename).unlink(missing_ok=True)
             (dst / basename).symlink_to(smt2_file.absolute())

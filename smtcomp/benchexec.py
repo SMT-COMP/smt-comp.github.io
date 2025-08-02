@@ -24,8 +24,10 @@ def get_suffix(track: defs.Track) -> str:
             return "_unsatcorevalidation"
         case defs.Track.SingleQuery:
             return ""
-        case _:
-            raise ValueError("No Cloud or Parallel")
+        case defs.Track.Parallel:
+            return "_parallel"
+        case defs.Track.Cloud:
+            return "_cloud"
 
 
 def get_xml_name(s: defs.Submission, track: defs.Track, division: defs.Division) -> str:
@@ -44,8 +46,9 @@ class CmdTask(BaseModel):
     taskdirs: List[str]
 
 
-def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]) -> None:
-    ymlfile = benchmark.with_suffix(".yml")
+def generate_benchmark_yml(
+    ymlfile: Path, benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]
+) -> None:
     with ymlfile.open("w") as f:
         f.write("format_version: '2.0'\n\n")
 
@@ -103,7 +106,9 @@ def generate_tool_modules(s: defs.Submission, cachedir: Path) -> None:
     generate_tool_module(s, cachedir, False)
 
 
-def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str) -> None:
+def generate_xml(
+    config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_module_name: str, track: defs.Track, test: bool
+) -> None:
     doc, tag, text = Doc().tagtext()
 
     doc.asis('<?xml version="1.0"?>')
@@ -111,16 +116,28 @@ def generate_xml(config: defs.Config, cmdtasks: List[CmdTask], file: Path, tool_
         '<!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 2.3//EN"'
         ' "https://www.sosy-lab.org/benchexec/benchmark-2.2.3dtd">'
     )
+
+    timelimit = config.timelimit_s_test if test else config.timelimit_s
+    cpuCores = config.cpuCores_parallel if track == defs.Track.Parallel else config.cpuCores
+    memlimit = config.memlimit_M_parallel if track == defs.Track.Parallel else config.memlimit_M
+
+    if test:
+        cpuCores = config.cpuCores_parallel_test if track == defs.Track.Parallel else config.cpuCores_test
+        memlimit = config.memlimit_M_parallel_test if track == defs.Track.Parallel else config.memlimit_M_test
     with tag(
         "benchmark",
         tool=f"tools.{tool_module_name}",
-        timelimit=f"{config.timelimit_s * config.cpuCores}s",
-        walltimelimit=f"{config.timelimit_s}s",
-        memlimit=f"{config.memlimit_M} MB",
-        cpuCores=f"{config.cpuCores}",
+        timelimit=f"{timelimit * cpuCores}s",
+        walltimelimit=f"{timelimit}s",
+        memlimit=f"{memlimit} MB",
+        cpuCores=f"{cpuCores}",
     ):
-        with tag("require", cpuModel="Intel Xeon E3-1230 v5 @ 3.40 GHz"):
-            text()
+
+        if track != defs.Track.Parallel:
+            # we run the test jobs on different machines (main machines are used)
+            used_cpuModel = "Intel Core i7" if test else "Intel Xeon E3-1230 v5 @ 3.40 GHz"
+            with tag("require", cpuModel=used_cpuModel):
+                text()
 
         with tag("resultfiles"):
             text("**/error.log")
@@ -222,7 +239,7 @@ def cmdtask_for_submission(
     return res
 
 
-def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
+def generate(s: defs.Submission, cachedir: Path, config: defs.Config, test: bool) -> None:
     generate_tool_modules(s, cachedir)
 
     dst = cachedir / "benchmarks"
@@ -241,7 +258,6 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
         # cloud and parallel tracks are not executed via benchexec
         if target_track in (
             defs.Track.Cloud,
-            defs.Track.Parallel,
             defs.Track.UnsatCoreValidation,
             defs.Track.ProofExhibition,
         ):
@@ -258,6 +274,8 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
                     cmdtasks=res,
                     file=file,
                     tool_module_name=tool_module_name(s, target_track == defs.Track.Incremental),
+                    track=target_track,
+                    test=test,
                 )
                 generated_divisions.append(division)
 
@@ -273,9 +291,11 @@ def generate(s: defs.Submission, cachedir: Path, config: defs.Config) -> None:
             out("set -x")
             out(f"for DIVISION in {division_list}")
             out("    do\n")
-            out(f'    TARGET="../final_results{track_suffix}/$DIVISION/{tool}"')
+            out(f'    TARGET="../results/results{track_suffix}/$DIVISION/{tool}"')
             out("    rm -rf $TARGET")
             out("    mkdir -p $TARGET")
+
+            extra_args = ""
             out(
                 f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}{track_suffix}_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess -o $TARGET"
             )
@@ -319,6 +339,6 @@ def generate_unsatcore_validation(s: defs.Submission, cachedir: Path, config: de
         out("    rm -rf $TARGET")
         out("    mkdir -p $TARGET")
         out(
-            f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}_unsatcorevalidation_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess --tryLessMemory -o $TARGET"
+            f"    PYTHONPATH=$(pwd) benchexec/contrib/vcloud-benchmark.py run_definitions/{tool}_unsatcorevalidation_$DIVISION.xml --read-only-dir / --overlay-dir . --overlay-dir /home --vcloudClientHeap 500 --vcloudPriority URGENT --cgroupAccess -o $TARGET"
         )
         out("done")

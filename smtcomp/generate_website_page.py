@@ -94,6 +94,8 @@ float_6dig = Annotated[
 
 class PodiumStep(BaseModel):
     name: str
+    baseSolver: str
+    deltaBaseSolver: int
     competing: str  # yes or no
     errorScore: int
     correctScore: int
@@ -241,10 +243,23 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
     if podium is None:
         return []
     else:
-        return [
-            PodiumStep(
+        podiums = []
+        base_solvers = []
+        for s in podium:
+            cscore = s["correctly_solved_score"]
+            delta = 0
+            derived_solver = defs.baseMapSMTLIB2025.get(s["solver"], "")
+            if derived_solver != "":
+                for sprime in podium:
+                    if sprime["solver"] == defs.baseMapSMTLIB2025.get(s["solver"], ""):
+                        delta = cscore - sprime["correctly_solved_score"]
+                        break
+
+            ps = PodiumStep(
                 name=s["solver"],
-                competing="yes",  # TODO
+                baseSolver=derived_solver,
+                deltaBaseSolver=delta,
+                competing="no" if "-base" in s["solver"] else "yes",  # TODO: establish s["competing"]
                 errorScore=s["error_score"],
                 correctScore=s["correctly_solved_score"],
                 CPUScore=s["cpu_time_score"],
@@ -257,8 +272,13 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
                 timeout=s["timeout"],
                 memout=s["memout"],
             )
-            for s in podium
-        ]
+
+            if "-base" in s["solver"]:
+                base_solvers.append(ps)
+            else:
+                podiums.append(ps)
+
+        return podiums + base_solvers
 
 
 def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track) -> PodiumDivision:
@@ -768,7 +788,6 @@ def largest_contribution(
 
 
 def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, track: defs.Track) -> None:
-
     page_suffix = page_track_suffix(track)
 
     dst = config.web_results

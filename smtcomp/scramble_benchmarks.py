@@ -58,34 +58,40 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
         i = "incremental"
     else:
         i = "non-incremental"
-    fsrc = (
+    orig_path = (
         srcdir.joinpath(i)
         .joinpath(str(defs.Logic.of_int(fdict["logic"])))
         .joinpath(Path(fdict["family"]))
         .joinpath(fdict["name"])
     )
     dstdir = dstdir.joinpath(str(defs.Logic.of_int(fdict["logic"])))
-    fdst = dstdir.joinpath(scramble_basename(fdict["scramble_id"]))
+    scrambled_path = dstdir.joinpath(scramble_basename(fdict["scramble_id"]))
     dstdir.mkdir(parents=True, exist_ok=True)
 
     if incremental:
         subprocess.run(
             ["grep", "-o", "(set-info :status \\(sat\\|unsat\\|unknown\\))"],
-            stdin=fsrc.open("r"),
-            stdout=fdst.open("w"),
+            stdin=orig_path.open("r"),
+            stdout=scrambled_path.open("w"),
         )
-        subprocess.run(["sed", "-i", "s/(set-info :status \\(.*\\))/\\1/", str(fdst)])
-        with fdst.open("a") as dstfile:
+        subprocess.run(["sed", "-i", "s/(set-info :status \\(.*\\))/\\1/", str(scrambled_path)])
+        with scrambled_path.open("a") as dstfile:
             dstfile.write("--- BENCHMARK BEGINS HERE ---\n")
-        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
+        subprocess.run(args, stdin=orig_path.open("r"), stdout=scrambled_path.open("a"))
     else:
         try:
-            subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"), check=True)
+            subprocess.run(args, stdin=orig_path.open("r"), stdout=scrambled_path.open("w"), check=True)
         except subprocess.CalledProcessError as e:
-            print(f"[red]Warning[/red] scrambler crashed on {fsrc}")
+            print(f"[red]Warning[/red] scrambler crashed on {orig_path}")
 
-    expected = get_expected_result(fsrc) if not incremental else None
-    generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
+    expected = get_expected_result(orig_path) if not incremental else None
+
+    mangled_name = "_".join(
+        [str(fdict["file"]), str(defs.Logic.of_int(fdict["logic"])), fdict["family"].replace("/", "__"), fdict["name"]]
+    )
+    yaml_dst = dstdir.joinpath(mangled_name).with_suffix(".yml")
+
+    generate_benchmark_yml(yaml_dst, scrambled_path, expected, orig_path.relative_to(srcdir))
 
 
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
@@ -177,7 +183,7 @@ def select_and_scramble_aws(
     all = intersect(solvers, selected, on=["track", "logic"]).collect().lazy()
 
     for name, track in [("cloud", defs.Track.Cloud), ("parallel", defs.Track.Parallel)]:
-        dst = dstdir / name / "non-incremental"
+        dst = benchmark_files_dir(dstdir, track)
         dst.mkdir(parents=True, exist_ok=True)
 
         scramble_lazyframe(

@@ -89,7 +89,7 @@ def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFram
             "result": int(defs.Status.Unknown),
             "current_result": int(defs.Status.Unknown),
         },
-    ).with_columns(new=pl.col("family").str.starts_with(str(config.current_year)))
+    ).with_columns(new=pl.col("family").str.starts_with(str(config.current_year - 1)))
 
     if config.use_previous_results_for_status:
         with_info = with_info.with_columns(
@@ -174,6 +174,8 @@ def helper_compute_non_incremental(config: defs.Config, track: SimpleNonIncremen
     Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
     """
     benchmarks = pl.read_ipc(config.cached_non_incremental_benchmarks).lazy()
+    benchmarks = benchmarks.join(removed_benchmarks(config), on=["logic", "family", "name"], how="anti")
+
     results = pl.read_ipc(config.cached_previous_results).lazy()
 
     match track:
@@ -198,7 +200,9 @@ def helper_compute_incremental(config: defs.Config) -> pl.LazyFrame:
     """
     Returned columns: file (uniq id), logic, family,name, status, asserts nunmber, trivial, run (in previous year), new (benchmarks), selected
     """
-    benchmarks = pl.read_ipc(config.cached_incremental_benchmarks)
+    benchmarks = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
+    benchmarks = benchmarks.join(removed_benchmarks(config), on=["logic", "family", "name"], how="anti")
+
     results = pl.read_ipc(config.cached_previous_results)
     benchmarks_with_info = add_trivial_run_info(benchmarks.lazy(), results.lazy(), config)
     if config.invert_triviality:

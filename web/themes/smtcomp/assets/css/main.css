@@ -593,7 +593,7 @@ td.left {
 }
 
 td.non-competing-grey {
-  color: #707070;
+  color: gray;
   a {
     color: #808080;
   }
