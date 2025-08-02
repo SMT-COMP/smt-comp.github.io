@@ -1459,11 +1459,18 @@ class Results(BaseModel):
 ## Parameters that can change each year
 class Config:
     __next_id__: ClassVar[int] = 0
-    current_year = 2024
+    current_year = 2025
     oldest_previous_results = 2018
     timelimit_s = 60 * 20
+    timelimit_s_test = 60  # time limit for test runs
     memlimit_M = 1024 * 30
+    memlimit_M_test = 1024 * 8  # memory limit for test runs
+    memlimit_M_parallel = 1024 * 1000
+    memlimit_M_parallel_test = 1024 * 8
     cpuCores = 4
+    cpuCores_test = 2
+    cpuCores_parallel = 128
+    cpuCores_parallel_test = 8
     unsatcore_validation_timelimit_s = 60 * 5
     unsatcore_validation_memlimit_M = 1024 * 30
     unsatcore_validation_cpuCores = 4
@@ -1507,22 +1514,21 @@ class Config:
 
     removed_benchmarks = [
         {
-            "logic": int(Logic.QF_LIA),
-            "family": "20210219-Dartagnan/ConcurrencySafety-Main",
-            "name": "39_rand_lock_p0_vs-O0.smt2",
-        }  # scrambler segfault (perhaps stack limit)
+            "logic": int(Logic.UFDTNIA),
+            "family": "20241211-verus/verismo",
+            "name": "tspec__math__nonlinearverismo_tspec.math.nonlinear.proof_mul_pos_neg_rel._01.smt2",
+        },  # reported by Mathias Preiner as syntactically invalid
+        {
+            "logic": int(Logic.UFDTNIA),
+            "family": "20241211-verus/verismo",
+            "name": "tspec__math__nonlinearverismo_tspec.math.nonlinear.proof_div_pos_neg_rel._01.smt2",
+        },  # reported by Mathias Preiner as syntactically invalid
     ]
     """
-    Benchmarks to remove before selection (currently just for aws)
+    Benchmarks to remove before selection
     """
 
-    removed_results = [
-        {
-            "logic": int(Logic.QF_BV),
-            "family": "20230221-oisc-gurtner",
-            "name": "SLL-NESTED-8-32-sp-not-excluded.smt2",
-        }  # wrong status in SMTLIB
-    ]
+    removed_results = []
     """
     Benchmarks to remove after running the solvers. Can be used when the selection has already been done.
     """
@@ -1550,7 +1556,7 @@ class Config:
 
     @functools.cached_property
     def previous_years(self) -> list[int]:
-        return list(range(self.oldest_previous_results, self.current_year))
+        return list(range(self.oldest_previous_results, self.current_year - 1))
 
     @functools.cached_property
     def previous_results(self) -> list[tuple[int, Path]]:

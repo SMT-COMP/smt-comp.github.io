@@ -30,7 +30,7 @@ class RunId(BaseModel):
 
 
 class Run(BaseModel):
-    scramble_id: int
+    file: int
     logic: defs.Logic
     cputime_s: float
     """ example: 0.211880968s"""
@@ -40,6 +40,8 @@ class Run(BaseModel):
     """ example: true"""
     walltime_s: float
     """ example: 0.21279739192686975s"""
+    benchmark_yml: str
+    """ example: 467234_QF_ABVFP_20210211-Vector__RTOS_C_73c22d8f.yml"""
 
     # host: str
     # """ example: pontos07"""
@@ -103,25 +105,26 @@ def parse_result(s: str) -> defs.Answer:
         return defs.Answer.Timeout
     if s.startswith("DONE"):
         return defs.Answer.Incremental
-    if s.startswith("OUT OF MEMORY"):
+    if s.startswith("OUT OF MEMORY") or s.startswith("KILLED BY SIGNAL 9"):
         return defs.Answer.OOM
     match s:
         case "false":
             return defs.Answer.Unsat
         case "true":
             return defs.Answer.Sat
-        case "unknown":
+        case "unknown" | "ERROR":
             return defs.Answer.Unknown
-        case "OUT OF MEMORY" | "OUT OF JAVA MEMORY":
+        case "OUT OF MEMORY" | "OUT OF JAVA MEMORY" | "KILLED BY SIGNAL 9":
             return defs.Answer.OOM
         case _:
             raise ValueError(f"Unknown result value {s}")
 
 
-def convert_run(r: ET.Element) -> Run:
+def convert_run(r: ET.Element) -> Run | None:
     parts = r.attrib["name"].split("/")
     logic = defs.Logic(parts[-2])
-    scramble_id = smtcomp.scramble_benchmarks.unscramble_yml_basename(parts[-1])
+    benchmark_yml = parts[-1]
+    benchmark_file = int(benchmark_yml.split("_", 1)[0])
     cputime_s: Optional[float] = None
     memory_B: Optional[int] = None
     answer: Optional[defs.Answer] = None
@@ -140,21 +143,23 @@ def convert_run(r: ET.Element) -> Run:
                 walltime_s = parse_time(value)
 
     if cputime_s is None or memory_B is None or answer is None or walltime_s is None:
-        raise ValueError("xml of results doesn't contains some expected column")
+        print(f"xml of results doesn't contains some expected column for {r.attrib['name']}")
+        return None
 
     return Run(
-        scramble_id=scramble_id,
+        file=benchmark_file,
         logic=logic,
         cputime_s=cputime_s,
         memory_B=memory_B,
         answer=answer,
         walltime_s=walltime_s,
+        benchmark_yml=benchmark_yml,
     )
 
 
 def parse_xml(file: Path) -> Results:
     result = ET.fromstring(read_cin(file))
-    runs = list(map(convert_run, result.iterfind("run")))
+    runs = list(filter(lambda r: r is not None, map(convert_run, result.iterfind("run"))))
     return Results(runid=RunId.unmangle(result.attrib["name"]), options=result.attrib["options"], runs=runs)
 
 
@@ -223,17 +228,17 @@ class LogFile:
         return s[index:]
 
 
-def mv_get_cached_results(resultdir: Path, scramble_id: int) -> defs.Validation | None:
+def mv_get_cached_results(resultdir: Path, benchmark_id: int) -> defs.Validation | None:
     d = resultdir / "model_validation_results"
-    file_cache = d / f"{str(scramble_id)}.json.gz"
+    file_cache = d / f"{str(benchmark_id)}.json.gz"
     if file_cache.is_file():
         return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
     else:
         return None
 
 
-def mv_get_cached_answer(resultdir: Path, scramble_id: int) -> defs.Answer:
-    val = mv_get_cached_results(resultdir, scramble_id)
+def mv_get_cached_answer(resultdir: Path, benchmark_id: int) -> defs.Answer:
+    val = mv_get_cached_results(resultdir, benchmark_id)
     if val is None:
         return defs.Answer.ModelNotValidated
     else:
@@ -251,8 +256,8 @@ re_inc_sat_unsat = re.compile(r"^sat|unsat$", flags=re.MULTILINE)
 re_inc_time = re.compile(r"^time ([0-9.]*)$", flags=re.MULTILINE)
 
 
-def inc_get_nb_answers(logfiles: LogFile, runid: RunId, scramble_id: int) -> Tuple[defs.Answer, int, float | None]:
-    output = logfiles.get_output(runid, smtcomp.scramble_benchmarks.scramble_basename(scramble_id, suffix="yml"))
+def inc_get_nb_answers(logfiles: LogFile, runid: RunId, yml_name: str) -> Tuple[defs.Answer, int, float | None]:
+    output = logfiles.get_output(runid, yml_name)
 
     if re_inc_trace_executor_wrong_output.search(output):
         return (defs.Answer.IncrementalError, 0, None)
@@ -291,8 +296,8 @@ def get_unsat_core(output: str) -> UnsatCore | None:
     return items
 
 
-def uc_get_uc(logfiles: LogFile, runid: RunId, scramble_id: int) -> UnsatCore | None:
-    output = logfiles.get_output(runid, smtcomp.scramble_benchmarks.scramble_basename(scramble_id, suffix="yml"))
+def uc_get_uc(logfiles: LogFile, runid: RunId, yml_name: str) -> UnsatCore | None:
+    output = logfiles.get_output(runid, yml_name)
 
     return get_unsat_core(output)
 
@@ -301,10 +306,10 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
     def convert(a: Run) -> Dict[str, Any]:
         d = dict(a)
         if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
-            a.answer = mv_get_cached_answer(resultdir, a.scramble_id)
+            a.answer = mv_get_cached_answer(resultdir, a.file)
 
         if r.runid.track == defs.Track.Incremental:
-            answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.scramble_id)
+            answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.benchmark_yml)
             a.answer = answer
             d["nb_answers"] = nb_answers
             # TODO: Since we forgot to readd timestamp for some answer
@@ -313,10 +318,12 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             if last_time is not None:
                 d["walltime_s"] = last_time
                 d["cputime_s"] = last_time
+        else:
+            d["nb_answers"] = -1
 
         if r.runid.track == defs.Track.UnsatCore:
             if d["answer"] == defs.Answer.Unsat:
-                uc = uc_get_uc(logfiles, r.runid, a.scramble_id)
+                uc = uc_get_uc(logfiles, r.runid, a.benchmark_yml)
                 if uc is None:
                     d["answer"] = defs.Answer.Unknown
                     d["unsat_core"] = []
@@ -330,18 +337,21 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
             # TODO: Since we forgot to readd timestamp for each answer
             # we don't have the time of the last answer for now
             # So we take the total for now
+        else:
+            d["unsat_core"] = []
 
         d["answer"] = int(d["answer"])
         d["logic"] = int(d["logic"])
         return d
 
-    lf = pl.LazyFrame(map(convert, r.runs))
+    # compute the list eagerly to avoid problems with 'infer_schema_length'
+    lf = pl.LazyFrame(list(map(convert, r.runs)))
     return lf.with_columns(solver=pl.lit(r.runid.solver), participation=r.runid.participation, track=int(r.runid.track))
 
 
-def parse_to_pl(file: Path) -> pl.LazyFrame:
+def parse_to_pl(file: Path, no_cache: bool) -> pl.LazyFrame:
     feather = file.with_suffix(".feather")
-    if feather.exists():
+    if not no_cache and feather.exists():
         return pl.read_ipc(feather).lazy()
 
     with LogFile(file.parent) as logfiles:
@@ -375,9 +385,9 @@ def parse_mapping(p: Path) -> pl.LazyFrame:
 json_mapping_name = "mapping.json"
 
 
-def parse_dir(dir: Path) -> pl.LazyFrame:
+def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
     """
-    output columns: solver, participation, track, basename, cputime_s, memory_B, status, walltime_s, scramble_id, file
+    output columns: solver, participation, track, basename, cputime_s, memory_B, status, walltime_s, file
 
     The track stored in the results is *not* used for some decisions:
     - if a file mapping.json is present it used and the original_id.csv is not needed
@@ -386,27 +396,20 @@ def parse_dir(dir: Path) -> pl.LazyFrame:
 
     TODO: streamline the results directory hierarchy
     """
-    csv = dir / smtcomp.scramble_benchmarks.csv_original_id_name
-    json = dir / json_mapping_name
-    if not csv.exists() and not json.exists():
-        raise (ValueError(f"No file {csv!s} or {json!s} in the directory"))
-
-    if csv.exists():
-        lf = pl.read_csv(csv).lazy()
-        defaults: dict[str, Any] = {"file": -1}
-    else:
-        lf = parse_mapping(json)
-        defaults = {"unsat_core": [], "scramble_id_orig": -1}
-
     l = list(dir.glob("**/*.xml.bz2"))
     if len(l) == 0:
         raise (ValueError(f"No results in the directory {dir!s}"))
-    l_parsed = list(track(map(parse_to_pl, l), total=len(l)))
+    l_parsed = list(track((parse_to_pl(f, no_cache) for f in l), total=len(l)))
     results = pl.concat(l_parsed)
-    results = add_columns(results, lf, on=["scramble_id"], defaults=defaults)
 
     ucvr = dir / "../unsat_core_validation_results" / "parsed.feather"
     if (dir.name).endswith("unsatcore"):
+        json = dir / json_mapping_name
+        if not json.exists():
+            raise (ValueError(f"No file {json!s} in the directory"))
+        lf = parse_mapping(json)
+        defaults = {"unsat_core": [], "scramble_id_orig": -1}
+
         if ucvr.is_file():
             vr = pl.read_ipc(ucvr).lazy()
             vr = (
@@ -449,7 +452,7 @@ def helper_get_results(
     The second value returned is the selection
 
     """
-    if len(results) == 0:
+    if results is None or len(results) == 0:
         lf = (
             pl.read_ipc(config.cached_current_results[track])
             .lazy()
@@ -466,7 +469,8 @@ def helper_get_results(
         )
     else:
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
-        lf = lf.filter(track=int(track)).drop("scramble_id")
+        lf = lf.drop("logic", "participation")  # Hack for participation 0 bug move "participation" to on= for 2025,
+        lf = lf.drop("benchmark_yml", "unsat_core")
 
     selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
@@ -484,61 +488,9 @@ def helper_get_results(
 
     selected = add_columns(
         selected,
-        lf.drop("logic", "participation"),  # Hack for participation 0 bug move "participation" to on= for 2025
+        lf,
         on=["file", "solver", "track"],
-        defaults={
-            "answer": -1,
-            "cputime_s": 0,
-            "memory_B": 0,
-            "walltime_s": 0,
-            "nb_answers": 0,
-        },
+        defaults={"answer": -1, "cputime_s": 0, "memory_B": 0, "walltime_s": 0, "nb_answers": -1},
     )
 
     return selected, selection
-
-
-def parse_aws_csv(dir: Path) -> pl.LazyFrame:
-    """
-    output columns: solver, participation, track, cputime_s, memory_B, status, walltime_s, scramble_id, file, answer
-
-    Assumes that there is a file results.csv in the directory dir. The file
-    must contain columns: solver, scramble_id, logic, solver_time, file, track, solver_result
-    """
-
-    def aws_logic(logic: str) -> int:
-        return int(defs.Logic(logic))
-
-    def aws_track(track: str) -> int:
-        return int(defs.Track(track))
-
-    def aws_result(res: str) -> int:
-        match res:
-            case "unsat":
-                return int(defs.Answer.Unsat)
-            case "sat":
-                return int(defs.Answer.Sat)
-            case _:
-                return int(defs.Answer.Unknown)
-
-    csv = dir / "results.csv"
-    if not csv.exists():
-        raise (ValueError(f"results.csv missing in the directory"))
-    lf = pl.scan_csv(csv).select(
-        pl.col("solver"),
-        pl.col("scramble_id"),
-        pl.col("logic").apply(aws_logic, return_dtype=pl.Int64).alias("logic"),
-        pl.col("solver_time").alias("walltime_s"),
-        pl.col("file"),
-        pl.col("track").apply(aws_track, return_dtype=pl.Int32).alias("track"),
-        pl.col("solver_result").map_elements(aws_result, return_dtype=pl.Int64).alias("answer"),
-    )
-
-    results = lf.with_columns(
-        participation=pl.lit(0, dtype=pl.Int64),
-        memory_B=pl.lit(0, dtype=pl.Int64),
-        nb_answers=pl.lit(0, dtype=pl.Int64),
-        cputime_s=pl.lit(0, dtype=pl.Int64),
-    )
-
-    return results
