@@ -239,9 +239,8 @@ def store_results(
                 on=["file"],
                 defaults={"logic": -1, "family": "", "name": ""},
             )
-            .join(removed_results, on=["logic", "family", "name"], how="anti")
-            .sort("file", "solver")
-            .collect()
+            # .join(removed_results, on=["logic", "family", "name"], how="anti")
+            .sort("file", "solver").collect()
         )
         if len(df) > 0:
             results_track = defs.Results(
