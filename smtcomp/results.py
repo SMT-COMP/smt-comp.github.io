@@ -414,26 +414,6 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
         if uc_validation_results.is_file():
             # compute stats of validated and refuted cores
             vr = pl.read_ipc(uc_validation_results).lazy()
-            invalid = vr.filter(pl.col("answer") == int(defs.Answer.Sat)).collect()
-            rich_print_pl(
-                "Invalid results",
-                invalid,
-                Col("orig_file", "File"),
-                Col("file", "Validation File"),
-                Col("solver", "Solver", footer=""),
-                Col("unsat_core", "Unsat Core", footer=""),
-                Col(
-                    "logic",
-                    "Logcc",
-                    footer="",
-                    justify="left",
-                    style="cyan",
-                    no_wrap=True,
-                    custom=defs.Logic.name_of_int,
-                ),
-                Col("answer", "Answer"),
-            )
-
             vr = (
                 vr.select("answer", "unsat_core", file="orig_file")
                 .group_by("file", "unsat_core")
@@ -449,26 +429,6 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
                 vr,
                 on=["file", "unsat_core"],
                 defaults={"sat": 0, "unsat": 0, "validation_attempted": False},
-            )
-
-            invalid = results.filter((pl.col("sat") >= pl.col("unsat")) & pl.col("sat") > 0).collect()
-            rich_print_pl(
-                "Invalid results",
-                invalid,
-                Col("file", "File"),
-                Col("solver", "Solver", footer=""),
-                Col("unsat_core", "Unsat Core", footer=""),
-                Col(
-                    "logic",
-                    "Logcc",
-                    footer="",
-                    justify="left",
-                    style="cyan",
-                    no_wrap=True,
-                    custom=defs.Logic.name_of_int,
-                ),
-                Col("sat", "sat"),
-                Col("unsat", "unsat"),
             )
 
             # change answer according to the validity of the core
