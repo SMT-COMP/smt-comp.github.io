@@ -10,6 +10,7 @@ from collections import defaultdict
 import smtcomp.defs as defs
 import smtcomp.results as results
 import smtcomp.generate_website_page as page
+import smtcomp.submission as submission
 
 show_experimental = False
 
@@ -175,12 +176,10 @@ def add_logic(logics: dict[Tuple[str, defs.Track], bool], list: dict[str, int], 
         logics[v, track] = True
 
 
-def parse_pretty_names(solvers: defaultdict[str, info], pretty_names: Path) -> None:
-    with open(pretty_names, newline="") as input:
-        input = csv.DictReader(input)  # type: ignore
-
-        for row in input:
-            solvers[row["Solver Name"]].members = int(row["Members"])  # type: ignore
+def process_submissions(solvers: defaultdict[str, info], submissions: list[defs.Submission]) -> None:
+    for s in submissions:
+        if s.competitive:
+            solvers[s.name].members = len(s.contributors)
 
 
 def parse_experimental_division(solvers: Any, experimental_division: Path) -> dict[str, bool]:
@@ -194,11 +193,14 @@ def parse_experimental_division(solvers: Any, experimental_division: Path) -> di
 
 
 def generate_certificates(
-    website_results: Path, input_for_certificates: Path, pretty_names: Path, experimental_division: Path
+    website_results: Path, input_for_certificates: Path, submission_dir: Path, experimental_division: Path
 ) -> None:
     solvers: defaultdict[str, info] = defaultdict(info)
 
-    parse_pretty_names(solvers, pretty_names)
+    submissions = [submission.read_submission_or_exit(f)
+                   for f in submission_dir.glob("*.json")]
+
+    process_submissions(solvers, submissions)
     solvers["-"].members = 0
 
     # Remove experimental division
