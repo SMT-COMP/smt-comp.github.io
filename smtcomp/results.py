@@ -408,11 +408,7 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
     if json.exists():
         # add information about the original benchmark to each UC validation run
         lf = parse_mapping(json)
-        results = add_columns(
-            results.drop("unsat_core"),
-            lf,
-            on=["file"],
-            defaults={"unsat_core": [], "orig_file": -1})
+        results = add_columns(results.drop("unsat_core"), lf, on=["file"], defaults={"unsat_core": [], "orig_file": -1})
 
     if (dir.name).endswith("unsatcore"):
         if uc_validation_results.is_file():
@@ -435,7 +431,8 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
                     no_wrap=True,
                     custom=defs.Logic.name_of_int,
                 ),
-                Col("answer", "Answer"))
+                Col("answer", "Answer"),
+            )
 
             vr = (
                 vr.select("answer", "unsat_core", file="orig_file")
@@ -471,16 +468,18 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
                     custom=defs.Logic.name_of_int,
                 ),
                 Col("sat", "sat"),
-                Col("unsat", "unsat"))
+                Col("unsat", "unsat"),
+            )
 
             # change answer according to the validity of the core
             results = results.with_columns(
                 answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("sat") >= pl.col("unsat")))
                 .then(
                     pl.when(pl.col("sat") == 0)
-                    .then(int(defs.Answer.Unknown)) # sat == unsat == 0
-                    .otherwise(int(defs.Answer.UnsatCoreInvalidated)))
-                .otherwise("answer") # sat < unsat
+                    .then(int(defs.Answer.Unknown))  # sat == unsat == 0
+                    .otherwise(int(defs.Answer.UnsatCoreInvalidated))
+                )
+                .otherwise("answer")  # sat < unsat
             ).drop("sat", "unsat", "unsat_core")
         else:
             results = results.with_columns(validation_attempted=False)

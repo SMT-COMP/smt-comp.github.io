@@ -52,7 +52,7 @@ def generate_validation_file(
     scrambler: Path,
     scramble_mapping: dict[int, int],
     generated_files: defaultdict[int, dict[FrozenUnsatCore, Path]],
-    target_dir: Path
+    target_dir: Path,
 ) -> None:
     assert r.answer == defs.Answer.Unsat
 
@@ -101,13 +101,12 @@ def generate_validation_files(cachedir: Path, resultdir: Path, scrambler: Path) 
         rich.print(f"[green]Processing[/green] {logfile}")
         with results.LogFile(resultdir) as f:
             l = [
-                (r.runid, b)
-                for r in results.parse_results(resultdir)
-                for b in r.runs
-                if b.answer == defs.Answer.Unsat
+                (r.runid, b) for r in results.parse_results(resultdir) for b in r.runs if b.answer == defs.Answer.Unsat
             ]
             for runid, run in track(l):
-                generate_validation_file(cachedir, f, runid, run, scrambler, scramble_mapping, generated_files, target_dir)
+                generate_validation_file(
+                    cachedir, f, runid, run, scrambler, scramble_mapping, generated_files, target_dir
+                )
 
     with open(target_dir / "mapping.json", "w") as f:
         data = {k: [{"core": c, "file": str(f)} for (c, f) in v.items()] for (k, v) in generated_files.items()}
