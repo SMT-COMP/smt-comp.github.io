@@ -1061,9 +1061,10 @@ def check_model_locally(
 
 @app.command()
 def generate_unsatcore_validation_files(
-    cachedir: Path, scrambler: Path, resultdirs: list[Path], max_workers: int = 8
+    cachedir: Path, scrambler: Path, resultdir: Path
 ) -> None:
-    unsat_core_validation.generate_validation_files(cachedir, resultdirs, scrambler)
+
+    unsat_core_validation.generate_validation_files(cachedir, resultdir, scrambler)
 
 
 @app.command()

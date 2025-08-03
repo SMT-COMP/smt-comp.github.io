@@ -21,19 +21,18 @@ def scramble_basename(id: int, suffix: str = "smt2") -> str:
 
 
 def unscramble_yml_basename(basename: str) -> int:
-    # We are unscrabling scrambled%i.yml
-    assert basename[0:9] == "scrambled"
-    # assert basename[-4:] == ".yml"
+    # We are unscrabling {i}.yml or scrambled{i}_{core}.smt2
     if basename[-4:] == ".yml":
-        return int(basename[9:-4])
+        parts = basename.split("_")
+        file_id = parts[0]
+        return int(file_id)
     else:
+        assert basename[0:9] == "scrambled"
         assert basename[-5:] == ".smt2"
         s = basename[9:-5]
-        l = list(map(int, s.split("_")))
-        i = l[0]
-        if len(l) > 1:
-            i += l[1] * 10_000_000  # Hack for unsat_core_verification
-        return i
+        file_id, core = list(map(int, s.split("_")))
+        file_id += core * 10_000_000  # Hack for unsat_core_verification
+        return file_id
 
 
 def benchmark_files_dir(cachedir: Path, track: defs.Track) -> Path:

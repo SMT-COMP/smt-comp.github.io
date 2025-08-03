@@ -6,6 +6,7 @@ import smtcomp.results as results
 import smtcomp.scramble_benchmarks
 from rich.progress import track
 import rich
+import polars as pl
 import re
 from tempfile import NamedTemporaryFile
 from os.path import splitext
@@ -24,7 +25,6 @@ def get_unsat_core(output: str) -> UnsatCore | None:
     assert len(answers) <= 1, "Multiple unsat cores!"
 
     if not answers:
-        print("No unsat core")
         return None
 
     core = answers[0][0]
@@ -50,51 +50,65 @@ def generate_validation_file(
     rid: results.RunId,
     r: results.Run,
     scrambler: Path,
-    generated_files: defaultdict[Path, dict[FrozenUnsatCore, Path]],
+    scramble_mapping: dict[int, int],
+    generated_files: defaultdict[int, dict[FrozenUnsatCore, Path]],
+    target_dir: Path
 ) -> None:
     assert r.answer == defs.Answer.Unsat
 
     filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
-    basename = smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id)
+
+    scramble_id = scramble_mapping[r.file]
+    basename = smtcomp.scramble_benchmarks.scramble_basename(scramble_id)
     benchmark_name = Path(str(r.logic)) / basename
     smt2_file = filedir / benchmark_name
-    solver_output = logfiles.get_output(rid, smtcomp.scramble_benchmarks.scramble_basename(r.scramble_id, suffix="yml"))
 
+    solver_output = logfiles.get_output(rid, r.benchmark_yml)
     core = get_unsat_core(solver_output)
     if core is None:
+        print(f"No unsat core for {r.benchmark_yml}")
+        return
+
+    (target_dir / str(r.logic)).mkdir(parents=True, exist_ok=True)
+
+    frozen_core = tuple(core)
+    if frozen_core in generated_files[r.file]:
         return
 
     basename_file, basename_ext = splitext(basename)
-    (cachedir / "benchmarks" / "files_unsatcorevalidation" / str(r.logic)).mkdir(parents=True, exist_ok=True)
-    outdir = cachedir / "benchmarks" / "files_unsatcorevalidation"
-
-    frozen_core = tuple(core)
-    if frozen_core in generated_files[benchmark_name]:
-        return
-
-    core_id = len(generated_files[benchmark_name])
+    core_id = len(generated_files[r.file])
     validation_file = Path(str(r.logic)) / f"{basename_file}_{core_id}{basename_ext}"
-    validation_filepath = outdir / validation_file
+    validation_filepath = target_dir / validation_file
 
     create_validation_file(smt2_file, core, scrambler, validation_filepath)
-    generated_files[benchmark_name][frozen_core] = validation_file
+    generated_files[r.file][frozen_core] = validation_file
 
 
-def generate_validation_files(cachedir: Path, resultdirs: list[Path], scrambler: Path) -> None:
+def generate_validation_files(cachedir: Path, resultdir: Path, scrambler: Path) -> None:
+    benchmark_dir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, defs.Track.UnsatCore)
     target_dir = cachedir / "benchmarks" / "files_unsatcorevalidation"
     target_dir.mkdir(parents=True, exist_ok=True)
 
-    generated_files: defaultdict[Path, dict[FrozenUnsatCore, Path]] = defaultdict(dict)
+    mapping_csv = benchmark_dir / smtcomp.scramble_benchmarks.csv_original_id_name
+    assert mapping_csv.exists()
+    scramble_mapping = dict(pl.read_csv(mapping_csv).select("file", "scramble_id").iter_rows())
 
-    for resultdir in resultdirs:
-        rich.print(f"[green]Processing[/green] {resultdir}")
-        with results.LogFile(resultdir) as logfiles:
+    generated_files: defaultdict[int, dict[FrozenUnsatCore, Path]] = defaultdict(dict)
+
+    logfiles = list(resultdir.glob("**/*.logfiles.zip"))
+    for logfile in logfiles:
+        resultdir = logfile.parent
+        rich.print(f"[green]Processing[/green] {logfile}")
+        with results.LogFile(resultdir) as f:
             l = [
-                (r.runid, b) for r in results.parse_results(resultdir) for b in r.runs if b.answer == defs.Answer.Unsat
+                (r.runid, b)
+                for r in results.parse_results(resultdir)
+                for b in r.runs
+                if b.answer == defs.Answer.Unsat
             ]
-            for r in track(l):
-                generate_validation_file(cachedir, logfiles, r[0], r[1], scrambler, generated_files)
+            for runid, run in track(l):
+                generate_validation_file(cachedir, f, runid, run, scrambler, scramble_mapping, generated_files, target_dir)
 
     with open(target_dir / "mapping.json", "w") as f:
-        data = {str(k): [{"core": c, "file": str(f)} for (c, f) in v.items()] for (k, v) in generated_files.items()}
+        data = {k: [{"core": c, "file": str(f)} for (c, f) in v.items()] for (k, v) in generated_files.items()}
         json.dump(data, f)
