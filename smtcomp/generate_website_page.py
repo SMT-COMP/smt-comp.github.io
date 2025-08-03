@@ -230,7 +230,7 @@ class PodiumLargestContribution(BaseModel):
 
 
 class PodiumCrossDivision(RootModel):
-    root: PodiumLargestContribution | PodiumBiggestLead = Field(..., discriminator="recognition")
+    root: PodiumBestOverall | PodiumLargestContribution | PodiumBiggestLead = Field(..., discriminator="recognition")
 
 
 class Podium(RootModel):
