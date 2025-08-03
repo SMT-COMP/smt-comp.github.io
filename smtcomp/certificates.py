@@ -70,11 +70,13 @@ def withtrack(l: list[str], name: str, category: category) -> None:
 class overall:
 
     def __init__(self) -> None:
+        self.best = category()
         self.biggest = category()
         self.largest = category()
 
     def latex(self) -> str:
         l: list[str] = []
+        withtrack(l, "Best Overall", self.best)
         withtrack(l, "Biggest Lead", self.biggest)
         withtrack(l, "Largest Contribution", self.largest)
         return ", ".join(l)
@@ -83,7 +85,7 @@ class overall:
         return self.latex()
 
     def isNotEmpty(self) -> bool:
-        return self.biggest.isNotEmpty() and self.largest.isNotEmpty()
+        return self.best.isNotEmpty() or self.biggest.isNotEmpty() or self.largest.isNotEmpty()
 
 
 class info:
@@ -132,7 +134,7 @@ class info:
 def update(
     solvers: defaultdict[str, info],
     select: Callable[[info, str], None],
-    podium: page.PodiumDivision | page.PodiumBiggestLead | page.PodiumLargestContribution,
+    podium: page.PodiumDivision | page.PodiumBestOverall | page.PodiumBiggestLead | page.PodiumLargestContribution,
 ) -> None:
     if podium.track == defs.Track.SingleQuery:
         select(solvers[podium.winner_seq], "sq_seq")
@@ -223,6 +225,8 @@ def generate_certificates(
                 continue
             case page.PodiumCrossDivision():
                 match result.root:
+                    case page.PodiumBestOverall():
+                        update(solvers, (lambda x, k: x.overall.best.update(k, True)), result.root)
                     case page.PodiumBiggestLead():
                         update(solvers, (lambda x, k: x.overall.biggest.update(k, True)), result.root)
                     case page.PodiumLargestContribution():
