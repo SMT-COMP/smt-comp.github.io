@@ -124,7 +124,7 @@ def convert_run(r: ET.Element) -> Run | None:
     parts = r.attrib["name"].split("/")
     logic = defs.Logic(parts[-2])
     benchmark_yml = parts[-1]
-    benchmark_file = int(benchmark_yml.split("_", 1)[0])
+    benchmark_file = smtcomp.scramble_benchmarks.unscramble_yml_basename(benchmark_yml)
     cputime_s: Optional[float] = None
     memory_B: Optional[int] = None
     answer: Optional[defs.Answer] = None
@@ -367,17 +367,17 @@ def parse_mapping(p: Path) -> pl.LazyFrame:
     return pl.LazyFrame(
         (
             (
-                smtcomp.scramble_benchmarks.unscramble_yml_basename(Path(k).name),
+                int(file),
                 sorted(v["core"]),
                 smtcomp.scramble_benchmarks.unscramble_yml_basename(Path(v["file"]).name),
             )
-            for k, l in d.items()
-            for v in l
+            for file, cores in d.items()
+            for v in cores
         ),
         {
-            "scramble_id_orig": pl.Int64,
+            "orig_file": pl.Int64,
             "unsat_core": pl.List(pl.Int64),
-            "scramble_id": pl.Int64,
+            "file": pl.Int64,
         },
     )
 
@@ -402,35 +402,85 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
     l_parsed = list(track((parse_to_pl(f, no_cache) for f in l), total=len(l)))
     results = pl.concat(l_parsed)
 
-    ucvr = dir / "../unsat_core_validation_results" / "parsed.feather"
-    if (dir.name).endswith("unsatcore"):
-        json = dir / json_mapping_name
-        if not json.exists():
-            raise (ValueError(f"No file {json!s} in the directory"))
-        lf = parse_mapping(json)
-        defaults = {"unsat_core": [], "scramble_id_orig": -1}
+    uc_validation_results = dir / "../unsat_core_validation_results" / "parsed.feather"
 
-        if ucvr.is_file():
-            vr = pl.read_ipc(ucvr).lazy()
+    json = dir / json_mapping_name
+    if json.exists():
+        # add information about the original benchmark to each UC validation run
+        lf = parse_mapping(json)
+        results = add_columns(
+            results.drop("unsat_core"),
+            lf,
+            on=["file"],
+            defaults={"unsat_core": [], "orig_file": -1})
+
+    if (dir.name).endswith("unsatcore"):
+        if uc_validation_results.is_file():
+            # compute stats of validated and refuted cores
+            vr = pl.read_ipc(uc_validation_results).lazy()
+            invalid = vr.filter(pl.col("answer") == int(defs.Answer.Sat)).collect()
+            rich_print_pl(
+                "Invalid results",
+                invalid,
+                Col("orig_file", "File"),
+                Col("file", "Validation File"),
+                Col("solver", "Solver", footer=""),
+                Col("unsat_core", "Unsat Core", footer=""),
+                Col(
+                    "logic",
+                    "Logcc",
+                    footer="",
+                    justify="left",
+                    style="cyan",
+                    no_wrap=True,
+                    custom=defs.Logic.name_of_int,
+                ),
+                Col("answer", "Answer"))
+
             vr = (
-                vr.select("answer", "unsat_core", scramble_id="scramble_id_orig")
-                .group_by("scramble_id", "unsat_core")
+                vr.select("answer", "unsat_core", file="orig_file")
+                .group_by("file", "unsat_core")
                 .agg(
-                    sat=(pl.col("answer") == int(defs.Answer.Sat)).count(),
-                    unsat=(pl.col("answer") == int(defs.Answer.Unsat)).count(),
+                    sat=(pl.col("answer") == int(defs.Answer.Sat)).sum(),
+                    unsat=(pl.col("answer") == int(defs.Answer.Unsat)).sum(),
                     validation_attempted=True,
                 )
             )
+
             results = add_columns(
                 results,
                 vr,
-                on=["scramble_id", "unsat_core"],
+                on=["file", "unsat_core"],
                 defaults={"sat": 0, "unsat": 0, "validation_attempted": False},
             )
+
+            invalid = results.filter((pl.col("sat") >= pl.col("unsat")) & pl.col("sat") > 0).collect()
+            rich_print_pl(
+                "Invalid results",
+                invalid,
+                Col("file", "File"),
+                Col("solver", "Solver", footer=""),
+                Col("unsat_core", "Unsat Core", footer=""),
+                Col(
+                    "logic",
+                    "Logcc",
+                    footer="",
+                    justify="left",
+                    style="cyan",
+                    no_wrap=True,
+                    custom=defs.Logic.name_of_int,
+                ),
+                Col("sat", "sat"),
+                Col("unsat", "unsat"))
+
+            # change answer according to the validity of the core
             results = results.with_columns(
                 answer=pl.when((pl.col("answer") == int(defs.Answer.Unsat)) & (pl.col("sat") >= pl.col("unsat")))
-                .then(int(defs.Answer.UnsatCoreInvalidated))
-                .otherwise("answer")
+                .then(
+                    pl.when(pl.col("sat") == 0)
+                    .then(int(defs.Answer.Unknown)) # sat == unsat == 0
+                    .otherwise(int(defs.Answer.UnsatCoreInvalidated)))
+                .otherwise("answer") # sat < unsat
             ).drop("sat", "unsat", "unsat_core")
         else:
             results = results.with_columns(validation_attempted=False)
