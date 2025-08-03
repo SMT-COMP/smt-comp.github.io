@@ -1132,12 +1132,12 @@ def build_dolmen(data: Path) -> None:
 def generate_certificates(
     website_results: Path = Path("web/content/results"),
     input_for_certificates: Path = Path("data/latex-certificates/input_for_certificates.tex"),
-    pretty_names: Path = Path("data/latex-certificates/solvers_pretty_name.csv"),
+    submission_dir: Path = Path("submissions"),
     experimental_division: Path = Path("data/latex-certificates/experimental.csv"),
 ) -> None:
     """
     generates the input data for the tex certificate generator.
     """
     smtcomp.certificates.generate_certificates(
-        website_results, input_for_certificates, pretty_names, experimental_division
+        website_results, input_for_certificates, submission_dir, experimental_division
     )
