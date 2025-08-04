@@ -306,7 +306,7 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
     def convert(a: Run) -> Dict[str, Any]:
         d = dict(a)
         if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
-            a.answer = mv_get_cached_answer(resultdir, a.file)
+            d["answer"] = mv_get_cached_answer(resultdir, a.file)
 
         if r.runid.track == defs.Track.Incremental:
             answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.benchmark_yml)
