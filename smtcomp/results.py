@@ -449,7 +449,7 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
 
 def helper_get_results(
     config: defs.Config, results: List[Path], track: defs.Track
-) -> Tuple[pl.LazyFrame, pl.LazyFrame]:
+) -> pl.LazyFrame:
     """
     If results is empty use the one in data
 
@@ -481,7 +481,7 @@ def helper_get_results(
         lf = lf.drop("logic", "participation")  # Hack for participation 0 bug move "participation" to on= for 2025,
         lf = lf.drop("benchmark_yml", "unsat_core")
 
-    selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
+    selection = smtcomp.selection.helper(config, track).with_columns(track=int(track))
 
     selection = (
         selection.unique()
@@ -494,12 +494,26 @@ def helper_get_results(
     )
 
     selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
-
     selected = add_columns(
-        selected,
         lf,
+        selected,
         on=["file", "solver", "track"],
-        defaults={"answer": -1, "cputime_s": 0, "memory_B": 0, "walltime_s": 0, "nb_answers": -1},
+        defaults={
+            "asserts": -1,
+            "current_result": -1,
+            "division": -1,
+            "family": -1,
+            "logic": -1,
+            "name": '',
+            "new": False,
+            "participation": -1,
+            "result": -1,
+            "run": True,
+            "selected": True,
+            "status": -1,
+            "trivial": False,
+            "file_right": "",
+        },
     )
 
-    return selected, selection
+    return selected
