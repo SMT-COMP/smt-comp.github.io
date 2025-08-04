@@ -70,14 +70,14 @@ results-generation:
 	@poetry run smtcomp export-results-pages data SingleQuery
 	@echo "🚀 Generating results to web/content/results for ModelValidation"
 	@poetry run smtcomp export-results-pages data ModelValidation
-	@echo "🚀 Generating results to web/content/results for UnsatCore"
-	@poetry run smtcomp export-results-pages data UnsatCore
+	#@echo "🚀 Generating results to web/content/results for UnsatCore"
+	#@poetry run smtcomp export-results-pages data UnsatCore
 	@echo "🚀 Generating results to web/content/results for Incremental"
 	@poetry run smtcomp export-results-pages data Incremental
 	# @echo "🚀 Generating results to web/content/results for Cloud"
 	# @poetry run smtcomp export-results-pages data Cloud
-	# @echo "🚀 Generating results to web/content/results for Parallel"
-	# @poetry run smtcomp export-results-pages data Parallel
+	@echo "🚀 Generating results to web/content/results for Parallel"
+	@poetry run smtcomp export-results-pages data Parallel
 
 cache:
 	@echo "🚀 Generating cache"
