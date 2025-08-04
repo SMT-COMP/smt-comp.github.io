@@ -368,8 +368,7 @@ def sq_generate_datas(
 
     if for_division:
         lf_logics = [
-            results
-            .group_by("division", "logic")
+            results.group_by("division", "logic")
             .agg(n=pl.col("file").n_unique())
             .group_by("division")
             .agg(logics=pl.struct("logic", "n"))
@@ -703,9 +702,7 @@ def largest_contribution_ranking(
     )
 
 
-def largest_contribution(
-    config: defs.Config, scores: pl.LazyFrame, track: defs.Track
-) -> PodiumLargestContribution:
+def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.Track) -> PodiumLargestContribution:
     for_division = True
     # For each solver compute its corresponding best solver
     # TODO: check what is competitive solver (unsound?)
@@ -755,9 +752,7 @@ def largest_contribution(
             logic=-1,
         )
     )
-    virtual_without_solver_datas = sq_generate_datas(
-        config, virtual_without_solver_scores, for_division, track
-    )
+    virtual_without_solver_datas = sq_generate_datas(config, virtual_without_solver_scores, for_division, track)
 
     large = largest_contribution_ranking(config, virtual_datas, virtual_without_solver_datas, ratio_by_division, track)
 

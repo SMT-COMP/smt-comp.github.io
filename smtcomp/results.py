@@ -447,9 +447,7 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
     return results
 
 
-def helper_get_results(
-    config: defs.Config, results: List[Path], track: defs.Track
-) -> pl.LazyFrame:
+def helper_get_results(config: defs.Config, results: List[Path], track: defs.Track) -> pl.LazyFrame:
     """
     If results is empty use the one in data
 
@@ -504,7 +502,7 @@ def helper_get_results(
             "division": -1,
             "family": -1,
             "logic": -1,
-            "name": '',
+            "name": "",
             "new": False,
             "participation": -1,
             "result": -1,
