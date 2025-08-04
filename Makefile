@@ -31,6 +31,10 @@ build: clean-build ## Build wheel file using poetry
 clean-build: ## clean build artifacts
 	@rm -rf dist
 
+.PHONY: clean-web-results
+clean-web-results: ## clean web results
+	@rm -rf web/content/results
+
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -70,8 +74,8 @@ results-generation:
 	@poetry run smtcomp export-results-pages data SingleQuery
 	@echo "🚀 Generating results to web/content/results for ModelValidation"
 	@poetry run smtcomp export-results-pages data ModelValidation
-	#@echo "🚀 Generating results to web/content/results for UnsatCore"
-	#@poetry run smtcomp export-results-pages data UnsatCore
+	@echo "🚀 Generating results to web/content/results for UnsatCore"
+	@poetry run smtcomp export-results-pages data UnsatCore
 	@echo "🚀 Generating results to web/content/results for Incremental"
 	@poetry run smtcomp export-results-pages data Incremental
 	# @echo "🚀 Generating results to web/content/results for Cloud"
