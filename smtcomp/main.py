@@ -239,9 +239,8 @@ def store_results(
                 on=["file"],
                 defaults={"logic": -1, "family": "", "name": ""},
             )
-            .join(removed_results, on=["logic", "family", "name"], how="anti")
-            .sort("file", "solver")
-            .collect()
+            # .join(removed_results, on=["logic", "family", "name"], how="anti")
+            .sort("file", "solver").collect()
         )
         if len(df) > 0:
             results_track = defs.Results(
@@ -1060,10 +1059,9 @@ def check_model_locally(
 
 
 @app.command()
-def generate_unsatcore_validation_files(
-    cachedir: Path, scrambler: Path, resultdirs: list[Path], max_workers: int = 8
-) -> None:
-    unsat_core_validation.generate_validation_files(cachedir, resultdirs, scrambler)
+def generate_unsatcore_validation_files(cachedir: Path, scrambler: Path, resultdir: Path) -> None:
+
+    unsat_core_validation.generate_validation_files(cachedir, resultdir, scrambler)
 
 
 @app.command()
@@ -1134,12 +1132,12 @@ def build_dolmen(data: Path) -> None:
 def generate_certificates(
     website_results: Path = Path("web/content/results"),
     input_for_certificates: Path = Path("data/latex-certificates/input_for_certificates.tex"),
-    pretty_names: Path = Path("data/latex-certificates/solvers_pretty_name.csv"),
+    submission_dir: Path = Path("submissions"),
     experimental_division: Path = Path("data/latex-certificates/experimental.csv"),
 ) -> None:
     """
     generates the input data for the tex certificate generator.
     """
     smtcomp.certificates.generate_certificates(
-        website_results, input_for_certificates, pretty_names, experimental_division
+        website_results, input_for_certificates, submission_dir, experimental_division
     )

@@ -10,6 +10,7 @@ from collections import defaultdict
 import smtcomp.defs as defs
 import smtcomp.results as results
 import smtcomp.generate_website_page as page
+import smtcomp.submission as submission
 
 show_experimental = False
 
@@ -70,11 +71,13 @@ def withtrack(l: list[str], name: str, category: category) -> None:
 class overall:
 
     def __init__(self) -> None:
+        self.best = category()
         self.biggest = category()
         self.largest = category()
 
     def latex(self) -> str:
         l: list[str] = []
+        withtrack(l, "Best Overall", self.best)
         withtrack(l, "Biggest Lead", self.biggest)
         withtrack(l, "Largest Contribution", self.largest)
         return ", ".join(l)
@@ -83,7 +86,7 @@ class overall:
         return self.latex()
 
     def isNotEmpty(self) -> bool:
-        return self.biggest.isNotEmpty() and self.largest.isNotEmpty()
+        return self.best.isNotEmpty() or self.biggest.isNotEmpty() or self.largest.isNotEmpty()
 
 
 class info:
@@ -132,7 +135,7 @@ class info:
 def update(
     solvers: defaultdict[str, info],
     select: Callable[[info, str], None],
-    podium: page.PodiumDivision | page.PodiumBiggestLead | page.PodiumLargestContribution,
+    podium: page.PodiumDivision | page.PodiumBestOverall | page.PodiumBiggestLead | page.PodiumLargestContribution,
 ) -> None:
     if podium.track == defs.Track.SingleQuery:
         select(solvers[podium.winner_seq], "sq_seq")
@@ -173,12 +176,10 @@ def add_logic(logics: dict[Tuple[str, defs.Track], bool], list: dict[str, int], 
         logics[v, track] = True
 
 
-def parse_pretty_names(solvers: defaultdict[str, info], pretty_names: Path) -> None:
-    with open(pretty_names, newline="") as input:
-        input = csv.DictReader(input)  # type: ignore
-
-        for row in input:
-            solvers[row["Solver Name"]].members = int(row["Members"])  # type: ignore
+def process_submissions(solvers: defaultdict[str, info], submissions: list[defs.Submission]) -> None:
+    for s in submissions:
+        if s.competitive:
+            solvers[s.name].members = len(s.contributors)
 
 
 def parse_experimental_division(solvers: Any, experimental_division: Path) -> dict[str, bool]:
@@ -192,11 +193,14 @@ def parse_experimental_division(solvers: Any, experimental_division: Path) -> di
 
 
 def generate_certificates(
-    website_results: Path, input_for_certificates: Path, pretty_names: Path, experimental_division: Path
+    website_results: Path, input_for_certificates: Path, submission_dir: Path, experimental_division: Path
 ) -> None:
     solvers: defaultdict[str, info] = defaultdict(info)
 
-    parse_pretty_names(solvers, pretty_names)
+    submissions = [submission.read_submission_or_exit(f)
+                   for f in submission_dir.glob("*.json")]
+
+    process_submissions(solvers, submissions)
     solvers["-"].members = 0
 
     # Remove experimental division
@@ -223,6 +227,8 @@ def generate_certificates(
                 continue
             case page.PodiumCrossDivision():
                 match result.root:
+                    case page.PodiumBestOverall():
+                        update(solvers, (lambda x, k: x.overall.best.update(k, True)), result.root)
                     case page.PodiumBiggestLead():
                         update(solvers, (lambda x, k: x.overall.biggest.update(k, True)), result.root)
                     case page.PodiumLargestContribution():
