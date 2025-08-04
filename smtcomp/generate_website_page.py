@@ -117,6 +117,7 @@ class PodiumDivision(BaseModel):
     participants: str  # participants_2023
     disagreements: str  # disagreements_2023
     division: str  # Arith
+    is_competitive: bool  # true = least 2 subst. different solvers were submitted
     track: track_name
     n_benchmarks: int
     time_limit: int
@@ -281,7 +282,9 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
         return podiums + base_solvers
 
 
-def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track) -> PodiumDivision:
+def make_podium(
+    config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track, results: pl.LazyFrame
+) -> PodiumDivision:
     def get_winner(l: List[dict[str, str]] | None) -> str:
         # TODO select only participating
         if l is None or not l or l[0]["correctly_solved_score"] == 0:
@@ -289,7 +292,27 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, trac
         else:
             return l[0]["solver"]
 
+    def is_competitive(results: pl.LazyFrame, division: int) -> bool:
+        """
+        A division in a track is competitive if at least two substantially different
+        solvers (i.e., solvers from two different teams) were submitted.
+        """
+        solvers = (
+            results.filter(pl.col("division") == division)
+            .select("solver")
+            .unique()
+            .collect()
+            .get_column("solver")
+            .to_list()
+        )
+        # Avoid solvers of the same solver family under the assumption
+        # of the following format: <solver-family>-<suffix> (holds for SMT-COMP 2025)
+        # TODO: improve this criterion in the future
+        return len(set([sol.split("-")[0].lower() for sol in solvers])) >= 2
+
+    competitive_division = True
     if for_division:
+        competitive_division = is_competitive(results, d["division"])
         division = defs.Division.name_of_int(d["division"])
         logics = dict((defs.Logic.name_of_int(d2["logic"]), d2["n"]) for d2 in d["logics"])
     else:
@@ -307,6 +330,7 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, trac
         resultdate="2025-08-11",
         year=config.current_year,
         divisions=f"divisions_{config.current_year}",
+        is_competitive=competitive_division,
         participants=f"participants_{config.current_year}",
         disagreements=f"disagreements_{config.current_year}",
         division=division,
@@ -403,7 +427,7 @@ def sq_generate_datas(
 
     df = r.collect()
 
-    return dict((name_of_int(d[group_by]), make_podium(config, d, for_division, track)) for d in df.to_dicts())
+    return dict((name_of_int(d[group_by]), make_podium(config, d, for_division, track, results)) for d in df.to_dicts())
 
 
 def get_kind(a: PodiumDivision, k: smtcomp.scoring.Kind) -> list[PodiumStep]:

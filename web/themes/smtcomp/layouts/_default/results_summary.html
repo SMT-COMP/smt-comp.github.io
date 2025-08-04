@@ -38,6 +38,8 @@
 
 {{ range $division := (sort .Params.divisions "division" "asc") }}
 {{ $divisionUrl := printf "../%s-%s" ($division.division | lower) $trackUrl }}
+
+{{ if $division.is_competitive }}
 <h3><a href="{{ $divisionUrl }}">{{ $division.division }}</a></h3>
 <table>
   <thead>
@@ -59,6 +61,7 @@
   </tr>
   {{ end }}
 </table>
+{{ end }}
 
 {{ end }}
 

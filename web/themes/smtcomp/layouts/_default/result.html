@@ -9,20 +9,29 @@
   {{ $hasBaseSolvers := false }}
   {{ $hasNoncompetingSolvers := false }}
 
+
+{{ if .Params.is_competitive }}
   <h1>{{ .Params.division }} ({{ $prettyTrack }})</h1>
-<p>
-  Competition results for the {{ .Params.division }}
-  {{ if $trueDivision }} division {{ else }} logic {{ end }}
-  in the {{ $prettyTrack }}.
-</p>
+  <p>
+    Competition results for the {{ .Params.division }}
+    {{ if $trueDivision }} division {{ else }} logic {{ end }}
+    in the {{ $prettyTrack }}.
+  <p>Results were generated on {{ .Params.resultdate }}</p>
+  </p>
+  <p>
+    <b>Benchmarks</b>: {{ .Params.n_benchmarks }}<br/>
+    <b>Time Limit:</b> {{ .Params.time_limit }} seconds<br/>
+    <b>Memory Limit:</b> {{ .Params.mem_limit }} GB
+  </p>
+{{ else }}
+   <h1>{{ .Params.division }} ({{ $prettyTrack }}) <br> <span style="background-color:gray; color:white; margin-top:10px; font-size:75%"> non-competitive</span></h1>
+   <p>
+    <b>Benchmarks</b>: {{ .Params.n_benchmarks }}<br/>
+  </p>
+{{ end }}
 
-<p>Results were generated on {{ .Params.resultdate }}</p>
 
-<p>
-  <b>Benchmarks</b>: {{ .Params.n_benchmarks }}<br/>
-  <b>Time Limit:</b> {{ .Params.time_limit }} seconds<br/>
-  <b>Memory Limit:</b> {{ .Params.mem_limit }} GB
-</p>
+
 
 {{ if $trueDivision }}
 <b>Logics:</b><ul>
@@ -43,6 +52,7 @@
 {{ $winner_category_names := .Site.Data.pretty_names.winner_performance }}
 {{ $category_names := .Site.Data.pretty_names.performance }}
 
+{{ if .Params.is_competitive }}
 <h3>Winners</h3>
 <table>
   <thead>
@@ -68,6 +78,7 @@
     {{ end }}
   </tr>
 </table>
+{{ end }}
 
 {{ range $cat := $categories }}
 {{ with index $.Params $cat }}
