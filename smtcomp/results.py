@@ -492,13 +492,13 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
     )
 
     defaults = {
-            "division": -1,
-            "family": -1,
-            "logic": -1,
-            "name": "",
-            "participation": -1,
-            "selected": True,
-        }
+        "division": -1,
+        "family": -1,
+        "logic": -1,
+        "name": "",
+        "participation": -1,
+        "selected": True,
+    }
 
     if track == defs.Track.Incremental:
         defaults["check_sats"] = -1
@@ -516,7 +516,6 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         defaults["run"] = True
         defaults["trivial"] = False
         defaults["file_right"] = ""
-
 
     selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
     selected = add_columns(
