@@ -28,8 +28,8 @@ def map_none3(f: Callable[[U], V | None]) -> Callable[[Tuple[W1, W2, U]], Tuple[
 
 
 def add_columns(dst: pl.LazyFrame, from_: pl.LazyFrame, on: list[str], defaults: Dict[str, Any]) -> pl.LazyFrame:
-    dst_cols = set(dst.columns)
-    from_cols = set(from_.columns)
+    dst_cols = set(dst.collect_schema().names())
+    from_cols = set(from_.collect_schema().names())
     on_cols = set(on)
     assert on_cols.issubset(dst_cols)
     assert on_cols.issubset(from_cols)
@@ -43,8 +43,8 @@ def intersect(dst: pl.LazyFrame, from_: pl.LazyFrame, on: list[str]) -> pl.LazyF
     """
     All the possible matches in the two given tables
     """
-    dst_cols = set(dst.columns)
-    from_cols = set(from_.columns)
+    dst_cols = set(dst.collect_schema().names())
+    from_cols = set(from_.collect_schema().names())
     on_cols = set(on)
     assert on_cols.issubset(dst_cols)
     assert on_cols.issubset(from_cols)
