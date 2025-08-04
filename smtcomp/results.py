@@ -491,27 +491,39 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         .lazy()
     )
 
+    defaults = {
+            "division": -1,
+            "family": -1,
+            "logic": -1,
+            "name": "",
+            "participation": -1,
+            "selected": True,
+        }
+
+    if track == defs.Track.Incremental:
+        defaults["check_sats"] = -1
+    else:
+        defaults["status"] = -1
+        defaults["asserts"] = -1
+
+    if track == defs.Track.Parallel:
+        defaults["hard"] = True
+        defaults["unsolved"] = False
+    else:
+        defaults["current_result"] = -1
+        defaults["new"] = False
+        defaults["result"] = -1
+        defaults["run"] = True
+        defaults["trivial"] = False
+        defaults["file_right"] = ""
+
+
     selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
     selected = add_columns(
         lf,
         selected,
         on=["file", "solver", "track"],
-        defaults={
-            "asserts": -1,
-            "current_result": -1,
-            "division": -1,
-            "family": -1,
-            "logic": -1,
-            "name": "",
-            "new": False,
-            "participation": -1,
-            "result": -1,
-            "run": True,
-            "selected": True,
-            "status": -1,
-            "trivial": False,
-            "file_right": "",
-        },
+        defaults=defaults,
     )
 
     return selected
