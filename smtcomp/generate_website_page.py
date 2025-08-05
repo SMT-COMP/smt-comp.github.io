@@ -286,7 +286,12 @@ def make_podium(
     config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track, results: pl.LazyFrame
 ) -> PodiumDivision:
     def get_winner(l: List[dict[str, str]] | None) -> str:
-        # TODO select only participating
+        if l is None or not l:
+            return "-"
+
+        competitive_solvers = [s.name for s in config.submissions if s.competitive]
+        l = [e for e in l if e["solver"] in competitive_solvers]
+
         if l is None or not l or l[0]["correctly_solved_score"] == 0:
             return "-"
         else:
