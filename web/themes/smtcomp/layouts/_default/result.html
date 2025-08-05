@@ -124,7 +124,7 @@
         {{ if not (lt $solver.deltaBaseSolver 0) }}
       <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +{{ $solver.deltaBaseSolver }})</span>
         {{ else }}
-            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base -{{ $solver.deltaBaseSolver }})</span>
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base {{ $solver.deltaBaseSolver }})</span>
         {{ end }}
     {{ end }}
     </td>
