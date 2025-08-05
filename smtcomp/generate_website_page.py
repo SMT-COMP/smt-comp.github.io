@@ -248,10 +248,10 @@ def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> Li
         for s in podium:
             cscore = s["correctly_solved_score"]
             delta = 0
-            derived_solver = defs.baseMapSMTLIB2025.get(s["solver"], "")
+            derived_solver = defs.Config.baseSolverMap2025.get(s["solver"], "")
             if derived_solver != "":
                 for sprime in podium:
-                    if sprime["solver"] == defs.baseMapSMTLIB2025.get(s["solver"], ""):
+                    if sprime["solver"] == defs.Config.baseSolverMap2025.get(s["solver"], ""):
                         delta = cscore - sprime["correctly_solved_score"]
                         break
 
@@ -309,6 +309,7 @@ def make_podium(
             .get_column("solver")
             .to_list()
         )
+        
         # Avoid solvers of the same solver family under the assumption
         # of the following format: <solver-family>-<suffix> (holds for SMT-COMP 2025)
         # TODO: improve this criterion in the future
