@@ -1517,7 +1517,8 @@ class Config:
     Benchmarks to remove before selection
     """
 
-    removed_results = []
+    removed_results: list[Any] = []
+
     """
     Benchmarks to remove after running the solvers. Can be used when the selection has already been done.
     """

@@ -239,6 +239,7 @@ class PodiumCrossDivision(RootModel):
 class Podium(RootModel):
     root: PodiumDivision | PodiumCrossDivision | PodiumSummaryResults = Field(..., discriminator="layout")
 
+
 def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
     if podium is None:
         return []
@@ -259,7 +260,7 @@ def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> Li
                 name=s["solver"],
                 baseSolver=derived_solver,
                 deltaBaseSolver=delta,
-                competing= "yes" if s["solver"] in config.competitive_solvers else "no",
+                competing="yes" if s["solver"] in config.competitive_solvers else "no",
                 errorScore=s["error_score"],
                 correctScore=s["correctly_solved_score"],
                 CPUScore=s["cpu_time_score"],
@@ -277,7 +278,7 @@ def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> Li
                 non_competitive.append(ps)
             else:
                 podiums.append(ps)
-        
+
         return podiums + non_competitive
 
 
@@ -309,7 +310,7 @@ def make_podium(
             .get_column("solver")
             .to_list()
         )
-        
+
         # Avoid solvers of the same solver family under the assumption
         # of the following format: <solver-family>-<suffix> (holds for SMT-COMP 2025)
         # TODO: improve this criterion in the future
@@ -329,7 +330,7 @@ def make_podium(
         steps_seq = []
     else:
         winner_seq = get_winner(d[smtcomp.scoring.Kind.seq.name])
-        steps_seq = podium_steps(config,d[smtcomp.scoring.Kind.seq.name])
+        steps_seq = podium_steps(config, d[smtcomp.scoring.Kind.seq.name])
 
     return PodiumDivision(
         resultdate="2025-08-11",

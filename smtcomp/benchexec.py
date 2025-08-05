@@ -28,6 +28,8 @@ def get_suffix(track: defs.Track) -> str:
             return "_parallel"
         case defs.Track.Cloud:
             return "_cloud"
+        case _:
+            raise ValueError(f"Unhandled track: {track}")
 
 
 def get_xml_name(s: defs.Submission, track: defs.Track, division: defs.Division) -> str:
@@ -46,9 +48,8 @@ class CmdTask(BaseModel):
     taskdirs: List[str]
 
 
-def generate_benchmark_yml(
-    ymlfile: Path, benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]
-) -> None:
+def generate_benchmark_yml(benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]) -> None:
+    ymlfile = benchmark.with_suffix(".yml")
     with ymlfile.open("w") as f:
         f.write("format_version: '2.0'\n\n")
 
