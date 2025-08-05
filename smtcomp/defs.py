@@ -1495,11 +1495,6 @@ class Config:
     """
     Commit of the model validator dolmen (branch smtcomp-2023)
     """
-    dolmen_force_logic_ALL = False
-    """
-    Some benchmarks are not accepted by dolmen in their current logic.
-    During model validation we can rerun by forcing logic ALL to accept more models
-    """
 
     removed_benchmarks = [
         {

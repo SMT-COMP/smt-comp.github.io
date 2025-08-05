@@ -197,8 +197,7 @@ def generate_certificates(
 ) -> None:
     solvers: defaultdict[str, info] = defaultdict(info)
 
-    submissions = [submission.read_submission_or_exit(f)
-                   for f in submission_dir.glob("*.json")]
+    submissions = [submission.read_submission_or_exit(f) for f in submission_dir.glob("*.json")]
 
     process_submissions(solvers, submissions)
     solvers["-"].members = 0

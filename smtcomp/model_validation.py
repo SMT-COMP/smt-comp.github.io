@@ -29,7 +29,7 @@ def raise_stack_limit() -> None:
     resource.setrlimit(resource.RLIMIT_STACK, (soft, hard))
 
 
-def check_locally(config: defs.Config, smt2_file: Path, model: str) -> defs.Validation:
+def check_locally(config: defs.Config, smt2_file: Path, model: str, force_logic_all: bool) -> defs.Validation:
     opts: list[str | Path] = []
     opts.append(config.dolmen_binary)
     opts.extend(
@@ -42,7 +42,7 @@ def check_locally(config: defs.Config, smt2_file: Path, model: str) -> defs.Vali
             "--warn=-all",
         ]
     )
-    if config.dolmen_force_logic_ALL:
+    if force_logic_all:
         opts.append("--force-smtlib2-logic=ALL")
     opts.append(smt2_file)
 
@@ -94,22 +94,28 @@ def check_result_locally(
     d = resultdir / "model_validation_results"
     file_cache = d / f"{str(r.file)}.json.gz"
     scramble_id = scramble_mapping[r.file]
+    force_logic_all = False
 
     if file_cache.is_file():
-        return defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
-    else:
-        match r.answer:
-            case defs.Answer.Sat:
-                filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
-                basename = smtcomp.scramble_benchmarks.scramble_basename(scramble_id)
-                smt2_file = filedir / str(r.logic) / basename
-                val = check_locally(config, smt2_file, model)
+        result = defs.ValidationResult.model_validate_json(read_cin(file_cache)).root
+        match result:
+            case defs.ValidationError(stderr="E:forbidden-array-sort\n"):
+                force_logic_all = True
             case _:
-                val = defs.noValidation
-        d.mkdir(parents=True, exist_ok=True)
-        s = defs.ValidationResult(val).model_dump_json(indent=1)
-        write_cin(file_cache, s)
-        return val
+                return result
+
+    match r.answer:
+        case defs.Answer.Sat:
+            filedir = smtcomp.scramble_benchmarks.benchmark_files_dir(cachedir, rid.track)
+            basename = smtcomp.scramble_benchmarks.scramble_basename(scramble_id)
+            smt2_file = filedir / str(r.logic) / basename
+            val = check_locally(config, smt2_file, model, force_logic_all)
+        case _:
+            val = defs.noValidation
+    d.mkdir(parents=True, exist_ok=True)
+    s = defs.ValidationResult(val).model_dump_json(indent=1)
+    write_cin(file_cache, s)
+    return val
 
 
 def prepare_model_validation_tasks(
