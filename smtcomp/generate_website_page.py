@@ -239,8 +239,7 @@ class PodiumCrossDivision(RootModel):
 class Podium(RootModel):
     root: PodiumDivision | PodiumCrossDivision | PodiumSummaryResults = Field(..., discriminator="layout")
 
-
-def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
+def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
     if podium is None:
         return []
     else:
@@ -260,7 +259,7 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
                 name=s["solver"],
                 baseSolver=derived_solver,
                 deltaBaseSolver=delta,
-                competing="no" if "-base" in s["solver"] else "yes",  # TODO: establish s["competing"]
+                competing= "yes" if s["solver"] in config.competitive_solvers else "no",
                 errorScore=s["error_score"],
                 correctScore=s["correctly_solved_score"],
                 CPUScore=s["cpu_time_score"],
@@ -289,8 +288,7 @@ def make_podium(
         if l is None or not l:
             return "-"
 
-        competitive_solvers = [s.name for s in config.submissions if s.competitive]
-        l = [e for e in l if e["solver"] in competitive_solvers]
+        l = [e for e in l if e["solver"] in config.competitive_solvers]
 
         if l is None or not l or l[0]["correctly_solved_score"] == 0:
             return "-"
@@ -329,7 +327,7 @@ def make_podium(
         steps_seq = []
     else:
         winner_seq = get_winner(d[smtcomp.scoring.Kind.seq.name])
-        steps_seq = podium_steps(d[smtcomp.scoring.Kind.seq.name])
+        steps_seq = podium_steps(config,d[smtcomp.scoring.Kind.seq.name])
 
     return PodiumDivision(
         resultdate="2025-08-11",
@@ -350,10 +348,10 @@ def make_podium(
         winner_unsat=get_winner(d[smtcomp.scoring.Kind.unsat.name]),
         winner_24s=get_winner(d[smtcomp.scoring.Kind.twentyfour.name]),
         sequential=steps_seq,
-        parallel=podium_steps(d[smtcomp.scoring.Kind.par.name]),
-        sat=podium_steps(d[smtcomp.scoring.Kind.sat.name]),
-        unsat=podium_steps(d[smtcomp.scoring.Kind.unsat.name]),
-        twentyfour=podium_steps(d[smtcomp.scoring.Kind.twentyfour.name]),
+        parallel=podium_steps(config, d[smtcomp.scoring.Kind.par.name]),
+        sat=podium_steps(config, d[smtcomp.scoring.Kind.sat.name]),
+        unsat=podium_steps(config, d[smtcomp.scoring.Kind.unsat.name]),
+        twentyfour=podium_steps(config, d[smtcomp.scoring.Kind.twentyfour.name]),
     )
 
 

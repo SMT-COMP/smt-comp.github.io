@@ -1597,6 +1597,10 @@ class Config:
         ]
 
     @functools.cached_property
+    def competitive_solvers(self) -> list[str]:
+        return [s.name for s in self.submissions if s.competitive]
+
+    @functools.cached_property
     def web_results(self) -> Path:
         return self.data / ".." / "web" / "content" / "results"
 
