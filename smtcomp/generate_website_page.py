@@ -315,13 +315,13 @@ def make_podium(
         # TODO: improve this criterion in the future
         return len(set([sol.split("-")[0].lower() for sol in solvers])) >= 2
 
-    competitive_division = True
     if for_division:
         competitive_division = is_competitive(results, d["division"])
         division = defs.Division.name_of_int(d["division"])
         logics = dict((defs.Logic.name_of_int(d2["logic"]), d2["n"]) for d2 in d["logics"])
     else:
         division = defs.Logic.name_of_int(d["logic"])
+        competitive_division = is_competitive(results, d["logic"])
         logics = dict()
 
     if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):
