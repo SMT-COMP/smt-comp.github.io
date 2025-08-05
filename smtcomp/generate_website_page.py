@@ -244,7 +244,7 @@ def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> Li
         return []
     else:
         podiums = []
-        base_solvers = []
+        non_competitive = []
         for s in podium:
             cscore = s["correctly_solved_score"]
             delta = 0
@@ -273,12 +273,12 @@ def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> Li
                 memout=s["memout"],
             )
 
-            if "-base" in s["solver"]:
-                base_solvers.append(ps)
+            if not s["solver"] in config.competitive_solvers:
+                non_competitive.append(ps)
             else:
                 podiums.append(ps)
-
-        return podiums + base_solvers
+        
+        return podiums + non_competitive
 
 
 def make_podium(
