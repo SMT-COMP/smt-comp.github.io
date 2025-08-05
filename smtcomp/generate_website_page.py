@@ -295,13 +295,14 @@ def make_podium(
         else:
             return l[0]["solver"]
 
-    def is_competitive(results: pl.LazyFrame, division: int) -> bool:
+    def is_competitive_division(results: pl.LazyFrame, division: int, for_division: bool) -> bool:
         """
         A division in a track is competitive if at least two substantially different
         solvers (i.e., solvers from two different teams) were submitted.
         """
+
         solvers = (
-            results.filter(pl.col("division") == division)
+            results.filter(pl.col("division" if for_division else "logic") == division)
             .select("solver")
             .unique()
             .collect()
@@ -314,12 +315,12 @@ def make_podium(
         return len(set([sol.split("-")[0].lower() for sol in solvers])) >= 2
 
     if for_division:
-        competitive_division = is_competitive(results, d["division"])
+        competitive_division = is_competitive_division(results, d["division"], for_division)
         division = defs.Division.name_of_int(d["division"])
         logics = dict((defs.Logic.name_of_int(d2["logic"]), d2["n"]) for d2 in d["logics"])
     else:
         division = defs.Logic.name_of_int(d["logic"])
-        competitive_division = is_competitive(results, d["logic"])
+        competitive_division = is_competitive_division(results, d["logic"], for_division)
         logics = dict()
 
     if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):

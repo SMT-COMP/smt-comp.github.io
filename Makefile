@@ -34,6 +34,8 @@ clean-build: ## clean build artifacts
 .PHONY: clean-web-results
 clean-web-results: ## clean web results
 	@rm -rf web/content/results
+	@rm -rf web/public/results
+
 
 .PHONY: help
 help:
