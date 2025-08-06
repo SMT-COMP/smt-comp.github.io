@@ -359,7 +359,7 @@ def make_podium(
 
 
 def sq_generate_datas(
-    config: defs.Config, results: pl.LazyFrame, for_division: bool, track: defs.Track
+    config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, for_division: bool, track: defs.Track
 ) -> dict[str, PodiumDivision]:
     """
     Generate datas for divisions or for logics
@@ -372,12 +372,13 @@ def sq_generate_datas(
         group_by = "logic"
         name_of_int = defs.Logic.name_of_int
 
+    selection = selection.filter(selected=True)
+
     # TODO it should be done after filter_for
-    len_by_division = results.group_by(group_by).agg(total=pl.col("file").n_unique())
+    len_by_division = selection.group_by(group_by).agg(total=pl.len())
 
     def info_for_podium_step(kind: smtcomp.scoring.Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
         results = smtcomp.scoring.filter_for(kind, config, results)
-
         return (
             sort(
                 intersect(results, len_by_division, on=[group_by])
@@ -418,8 +419,8 @@ def sq_generate_datas(
 
     if for_division:
         lf_logics = [
-            results.group_by("division", "logic")
-            .agg(n=pl.col("file").n_unique())
+            selection.group_by("division", "logic")
+            .agg(n=pl.len())
             .group_by("division")
             .agg(logics=pl.struct("logic", "n"))
         ]
@@ -752,7 +753,9 @@ def largest_contribution_ranking(
     )
 
 
-def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.Track) -> PodiumLargestContribution:
+def largest_contribution(
+    config: defs.Config, selection: pl.LazyFrame, scores: pl.LazyFrame, track: defs.Track
+) -> PodiumLargestContribution:
     for_division = True
     # For each solver compute its corresponding best solver
     # TODO: check what is competitive solver (unsound?)
@@ -777,11 +780,10 @@ def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.
             pl.min("cpu_time_score"),
             sound_status=pl.col("sound_status").first(),
             answer=pl.col("answer").first(),
-            logic=-1,
         )
         .with_columns(solver=pl.lit("virtual"), error_score=0)
     )
-    virtual_datas = sq_generate_datas(config, virtual_scores, for_division, track)
+    virtual_datas = sq_generate_datas(config, selection, virtual_scores, for_division, track)
 
     # For each solver Compute virtual solver without the solver
     solvers = scores.select("division", "solver").unique()
@@ -799,10 +801,11 @@ def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.
             sound_status=pl.col("sound_status").first(),
             error_score=0,
             answer=pl.col("answer").first(),
-            logic=-1,
         )
     )
-    virtual_without_solver_datas = sq_generate_datas(config, virtual_without_solver_scores, for_division, track)
+    virtual_without_solver_datas = sq_generate_datas(
+        config, selection, virtual_without_solver_scores, for_division, track
+    )
 
     large = largest_contribution_ranking(config, virtual_datas, virtual_without_solver_datas, ratio_by_division, track)
 
@@ -829,7 +832,7 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
     all_divisions: list[PodiumDivision] = []
 
     for for_division in [True, False]:
-        datas = sq_generate_datas(config, scores, for_division, track)
+        datas = sq_generate_datas(config, selection, scores, for_division, track)
 
         for name, data in datas.items():
             (dst / f"{name.lower()}-{page_suffix}.md").write_text(data.model_dump_json(indent=1))
@@ -844,7 +847,7 @@ def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.Laz
             bigdata = biggest_lead_ranking(config, datas, track)
             (dst / f"biggest-lead-{page_suffix}.md").write_text(bigdata.model_dump_json(indent=1))
 
-            largedata = largest_contribution(config, scores, track)
+            largedata = largest_contribution(config, selection, scores, track)
             (dst / f"largest-contribution-{page_suffix}.md").write_text(largedata.model_dump_json(indent=1))
 
     all_divisions.sort(key=lambda x: x.division)

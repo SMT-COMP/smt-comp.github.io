@@ -306,7 +306,7 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
     def convert(a: Run) -> Dict[str, Any]:
         d = dict(a)
         if r.runid.track == defs.Track.ModelValidation and a.answer == defs.Answer.Sat:
-            d["answer"] = mv_get_cached_answer(resultdir, a.file)
+            a.answer = mv_get_cached_answer(resultdir, a.file)
 
         if r.runid.track == defs.Track.Incremental:
             answer, nb_answers, last_time = inc_get_nb_answers(logfiles, r.runid, a.benchmark_yml)
@@ -447,7 +447,9 @@ def parse_dir(dir: Path, no_cache: bool) -> pl.LazyFrame:
     return results
 
 
-def helper_get_results(config: defs.Config, results: List[Path], track: defs.Track) -> pl.LazyFrame:
+def helper_get_results(
+    config: defs.Config, results: List[Path], track: defs.Track
+) -> Tuple[pl.LazyFrame, pl.LazyFrame]:
     """
     If results is empty use the one in data
 
@@ -479,7 +481,7 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         lf = lf.drop("logic", "participation")  # Hack for participation 0 bug move "participation" to on= for 2025,
         lf = lf.drop("benchmark_yml", "unsat_core")
 
-    selection = smtcomp.selection.helper(config, track).with_columns(track=int(track))
+    selection = smtcomp.selection.helper(config, track).filter(selected=True).with_columns(track=int(track))
 
     selection = (
         selection.unique()
@@ -491,38 +493,13 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         .lazy()
     )
 
-    defaults = {
-        "division": -1,
-        "family": -1,
-        "logic": -1,
-        "name": "",
-        "participation": -1,
-        "selected": True,
-    }
-
-    if track == defs.Track.Incremental:
-        defaults["check_sats"] = -1
-    else:
-        defaults["status"] = -1
-        defaults["asserts"] = -1
-
-    if track == defs.Track.Parallel:
-        defaults["hard"] = True
-        defaults["unsolved"] = False
-    else:
-        defaults["current_result"] = -1
-        defaults["new"] = False
-        defaults["result"] = -1
-        defaults["run"] = True
-        defaults["trivial"] = False
-        defaults["file_right"] = ""
-
     selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+
     selected = add_columns(
-        lf,
         selected,
+        lf,
         on=["file", "solver", "track"],
-        defaults=defaults,
+        defaults={"answer": -1, "cputime_s": 0, "memory_B": 0, "walltime_s": 0, "nb_answers": -1},
     )
 
-    return selected
+    return selected, selection
