@@ -218,7 +218,7 @@ ETH Zurich, Switzerland
     \node[draw,text width=1.8cm,align=center](uc) at (3,4) {unsat core};
     \node[draw,text width=1.8cm,align=center](mv) at (3,3) {model val.};
     \node[draw,text width=1.8cm,align=center](par) at (3,2) {parallel};
-    \node[draw,text width=1.8cm,align=center](cloud) at (3,1) {cloud};
+    %\node[draw,text width=1.8cm,align=center](cloud) at (3,1) {cloud};
     \node[draw,text width=1.8cm,align=center](inc) at (3,0) {incremental};
 
     \node[anchor=west] (div1) at (5,5) {Arith};
@@ -253,7 +253,7 @@ ETH Zurich, Switzerland
     \draw[->,shorten <=.3em] (nonincbench) to[bend left=7] (uc.west);
     \draw[->,shorten <=.3em] (nonincbench) to[bend left=5] (mv.west);
     \draw[->,shorten <=.3em] (nonincbench) to (par.west);
-    \draw[->,shorten <=.3em] (nonincbench) to[bend right=4] (cloud.west);
+    %\draw[->,shorten <=.3em] (nonincbench) to[bend right=4] (cloud.west);
     \draw[->,shorten <=.3em] (incbench) to (inc.west);
 
     \draw (sq.east) to (div1.west);
@@ -277,12 +277,12 @@ ETH Zurich, Switzerland
     \draw (mv.east) to (div5.west);
     \draw (mv.east) to (div6.west);
 
-    \draw (cloud.east) to (div1.west);
-    \draw (cloud.east) to (div2.west);
-    \draw (cloud.east) to (div3.west);
-    \draw (cloud.east) to (div4.west);
-    \draw (cloud.east) to (div5.west);
-    \draw (cloud.east) to (div6.west);
+    %\draw (cloud.east) to (div1.west);
+    %\draw (cloud.east) to (div2.west);
+    %\draw (cloud.east) to (div3.west);
+    %\draw (cloud.east) to (div4.west);
+    %\draw (cloud.east) to (div5.west);
+    %\draw (cloud.east) to (div6.west);
 
     \draw (par.east) to (div1.west);
     \draw (par.east) to (div2.west);
@@ -330,27 +330,27 @@ ETH Zurich, Switzerland
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{SMT-COMP Tracks (experimental)}
+\begin{frame}[fragile]{SMT-COMP Tracks}
 
-  \emph{Model Validation}
-  \begin{itemize}
-    \item Division with quantifier-free floating-point logics
-    \item Model validation with Dolmen (thanks to Gillaume Bury and Fran\c{c}ois
-    Bobot)
-  \end{itemize}
-  \bigskip
+%  \emph{Model Validation}
+  %\begin{itemize}
+    %\item Division with quantifier-free floating-point logics
+    %\item Model validation with Dolmen (thanks to Gillaume Bury and Fran\c{c}ois
+    %Bobot)
+  %\end{itemize}
+  %\bigskip
 
-  \emph{Cloud and Parallel Track} (sponsored by AWS, led by Mike Whalen)
-  \begin{itemize}
-  \item Solve a large problem over the cloud (or a big computer)
-  \begin{itemize}
-    \item 100 machines, 1600 cores, 6400 GB of memory (cloud)
-    \item 64 cores, 256 GB of memory (parallel)
-  \end{itemize}
-  \item Solver answers sat/unsat/unknown
-  \end{itemize}
+%  \emph{Cloud and Parallel Track} (sponsored by AWS, led by Mike Whalen)
+  %\begin{itemize}
+  %\item Solve a large problem over the cloud (or a big computer)
+  %\begin{itemize}
+    %\item 100 machines, 1600 cores, 6400 GB of memory (cloud)
+    %\item 64 cores, 256 GB of memory (parallel)
+  %\end{itemize}
+  %\item Solver answers sat/unsat/unknown
+  %\end{itemize}
 
-  \pause\bigskip
+  %\pause\bigskip
 
   \emph{Proof Exhibition Track}
   \begin{itemize}
@@ -507,7 +507,7 @@ ETH Zurich, Switzerland
 \begin{frame}{Scoring}
   Computing scores:
   \begin{itemize}
-  \item \emph{Single Query/Parallel/Cloud}: number of solved \emph{instances}
+  \item \emph{Single Query/Parallel}: number of solved \emph{instances}
   \item \emph{Incremental}: number of solved \emph{queries}
   \item \emph{Unsat Core}: number of top-level assertions \emph{removed}
   \item \emph{Model Validation}: number of solved instances with correct \emph{models}
