@@ -1,8 +1,7 @@
 .PHONY: install
-install: ## Install the poetry environment and install the pre-commit hooks
+install: ## Install the poetry environment
 	@echo "🚀 Creating virtual environment using pyenv and poetry"
 	@poetry install
-	@poetry shell
 
 .PHONY: check
 check: ## Run code quality tools.

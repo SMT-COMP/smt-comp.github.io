@@ -31,6 +31,7 @@ import smtcomp.generate_benchmarks
 import smtcomp.list_benchmarks
 import smtcomp.selection
 import smtcomp.generate_website_page
+import smtcomp.generate_graphics as smtcomp_generate_graphics
 from smtcomp.unpack import write_cin, read_cin
 import smtcomp.scramble_benchmarks
 from rich.console import Console
@@ -1125,3 +1126,27 @@ def generate_certificates(
     smtcomp.certificates.generate_certificates(
         website_results, input_for_certificates, submission_dir, experimental_division
     )
+
+
+@app.command()
+def generate_graphics(
+    data: Path,
+    logic: defs.Logic,
+    output_dir: Path,
+    track: defs.Track = defs.Track.SingleQuery,
+    src: List[Path] = typer.Argument(None),
+    kind: smtcomp.scoring.Kind = typer.Argument(default="par"),
+) -> None:
+    """
+    Generate graphics in html format
+
+    If src is empty use results in data
+    """
+    config = defs.Config(data)
+    results, _ = smtcomp.results.helper_get_results(config, src, track)
+
+    smtcomp.scoring.sanity_check(config, results)
+
+    results = smtcomp.scoring.add_disagreements_info(results, track).filter(disagreements=False).drop("disagreements")
+
+    smtcomp_generate_graphics.output_for_logic(config, results, logic, output_dir)
