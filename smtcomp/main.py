@@ -1131,8 +1131,9 @@ def generate_certificates(
 @app.command()
 def generate_graphics(
     data: Path,
-    logic: defs.Logic,
     output_dir: Path,
+    logic: list[defs.Logic] = [],
+    division: list[defs.Division] = [],
     track: defs.Track = defs.Track.SingleQuery,
     src: List[Path] = typer.Argument(None),
     kind: smtcomp.scoring.Kind = typer.Argument(default="par"),
@@ -1149,4 +1150,4 @@ def generate_graphics(
 
     results = smtcomp.scoring.add_disagreements_info(results, track).filter(disagreements=False).drop("disagreements")
 
-    smtcomp_generate_graphics.output_for_logic(config, results, logic, output_dir)
+    smtcomp_generate_graphics.create_output(config, results, output_dir / "test.html", logic, division)
