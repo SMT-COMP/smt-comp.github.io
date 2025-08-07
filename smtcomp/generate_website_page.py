@@ -94,6 +94,8 @@ float_6dig = Annotated[
 
 class PodiumStep(BaseModel):
     name: str
+    baseSolver: str
+    deltaBaseSolver: int
     competing: str  # yes or no
     errorScore: int
     correctScore: int
@@ -115,6 +117,7 @@ class PodiumDivision(BaseModel):
     participants: str  # participants_2023
     disagreements: str  # disagreements_2023
     division: str  # Arith
+    is_competitive: bool  # true = least 2 subst. different solvers were submitted
     track: track_name
     n_benchmarks: int
     time_limit: int
@@ -237,14 +240,27 @@ class Podium(RootModel):
     root: PodiumDivision | PodiumCrossDivision | PodiumSummaryResults = Field(..., discriminator="layout")
 
 
-def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
+def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
     if podium is None:
         return []
     else:
-        return [
-            PodiumStep(
+        podiums = []
+        non_competitive = []
+        for s in podium:
+            cscore = s["correctly_solved_score"]
+            delta = 0
+            derived_solver = defs.Config.baseSolverMap2025.get(s["solver"], "")
+            if derived_solver != "":
+                for sprime in podium:
+                    if sprime["solver"] == defs.Config.baseSolverMap2025.get(s["solver"], ""):
+                        delta = cscore - sprime["correctly_solved_score"]
+                        break
+
+            ps = PodiumStep(
                 name=s["solver"],
-                competing="yes",  # TODO
+                baseSolver=derived_solver,
+                deltaBaseSolver=delta,
+                competing="yes" if s["solver"] in config.competitive_solvers else "no",
                 errorScore=s["error_score"],
                 correctScore=s["correctly_solved_score"],
                 CPUScore=s["cpu_time_score"],
@@ -257,23 +273,56 @@ def podium_steps(podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
                 timeout=s["timeout"],
                 memout=s["memout"],
             )
-            for s in podium
-        ]
+
+            if not s["solver"] in config.competitive_solvers:
+                non_competitive.append(ps)
+            else:
+                podiums.append(ps)
+
+        return podiums + non_competitive
 
 
-def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track) -> PodiumDivision:
+def make_podium(
+    config: defs.Config, d: dict[str, Any], for_division: bool, track: defs.Track, results: pl.LazyFrame
+) -> PodiumDivision:
     def get_winner(l: List[dict[str, str]] | None) -> str:
-        # TODO select only participating
+        if l is None or not l:
+            return "-"
+
+        l = [e for e in l if e["solver"] in config.competitive_solvers]
+
         if l is None or not l or l[0]["correctly_solved_score"] == 0:
             return "-"
         else:
             return l[0]["solver"]
 
+    def is_competitive_division(results: pl.LazyFrame, division: int, for_division: bool) -> bool:
+        """
+        A division in a track is competitive if at least two substantially different
+        solvers (i.e., solvers from two different teams) were submitted.
+        """
+
+        solvers = (
+            results.filter(pl.col("division" if for_division else "logic") == division)
+            .select("solver")
+            .unique()
+            .collect()
+            .get_column("solver")
+            .to_list()
+        )
+
+        # Avoid solvers of the same solver family under the assumption
+        # of the following format: <solver-family>-<suffix> (holds for SMT-COMP 2025)
+        # TODO: improve this criterion in the future
+        return len(set([sol.split("-")[0].lower() for sol in solvers])) >= 2
+
     if for_division:
+        competitive_division = is_competitive_division(results, d["division"], for_division)
         division = defs.Division.name_of_int(d["division"])
         logics = dict((defs.Logic.name_of_int(d2["logic"]), d2["n"]) for d2 in d["logics"])
     else:
         division = defs.Logic.name_of_int(d["logic"])
+        competitive_division = is_competitive_division(results, d["logic"], for_division)
         logics = dict()
 
     if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):
@@ -281,12 +330,13 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, trac
         steps_seq = []
     else:
         winner_seq = get_winner(d[smtcomp.scoring.Kind.seq.name])
-        steps_seq = podium_steps(d[smtcomp.scoring.Kind.seq.name])
+        steps_seq = podium_steps(config, d[smtcomp.scoring.Kind.seq.name])
 
     return PodiumDivision(
-        resultdate="2024-07-08",
+        resultdate="2025-08-11",
         year=config.current_year,
         divisions=f"divisions_{config.current_year}",
+        is_competitive=competitive_division,
         participants=f"participants_{config.current_year}",
         disagreements=f"disagreements_{config.current_year}",
         division=division,
@@ -301,15 +351,15 @@ def make_podium(config: defs.Config, d: dict[str, Any], for_division: bool, trac
         winner_unsat=get_winner(d[smtcomp.scoring.Kind.unsat.name]),
         winner_24s=get_winner(d[smtcomp.scoring.Kind.twentyfour.name]),
         sequential=steps_seq,
-        parallel=podium_steps(d[smtcomp.scoring.Kind.par.name]),
-        sat=podium_steps(d[smtcomp.scoring.Kind.sat.name]),
-        unsat=podium_steps(d[smtcomp.scoring.Kind.unsat.name]),
-        twentyfour=podium_steps(d[smtcomp.scoring.Kind.twentyfour.name]),
+        parallel=podium_steps(config, d[smtcomp.scoring.Kind.par.name]),
+        sat=podium_steps(config, d[smtcomp.scoring.Kind.sat.name]),
+        unsat=podium_steps(config, d[smtcomp.scoring.Kind.unsat.name]),
+        twentyfour=podium_steps(config, d[smtcomp.scoring.Kind.twentyfour.name]),
     )
 
 
 def sq_generate_datas(
-    config: defs.Config, results: pl.LazyFrame, for_division: bool, track: defs.Track
+    config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, for_division: bool, track: defs.Track
 ) -> dict[str, PodiumDivision]:
     """
     Generate datas for divisions or for logics
@@ -322,12 +372,13 @@ def sq_generate_datas(
         group_by = "logic"
         name_of_int = defs.Logic.name_of_int
 
+    selection = selection.filter(selected=True)
+
     # TODO it should be done after filter_for
-    len_by_division = results.group_by(group_by).agg(total=pl.col("file").n_unique())
+    len_by_division = selection.group_by(group_by).agg(total=pl.len())
 
     def info_for_podium_step(kind: smtcomp.scoring.Kind, config: defs.Config, results: pl.LazyFrame) -> pl.LazyFrame:
         results = smtcomp.scoring.filter_for(kind, config, results)
-
         return (
             sort(
                 intersect(results, len_by_division, on=[group_by])
@@ -368,8 +419,8 @@ def sq_generate_datas(
 
     if for_division:
         lf_logics = [
-            results.group_by("division", "logic")
-            .agg(n=pl.col("file").n_unique())
+            selection.group_by("division", "logic")
+            .agg(n=pl.len())
             .group_by("division")
             .agg(logics=pl.struct("logic", "n"))
         ]
@@ -382,7 +433,7 @@ def sq_generate_datas(
 
     df = r.collect()
 
-    return dict((name_of_int(d[group_by]), make_podium(config, d, for_division, track)) for d in df.to_dicts())
+    return dict((name_of_int(d[group_by]), make_podium(config, d, for_division, track, results)) for d in df.to_dicts())
 
 
 def get_kind(a: PodiumDivision, k: smtcomp.scoring.Kind) -> list[PodiumStep]:
@@ -471,7 +522,7 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
         winner_seq = get_winner(sequential)
 
     return PodiumBiggestLead(
-        resultdate="2024-07-08",
+        resultdate="2025-08-11",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
@@ -589,7 +640,7 @@ def best_overall_ranking(
         winner_seq = get_winner(sequential, scores, data, track)
 
     return PodiumBestOverall(
-        resultdate="2024-07-08",
+        resultdate="2025-08-11",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
@@ -684,7 +735,7 @@ def largest_contribution_ranking(
         steps_seq = ld[smtcomp.scoring.Kind.seq]
 
     return PodiumLargestContribution(
-        resultdate="2024-07-08",
+        resultdate="2025-08-11",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
@@ -702,7 +753,9 @@ def largest_contribution_ranking(
     )
 
 
-def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.Track) -> PodiumLargestContribution:
+def largest_contribution(
+    config: defs.Config, selection: pl.LazyFrame, scores: pl.LazyFrame, track: defs.Track
+) -> PodiumLargestContribution:
     for_division = True
     # For each solver compute its corresponding best solver
     # TODO: check what is competitive solver (unsound?)
@@ -727,11 +780,10 @@ def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.
             pl.min("cpu_time_score"),
             sound_status=pl.col("sound_status").first(),
             answer=pl.col("answer").first(),
-            logic=-1,
         )
         .with_columns(solver=pl.lit("virtual"), error_score=0)
     )
-    virtual_datas = sq_generate_datas(config, virtual_scores, for_division, track)
+    virtual_datas = sq_generate_datas(config, selection, virtual_scores, for_division, track)
 
     # For each solver Compute virtual solver without the solver
     solvers = scores.select("division", "solver").unique()
@@ -749,10 +801,11 @@ def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.
             sound_status=pl.col("sound_status").first(),
             error_score=0,
             answer=pl.col("answer").first(),
-            logic=-1,
         )
     )
-    virtual_without_solver_datas = sq_generate_datas(config, virtual_without_solver_scores, for_division, track)
+    virtual_without_solver_datas = sq_generate_datas(
+        config, selection, virtual_without_solver_scores, for_division, track
+    )
 
     large = largest_contribution_ranking(config, virtual_datas, virtual_without_solver_datas, ratio_by_division, track)
 
@@ -764,8 +817,7 @@ def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.
     return large
 
 
-def export_results(config: defs.Config, results: pl.LazyFrame, track: defs.Track) -> None:
-
+def export_results(config: defs.Config, selection: pl.LazyFrame, results: pl.LazyFrame, track: defs.Track) -> None:
     page_suffix = page_track_suffix(track)
 
     dst = config.web_results
@@ -780,7 +832,7 @@ def export_results(config: defs.Config, results: pl.LazyFrame, track: defs.Track
     all_divisions: list[PodiumDivision] = []
 
     for for_division in [True, False]:
-        datas = sq_generate_datas(config, scores, for_division, track)
+        datas = sq_generate_datas(config, selection, scores, for_division, track)
 
         for name, data in datas.items():
             (dst / f"{name.lower()}-{page_suffix}.md").write_text(data.model_dump_json(indent=1))
@@ -795,7 +847,7 @@ def export_results(config: defs.Config, results: pl.LazyFrame, track: defs.Track
             bigdata = biggest_lead_ranking(config, datas, track)
             (dst / f"biggest-lead-{page_suffix}.md").write_text(bigdata.model_dump_json(indent=1))
 
-            largedata = largest_contribution(config, scores, track)
+            largedata = largest_contribution(config, selection, scores, track)
             (dst / f"largest-contribution-{page_suffix}.md").write_text(largedata.model_dump_json(indent=1))
 
     all_divisions.sort(key=lambda x: x.division)

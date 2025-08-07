@@ -30,9 +30,9 @@ def unscramble_yml_basename(basename: str) -> int:
         assert basename[0:9] == "scrambled"
         assert basename[-5:] == ".smt2"
         s = basename[9:-5]
-        file_id, core = list(map(int, s.split("_")))
-        file_id += core * 10_000_000  # Hack for unsat_core_verification
-        return file_id
+        file_id, core = list(map(int, s.split("_")))  # type: ignore
+        file_id += core * 10_000_000  # type: ignore # Hack for unsat_core_verification
+        return file_id  # type: ignore
 
 
 def benchmark_files_dir(cachedir: Path, track: defs.Track) -> Path:
@@ -57,40 +57,34 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
         i = "incremental"
     else:
         i = "non-incremental"
-    orig_path = (
+    fsrc = (
         srcdir.joinpath(i)
         .joinpath(str(defs.Logic.of_int(fdict["logic"])))
         .joinpath(Path(fdict["family"]))
         .joinpath(fdict["name"])
     )
     dstdir = dstdir.joinpath(str(defs.Logic.of_int(fdict["logic"])))
-    scrambled_path = dstdir.joinpath(scramble_basename(fdict["scramble_id"]))
+    fdst = dstdir.joinpath(scramble_basename(fdict["scramble_id"]))
     dstdir.mkdir(parents=True, exist_ok=True)
 
     if incremental:
         subprocess.run(
             ["grep", "-o", "(set-info :status \\(sat\\|unsat\\|unknown\\))"],
-            stdin=orig_path.open("r"),
-            stdout=scrambled_path.open("w"),
+            stdin=fsrc.open("r"),
+            stdout=fdst.open("w"),
         )
-        subprocess.run(["sed", "-i", "s/(set-info :status \\(.*\\))/\\1/", str(scrambled_path)])
-        with scrambled_path.open("a") as dstfile:
+        subprocess.run(["sed", "-i", "s/(set-info :status \\(.*\\))/\\1/", str(fdst)])
+        with fdst.open("a") as dstfile:
             dstfile.write("--- BENCHMARK BEGINS HERE ---\n")
-        subprocess.run(args, stdin=orig_path.open("r"), stdout=scrambled_path.open("a"))
+        subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("a"))
     else:
         try:
-            subprocess.run(args, stdin=orig_path.open("r"), stdout=scrambled_path.open("w"), check=True)
+            subprocess.run(args, stdin=fsrc.open("r"), stdout=fdst.open("w"), check=True)
         except subprocess.CalledProcessError as e:
-            print(f"[red]Warning[/red] scrambler crashed on {orig_path}")
+            print(f"[red]Warning[/red] scrambler crashed on {fsrc}")
 
-    expected = get_expected_result(orig_path) if not incremental else None
-
-    mangled_name = "_".join(
-        [str(fdict["file"]), str(defs.Logic.of_int(fdict["logic"])), fdict["family"].replace("/", "__"), fdict["name"]]
-    )
-    yaml_dst = dstdir.joinpath(mangled_name).with_suffix(".yml")
-
-    generate_benchmark_yml(yaml_dst, scrambled_path, expected, orig_path.relative_to(srcdir))
+    expected = get_expected_result(fsrc) if not incremental else None
+    generate_benchmark_yml(fdst, expected, fsrc.relative_to(srcdir))
 
 
 def create_scramble_id(benchmarks: pl.LazyFrame, config: defs.Config) -> pl.LazyFrame:
