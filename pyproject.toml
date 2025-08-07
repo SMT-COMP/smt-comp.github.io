@@ -19,7 +19,8 @@ dependencies = [
 "wget",
 "benchexec",
 "polars",
-"PyGithub"
+"PyGithub",
+"altair",
 ]
 #pystemd is not set as dependency because it is not in the CI
 
