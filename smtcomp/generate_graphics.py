@@ -64,16 +64,17 @@ def create_output(
 
     # Replace integer by names
     # It should be possible to do it later in altair; the html file would be smaller
-    for lookup, replaced in [
-        (defs.Answer, "answer"),
-        (defs.Answer, "answer2"),
-        (defs.Logic, "logic"),
-        (defs.Division, "division"),
-    ]:
-        lf_lookup = pl.DataFrame(
-            data=((int(n), str(n)) for n in lookup), schema=[(replaced, pl.Int8), ("pretty", pl.String)]
-        ).lazy()
-        results = results.join(lf_lookup, how="left", on=replaced).drop(replaced).rename({"pretty": replaced})
+    if True:
+        for lookup, replaced in [
+            (defs.Answer, "answer"),
+            (defs.Answer, "answer2"),
+            (defs.Logic, "logic"),
+            (defs.Division, "division"),
+        ]:
+            lf_lookup = pl.DataFrame(
+                data=((int(n), str(n)) for n in lookup), schema=[(replaced, pl.Int8), ("pretty", pl.String)]
+            ).lazy()
+            results = results.join(lf_lookup, how="left", on=replaced).drop(replaced).rename({"pretty": replaced})
 
     buckets = results.select(c_bucket.unique())
 
