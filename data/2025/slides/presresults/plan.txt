@@ -7,9 +7,10 @@ does it apply?
 [ ] slide7: update    
 [ ] slide8-10: update    
 [ ] -- solver presentations: unknown at this point      
-[ ] slide 11: update    
-[ ] slide 13: OK?    
-[ ] slide 14: add best overall metric    
+[x] slide 11: update    
+[x] slide 12
+[x] slide 13: OK?    
+[x] slide 14: add best overall metric    
 [ ] slide 15: OK                                   
 [ ] slide 16-28 change/import according to certificates    
 [ ] slide 29: update                        
