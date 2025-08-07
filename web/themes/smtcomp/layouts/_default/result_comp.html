@@ -107,7 +107,9 @@
   <tr {{ if eq $solver.competing "no" }}class = "non-competing" {{ end }}>
     <td><a href="../{{ $solver.division | lower }}-{{ replace ($.Params.track | strings.TrimPrefix "track_") "_" "-" }}">{{ $solver.division }}</a></td>
     <td>
-      <a href="TODO">{{ $solver.name }}</a>{{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
+      <!--<a href="TODO">{{ $solver.name }}</a>{{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}-->
+     {{ $solver.name }}{{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
+
       <td class="right">{{ $solver.contribution}}</td>
     </td>
   </tr>
