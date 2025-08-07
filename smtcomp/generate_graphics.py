@@ -13,6 +13,7 @@ import smtcomp.results
 
 c_file = pl.col("file")
 c_logic = pl.col("logic")
+c_division = pl.col("division")
 c_solver = pl.col("solver")
 c_solver2 = pl.col("solver2")
 c_answer = pl.col("answer")
@@ -24,11 +25,21 @@ c_bucket = pl.col("bucket")
 c_bucket2 = pl.col("bucket2")
 
 
-def output_for_logic(config: defs.Config, results: pl.LazyFrame, logic: defs.Logic, output_dir: Path) -> None:
+def create_output(
+    config: defs.Config,
+    results: pl.LazyFrame,
+    output: Path,
+    logics: list[defs.Logic] = [],
+    divisions: list[defs.Division] = [],
+) -> None:
 
     # We are computing the buckets offline because we have too much data
-    results = results.filter(c_run == True, c_logic == int(logic)).select(
+    results = results.filter(
+        c_run == True, c_logic.is_in(set(map(int, logics))) | c_division.is_in(set(map(int, divisions)))
+    ).select(
         c_file,
+        c_logic,
+        c_division,
         c_solver,
         c_answer,
         c_cputime_s,
@@ -45,28 +56,30 @@ def output_for_logic(config: defs.Config, results: pl.LazyFrame, logic: defs.Log
         .sort(c_solver, c_solver2)
     )
 
-    answers = pl.DataFrame(
-        data=((int(n), str(n)) for n in defs.Answer), schema=[("answer", pl.Int8), ("pretty_answer", pl.String)]
-    ).lazy()
-
-    def pretty_answer(lf: pl.LazyFrame, replaced: str) -> pl.LazyFrame:
-        if replaced == "answer":
-            pretty = answers
-        else:
-            pretty = answers.rename({"answer": replaced})
-        return lf.join(pretty, how="left", on=replaced).drop(replaced).rename({"pretty_answer": replaced})
-
     results = (
-        results.group_by(c_solver, c_solver2, c_answer, c_answer2, c_bucket, c_bucket2).len().sort(c_solver, c_solver2)
+        results.group_by(c_solver, c_solver2, c_answer, c_answer2, c_bucket, c_bucket2, c_logic, c_division)
+        .len()
+        .sort(c_solver, c_solver2)
     )
 
-    results = pretty_answer(pretty_answer(results, "answer"), "answer2")
+    # Replace integer by names
+    # It should be possible to do it later in altair; the html file would be smaller
+    for lookup, replaced in [
+        (defs.Answer, "answer"),
+        (defs.Answer, "answer2"),
+        (defs.Logic, "logic"),
+        (defs.Division, "division"),
+    ]:
+        lf_lookup = pl.DataFrame(
+            data=((int(n), str(n)) for n in lookup), schema=[(replaced, pl.Int8), ("pretty", pl.String)]
+        ).lazy()
+        results = results.join(lf_lookup, how="left", on=replaced).drop(replaced).rename({"pretty": replaced})
 
     buckets = results.select(c_bucket.unique())
 
     df_corr, df_results, df_buckets = pl.collect_all([corr, results, buckets])
 
-    bucket_domain = list(df_buckets["bucket"])
+    bucket_domain: list[float] = list(df_buckets["bucket"])
 
     row1 = df_corr.row(1, named=True)
 
@@ -75,6 +88,8 @@ def output_for_logic(config: defs.Config, results: pl.LazyFrame, logic: defs.Log
     select_y = alt.selection_point(fields=["solver2"], name="solver2", value=row1["solver2"], toggle=False)
     answer_x = alt.selection_point(fields=["answer"], name="answer1")
     answer_y = alt.selection_point(fields=["answer2"], name="answer2")
+    logic = alt.selection_point(fields=["logic"], name="logic")
+    division = alt.selection_point(fields=["division"], name="division")
     g_select_provers = (
         alt.Chart(df_corr, title="Click a tile to compare solvers", height=250, width=250)
         .mark_rect()
@@ -99,7 +114,7 @@ def output_for_logic(config: defs.Config, results: pl.LazyFrame, logic: defs.Log
             .scale(type="band", align=0, domain=bucket_domain),
             alt.Y("bucket2:O")
             .axis(title="solver2", bandPosition=0.5)
-            .scale(type="band", align=0, domain=reversed(bucket_domain)),
+            .scale(type="band", align=0, domain=list(reversed(bucket_domain))),
             text="benchs:Q",
         )
     )
@@ -122,7 +137,9 @@ def output_for_logic(config: defs.Config, results: pl.LazyFrame, logic: defs.Log
     #     )
     #     .mark_bar()
     # )
-    opacity = alt.when(select_x, select_y, answer_x, answer_y).then(alt.value(1)).otherwise(alt.value(0.0))
+    opacity = (
+        alt.when(select_x, select_y, answer_x, answer_y, logic, division).then(alt.value(1)).otherwise(alt.value(0.0))
+    )
 
     legend_answer_x = (
         alt.Chart(df_results, title=alt.Title(alt.expr(f'"solver1:" + {select_x.name}.solver')))
@@ -138,11 +155,24 @@ def output_for_logic(config: defs.Config, results: pl.LazyFrame, logic: defs.Log
         .add_params(answer_y)
     )
 
+    legend_logic = (
+        alt.Chart(df_results, title="Logic")
+        .mark_point()
+        .encode(alt.Y("logic:N").axis(title="", orient="right"), opacity=opacity)
+        .add_params(logic)
+    )
+
+    legend_division = (
+        alt.Chart(df_results, title="Division")
+        .mark_point()
+        .encode(alt.Y("division:N").axis(title="", orient="right"), opacity=opacity)
+        .add_params(division)
+    )
+
     graph = (g_select_provers | g_results_rect + g_results_text).resolve_scale(color="independent")
 
-    graph = alt.vconcat(graph, legend_answer_x | legend_answer_y)
+    graph = alt.vconcat(graph, legend_answer_x | legend_answer_y | legend_logic | legend_division)
 
     graph = graph.resolve_scale(color="independent")
 
-    graph.save(output_dir / "test.html")
-    graph.save(output_dir / "test.json", format="json")
+    graph.save(output)
