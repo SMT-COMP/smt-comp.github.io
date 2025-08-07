@@ -1143,7 +1143,7 @@ def generate_graphics(
     If src is empty use results in data
     """
     config = defs.Config(data)
-    results, _ = smtcomp.results.helper_get_results(config, src, track)
+    results = smtcomp.results.helper_get_results(config, src, track)
 
     smtcomp.scoring.sanity_check(config, results)
 
