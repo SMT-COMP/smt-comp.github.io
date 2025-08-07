@@ -12,7 +12,6 @@ from typing import Optional
 import re
 from rich import print
 
-
 csv_original_id_name = "original_id.csv"
 
 
@@ -30,9 +29,9 @@ def unscramble_yml_basename(basename: str) -> int:
         assert basename[0:9] == "scrambled"
         assert basename[-5:] == ".smt2"
         s = basename[9:-5]
-        file_id, core = list(map(int, s.split("_")))
-        file_id += core * 10_000_000  # Hack for unsat_core_verification
-        return file_id
+        file_id_int, core = list(map(int, s.split("_")))
+        file_id_int += core * 10_000_000  # Hack for unsat_core_verification
+        return file_id_int
 
 
 def benchmark_files_dir(cachedir: Path, track: defs.Track) -> Path:

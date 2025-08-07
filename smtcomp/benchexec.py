@@ -28,6 +28,8 @@ def get_suffix(track: defs.Track) -> str:
             return "_parallel"
         case defs.Track.Cloud:
             return "_cloud"
+        case defs.Track.ProofExhibition:
+            return "_proof"
 
 
 def get_xml_name(s: defs.Submission, track: defs.Track, division: defs.Division) -> str:
@@ -47,7 +49,7 @@ class CmdTask(BaseModel):
 
 
 def generate_benchmark_yml(
-    ymlfile: Path, benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path]
+    ymlfile: Path, benchmark: Path, expected_result: Optional[bool], orig_file: Optional[Path] = None
 ) -> None:
     with ymlfile.open("w") as f:
         f.write("format_version: '2.0'\n\n")

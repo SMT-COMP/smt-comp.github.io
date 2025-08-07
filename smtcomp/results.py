@@ -159,7 +159,7 @@ def convert_run(r: ET.Element) -> Run | None:
 
 def parse_xml(file: Path) -> Results:
     result = ET.fromstring(read_cin(file))
-    runs = list(filter(lambda r: r is not None, map(convert_run, result.iterfind("run"))))
+    runs = list(filter_map(convert_run, result.iterfind("run")))
     return Results(runid=RunId.unmangle(result.attrib["name"]), options=result.attrib["options"], runs=runs)
 
 

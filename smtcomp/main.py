@@ -27,7 +27,6 @@ import smtcomp.model_validation as model_validation
 import smtcomp.unsat_core_validation as unsat_core_validation
 import smtcomp.results as results
 from smtcomp.benchmarks import clone_group
-import smtcomp.convert_csv
 import smtcomp.generate_benchmarks
 import smtcomp.list_benchmarks
 import smtcomp.selection
@@ -129,15 +128,6 @@ def validate(file: str) -> None:
     except ValidationError as e:
         print(e)
         exit(1)
-
-
-@app.command(rich_help_panel=conversion_panel)
-def convert_csv(file: str, dstdir: Path) -> None:
-    """
-    Convert a csv (old submission format) to json files (new format)
-    """
-    dstdir.mkdir(parents=True, exist_ok=True)
-    smtcomp.convert_csv.convert_csv(Path(file), Path(dstdir))
 
 
 @app.command(rich_help_panel=submissions_panel)
@@ -597,12 +587,6 @@ def benchmarks_stats(src: Path) -> None:
     tree_info(tree.add("non-incremental"), benchmarks.non_incremental)
     tree_info(tree.add("incremental"), benchmarks.incremental)
     print(tree)
-
-
-@app.command(rich_help_panel=conversion_panel)
-def convert_csv_result(src: Path, dst: Path, track: defs.Track) -> None:
-    results = smtcomp.convert_csv.convert_csv_result(src, track)
-    write_cin(dst, results.model_dump_json(indent=1))
 
 
 def merge_results_aux(files: list[Path]) -> defs.Results:

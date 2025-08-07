@@ -17,9 +17,6 @@ dependencies = [
 "gitpython",
 "yattag",
 "wget",
-"option",
-"requests",
-"bs4",
 "benchexec",
 "polars",
 "PyGithub"
