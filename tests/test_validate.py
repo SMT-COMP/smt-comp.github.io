@@ -4,7 +4,6 @@ from pathlib import Path
 import pytest
 from typer.testing import CliRunner
 
-from smtcomp.convert_csv import convert_csv
 from smtcomp.main import app
 import smtcomp.defs as defs
 from smtcomp.submission import read

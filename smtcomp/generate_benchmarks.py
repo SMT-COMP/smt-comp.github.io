@@ -81,5 +81,5 @@ def generate_trivial_benchmarks(dst: Path) -> None:
                     file_sat.write_text(f"(set-logic {logic.value})(check-sat)")
                     file_unsat.write_text(f"(set-logic {logic.value})(assert false)(check-sat)")
 
-                    generate_benchmark_yml(file_sat, True, None)
-                    generate_benchmark_yml(file_unsat, False, None)
+                    generate_benchmark_yml(file_sat.with_suffix(".yml"), file_sat, True, None)
+                    generate_benchmark_yml(file_unsat.with_suffix(".yml"), file_unsat, False, None)
