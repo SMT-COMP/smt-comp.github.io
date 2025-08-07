@@ -301,7 +301,7 @@ ETH Zurich, Switzerland
 
 \end{frame}
 
-\begin{frame}[fragile]{SMT-COMP Tracks (traditional)}
+\begin{frame}[fragile]{SMT-COMP Tracks}
   \emph{Single Query (SQ) Track}
   \begin{itemize}
   \item Determine satisfiability of one problem
@@ -330,42 +330,42 @@ ETH Zurich, Switzerland
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{SMT-COMP Tracks}
+%\begin{frame}[fragile]{SMT-COMP Tracks}
 
-%  \emph{Model Validation}
+%%  \emph{Model Validation}
+  %%\begin{itemize}
+    %%\item Division with quantifier-free floating-point logics
+    %%\item Model validation with Dolmen (thanks to Gillaume Bury and Fran\c{c}ois
+    %%Bobot)
+  %%\end{itemize}
+  %%\bigskip
+
+%%  \emph{Cloud and Parallel Track} (sponsored by AWS, led by Mike Whalen)
+  %%\begin{itemize}
+  %%\item Solve a large problem over the cloud (or a big computer)
+  %%\begin{itemize}
+    %%\item 100 machines, 1600 cores, 6400 GB of memory (cloud)
+    %%\item 64 cores, 256 GB of memory (parallel)
+  %%\end{itemize}
+  %%\item Solver answers sat/unsat/unknown
+  %%\end{itemize}
+
+  %%\pause\bigskip
+
+  %\emph{Proof Exhibition Track}
   %\begin{itemize}
-    %\item Division with quantifier-free floating-point logics
-    %\item Model validation with Dolmen (thanks to Gillaume Bury and Fran\c{c}ois
-    %Bobot)
-  %\end{itemize}
-  %\bigskip
+  %\item Solver submitted together with a checker for unsatisfiability proofs
+  %\item No predefined format or checker
+  %\item No ranking
+  %\item Qualitative assessment
+%\end{itemize}
 
-%  \emph{Cloud and Parallel Track} (sponsored by AWS, led by Mike Whalen)
-  %\begin{itemize}
-  %\item Solve a large problem over the cloud (or a big computer)
-  %\begin{itemize}
-    %\item 100 machines, 1600 cores, 6400 GB of memory (cloud)
-    %\item 64 cores, 256 GB of memory (parallel)
-  %\end{itemize}
-  %\item Solver answers sat/unsat/unknown
-  %\end{itemize}
+%\medskip
+%\pause
+  %\emph{As last year} the sat/unsat results from sound solvers in SQ were used to
+  %include benchmarks on the MV, UC and PE tracks.
 
-  %\pause\bigskip
-
-  \emph{Proof Exhibition Track}
-  \begin{itemize}
-  \item Solver submitted together with a checker for unsatisfiability proofs
-  \item No predefined format or checker
-  \item No ranking
-  \item Qualitative assessment
-\end{itemize}
-
-\medskip
-\pause
-  \emph{As last year} the sat/unsat results from sound solvers in SQ were used to
-  include benchmarks on the MV, UC and PE tracks.
-
-\end{frame}
+%\end{frame}
 
 \begin{frame}{Tracks, Solvers, Divisions, and Benchmarks}
   Teams: 25 (+4) %2022 21
@@ -475,18 +475,48 @@ ETH Zurich, Switzerland
   \end{center}
 \end{frame}
 
-  \begin{frame}
-    \frametitle{Other participants}
+\begin{frame}
+  \frametitle{Other participants}
+
+  \begin{center}
+  \begin{minipage}{0.49\textwidth}  % Adjust 0.8 to control how wide the content is
     \begin{itemize}
-\item Q3B
-\vitem Q3B-pBDD
-\vitem STP
-\vitem UltimateIntBlastingWrapper+SMTInterpol
-\vitem z3-alpha
-\vitem Z3-Noodler
-\vitem Z3-Owl
+      \item Amaya
+      \item Bitwuzla-MachBV
+      \item COLIBRI
+      \item STP-Parti-Bitwuzla
+      \item UltimateEliminator+MathSAT
+      \item Z3-Inc-Z3++
+      \item Z3-Noodler-Mocha
+      \item Z3-Owl
+      \item Z3-Parti-Z3pp
+      \item Bitwuzla
+      \item bv\_decide-nokernel
+      \item bv\_decide
+      \item colibri2
     \end{itemize}
-  \end{frame}
+  \end{minipage}
+  \begin{minipage}{0.49\textwidth}  % Adjust 0.8 to control how wide the content is
+    \begin{itemize}
+      \item cvc5
+      \item iProver v3.9.3
+      \item OpenSMT (min-ucore)
+      \item OpenSMT
+      \item OSTRICH
+      \item SMTInterpol
+      \item SMT-RAT
+      \item SMTS
+      \item Yices2
+      \item YicesQS
+      \item Z3-Noodler
+      \item z3siri
+      \item Z3-alpha
+     \end{itemize}
+  \end{minipage}
+  \end{center}
+
+\end{frame}
+
 
 
 \begin{frame}
@@ -494,14 +524,15 @@ ETH Zurich, Switzerland
 
   Submitted by organisers
   \begin{itemize}
-  \item Best solvers, per division, from previous years (27 Solvers)
+      \item Base solvers for derived solvers (Bitwuzla, Z3, Z3-Noodler) 
+      \item Parallel track: solvers with varied number of cores (e.g, 64, 32, 16, 8)       
   \end{itemize}
   \bigskip
 
-  Submitted by participants
-  \begin{itemize}
-  \item Fixed solvers (OSTRICH, Z3-Owl, Bitwuzla, Yices2, Z3-Noodler, iProver)
-  \end{itemize}
+%  Submitted by participants
+  %\begin{itemize}
+  %\item Fixed solvers (OSTRICH, Z3-Owl, Bitwuzla, Yices2, Z3-Noodler, iProver)
+  %\end{itemize}
 \end{frame}
 
 \begin{frame}{Scoring}
@@ -541,10 +572,11 @@ ETH Zurich, Switzerland
 
   \bigskip
 
-  Two competition-wide rankings (for each score)
+  Competition-wide rankings (for each score)
   \begin{itemize}
-  \item \emph{Biggest lead}: division winner with most score difference to second place
+  \item \emph{Best overall ranking}: select solver that is most universal  
   \item \emph{Largest contribution}: improvement each solver provided to a virtual best solver
+  \item \emph{Biggest lead}: division winner with most score difference to second place
   \end{itemize}
 
 \end{frame}
@@ -572,9 +604,9 @@ ETH Zurich, Switzerland
   \hline
 \end{tabular}
 \end{center}
-\vfill
-Experimental track are added in the slides but are not present
-in the certificates
+%\vfill
+%Experimental track are added in the slides but are not present
+%in the certificates
 \end{frame}
 
 {
