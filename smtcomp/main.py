@@ -1131,12 +1131,11 @@ def generate_certificates(
 @app.command()
 def generate_graphics(
     data: Path,
-    output_dir: Path,
+    output: Path,
     logic: list[defs.Logic] = [],
     division: list[defs.Division] = [],
     track: defs.Track = defs.Track.SingleQuery,
     src: List[Path] = typer.Argument(None),
-    kind: smtcomp.scoring.Kind = typer.Argument(default="par"),
 ) -> None:
     """
     Generate graphics in html format
@@ -1150,4 +1149,4 @@ def generate_graphics(
 
     results = smtcomp.scoring.add_disagreements_info(results, track).filter(disagreements=False).drop("disagreements")
 
-    smtcomp_generate_graphics.create_output(config, results, output_dir / "test.html", logic, division)
+    smtcomp_generate_graphics.create_output(config, results, output, logic, division)
