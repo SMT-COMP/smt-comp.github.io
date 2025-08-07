@@ -6,20 +6,32 @@
   {{ $trueDivision := and (isset .Params "logics") (.Params.logics | len | ne 0) }}
   {{ $prettyTrack := index .Site.Data.pretty_names.track .Params.track }}
 
+  {{ $hasBaseSolvers := false }}
+  {{ $hasNoncompetingSolvers := false }}
+
+
+{{ if .Params.is_competitive }}
   <h1>{{ .Params.division }} ({{ $prettyTrack }})</h1>
-<p>
-  Competition results for the {{ .Params.division }}
-  {{ if $trueDivision }} division {{ else }} logic {{ end }}
-  in the {{ $prettyTrack }}.
-</p>
+  <p>
+    Competition results for the {{ .Params.division }}
+    {{ if $trueDivision }} division {{ else }} logic {{ end }}
+    in the {{ $prettyTrack }}.
+  <p>Results were generated on {{ .Params.resultdate }}</p>
+  </p>
+  <p>
+    <b>Benchmarks</b>: {{ .Params.n_benchmarks }}<br/>
+    <b>Time Limit:</b> {{ .Params.time_limit }} seconds<br/>
+    <b>Memory Limit:</b> {{ .Params.mem_limit }} GB
+  </p>
+{{ else }}
+   <h1>{{ .Params.division }} ({{ $prettyTrack }}) <br> <span style="background-color:gray; color:white; margin-top:10px; font-size:75%"> non-competitive</span></h1>
+   <p>
+    <b>Benchmarks</b>: {{ .Params.n_benchmarks }}<br/>
+  </p>
+{{ end }}
 
-<p>Results were generated on {{ .Params.resultdate }}</p>
 
-<p>
-  <b>Benchmarks</b>: {{ .Params.n_benchmarks }}<br/>
-  <b>Time Limit:</b> {{ .Params.time_limit }} seconds<br/>
-  <b>Memory Limit:</b> {{ .Params.mem_limit }} GB
-</p>
+
 
 {{ if $trueDivision }}
 <b>Logics:</b><ul>
@@ -40,6 +52,7 @@
 {{ $winner_category_names := .Site.Data.pretty_names.winner_performance }}
 {{ $category_names := .Site.Data.pretty_names.performance }}
 
+{{ if .Params.is_competitive }}
 <h3>Winners</h3>
 <table>
   <thead>
@@ -65,6 +78,7 @@
     {{ end }}
   </tr>
 </table>
+{{ end }}
 
 {{ range $cat := $categories }}
 {{ with index $.Params $cat }}
@@ -88,30 +102,61 @@
     </tr>
 </thead>
 {{ range $solver := . }}
-<tr {{ if eq $solver.competing "no" }}class = "non-competing" {{ end }}>
-    <td>
+
+{{ if eq $solver.competing "no" }}
+    {{ $.Scratch.Set "hasNonCompetingSolvers" true }}
+{{ end }}
+
+
+<tr {{ if eq $solver.competing "no" }}class="non-competing" {{ end }}>
+    <td {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>
       {{ $solver.name }} {{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
     </td>
-    <td class="right">{{ $solver.errorScore }}
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.errorScore }}
       {{ if $solver.errorFootnote }}
          <a href="#error{{ $solver.name }}">*</a>
       {{ end }}
     </td>
-    <td class="right">{{ $solver.correctScore }}</td>
-    <td class="right">{{ $solver.CPUScore }}</td>
-    <td class="right">{{ $solver.WallScore }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>
+    {{ $solver.correctScore }}
+    {{ if not (eq $solver.baseSolver "") }}
+        {{ $.Scratch.Set "hasBaseSolvers" true }}
+        {{ if not (lt $solver.deltaBaseSolver 0) }}
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +{{ $solver.deltaBaseSolver }})</span>
+        {{ else }}
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base {{ $solver.deltaBaseSolver }})</span>
+        {{ end }}
+    {{ end }}
+    </td>
+    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.CPUScore }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.WallScore }}</td>
 
-    <td class="right">{{ $solver.solved }}</td>
-    <td class="right">{{ $solver.solved_sat }}</td>
-    <td class="right">{{ $solver.solved_unsat }}</td>
-    <td class="right">{{ $solver.unsolved }}</td>
-    <td class="right">{{ $solver.abstained }}</td>
+    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.solved }}</td>
+    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.solved_sat }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.solved_unsat }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.unsolved }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.abstained }}</td>
 
-    <td class="right">{{ $solver.timeout }}</td>
-    <td class="right">{{ $solver.memout }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.timeout }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.memout }}</td>
 </tr>
 {{ end }}
 </table>
+
+{{ if ($.Scratch.Get "hasBaseSolvers") }}
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+{{ end }}
+
+{{ if ($.Scratch.Get "hasNonCompetingSolvers") }}
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+{{ end }}
+
+
+
 {{ end }}
 {{ end }}
 

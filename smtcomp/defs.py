@@ -135,7 +135,7 @@ class Contributor(BaseModel, extra="forbid"):
 
 class SolverType(EnumAutoInt):
     wrapped = "wrapped"
-    derived = "derived"
+    derived = "derived"  # TODO: put a datatype information on base solver
     standalone = "Standalone"
     portfolio = "Portfolio"
 
@@ -1317,6 +1317,7 @@ class Submission(BaseModel, extra="forbid"):
     website: HttpUrl
     system_description: HttpUrl
     solver_type: SolverType
+    # TODO add field base_solver?
     participations: Participations
     seed: int | None = None
     competitive: bool = True
@@ -1325,6 +1326,7 @@ class Submission(BaseModel, extra="forbid"):
         description="Must be set for the final version of the submission. An archive on zenodo is needed in this case.",
     )
 
+    # TODO: model validator to check the sanity of the new base_solver field
     @model_validator(mode="after")
     def check_archive(self) -> Submission:
         if self.archive is None and not all(p.archive for p in self.participations.root):
@@ -1510,10 +1512,25 @@ class Config:
     Benchmarks to remove before selection
     """
 
-    removed_results: Any = []
+    removed_results: list[Any] = []
+
     """
     Benchmarks to remove after running the solvers. Can be used when the selection has already been done.
     """
+
+    """
+    Solver -> Base solver map for 2025
+    TODO: refactor this into Submission
+    """
+    baseSolverMap2025 = {
+        "Bitwuzla-MachBV": "Bitwuzla-MachBV-base",
+        "Z3-Inc-Z3++": "Z3-Inc-Z3++-base",
+        "Z3-Noodler-Mocha": "Z3-Noodler-Mocha-base",
+        "Z3-Owl": "Z3-Owl-base",
+        "Z3-Noodler": "Z3-Noodler",
+        "z3siri": "z3siri-base",
+        "Z3-alpha": "Z3-alpha-base",
+    }
 
     def __init__(self, data: Path | None) -> None:
         self.id = self.__class__.__next_id__
@@ -1577,6 +1594,10 @@ class Config:
         return [
             Submission.model_validate_json(Path(file).read_text()) for file in self.data.glob("../submissions/*.json")
         ]
+
+    @functools.cached_property
+    def competitive_solvers(self) -> list[str]:
+        return [s.name for s in self.submissions if s.competitive]
 
     @functools.cached_property
     def web_results(self) -> Path:
