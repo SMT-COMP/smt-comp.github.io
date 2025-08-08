@@ -1,5 +1,5 @@
 {
-  "name": "Bitwuzla-32core",
+  "name": "Bitwuzla-16core",
   "contributors": ["Aina Niemetz", "Mathias Preiner"],
   "contacts": ["Mathias Preiner <preiner@cs.stanford.edu>"],
   "final" : true,
