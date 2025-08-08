@@ -1149,4 +1149,25 @@ def generate_graphics(
 
     results = smtcomp.scoring.add_disagreements_info(results, track).filter(disagreements=False).drop("disagreements")
 
-    smtcomp_generate_graphics.create_output(config, results, output, logic, division)
+    smtcomp_generate_graphics.save_output(config, results, output, logic, division)
+
+
+@app.command()
+def generate_website_graphics(
+    data: Path,
+    track: defs.Track,
+    src: List[Path] = typer.Argument(None),
+) -> None:
+    """
+    Generate graphics for hugo website
+
+    If src is empty use results in data
+    """
+    config = defs.Config(data)
+    results = smtcomp.results.helper_get_results(config, src, track)
+
+    smtcomp.scoring.sanity_check(config, results)
+
+    results = smtcomp.scoring.add_disagreements_info(results, track).filter(disagreements=False).drop("disagreements")
+
+    smtcomp_generate_graphics.generate_pages(config, results, track)

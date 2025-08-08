@@ -15,9 +15,8 @@
   <p>
     Competition results for the {{ .Params.division }}
     {{ if $trueDivision }} division {{ else }} logic {{ end }}
-    in the {{ $prettyTrack }}.
+    in the {{ $prettyTrack }}. <a href="{{math.Add (path.Dir .RelPermalink) "-chart"}}"><b>Chart</b></a> </p>
   <p>Results were generated on {{ .Params.resultdate }}</p>
-  </p>
   <p>
     <b>Benchmarks</b>: {{ .Params.n_benchmarks }}<br/>
     <b>Time Limit:</b> {{ .Params.time_limit }} seconds<br/>

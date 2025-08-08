@@ -21,6 +21,7 @@ dependencies = [
 "polars",
 "PyGithub",
 "altair",
+"python-frontmatter",
 ]
 #pystemd is not set as dependency because it is not in the CI
 
@@ -70,10 +71,9 @@ module = [
     "benchexec","benchexec.util",
     "benchexec.result","benchexec.tools.template",
     "benchexec.runexecutor",
-    "bs4","wget"
+    "bs4","wget","frontmatter"
 ]
 ignore_missing_imports = true
-
 
 [tool.ruff]
 target-version = "py37"
