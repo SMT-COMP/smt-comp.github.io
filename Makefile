@@ -19,7 +19,7 @@ test: generation ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
 	@poetry run pytest
 
-generation: submission-generation participant-data track-data division-track-data results-generation ## Files generation for the website
+generation: submission-generation participant-data track-data division-track-data results-generation charts-generation ## Files generation for the website
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
@@ -83,6 +83,21 @@ results-generation:
 	# @poetry run smtcomp export-results-pages data Cloud
 	@echo "🚀 Generating results to web/content/results for Parallel"
 	@poetry run smtcomp export-results-pages data Parallel
+
+charts-generation:
+	@echo "🚀 Generating results to web/content/results for SingleQuery"
+	@poetry run smtcomp generate-website-graphics data SingleQuery
+	@echo "🚀 Generating results to web/content/results for ModelValidation"
+	@poetry run smtcomp generate-website-graphics data ModelValidation
+	@echo "🚀 Generating results to web/content/results for UnsatCore"
+	@poetry run smtcomp generate-website-graphics data UnsatCore
+	@echo "🚀 Generating results to web/content/results for Incremental"
+	@poetry run smtcomp generate-website-graphics data Incremental
+	# @echo "🚀 Generating results to web/content/results for Cloud"
+	# @poetry run smtcomp generate-website-graphics data Cloud
+	@echo "🚀 Generating results to web/content/results for Parallel"
+	@poetry run smtcomp generate-website-graphics data Parallel
+
 
 cache:
 	@echo "🚀 Generating cache"
