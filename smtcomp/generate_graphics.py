@@ -4,12 +4,15 @@ from collections import defaultdict
 from typing import Set, Dict, Optional, cast, List, DefaultDict, Tuple
 from pathlib import Path, PurePath
 from smtcomp import defs
+from rich.progress import track as rich_track
 
 import polars as pl
 import altair as alt
-import smtcomp.scoring
+import altair.utils.html
+import altair.vegalite.display
 from smtcomp.utils import *
-import smtcomp.results
+import smtcomp.generate_website_page
+import frontmatter
 
 c_file = pl.col("file")
 c_logic = pl.col("logic")
@@ -28,10 +31,9 @@ c_bucket2 = pl.col("bucket2")
 def create_output(
     config: defs.Config,
     results: pl.LazyFrame,
-    output: Path,
     logics: list[defs.Logic] = [],
     divisions: list[defs.Division] = [],
-) -> None:
+) -> alt.api.ChartType:
 
     # We are computing the buckets offline because we have too much data
     results = results.filter(
@@ -82,7 +84,7 @@ def create_output(
 
     bucket_domain: list[float] = list(df_buckets["bucket"])
 
-    row1 = df_corr.row(1, named=True)
+    row1 = df_corr.row(min(1, len(df_corr) - 1), named=True)
 
     # Create heatmap with selection
     select_x = alt.selection_point(fields=["solver"], name="solver1", value=row1["solver"], toggle=False)
@@ -170,10 +172,58 @@ def create_output(
         .add_params(division)
     )
 
-    graph = (g_select_provers | g_results_rect + g_results_text).resolve_scale(color="independent")
+    graph: alt.api.ChartType = (g_select_provers | g_results_rect + g_results_text).resolve_scale(color="independent")
 
     graph = alt.vconcat(graph, legend_answer_x | legend_answer_y | legend_logic | legend_division)
 
     graph = graph.resolve_scale(color="independent")
 
-    graph.save(output)
+    return graph
+
+
+def save_output(
+    config: defs.Config,
+    results: pl.LazyFrame,
+    output: Path,
+    logics: list[defs.Logic] = [],
+    divisions: list[defs.Division] = [],
+) -> None:
+
+    create_output(config, results, logics, divisions).save(output)
+
+
+def save_hugo_output(chart: alt.api.ChartType, output: Path, title: str) -> None:
+
+    with alt.data_transformers.disable_max_rows():
+        content = chart.to_html(
+            fullhtml=False,
+        )
+    post = frontmatter.Post(content=content, title=title, layout="chart")
+    output.write_text(frontmatter.dumps(post))
+
+
+def generate_pages(config: defs.Config, results: pl.LazyFrame, track: defs.Track) -> None:
+    page_suffix = smtcomp.generate_website_page.page_track_suffix(track)
+    dst = config.web_results
+    dst.mkdir(parents=True, exist_ok=True)
+
+    df_results = results.filter(c_run == True).collect()
+    results = df_results.lazy()
+
+    divisions = list(df_results["division"].unique())
+    for div in rich_track(list(map(defs.Division.of_int, divisions)), description="Generating chart for divisions"):
+        chart = create_output(config, results, divisions=[div])
+        save_hugo_output(
+            chart,
+            output=dst / f"{div.name.lower()}-{page_suffix}-chart.html",
+            title=f"Chart for division {div.name}",
+        )
+
+    logics = list(df_results["logic"].unique())
+    for logic in rich_track(list(map(defs.Logic.of_int, logics)), description="Generating chart for logics"):
+        chart = create_output(config, results, logics=[logic])
+        save_hugo_output(
+            chart,
+            output=dst / f"{logic.name.lower()}-{page_suffix}-chart.html",
+            title=f"Chart for logic {logic.name}",
+        )

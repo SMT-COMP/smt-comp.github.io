@@ -525,4 +525,7 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         defaults=defaults,
     )
 
+    if track == defs.Track.Parallel:
+        selected = selected.with_columns(run=True)
+
     return selected
