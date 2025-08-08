@@ -28,61 +28,6 @@
     fill=orange,fill opacity=.5,thick}}%
 \pgfornament[scale=0.50]{32}}
 
-\newbox{\myfancyhead}
-\AtBeginDocument{
-\savebox{\myfancyhead}{
-\newpgfornamentfamily{pgfhan}
-\begin{tikzpicture}[overlay,remember picture]
-    \tikzset{every node/.append style={inner sep=0pt,color=MidnightBlue!50}}
-    \tikzset{pgfornamentstyle/.style={draw=green!20!black,
-    fill=orange,fill opacity=.5,thick}}%
-    \node[anchor=north west,shift={(14.5pt,-14.5pt)}] at (current page.north west)
-  (nw) {\pgfornament[scale=0.5]{12}};
-    \node[anchor=north east,shift={(-14.5pt,-14.5pt)}] at (current page.north east)
-    (ne) {\pgfornament[scale=0.5,symmetry=v]{12}};
-  \node[anchor=south west,shift={(14.5pt,14.5pt)}] at (current page.south west)
-    (sw) {\pgfornament[scale=0.5,symmetry=h]{12}};
-  \node[anchor=south east,shift={(-14.5pt,14.5pt)}] at (current page.south east)
-    (se) {\pgfornament[scale=0.5,symmetry=c]{12}};
-%    \pgfornamentline[scale=0.25,shift={(0pt,-14.5pt)}]{nw.north west}{ne}{20}{32};
-% \begin{scope}[start chain,node distance=-1pt]
-%     \node[anchor=north west,on chain] at (nw.north east)
-%     {\usebox{\fortyseven}};
-%     \foreach \i in {1,...,9} {\node[on chain]{\usebox{\fortyseven}};}
-%     \end{scope}
-\foreach \i in {0,...,6}
-   \node[anchor=north west,shift={($\i*(100bp,0)-(50bp,0)$)}] at (nw.north east)
-    {\usebox{\fortyseven}};
-\foreach \i in {0,...,3}
-    \node[anchor=south east,shift={($\i*(0,-100bp)+(0,25bp)$)},rotate=90] at (ne.south east)
-     {\usebox{\fortyseven}};
-\foreach \i in {0,...,6}
-     \node[anchor=south west,shift={($\i*(100bp,0)-(50bp,0)$)}] at (sw.south east)
-      {\usebox{\fortyseven}};
-\foreach \i in {0,...,3}
-      \node[anchor=south west,shift={($\i*(0,-100bp)+(0,25bp)$)},rotate=-90] at (nw.south west)
-       {\usebox{\fortyseven}};
-   %         \foreach \i in {0,...,22}
-% \node[anchor=south west,rotate=-90,
-% shift={($\i*(31bp,0)$)}] at (nw.south west)
-% {\usebox{\fortyseven}};
-    %   \node[anchor=north west] at (nw.north east) {\pgfornament[scale=0.25]{32}};
-%    \draw [scale=0.25] (nw) to [ornament=12] (ne);
-%   \node[anchor=north west] at (nw.north east)%
-%     {\pgfornament[scale=0.25]{32}};
-%     \node[anchor=south west] at (sw.south east)%
-%     {\pgfornament[scale=0.25]{32}};
-%     \node[anchor=south west,rotate=-90] at (nw.south west)
-%     {\pgfornament[scale=0.25]{32}};
-%     \node[anchor=south east,rotate=90] at (ne.south east)
-%     {\pgfornament[scale=0.25]{32}};
-%     \node[anchor=center,shift={(25bp,-25bp)}] at (nw.south east)
-%     {\pgfornament[scale=0.5]{57}};
-\end{tikzpicture}
-}}
-
-
-\fancyhead[L]{\usebox{\myfancyhead}}
 
 % \node[anchor=north west,shift={(14.5pt,-14.5pt)}] at (current page.north west)
 %   (nw) {\pgfornamenthan[scale=0.2]{25}};
@@ -96,19 +41,11 @@
 \newpgfornamentfamily{vectorian}
     \begin{tikzpicture}[color=Maroon,
         every node/.style={inner sep=0pt}]
-        \node[minimum size=12cm](vecbox){%
+        \node[minimum size=11cm](vecbox){%
             \begin{minipage}{\textwidth}
             \centering
         \BODY
     \end{minipage}};
-        \node[anchor=north west] at (vecbox.north west)
-        {\pgfornament[width=2.5cm,symmetry=h]{3}};
-        \node[anchor=north east] at (vecbox.north east)
-        {\pgfornament[width=2.5cm,symmetry=c]{3}};
-        \node[anchor=south west] at (vecbox.south west)
-        {\pgfornament[width=2.5cm,symmetry=none]{3}};
-        \node[anchor=south east] at (vecbox.south east)
-        {\pgfornament[width=2.5cm,symmetry=v]{3}};
         \end{tikzpicture}
 }
 
@@ -126,27 +63,27 @@
 \newcommand{\withtrack}[2]{\textsc{#1}{{\footnotesize (#2)}}}
 
 \newcommand{\MakeOnePage}[6]{
+  \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{background_upscaled.png}};
     {\centering
     {
 
     \begin{minipage}{\textwidth}
     \centering
 
+    \vspace{1cm}
     \begin{tikzpicture}
-      \node [circular drop shadow={shadow scale=1.05},
-             decorate, decoration=zigzag,
-             fill=blue!20,draw,thick,circle,text width=3.5cm,align=center,xshift=2cm]
-              {\large\textbf{SMT-COMP\\ 2025}};
+      \node [align=center]
+              {\resizebox{10cm}{!}{\Huge\textsc{SMT-COMP 2025}}};
     \end{tikzpicture}
     \end{minipage}
+    \vspace{1.55cm}
 
     \begin{myframe}
 
     \textcolor{red!10!black!90}
-    {\Huge #1}\\
+    {\Huge \textsc{#1}}\\
 
-    \textcolor{green!10!black!90}{
-    \large In honor of the results achieved in the SMT-competition}
+    \vspace{1.55cm}
 
     \medskip
     \ifstrempty{#2}{}{
@@ -156,7 +93,7 @@
 
     \textcolor{black}{\large #2}
 
-     \medskip
+     \bigskip
     }
 
     \ifstrempty{#3}{}{
@@ -164,7 +101,7 @@
 
      \textcolor{black}{\large#3}
 
-     \medskip
+     \bigskip
     }
 
     \ifstrempty{#4}{}{
@@ -176,21 +113,23 @@
     \vspace{2mm}
 
 
-    \vspace{1cm}
+    \vspace{1.5cm}
 
     {\color{blue!40!black}
 %    \scalebox{.7}{
     {\tiny
-    \begin{tabular}{ccccc}
+    \begin{tabular}{ccccccc}
         \includegraphics[scale=0.25,trim=1.5cm 2.75cm 0pt 0pt]{FB-signature.png} &&
-        \includegraphics[trim=0pt 0.20cm 0pt 0pt]{MB-Signature.png} &&
-        \includegraphics[scale=0.4,trim=1.5pt 2.75cm 0pt 0pt]{MJ-Signature.png} \\
+        \includegraphics[scale=0.06,trim=0pt 0.20cm 0pt 0pt]{DD-Signature.png} &&
+        \includegraphics[scale=0.4,trim=1.5pt 2.75cm 0pt 0pt]{MJ-Signature.png} &&
+        \includegraphics[scale=0.4,trim=0pt 23pt 0pt 0pt]{DW-Signature.png}\\
     \cline{1-1}
     \cline{3-3}
     \cline{5-5}
+    \cline{7-7}
     \\ \
-    François Bobot & & Martin Bromberger & & Martin Jon\'{a}\v{s} \\
-    Organizer & & Chair & & Organizer \\
+    François Bobot & & David Déharbe  & & Martin Jon\'{a}\v{s} & & Dominik Winterer  \\
+    Organizer & & Organizer & & Chair & & Organizer \\
     \end{tabular}
     }}
     \end{myframe}
@@ -199,8 +138,6 @@
 }
 
 \begin{document}
-
-\TileWallPaper{4cm}{2cm}{tiling.png}
 
 \input{input_for_certificates.tex}
 
