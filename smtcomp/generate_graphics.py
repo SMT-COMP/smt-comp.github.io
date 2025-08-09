@@ -240,7 +240,7 @@ def create_output(
 
     graph: alt.api.ChartType = (g_select_provers | g_results).resolve_scale(color="independent")
 
-    graph = alt.vconcat(graph, g_answer | (legend_logic | legend_division))
+    graph = alt.vconcat(graph, (g_answer | (legend_logic | legend_division)).resolve_scale(color="independent"))
 
     graph = graph.resolve_scale(color="independent")
 
