@@ -18,6 +18,7 @@
 \usepackage{clrscode}
 \usepackage{pifont}
 \usepackage{pdfpages}
+\usepackage{booktabs}
 \geometry{papersize={16cm,9cm}}
 %\tikzexternalize
 \usepackage{multicol}
@@ -115,18 +116,17 @@ ETH Zurich, Switzerland
 \begin{frame}
   \frametitle{SMT-COMP}
 
-  \begin{minipage}[b]{.6\textwidth}
+  \begin{minipage}[b]{.5\textwidth}
     Annual competition for \emph{SMT solvers}\\
-    on (a selection of) benchmarks from \emph{SMT-LIB}
+    on (a selection of) benchmarks from \\ \emph{SMT-LIB}
   \end{minipage}%
-  \begin{minipage}{.4\textwidth}
+  \begin{minipage}{.5\textwidth}
     \begin{block}{History}
-      \begin{tabular}{rp{3cm}}
+      \begin{tabular}{rp{5cm}}
         \textbf{2005} & first competition \\
-        \textbf{2013} & evaluation instead \\
-        & of competition\\
-        \textbf{2014} & since then hosted\\
-        & by \emph{StarExec}
+        \textbf{2013} & evaluation instead of competition\\
+        \textbf{2014} & hosted by \emph{StarExec} \\
+        \textbf{2024} & hosted by \emph{LMU Munich} BenchCloud Cluster \\
       \end{tabular}
     \end{block}
   \end{minipage}
@@ -140,7 +140,6 @@ ETH Zurich, Switzerland
     \item to promote and develop the SMT-LIB format
     \begin{itemize}
       \item model validation
-      \item proof checking
     \end{itemize}
     \item to collect relevant benchmarks
     \end{itemize}
@@ -165,21 +164,20 @@ ETH Zurich, Switzerland
   \item a community effort to \emph{collect benchmarks}
   \end{enumerate}
   \medskip
-  
-  \textcolor{red}{TODO: update these numbers}
+
   \begin{columns}
     \begin{column}{0.4\textwidth}
       \begin{block}{Non-incremental}
-        434\,212 instances {\small (+42849)}\\ % 434212-391363=42849
+        450\,474 instances \\
         with 1 query each \\
-        in 83 logics {\small (+2)}.
+        in 90 logics
       \end{block}
     \end{column}
     \begin{column}{0.4\textwidth}
       \begin{block}{Incremental}
-        43\,287 instances {\small (+2)}\\
-        with 34\,036\,491 queries {\small (+37\,556)} \\ %34036491-33998935=37556
-        in 38 logics. % -1 ???
+        44\,708 instances \\
+        with 34\,163\,848 total queries \\
+        in 42 logics
       \end{block}
     \end{column}
     \begin{column}{0.08\textwidth}
@@ -189,12 +187,12 @@ ETH Zurich, Switzerland
     \begin{columns}
     \begin{column}{0.4\textwidth}
       \begin{block}{Selected Non-incremental}
-        227\,940 instances
+        260\,089 instances (4 tracks)
       \end{block}
     \end{column}
     \begin{column}{0.4\textwidth}
       \begin{block}{Selected Incremental}
-        22\,302 instances
+        22\,942 instances (1 track)
       \end{block}
     \end{column}
     \begin{column}{0.08\textwidth}
@@ -306,28 +304,28 @@ ETH Zurich, Switzerland
   \emph{Single Query (SQ) Track}
   \begin{itemize}
   \item Determine satisfiability of one problem
-  \item Solver answers sat/unsat/unknown
+  \item Solver answers \emph{sat/unsat/unknown}
   \end{itemize}
   \medskip
 
   \emph{Unsat Core Track}
   \begin{itemize}
-  \item Find small unsatisfiable subset of input.
-  \item Solver answers unsat + list of formulas.
+  \item Find small unsatisfiable subset of input
+  \item Solver answers \emph{unsat + list of formulas}
   \end{itemize}
   \medskip
 
   \emph{Model Validation Track}
   \begin{itemize}
-  \item Find a model for a satisfiable problem.
-  \item Solver answers sat + value for each non-logical symbol.
+  \item Find a model for a satisfiable problem
+  \item Solver answers \emph{sat + value} for each non-logical symbol
   \end{itemize}
   \medskip
 
   \emph{Incremental Track}
   \begin{itemize}
-  \item Solve many small problems interactively.
-  \item Solver acks commands and answers sat/unsat for each check.
+  \item Solve many small problems interactively
+  \item Solver reads commands and answers \emph{sat/unsat} for each check
   \end{itemize}
 \end{frame}
 
@@ -369,27 +367,25 @@ ETH Zurich, Switzerland
 %\end{frame}
 
 \begin{frame}{Tracks, Solvers, Divisions, and Benchmarks}
-  \textcolor{red}{TODO: Update this information}
-
-  Teams: 25 (+4) %2022 21
+  Solvers: 26 (+6) %2022 20
   \bigskip
 
-  \begin{tabular}{c|r@{}l|r@{}l|c}
-    Track & \multicolumn{2}{c|}{Solvers} & \multicolumn{2}{c|}{Divisions}  & Benchmarks \\
-    \hline
-    Single Query  &  22&(=)  & 19&(=)  & 113\,139 \\
-    Incremental &  7&(-1)   & 17&(=)  & 22\,301   \\
-    Unsat Core  &  6&(=)   & 16&(-1)  & 72\,958  \\
-    Model Validation  &  11&(+3)    &  13& (+ 6 exp.)  & 61\,083  \\
-    Proof Exhibition  &  4&(=)    &  & 19 exp.  & 59\,114  \\
-    \hline
-    Parallel &   3&(-1)      &   &4 exp.  & 400 \\
-    Cloud & 2&(-2)      &  &4 exp.  & 400 \\
-
-  \end{tabular}
+  \begin{center}
+    \begin{tabular}{lr@{}lr@{}rr}
+      \toprule
+      Track & \multicolumn{2}{c}{Solvers} & \multicolumn{2}{c}{Divisions}  & Benchmarks \\
+      \midrule
+      Single Query  &  21&(+4)  & &19  &  129\,361 \\
+      Incremental &  7&   & & 17 & 22\,942 \\
+      Unsat Core  &  7&(+1)   && 19  & 70\,578 \\
+      Model Validation  &  6&(-2)    &  & 13 & 59\,750  \\
+      Parallel & 6&(+3)      &  & 19 & 400 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
   \bigskip
 
-  Number in parenthesis shows changes from 2022
+  Number in parenthesis shows changes from 2024
 \end{frame}
 
 \begin{frame}
@@ -534,11 +530,19 @@ ETH Zurich, Switzerland
 \begin{frame}
   \frametitle{Non-Competitive Solvers}
 
-  Submitted by organisers
+  Mandatory submission by solver authors
   \begin{itemize}
-      \item Base solvers for derived solvers (Bitwuzla, Z3, Z3-Noodler) 
-      \item Parallel track: solvers with varied number of cores (e.g, 64, 32, 16, 8)       
+  \item base solver for each \emph{derived} solvers (Bitwuzla, Z3, Z3-Noodler)
+  \item new rule this year
   \end{itemize}
+
+  \bigskip
+
+  Voluntory submission to show parallel speedup
+  \begin{itemize}
+  \item parallel track solvers with varied number of cores (e.g, 64, 32, 16, 8)
+  \end{itemize}
+
   \bigskip
 
 %  Submitted by participants
@@ -569,7 +573,7 @@ ETH Zurich, Switzerland
 \begin{frame}{Score and Ranking}
   In each track we collect different scores:
   \begin{itemize}
-  \item \emph{Sequential score} (SQ, UC, MV): all time limits apply to cpu time
+  \item \emph{Sequential score} (SQ, UC, MV): all time limits apply to CPU time
   \item \emph{Parallel score} (all): all time limits apply to wallclock time
   \item \emph{SAT score} (SQ): parallel score for \emph{satisfiable} instances
   \item \emph{UNSAT score} (SQ): parallel score for \emph{unsatisfiable} instances
@@ -586,7 +590,7 @@ ETH Zurich, Switzerland
 
   Competition-wide rankings (for each score)
   \begin{itemize}
-  \item \emph{Best overall ranking}: select solver that is most universal  
+  \item \emph{Best overall ranking}: select solver that is most universal
   \item \emph{Largest contribution}: improvement each solver provided to a virtual best solver
   \item \emph{Biggest lead}: division winner with most score difference to second place
   \end{itemize}
@@ -788,44 +792,30 @@ ETH Zurich, Switzerland
 % \end{frame}
 
 \begin{frame}{Checking Disagreements}
-  \textcolor{red}{TODO: Update these numbers}
-  
-  \begin{itemize}
-  \item  50411 benchmarks of 227\,938 have no status
 
-  \vitem 300 benchmarks with disagreements (ABV,
-  BV,
-  LIA,
+  \begin{itemize}
+  \item 50\,978 of selected 129\,361 single query benchmarks have no known status
+
+  \vitem 59 benchmarks with disagreements (%
   NIA,
-  QF\_ABV,
-  QF\_AUFBV,
-  QF\_BVFP,
-  QF\_FP,
-  QF\_NRA,
-  QF\_SLIA,
-  UF,
-  UFDT,
+  QF\_ABVFP
+  QF\_S,
   UFDTLIRA)
 
-  \vitem We manually resolved the disagreements: authors confirmed solver
-  unsoundness
-  \vitem We had 10 solvers with soundness issues:
+  \vitem We had 7 solvers with soundness issues:
   \begin{columns}
     \column{0.45\textwidth}
     \begin{itemize}
-      \item Bitwuzla (uc printing error)
-      \item iProver (\& Fixed)
-      \item OSTRICH
-      \item Q3B
-      \item UltimateEliminator+MathSAT
+      \item Amaya
+      \item SMTInterpol
+      \item COLIBRI
+      \item UltimateEliminator+MathSAT (invalid unsat cores)
     \end{itemize}
     \column{0.55\textwidth}
     \begin{itemize}
-      \item UltimateIntBlastingWrapper+SMTInterpol
-      \item Vampire
-      \item Yices2 (\& Fixed)
-      \item Z3-Noodler (\& Fixed)
-      \item Z3-Owl (\& Fixed)
+    \item OpenSMT (invalid unsat cores)
+    \item OpenSMT (min-ucore) \\ (invalid unsat cores)
+    \item Yices2 (unsatisfiable models)
     \end{itemize}
 \end{columns}
 
@@ -851,20 +841,20 @@ ETH Zurich, Switzerland
 
 \begin{frame}{Plans for SMT-COMP 2026?}
   \begin{itemize}
-    \item Ressource requirements 
+    \item Ressource requirements
         \begin{itemize}
-            \item This year: around 1 million of solver-benchmark pairs 
-            \item Number of enchmarks and solvers steadily growing 
-            \item How to make this sustainable? 
-            \item Exclude \emph{trivial benchmarks}?
-            \item Reduce the RAM to allow more parallel runs?
-        \end{itemize} 
+            \item This year: around 1 million of solver-benchmark pairs
+            \item Number of benchmarks and solvers steadily growing
+            \item How to make this sustainable?
+            \item Modify benchmark selection rules?
+            \item Reduce RAM to allow more parallel runs?
+        \end{itemize}
     \item Derived Solvers
         \begin{itemize}
             \item Should we allow derived solvers?
             \item Should they compete in the same divisions?
         \end{itemize}
-    \item Instability track 
+    \item Instability track
       %\vitem Hopefully proof exhibition this year will help
 
 %      \vitem We have to analyze the data still
@@ -882,10 +872,10 @@ ETH Zurich, Switzerland
   %Three people organize the SMT-COMP.  In 2026:
   %\begin{itemize}
   %\item Martin Jonáš
-  %\item David Déharbe 
+  %\item David Déharbe
   %\item Fran\c{c}ois Bobot
-  %\item Dominik Winterer 
-  %\item AWS contact   
+  %\item Dominik Winterer
+  %\item AWS contact
   %\end{itemize}
   %%Fran\c{c}ois has been organizer for four-years! He can rest happy.
   %\bigskip
@@ -901,7 +891,7 @@ ETH Zurich, Switzerland
     \item \emph{Clark Barrett, Pascal Fontaine, Aina Niemetz, Mathias Preiner, Hans-Jörg Schurr}: SMT-LIB benchmarks
     %\item \emph{Aaron Stump}: StarExec support
     %\item \emph{Mike Whalen and team}: Cloud/Parallel Track
-    \item \emph{Dirk Beyer and team}: (BenchCloud instance at LMU)
+    \item \emph{Dirk Beyer, Philipp Wendler, and team}: BenchCloud instance at LMU
   \end{itemize}
   \bigskip
 
@@ -931,16 +921,16 @@ ETH Zurich, Switzerland
     %\item  Nicolas Amat
     %\item  Yannick Moy
     %\item  Yoni Zohar
-    \item Johannes Bauer  
-    \item Shaoke Cui  
-    \item Michal Hečko  
-    \item Hongjian Jiang  
-    \item Bohan Li  
-    \item Oliver Markgraf  
-    \item Hernan Ponce de Leon  
-    \item Hans-Jörg Schurr  
-    \item Amar Shah  
-    \item Yoni Zohar  
+    \item Johannes Bauer
+    \item Shaoke Cui
+    \item Michal Hečko
+    \item Hongjian Jiang
+    \item Bohan Li
+    \item Oliver Markgraf
+    \item Hernan Ponce de Leon
+    \item Hans-Jörg Schurr
+    \item Amar Shah
+    \item Yoni Zohar
   \end{itemize}
 \end{frame}
 
