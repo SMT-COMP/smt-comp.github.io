@@ -147,13 +147,11 @@ def create_output(
             corrs[row[0], row[1]] = row[2]
         correlation_sorting(solver_domain, corrs, 1000)
 
-    row1 = df_corr.row(min(1, len(df_corr) - 1), named=True)
-
     # Create heatmap with selection
     solvers = alt.selection_point(
         fields=["solver", "solver2"],
         name="solvers",
-        value=[{"solver": row1["solver"], "solver2": row1["solver2"]}],
+        value=[{"solver": solver_domain[0], "solver2": solver_domain[min(1, len(solver_domain) - 1)]}],
         toggle=False,
     )
     answer_xy = alt.selection_point(fields=["answer", "answer2"], name="answer")
@@ -163,10 +161,12 @@ def create_output(
         alt.Chart(df_corr, title="Click a tile to compare solvers", height=250, width=250)
         .mark_rect()
         .encode(
-            alt.X("solver", title=None).scale(domain=solver_domain),
-            alt.Y("solver2", title=None).scale(domain=list(reversed(solver_domain))),
+            alt.X("solver", title="solver1").scale(domain=solver_domain),
+            alt.Y("solver2", title="solver2").scale(domain=list(reversed(solver_domain))),
             alt.Color("corr", scale=alt.Scale(domain=[-1, 1], scheme="blueorange")),
-            opacity=alt.when(solvers).then(alt.value(1)).otherwise(alt.value(0.4)),
+            stroke=alt.when(solvers).then(alt.value("lightgreen")),
+            strokeWidth=alt.value(3),
+            opacity=alt.value(0.8),
         )
         .add_params(solvers)
     )
