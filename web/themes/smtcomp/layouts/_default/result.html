@@ -92,8 +92,12 @@
         <th class="center">Wall Time Score</th>
 
         <th class="center">Solved</th>
-        <th class="center">Solved SAT</th>
-        <th class="center">Solved UNSAT</th>
+        {{ if in (slice "track_single_query" "track_model_validation" "track_parallel") $.Params.track }}
+          <th class="center">Solved SAT</th>
+        {{ end }}
+        {{ if in (slice "track_single_query" "track_unsat_core" "track_parallel") $.Params.track }}
+          <th class="center">Solved UNSAT</th>
+        {{ end }}
         <th class="center">Unsolved</th>
         <th class="center">Abstained</th>
         <th class="center">Timeout</th>
@@ -131,8 +135,12 @@
     <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.WallScore }}</td>
 
     <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.solved }}</td>
+    {{ if in (slice "track_single_query" "track_model_validation" "track_parallel") $.Params.track }}
     <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.solved_sat }}</td>
+    {{ end }}
+    {{ if in (slice "track_single_query" "track_unsat_core" "track_parallel") $.Params.track }}
     <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.solved_unsat }}</td>
+    {{ end }}
     <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.unsolved }}</td>
     <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.abstained }}</td>
 
