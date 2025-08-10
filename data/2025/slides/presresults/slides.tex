@@ -22,6 +22,7 @@
 \geometry{papersize={16cm,9cm}}
 %\tikzexternalize
 \usepackage{multicol}
+\usepackage{wasysym}
 
 \colorlet{MYred}{red!70!black}
 \definecolor{MYgreen}{rgb}{.1,.5,0}
@@ -131,16 +132,13 @@ ETH Zurich, Switzerland
     \end{block}
   \end{minipage}
 
-  Goals:
+  \textbf{Goals}
   \begin{itemize}
   \item spur development of SMT solver implementations
   \item promote SMT solvers and their usage
   \item support the SMT-LIB project
     \begin{itemize}
-    \item to promote and develop the SMT-LIB format
-    \begin{itemize}
-      \item model validation
-    \end{itemize}
+    \item to promote and develop the SMT-LIB format (e.g., model validation)
     \item to collect relevant benchmarks
     \end{itemize}
   \item engage and include new members
@@ -150,7 +148,7 @@ ETH Zurich, Switzerland
 
 \begin{frame}
   \frametitle{SMT Solvers and SMT-LIB}
-  SMT Solver
+  \textbf{SMT Solver}
   \begin{itemize}
   \item checks formulas
     in \emph{SMT-LIB} format
@@ -158,7 +156,7 @@ ETH Zurich, Switzerland
   \end{itemize}
   \bigskip
 
-  SMT-LIB is
+  \textbf{SMT-LIB}
   \begin{enumerate}
   \item a \emph{language} in which benchmarks are written
   \item a community effort to \emph{collect benchmarks}
@@ -303,29 +301,35 @@ ETH Zurich, Switzerland
 \begin{frame}[fragile]{SMT-COMP Tracks}
   \emph{Single Query (SQ) Track}
   \begin{itemize}
-  \item Determine satisfiability of one problem
-  \item Solver answers \emph{sat/unsat/unknown}
+  \item determine satisfiability of one problem
+  \item solver answers \emph{sat/unsat/unknown}
   \end{itemize}
   \medskip
 
   \emph{Unsat Core Track}
   \begin{itemize}
-  \item Find small unsatisfiable subset of input
-  \item Solver answers \emph{unsat + list of formulas}
+  \item find small unsatisfiable subset of input
+  \item solver answers \emph{unsat + list of formulas}
   \end{itemize}
   \medskip
 
   \emph{Model Validation Track}
   \begin{itemize}
-  \item Find a model for a satisfiable problem
-  \item Solver answers \emph{sat + value} for each non-logical symbol
+  \item find a model for a satisfiable problem
+  \item solver answers \emph{sat + value} for each non-logical symbol
   \end{itemize}
   \medskip
 
   \emph{Incremental Track}
   \begin{itemize}
-  \item Solve many small problems interactively
-  \item Solver reads commands and answers \emph{sat/unsat} for each check
+  \item solve many small problems interactively
+  \item solver reads commands and answers \emph{sat/unsat} for each check
+  \end{itemize}
+
+  \emph{Parallel Track}
+  \begin{itemize}
+  \item solve a complicated problem on a parallel machine (128 cores)
+  \item solver answers \emph{sat/unsat/unknown}
   \end{itemize}
 \end{frame}
 
@@ -388,10 +392,40 @@ ETH Zurich, Switzerland
   Number in parenthesis shows changes from 2024
 \end{frame}
 
+\begin{frame}{Infrastructure}
+  \textbf{Hardware}
+  \begin{itemize}
+  \item everything executed on LMU Munich machines (thanks to Dirk Beyer!)
+  \item cluster of 168 machines with Intel Xeon E3-1230 v5 @ 3.40 GHz CPU and 32 GiB of RAM (SQ, Incremental, UC, MV)
+  \item parallel machine with AMD EPYC 7713 processor -- \emph{128 virtual cores} -- and 1 TiB of RAM
+  \end{itemize}
+
+  \bigskip
+
+  \textbf{Software}
+  \begin{itemize}
+  \item everything (benchmark selection, job generation, result processing, $\ldots$) orchestrated by a Python tool \texttt{smtcomp}
+  \item Dolmen for model validation
+  \item SMT-COMP scrambler for benchmark scrambling
+  \item Benchexec+BenchCloud for benchmark definition and execution
+  \item solver submission via GitHub pull requests with JSON files
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{New in SMT-COMP 2025}
+  \begin{itemize}
+  \item best overall ranking
+  \item mandatory submission of a base solver for each derived solver
+  \item parallel track executed on LMU Munich machine
+  \item no cloud track
+  \item changes in resource limits
+  \end{itemize}
+\end{frame}
+
 \begin{frame}
   \frametitle{Participants}
 
-  SMT-COMP 2025 participants rely on multiple reasoning frameworks:
+  \textbf{Multiple reasoning frameworks}
   \begin{itemize}
   \item CDCL(T), Saturation, MCSAT, CP
   \item automata
@@ -401,7 +435,7 @@ ETH Zurich, Switzerland
   \end{itemize}
 
   \bigskip
-  Seven new solvers participated:
+  \textbf{Seven new solvers}
   \begin{itemize}
 %\item iProver {\footnotesize (Korovin et al.)}
 %\item SMT-RAT-MCSAT {\footnotesize (Jasper Nalbach et al.)}
@@ -538,7 +572,7 @@ ETH Zurich, Switzerland
 
   \bigskip
 
-  Voluntory submission to show parallel speedup
+  Voluntary submission to show parallel speedup
   \begin{itemize}
   \item parallel track solvers with varied number of cores (e.g, 64, 32, 16, 8)
   \end{itemize}
@@ -552,7 +586,7 @@ ETH Zurich, Switzerland
 \end{frame}
 
 \begin{frame}{Scoring}
-  Computing scores:
+  \textbf{Computing scores}
   \begin{itemize}
   \item \emph{Single Query/Parallel}: number of solved \emph{instances}
   \item \emph{Incremental}: number of solved \emph{queries}
@@ -561,12 +595,15 @@ ETH Zurich, Switzerland
   \end{itemize}
 
   \bigskip
-  Error scores:
+
+  \textbf{Error scores}
   \begin{itemize}
   \item \emph{All Tracks}: given for sat reply for unsat instance, or vice versa
   \item \emph{Unsat Core}: given if returned core is satisfiable.
   \item \emph{Model Validation}: given if given model evaluates formula to \emph{false}
   \end{itemize}
+
+  \bigskip
   Error scores are \textbf{draconian}.
 \end{frame}
 
@@ -804,14 +841,14 @@ ETH Zurich, Switzerland
 
   \vitem We had 7 solvers with soundness issues:
   \begin{columns}
-    \column{0.45\textwidth}
+    \column{0.42\textwidth}
     \begin{itemize}
       \item Amaya
       \item SMTInterpol
       \item COLIBRI
       \item UltimateEliminator+MathSAT (invalid unsat cores)
     \end{itemize}
-    \column{0.55\textwidth}
+    \column{0.40\textwidth}
     \begin{itemize}
     \item OpenSMT (invalid unsat cores)
     \item OpenSMT (min-ucore) \\ (invalid unsat cores)
@@ -840,32 +877,28 @@ ETH Zurich, Switzerland
 %\end{frame}
 
 \begin{frame}{Plans for SMT-COMP 2026?}
+  \textbf{Resource requirements}
   \begin{itemize}
-    \item Ressource requirements
-        \begin{itemize}
-            \item This year: around 1 million of solver-benchmark pairs
-            \item Number of benchmarks and solvers steadily growing
-            \item How to make this sustainable?
-            \item Modify benchmark selection rules?
-            \item Reduce RAM to allow more parallel runs?
-        \end{itemize}
-    \item Derived Solvers
-        \begin{itemize}
-            \item Should we allow derived solvers?
-            \item Should they compete in the same divisions?
-        \end{itemize}
-    \item Instability track
-      %\vitem Hopefully proof exhibition this year will help
-
-%      \vitem We have to analyze the data still
-      %\begin{itemize}
-        %\item Job only finished last week (took 18 days to run)
-        %\item 830gb
-      %\end{itemize}
-
+  \item This year: around 1 million of solver-benchmark pairs
+  \item Number of benchmarks and solvers steadily growing
+  \item How to make this sustainable?
+  \item Modify benchmark selection rules?
+  \item Reduce RAM to allow more parallel runs?
   \end{itemize}
 
+  \bigskip
+  \textbf{Derived Solvers}
+  \begin{itemize}
+  \item Should we allow derived solvers?
+  \item Should they compete in the same divisions?
+  \end{itemize}
 
+  \bigskip
+
+  \textbf{Instability track}
+  \begin{itemize}
+  \item Previous presentation \smiley
+  \end{itemize}
 \end{frame}
 
 %\begin{frame}{SMT-COMP organizing committee}
