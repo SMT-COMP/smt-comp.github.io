@@ -121,7 +121,7 @@
       {{ end }}
     </td>
     <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>
-    {{ $solver.correctScore }}
+    {{ lang.FormatNumberCustom 0 $solver.correctScore "- ." }}
     {{ if not (eq $solver.baseSolver "") }}
         {{ $.Scratch.Set "hasBaseSolvers" true }}
         {{ if not (lt $solver.deltaBaseSolver 0) }}
@@ -131,8 +131,8 @@
         {{ end }}
     {{ end }}
     </td>
-    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.CPUScore }}</td>
-    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ $solver.WallScore }}</td>
+    <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ lang.FormatNumberCustom 2 $solver.CPUScore "- ." }}</td>
+    <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ lang.FormatNumberCustom 2 $solver.WallScore "- ." }}</td>
 
     <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.solved }}</td>
     {{ if in (slice "track_single_query" "track_model_validation" "track_parallel") $.Params.track }}
