@@ -34,6 +34,9 @@ def add_columns(dst: pl.LazyFrame, from_: pl.LazyFrame, on: list[str], defaults:
     assert on_cols.issubset(dst_cols)
     assert on_cols.issubset(from_cols)
     assert dst_cols.isdisjoint(from_cols.difference(on_cols))
+    if from_cols.difference(on_cols) != defaults.keys():
+        print(set(defaults.keys()).difference(from_cols.difference(on_cols)))
+        print(from_cols.difference(on_cols).difference(defaults.keys()))
     assert from_cols.difference(on_cols) == defaults.keys()
     fill_nulls = [pl.col(k).fill_null(value=v) for k, v in defaults.items()]
     return dst.join(from_, how="left", on=on, coalesce=True).with_columns(*fill_nulls)

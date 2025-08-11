@@ -1,21 +1,21 @@
-[x] slide1: change authors and affiliations    
-[ ] slide2: OK    
-[ ] slide3: 3 -> change numbers + delta to 2024    
-[ ] slide4-5: OK    
-[ ] slide6: update; proof exhibition track; as last year comment:    
-does it apply?        
-[ ] slide7: update    
-[ ] slide8-10: update    
-[ ] -- solver presentations: unknown at this point      
-[x] slide 11: update    
+[x] slide1: change authors and affiliations
+[ ] slide2: OK
+[ ] slide3: 3 -> change numbers + delta to 2024
+[ ] slide4-5: OK
+[ ] slide6: update; proof exhibition track; as last year comment:
+does it apply?
+[ ] slide7: update
+[ ] slide8-10: update
+[ ] -- solver presentations: unknown at this point
+[x] slide 11: update
 [x] slide 12
-[x] slide 13: OK?    
-[x] slide 14: add best overall metric    
-[ ] slide 15: OK                                   
-[ ] slide 16-28 change/import according to certificates    
-[ ] slide 29: update                        
-[ ] slide 30: remove?      
-[ ] slide 31: update    
-[x] slide 32: update    
-[x] slide 33: update name (rm Amazon)     
+[x] slide 13: OK?
+[x] slide 14: add best overall metric
+[ ] slide 15: OK
+[ ] slide 16-28 change/import according to certificates
+[ ] slide 29: update
+[ ] slide 30: remove?  
+[ ] slide 31: update
+[x] slide 32: update
+[x] slide 33: update name (rm Amazon) 
 [x] slide 34: update  

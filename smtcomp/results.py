@@ -479,7 +479,16 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         lf = lf.drop("logic", "participation")  # Hack for participation 0 bug move "participation" to on= for 2025,
         lf = lf.drop("benchmark_yml", "unsat_core")
 
-    selection = smtcomp.selection.helper(config, track).with_columns(track=int(track))
+    if False:
+        selection = smtcomp.selection.helper(config, track).drop("result")
+    else:
+        if track == defs.Track.Incremental:
+            selection = pl.read_ipc(config.cached_incremental_benchmarks).lazy()
+        else:
+            selection = pl.read_ipc(config.cached_non_incremental_benchmarks).lazy()
+        selection = intersect(selection, lf.select("file").unique(), on=["file"]).with_columns(selected=True)
+
+    selection = selection.with_columns(track=int(track))
 
     selection = (
         selection.unique()
@@ -491,36 +500,48 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         .lazy()
     )
 
-    defaults = {
-        "division": -1,
-        "family": -1,
-        "logic": -1,
-        "name": "",
-        "participation": -1,
-        "selected": True,
-    }
+    # defaults = {
+    #     "division": -1,
+    #     "family": -1,
+    #     "logic": -1,
+    #     "name": "",
+    #     "participation": -1,
+    #     "selected": True,
+    # }
+
+    defaults = {}
 
     if track == defs.Track.Incremental:
-        defaults["check_sats"] = -1
+        # defaults["check_sats"] = -1
+        pass
     else:
-        defaults["status"] = -1
-        defaults["asserts"] = -1
+        # defaults["status"] = -1
+        # defaults["asserts"] = -1
+        pass
 
     if track == defs.Track.Parallel:
-        defaults["hard"] = True
-        defaults["unsolved"] = False
+        # defaults["hard"] = True
+        # defaults["unsolved"] = False
+        pass
     else:
-        defaults["current_result"] = -1
-        defaults["new"] = False
-        defaults["result"] = -1
-        defaults["run"] = True
-        defaults["trivial"] = False
-        defaults["file_right"] = ""
+        # defaults["current_result"] = -1
+        # defaults["new"] = False
+        # defaults["run"] = True
+        # defaults["trivial"] = False
+        # defaults["file_right"] = ""
+        pass
+
+    defaults["cputime_s"] = 0
+    defaults["nb_answers"] = 0
+    defaults["memory_B"] = 0
+    defaults["walltime_s"] = 0
+    defaults["answer"] = -1
 
     selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+
     selected = add_columns(
-        lf,
         selected,
+        lf,
         on=["file", "solver", "track"],
         defaults=defaults,
     )
