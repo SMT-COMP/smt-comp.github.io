@@ -476,48 +476,48 @@ ETH Zurich, Switzerland
 \end{frame}
 }
 
-%\myincludepdf{slides-bitwuzla.pdf}
-
+\myincludepdf{solver/Bitwuzla.pdf}
 %\myincludepdf{slides-colibri.pdf}
 
-%%\myincludepdf{slides-cvc5.pdf}
-
-%\myvideopdf{cvc5-NRA-LS}{slides-cvc5-nra-ls.mp4}
-
-%\myvideopdf{iProver}{slides-iProver.mp4}
-
-%\myvideopdf{ismt, Yices-ismt}{slides-ismt.mp4}
-
-%\myincludepdf{slides-ismt-ppt.pdf}
-
-%\myincludepdf{slides-opensmt.pdf}
-
-%\myvideopdf{Ostrich}{slides-Ostrich.mkv}
-
-%\myincludepdf{slides-smtinterpol.pdf}
-
-%\myincludepdf{slides-smtrat.pdf}
-
-%\myvideopdf{UltimateEliminator+MathSAT}{slides-UltimateEliminator.mkv}
-
-%\myincludepdf{slides-vampire.pdf}
-
-%\myincludepdf{slides-yaga.pdf}
-
-%\myincludepdf{slides-Yices-2023.pdf}
-
-%\myincludepdf{slides-YicesQS-2025.pdf}
-
-%\myvideopdf{Z3-Z3++}{slides-z3-z3++.mp4}
 \begin{frame}
-\textcolor{red}{TODO: Add solver slides received through the call}
-%
-  %\frametitle{Z3-Z3++}
+  \frametitle{COLIBRI}
 
-  %\begin{center}
-    %\url{https://youtu.be/fBB0Wxxf9vA}
-  %\end{center}
+  \begin{itemize}
+    \item CP/SMT solver, propagation, no learning
+    \item QF\_FParith: propagation at the floating point or bitvector level (no bot-blsting)
+    \item 2025: More propagations for transcendental functions (Could we create a category for them?)
+    \end{itemize}
+    \vfill
+    \includegraphics[height=1cm]{logo_cea.png}
 \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{colibri2}
+
+  \begin{itemize}
+    \item First year participation
+    \item CP/SMT solver, propagation, no learning
+    \item Uses Dolmen as parser, so parse all standardized SMT-LIB theories
+    \item For 2025: participation only in QF\_FParith, many propagators from COLIBRI but nearly no propagators for BV
+    \item For 2026: add BV propagators ;), participation in quantified theory?
+    \end{itemize}
+    \vfill
+    \includegraphics[height=1cm]{logo_cea.png}
+\end{frame}
+
+\myincludepdf{solver/cvc5.pdf}
+
+\myincludepdf{solver/opensmt.pdf}
+
+\myincludepdf{solver/ostrich-smt-comp-2025.pdf}
+
+\myincludepdf{solver/smtinterpol.pdf}
+
+% \begin{frame}
+% \textcolor{red}{TODO: Add solver slides received through the call}
+% \end{frame}
 
 \begin{frame}
   \frametitle{Other participants}
@@ -903,13 +903,36 @@ ETH Zurich, Switzerland
   \end{itemize}
 \end{frame}
 
+%http://localhost:1313/2025/results/qf_fparith-single-query-chart/
+%http://localhost:1313/2025/results/lia-single-query-chart/
+%http://localhost:1313/2025/results/qf_bitvec-single-query/
+%http://localhost:1313/2025/results/qf_strings-single-query/
 
-\begin{frame}{Derived Solver}
-  
+
+\begin{frame}{Derived Solver: like any solver?}
+
   Derived Tool: A derived tool is defined as any solver that is based on and \textbf{extends another SMT
 solver} (the base solver) \textbf{from a different group of authors}. In contrast to a wrapper tool, a derived
 tool solving a benchmark of \textbf{logic A} is allowed to call an SMT solver to solve a problem for \textbf{logic
 A}.
+\end{frame}
+
+\begin{frame}
+\frametitle{Derived Solver: like any solver?}
+\begin{itemize}
+  \item Some derived solver are very different from the base solver
+  \item Some derived solver had only a small increment
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derived Solver: like any solver?}
+  \begin{itemize}[<+->]
+    \item The comparison with the base solver should help see the improvement
+    \item "Best Family of solver"? Give credit to the base solver
+    \item Different podium? but we have derived of derived solver
+    \item What means different enough?
+  \end{itemize}
 \end{frame}
 
 %\begin{frame}{SMT-COMP organizing committee}

@@ -1527,7 +1527,7 @@ class Config:
         "Z3-Inc-Z3++": "Z3-Inc-Z3++-base",
         "Z3-Noodler-Mocha": "Z3-Noodler-Mocha-base",
         "Z3-Owl": "Z3-Owl-base",
-        "Z3-Noodler": "Z3-Noodler",
+        "Z3-Noodler": "Z3-Noodler-base",
         "z3siri": "z3siri-base",
         "Z3-alpha": "Z3-alpha-base",
     }
