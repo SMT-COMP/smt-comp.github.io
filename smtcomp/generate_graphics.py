@@ -80,9 +80,7 @@ def create_output(
 ) -> alt.api.ChartType:
 
     # We are computing the buckets offline because we have too much data
-    results = results.filter(
-        c_run == True, c_logic.is_in(set(map(int, logics))) | c_division.is_in(set(map(int, divisions)))
-    ).select(
+    results = results.filter(c_logic.is_in(set(map(int, logics))) | c_division.is_in(set(map(int, divisions)))).select(
         c_file,
         c_logic,
         c_division,
@@ -94,6 +92,7 @@ def create_output(
     )
 
     results_with = results.select(c_file, solver2=c_solver, bucket2=c_bucket, cputime_s2=c_cputime_s, answer2=c_answer)
+
     results = results.join(results_with, on=c_file, how="left")
 
     corr = (
@@ -273,7 +272,7 @@ def generate_pages(config: defs.Config, results: pl.LazyFrame, track: defs.Track
     dst = config.web_results
     dst.mkdir(parents=True, exist_ok=True)
 
-    df_results = results.filter(c_run == True).collect()
+    df_results = results.filter(c_answer != -1).collect()
     results = df_results.lazy()
 
     divisions = list(df_results["division"].unique())
