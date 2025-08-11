@@ -316,7 +316,7 @@ ETH Zurich, Switzerland
   \emph{Model Validation Track}
   \begin{itemize}
   \item find a model for a satisfiable problem
-  \item solver answers \emph{sat + value} for each non-logical symbol
+  \item solver answers \emph{sat + value} for each toplevel symbol
   \end{itemize}
   \medskip
 
@@ -419,6 +419,7 @@ ETH Zurich, Switzerland
   \item parallel track executed on LMU Munich machine
   \item no cloud track
   \item changes in resource limits
+  \item charts on website and comparison in results with base solver
   \end{itemize}
 \end{frame}
 
@@ -451,6 +452,7 @@ ETH Zurich, Switzerland
 \item Z3-Owl {\footnotesize (Zuo et al.)}
 \item bv\_decide {\footnotesize (Böving et al.)}
 \item z3siri {\footnotesize (Zhou et al.)}
+\item colibri2 {\footnotesize (Bobot et al.)}
 \end{itemize}
 
 \end{frame}
@@ -899,6 +901,15 @@ ETH Zurich, Switzerland
   \begin{itemize}
   \item Previous presentation \smiley
   \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Derived Solver}
+  
+  Derived Tool: A derived tool is defined as any solver that is based on and \textbf{extends another SMT
+solver} (the base solver) \textbf{from a different group of authors}. In contrast to a wrapper tool, a derived
+tool solving a benchmark of \textbf{logic A} is allowed to call an SMT solver to solve a problem for \textbf{logic
+A}.
 \end{frame}
 
 %\begin{frame}{SMT-COMP organizing committee}
