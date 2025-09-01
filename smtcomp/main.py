@@ -377,7 +377,7 @@ def find_disagreement_results(
     )
 
     def print_answers(d: List[Dict[str, Any]]) -> str:
-        return ",".join(map(lambda x: "{}({})".format(x["solver"], defs.Answer.name_of_int(x["answer"])), d))
+        return ", ".join(map(lambda x: "{}({})".format(x["solver"], defs.Answer.name_of_int(x["answer"])), d))
 
     rich_print_pl(
         "Disagreements",
@@ -397,10 +397,16 @@ def find_disagreement_results(
             footer="",
             justify="left",
             style="cyan",
-            no_wrap=False,
+            no_wrap=True,
             custom=defs.Status.name_of_int,
         ),
-        Col("answers", "Disagreement", custom=print_answers, footer=""),
+        Col(
+            "answers",
+            "Disagreement",
+            custom=print_answers,
+            footer="",
+            no_wrap=False,
+        ),
     )
 
 
