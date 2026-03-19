@@ -65,6 +65,9 @@ def show(
     Show information about a solver submission
     """
 
+    if files is None:
+        return
+
     if prefix is not None:
         files = list(map(prefix.joinpath, files))
 
