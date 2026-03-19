@@ -10,7 +10,7 @@ aliases = ['/model.html']
 The format for the model output of some theories is not yet defined by the
 SMT-LIB. The following document describes our proposal of such definitions.
 This format will be used by the model validator for the experimental model
-validation track of the SMTCOMP 2025.
+validation track of the SMTCOMP 2026.
 
 ## Partial functions
 
@@ -21,7 +21,7 @@ value of the function can be chosen by the solver. This begs the
 questions how a solver should describe the model it chose.
 
 We propose that solvers should give the values similar as for
-uninterpreted functions using `refine-fun`. It should be soon the official choice. The formerly proposed command `define-fun` is kept for compatibility at least in 2025. The given function definition
+uninterpreted functions using `refine-fun`. It should be soon the official choice. The formerly proposed command `define-fun` is kept for compatibility at least in 2026. The given function definition
 must coincide on the defined inputs with the values given by the
 theory. To achieve this, the function definition may call the original theory
 function using the same name as the function that is defined.

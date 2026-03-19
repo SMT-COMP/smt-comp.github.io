@@ -1,11 +1,11 @@
 +++
 layout = 'single'
-title = 'SMT-COMP 2025'
+title = 'SMT-COMP 2026'
 +++
 
-The _20th International Satisfiability Modulo Theories Competition (SMT-COMP 2025)_ is part of the
-[SMT Workshop 2025](https://smt-workshop.cs.uiowa.edu/2025),
-affiliated with [SAT-25](http://satisfiability.org/SAT25/).
+The _21th International Satisfiability Modulo Theories Competition (SMT-COMP 2026)_ is part of the
+[SMT Workshop 2026](https://smt-workshop.cs.uiowa.edu/2026),
+affiliated with [IJCAR-26](https://www.floc26.org/ijcar)
 The SMT Workshop will include a block of time to
 present the competitors and results of the competition.
 
@@ -15,20 +15,18 @@ present the competitors and results of the competition.
 
 ### Key dates
 
-- **April 12** Deadline for new benchmark contributions
-- **May 31** Final versions of competition tools (used by the organizers to run the participating solvers)
-- **June 13** Deadline for first versions of participating solvers (for all tracks), including preliminary system descriptions
-- **June 27** Deadline for final versions of participating solvers, including final system descriptions
-- **August 10–11** SMT Workshop (presentation of results)
+- **May 15** Final versions of competition tools (used by the organizers to run the participating solvers)
+- **May 27** Deadline for first versions of participating solvers (for all tracks), including preliminary system descriptions
+- **June 10** Deadline for final versions of participating solvers, including final system descriptions
+- **July 24–25** SMT Workshop (presentation of results)
 
 ### Organizers
 
-- [Martin Jonáš](https://fi.muni.cz/~xjonas) (chair) - Masaryk University, Czechia
-- [François Bobot](https://github.com/bobot) - CEA List, France
-- [David Déharbe](https://daviddeharbe.github.io/) - CLEARSY, France
-- [Dominik Winterer](https://wintered.github.io/) - ETH Zurich, Switzerland
+- [Dominik Winterer](https://wintered.github.io/)  (chair) - University of Manchester, United Kingdom
+- [Martin Jonáš](https://fi.muni.cz/~xjonas) - Masaryk University, Czechia
+- [Tomáš Kolárik](https://usi.to/bisk) – Università della Svizzera italiana, Switzerland
 
-SMT-COMP 2025 is organized under the direction of the SMT Steering
+SMT-COMP 2026 is organized under the direction of the SMT Steering
 Committee.
 
 ### Acknowledgment
