@@ -22,7 +22,7 @@ present the competitors and results of the competition.
 
 ### Organizers
 
-- [Dominik Winterer](https://wintered.github.io/)  (chair) - University of Manchester, United Kingdom
+- [Dominik Winterer](https://wintered.github.io/) (chair) - University of Manchester, United Kingdom
 - [Martin Jonáš](https://fi.muni.cz/~xjonas) - Masaryk University, Czechia
 - [Tomáš Kolárik](https://usi.to/bisk) – Università della Svizzera italiana, Switzerland
 
