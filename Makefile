@@ -19,7 +19,8 @@ test: generation ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
 	@poetry run pytest
 
-generation: submission-generation participant-data track-data division-track-data results-generation charts-generation ## Files generation for the website
+generation:
+	# submission-generation participant-data track-data division-track-data results-generation charts-generation ## Files generation for the website
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
@@ -100,8 +101,8 @@ charts-generation:
 
 
 cache:
-	@echo "🚀 Generating cache"
-	@poetry run smtcomp create-cache data
+	# @echo "🚀 Generating cache"
+	# @poetry run smtcomp create-cache data
 
 hugo-server:
 	(cd web; hugo server)
