@@ -57,16 +57,13 @@ scoring_panel = "Scoring process"
 
 @app.command(rich_help_panel=submissions_panel)
 def show(
-    files: list[Path] = typer.Argument(None),
+    files: list[Path] = typer.Argument([]),
     prefix: Optional[Path] = None,
     into_comment_file: Annotated[Optional[Path], typer.Option(help="Write the summary into the given file")] = None,
 ) -> None:
     """
     Show information about a solver submission
     """
-
-    if files is None:
-        return
 
     if prefix is not None:
         files = list(map(prefix.joinpath, files))
@@ -920,7 +917,7 @@ def select_and_scramble(
 
 
 @app.command()
-def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument(None)) -> None:
+def generate_test_script(outdir: Path, submissions: list[Path] = typer.Argument([])) -> None:
     def read_submission(file: Path) -> defs.Submission:
         try:
             return submission.read(str(file))
