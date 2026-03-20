@@ -1448,7 +1448,7 @@ class Results(BaseModel):
 ## Parameters that can change each year
 class Config:
     __next_id__: ClassVar[int] = 0
-    current_year = 2025
+    current_year = 2026
     oldest_previous_results = 2018
     timelimit_s = 60 * 20
     timelimit_s_test = 60  # time limit for test runs

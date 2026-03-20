@@ -48,5 +48,5 @@ using GitHub](solver_submission).
 ### Cloud track
 
 During previous years, we also organized a Cloud track where the solvers were
-executed on a large distributed cloud. This track is not a part of SMT-COMP 2025
+executed on a large distributed cloud. This track is not a part of SMT-COMP 2026
 due to the lack of suitable execution infrastructure. We hope it will return next year.
