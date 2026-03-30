@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/2025/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Solver Submission | SMT-COMP 2025</title>
+
+    <link rel="stylesheet" href="/2025/css/main.css">
+
+
+      <script src="/2025/js/main.js"></script>
+
+
+</head>
+<body>
+  <div class="wrapper">
+  <header>
+      <h1>
+    <a href="/">SMT-COMP 2025</a>
+  </h1>
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp">GitHub</a>
+  </p>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/">Home</a><br/>
+      <a class="hl" href="/2025/introduction/">Introduction</a><br/>
+      <a class="hl" href="/2025/benchmark_submission/">Benchmark Submission</a><br/>
+      <a class="hl" href="/2025/publications/">Publications</a><br/>
+      <a class="hl" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a><br/>
+      <a class="hl" href="/2025/previous/">Previous Editions</a><br/>
+  </nav>
+
+
+  <p class="view">
+    <h3>
+      <a href="">SMT-COMP 2025</a>
+    </h3>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/results/">Results</a><br/>
+      <a class="hl" href="/2025/rules.pdf">Rules</a><br/>
+      <a class="hl" href="specs">Specs</a><br/>
+      <a class="hl" aria-current="page" class="active" href="/2025/solver_submission/">Solver Submission</a><br/>
+      <a class="hl" href="/2025/model/">Model Validation Track</a><br/>
+      <a class="hl" href="/2025/parallel_track/">Parallel Track</a><br/>
+      <a class="hl" href="/2025/participants/">Participants</a><br/>
+  </nav>
+
+
+  </header>
+  <section>
+    
+  <h1>Solver Submission</h1>
+
+  <p>The solvers are submitted via pull requests to the <a href="https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions">SMT-COMP repository</a>.</p>
+<p>The solver is run in <a href="https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines">this docker image</a>, which is based on Ubuntu 24.04. The link also describes the packages that are installed in the image.</p>
+<h2 id="submissions-directory">Submissions directory</h2>
+<p>The creation of new submission is done through the creation of a new JSON file
+in the <code>submission</code> directory of the repository and the submission of a pull
+request. The filename should start with the name of your solver and end with
+<code>.json</code>.</p>
+<p>It could be done directly from the web interface and starting with a template:
+<a href="https://github.com/SMT-COMP/smt-comp.github.io/new/master/submissions?value=
+%7B%0A&#43;&#43;&#43;&#43;%22name%22%3A&#43;%22%3Csolver&#43;name%3E%22%2C%0A&#43;&#43;&#43;&#43;%22contributors%22%3A&#43;%5B%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22First&#43;Smith%22%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%7B&#43;%22name%22%3A&#43;%22Second&#43;Baker%22%2C&#43;%22website%22%3A&#43;%22http%3A%2F%2Fbaker.com%2F%22&#43;%7D%0A&#43;&#43;&#43;&#43;%5D%2C%0A&#43;&#43;&#43;&#43;%22contacts%22%3A&#43;%5B%22contact&#43;name&#43;%3Ccontact%40email.com%3E%22%5D%2C%0A&#43;&#43;&#43;&#43;%22archive%22%3A&#43;%7B%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22url%22%3A&#43;%22http%3A%2F%2Fexample.com%2Fsolver.tar.gz%22%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22h%22%3A&#43;%7B&#43;%22sha256%22%3A&#43;%22012345%22&#43;%7D%0A&#43;&#43;&#43;&#43;%7D%2C%0A&#43;&#43;&#43;&#43;%22website%22%3A&#43;%22http%3A%2F%2Fexample.com%2F%22%2C%0A&#43;&#43;&#43;&#43;%22system_description%22%3A&#43;%22http%3A%2F%2Fexample.com%2Fsystem.pdf%22%2C%0A&#43;&#43;&#43;&#43;%22command%22%3A&#43;%5B%22relative_cmd%22%2C&#43;%22default_command_line%22%5D%2C%0A&#43;&#43;&#43;&#43;%22solver_type%22%3A&#43;%22Standalone%22%2C%0A&#43;&#43;&#43;&#43;%22seed%22%3A&#43;%2242%22%2C%0A&#43;&#43;&#43;&#43;%22participations%22%3A&#43;%5B%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%7B&#43;%22tracks%22%3A&#43;%5B%22SingleQuery%22%5D%2C&#43;%22divisions%22%3A&#43;%5B%22Equality%22%5D&#43;%7D%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%7B%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22tracks%22%3A&#43;%5B%22SingleQuery%22%5D%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22logics%22%3A&#43;%22QF_.%2ALRA.%2A%22%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22command%22%3A&#43;%5B%22relative_cmd%22%2C&#43;%22other_option%22%5D%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%7D%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%7B%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22tracks%22%3A&#43;%5B%22SingleQuery%22%5D%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22logics%22%3A&#43;%5B%22LIA%22%5D%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22archive%22%3A&#43;%7B&#43;%22url%22%3A&#43;%22http%3A%2F%2Fexample.com%2Fsolver_lia.tar.gz%22&#43;%7D%2C%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%22command%22%3A&#43;%5B%22relative_cmd%22%2C&#43;%22--super-lia%22%5D%0A&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;%7D%0A&#43;&#43;&#43;&#43;%5D%0A%7D%0A
+
+">create a new submission</a></p>
+<p>The repository contains a continuous integration check that will</p>
+<ul>
+<li>check the format and all the required fields,</li>
+<li>try to download your solver,</li>
+<li>run it inside the docker container used by the competition on trivial examples,</li>
+<li>check that the final version of the solver is uploaded to Zenodo.</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<p>For examples, take a look at the <a href="https://github.com/SMT-COMP/smt-comp.github.io/tree/smtcomp24/submissions">last year&rsquo;s submissions</a>.</p>
+<p>The detailed description of the fields in the solver JSON file is available in the <a href="schema.html">schema</a>.</p>
+<h2 id="changes">Changes</h2>
+<ul>
+<li>05/2025: The field <code>final</code> must be set for the final version. When <code>final</code> is set, the archive URL needs to point to Zenodo.</li>
+</ul>
+
+  
+
+
+  </section>
+  <footer>
+    
+  </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on SMT-COMP 2025</title>
+    <link>http://localhost:1313/2025/news/</link>
+    <description>Recent content in News on SMT-COMP 2025</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/2025/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Results are available!</title>
+      <link>http://localhost:1313/2025/news/2025-08-11-results/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/2025/news/2025-08-11-results/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://localhost:1313/2025/results&#34;&gt;results&lt;/a&gt; of SMT-COMP 2025 are available on the website. Congratulations to all the winners!&lt;/p&gt;&#xA;&lt;p&gt;Processed data for each benchmark and solver are available in the &lt;a href=&#34;https://github.com/SMT-COMP/smt-comp.github.io/tree/master/data&#34;&gt;GitHub repository&lt;/a&gt;. The raw execution data and the scrambled benchmarks will be uploaded to Zenodo in a few days. Stay tuned.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>List of participants is final</title>
+      <link>http://localhost:1313/2025/news/2025-07-04-list-of-participants/</link>
+      <pubDate>Fri, 04 Jul 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/2025/news/2025-07-04-list-of-participants/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://localhost:1313/2025/participants&#34;&gt;list of participants&lt;/a&gt; of SMT-COMP 2025 is final. We are happy to have received so many solvers and we are looking forward to the results.&lt;/p&gt;&#xA;&lt;p&gt;New York Stock Exchange index on the date after the submission deadline (i.e, 2025-06-30) was 20338.41, resulting in a competition seed of 2033841 + 755033430 = &lt;strong&gt;757067271&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Final Call for Solvers</title>
+      <link>http://localhost:1313/2025/news/2025-05-27-final-call-for-solvers/</link>
+      <pubDate>Tue, 27 May 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/2025/news/2025-05-27-final-call-for-solvers/</guid>
+      <description>&lt;p&gt;=================================================&lt;/p&gt;&#xA;&lt;p&gt;20th International Satisfiability Modulo Theories Competition&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;                     (SMT-COMP&#39;25)&#xA;&#xA;&#xA;           FINAL CALL FOR SOLVERS&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;=================================================&lt;/p&gt;&#xA;&lt;p&gt;We invite registration of solvers for SMT-COMP 2025.&lt;/p&gt;&#xA;&lt;p&gt;Solvers are entered into the competition via a pull request to the SMT-COMP&#xA;GitHub repository at:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions&#34;&gt;https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Detailed instructions can be found on the competition website&#xA;(&lt;a href=&#34;https://smt-comp.github.io/2025/solver_submission/&#34;&gt;https://smt-comp.github.io/2025/solver_submission/&lt;/a&gt;) . Note that solver binaries&#xA;must be uploaded to a publicly available space and the final version must be a&#xA;Zenodo (&lt;a href=&#34;https://zenodo.org/&#34;&gt;https://zenodo.org/&lt;/a&gt;) submission for reproducibility. Please include a&#xA;license file of your choice with your solver binaries.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Call for Comments, Call for Benchmarks, Preliminary Call for Solvers</title>
+      <link>http://localhost:1313/2025/news/2025-02-25-preliminary-calls/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/2025/news/2025-02-25-preliminary-calls/</guid>
+      <description>&lt;pre&gt;&lt;code&gt; 20th International Satisfiability Modulo Theories Competition&#xA;                       (SMT-COMP&#39;25)&#xA;&#xA;                     August 10-11, 2025&#xA;                        Glasgow, UK&#xA;&#xA;                     CALL FOR COMMENTS&#xA;                    CALL FOR BENCHMARKS&#xA;                PRELIMINARY CALL FOR SOLVERS&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;We are pleased to announce the 2025 edition of SMT-COMP.&lt;/p&gt;&#xA;&lt;p&gt;SMT-COMP is the annual competition among Satisfiability Modulo&#xA;Theories (SMT) solvers.&lt;/p&gt;&#xA;&lt;p&gt;The goals of SMT-COMP&#39;25 are to encourage scientific advances in the&#xA;power and scope of solvers, to stimulate the community to explore and&#xA;discuss shared challenges, to promote tools and their usage, to engage&#xA;and include new members of the community (in a fun environment), and to&#xA;support the SMT-LIB project in its efforts to promote and develop the&#xA;SMT-LIB format and collect and collate relevant benchmarks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Website is online!</title>
+      <link>http://localhost:1313/2025/news/2025-02-04-website-online/</link>
+      <pubDate>Tue, 04 Feb 2025 08:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/2025/news/2025-02-04-website-online/</guid>
+      <description>&lt;p&gt;The website for SMT-COMP 2025 is online including the important dates and the new organizing team.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

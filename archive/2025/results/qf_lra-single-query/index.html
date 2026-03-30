@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/2025/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> | SMT-COMP 2025</title>
+
+    <link rel="stylesheet" href="/2025/css/main.css">
+
+
+      <script src="/2025/js/main.js"></script>
+
+
+</head>
+<body>
+  <div class="wrapper">
+  <header>
+      <h1>
+    <a href="/">SMT-COMP 2025</a>
+  </h1>
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp">GitHub</a>
+  </p>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/">Home</a><br/>
+      <a class="hl" href="/2025/introduction/">Introduction</a><br/>
+      <a class="hl" href="/2025/benchmark_submission/">Benchmark Submission</a><br/>
+      <a class="hl" href="/2025/publications/">Publications</a><br/>
+      <a class="hl" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a><br/>
+      <a class="hl" href="/2025/previous/">Previous Editions</a><br/>
+  </nav>
+
+
+  <p class="view">
+    <h3>
+      <a href="">SMT-COMP 2025</a>
+    </h3>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" aria-current="true" class="ancestor" href="/2025/results/">Results</a><br/>
+      <a class="hl" href="/2025/rules.pdf">Rules</a><br/>
+      <a class="hl" href="specs">Specs</a><br/>
+      <a class="hl" href="/2025/solver_submission/">Solver Submission</a><br/>
+      <a class="hl" href="/2025/model/">Model Validation Track</a><br/>
+      <a class="hl" href="/2025/parallel_track/">Parallel Track</a><br/>
+      <a class="hl" href="/2025/participants/">Participants</a><br/>
+  </nav>
+
+
+  </header>
+  <section>
+    
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+  <h1>QF_LRA (Single Query Track)</h1>
+  <p>
+    Competition results for the QF_LRA
+     logic 
+    in the Single Query Track. <a href="/2025/results/qf_lra-single-query-chart"><b>Chart</b></a> </p>
+  <p>Results were generated on 2025-08-11</p>
+  <p>
+    <b>Benchmarks</b>: 595<br/>
+    <b>Time Limit:</b> 1200 seconds<br/>
+    <b>Memory Limit:</b> 30720 GB
+  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>Winners</h3>
+<table>
+  <thead>
+    <tr>
+    
+      
+      <th class="center">Sequential Performance</th>
+      
+    
+      
+      <th class="center">Parallel Performance</th>
+      
+    
+      
+      <th class="center">SAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">UNSAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">24 seconds Performance (parallel)</th>
+      
+    
+    </tr>
+  </thead>
+  <tr>
+    
+    
+    <td class="center">
+      
+      OpenSMT
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      OpenSMT
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      OpenSMT
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      OpenSMT
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      OpenSMT
+      
+    </td>
+    
+    
+  </tr>
+</table>
+
+
+
+
+<h3>Sequential Performance Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    578
+    
+    </td>
+    <td class="right">19618.61</td>
+    <td class="right" >19693.28</td>
+
+    <td class="right" >578</td>
+    
+    <td class="right" >326</td>
+    
+    
+    <td class="right" >252</td>
+    
+    <td class="right" >17</td>
+    <td class="right" >0</td>
+
+    <td class="right" >17</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    561
+    
+    </td>
+    <td class="right">25527.85</td>
+    <td class="right" >25600.28</td>
+
+    <td class="right" >561</td>
+    
+    <td class="right" >320</td>
+    
+    
+    <td class="right" >241</td>
+    
+    <td class="right" >34</td>
+    <td class="right" >0</td>
+
+    <td class="right" >34</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    549
+    
+    </td>
+    <td class="right">26942.01</td>
+    <td class="right" >27013.30</td>
+
+    <td class="right" >549</td>
+    
+    <td class="right" >309</td>
+    
+    
+    <td class="right" >240</td>
+    
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    514
+    
+        
+        
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base -33)</span>
+        
+    
+    </td>
+    <td class="right">64169.74</td>
+    <td class="right" >16445.90</td>
+
+    <td class="right" >549</td>
+    
+    <td class="right" >312</td>
+    
+    
+    <td class="right" >237</td>
+    
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    476
+    
+    </td>
+    <td class="right">51585.82</td>
+    <td class="right" >44844.68</td>
+
+    <td class="right" >479</td>
+    
+    <td class="right" >295</td>
+    
+    
+    <td class="right" >184</td>
+    
+    <td class="right" >116</td>
+    <td class="right" >0</td>
+
+    <td class="right" >111</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    547
+    
+    </td>
+    <td class="right"style="color:grey" >31112.89</td>
+    <td class="right" style="color:grey" >31185.34</td>
+
+    <td class="right"style="color:grey"  >547</td>
+    
+    <td class="right"style="color:grey"  >315</td>
+    
+    
+    <td class="right" style="color:grey" >232</td>
+    
+    <td class="right" style="color:grey" >48</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >48</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>Parallel Performance Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    578
+    
+    </td>
+    <td class="right">19618.61</td>
+    <td class="right" >19693.28</td>
+
+    <td class="right" >578</td>
+    
+    <td class="right" >326</td>
+    
+    
+    <td class="right" >252</td>
+    
+    <td class="right" >17</td>
+    <td class="right" >0</td>
+
+    <td class="right" >17</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    561
+    
+    </td>
+    <td class="right">25527.85</td>
+    <td class="right" >25600.28</td>
+
+    <td class="right" >561</td>
+    
+    <td class="right" >320</td>
+    
+    
+    <td class="right" >241</td>
+    
+    <td class="right" >34</td>
+    <td class="right" >0</td>
+
+    <td class="right" >34</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    549
+    
+    </td>
+    <td class="right">26942.01</td>
+    <td class="right" >27013.30</td>
+
+    <td class="right" >549</td>
+    
+    <td class="right" >309</td>
+    
+    
+    <td class="right" >240</td>
+    
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    549
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +2)</span>
+        
+    
+    </td>
+    <td class="right">157972.00</td>
+    <td class="right" >39949.93</td>
+
+    <td class="right" >549</td>
+    
+    <td class="right" >312</td>
+    
+    
+    <td class="right" >237</td>
+    
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+
+    <td class="right" >46</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    479
+    
+    </td>
+    <td class="right">55577.07</td>
+    <td class="right" >48040.64</td>
+
+    <td class="right" >479</td>
+    
+    <td class="right" >295</td>
+    
+    
+    <td class="right" >184</td>
+    
+    <td class="right" >116</td>
+    <td class="right" >0</td>
+
+    <td class="right" >111</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    547
+    
+    </td>
+    <td class="right"style="color:grey" >31112.89</td>
+    <td class="right" style="color:grey" >31185.34</td>
+
+    <td class="right"style="color:grey"  >547</td>
+    
+    <td class="right"style="color:grey"  >315</td>
+    
+    
+    <td class="right" style="color:grey" >232</td>
+    
+    <td class="right" style="color:grey" >48</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >48</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>SAT Performance Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    326
+    
+    </td>
+    <td class="right">14009.48</td>
+    <td class="right" >14052.30</td>
+
+    <td class="right" >326</td>
+    
+    <td class="right" >326</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >9</td>
+    <td class="right" >260</td>
+
+    <td class="right" >9</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    320
+    
+    </td>
+    <td class="right">11051.56</td>
+    <td class="right" >11092.59</td>
+
+    <td class="right" >320</td>
+    
+    <td class="right" >320</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >15</td>
+    <td class="right" >260</td>
+
+    <td class="right" >15</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    312
+    
+        
+        
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base -3)</span>
+        
+    
+    </td>
+    <td class="right">80314.24</td>
+    <td class="right" >20415.71</td>
+
+    <td class="right" >312</td>
+    
+    <td class="right" >312</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >23</td>
+    <td class="right" >260</td>
+
+    <td class="right" >23</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    309
+    
+    </td>
+    <td class="right">13979.69</td>
+    <td class="right" >14019.58</td>
+
+    <td class="right" >309</td>
+    
+    <td class="right" >309</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >26</td>
+    <td class="right" >260</td>
+
+    <td class="right" >26</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    295
+    
+    </td>
+    <td class="right">30818.38</td>
+    <td class="right" >27232.72</td>
+
+    <td class="right" >295</td>
+    
+    <td class="right" >295</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >40</td>
+    <td class="right" >260</td>
+
+    <td class="right" >40</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    315
+    
+    </td>
+    <td class="right"style="color:grey" >12960.71</td>
+    <td class="right" style="color:grey" >13001.68</td>
+
+    <td class="right"style="color:grey"  >315</td>
+    
+    <td class="right"style="color:grey"  >315</td>
+    
+    
+    <td class="right" style="color:grey" >0</td>
+    
+    <td class="right" style="color:grey" >20</td>
+    <td class="right" style="color:grey" >260</td>
+
+    <td class="right" style="color:grey" >20</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>UNSAT Performance Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    252
+    
+    </td>
+    <td class="right">5609.12</td>
+    <td class="right" >5640.98</td>
+
+    <td class="right" >252</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >252</td>
+    
+    <td class="right" >3</td>
+    <td class="right" >340</td>
+
+    <td class="right" >3</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    241
+    
+    </td>
+    <td class="right">14476.28</td>
+    <td class="right" >14507.69</td>
+
+    <td class="right" >241</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >241</td>
+    
+    <td class="right" >14</td>
+    <td class="right" >340</td>
+
+    <td class="right" >14</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    240
+    
+    </td>
+    <td class="right">12962.32</td>
+    <td class="right" >12993.72</td>
+
+    <td class="right" >240</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >240</td>
+    
+    <td class="right" >15</td>
+    <td class="right" >340</td>
+
+    <td class="right" >15</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    237
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +5)</span>
+        
+    
+    </td>
+    <td class="right">77657.77</td>
+    <td class="right" >19534.22</td>
+
+    <td class="right" >237</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >237</td>
+    
+    <td class="right" >18</td>
+    <td class="right" >340</td>
+
+    <td class="right" >18</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    184
+    
+    </td>
+    <td class="right">24758.69</td>
+    <td class="right" >20807.92</td>
+
+    <td class="right" >184</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >184</td>
+    
+    <td class="right" >71</td>
+    <td class="right" >340</td>
+
+    <td class="right" >66</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    232
+    
+    </td>
+    <td class="right"style="color:grey" >18152.18</td>
+    <td class="right" style="color:grey" >18183.67</td>
+
+    <td class="right"style="color:grey"  >232</td>
+    
+    <td class="right"style="color:grey"  >0</td>
+    
+    
+    <td class="right" style="color:grey" >232</td>
+    
+    <td class="right" style="color:grey" >23</td>
+    <td class="right" style="color:grey" >340</td>
+
+    <td class="right" style="color:grey" >23</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>24 seconds Performance Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    488
+    
+    </td>
+    <td class="right">1533.60</td>
+    <td class="right" >1594.23</td>
+
+    <td class="right" >488</td>
+    
+    <td class="right" >271</td>
+    
+    
+    <td class="right" >217</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >107</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    464
+    
+    </td>
+    <td class="right">1086.75</td>
+    <td class="right" >1144.13</td>
+
+    <td class="right" >464</td>
+    
+    <td class="right" >277</td>
+    
+    
+    <td class="right" >187</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >131</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    407
+    
+    </td>
+    <td class="right">1596.52</td>
+    <td class="right" >1646.72</td>
+
+    <td class="right" >407</td>
+    
+    <td class="right" >232</td>
+    
+    
+    <td class="right" >175</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >188</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    353
+    
+        
+        
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base -33)</span>
+        
+    
+    </td>
+    <td class="right">4148.52</td>
+    <td class="right" >1186.60</td>
+
+    <td class="right" >353</td>
+    
+    <td class="right" >205</td>
+    
+    
+    <td class="right" >148</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >242</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    313
+    
+    </td>
+    <td class="right">2924.42</td>
+    <td class="right" >1333.15</td>
+
+    <td class="right" >313</td>
+    
+    <td class="right" >196</td>
+    
+    
+    <td class="right" >117</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >282</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    386
+    
+    </td>
+    <td class="right"style="color:grey" >1227.25</td>
+    <td class="right" style="color:grey" >1275.30</td>
+
+    <td class="right"style="color:grey"  >386</td>
+    
+    <td class="right"style="color:grey"  >233</td>
+    
+    
+    <td class="right" style="color:grey" >153</td>
+    
+    <td class="right" style="color:grey" >0</td>
+    <td class="right" style="color:grey" >209</td>
+
+    <td class="right" style="color:grey" >0</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+
+  
+
+
+  </section>
+  <footer>
+    
+  </footer>
+  </div>
+</body>
+</html>

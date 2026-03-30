@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/2025/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> | SMT-COMP 2025</title>
+
+    <link rel="stylesheet" href="/2025/css/main.css">
+
+
+      <script src="/2025/js/main.js"></script>
+
+
+</head>
+<body>
+  <div class="wrapper">
+  <header>
+      <h1>
+    <a href="/">SMT-COMP 2025</a>
+  </h1>
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp">GitHub</a>
+  </p>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/">Home</a><br/>
+      <a class="hl" href="/2025/introduction/">Introduction</a><br/>
+      <a class="hl" href="/2025/benchmark_submission/">Benchmark Submission</a><br/>
+      <a class="hl" href="/2025/publications/">Publications</a><br/>
+      <a class="hl" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a><br/>
+      <a class="hl" href="/2025/previous/">Previous Editions</a><br/>
+  </nav>
+
+
+  <p class="view">
+    <h3>
+      <a href="">SMT-COMP 2025</a>
+    </h3>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" aria-current="true" class="ancestor" href="/2025/results/">Results</a><br/>
+      <a class="hl" href="/2025/rules.pdf">Rules</a><br/>
+      <a class="hl" href="specs">Specs</a><br/>
+      <a class="hl" href="/2025/solver_submission/">Solver Submission</a><br/>
+      <a class="hl" href="/2025/model/">Model Validation Track</a><br/>
+      <a class="hl" href="/2025/parallel_track/">Parallel Track</a><br/>
+      <a class="hl" href="/2025/participants/">Participants</a><br/>
+  </nav>
+
+
+  </header>
+  <section>
+    
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+  <h1>QF_Strings (Single Query Track)</h1>
+  <p>
+    Competition results for the QF_Strings
+     division 
+    in the Single Query Track. <a href="/2025/results/qf_strings-single-query-chart"><b>Chart</b></a> </p>
+  <p>Results were generated on 2025-08-11</p>
+  <p>
+    <b>Benchmarks</b>: 34228<br/>
+    <b>Time Limit:</b> 1200 seconds<br/>
+    <b>Memory Limit:</b> 30720 GB
+  </p>
+
+
+
+
+
+
+<b>Logics:</b><ul>
+  
+  <li><a href="../qf_s-single-query">QF_S</a> : 10428 benchmarks</li>
+  
+  <li><a href="../qf_slia-single-query">QF_SLIA</a> : 23730 benchmarks</li>
+  
+  <li><a href="../qf_snia-single-query">QF_SNIA</a> : 70 benchmarks</li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h3>Winners</h3>
+<table>
+  <thead>
+    <tr>
+    
+      
+      <th class="center">Sequential Performance</th>
+      
+    
+      
+      <th class="center">Parallel Performance</th>
+      
+    
+      
+      <th class="center">SAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">UNSAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">24 seconds Performance (parallel)</th>
+      
+    
+    </tr>
+  </thead>
+  <tr>
+    
+    
+    <td class="center">
+      
+      Z3-Noodler-Mocha
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Z3-Noodler-Mocha
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Z3-Noodler-Mocha
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Z3-Noodler-Mocha
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Z3-Noodler-Mocha
+      
+    </td>
+    
+    
+  </tr>
+</table>
+
+
+
+
+<h3>Sequential Performance Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler-Mocha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    34110
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +521)</span>
+        
+    
+    </td>
+    <td class="right">22239.22</td>
+    <td class="right" >26476.54</td>
+
+    <td class="right" >34110</td>
+    
+    <td class="right" >22093</td>
+    
+    
+    <td class="right" >12017</td>
+    
+    <td class="right" >118</td>
+    <td class="right" >0</td>
+
+    <td class="right" >75</td>
+    <td class="right" >24</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    33635
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +4282)</span>
+        
+    
+    </td>
+    <td class="right">23260.58</td>
+    <td class="right" >27437.40</td>
+
+    <td class="right" >33635</td>
+    
+    <td class="right" >22088</td>
+    
+    
+    <td class="right" >11547</td>
+    
+    <td class="right" >593</td>
+    <td class="right" >0</td>
+
+    <td class="right" >77</td>
+    <td class="right" >29</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OSTRICH 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    32766
+    
+    </td>
+    <td class="right">876070.90</td>
+    <td class="right" >572896.46</td>
+
+    <td class="right" >32781</td>
+    
+    <td class="right" >21440</td>
+    
+    
+    <td class="right" >11341</td>
+    
+    <td class="right" >1447</td>
+    <td class="right" >0</td>
+
+    <td class="right" >1447</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    30671
+    
+    </td>
+    <td class="right">794564.28</td>
+    <td class="right" >798463.70</td>
+
+    <td class="right" >30671</td>
+    
+    <td class="right" >20275</td>
+    
+    
+    <td class="right" >10396</td>
+    
+    <td class="right" >3557</td>
+    <td class="right" >0</td>
+
+    <td class="right" >3532</td>
+    <td class="right" >4</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    29350
+    
+        
+        
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base -71)</span>
+        
+    
+    </td>
+    <td class="right">319765.74</td>
+    <td class="right" >110490.43</td>
+
+    <td class="right" >29524</td>
+    
+    <td class="right" >19113</td>
+    
+    
+    <td class="right" >10411</td>
+    
+    <td class="right" >4704</td>
+    <td class="right" >0</td>
+
+    <td class="right" >3155</td>
+    <td class="right" >213</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-Mocha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    33589
+    
+    </td>
+    <td class="right"style="color:grey" >23586.42</td>
+    <td class="right" style="color:grey" >27719.87</td>
+
+    <td class="right"style="color:grey"  >33589</td>
+    
+    <td class="right"style="color:grey"  >22088</td>
+    
+    
+    <td class="right" style="color:grey" >11501</td>
+    
+    <td class="right" style="color:grey" >639</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >79</td>
+    <td class="right" style="color:grey" >28</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    29421
+    
+    </td>
+    <td class="right"style="color:grey" >219342.97</td>
+    <td class="right" style="color:grey" >223002.50</td>
+
+    <td class="right"style="color:grey"  >29421</td>
+    
+    <td class="right"style="color:grey"  >18963</td>
+    
+    
+    <td class="right" style="color:grey" >10458</td>
+    
+    <td class="right" style="color:grey" >4807</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >3350</td>
+    <td class="right" style="color:grey" >330</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    29353
+    
+    </td>
+    <td class="right"style="color:grey" >188202.78</td>
+    <td class="right" style="color:grey" >191856.12</td>
+
+    <td class="right"style="color:grey"  >29353</td>
+    
+    <td class="right"style="color:grey"  >18882</td>
+    
+    
+    <td class="right" style="color:grey" >10471</td>
+    
+    <td class="right" style="color:grey" >4875</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >3354</td>
+    <td class="right" style="color:grey" >325</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>Parallel Performance Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler-Mocha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    34110
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +521)</span>
+        
+    
+    </td>
+    <td class="right">22239.22</td>
+    <td class="right" >26476.54</td>
+
+    <td class="right" >34110</td>
+    
+    <td class="right" >22093</td>
+    
+    
+    <td class="right" >12017</td>
+    
+    <td class="right" >118</td>
+    <td class="right" >0</td>
+
+    <td class="right" >75</td>
+    <td class="right" >24</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    33635
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +4282)</span>
+        
+    
+    </td>
+    <td class="right">23260.58</td>
+    <td class="right" >27437.40</td>
+
+    <td class="right" >33635</td>
+    
+    <td class="right" >22088</td>
+    
+    
+    <td class="right" >11547</td>
+    
+    <td class="right" >593</td>
+    <td class="right" >0</td>
+
+    <td class="right" >77</td>
+    <td class="right" >29</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OSTRICH 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    32781
+    
+    </td>
+    <td class="right">901069.65</td>
+    <td class="right" >588961.14</td>
+
+    <td class="right" >32781</td>
+    
+    <td class="right" >21440</td>
+    
+    
+    <td class="right" >11341</td>
+    
+    <td class="right" >1447</td>
+    <td class="right" >0</td>
+
+    <td class="right" >1447</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    30671
+    
+    </td>
+    <td class="right">794564.28</td>
+    <td class="right" >798463.70</td>
+
+    <td class="right" >30671</td>
+    
+    <td class="right" >20275</td>
+    
+    
+    <td class="right" >10396</td>
+    
+    <td class="right" >3557</td>
+    <td class="right" >0</td>
+
+    <td class="right" >3532</td>
+    <td class="right" >4</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    29524
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +103)</span>
+        
+    
+    </td>
+    <td class="right">753806.26</td>
+    <td class="right" >220794.86</td>
+
+    <td class="right" >29524</td>
+    
+    <td class="right" >19113</td>
+    
+    
+    <td class="right" >10411</td>
+    
+    <td class="right" >4704</td>
+    <td class="right" >0</td>
+
+    <td class="right" >3155</td>
+    <td class="right" >213</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-Mocha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    33589
+    
+    </td>
+    <td class="right"style="color:grey" >23586.42</td>
+    <td class="right" style="color:grey" >27719.87</td>
+
+    <td class="right"style="color:grey"  >33589</td>
+    
+    <td class="right"style="color:grey"  >22088</td>
+    
+    
+    <td class="right" style="color:grey" >11501</td>
+    
+    <td class="right" style="color:grey" >639</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >79</td>
+    <td class="right" style="color:grey" >28</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    29421
+    
+    </td>
+    <td class="right"style="color:grey" >219342.97</td>
+    <td class="right" style="color:grey" >223002.50</td>
+
+    <td class="right"style="color:grey"  >29421</td>
+    
+    <td class="right"style="color:grey"  >18963</td>
+    
+    
+    <td class="right" style="color:grey" >10458</td>
+    
+    <td class="right" style="color:grey" >4807</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >3350</td>
+    <td class="right" style="color:grey" >330</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    29353
+    
+    </td>
+    <td class="right"style="color:grey" >188202.78</td>
+    <td class="right" style="color:grey" >191856.12</td>
+
+    <td class="right"style="color:grey"  >29353</td>
+    
+    <td class="right"style="color:grey"  >18882</td>
+    
+    
+    <td class="right" style="color:grey" >10471</td>
+    
+    <td class="right" style="color:grey" >4875</td>
+    <td class="right" style="color:grey" >0</td>
+
+    <td class="right" style="color:grey" >3354</td>
+    <td class="right" style="color:grey" >325</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>SAT Performance Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler-Mocha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    22093
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +5)</span>
+        
+    
+    </td>
+    <td class="right">15882.66</td>
+    <td class="right" >18623.47</td>
+
+    <td class="right" >22093</td>
+    
+    <td class="right" >22093</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >51</td>
+    <td class="right" >12084</td>
+
+    <td class="right" >46</td>
+    <td class="right" >5</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    22088
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +3206)</span>
+        
+    
+    </td>
+    <td class="right">15946.83</td>
+    <td class="right" >18685.22</td>
+
+    <td class="right" >22088</td>
+    
+    <td class="right" >22088</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >56</td>
+    <td class="right" >12084</td>
+
+    <td class="right" >48</td>
+    <td class="right" >8</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OSTRICH 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    21440
+    
+    </td>
+    <td class="right">788987.02</td>
+    <td class="right" >514244.86</td>
+
+    <td class="right" >21440</td>
+    
+    <td class="right" >21440</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >704</td>
+    <td class="right" >12084</td>
+
+    <td class="right" >704</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    20275
+    
+    </td>
+    <td class="right">698596.23</td>
+    <td class="right" >701193.20</td>
+
+    <td class="right" >20275</td>
+    
+    <td class="right" >20275</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >1869</td>
+    <td class="right" >12084</td>
+
+    <td class="right" >1851</td>
+    <td class="right" >3</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    19113
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +150)</span>
+        
+    
+    </td>
+    <td class="right">603853.08</td>
+    <td class="right" >178234.40</td>
+
+    <td class="right" >19113</td>
+    
+    <td class="right" >19113</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >3031</td>
+    <td class="right" >12084</td>
+
+    <td class="right" >2362</td>
+    <td class="right" >128</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-Mocha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    22088
+    
+    </td>
+    <td class="right"style="color:grey" >16244.80</td>
+    <td class="right" style="color:grey" >18958.23</td>
+
+    <td class="right"style="color:grey"  >22088</td>
+    
+    <td class="right"style="color:grey"  >22088</td>
+    
+    
+    <td class="right" style="color:grey" >0</td>
+    
+    <td class="right" style="color:grey" >56</td>
+    <td class="right" style="color:grey" >12084</td>
+
+    <td class="right" style="color:grey" >49</td>
+    <td class="right" style="color:grey" >7</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    18963
+    
+    </td>
+    <td class="right"style="color:grey" >207693.33</td>
+    <td class="right" style="color:grey" >210062.17</td>
+
+    <td class="right"style="color:grey"  >18963</td>
+    
+    <td class="right"style="color:grey"  >18963</td>
+    
+    
+    <td class="right" style="color:grey" >0</td>
+    
+    <td class="right" style="color:grey" >3181</td>
+    <td class="right" style="color:grey" >12084</td>
+
+    <td class="right" style="color:grey" >2536</td>
+    <td class="right" style="color:grey" >313</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    18882
+    
+    </td>
+    <td class="right"style="color:grey" >175609.63</td>
+    <td class="right" style="color:grey" >177963.63</td>
+
+    <td class="right"style="color:grey"  >18882</td>
+    
+    <td class="right"style="color:grey"  >18882</td>
+    
+    
+    <td class="right" style="color:grey" >0</td>
+    
+    <td class="right" style="color:grey" >3262</td>
+    <td class="right" style="color:grey" >12084</td>
+
+    <td class="right" style="color:grey" >2551</td>
+    <td class="right" style="color:grey" >312</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>UNSAT Performance Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler-Mocha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    12017
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +516)</span>
+        
+    
+    </td>
+    <td class="right">6356.56</td>
+    <td class="right" >7853.07</td>
+
+    <td class="right" >12017</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >12017</td>
+    
+    <td class="right" >46</td>
+    <td class="right" >22165</td>
+
+    <td class="right" >17</td>
+    <td class="right" >10</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    11547
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +1076)</span>
+        
+    
+    </td>
+    <td class="right">7313.76</td>
+    <td class="right" >8752.18</td>
+
+    <td class="right" >11547</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >11547</td>
+    
+    <td class="right" >516</td>
+    <td class="right" >22165</td>
+
+    <td class="right" >17</td>
+    <td class="right" >12</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OSTRICH 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    11341
+    
+    </td>
+    <td class="right">112082.64</td>
+    <td class="right" >74716.29</td>
+
+    <td class="right" >11341</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >11341</td>
+    
+    <td class="right" >722</td>
+    <td class="right" >22165</td>
+
+    <td class="right" >722</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    10411
+    
+        
+        
+            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base -47)</span>
+        
+    
+    </td>
+    <td class="right">149953.18</td>
+    <td class="right" >42560.47</td>
+
+    <td class="right" >10411</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >10411</td>
+    
+    <td class="right" >1652</td>
+    <td class="right" >22165</td>
+
+    <td class="right" >778</td>
+    <td class="right" >85</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    10396
+    
+    </td>
+    <td class="right">95968.05</td>
+    <td class="right" >97270.49</td>
+
+    <td class="right" >10396</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >10396</td>
+    
+    <td class="right" >1667</td>
+    <td class="right" >22165</td>
+
+    <td class="right" >1660</td>
+    <td class="right" >1</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-Mocha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    11501
+    
+    </td>
+    <td class="right"style="color:grey" >7341.62</td>
+    <td class="right" style="color:grey" >8761.64</td>
+
+    <td class="right"style="color:grey"  >11501</td>
+    
+    <td class="right"style="color:grey"  >0</td>
+    
+    
+    <td class="right" style="color:grey" >11501</td>
+    
+    <td class="right" style="color:grey" >562</td>
+    <td class="right" style="color:grey" >22165</td>
+
+    <td class="right" style="color:grey" >18</td>
+    <td class="right" style="color:grey" >12</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    10471
+    
+    </td>
+    <td class="right"style="color:grey" >12593.14</td>
+    <td class="right" style="color:grey" >13892.50</td>
+
+    <td class="right"style="color:grey"  >10471</td>
+    
+    <td class="right"style="color:grey"  >0</td>
+    
+    
+    <td class="right" style="color:grey" >10471</td>
+    
+    <td class="right" style="color:grey" >1592</td>
+    <td class="right" style="color:grey" >22165</td>
+
+    <td class="right" style="color:grey" >788</td>
+    <td class="right" style="color:grey" >13</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    10458
+    
+    </td>
+    <td class="right"style="color:grey" >11649.63</td>
+    <td class="right" style="color:grey" >12940.33</td>
+
+    <td class="right"style="color:grey"  >10458</td>
+    
+    <td class="right"style="color:grey"  >0</td>
+    
+    
+    <td class="right" style="color:grey" >10458</td>
+    
+    <td class="right" style="color:grey" >1605</td>
+    <td class="right" style="color:grey" >22165</td>
+
+    <td class="right" style="color:grey" >799</td>
+    <td class="right" style="color:grey" >17</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+<h3>24 seconds Performance Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler-Mocha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    34057
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +541)</span>
+        
+    
+    </td>
+    <td class="right">9685.94</td>
+    <td class="right" >13914.77</td>
+
+    <td class="right" >34057</td>
+    
+    <td class="right" >22050</td>
+    
+    
+    <td class="right" >12007</td>
+    
+    <td class="right" >18</td>
+    <td class="right" >153</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-Noodler 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    33559
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +5385)</span>
+        
+    
+    </td>
+    <td class="right">9922.05</td>
+    <td class="right" >14087.58</td>
+
+    <td class="right" >33559</td>
+    
+    <td class="right" >22042</td>
+    
+    
+    <td class="right" >11517</td>
+    
+    <td class="right" >486</td>
+    <td class="right" >183</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      Z3-alpha 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    28480
+    
+        
+        
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +334)</span>
+        
+    
+    </td>
+    <td class="right">94402.79</td>
+    <td class="right" >44519.30</td>
+
+    <td class="right" >28480</td>
+    
+    <td class="right" >18253</td>
+    
+    
+    <td class="right" >10227</td>
+    
+    <td class="right" >1117</td>
+    <td class="right" >4631</td>
+
+    <td class="right" >0</td>
+    <td class="right" >1</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    28267
+    
+    </td>
+    <td class="right">13626.55</td>
+    <td class="right" >17119.73</td>
+
+    <td class="right" >28267</td>
+    
+    <td class="right" >18205</td>
+    
+    
+    <td class="right" >10062</td>
+    
+    <td class="right" >20</td>
+    <td class="right" >5941</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OSTRICH 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    27956
+    
+    </td>
+    <td class="right">190516.66</td>
+    <td class="right" >82017.96</td>
+
+    <td class="right" >27956</td>
+    
+    <td class="right" >16907</td>
+    
+    
+    <td class="right" >11049</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >6272</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-Mocha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    33516
+    
+    </td>
+    <td class="right"style="color:grey" >10023.07</td>
+    <td class="right" style="color:grey" >14145.41</td>
+
+    <td class="right"style="color:grey"  >33516</td>
+    
+    <td class="right"style="color:grey"  >22044</td>
+    
+    
+    <td class="right" style="color:grey" >11472</td>
+    
+    <td class="right" style="color:grey" >531</td>
+    <td class="right" style="color:grey" >181</td>
+
+    <td class="right" style="color:grey" >0</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-Noodler-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    28174
+    
+    </td>
+    <td class="right"style="color:grey" >23832.92</td>
+    <td class="right" style="color:grey" >27315.09</td>
+
+    <td class="right"style="color:grey"  >28174</td>
+    
+    <td class="right"style="color:grey"  >17763</td>
+    
+    
+    <td class="right" style="color:grey" >10411</td>
+    
+    <td class="right" style="color:grey" >1187</td>
+    <td class="right" style="color:grey" >4867</td>
+
+    <td class="right" style="color:grey" >0</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+
+
+    
+
+
+
+<tr class="non-competing" >
+    <td style="color:grey" >
+      Z3-alpha-base <sup><a href="#nc">n</a></sup>
+    </td>
+    <td class="right" style="color:grey"  >0
+      
+    </td>
+    <td class="right" style="color:grey" >
+    28146
+    
+    </td>
+    <td class="right"style="color:grey" >23855.72</td>
+    <td class="right" style="color:grey" >27327.91</td>
+
+    <td class="right"style="color:grey"  >28146</td>
+    
+    <td class="right"style="color:grey"  >17740</td>
+    
+    
+    <td class="right" style="color:grey" >10406</td>
+    
+    <td class="right" style="color:grey" >1120</td>
+    <td class="right" style="color:grey" >4962</td>
+
+    <td class="right" style="color:grey" >0</td>
+    <td class="right" style="color:grey" >0</td>
+</tr>
+
+</table>
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4;">
+    (base +/- n): for derived solvers: increment over base solver <br>
+</span>
+
+
+
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>n</sup>: non-competing solver
+</span>
+
+
+
+
+
+
+
+
+  
+
+
+  </section>
+  <footer>
+    
+  </footer>
+  </div>
+</body>
+</html>
