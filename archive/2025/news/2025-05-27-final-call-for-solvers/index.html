@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/2025/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Final Call for Solvers | SMT-COMP 2025</title>
+
+    <link rel="stylesheet" href="/2025/css/main.css">
+
+
+      <script src="/2025/js/main.js"></script>
+
+
+</head>
+<body>
+  <div class="wrapper">
+  <header>
+      <h1>
+    <a href="/">SMT-COMP 2025</a>
+  </h1>
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp">GitHub</a>
+  </p>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/">Home</a><br/>
+      <a class="hl" href="/2025/introduction/">Introduction</a><br/>
+      <a class="hl" href="/2025/benchmark_submission/">Benchmark Submission</a><br/>
+      <a class="hl" href="/2025/publications/">Publications</a><br/>
+      <a class="hl" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a><br/>
+      <a class="hl" href="/2025/previous/">Previous Editions</a><br/>
+  </nav>
+
+
+  <p class="view">
+    <h3>
+      <a href="">SMT-COMP 2025</a>
+    </h3>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/results/">Results</a><br/>
+      <a class="hl" href="/2025/rules.pdf">Rules</a><br/>
+      <a class="hl" href="specs">Specs</a><br/>
+      <a class="hl" href="/2025/solver_submission/">Solver Submission</a><br/>
+      <a class="hl" href="/2025/model/">Model Validation Track</a><br/>
+      <a class="hl" href="/2025/parallel_track/">Parallel Track</a><br/>
+      <a class="hl" href="/2025/participants/">Participants</a><br/>
+  </nav>
+
+
+  </header>
+  <section>
+    
+  <h1>Final Call for Solvers</h1>
+
+  <p>=================================================</p>
+<p>20th International Satisfiability Modulo Theories Competition</p>
+<pre><code>                     (SMT-COMP'25)
+
+
+           FINAL CALL FOR SOLVERS
+</code></pre>
+<p>=================================================</p>
+<p>We invite registration of solvers for SMT-COMP 2025.</p>
+<p>Solvers are entered into the competition via a pull request to the SMT-COMP
+GitHub repository at:</p>
+<p><a href="https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions">https://github.com/SMT-COMP/smt-comp.github.io/tree/master/submissions</a></p>
+<p>Detailed instructions can be found on the competition website
+(<a href="https://smt-comp.github.io/2025/solver_submission/">https://smt-comp.github.io/2025/solver_submission/</a>) . Note that solver binaries
+must be uploaded to a publicly available space and the final version must be a
+Zenodo (<a href="https://zenodo.org/">https://zenodo.org/</a>) submission for reproducibility. Please include a
+license file of your choice with your solver binaries.</p>
+<p>The submission deadline for (first versions of) solvers is</p>
+<pre><code>***June 13, 2025***
+</code></pre>
+<p>After the above date, no new entrants will be accepted. However,
+submitted solvers may be updated via the pull request until</p>
+<pre><code>***June 27, 2025***
+</code></pre>
+<p>Note that a short system description of 1-2 pages (see Section 4 of the
+competition rules at <a href="https://smt-comp.github.io/2025/rules.pdf">https://smt-comp.github.io/2025/rules.pdf</a>) is part of the
+solver submission and is MANDATORY. The system descriptions can be submitted
+until the initial solver deadline on June 13, 2025. Participants are
+asked to provide a link to the system description in the submission. The system
+description can be updated until June 27, 2025, but it must be
+reviewable since the initial solver deadline. The links to the final solver
+submission must be provided via the pull request to the organizers by the final
+deadline.</p>
+<p>As in the previous year, we will run single query, incremental, unsat-core, and
+model-validation tracks on the BenchExec cluster
+(<a href="https://github.com/sosy-lab/benchexec">https://github.com/sosy-lab/benchexec</a>) owned by LMU&rsquo;s Software and
+Computational Systems Lab (SoSy-Lab <a href="https://www.sosy-lab.org/)">https://www.sosy-lab.org/)</a>, who are kind
+enough to support our competition with their computing power. To be more
+precise, the competition will be run on the 168 apollon nodes of the SoSy-Lab
+BenchExec cluster (for more details see
+<a href="https://vcloud.sosy-lab.org/cpachecker/webclient/master/info)">https://vcloud.sosy-lab.org/cpachecker/webclient/master/info)</a>. It is also
+possible to locally emulate and test the computing environment on the
+competition machines using the following instructions:
+<a href="https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines">https://gitlab.com/sosy-lab/benchmarking/competition-scripts/#computing-environment-on-competition-machines</a></p>
+<p>You are encouraged to run the solvers in the above-mentioned environment for
+testing. The submission process contains a continuous integration check that
+tests the submitted binaries on a trivial set of input benchmarks for every pull
+request. We will also run the first versions of all solvers on a small subset of
+benchmarks using shorter timeout and send you the results. However, these checks
+do not substitute thorough testing of the submitted solvers.</p>
+<p>Your solver can have multiple configurations for different tracks, logics, etc.
+These can be specified as part of the solver submission and changed until the
+deadline for the final solver. The default configuration is used for all other
+tracks.</p>
+<p>Due to the lack of suitable infrastructure, Cloud track is not taking place for
+SMT-COMP 2025. Parallel track is going to be executed on the same
+BenchExec-based infrastructure as the other tracks, only on machines with a
+higher number of CPU cores. As a result, there is no special submission process
+for the parallel track and the submissions should follow the same process as the
+rest of the competition.</p>
+<p>Please see the competition rules for further details. Do not hesitate contacting us
+if you have any questions or comments.</p>
+<p>Sincerely,</p>
+<p>The organizing team</p>
+
+  
+
+
+  </section>
+  <footer>
+    
+  </footer>
+  </div>
+</body>
+</html>

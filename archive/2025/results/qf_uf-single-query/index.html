@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/2025/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> | SMT-COMP 2025</title>
+
+    <link rel="stylesheet" href="/2025/css/main.css">
+
+
+      <script src="/2025/js/main.js"></script>
+
+
+</head>
+<body>
+  <div class="wrapper">
+  <header>
+      <h1>
+    <a href="/">SMT-COMP 2025</a>
+  </h1>
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp">GitHub</a>
+  </p>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/">Home</a><br/>
+      <a class="hl" href="/2025/introduction/">Introduction</a><br/>
+      <a class="hl" href="/2025/benchmark_submission/">Benchmark Submission</a><br/>
+      <a class="hl" href="/2025/publications/">Publications</a><br/>
+      <a class="hl" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a><br/>
+      <a class="hl" href="/2025/previous/">Previous Editions</a><br/>
+  </nav>
+
+
+  <p class="view">
+    <h3>
+      <a href="">SMT-COMP 2025</a>
+    </h3>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" aria-current="true" class="ancestor" href="/2025/results/">Results</a><br/>
+      <a class="hl" href="/2025/rules.pdf">Rules</a><br/>
+      <a class="hl" href="specs">Specs</a><br/>
+      <a class="hl" href="/2025/solver_submission/">Solver Submission</a><br/>
+      <a class="hl" href="/2025/model/">Model Validation Track</a><br/>
+      <a class="hl" href="/2025/parallel_track/">Parallel Track</a><br/>
+      <a class="hl" href="/2025/participants/">Participants</a><br/>
+  </nav>
+
+
+  </header>
+  <section>
+    
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+  <h1>QF_UF (Single Query Track)</h1>
+  <p>
+    Competition results for the QF_UF
+     logic 
+    in the Single Query Track. <a href="/2025/results/qf_uf-single-query-chart"><b>Chart</b></a> </p>
+  <p>Results were generated on 2025-08-11</p>
+  <p>
+    <b>Benchmarks</b>: 3521<br/>
+    <b>Time Limit:</b> 1200 seconds<br/>
+    <b>Memory Limit:</b> 30720 GB
+  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>Winners</h3>
+<table>
+  <thead>
+    <tr>
+    
+      
+      <th class="center">Sequential Performance</th>
+      
+    
+      
+      <th class="center">Parallel Performance</th>
+      
+    
+      
+      <th class="center">SAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">UNSAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">24 seconds Performance (parallel)</th>
+      
+    
+    </tr>
+  </thead>
+  <tr>
+    
+    
+    <td class="center">
+      
+      Yices2
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Yices2
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Yices2
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Yices2
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      Yices2
+      
+    </td>
+    
+    
+  </tr>
+</table>
+
+
+
+
+<h3>Sequential Performance Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3521
+    
+    </td>
+    <td class="right">1599.77</td>
+    <td class="right" >2035.93</td>
+
+    <td class="right" >3521</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2048</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3520
+    
+    </td>
+    <td class="right">7474.78</td>
+    <td class="right" >7912.01</td>
+
+    <td class="right" >3520</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2047</td>
+    
+    <td class="right" >1</td>
+    <td class="right" >0</td>
+
+    <td class="right" >1</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3519
+    
+    </td>
+    <td class="right">5055.83</td>
+    <td class="right" >5489.34</td>
+
+    <td class="right" >3519</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2046</td>
+    
+    <td class="right" >2</td>
+    <td class="right" >0</td>
+
+    <td class="right" >2</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3443
+    
+    </td>
+    <td class="right">24749.86</td>
+    <td class="right" >11485.66</td>
+
+    <td class="right" >3443</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >1970</td>
+    
+    <td class="right" >78</td>
+    <td class="right" >0</td>
+
+    <td class="right" >24</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<h3>Parallel Performance Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3521
+    
+    </td>
+    <td class="right">1599.77</td>
+    <td class="right" >2035.93</td>
+
+    <td class="right" >3521</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2048</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3520
+    
+    </td>
+    <td class="right">7474.78</td>
+    <td class="right" >7912.01</td>
+
+    <td class="right" >3520</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2047</td>
+    
+    <td class="right" >1</td>
+    <td class="right" >0</td>
+
+    <td class="right" >1</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3519
+    
+    </td>
+    <td class="right">5055.83</td>
+    <td class="right" >5489.34</td>
+
+    <td class="right" >3519</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2046</td>
+    
+    <td class="right" >2</td>
+    <td class="right" >0</td>
+
+    <td class="right" >2</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3443
+    
+    </td>
+    <td class="right">24749.86</td>
+    <td class="right" >11485.66</td>
+
+    <td class="right" >3443</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >1970</td>
+    
+    <td class="right" >78</td>
+    <td class="right" >0</td>
+
+    <td class="right" >24</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<h3>SAT Performance Performance</h3>
+<table id="sat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    1473
+    
+    </td>
+    <td class="right">246.82</td>
+    <td class="right" >429.58</td>
+
+    <td class="right" >1473</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >2048</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    1473
+    
+    </td>
+    <td class="right">384.08</td>
+    <td class="right" >567.08</td>
+
+    <td class="right" >1473</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >2048</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    1473
+    
+    </td>
+    <td class="right">475.70</td>
+    <td class="right" >657.38</td>
+
+    <td class="right" >1473</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >2048</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    1473
+    
+    </td>
+    <td class="right">3689.56</td>
+    <td class="right" >1742.13</td>
+
+    <td class="right" >1473</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >0</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >2048</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<h3>UNSAT Performance Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    2048
+    
+    </td>
+    <td class="right">1352.94</td>
+    <td class="right" >1606.35</td>
+
+    <td class="right" >2048</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >2048</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >1473</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    2047
+    
+    </td>
+    <td class="right">7090.70</td>
+    <td class="right" >7344.94</td>
+
+    <td class="right" >2047</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >2047</td>
+    
+    <td class="right" >1</td>
+    <td class="right" >1473</td>
+
+    <td class="right" >1</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    2046
+    
+    </td>
+    <td class="right">4580.13</td>
+    <td class="right" >4831.97</td>
+
+    <td class="right" >2046</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >2046</td>
+    
+    <td class="right" >2</td>
+    <td class="right" >1473</td>
+
+    <td class="right" >2</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    1970
+    
+    </td>
+    <td class="right">21060.30</td>
+    <td class="right" >9743.53</td>
+
+    <td class="right" >1970</td>
+    
+    <td class="right" >0</td>
+    
+    
+    <td class="right" >1970</td>
+    
+    <td class="right" >78</td>
+    <td class="right" >1473</td>
+
+    <td class="right" >24</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<h3>24 seconds Performance Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+          <th class="center">Solved SAT</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      Yices2 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3518
+    
+    </td>
+    <td class="right">687.03</td>
+    <td class="right" >1122.70</td>
+
+    <td class="right" >3518</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2045</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >3</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      OpenSMT 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3494
+    
+    </td>
+    <td class="right">2019.55</td>
+    <td class="right" >2452.78</td>
+
+    <td class="right" >3494</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2021</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >27</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3487
+    
+    </td>
+    <td class="right">1834.66</td>
+    <td class="right" >2263.82</td>
+
+    <td class="right" >3487</td>
+    
+    <td class="right" >1473</td>
+    
+    
+    <td class="right" >2014</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >34</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    3408
+    
+    </td>
+    <td class="right">18844.45</td>
+    <td class="right" >8529.55</td>
+
+    <td class="right" >3408</td>
+    
+    <td class="right" >1472</td>
+    
+    
+    <td class="right" >1936</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >113</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  </section>
+  <footer>
+    
+  </footer>
+  </div>
+</body>
+</html>

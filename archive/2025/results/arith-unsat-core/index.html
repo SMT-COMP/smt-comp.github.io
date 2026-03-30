@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/2025/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2025/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> | SMT-COMP 2025</title>
+
+    <link rel="stylesheet" href="/2025/css/main.css">
+
+
+      <script src="/2025/js/main.js"></script>
+
+
+</head>
+<body>
+  <div class="wrapper">
+  <header>
+      <h1>
+    <a href="/">SMT-COMP 2025</a>
+  </h1>
+
+  <p>The International Satisfiability Modulo Theories (SMT) Competition.</p>
+
+  <p class="view">
+    <a class="hl" href="https://github.com/smt-comp">GitHub</a>
+  </p>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" href="/2025/">Home</a><br/>
+      <a class="hl" href="/2025/introduction/">Introduction</a><br/>
+      <a class="hl" href="/2025/benchmark_submission/">Benchmark Submission</a><br/>
+      <a class="hl" href="/2025/publications/">Publications</a><br/>
+      <a class="hl" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a><br/>
+      <a class="hl" href="/2025/previous/">Previous Editions</a><br/>
+  </nav>
+
+
+  <p class="view">
+    <h3>
+      <a href="">SMT-COMP 2025</a>
+    </h3>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav>
+      <a class="hl" aria-current="true" class="ancestor" href="/2025/results/">Results</a><br/>
+      <a class="hl" href="/2025/rules.pdf">Rules</a><br/>
+      <a class="hl" href="specs">Specs</a><br/>
+      <a class="hl" href="/2025/solver_submission/">Solver Submission</a><br/>
+      <a class="hl" href="/2025/model/">Model Validation Track</a><br/>
+      <a class="hl" href="/2025/parallel_track/">Parallel Track</a><br/>
+      <a class="hl" href="/2025/participants/">Participants</a><br/>
+  </nav>
+
+
+  </header>
+  <section>
+    
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+  <h1>Arith (Unsat Core Track)</h1>
+  <p>
+    Competition results for the Arith
+     division 
+    in the Unsat Core Track. <a href="/2025/results/arith-unsat-core-chart"><b>Chart</b></a> </p>
+  <p>Results were generated on 2025-08-11</p>
+  <p>
+    <b>Benchmarks</b>: 386<br/>
+    <b>Time Limit:</b> 1200 seconds<br/>
+    <b>Memory Limit:</b> 30720 GB
+  </p>
+
+
+
+
+
+
+<b>Logics:</b><ul>
+  
+  <li><a href="../lia-unsat-core">LIA</a> : 227 benchmarks</li>
+  
+  <li><a href="../nia-unsat-core">NIA</a> : 159 benchmarks</li>
+  
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h3>Winners</h3>
+<table>
+  <thead>
+    <tr>
+    
+      
+      <th class="center">Sequential Performance</th>
+      
+    
+      
+      <th class="center">Parallel Performance</th>
+      
+    
+      
+      <th class="center">SAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">UNSAT Performance (parallel)</th>
+      
+    
+      
+      <th class="center">24 seconds Performance (parallel)</th>
+      
+    
+    </tr>
+  </thead>
+  <tr>
+    
+    
+    <td class="center">
+      
+      cvc5
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      cvc5
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      -
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      cvc5
+      
+    </td>
+    
+    
+    
+    <td class="center">
+      
+      cvc5
+      
+    </td>
+    
+    
+  </tr>
+</table>
+
+
+
+
+<h3>Sequential Performance Performance</h3>
+<table id="sequential" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    266
+    
+    </td>
+    <td class="right">23878.77</td>
+    <td class="right" >23928.18</td>
+
+    <td class="right" >367</td>
+    
+    
+    <td class="right" >367</td>
+    
+    <td class="right" >19</td>
+    <td class="right" >0</td>
+
+    <td class="right" >19</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    7
+    
+    </td>
+    <td class="right">34.00</td>
+    <td class="right" >29.29</td>
+
+    <td class="right" >56</td>
+    
+    
+    <td class="right" >56</td>
+    
+    <td class="right" >330</td>
+    <td class="right" >0</td>
+
+    <td class="right" >13</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      UltimateEliminator&#43;MathSAT 
+    </td>
+    <td class="right"  >2
+      
+    </td>
+    <td class="right" >
+    238
+    
+    </td>
+    <td class="right">2319.85</td>
+    <td class="right" >1290.21</td>
+
+    <td class="right" >311</td>
+    
+    
+    <td class="right" >311</td>
+    
+    <td class="right" >75</td>
+    <td class="right" >0</td>
+
+    <td class="right" >20</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<h3>Parallel Performance Performance</h3>
+<table id="parallel" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    266
+    
+    </td>
+    <td class="right">23878.77</td>
+    <td class="right" >23928.18</td>
+
+    <td class="right" >367</td>
+    
+    
+    <td class="right" >367</td>
+    
+    <td class="right" >19</td>
+    <td class="right" >0</td>
+
+    <td class="right" >19</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    7
+    
+    </td>
+    <td class="right">34.00</td>
+    <td class="right" >29.29</td>
+
+    <td class="right" >56</td>
+    
+    
+    <td class="right" >56</td>
+    
+    <td class="right" >330</td>
+    <td class="right" >0</td>
+
+    <td class="right" >13</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      UltimateEliminator&#43;MathSAT 
+    </td>
+    <td class="right"  >2
+      
+    </td>
+    <td class="right" >
+    238
+    
+    </td>
+    <td class="right">2319.85</td>
+    <td class="right" >1290.21</td>
+
+    <td class="right" >311</td>
+    
+    
+    <td class="right" >311</td>
+    
+    <td class="right" >75</td>
+    <td class="right" >0</td>
+
+    <td class="right" >20</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>UNSAT Performance Performance</h3>
+<table id="unsat" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    266
+    
+    </td>
+    <td class="right">23878.77</td>
+    <td class="right" >23928.18</td>
+
+    <td class="right" >367</td>
+    
+    
+    <td class="right" >367</td>
+    
+    <td class="right" >19</td>
+    <td class="right" >0</td>
+
+    <td class="right" >19</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    7
+    
+    </td>
+    <td class="right">34.00</td>
+    <td class="right" >29.29</td>
+
+    <td class="right" >56</td>
+    
+    
+    <td class="right" >56</td>
+    
+    <td class="right" >330</td>
+    <td class="right" >0</td>
+
+    <td class="right" >13</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      UltimateEliminator&#43;MathSAT 
+    </td>
+    <td class="right"  >2
+      
+    </td>
+    <td class="right" >
+    238
+    
+    </td>
+    <td class="right">2319.85</td>
+    <td class="right" >1290.21</td>
+
+    <td class="right" >311</td>
+    
+    
+    <td class="right" >311</td>
+    
+    <td class="right" >75</td>
+    <td class="right" >0</td>
+
+    <td class="right" >20</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<h3>24 seconds Performance Performance</h3>
+<table id="twentyfour" class="result sorted">
+<thead>
+    <tr>
+        <th class="center">Solver</th>
+        <th class="center">Error Score</th>
+        <th class="center">Correct Score</th>
+        <th class="center">CPU Time Score</th>
+        <th class="center">Wall Time Score</th>
+
+        <th class="center">Solved</th>
+        
+        
+          <th class="center">Solved UNSAT</th>
+        
+        <th class="center">Unsolved</th>
+        <th class="center">Abstained</th>
+        <th class="center">Timeout</th>
+        <th class="center">Memout</th>
+    </tr>
+</thead>
+
+
+
+
+
+<tr >
+    <td >
+      cvc5 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    122
+    
+    </td>
+    <td class="right">138.97</td>
+    <td class="right" >174.95</td>
+
+    <td class="right" >288</td>
+    
+    
+    <td class="right" >288</td>
+    
+    <td class="right" >0</td>
+    <td class="right" >98</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      SMTInterpol 
+    </td>
+    <td class="right"  >0
+      
+    </td>
+    <td class="right" >
+    7
+    
+    </td>
+    <td class="right">34.00</td>
+    <td class="right" >29.29</td>
+
+    <td class="right" >56</td>
+    
+    
+    <td class="right" >56</td>
+    
+    <td class="right" >297</td>
+    <td class="right" >33</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+
+
+
+
+<tr >
+    <td >
+      UltimateEliminator&#43;MathSAT 
+    </td>
+    <td class="right"  >2
+      
+    </td>
+    <td class="right" >
+    237
+    
+    </td>
+    <td class="right">1720.46</td>
+    <td class="right" >765.92</td>
+
+    <td class="right" >307</td>
+    
+    
+    <td class="right" >307</td>
+    
+    <td class="right" >55</td>
+    <td class="right" >24</td>
+
+    <td class="right" >0</td>
+    <td class="right" >0</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  </section>
+  <footer>
+    
+  </footer>
+  </div>
+</body>
+</html>
