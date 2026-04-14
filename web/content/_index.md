@@ -23,6 +23,7 @@ present the competitors and results of the competition.
 ### Communication
 
 If you want to publicly discuss topics such as rules, submission process, or the competition results with the SMT-COMP community, you are welcome in
+
 - `#smtcomp` channel on [SMT-LIB Zulip server](https://smtlib.zulipchat.com)
 
 ### Organizers
