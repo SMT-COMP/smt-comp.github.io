@@ -20,6 +20,11 @@ present the competitors and results of the competition.
 - **June 10** Deadline for final versions of participating solvers, including final system descriptions
 - **July 24–25** SMT Workshop (presentation of results)
 
+### Communication
+
+If you want to publicly discuss topics such as rules, submission process, or the competition results with the SMT-COMP community, you are welcome in
+- `#smtcomp` channel on [SMT-LIB Zulip server](https://smtlib.zulipchat.com)
+
 ### Organizers
 
 - [Dominik Winterer](https://wintered.github.io/) (chair) - University of Manchester, United Kingdom
