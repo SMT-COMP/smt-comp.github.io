@@ -1,0 +1,34 @@
+{
+    "name": "NeuroSym",
+    "contributors": [
+        "Vishal Kumar Swain",
+        "Sangharatna Godboley",
+        "P. Radha Krishna",
+        "Avijit Das",
+        "Bhaskar Sri Viswaroopanand"
+    ],
+    "contacts": ["Vishal Kumar Swain <vkswain50@gmail.com>"],
+    "archive": {
+        "url": "https://github.com/VishalKumarSwain/NeuroSym/archive/refs/tags/v1.0-pre.tar.gz",
+        "h": { "sha256": "bd4716f925905374d330c199c02c1b70f664f668c5a52e1ba1f342d27f3fd2f5" }
+    },
+    "website": "https://github.com/VishalKumarSwain/NeuroSym",
+    "system_description": "https://github.com/VishalKumarSwain/NeuroSym/blob/main/GANSAT_Mathematical_Details.md",
+    "command": ["python", "main.py"],
+    "solver_type": "Standalone",
+    "seed": "42",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["QF_LIA"]
+        },
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["QF_BV"]
+        },
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["QF_ABV"]
+        }
+    ]
+}
