@@ -8,7 +8,7 @@
         "url": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2026/plat-smt.zip",
         "h": { "sha256": "1dc13645aa4932722ff4b7e052144ceea0dfeb93872ba853be23e88390d85770" }
     },
-    "website": "http://example.com/",
+    "website": "https://github.com/dewert99/plat-smt",
     "system_description": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2026/smtcomp2026.pdf",
     "command": ["./plat-smt"],
     "solver_type": "wrapped",
