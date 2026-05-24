@@ -1,0 +1,33 @@
+{
+    "name": "BooledASS",
+    "contributors": [
+        "Umut Korkmaz"
+    ],
+    "contacts": ["Umut Korkmaz <224981482+ismail0098-lang@users.noreply.github.com>"],
+    "archive": {
+        "url": "https://github.com/ismail0098-lang/BooledASS/archive/refs/heads/main.tar.gz"
+    },
+    "website": "https://github.com/ismail0098-lang/BooledASS",
+    "system_description": "https://github.com/ismail0098-lang/BooledASS/raw/main/system_description.pdf",
+    "command": ["z3", "-smt2"],
+    "solver_type": "derived",
+    "seed": "2026",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ".*"
+        },
+        {
+            "tracks": ["Incremental"],
+            "logics": ".*"
+        },
+        {
+            "tracks": ["UnsatCore"],
+            "logics": ".*"
+        },
+        {
+            "tracks": ["ModelValidation"],
+            "logics": ".*"
+        }
+    ]
+}
