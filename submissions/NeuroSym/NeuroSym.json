@@ -7,31 +7,48 @@
         "Avijit Das",
         "Lucas Cordeiro"
     ],
-    "contacts": ["Vishal Kumar Swain <vkswain50@gmail.com>"],
+    "contacts": [
+        "Vishal Kumar Swain <vkswain50@gmail.com>"
+    ],
     "archive": {
-        "url": "https://github.com/VishalKumarSwain/NeuroSym/archive/refs/tags/v1.0.tar.gz",
+        "url": "https://github.com/VishalKumarSwain/NeuroSym/archive/refs/tags/v1.1.tar.gz",
         "h": {
-            "sha256": "9a6fa20ef6e05dd29a6a66084e5a31edfae8c2c1277cbbf05fcd15f92c540793"
+            "sha256": "238898f61f26cf3f1fe66c9614b773f8ec11f88e905491e607d15fc7684ead87"
         }
     },
     "final": true,
     "website": "https://github.com/VishalKumarSwain/NeuroSym",
     "system_description": "https://github.com/VishalKumarSwain/NeuroSym/blob/main/GANSAT_Mathematical_Details.md",
-    "command": ["python", "main.py"],
+    "command": [
+        "python",
+        "main.py"
+    ],
     "solver_type": "Standalone",
     "seed": "42",
     "participations": [
         {
-            "tracks": ["SingleQuery"],
-            "logics": ["QF_LIA"]
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": [
+                "QF_LIA"
+            ]
         },
         {
-            "tracks": ["SingleQuery"],
-            "logics": ["QF_BV"]
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": [
+                "QF_BV"
+            ]
         },
         {
-            "tracks": ["SingleQuery"],
-            "logics": ["QF_ABV"]
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": [
+                "QF_ABV"
+            ]
         }
     ]
 }
