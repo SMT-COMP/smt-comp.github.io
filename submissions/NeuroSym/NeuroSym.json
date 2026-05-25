@@ -20,7 +20,7 @@
   "website": "https://github.com/VishalKumarSwain/NeuroSym",
   "system_description": "https://github.com/VishalKumarSwain/NeuroSym/blob/main/GANSAT_Mathematical_Details.md",
   "command": [
-    "python",
+    "python3",
     "main.py"
   ],
   "solver_type": "Standalone",
