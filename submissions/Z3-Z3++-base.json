@@ -1,0 +1,19 @@
+{
+    "name": "Z3-Z3++-base",
+    "archive": {
+        "url": "https://zenodo.org/records/20382937/files/z3base.zip?download=1"
+    },
+    "contributors": [
+        "Nikolaj Bjørner"
+    ],
+    "contacts": ["Nikolaj Bjørner <nbjorner@microsoft.com>"],
+    "website": "https://github.com/Z3Prover/z3/wiki",
+    "system_description": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
+    "command": [ "./z3" ],
+    "solver_type": "Standalone",
+    "participations": [
+        { "tracks": ["SingleQuery"], "logics": ["QF_NIA", "QF_DT"] }
+    ],
+    "competitive": false,
+    "final" : false
+}
