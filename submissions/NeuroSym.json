@@ -9,9 +9,9 @@
   ],
   "contacts": ["Vishal Kumar Swain <vkswain50@gmail.com>"],
   "archive": {
-    "url": "https://zenodo.org/records/20384746/files/NeuroSym-1.1.tar.gz",
+    "url": "https://zenodo.org/records/20385242/files/NeuroSym-1.1.tar.gz",
     "h": {
-      "sha256": "b59679c877a6c9397ff45a21049cd152eb56b404f6cd5a44b9e177a9f6c31e17"
+      "sha256": "f030dac6e7362bb7a64abf795113dbed09c8bc95c8229f52b5db04671bb16a83"
     }
   },
   "final": true,
