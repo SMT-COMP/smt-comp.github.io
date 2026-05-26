@@ -1,0 +1,21 @@
+{
+    "name": "Z3-Z3++",
+    "contributors": [
+        "Bohan Li",
+        "Shihao Jiao",
+	"Jun Wu"
+    ],
+    "contacts": ["Bohan Li <bhli@iaii.ac.cn>","Shihao Jiao <202512491182@nuist.edu.cn>", "Jun Wu <wujun@nuist.edu.cn>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20397586/files/z3upv1.zip?download=1"
+    },
+    "website": "https://z3-plus-plus.github.io/",
+    "system_description": "https://github.com/z3-plus-plus/z3-plus-plus.github.io/blob/main/Z3%2B%2B_in_SMT_COMP_2026.pdf",
+    "command": [ "./z3" ],
+    "solver_type": "derived",
+    "seed": "19970530",
+    "participations": [
+        { "tracks": ["SingleQuery"], "logics": ["QF_NIA", "QF_DT"] }
+    ],
+    "final" : false
+}
