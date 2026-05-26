@@ -1,0 +1,29 @@
+{
+    "name": "colibri2",
+    "contributors": [
+        "François Bobot",
+        "Hichem Ait El Hara",
+        "Christophe Junke"
+    ],
+    "contacts": ["François Bobot <francois.bobot@cea.fr>"],
+    "archive": {
+        "url": "https://git.frama-c.com/pub/colibrics/-/jobs/1912428/artifacts/download?file_type=archive"
+    },
+    "website": "http://colibri.frama-c.com/",
+    "system_description": "https://drive.google.com/uc?export=download&id=14ZT6msIH9JcleUv6P4ha3Rdpc7mhpGL9",
+    "solver_type": "Standalone",
+    "seed": "42",
+    "final":false,
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["QF_FPArith"],
+            "command": ["bin/colibri2"]
+        },
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["FPArith"],
+            "command": ["bin/colibri2", "--try-disprove-forall-using-domain" ]
+        }
+    ]
+}
