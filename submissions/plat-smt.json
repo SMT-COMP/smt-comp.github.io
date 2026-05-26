@@ -1,0 +1,35 @@
+{
+    "name": "plat-smt",
+    "contributors": [
+        "David Ewert"
+    ],
+    "contacts": ["David Ewert <dewert10@gmail.com>"],
+    "archive": {
+        "url": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2026/plat-smt.zip",
+        "h": { "sha256": "1dc13645aa4932722ff4b7e052144ceea0dfeb93872ba853be23e88390d85770" }
+    },
+    "website": "https://github.com/dewert99/plat-smt",
+    "system_description": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2026/smtcomp2026.pdf",
+    "command": ["./plat-smt"],
+    "solver_type": "wrapped",
+    "seed": "6536",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["QF_UF"]
+        },
+        {
+            "tracks": ["Incremental"],
+            "logics": ["QF_UF"],
+            "command": ["./plat-smt", "-i"]
+        },
+        {
+            "tracks": ["UnsatCore"],
+            "logics": ["QF_UF"]
+        },
+        {
+            "tracks": ["ModelValidation"],
+            "logics": ["QF_UF"]
+        }
+  ]
+}
