@@ -1,0 +1,26 @@
+{
+    "name": "MochaStr",
+    "contributors": [
+        "Shaoke Cui",
+        "Chuan Luo",
+        "Zhenwei Yang",
+        "Chunming Hu"
+    ],
+    "contacts": [
+        "Shaoke Cui <cuisk@buaa.edu.cn>"
+    ],
+    "archive": {
+        "url": "https://github.com/Bazoka13/MochaStr/blob/main/mocha.tar.gz"
+    },
+    "website": "https://github.com/Bazoka13/MochaStr",
+    "system_description": "https://github.com/Bazoka13/MochaStr/blob/main/MochaStr_at_SMT_Comp_2026.pdf",
+    "command": ["./mocha"],
+    "solver_type": "Standalone",
+    "seed": "347",
+    "participations": [
+        { 
+          "tracks": ["SingleQuery"], 
+          "divisions": ["QF_Strings"] 
+        }
+    ]
+}
