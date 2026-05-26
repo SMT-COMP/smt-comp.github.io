@@ -1,0 +1,30 @@
+{
+    "name": "Z3-GEX",
+    "contributors": [
+        "Shuming Shi",
+        "Wenbo Wei"
+    ],
+    "contacts": ["Wenbo Wei <ww819616@gmail.com>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20397315/files/Z3_GEX.zip?download=1"
+    },
+    "website": "https://github.com/moyvbai/smt-comp2026",
+    "system_description": "https://github.com/moyvbai/smt-comp2026/blob/main/SMT.pdf",
+    "command": ["z3gex"],
+    "solver_type": "derived",
+    "seed": "42",
+    "participations": [
+       { 
+            "tracks": ["SingleQuery"], 
+            "divisions": [
+                "Arith",
+                "QF_Bitvec",
+                "QF_LinearIntArith",
+                "QF_LinearRealArith",
+                "QF_NonLinearIntArith",
+                "QF_NonLinearRealArith",
+                "QF_Strings"
+            ]
+        }
+    ]
+}
