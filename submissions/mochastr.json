@@ -10,7 +10,7 @@
         "Shaoke Cui <cuisk@buaa.edu.cn>"
     ],
     "archive": {
-        "url": "https://github.com/Bazoka13/MochaStr/blob/main/mocha.tar.gz"
+        "url": "https://github.com/Bazoka13/MochaStr/raw/refs/heads/main/mocha.tar.gz"
     },
     "website": "https://github.com/Bazoka13/MochaStr",
     "system_description": "https://github.com/Bazoka13/MochaStr/blob/main/MochaStr_at_SMT_Comp_2026.pdf",
