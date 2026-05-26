@@ -8,8 +8,8 @@
     "archive": {
         "url": "https://zenodo.org/records/20393652/files/z3gex.zip?download=1"
     },
-    "website": "https://github.com/b1uerar/SMT",
-    "system_description": "https://github.com/b1uerar/SMT/blob/main/SMT.pdf",
+    "website": "https://github.com/moyvbai/smt-comp2026",
+    "system_description": "https://github.com/moyvbai/smt-comp2026/blob/main/SMT.pdf",
     "command": ["z3gex"],
     "solver_type": "derived",
     "seed": "42",
