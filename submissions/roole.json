@@ -19,7 +19,7 @@
             "tracks": ["SingleQuery"],
             "logics": "QF_BV",
             "command": [
-                "roole",
+                "roole"
             ]
         }
     ]
