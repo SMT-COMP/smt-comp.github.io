@@ -9,15 +9,15 @@
   ],
   "contacts": ["Vishal Kumar Swain <vkswain50@gmail.com>"],
   "archive": {
-    "url": "https://zenodo.org/records/20385242/files/NeuroSym-1.1.tar.gz",
+    "url": "https://zenodo.org/records/20390458/files/NeuroSym-1.1.tar.gz",
     "h": {
-      "sha256": "f030dac6e7362bb7a64abf795113dbed09c8bc95c8229f52b5db04671bb16a83"
+      "sha256": "a8f2f0bce45a06e434782cfe36ece0222ba1872ec8efcc55543e4b54df4ff93a"
     }
   },
   "final": true,
   "website": "https://github.com/VishalKumarSwain/NeuroSym",
   "system_description": "https://github.com/VishalKumarSwain/NeuroSym/blob/main/GANSAT_Mathematical_Details.md",
-  "command": ["python3", "main.py"],
+  "command": ["NeuroSym-1.1/python3"],
   "solver_type": "Standalone",
   "seed": "42",
   "participations": [
