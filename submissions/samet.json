@@ -1,0 +1,21 @@
+{
+    "name": "Samet",
+    "contributors": [
+        "Martin Blicha"
+    ],
+    "contacts": ["Martin Blicha <martin.blicha@argot.org>"],
+    "archive": {
+        "url": "https://drive.google.com/uc?export=download&id=11KClA52CNTY3q0LzHCbVZbcHNk0SxQRF"
+    },
+    "website": "https://github.com/blishko/",
+    "system_description": "https://drive.google.com/uc?export=download&id=1C5vVC3E3KI8AB6e1l-cVeOrv1hgVjEfJ",
+    "command": ["./samet"],
+    "solver_type": "Standalone",
+    "seed": "3948761623",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["QF_LRA"]
+        }
+    ]
+}
