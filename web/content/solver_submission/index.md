@@ -27,7 +27,7 @@ The repository contains a continuous integration check that will
 
 ### Examples
 
-For examples, take a look at the [last year's submissions](https://github.com/SMT-COMP/smt-comp.github.io/tree/smtcomp24/submissions).
+For examples, take a look at the [last year's submissions](https://github.com/SMT-COMP/smt-comp.github.io/tree/smtcomp25/submissions).
 
 The detailed description of the fields in the solver JSON file is available in the [schema](schema.html).
 
