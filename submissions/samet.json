@@ -1,0 +1,22 @@
+{
+    "name": "Samet",
+    "contributors": [
+        "Martin Blicha"
+    ],
+    "contacts": ["Martin Blicha <martin.blicha@argot.org>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20629779/files/samet.tgz?download=1"
+    },
+    "website": "https://github.com/blishko/",
+    "system_description": "https://zenodo.org/records/20629779/files/samet.pdf?download=1",
+    "command": ["./samet"],
+    "solver_type": "Standalone",
+    "seed": "3948761623",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": ["QF_LRA"]
+        }
+    ],
+    "final": true
+}
