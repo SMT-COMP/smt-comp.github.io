@@ -1,0 +1,26 @@
+{
+    "name": "Roole",
+    "contributors": [
+        { "name": "Jan Onderka", "website": "http://onderjan.net/" },
+        "Armin Biere"
+    ],
+    "contacts": ["Jan Onderka <onderka@cs.uni-freiburg.net>"],
+    "archive": {
+        "url": "https://github.com/onderjan/roole-smt-comp/raw/34460428ec7e43c278e8effdce74da49b90a613f/relics/roole.tar.gz",
+        "h": { "sha256": "44c6b6119c0c521b3a6ada111601f7ae014827e564626f5558ec0fbad40a7b55" }
+    },
+    "website": "https://github.com/onderjan/roole",
+    "system_description": "https://github.com/onderjan/roole-smt-comp/raw/34460428ec7e43c278e8effdce74da49b90a613f/relics/roole.pdf",
+    "command": ["roole"],
+    "solver_type": "Standalone",
+    "seed": "22961",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": "QF_BV",
+            "command": [
+                "roole",
+            ]
+        }
+    ]
+}
