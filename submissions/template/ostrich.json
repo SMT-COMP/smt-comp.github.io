@@ -1,0 +1,25 @@
+{
+    "name": "OSTRICH",
+    "contributors": [
+        "Matthew Hague",
+        "Denghang Hu",
+        "Anthony W. Lin",
+        "Oliver Markgraf",
+        "Philipp Ruemmer",
+        "Zhilin Wu"
+    ],
+    "contacts": ["Philipp Ruemmer <philipp.ruemmer@it.uu.se>",
+                 "Oliver Markgraf <markgraf@cs.uni-kl.de>"],
+    "archive": {
+        "url": "https://github.com/uuverifiers/ostrich/archive/refs/tags/v2.0.1.tar.gz",
+        "h": { "sha256": "sha256:f4c5a275c84721b35a4d73c12e47f744c01394ed330097cbba41ad7a8b8dff90" }
+    },
+    "website": "https://github.com/uuverifiers/ostrich/",
+    "system_description": "https://arg-git.informatik.uni-kl.de/pub/ostrich-system-description/-/blob/main/smt-comp2026/document.pdf",
+    "command": ["./ostrich", "+quiet", "-portfolio=strings"],
+    "solver_type": "Standalone",
+    "seed": "718582",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
+    ]
+}
