@@ -6,12 +6,12 @@
     ],
     "contacts": ["Jan Onderka <onderka@cs.uni-freiburg.net>"],
     "archive": {
-        "url": "https://github.com/onderjan/roole-smt-comp/raw/34460428ec7e43c278e8effdce74da49b90a613f/relics/roole.tar.gz",
+        "url": "https://github.com/onderjan/roole-smt-comp/raw/89d408abd6b8b5b4d19552f79f501a6d309158b7/relics/roole.tar.gz",
         "h": { "sha256": "44c6b6119c0c521b3a6ada111601f7ae014827e564626f5558ec0fbad40a7b55" }
     },
     "website": "https://github.com/onderjan/roole",
-    "system_description": "https://github.com/onderjan/roole-smt-comp/raw/34460428ec7e43c278e8effdce74da49b90a613f/relics/roole.pdf",
-    "command": ["roole"],
+    "system_description": "https://github.com/onderjan/roole-smt-comp/raw/89d408abd6b8b5b4d19552f79f501a6d309158b7/relics/roole.pdf",
+    "command": ["roole", "--silent"],
     "solver_type": "Standalone",
     "seed": "22961",
     "participations": [
@@ -19,7 +19,8 @@
             "tracks": ["SingleQuery"],
             "logics": "QF_BV",
             "command": [
-                "roole"
+                "roole",
+                "--silent"
             ]
         }
     ]
