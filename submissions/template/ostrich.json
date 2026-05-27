@@ -13,9 +13,9 @@
         "Oliver Markgraf <markgraf@cs.uni-kl.de>"
     ],
     "archive": {
-        "url": "https://github.com/uuverifiers/ostrich/archive/refs/tags/v2.0.1.tar.gz",
+        "url": "https://arg-git.informatik.uni-kl.de/pub/ostrich-system-description/-/blob/main/smt-comp2026/ostrich-2.1.tar.gz",
         "h": {
-            "sha256": "sha256:f4c5a275c84721b35a4d73c12e47f744c01394ed330097cbba41ad7a8b8dff90"
+            "sha256": "sha256:623127c85e9d4072def45103ce9ee5acfbb3a69e524da706683d9d5cd410ce55"
         }
     },
     "website": "https://github.com/uuverifiers/ostrich/",
