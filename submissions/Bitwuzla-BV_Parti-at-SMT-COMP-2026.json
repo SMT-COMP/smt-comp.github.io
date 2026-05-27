@@ -1,0 +1,33 @@
+{
+  "name": "Bitwuzla-BV_Parti",
+  "contributors": [
+    "Mengyu Zhao",
+    "Zhenghang Xu",
+    "Shaowei Cai"
+  ],
+  "contacts": [
+    "Mengyu Zhao <zhaomy@ios.ac.cn>"
+  ],
+  "archive": {
+    "url": "https://github.com/zmylinxi99/Bitwuzla-BV_Parti-at-SMT-COMP-2026/releases/download/SMT-COMP-2026/Bitwuzla-BV_Parti-at-SMT-COMP-2026-build.zip"
+  },
+  "website": "https://github.com/zmylinxi99/Bitwuzla-BV_Parti-at-SMT-COMP-2026",
+  "system_description": "https://github.com/zmylinxi99/Bitwuzla-BV_Parti-at-SMT-COMP-2026/blob/master/Bitwuzla-BV_Parti.pdf",
+  "command": [
+    "./Bitwuzla-BV_Parti-at-SMT-COMP-2026-build/solver/run_BV_Parti.py",
+    "128"
+  ],
+  "solver_type": "wrapped",
+  "seed": 998244353,
+  "participations": [
+    {
+      "tracks": [
+        "Parallel"
+      ],
+      "logics": [
+        "QF_BV"
+      ]
+    }
+  ],
+  "final": false
+}
