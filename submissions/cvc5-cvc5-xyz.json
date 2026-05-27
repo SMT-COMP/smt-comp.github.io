@@ -1,0 +1,30 @@
+{
+    "name": "cvc5-cvc5-xyz",
+    "contributors": [
+        "Xinyu Xie",
+        "Yingte Xu",
+        "Zhiyuan Zhang"
+    ],
+    "contacts": [
+        "Xinyu Xie <xinyu.xie@mpi-sp.org>",
+        "Yingte Xu <yingte.xu@mpi-sp.org>",
+        "Zhiyuan Zhang <zhiyuan.zhang@mpi-sp.org>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20418577/files/cvc5-xyz.tar.gz?download=1"
+    },
+    "website": "https://www.google.com",
+    "system_description": "https://www.google.com",
+    "command": [
+        "./bin/starexec_run_sq"
+    ],
+    "solver_type": "derived",
+    "seed": "66",
+    "participations": [
+        {
+            "tracks": [ "SingleQuery" ],
+            "logics": ".*"
+        }
+    ],
+    "final": false
+}
