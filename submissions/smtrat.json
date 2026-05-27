@@ -13,7 +13,7 @@
     "system_description": "https://zenodo.org/records/15754549/files/smtcomp-2025.pdf",
     "command": [ "./smtrat-static" ],
     "solver_type": "Standalone",
-    "seed": 23,
+    "seed": 29,
     "participations": [
         { "tracks": ["SingleQuery"], "logics": "(QF_)?NRA" },
         { "tracks": ["ModelValidation"], "logics": "QF_NRA" }
