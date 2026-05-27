@@ -11,10 +11,10 @@
         "Zhiyuan Zhang <zhiyuan.zhang@mpi-sp.org>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/20418577/files/cvc5-xyz.tar.gz?download=1"
+        "url": "https://zenodo.org/records/20418978/files/cvc5-xyz.tar.gz?download=1"
     },
-    "website": "https://www.google.com",
-    "system_description": "https://www.google.com",
+    "website": "https://www.namasikanam.com",
+    "system_description": "https://zenodo.org/records/20418978/files/AI4SMT.pdf?download=1",
     "command": [
         "./bin/starexec_run_sq"
     ],
