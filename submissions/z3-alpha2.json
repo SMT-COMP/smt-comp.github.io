@@ -9,7 +9,7 @@
     ],
     "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
     "archive": {
-        "url": "https://drive.google.com/uc?export=download&id=1Mk6iz1DFvEDf2F8Zzplg4VQZ6M7dkNwJ",
+        "url": "https://github.com/JohnLyu2/z3alpha/releases/download/z3alpha2-smtcomp26-1st/z3alpha2_smtcomp26.tar.gz",
         "h": { "sha256": "46e4da57c65e9007ff1d241ff1f6970fbf871ca6515aaec3a4170f4658b994bb" }
     },
     "website": "https://github.com/JohnLyu2/z3alpha",
