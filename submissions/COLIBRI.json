@@ -14,7 +14,7 @@
     "participations": [
         {
             "tracks": ["SingleQuery"],
-            "logics": "QF_.*FP(?!DT).*"
+            "divisions": ["QF_FPArith"]
         }
     ],
     "seed": 0,
