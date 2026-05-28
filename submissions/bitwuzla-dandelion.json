@@ -1,0 +1,31 @@
+{
+    "name": "bitwuzla-dandelion",
+    "contributors": [
+        "Runzhou Li",
+        "Peison Yao"
+    ],
+    "contacts": [
+        "Peison Yao <pyaoaa@zju.edu.cn>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20422525/files/bitwuzla-dandelion-smtcomp2026-linux-x86_64.tar.gz?download=1"
+    },
+    "website": "https://zenodo.org/records/20422525",
+    "system_description": "https://zenodo.org/records/20422525/files/bitwuzla-dandelion.pdf?download=1",
+    "command": [
+        "./run-bitwuzla-dandelion"
+    ],
+    "solver_type": "derived",
+    "seed": "421",
+    "participations": [
+        {
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": "^((QF_)?(A)?(UF)?(BV|FP|FPLRA)+)$",
+            "command": [
+                "./run-bitwuzla-dandelion"
+            ]
+        }
+    ]
+}
