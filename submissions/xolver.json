@@ -1,0 +1,41 @@
+{
+    "name": "Xolver",
+    "contributors": [
+        "Fuqi Jia"
+    ],
+    "contacts": [
+        "Fuqi Jia <jiafq@ios.ac.cn>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20426099/files/xolver.tar.gz?download=1",
+        "h": {
+            "sha256": "8db01ea8db02d05f345d06f8285a929b10916de562efd43623959e5d1245d060"
+        }
+    },
+    "website": "https://zenodo.org/records/20426099",
+    "system_description": "https://zenodo.org/records/20426099/files/xolver.pdf?download=1",
+    "command": [
+        "./bin/xolver",
+        "solve"
+    ],
+    "solver_type": "Standalone",
+    "seed": "20260528",
+    "participations": [
+        {
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": [
+                "QF_NIA",
+                "QF_NIRA",
+                "QF_NRA",
+                "QF_UFNIA",
+                "QF_UFNRA",
+                "QF_ANIA",
+                "QF_AUFNIA",
+                "QF_UFDTNIA"
+            ]
+        }
+    ],
+    "final": false
+}
