@@ -1,0 +1,34 @@
+{
+    "name": "bitwuzla-dandelion",
+    "contributors": [
+        "Runzhou Li",
+        "Peison Yao"
+    ],
+    "contacts": [
+        "Peison Yao <pyaoaa@zju.edu.cn>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/api/records/20420724/files-archive",
+        "h": {
+            "sha256": "7d1cea33c4a150eadf46584597773b28cc58d77a033c980045d8719d853a3e0d"
+        }
+    },
+    "website": "https://zenodo.org/records/20420724",
+    "system_description": "https://zenodo.org/records/20420724/files/bitwuzla-dandelion.pdf?download=1",
+    "command": [
+        "./bitwuzla-dandelion"
+    ],
+    "solver_type": "derived",
+    "seed": "421",
+    "participations": [
+        {
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": "^((QF_)?(A)?(UF)?(BV|FP|FPLRA)+)$",
+            "command": [
+                "./bitwuzla-dandelion"
+            ]
+        }
+    ]
+}
