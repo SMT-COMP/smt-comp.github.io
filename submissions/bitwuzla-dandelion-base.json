@@ -1,0 +1,35 @@
+{
+    "name": "bitwuzla-dandelion-base",
+    "contributors": [
+        "Aina Niemetz",
+        "Mathias Preiner"
+    ],
+    "contacts": [
+        "Mathias Preiner <preiner@cs.stanford.edu>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20420724/files/bitwuzla?download=1",
+        "h": {
+            "md5": "3f9a8ea0a43b1abebde01025d892b8b8 "
+        }
+    },
+    "website": "https://bitwuzla.github.io",
+    "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-031-37703-7_1",
+    "command": [
+        "./bitwuzla"
+    ],
+    "solver_type": "Standalone",
+    "seed": "421",
+    "participations": [
+        {
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": "^((QF_)?(A)?(UF)?(BV|FP|FPLRA)+)$",
+            "command": [
+                "./bitwuzla"
+            ]
+        }
+    ],
+    "competitive": false
+}
