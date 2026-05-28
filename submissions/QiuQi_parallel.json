@@ -16,7 +16,7 @@
   "website": "https://github.com/YZhang322/QiuQi-for-SMT-COMP-2026",
   "system_description": "https://github.com/YZhang322/QiuQi-for-SMT-COMP-2026/blob/main/Qiuqi_at_SMT_COMP_2026.pdf",
   "command": [
-    "./MIXSolver  -Threads=32"
+    "./MIXSolver", "-Threads=32"
   ],
   "solver_type": "Standalone",
   "participations": [
