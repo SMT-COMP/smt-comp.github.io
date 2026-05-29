@@ -1,0 +1,29 @@
+{
+  "name": "QiuQi",
+  "archive": {
+    "url": "https://github.com/YZhang322/QiuQi-for-SMT-COMP-2026/releases/download/version_0.0.1/MIXSolver.zip"
+  },
+  "contributors": [
+    "Zhendong Lei",
+    "Jianrong Yuan",
+    "Yue Zhang",
+    "Qiuchen Qian",
+    "Pinyan Lu"
+  ],
+  "contacts": [
+    "Zhendong Lei <leizhendong3@huawei.com>"
+  ],
+  "website": "https://github.com/YZhang322/QiuQi-for-SMT-COMP-2026",
+  "system_description": "https://github.com/YZhang322/QiuQi-for-SMT-COMP-2026/blob/main/Qiuqi_at_SMT_COMP_2026.pdf",
+  "command": [
+    "./MIXSolver"
+  ],
+  "solver_type": "Standalone",
+  "participations": [
+    {
+      "tracks": ["SingleQuery"],
+      "logics": ["QF_LIA", "QF_IDL"]
+    }
+  ],
+  "final": false
+}
