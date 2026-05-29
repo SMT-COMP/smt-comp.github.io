@@ -25,7 +25,7 @@
     "command": ["leanwuzla.sh"],
     "website": "https://github.com/hargoniX/Leanwuzla",
     "system_description": "https://github.com/hargoniX/Leanwuzla/releases/download/smtcomp2026/bv_decide.pdf",
-    "solver_type": "derived",
+    "solver_type": "Standalone",
     "seed": 42,
     "participations": [
         {
