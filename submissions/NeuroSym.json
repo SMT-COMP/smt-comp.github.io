@@ -18,7 +18,7 @@
   "website": "https://github.com/VishalKumarSwain/NeuroSym",
   "system_description": "https://github.com/VishalKumarSwain/NeuroSym/blob/main/NeuroSym_Report.pdf",
   "command": ["NeuroSym-1.1/python3"],
-  "solver_type": "Standalone",
+  "solver_type": "wrapped",
   "seed": "42",
   "participations": [
     {
