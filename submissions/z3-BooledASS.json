@@ -1,15 +1,15 @@
 {
-    "name": "BooledASS",
+    "name": "z3-BooledASS",
     "contributors": [
         "Umut Korkmaz"
     ],
     "contacts": ["Umut Korkmaz <224981482+ismail0098-lang@users.noreply.github.com>"],
     "archive": {
-        "url": "https://github.com/ismail0098-lang/BooledASS/releases/download/v1.0.0/BooledASS-linux.tar.gz"
+        "url": "https://github.com/ismail0098-lang/BooledASS/releases/download/v1.0.0/z3-BooledASS.tar.gz"
     },
     "website": "https://github.com/ismail0098-lang/BooledASS",
     "system_description": "https://github.com/ismail0098-lang/BooledASS/raw/main/system_description.pdf",
-    "command": ["z3", "-smt2"],
+    "command": ["z3-BooledASS", "-smt2"],
     "solver_type": "derived",
     "seed": "2026",
     "participations": [
