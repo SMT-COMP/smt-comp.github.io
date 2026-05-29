@@ -1,0 +1,37 @@
+{
+  "name": "NeuroSym",
+  "contributors": [
+    "Vishal Kumar Swain",
+    "Sangharatna Godboley",
+    "P. Radha Krishna",
+    "Avijit Das",
+    "Lucas Cordeiro"
+  ],
+  "contacts": ["Vishal Kumar Swain <vk25csr1p07@student.nitw.ac.in>"],
+  "archive": {
+    "url": "https://zenodo.org/records/20396830/files/NeuroSym-1.1.tar.gz",
+    "h": {
+      "sha256": "fafcd7c6ffcaf11c0be23678861fd4a856289a1968a233803d233a2bfda5b318"
+    }
+  },
+  "final": true,
+  "website": "https://github.com/VishalKumarSwain/NeuroSym",
+  "system_description": "https://github.com/VishalKumarSwain/NeuroSym/blob/main/NeuroSym_Report.pdf",
+  "command": ["NeuroSym-1.1/python3"],
+  "solver_type": "wrapped",
+  "seed": "42",
+  "participations": [
+    {
+      "tracks": ["SingleQuery"],
+      "logics": ["QF_LIA"]
+    },
+    {
+      "tracks": ["SingleQuery"],
+      "logics": ["QF_BV"]
+    },
+    {
+      "tracks": ["SingleQuery"],
+      "logics": ["QF_ABV"]
+    }
+  ]
+}
