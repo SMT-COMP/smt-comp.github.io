@@ -32,10 +32,6 @@
         {
             "tracks": ["ProofExhibition"],
             "logics": ".*"
-        },
-        {
-            "tracks": ["UnsatCoreValidation"],
-            "logics": ".*"
         }
     ]
 }
