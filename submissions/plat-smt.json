@@ -11,7 +11,7 @@
     "website": "https://github.com/dewert99/plat-smt",
     "system_description": "https://github.com/dewert99/plat-smt/releases/download/SMT-COMP2026/smtcomp2026.pdf",
     "command": ["./plat-smt"],
-    "solver_type": "wrapped",
+    "solver_type": "standalone",
     "seed": "6536",
     "participations": [
         {
