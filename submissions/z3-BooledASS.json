@@ -28,6 +28,14 @@
         {
             "tracks": ["ModelValidation"],
             "logics": ".*"
+        },
+        {
+            "tracks": ["ProofExhibition"],
+            "logics": ".*"
+        },
+        {
+            "tracks": ["UnsatCoreValidation"],
+            "logics": ".*"
         }
     ]
 }
