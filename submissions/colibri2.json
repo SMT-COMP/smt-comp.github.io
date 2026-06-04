@@ -10,7 +10,7 @@
         "url": "https://git.frama-c.com/pub/colibrics/-/jobs/1912428/artifacts/download?file_type=archive"
     },
     "website": "http://colibri.frama-c.com/",
-    "system_description": "https://drive.google.com/uc?export=download&id=14ZT6msIH9JcleUv6P4ha3Rdpc7mhpGL9",
+    "system_description": "https://colibri.frama-c.com/assets/documents/colibri2_2026.pdf",
     "solver_type": "Standalone",
     "seed": "42",
     "final":false,
