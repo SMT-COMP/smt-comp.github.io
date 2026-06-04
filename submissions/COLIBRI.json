@@ -8,7 +8,7 @@
         "url": "https://git.frama-c.com/pub/colibri/-/releases/2026.05/downloads/bundle-v5"
     },
     "website": "http://colibri.frama-c.com/",
-    "system_description": "https://colibri.frama-c.com/assets/documents/colibri_2025.pdf",
+    "system_description": "https://colibri.frama-c.com/assets/documents/colibri_2026.pdf",
     "command": ["colibri-2026.05-v5/colibri", "--memlimit", "5000"],
     "solver_type": "Standalone",
     "participations": [
