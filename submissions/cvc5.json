@@ -22,13 +22,13 @@
     "Clark Barrett <barrettc@stanford.edu>"
   ],
   "archive": {
-    "url": "https://homepage.cs.uiowa.edu/~dlarrazhurtado/smtcomp2026/cvc5-default.zip",
+    "url": "https://zenodo.org/records/20571963/files/cvc5-default.zip?download=1",
     "h": {
-      "sha256": "55b9cd4a967fac0ed6167a78bbed0b8667d09a2acd684e8e564fadaf4f4717a7"
+      "sha256": "ceb49bc7b2d6b0c221b7e1b1d201c9ae0c0ae10cf0cdd43f8700167c62b99ee1"
     }
   },
   "website": "https://cvc5.github.io/",
-  "system_description": "https://homepage.cs.uiowa.edu/~dlarrazhurtado/smtcomp2026/cvc5.pdf",
+  "system_description": "https://zenodo.org/records/20571963/files/cvc5.pdf?download=1",
   "command": [ "bin/starexec_run_sq" ],
   "solver_type": "Standalone",
   "participations": [
@@ -50,13 +50,13 @@
       "tracks": [ "Incremental" ],
       "logics": ".*",
       "archive": {
-        "url": "https://homepage.cs.uiowa.edu/~dlarrazhurtado/smtcomp2026/cvc5-inc.zip",
+        "url": "https://zenodo.org/records/20571963/files/cvc5-inc.zip?download=1",
         "h": {
-          "sha256": "1df00c3d476951993af74b5e8393eb0ad53a89923a22b6215c1876171d1ebef2"
+          "sha256": "148c2b2ee6a459e709bbdcf3d3d6b505073c57c879f024acedf621e100ea12fc"
         }
       },
       "command": [ "bin/smtcomp_run_incremental" ]
     }
   ],
-  "seed": 8465677983
+  "seed": 44
 }
