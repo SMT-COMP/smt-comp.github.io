@@ -17,5 +17,5 @@
     "participations": [
         { "tracks": ["SingleQuery"], "logics": ["QF_NIA", "QF_DT"] }
     ],
-    "final" : false
+    "final" : true
 }
