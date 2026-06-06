@@ -15,5 +15,5 @@
         { "tracks": ["SingleQuery"], "logics": ["QF_NIA", "QF_DT"] }
     ],
     "competitive": false,
-    "final" : false
+    "final" : true
 }
