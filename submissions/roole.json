@@ -5,12 +5,13 @@
         "Armin Biere"
     ],
     "contacts": ["Jan Onderka <onderka@cs.uni-freiburg.net>"],
+    "final": true,
     "archive": {
-        "url": "https://github.com/onderjan/roole-smt-comp/raw/89d408abd6b8b5b4d19552f79f501a6d309158b7/relics/roole.tar.gz",
-        "h": { "sha256": "44c6b6119c0c521b3a6ada111601f7ae014827e564626f5558ec0fbad40a7b55" }
+        "url": "https://zenodo.org/records/20584485/files/roole.tar.gz?download=1",
+        "h": { "sha256": "1390a15c4579accf6274ffb293ad50887289bccd20e4b8587e6b85ff76f9ff29" }
     },
     "website": "https://github.com/onderjan/roole",
-    "system_description": "https://github.com/onderjan/roole-smt-comp/raw/89d408abd6b8b5b4d19552f79f501a6d309158b7/relics/roole.pdf",
+    "system_description": "https://zenodo.org/records/20584485/files/roole.pdf?download=1",
     "command": ["roole", "--silent"],
     "solver_type": "Standalone",
     "seed": "22961",
