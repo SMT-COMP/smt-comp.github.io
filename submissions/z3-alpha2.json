@@ -25,7 +25,7 @@
                 "QF_Bitvec",
                 "QF_Datatypes",
                 "QF_LinearIntArith",
-                "QF_LinearRealArith",
+                "QF_Equality+NonLinearArith",
                 "QF_NonLinearIntArith",
                 "QF_NonLinearRealArith"
             ]
