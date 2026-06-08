@@ -10,7 +10,7 @@
     "website": "https://github.com/Z3Prover/z3",
     "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-540-78800-3_24.pdf",
     "solver_type": "Standalone",
-    "command": ["bin/z3"],
+    "command": ["z3-4.16.0-x64-glibc-2.39/bin/z3"],
     "seed": 928343,
     "participations": [
         {
