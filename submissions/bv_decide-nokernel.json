@@ -20,7 +20,7 @@
         "Abdalrhman Mohamed <abdal@stanford.edu>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/20369518/files/bv_decide_2026.zip?download=1"
+        "url": "https://zenodo.org/records/20600607/files/bv_decide_2026.zip?download=1"
     },
     "command": ["leanwuzla.sh"],
     "website": "https://github.com/hargoniX/Leanwuzla",
@@ -30,6 +30,21 @@
     "participations": [
         {
             "tracks": ["SingleQuery"],
+            "logics": "QF_BV",
+            "command": [
+                "leanwuzla.sh",
+                "--disableKernel",
+                "--disableEmbeddedConstraintSubst",
+                "--expthreshold=32768",
+                "--acnf",
+                "--timeout=1200",
+                "--maxSteps=100000000",
+                "--maxHeartbeats=200000000",
+                "--maxRecDepth=1048576"
+            ]
+        },
+        {
+            "tracks": ["ModelValidation"],
             "logics": "QF_BV",
             "command": [
                 "leanwuzla.sh",
