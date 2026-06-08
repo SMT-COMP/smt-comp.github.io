@@ -1,0 +1,31 @@
+{
+    "name": "Z3-alpha2-base",
+    "contributors": [
+        "Nikolaj Bjørner et al."
+    ],
+    "contacts": ["Nikolaj Bjørner <nbjorner@microsoft.com>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20595207/files/z3-4.16.0.tar.gz?download=1"
+    },
+    "website": "https://github.com/z3prover/z3",
+    "system_description": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
+    "solver_type": "Standalone",
+    "command": ["./z3"],
+    "seed": "33",
+    "participations": [
+        { 
+            "tracks": ["SingleQuery"], 
+            "divisions": [
+                "Arith",
+                "QF_Bitvec",
+                "QF_Datatypes",
+                "QF_LinearIntArith",
+                "QF_Equality+NonLinearArith",
+                "QF_NonLinearIntArith",
+                "QF_NonLinearRealArith"
+            ]
+        }
+    ],
+    "competitive": false,
+    "final" : true
+}
