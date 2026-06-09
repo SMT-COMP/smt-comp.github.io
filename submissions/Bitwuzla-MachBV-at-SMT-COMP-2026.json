@@ -10,15 +10,15 @@
         "Xiang Zhang <zhangxiang25@ios.ac.cn>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/15752452/files/Bitwuzla-MachBV.zip",
+        "url": "https://zenodo.org/records/20610415/files/Bitwuzla-MachBV.zip",
         "h": {
-            "sha256": "7267c86005f3c57bf22fccd8b6d868651be109a9231aeaa01a93d07843d14555"
+            "sha256": "8760165be6d79806e3ae17567e12702366de738eff7dc7dd20ec8d99c12684b5"
         }
     },
     "website": "https://github.com/Andeviking/Bitwuzla-MachBV-at-SMT-COMP-2026",
     "system_description": "https://github.com/Andeviking/Bitwuzla-MachBV-at-SMT-COMP-2026/blob/main/Bitwuzla_MachBV_at_SMT_COMP_2026.pdf",
     "command": [
-        "./MachBV"
+        "./bin/SMTStabilizer"
     ],
     "solver_type": "derived",
     "seed": "1126300213",
