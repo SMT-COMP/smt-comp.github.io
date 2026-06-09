@@ -1,9 +1,9 @@
 {
     "name": "Bitwuzla-MachBV-base",
     "archive": {
-        "url": "https://zenodo.org/records/15752452/files/Bitwuzla-0-7-0.zip",
+        "url": "https://zenodo.org/records/20610415/files/Bitwuzla.zip",
         "h": {
-            "sha256": "a85ffea4009c096be3bf627c720fed903bbff1ae3655ac1bd169519ae4403c00"
+            "sha256": "2271688b0f6ffe3d18efb763bd48dda0a5cce8dbbc07ef1be7a9cb5636ebf70f"
         }
     },
     "contributors": [
