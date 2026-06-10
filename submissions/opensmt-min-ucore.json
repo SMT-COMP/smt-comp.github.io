@@ -9,7 +9,9 @@
         "Tomáš Kolárik <tomas.kolarik@usi.ch>"
     ],
     "archive": {
-        "url": "https://github.com/usi-verification-and-security/opensmt/releases/download/smtcomp2026/opensmt-x64-linux-static.tar.bz2"
+        "url": "https://zenodo.org/records/20624422/files/opensmt-x64-linux-static.tar.bz2"
+        ,
+        "h": { "sha256": "f63e84c110afc31be7de9933a5918aeb4b1c5c0da6c334aa4b6b8dafc3733e0a" }
     },
     "command": ["./opensmt", "--minimal-unsat-cores"],
     "website": "https://github.com/usi-verification-and-security/opensmt",
@@ -28,5 +30,5 @@
         }
     ],
     "seed": 367,
-    "final": false
+    "final": true
 }
