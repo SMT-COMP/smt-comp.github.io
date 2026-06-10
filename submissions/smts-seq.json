@@ -1,5 +1,5 @@
 {
-    "name": "SMTS (sequential)",
+    "name": "OpenSMT-SMTS-seq",
     "contributors": [
         { "name": "Tomáš Kolárik", "website": "https://github.com/Tomaqa" }
         ,
@@ -16,7 +16,7 @@
     "command": ["./SMTS-tacas26-artifact/server/smts.py", "-l", "-p", "-nt", "32", "-o", "1", "-fp"],
     "website": "https://github.com/usi-verification-and-security/SMTS",
     "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/smts-abstract-2026.pdf",
-    "solver_type": "Standalone",
+    "solver_type": "derived",
     "participations": [
         {
             "tracks": ["SingleQuery"],
