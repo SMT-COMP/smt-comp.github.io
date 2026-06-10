@@ -11,7 +11,7 @@
         "Jochen Hoenicke <jochen@certora.com>"
     ],
     "archive": {
-        "url": "https://jhoenicke.de/smtinterpol/smtinterpol-2.5-1488-g28a43840.tar.gz",
+        "url": "https://zenodo.org/records/20580131/files/smtinterpol-2.5-1488-g28a43840.tar.gz",
         "h": { "sha256": "4610d23310e0191d6ad8b93284c421a74d7cdb20c6f60430672a879fee3337ee" }
     },
     "website": "https://ultimate.informatik.uni-freiburg.de/smtinterpol",
