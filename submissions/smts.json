@@ -11,7 +11,9 @@
         "Tomáš Kolárik <tomas.kolarik@usi.ch>"
     ],
     "archive": {
-        "url": "https://github.com/usi-verification-and-security/SMTS/raw/refs/heads/data/data/smtcomp/smtcomp26-smts.tar.bz2"
+        "url": "https://zenodo.org/records/20625983/files/opensmt-smts.tar.bz2"
+        ,
+        "h": { "sha256": "8ccfa04fca0f603c0f3aea0500c73c02b1a3397a070b9f8d21ad604074ae9b11" }
     },
     "command": ["./SMTS/server/smts.py", "-l", "-p", "-nt", "32", "-o", "128", "-fp"],
     "website": "https://github.com/usi-verification-and-security/SMTS",
@@ -30,5 +32,5 @@
         }
     ],
     "seed": 6789,
-    "final": false
+    "final": true
 }
