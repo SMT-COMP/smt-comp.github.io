@@ -6,9 +6,9 @@
     "contacts": [
         "Stéphane Graham-Lengrand <stephane.graham-lengrand@sri.com>"
     ],
-    "final" : false,
+    "final" : true,
     "archive": {
-        "url": "https://www.csl.sri.com/users/sgl/Work/Reports/yicesQS-2026.zip"
+        "url": "https://zenodo.org/records/20621122/files/yicesQS-2026.zip?download=1"
     },
     "website": "https://github.com/disteph/yicesQS",
     "system_description": "https://www.csl.sri.com/users/sgl/Work/Reports/2026-yicesQS.pdf",
