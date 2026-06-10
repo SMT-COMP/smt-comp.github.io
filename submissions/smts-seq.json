@@ -11,9 +11,9 @@
         "Tomáš Kolárik <tomas.kolarik@usi.ch>"
     ],
     "archive": {
-        "url": "https://github.com/usi-verification-and-security/SMTS/archive/refs/tags/tacas26-artifact.tar.gz"
+        "url": "https://github.com/usi-verification-and-security/SMTS/raw/refs/heads/data/data/smtcomp/smtcomp26-smts.tar.bz2"
     },
-    "command": ["./SMTS-tacas26-artifact/server/smts.py", "-l", "-p", "-nt", "32", "-o", "1", "-fp"],
+    "command": ["./SMTS/server/smts.py", "-l", "-p", "-nt", "32", "-o", "1", "-fp"],
     "website": "https://github.com/usi-verification-and-security/SMTS",
     "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/smts-abstract-2026.pdf",
     "solver_type": "derived",
