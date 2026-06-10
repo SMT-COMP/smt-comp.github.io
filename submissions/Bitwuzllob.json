@@ -2,17 +2,17 @@
     "name": "Bitwuzllob",
     "contributors": ["Dominik Schreiber", "Aina Niemetz", "Mathias Preiner"],
     "contacts": ["Dominik Schreiber <dominik.schreiber@kit.edu>", "Mathias Preiner <preiner@cs.stanford.edu>", "Aina Niemetz <niemetz@cs.stanford.edu>"],
-    "final" : false,
+    "final" : true,
 
     "archive": {
-      "url": "https://zenodo.org/records/20417490/files/bitwuzllob-submission-smtcomp-2026.zip?download=1",
-      "h": {"sha256": "5dcd4d6bcc9ebdd912a496670b408d91786ce9b5398f9ce167920bf6f09ff38f"}
+      "url": "https://zenodo.org/records/20631919/files/bitwuzllob-submission-smtcomp-2026.zip?download=1",
+      "h": {"sha256": "c95dc623e7be29338fbe170e484e0229f871a337085845964d268b2c8f928f72"}
     },
 
     "command": ["bin/run_solver.sh"],
 
-    "website": "https://zenodo.org/records/17478481",
-    "system_description": "https://zenodo.org/records/20417490/files/system-description.pdf?download=1",
+    "website": "https://zenodo.org/records/20631919",
+    "system_description": "https://zenodo.org/records/20631919/files/system-description.pdf?download=1",
     "solver_type": "Standalone",
     "seed": "42",
     "participations": [
