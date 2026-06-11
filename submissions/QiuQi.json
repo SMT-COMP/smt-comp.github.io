@@ -1,7 +1,8 @@
 {
   "name": "QiuQi",
   "archive": {
-    "url": "https://github.com/YZhang322/QiuQi-for-SMT-COMP-2026/releases/download/version_0.0.1/MIXSolver.zip"
+    "url": "https://zenodo.org/records/20640834/files/MIXSolver.tar.gz?download=1",
+    "h": {"sha256": "a62ae98888f5c1b12c421783fc1f6373aae5858ea0800ebf62de888cc5f93952"}
   },
   "contributors": [
     "Zhendong Lei",
@@ -25,5 +26,5 @@
       "logics": ["QF_LIA", "QF_IDL"]
     }
   ],
-  "final": false
+  "final": true
 }
