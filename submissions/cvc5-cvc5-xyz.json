@@ -26,5 +26,5 @@
             "logics": ".*"
         }
     ],
-    "final": false
+    "final": true
 }
