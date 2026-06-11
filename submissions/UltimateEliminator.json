@@ -5,11 +5,11 @@
     ],
     "contacts": ["Matthias Heizmann <matthias.heizmann@iste.uni-stuttgart.de>"],
     "archive": {
-        "url": "https://heizmann.name/nonWebsite/UltimateEliminator.zip",
-        "h": { "sha256": "e9fa83e79187e9d5af004197447dbb77559cacd9dbc530538c785c4c46589290" }
+        "url": "https://zenodo.org/records/20639695/files/UltimateEliminator.zip",
+        "h": { "sha256": "81d6d0eefeb900633a8f12f952ccee3af1374cb84adf6457b719c1e626d91496" }
     },
     "website": "https://www.ultimate-pa.org/eliminator/",
-    "system_description": "https://heizmann.name/nonWebsite/2026UltimateEliminator.pdf",
+    "system_description": "https://zenodo.org/records/20639695/files/2026UltimateEliminator.pdf",
     "command": ["ultimateeliminator.sh"],
     "solver_type": "wrapped",
     "seed": "0",
