@@ -2,10 +2,11 @@
   "name": "Bitwuzla",
   "contributors": ["Aina Niemetz", "Mathias Preiner"],
   "contacts": ["Mathias Preiner <preiner@cs.stanford.edu>"],
+  "final": true,
 
   "archive": {
-    "url": "https://zenodo.org/records/20415855/files/bitwuzla-submission-smtcomp-2026.zip?download=1",
-    "h": {"sha256": "fee472d3af1de20cc2c849a41728fe40df54c9699a53264b766b9639d6a1ecd9"}
+    "url": "https://zenodo.org/records/20636334/files/bitwuzla-submission-smtcomp-2026.zip?download=1",
+    "h": {"sha256": "4d35c119dd837971e62afca61c4093dbd6d520b91c4f32c0bb30a463be2f1841"}
   },
 
   "command": ["bin/bitwuzla"],
