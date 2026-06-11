@@ -7,13 +7,13 @@
         "Fuqi Jia <jiafq@ios.ac.cn>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/20634921/files/xolver.tar.gz?download=1",
+        "url": "https://zenodo.org/records/20635034/files/xolver.tar.gz?download=1",
         "h": {
             "sha256": "a919355a837b6bcdc4b5bc130c4f7561f6f45fc080f2e41a80a1d4f648590fbe"
         }
     },
     "website": "https://github.com/fuqi-jia/Xolver",
-    "system_description": "https://zenodo.org/records/20457762/files/xolver.pdf?download=1",
+    "system_description": "https://zenodo.org/records/20635034/files/xolver.pdf?download=1",
     "command": [
         "./bin/xolver",
         "solve"
@@ -37,5 +37,5 @@
             ]
         }
     ],
-    "final": false
+    "final": true
 }
