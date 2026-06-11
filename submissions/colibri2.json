@@ -7,13 +7,13 @@
     ],
     "contacts": ["François Bobot <francois.bobot@cea.fr>"],
     "archive": {
-        "url": "https://git.frama-c.com/pub/colibrics/-/jobs/1942219/artifacts/raw/colibri2_ef72cb1a.tar.gz"
+        "url": "https://zenodo.org/records/20639259/files/colibri2_ef72cb1a.tar.gz?download=1"
     },
     "website": "http://colibri.frama-c.com/",
     "system_description": "https://colibri.frama-c.com/assets/documents/colibri2_2026.pdf",
     "solver_type": "Standalone",
-    "seed": "42",
-    "final":false,
+    "seed": "72",
+    "final": true,
     "participations": [
         {
             "tracks": ["SingleQuery"],
@@ -23,7 +23,8 @@
         {
             "tracks": ["SingleQuery"],
             "divisions": ["FPArith"],
-            "command": ["bin/colibri2", "--try-disprove-forall-using-domain" ]
+            "command": ["bin/colibri2", "--try-disprove-forall-using-domain" ],
+            "experimental" : true
         }
     ]
 }

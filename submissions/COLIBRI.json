@@ -5,7 +5,7 @@
     ],
     "contacts": ["François Bobot <francois.bobot@cea.fr>"],
     "archive": {
-        "url": "https://git.frama-c.com/pub/colibri/-/releases/2026.06/downloads/bundle-v5"
+        "url": "https://zenodo.org/records/20639619/files/colibri-2026.06-v5.tar.gz?download=1"
     },
     "website": "http://colibri.frama-c.com/",
     "system_description": "https://colibri.frama-c.com/assets/documents/colibri_2026.pdf",
@@ -18,5 +18,5 @@
         }
     ],
     "seed": 0,
-    "final" : false
+    "final" : true
 }
