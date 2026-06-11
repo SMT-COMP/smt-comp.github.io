@@ -1,7 +1,7 @@
 {
-  "name": "Bitwuzla-0-8-0",
+  "name": "Bitwuzla-0-9-1",
   "archive": {
-    "url": "https://github.com/zmylinxi99/Bitwuzla-SPFD-at-SMT-COMP-2026/releases/download/SMT-COMP-2026/Bitwuzla-SPFD-at-SMT-COMP-2026-build.zip"
+    "url": "https://zenodo.org/records/20637194/files/Bitwuzla-SPFD-at-SMT-COMP-2026.zip"
   },
   "contributors": [
     "Aina Niemetz",
@@ -10,10 +10,10 @@
   "contacts": [
     "Mathias Preiner <preiner@cs.stanford.edu>"
   ],
-  "website": "https://github.com/bitwuzla/bitwuzla/tree/0.8.0",
+  "website": "https://github.com/bitwuzla/bitwuzla",
   "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-031-37703-7_1",
   "command": [
-    "./Bitwuzla-SPFD-at-SMT-COMP-2026-build/solver/bitwuzla-0.8.0-bin"
+    "./Bitwuzla-SPFD-at-SMT-COMP-2026/solver/bitwuzla-0.9.1-bin"
   ],
   "solver_type": "Standalone",
   "seed": 42,
@@ -26,5 +26,5 @@
     }
   ],
   "competitive": false,
-  "final": false
+  "final": true
 }
