@@ -9,12 +9,12 @@
     "Mengyu Zhao <zhaomy@ios.ac.cn>"
   ],
   "archive": {
-    "url": "https://github.com/zmylinxi99/Bitwuzla-SPFD-at-SMT-COMP-2026/releases/download/SMT-COMP-2026/Bitwuzla-SPFD-at-SMT-COMP-2026-build.zip"
+    "url": "https://zenodo.org/records/20637194/files/Bitwuzla-SPFD-at-SMT-COMP-2026.zip"
   },
   "website": "https://github.com/zmylinxi99/Bitwuzla-SPFD-at-SMT-COMP-2026",
   "system_description": "https://github.com/zmylinxi99/Bitwuzla-SPFD-at-SMT-COMP-2026/blob/master/Bitwuzla-SPFD.pdf",
   "command": [
-    "./Bitwuzla-SPFD-at-SMT-COMP-2026-build/solver/Bitwuzla-SPFD"
+    "./Bitwuzla-SPFD-at-SMT-COMP-2026/solver/Bitwuzla-SPFD"
   ],
   "solver_type": "derived",
   "seed": 998244353,
@@ -28,5 +28,5 @@
       ]
     }
   ],
-  "final": false
+  "final": true
 }
