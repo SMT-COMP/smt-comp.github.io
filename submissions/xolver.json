@@ -7,9 +7,9 @@
         "Fuqi Jia <jiafq@ios.ac.cn>"
     ],
     "archive": {
-        "url": "https://zenodo.org/records/20457762/files/xolver.tar.gz?download=1",
+        "url": "https://zenodo.org/records/20634921/files/xolver.tar.gz?download=1",
         "h": {
-            "sha256": "36dbe1a7401ec73c3df1cbfd2eb42994793dafe7ff16017a3b3dbbb90e5456cf"
+            "sha256": "a919355a837b6bcdc4b5bc130c4f7561f6f45fc080f2e41a80a1d4f648590fbe"
         }
     },
     "website": "https://github.com/fuqi-jia/Xolver",
