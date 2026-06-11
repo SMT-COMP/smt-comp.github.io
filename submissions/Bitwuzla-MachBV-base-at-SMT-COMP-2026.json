@@ -28,5 +28,6 @@
             "logics": "QF_BV"
         }
     ],
-    "competitive": false
+    "competitive": false,
+    "final": true
 }
