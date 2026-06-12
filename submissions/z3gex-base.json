@@ -32,5 +32,6 @@
             ]
         }
     ],
-    "final" : true
+    "competitive": false,
+    "final": true
 }
