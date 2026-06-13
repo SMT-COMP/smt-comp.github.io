@@ -15,7 +15,7 @@
     "system_description": "https://ilanashapiro.github.io/files/smtcomp2026_z3.pdf",
     "solver_type": "Standalone",
     "seed": 0,
-    "command": ["smtcomp2026/bin/z3", "smt.threads=125"],
+    "command": ["z3_smtcomp2026/smtcomp2026/bin/z3", "smt.threads=125"],
     "participations": [
       {
         "tracks": ["Parallel"],
