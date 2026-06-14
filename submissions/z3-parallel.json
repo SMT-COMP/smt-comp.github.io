@@ -8,8 +8,8 @@
       "Ilana Shapiro <ilshapiro@ucsd.edu>"
     ],
     "archive": {
-      "url": "https://zenodo.org/records/20388070/files/z3_smtcomp2026.tar.zst",
-      "h": { "sha256": "9ec592eb8e1f14cd9b97391dc6d14f1340200262dbd4af02c8cc6b0385dbc3bb" }
+      "url": "https://zenodo.org/records/20684231/files/z3_smtcomp2026.tar.xz",
+      "h": { "sha256": "5e34cde0e6e9f66f7a5987945f09c95613c2c45d0e884b089e2d8acca3b2dc9e" }
     },
     "website": "https://z3prover.github.io/",
     "system_description": "https://ilanashapiro.github.io/files/smtcomp2026_z3.pdf",
