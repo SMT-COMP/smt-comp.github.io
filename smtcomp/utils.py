@@ -72,6 +72,7 @@ class Col:
     justify: Literal["default", "left", "center", "right", "full"] = "right"
     style: str | None = None
     no_wrap: bool = False
+    min_width: int | None = None
     custom: Callable[[Any], str] = str
 
 
@@ -81,7 +82,14 @@ def rich_print_pl(title: str, df: pl.DataFrame, *cols: Col) -> None:
     table = Table(title=title)
 
     for col in cols:
-        table.add_column(col.header, justify=col.justify, style=col.style, no_wrap=col.no_wrap)
+        table.add_column(
+            col.header,
+            justify=col.justify,
+            style=col.style,
+            no_wrap=col.no_wrap,
+            overflow="fold",
+            min_width=col.min_width,
+        )
 
     for d in df.to_dicts():
         l = list(map(lambda col: col.custom(d[col.name]), cols))
