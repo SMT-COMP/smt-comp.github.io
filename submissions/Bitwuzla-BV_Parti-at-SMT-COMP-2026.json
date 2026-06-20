@@ -14,7 +14,7 @@
   "website": "https://github.com/zmylinxi99/Bitwuzla-BV_Parti-at-SMT-COMP-2026",
   "system_description": "https://github.com/zmylinxi99/Bitwuzla-BV_Parti-at-SMT-COMP-2026/blob/master/Bitwuzla_BV_Parti.pdf",
   "command": [
-    "./Bitwuzla-BV_Parti-at-SMT-COMP-2026-build/solver/run_BV_Parti.py",
+    "./Bitwuzla-BV_Parti-at-SMT-COMP-2026/solver/run_BV_Parti.py",
     "128"
   ],
   "solver_type": "wrapped",
