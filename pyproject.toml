@@ -35,7 +35,7 @@ documentation = "https://smtcomp.github.io/smtcomp/"
 smtcomp = "smtcomp.main:app"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.2.0"
+pytest = "^9.0.3"
 pytest-cov = "^4.0.0"
 deptry = "^0.12.0"
 mypy = "^1.5.1"

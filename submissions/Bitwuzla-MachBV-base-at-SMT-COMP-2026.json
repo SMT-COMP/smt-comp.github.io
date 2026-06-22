@@ -1,0 +1,33 @@
+{
+    "name": "Bitwuzla-MachBV-base",
+    "archive": {
+        "url": "https://zenodo.org/records/20610415/files/Bitwuzla.zip",
+        "h": {
+            "sha256": "2271688b0f6ffe3d18efb763bd48dda0a5cce8dbbc07ef1be7a9cb5636ebf70f"
+        }
+    },
+    "contributors": [
+        "Aina Niemetz",
+        "Mathias Preiner"
+    ],
+    "contacts": [
+        "Mathias Preiner <preiner@cs.stanford.edu>"
+    ],
+    "website": "https://github.com/bitwuzla/bitwuzla/tree/0.9.1",
+    "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-031-37703-7_1",
+    "command": [
+        "./bitwuzla"
+    ],
+    "solver_type": "Standalone",
+    "seed": 42,
+    "participations": [
+        {
+            "tracks": [
+                "SingleQuery"
+            ],
+            "logics": "QF_BV"
+        }
+    ],
+    "competitive": false,
+    "final": true
+}

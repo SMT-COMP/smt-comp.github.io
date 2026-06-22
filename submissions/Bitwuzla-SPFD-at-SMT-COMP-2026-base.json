@@ -1,0 +1,30 @@
+{
+  "name": "Bitwuzla-0-9-1",
+  "archive": {
+    "url": "https://zenodo.org/records/20637194/files/Bitwuzla-SPFD-at-SMT-COMP-2026.zip"
+  },
+  "contributors": [
+    "Aina Niemetz",
+    "Mathias Preiner"
+  ],
+  "contacts": [
+    "Mathias Preiner <preiner@cs.stanford.edu>"
+  ],
+  "website": "https://github.com/bitwuzla/bitwuzla",
+  "system_description": "https://link.springer.com/content/pdf/10.1007/978-3-031-37703-7_1",
+  "command": [
+    "./Bitwuzla-SPFD-at-SMT-COMP-2026/solver/bitwuzla-0.9.1-bin"
+  ],
+  "solver_type": "Standalone",
+  "seed": 42,
+  "participations": [
+    {
+      "tracks": [
+        "SingleQuery"
+      ],
+      "logics": "QF_BV"
+    }
+  ],
+  "competitive": false,
+  "final": true
+}

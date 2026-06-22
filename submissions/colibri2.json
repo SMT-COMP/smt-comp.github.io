@@ -1,0 +1,30 @@
+{
+    "name": "colibri2",
+    "contributors": [
+        "François Bobot",
+        "Hichem Rami Ait El Hara",
+        "Christophe Junke"
+    ],
+    "contacts": ["François Bobot <francois.bobot@cea.fr>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20639259/files/colibri2_ef72cb1a.tar.gz?download=1"
+    },
+    "website": "http://colibri.frama-c.com/",
+    "system_description": "https://colibri.frama-c.com/assets/documents/colibri2_2026.pdf",
+    "solver_type": "Standalone",
+    "seed": "72",
+    "final": true,
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["QF_FPArith"],
+            "command": ["bin/colibri2"]
+        },
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["FPArith"],
+            "command": ["bin/colibri2", "--try-disprove-forall-using-domain" ],
+            "experimental" : true
+        }
+    ]
+}

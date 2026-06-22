@@ -1,0 +1,39 @@
+{
+    "name": "z3-parallel",
+    "contributors": [
+      { "name": "Ilana Shapiro", "website": "https://ilanashapiro.github.io/" },
+      { "name": "Nikolaj Bjørner", "website": "https://www.microsoft.com/en-us/research/people/nbjorner/" }
+    ],
+    "contacts": [
+      "Ilana Shapiro <ilshapiro@ucsd.edu>"
+    ],
+    "archive": {
+      "url": "https://zenodo.org/records/20684231/files/z3_smtcomp2026.tar.xz",
+      "h": { "sha256": "5e34cde0e6e9f66f7a5987945f09c95613c2c45d0e884b089e2d8acca3b2dc9e" }
+    },
+    "website": "https://z3prover.github.io/",
+    "system_description": "https://ilanashapiro.github.io/files/smtcomp2026_z3.pdf",
+    "solver_type": "Standalone",
+    "seed": 0,
+    "command": ["z3_smtcomp2026/smtcomp2026/bin/z3", "smt.threads=125"],
+    "participations": [
+      {
+        "tracks": ["Parallel"],
+        "logics": [
+          "QF_UF",
+          "QF_AX",
+          "QF_IDL",
+          "QF_RDL",
+          "QF_LIA",
+          "QF_LRA",
+          "QF_UFIDL",
+          "QF_UFLIA",
+          "QF_UFLRA",
+          "QF_ALIA",
+          "QF_AUFLIA",
+          "QF_NIA",
+          "QF_NRA"
+        ]
+      }
+    ]
+  }

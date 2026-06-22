@@ -1,0 +1,34 @@
+{
+    "name": "OpenSMT (min-ucore)",
+    "contributors": [
+        { "name": "Tomáš Kolárik", "website": "https://github.com/Tomaqa" }
+        ,
+        { "name": "Martin Blicha", "website": "https://github.com/blishko" }
+    ],
+    "contacts": [
+        "Tomáš Kolárik <tomas.kolarik@usi.ch>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20624422/files/opensmt-x64-linux-static.tar.bz2"
+        ,
+        "h": { "sha256": "f63e84c110afc31be7de9933a5918aeb4b1c5c0da6c334aa4b6b8dafc3733e0a" }
+    },
+    "command": ["./opensmt", "--minimal-unsat-cores"],
+    "website": "https://github.com/usi-verification-and-security/opensmt",
+    "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/opensmt-abstract-2026.pdf",
+    "solver_type": "Standalone",
+    "participations": [
+        {
+            "tracks": ["UnsatCore"],
+            "logics": [
+                "QF_UF", "QF_AX",
+                "QF_IDL", "QF_RDL", "QF_LIA", "QF_LRA",
+                "QF_UFIDL", "QF_UFLIA", "QF_UFLRA",
+                "QF_ALIA",
+                "QF_AUFLIA"
+            ]
+        }
+    ],
+    "seed": 367,
+    "final": true
+}

@@ -1,0 +1,35 @@
+{
+    "name": "OpenSMT-SMTS-seq-base",
+    "contributors": [
+        { "name": "Tomáš Kolárik", "website": "https://github.com/Tomaqa" }
+        ,
+        { "name": "Martin Blicha", "website": "https://github.com/blishko" }
+    ],
+    "contacts": [
+        "Tomáš Kolárik <tomas.kolarik@usi.ch>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20625983/files/opensmt-smts-base.tar.bz2"
+        ,
+        "h": { "sha256": "4c1e2e08031524a1c4baf3085ef18d986b2103c7575bdb79ce5a47855da4383d" }
+    },
+    "command": ["./opensmt"],
+    "website": "https://github.com/usi-verification-and-security/opensmt",
+    "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/abstract-2025.pdf",
+    "solver_type": "Standalone",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": [
+                "QF_UF", "QF_AX",
+                "QF_IDL", "QF_RDL", "QF_LIA", "QF_LRA",
+                "QF_UFIDL", "QF_UFLIA", "QF_UFLRA",
+                "QF_ALIA",
+                "QF_AUFLIA"
+            ]
+        }
+    ],
+    "seed": 67893,
+    "competitive": false,
+    "final": true
+}
