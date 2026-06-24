@@ -26,5 +26,6 @@
       "logics": ["QF_LIA", "QF_IDL"]
     }
   ],
-  "final": true
+  "final": true,
+  "seed": 0
 }
