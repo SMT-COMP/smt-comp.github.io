@@ -27,5 +27,6 @@
                 "./run-bitwuzla-dandelion"
             ]
         }
-    ]
+    ],
+    "competitive": false
 }
