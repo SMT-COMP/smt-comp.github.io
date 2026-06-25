@@ -134,7 +134,15 @@ def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, tar
     sample_size = pl.min_horizontal(
         c_all_len,
         pl.max_horizontal(
-            config.min_used_benchmarks, (c_all_len * config.ratio_of_used_benchmarks).floor().cast(pl.UInt32)
+            config.min_used_benchmarks, ## ensures cases (a) and (b) of rules
+            pl.when(c_all_len <= config.large_logic_threshold)
+            # case (c) of rules
+            .then(c_all_len * config.ratio_of_used_benchmarks)
+            # case (d) of rules
+            .otherwise(
+                config.large_logic_threshold * config.ratio_of_used_benchmarks +
+                (c_all_len - config.large_logic_threshold) * config.large_logic_used_ratio)
+            .floor().cast(pl.UInt32)
         ),
     )
     new_sample_size = pl.min_horizontal(sample_size, c_new_len).cast(pl.UInt32)
