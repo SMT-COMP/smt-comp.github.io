@@ -1,0 +1,26 @@
+{
+    "name": "Z3-siri",
+    "contributors": [
+        "BingZhe Zhou",
+        "HanNan Wang",
+        "Yuan Yao",
+        "Taolue Chen",
+        "Feng Xu",
+        "Xiaoxing Ma"
+    ],
+    "contacts": ["HanNan Wang <hannanwang@smail.nju.edu.cn>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20625187/files/z3-siri.tar.gz?download=1"
+    },
+    "website": "https://github.com/SoftWiser-group/SiriSMT",
+    "system_description": "https://drive.google.com/uc?export=download&id=1-af4E_-wO_MzlE0IMFBjAPx13uj98feS",
+    "command": ["./z3siri.py"],
+    "solver_type": "derived",
+    "seed": "42",
+    "participations": [
+        { 
+            "tracks": ["SingleQuery"], 
+            "divisions": ["QF_NonLinearIntArith", "QF_NonLinearRealArith"] 
+        }
+    ]
+}

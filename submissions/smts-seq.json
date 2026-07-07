@@ -1,0 +1,36 @@
+{
+    "name": "OpenSMT-SMTS-seq",
+    "contributors": [
+        { "name": "Tomáš Kolárik", "website": "https://github.com/Tomaqa" }
+        ,
+        { "name": "Antti E. J. Hyvärinen", "website": "https://github.com/aehyvari" }
+        ,
+        { "name": "Seyedmasoud Asadzadeh", "website": "https://masoudasadzade.github.io" }
+    ],
+    "contacts": [
+        "Tomáš Kolárik <tomas.kolarik@usi.ch>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20625983/files/opensmt-smts.tar.bz2"
+        ,
+        "h": { "sha256": "8ccfa04fca0f603c0f3aea0500c73c02b1a3397a070b9f8d21ad604074ae9b11" }
+    },
+    "command": ["./SMTS/server/smts.py", "-l", "-p", "-nt", "32", "-o", "1", "-fp"],
+    "website": "https://github.com/usi-verification-and-security/SMTS",
+    "system_description": "https://github.com/usi-verification-and-security/opensmt-doc/blob/master/smt-comp/smts-abstract-2026.pdf",
+    "solver_type": "derived",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "logics": [
+                "QF_UF", "QF_AX",
+                "QF_IDL", "QF_RDL", "QF_LIA", "QF_LRA",
+                "QF_UFIDL", "QF_UFLIA", "QF_UFLRA",
+                "QF_ALIA",
+                "QF_AUFLIA"
+            ]
+        }
+    ],
+    "seed": 67891,
+    "final": true
+}

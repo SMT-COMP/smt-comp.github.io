@@ -1,0 +1,36 @@
+{
+    "name": "Z3-alpha2-debug",
+    "contributors": [
+        "John Lu", 
+        "Avik Kumar",
+        "Piyush Jha",
+        "Arie Gurfinkel",
+        "Vijay Ganesh" 
+    ],
+    "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
+    "archive": {
+        "url": "https://github.com/JohnLyu2/z3alpha/releases/download/z3alpha2-smtcomp26-1st/z3alpha2_smtcomp26.tar.gz",
+        "sha256": "87bcd6b9a0b7ee864b63fe906840716f2cfbcfc83bdab31a8708f3b9d98bae5d"
+    },
+    "website": "https://github.com/JohnLyu2/z3alpha",
+    "system_description": "https://drive.google.com/uc?export=download&id=1Fy4tiFo65ADRk7H2Dc_ykGR2i7ksXxkQ",
+    "solver_type": "derived",
+    "command": ["./z3alpha2_debug.py"],
+    "seed": "33",
+    "participations": [
+        { 
+            "tracks": ["SingleQuery"], 
+            "divisions": [
+                "Arith",
+                "QF_Bitvec",
+                "QF_Datatypes",
+                "QF_LinearIntArith",
+                "QF_Equality+NonLinearArith",
+                "QF_NonLinearIntArith",
+                "QF_NonLinearRealArith"
+            ]
+        }
+    ],
+    "competitive": false,
+    "final" : false
+}

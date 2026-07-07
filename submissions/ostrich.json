@@ -1,0 +1,29 @@
+{
+    "name": "OSTRICH",
+    "contributors": [
+        "Matthew Hague",
+        "Denghang Hu",
+        "Anthony W. Lin",
+        "Oliver Markgraf",
+        "Philipp Ruemmer",
+        "Zhilin Wu"
+    ],
+    "contacts": [
+        "Philipp Ruemmer <philipp.ruemmer@it.uu.se>",
+        "Oliver Markgraf <markgraf@cs.uni-kl.de>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20626662/files/ostrich-2.1.tar.gz",
+        "h": {
+            "sha256": "sha256:623127c85e9d4072def45103ce9ee5acfbb3a69e524da706683d9d5cd410ce55"
+        }
+    },
+    "website": "https://github.com/uuverifiers/ostrich/",
+    "system_description": "https://zenodo.org/records/20626662/files/document.pdf",
+    "command": ["./ostrich", "+quiet", "-portfolio=strings"],
+    "solver_type": "Standalone",
+    "seed": "718582",
+    "participations": [
+        { "tracks": ["SingleQuery"], "divisions": ["QF_Strings"] }
+    ]
+}

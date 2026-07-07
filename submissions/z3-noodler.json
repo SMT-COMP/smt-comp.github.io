@@ -1,0 +1,27 @@
+{
+    "name": "Z3-Noodler",
+    "contributors": [
+        "Vojtěch Havlena",
+        "Juraj Síč",
+        "David Chocholatý",
+        "Lukáš Holík",
+        "Ondřej Lengál",
+        "Michal Hečko"
+    ],
+    "contacts": ["Juraj Síč <sicjura@vut.cz>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20601093/files/z3-noodler.tar.gz"
+    },
+    "website": "https://github.com/VeriFIT/z3-noodler",
+    "system_description": "https://zenodo.org/records/20601093/files/z3-noodler-system-description-2026.pdf",
+    "command": ["./z3-noodler"],
+    "solver_type": "derived",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["QF_Strings"]
+        }
+    ],
+    "seed": 24305,
+    "final": true
+}
