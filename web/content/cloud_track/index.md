@@ -4,15 +4,14 @@ The cloud track of SMT-COMP '26 is run separately from all other tracks with its
 
 ### Key dates  
 - **Jul 21, 2026** — preliminary call for solvers (should compile & pass basic tests).
-- **Aug 8, 2026** — final call for solvers 
+- **Aug 8, 2026** — final call for solvers
 
 All deadlines are 11:59 PM AoE (Anywhere on Earth).
 
 ### Submission Instructions 
 
 #### Infrastructure 
-[`aws-samples/aws-batch-comp-infrastructure-sample`](https://github.com/aws-samples/aws-batch-comp-infrastructure-sample) 
-on the **`mainline-2026`** (default). 
+[`aws-samples/aws-batch-comp-infrastructure-sample`](https://github.com/aws-samples/aws-batch-comp-infrastructure-sample) on the **`mainline-2026`** (default). 
 
 *Each submission needs to be prepared according based on this repository.*
 

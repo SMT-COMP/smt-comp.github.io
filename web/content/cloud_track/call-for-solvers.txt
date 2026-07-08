@@ -1,0 +1,38 @@
+=================================================
+
+ 21th International Satisfiability Modulo Theories Competition
+
+                (SMT-COMP'26 CLOUD TRACK)
+
+
+               DEDICATED CALL FOR SOLVERS
+
+=================================================
+
+
+We invite registration of solvers for the cloud track at SMT-COMP 2026.
+The cloud track is run separately from all other tracks with its own procedures, 
+infrastructure, deadlines, and result announcement. Please read the related      
+instructions on the SMT-COMP website [1].  
+
+The submission deadline for (first versions of) cloud solvers is
+
+    ***Jul 21, 2026 AoE***
+
+After the above date, no new entrants will be accepted. However,
+
+submitted solvers may be updated via the pull request until
+
+    ***Aug 8, 2026 AoE***
+
+The cloud track is hosted by AWS and uses a different infrastructure than 
+all other tracks. 
+
+
+The organizing team
+
+Dominik Winterer (chair) - University of Manchester, United Kingdom
+Martin Jonáš - Masaryk University, Czechia
+Tomáš Kolárik - Università della Svizzera italiana, Switzerland
+
+[1] https://smt-comp.github.io/2026/cloud_track/
