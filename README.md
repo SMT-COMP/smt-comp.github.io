@@ -116,7 +116,7 @@ Which outputs:
 The final solvers submitted during the smtcomp 2023 can be used:
 
 ```
-smtcomp convert-csv tests/solvers_divisions_final.csv ../tmp/submissions
+smtcomp convert-csv tests/solvers_divisions_final.csv ../execution/submissions
 ```
 
 The generated files can be visualized using:
@@ -125,22 +125,22 @@ The generated files can be visualized using:
 smtcomp show ../tmp/submissions/YicesQS.json
 ```
 
-The solver downloaded using:
+All solvers are downloaded and unpacked using:
 
 ```
-smtcomp download-archive submissions/*.json ../tmp/execution
+smtcomp download-archive submissions/*.json ../execution
 ```
 
-Trivial tests benchmarks generated with:
+Trivial tests benchmarks can be generated with:
 
 ```
-smtcomp generate-trivial-benchmarks ../tmp/execution/benchmarks
+smtcomp generate-trivial-benchmarks ../execution/benchmarks
 ```
 
-The benchexec execution environment generated using:
+The benchexec execution environment is generated using:
 
 ```
-smtcomp prepare-execution ../tmp/execution
+smtcomp prepare-execution ../execution
 ```
 
 The benchmarks can be selected by running
@@ -183,7 +183,7 @@ We will suppose that the results are locally available in directory `tmp/final_r
 For example using rsync if `sosy` is configured in `.ssh/config`:
 
 ```
-rsync sosy:/localhome/smt-comp/final_results -ra tmp/ --progress --exclude="*.logfiles"
+rsync sosy:/localhome/smt-comp/results -ra .. --progress --exclude="*.logfiles"
 ```
 
 The `original_id.csv` file generated at the same time that the scrambled benchmarks is needed in the results directory (even if we can recompute it, we use this one for safety):
@@ -195,19 +195,19 @@ scp sosy:/localhome/smt-comp/execution/benchmarks/files/original_id.csv tmp/fina
 In order to allow looking at the results incrementally, the first step is to translate each `.xml` into a faster `.feather` file. The translation is done only for `.xml` without a corresponding `.feather` file.
 
 ```
-smtcomp convert-benchexec-results tmp/final_results
+smtcomp convert-benchexec-results ../results
 ```
 
 Information on missing results can be obtained using:
 
 ```
-smtcomp stats-of-benchexec-results data tmp/final_results SingleQuery
+smtcomp stats-of-benchexec-results data ../results SingleQuery
 ```
 
 Computation of the scores can be obtained for the different way (parallel, sequential, sat, unsat, twenty-four seconds):
 
 ```
-smtcomp show-scores data tmp/final_results/ [par|seq|sat|unsat|24]
+smtcomp show-scores data SingleQuery ../results/ [par|seq|sat|unsat|24]
 ```
 
 Once all the results are available, they can be stored in `data/results-sq-{year}.json.gz`:
@@ -224,7 +224,12 @@ As usual the `.feather` cache need to be computed (`--only-current` create only 
 smtcomp create-cache data --only-current
 ```
 
-Now the `tmp/final_results` directory is not needed anymore, since it will look into `data` for the current year results.
+Now the `../results` directory is not needed anymore, since it will look into `data` for the current year results. The `show-scores` command can be called without the results file to show the results from the stored data:
+
+```
+smtcomp show-scores data SingleQuery [par|seq|sat|unsat|24]
+```
+
 
 # Model Validation
 
