@@ -537,7 +537,10 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
     defaults["walltime_s"] = 0
     defaults["answer"] = -1
 
-    selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+    selected = intersect(
+        selection,
+        smtcomp.selection.solver_competing_logics(config, only_competitive=False),
+        on=["logic", "track"])
 
     selected = add_columns(
         selected,
