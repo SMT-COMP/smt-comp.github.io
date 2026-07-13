@@ -480,6 +480,7 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
         lf = lf.drop("logic", "participation")  # Hack for participation 0 bug move "participation" to on= for 2025,
         lf = lf.drop("benchmark_yml", "unsat_core")
+        lf = lf.filter(track=int(track))
 
     if False:
         selection = smtcomp.selection.helper(config, track).drop("result")
