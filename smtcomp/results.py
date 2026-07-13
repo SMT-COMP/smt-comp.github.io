@@ -103,16 +103,18 @@ def parse_result(s: str) -> defs.Answer:
     if s.startswith("TIMEOUT"):
         # TIMEOUT (true), TIMEOUT (false), TIMEOUT
         return defs.Answer.Timeout
-    if s.startswith("DONE"):
+    if s.startswith("DONE") or s.startswith("WRONG"):
         return defs.Answer.Incremental
     if s.startswith("OUT OF MEMORY") or s.startswith("KILLED BY SIGNAL 9"):
         return defs.Answer.OOM
+    if s.startswith("ERROR"):
+        return defs.Answer.Unknown
     match s:
         case "false":
             return defs.Answer.Unsat
         case "true":
             return defs.Answer.Sat
-        case "unknown" | "ERROR":
+        case "unknown":
             return defs.Answer.Unknown
         case "OUT OF MEMORY" | "OUT OF JAVA MEMORY" | "KILLED BY SIGNAL 9":
             return defs.Answer.OOM
