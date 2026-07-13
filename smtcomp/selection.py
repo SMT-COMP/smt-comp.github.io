@@ -245,14 +245,14 @@ def helper(config: defs.Config, track: defs.Track) -> pl.LazyFrame:
     return selected
 
 
-def solver_competing_logics(config: defs.Config, target_track: Optional[defs.Track] = None) -> pl.LazyFrame:
+def solver_competing_logics(config: defs.Config, target_track: Optional[defs.Track] = None, only_competitive = True) -> pl.LazyFrame:
     """
     returned columns solver, track, logic
     """
     l = (
         (s.name, int(track), int(logic), p_id)
         for s in config.submissions
-        if s.competitive
+        if not only_competitive or s.competitive
         for p_id, p in enumerate(s.participations.root)
         for (track, logics) in p.get_logics_by_track().items()
         if target_track is None or target_track == track
