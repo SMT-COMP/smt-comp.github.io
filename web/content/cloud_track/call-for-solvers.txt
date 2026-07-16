@@ -6,12 +6,12 @@
 
 
                DEDICATED CALL FOR SOLVERS
-
+k
 =================================================
 
 
 We invite registration of solvers for the cloud track at SMT-COMP 2026.
-The cloud track is run separately from all other tracks with its own procedures, 
+The cloud track is run separately from all other tracks with its own procedur es, 
 infrastructure, deadlines, and result announcement. Please read the related      
 instructions on the SMT-COMP website [1].  
 
@@ -28,8 +28,7 @@ submitted solvers may be updated via the pull request until
 The cloud track is hosted by AWS and uses a different infrastructure than 
 all other tracks. 
 
-
-The SMT organizing team
+The organizing team
 
 Dominik Winterer (chair) - University of Manchester, United Kingdom
 Martin Jonáš - Masaryk University, Czechia

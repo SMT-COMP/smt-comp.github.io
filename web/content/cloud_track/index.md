@@ -27,6 +27,7 @@ Repo (including source) must stay **open source** at least through the final dea
 - (Distributed only) Your Dockerfile should compile solvers for both the leader and the worker. Note that the solver harness invokes one machine (the leader) per problem; the leader is responsible for driving workers over SSH/MPI using the provided list of IP addresses. 
 - The provided solver harness downloads benchmarks previously uploaded to S3 (`.cnf`/`.smt2`, compressed OK) and runs until timeout/memout.
 
+
 #### Steps
 1. Fix exit codes.
 2. Write Dockerfile + `solver_cmd.py`.
