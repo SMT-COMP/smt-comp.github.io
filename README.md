@@ -174,9 +174,15 @@ Benchexec in verifier cloud started using:
 
 ## Using the `smtcomp` tool for handling `benchexec` results
 
-All the track are similar, except model validation and unsat core needs some additional work to check the output of the solvers. Lets start with the simple case:
+First of all, if the previous sections have been skipped (for example, they have been done by a different organizer), the benchmark cache must be created:
 
-## Single Query
+```
+smtcomp create-cache ./data/
+```
+
+All the tracks are similar, except model validation and unsat core needs some additional work to check the output of the solvers. Lets start with the simple case:
+
+### Single Query
 
 We will suppose that the results are locally available in directory `tmp/final_results`:
 
@@ -207,7 +213,7 @@ smtcomp stats-of-benchexec-results data tmp/final_results SingleQuery
 Computation of the scores can be obtained for the different way (parallel, sequential, sat, unsat, twenty-four seconds):
 
 ```
-smtcomp show-scores data tmp/final_results/ [par|seq|sat|unsat|24]
+smtcomp show-scores data SingleQuery tmp/final_results/ [par|seq|sat|unsat|24]
 ```
 
 Once all the results are available, they can be stored in `data/results-sq-{year}.json.gz`:
@@ -226,7 +232,7 @@ smtcomp create-cache data --only-current
 
 Now the `tmp/final_results` directory is not needed anymore, since it will look into `data` for the current year results.
 
-# Model Validation
+### Model Validation
 
 It is the same than Single Query except we need to check the models. It is done using dolmen.
 
