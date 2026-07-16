@@ -17,22 +17,27 @@ instructions on the SMT-COMP website [1].
 
 The submission deadline for (first versions of) cloud solvers is
 
-    ***Jul 21, 2026 AoE***
+    ***Aug 8, 2026 AoE***
 
 After the above date, no new entrants will be accepted. However,
 
 submitted solvers may be updated via the pull request until
 
-    ***Aug 8, 2026 AoE***
+    ***Aug 22, 2026 AoE***
 
 The cloud track is hosted by AWS and uses a different infrastructure than 
 all other tracks. 
 
 
-The organizing team
+The SMT organizing team
 
 Dominik Winterer (chair) - University of Manchester, United Kingdom
 Martin Jonáš - Masaryk University, Czechia
 Tomáš Kolárik - Università della Svizzera italiana, Switzerland
+
+Contacts for inquiries about the cloud track:   
+Cayden Codel — crcodel@amazon.com
+Robert Jones — rbtjones@amazon.com
+
 
 [1] https://smt-comp.github.io/2026/cloud_track/

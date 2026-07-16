@@ -3,8 +3,8 @@
 The cloud track of SMT-COMP '26 is run separately from all other tracks with its own procedures, infrastructure, deadlines, and result announcement.
 
 ### Key dates  
-- **Jul 21, 2026** — preliminary call for solvers (should compile & pass basic tests).
-- **Aug 8, 2026** — final call for solvers
+- **Aug 8, 2026**— preliminary call for solvers (should compile & pass basic tests).
+- **Aug 22, 2026** — final call for solvers
 
 All deadlines are 11:59 PM AoE (Anywhere on Earth).
 
@@ -24,8 +24,8 @@ Repo (including source) must stay **open source** at least through the final dea
 
 #### Solver Requirements
 - Return exit codes: **10 = SAT, 20 = UNSAT, 0 = UNKNOWN**, anything else = error.
-- One Dockerfile handles both leader and worker nodes (harness detects role at startup). Only the leader is invoked per problem; it drives workers over **SSH/MPI**.
-- Harness downloads benchmarks from S3 (`.cnf`/`.smt2`, compressed OK) and runs until timeout/memout.
+- (Distributed only) Your Dockerfile should compile solvers for both the leader and the worker. Note that the solver harness invokes one machine (the leader) per problem; the leader is responsible for driving workers over SSH/MPI using the provided list of IP addresses. 
+- The provided solver harness downloads benchmarks previously uploaded to S3 (`.cnf`/`.smt2`, compressed OK) and runs until timeout/memout.
 
 #### Steps
 1. Fix exit codes.
