@@ -14,7 +14,7 @@
   "website": "https://bitwuzla.github.io",
   "system_description": "https://bitwuzla.github.io/data/smtcomp2026/paper.pdf",
   "solver_type": "Standalone",
-  "seed": "42",
+  "seed": "0",
   "participations": [
     {
       "tracks": ["SingleQuery"],
