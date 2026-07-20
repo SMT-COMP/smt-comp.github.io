@@ -85,11 +85,7 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
     expected = get_expected_result(orig_path) if not incremental else None
 
     mangled_name = "_".join(
-        [str(fdict["file"]),
-         str(defs.Logic.of_int(fdict["logic"])),
-         fdict["family"].
-         replace("/", "__"),
-         fdict["name"]]
+        [str(fdict["file"]), str(defs.Logic.of_int(fdict["logic"])), fdict["family"].replace("/", "__"), fdict["name"]]
     )
     yaml_dst = dstdir.joinpath(mangled_name[:150]).with_suffix(".yml")
 

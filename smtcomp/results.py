@@ -349,10 +349,7 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
         return d
 
     # compute the list eagerly to avoid problems with 'infer_schema_length'
-    lf = pl.LazyFrame(
-        list(map(convert, r.runs)),
-        schema_overrides = {'unsat_core': pl.List(pl.Int64)}
-    )
+    lf = pl.LazyFrame(list(map(convert, r.runs)), schema_overrides={"unsat_core": pl.List(pl.Int64)})
     return lf.with_columns(solver=pl.lit(r.runid.solver), participation=r.runid.participation, track=int(r.runid.track))
 
 

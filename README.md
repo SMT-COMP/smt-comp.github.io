@@ -230,7 +230,6 @@ Now the `../results` directory is not needed anymore, since it will look into `d
 smtcomp show-scores data SingleQuery [par|seq|sat|unsat|24]
 ```
 
-
 # Model Validation
 
 It is the same than Single Query except we need to check the models. It is done using dolmen.
