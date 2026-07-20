@@ -244,7 +244,7 @@ def helper(config: defs.Config, track: defs.Track) -> pl.LazyFrame:
 
 
 def solver_competing_logics(
-    config: defs.Config, target_track: Optional[defs.Track] = None, only_competitive=True
+    config: defs.Config, target_track: Optional[defs.Track] = None, only_competitive: bool = True
 ) -> pl.LazyFrame:
     """
     returned columns solver, track, logic
