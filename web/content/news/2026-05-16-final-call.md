@@ -1,21 +1,18 @@
 ---
 layout: single
 author:
-title: Final Call for Solvers  
+title: Final Call for Solvers
 date: 2026-05-16T00:00:00+01:00
 ---
 
- 21st International Satisfiability Modulo Theories Competition
-                        (SMT-COMP'26)
-                    FINAL CALL FOR SOLVERS
+21st International Satisfiability Modulo Theories Competition
+(SMT-COMP'26)
+FINAL CALL FOR SOLVERS
 
                         July 24–25, 2026
                         Lisbon, Portugal
 
-
-
 We invite registration of solvers for SMT-COMP 2026.
-
 
 Solvers are entered into the competition via a pull request to the SMT-COMP
 GitHub repository at:
@@ -71,7 +68,7 @@ These can be specified as part of the solver submission and changed until the
 deadline for the final solver. The default configuration is used for all other
 tracks.
 
-Please see the competition rules for further details. Do not hesitate contacting us 
+Please see the competition rules for further details. Do not hesitate contacting us
 if you have any questions or comments.
 
 Sincerely,
@@ -83,6 +80,7 @@ Martin Jonáš - Masaryk University, Czechia
 Tomáš Kolárik - Università della Svizzera italiana, Switzerland
 
 ## COMMUNICATION:
+
 The competition website is at
 https://smt-comp.github.io/2026/
 
@@ -91,4 +89,3 @@ https://github.com/SMT-COMP/smt-comp.github.io
 
 Public email regarding the competition may be sent to
 smt-announce@googlegroups.com
-
