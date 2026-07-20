@@ -114,7 +114,7 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
     wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)
     """Time if answered"""
     cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)
-    unsolved = 0
+    unsolved: pl.Expr | int = 0
 
     match track:
         case defs.Track.Incremental:
