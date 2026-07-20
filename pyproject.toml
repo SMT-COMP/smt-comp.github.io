@@ -79,7 +79,9 @@ ignore_missing_imports = true
 target-version = "py37"
 line-length = 120
 fix = true
-lint.select = [
+
+[tool.ruff.lint]
+select = [
     # flake8-2020
     "YTT",
     # flake8-bandit
@@ -112,7 +114,7 @@ lint.select = [
     "TRY",
 ]
 
-lint.ignore = [
+ignore = [
     # LineTooLong
     "E501",
     # DoNotAssignLambda

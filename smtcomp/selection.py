@@ -100,10 +100,10 @@ def add_trivial_run_info(benchmarks: pl.LazyFrame, previous_results: pl.LazyFram
 
 
 def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, target_track: SimpleTrack) -> pl.LazyFrame:
-    used_logics = defs.logic_used_for_track(target_track)
+    used_logics = competitive_logics(config, target_track).filter(competitive=True).drop("competitive")
 
-    # Keep only logics used by the track
-    b = benchmarks_with_info.filter(c_logic.is_in(set(map(int, used_logics))))
+    # Keep only benchmarks used by the competitive logics
+    b = intersect(benchmarks_with_info, used_logics, on=["logic"])
 
     # Specific track filter
     match target_track:
@@ -134,7 +134,17 @@ def track_selection(benchmarks_with_info: pl.LazyFrame, config: defs.Config, tar
     sample_size = pl.min_horizontal(
         c_all_len,
         pl.max_horizontal(
-            config.min_used_benchmarks, (c_all_len * config.ratio_of_used_benchmarks).floor().cast(pl.UInt32)
+            config.min_used_benchmarks,  ## ensures cases (a) and (b) of rules
+            pl.when(c_all_len <= config.large_logic_threshold)
+            # case (c) of rules
+            .then(c_all_len * config.ratio_of_used_benchmarks)
+            # case (d) of rules
+            .otherwise(
+                config.large_logic_threshold * config.ratio_of_used_benchmarks
+                + (c_all_len - config.large_logic_threshold) * config.large_logic_used_ratio
+            )
+            .floor()
+            .cast(pl.UInt32),
         ),
     )
     new_sample_size = pl.min_horizontal(sample_size, c_new_len).cast(pl.UInt32)
@@ -233,15 +243,19 @@ def helper(config: defs.Config, track: defs.Track) -> pl.LazyFrame:
     return selected
 
 
-def solver_competing_logics(config: defs.Config) -> pl.LazyFrame:
+def solver_competing_logics(
+    config: defs.Config, target_track: Optional[defs.Track] = None, only_competitive: bool = True
+) -> pl.LazyFrame:
     """
     returned columns solver, track, logic
     """
     l = (
         (s.name, int(track), int(logic), p_id)
         for s in config.submissions
+        if not only_competitive or s.competitive
         for p_id, p in enumerate(s.participations.root)
         for (track, logics) in p.get_logics_by_track().items()
+        if target_track is None or target_track == track
         for logic in logics
     )
     return pl.LazyFrame(
@@ -249,11 +263,11 @@ def solver_competing_logics(config: defs.Config) -> pl.LazyFrame:
     )
 
 
-def competitive_logics(config: defs.Config) -> pl.LazyFrame:
+def competitive_logics(config: defs.Config, track: Optional[defs.Track] = None) -> pl.LazyFrame:
     """
     returned columns track, logic, competitive:bool
     """
-    return solver_competing_logics(config).group_by("track", "logic").agg(competitive=(pl.len() > 1))
+    return solver_competing_logics(config, track).group_by("track", "logic").agg(competitive=(pl.len() > 1))
 
 
 @functools.cache

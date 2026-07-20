@@ -1465,6 +1465,8 @@ class Config:
     unsatcore_validation_cpuCores = 4
     min_used_benchmarks = 300
     ratio_of_used_benchmarks = 0.5
+    large_logic_threshold = 1000
+    large_logic_used_ratio = 0.1
     use_previous_results_for_status = False
     """
     Complete the status given in the benchmarks using previous results

@@ -87,7 +87,7 @@ def scramble_file(fdict: dict, incremental: bool, srcdir: Path, dstdir: Path, ar
     mangled_name = "_".join(
         [str(fdict["file"]), str(defs.Logic.of_int(fdict["logic"])), fdict["family"].replace("/", "__"), fdict["name"]]
     )
-    yaml_dst = dstdir.joinpath(mangled_name).with_suffix(".yml")
+    yaml_dst = dstdir.joinpath(mangled_name[:150]).with_suffix(".yml")
 
     generate_benchmark_yml(yaml_dst, scrambled_path, expected, orig_path.relative_to(srcdir))
 

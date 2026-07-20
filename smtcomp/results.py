@@ -107,12 +107,16 @@ def parse_result(s: str) -> defs.Answer:
         return defs.Answer.Incremental
     if s.startswith("OUT OF MEMORY") or s.startswith("KILLED BY SIGNAL 9"):
         return defs.Answer.OOM
+    if s.startswith("ERROR"):
+        return defs.Answer.Unknown
     match s:
         case "false":
             return defs.Answer.Unsat
         case "true":
             return defs.Answer.Sat
-        case "unknown" | "ERROR":
+        case "WRONG":
+            return defs.Answer.IncrementalError
+        case "unknown":
             return defs.Answer.Unknown
         case "OUT OF MEMORY" | "OUT OF JAVA MEMORY" | "KILLED BY SIGNAL 9":
             return defs.Answer.OOM
@@ -345,7 +349,7 @@ def to_pl(resultdir: Path, logfiles: LogFile, r: Results) -> pl.LazyFrame:
         return d
 
     # compute the list eagerly to avoid problems with 'infer_schema_length'
-    lf = pl.LazyFrame(list(map(convert, r.runs)))
+    lf = pl.LazyFrame(list(map(convert, r.runs)), schema_overrides={"unsat_core": pl.List(pl.Int64)})
     return lf.with_columns(solver=pl.lit(r.runid.solver), participation=r.runid.participation, track=int(r.runid.track))
 
 
@@ -478,6 +482,7 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
         lf = pl.concat(pl.read_ipc(p / "parsed.feather").lazy() for p in results)
         lf = lf.drop("logic", "participation")  # Hack for participation 0 bug move "participation" to on= for 2025,
         lf = lf.drop("benchmark_yml", "unsat_core")
+        lf = lf.filter(track=int(track))
 
     if False:
         selection = smtcomp.selection.helper(config, track).drop("result")
@@ -537,7 +542,9 @@ def helper_get_results(config: defs.Config, results: List[Path], track: defs.Tra
     defaults["walltime_s"] = 0
     defaults["answer"] = -1
 
-    selected = intersect(selection, smtcomp.selection.solver_competing_logics(config), on=["logic", "track"])
+    selected = intersect(
+        selection, smtcomp.selection.solver_competing_logics(config, only_competitive=False), on=["logic", "track"]
+    )
 
     selected = add_columns(
         selected,
