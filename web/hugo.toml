@@ -70,7 +70,12 @@ theme = 'smtcomp'
     pageRef = 'parallel_track'
     weight = 30
 
-# [[menu.year]]
-#     name = 'Participants'
-#     pageRef = 'participants'
-#     weight = 50
+[[menu.year]]
+    name = 'Cloud track'
+    pageRef = 'cloud_track'
+    weight = 45
+
+[[menu.year]]
+    name = 'Participants'
+    pageRef = 'participants'
+    weight = 50

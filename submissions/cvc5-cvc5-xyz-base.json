@@ -1,0 +1,29 @@
+{
+    "name": "cvc5-cvc5-xyz-base",
+    "contributors": [
+        "All cvc5 Contributors"
+    ],
+    "contacts": [
+      "Hans-Jörg Schurr <hansjoerg-schurr@uiowa.edu>",
+      "Daniel Larraz <daniel-larraz@uiowa.edu>",
+      "Clark Barrett <barrettc@stanford.edu>"
+    ],
+    "archive": {
+        "url": "https://zenodo.org/records/20642185/files/cvc5-xyz-base.tar.gz?download=1"
+    },
+    "website": "https://github.com/cvc5/cvc5",
+    "system_description": "https://cvc5.github.io/docs/cvc5-1.3.4/",
+    "command": [
+        "./bin/starexec_run_sq"
+    ],
+    "solver_type": "Standalone",
+    "seed": "66",
+    "participations": [
+        {
+            "tracks": [ "SingleQuery" ],
+            "logics": ".*"
+        }
+    ],
+    "competitive": false,
+    "final": true
+}

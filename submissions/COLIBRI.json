@@ -1,0 +1,22 @@
+{
+    "name": "COLIBRI",
+    "contributors": [
+        "Bruno Marre", "François Bobot", "Christophe Junke"
+    ],
+    "contacts": ["François Bobot <francois.bobot@cea.fr>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20639619/files/colibri-2026.06-v5.tar.gz?download=1"
+    },
+    "website": "http://colibri.frama-c.com/",
+    "system_description": "https://colibri.frama-c.com/assets/documents/colibri_2026.pdf",
+    "command": ["colibri-2026.06-v5/colibri", "--memlimit", "5000"],
+    "solver_type": "Standalone",
+    "participations": [
+        {
+            "tracks": ["SingleQuery"],
+            "divisions": ["QF_FPArith"]
+        }
+    ],
+    "seed": 0,
+    "final" : true
+}

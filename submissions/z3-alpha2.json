@@ -1,0 +1,34 @@
+{
+    "name": "Z3-alpha2",
+    "contributors": [
+        "John Lu", 
+        "Avik Kumar",
+        "Piyush Jha",
+        "Arie Gurfinkel",
+        "Vijay Ganesh" 
+    ],
+    "contacts": ["John Lu <z52lu@uwaterloo.ca>"],
+    "archive": {
+        "url": "https://zenodo.org/records/20636095/files/z3alpha2_smtcomp26.tar.gz?download=1"
+    },
+    "website": "https://github.com/JohnLyu2/z3alpha",
+    "system_description": "https://drive.google.com/uc?export=download&id=1Fy4tiFo65ADRk7H2Dc_ykGR2i7ksXxkQ",
+    "solver_type": "derived",
+    "command": ["./z3alpha2.py"],
+    "seed": "33",
+    "participations": [
+        { 
+            "tracks": ["SingleQuery"], 
+            "divisions": [
+                "Arith",
+                "QF_Bitvec",
+                "QF_Datatypes",
+                "QF_LinearIntArith",
+                "QF_Equality+NonLinearArith",
+                "QF_NonLinearIntArith",
+                "QF_NonLinearRealArith"
+            ]
+        }
+    ],
+    "final" : true
+}
