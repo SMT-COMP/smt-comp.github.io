@@ -55,9 +55,13 @@
 
     {{ $ranking := slice }}
     {{ range (index $division $cat) }}
+    {{ if .eligibleForWinning }}
     {{ $ranking = $ranking | append .name }}
+    {{ else if not (strings.HasSuffix .name "-base") }}
+    {{ $ranking = $ranking | append (printf "<span style=\"color:gray\">%s</span>" .name ) }}
     {{ end }}
-    <td>{{ delimit $ranking ", " }}</td>
+    {{ end }}
+    <td>{{ delimit $ranking ", " | safeHTML }}</td>
   </tr>
   {{ end }}
 </table>

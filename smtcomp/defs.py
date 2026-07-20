@@ -1520,23 +1520,6 @@ class Config:
     Benchmarks to remove after running the solvers. Can be used when the selection has already been done.
     """
 
-    """
-    Solver -> Base solver map for 2026
-    """
-    baseSolverMap2026 = {
-        "bitwuzla-dandelion": "bitwuzla-dandelion-base",
-        "Bitwuzla-MachBV": "Bitwuzla-MachBV-base",
-        "cvc5-cvc5-xyz": "cvc5-cvc5-xyz-base",
-        "OpenSMT-SMTS": "OpenSMT-SMTS-base",
-        "OpenSMT-SMTS-seq": "OpenSMT-SMTS-seq-base",
-        "Z3-alpha2": "Z3-alpha2-base",
-        "z3-BooledASS": "z3-BooledASS-base",
-        "Z3-GEX": "Z3-GEX-base",
-        "Z3-Noodler": "Z3-Noodler-base",
-        "Z3-siri": "Z3-siri-base",
-        "Z3-Z3++": "Z3-Z3++-base",
-    }
-
     def __init__(self, data: Path | None) -> None:
         self.id = self.__class__.__next_id__
         self.__class__.__next_id__ += 1
