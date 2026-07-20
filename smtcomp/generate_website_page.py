@@ -249,10 +249,10 @@ def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> Li
         for s in podium:
             cscore = s["correctly_solved_score"]
             delta = 0
-            derived_solver = defs.Config.baseSolverMap2025.get(s["solver"], "")
+            derived_solver = defs.Config.baseSolverMap2026.get(s["solver"], "")
             if derived_solver != "":
                 for sprime in podium:
-                    if sprime["solver"] == defs.Config.baseSolverMap2025.get(s["solver"], ""):
+                    if sprime["solver"] == defs.Config.baseSolverMap2026.get(s["solver"], ""):
                         delta = cscore - sprime["correctly_solved_score"]
                         break
 
@@ -312,7 +312,7 @@ def make_podium(
         )
 
         # Avoid solvers of the same solver family under the assumption
-        # of the following format: <solver-family>-<suffix> (holds for SMT-COMP 2025)
+        # of the following format: <solver-family>-<suffix> (holds for SMT-COMP 2025/26)
         # TODO: improve this criterion in the future
         return len(set([sol.split("-")[0].lower() for sol in solvers])) >= 2
 
@@ -333,7 +333,7 @@ def make_podium(
         steps_seq = podium_steps(config, d[smtcomp.scoring.Kind.seq.name])
 
     return PodiumDivision(
-        resultdate="2025-08-11",
+        resultdate="2026-08-11",
         year=config.current_year,
         divisions=f"divisions_{config.current_year}",
         is_competitive=competitive_division,
@@ -521,7 +521,7 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
         winner_seq = get_winner(sequential)
 
     return PodiumBiggestLead(
-        resultdate="2025-08-11",
+        resultdate="2026-07-20",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
@@ -639,7 +639,7 @@ def best_overall_ranking(
         winner_seq = get_winner(sequential, scores, data, track)
 
     return PodiumBestOverall(
-        resultdate="2025-08-11",
+        resultdate="2026-07-20",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
@@ -737,7 +737,7 @@ def largest_contribution_ranking(
         steps_seq = ld[smtcomp.scoring.Kind.seq]
 
     return PodiumLargestContribution(
-        resultdate="2025-08-11",
+        resultdate="2026-08-11",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",

@@ -1521,18 +1521,21 @@ class Config:
     """
 
     """
-    Solver -> Base solver map for 2025
-    TODO: refactor this into Submission
+    Solver -> Base solver map for 2026
     """
-    baseSolverMap2025 = {
+    baseSolverMap2026 = {
+        "bitwuzla-dandelion": "bitwuzla-dandelion-base",
         "Bitwuzla-MachBV": "Bitwuzla-MachBV-base",
-        "Z3-Inc-Z3++": "Z3-Inc-Z3++-base",
-        "Z3-Noodler-Mocha": "Z3-Noodler-Mocha-base",
-        "Z3-Owl": "Z3-Owl-base",
+        "cvc5-cvc5-xyz": "cvc5-cvc5-xyz-base",
+        "OpenSMT-SMTS": "OpenSMT-SMTS-base",
+        "OpenSMT-SMTS-seq": "OpenSMT-SMTS-seq-base",
+        "Z3-alpha2": "Z3-alpha2-base",
+        "z3-BooledASS": "z3-BooledASS-base",
+        "Z3-GEX": "Z3-GEX-base",
         "Z3-Noodler": "Z3-Noodler-base",
-        "z3siri": "z3siri-base",
-        "Z3-alpha": "Z3-alpha-base",
-    }
+        "Z3-siri": "Z3-siri-base",
+        "Z3-Z3++": "Z3-Z3++-base",
+    } 
 
     def __init__(self, data: Path | None) -> None:
         self.id = self.__class__.__next_id__
