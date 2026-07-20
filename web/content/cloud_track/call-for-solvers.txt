@@ -11,9 +11,9 @@ k
 
 
 We invite registration of solvers for the cloud track at SMT-COMP 2026.
-The cloud track is run separately from all other tracks with its own procedur es, 
-infrastructure, deadlines, and result announcement. Please read the related      
-instructions on the SMT-COMP website [1].  
+The cloud track is run separately from all other tracks with its own procedur es,
+infrastructure, deadlines, and result announcement. Please read the related
+instructions on the SMT-COMP website [1].
 
 The submission deadline for (first versions of) cloud solvers is
 
@@ -25,8 +25,8 @@ submitted solvers may be updated via the pull request until
 
     ***Aug 22, 2026 AoE***
 
-The cloud track is hosted by AWS and uses a different infrastructure than 
-all other tracks. 
+The cloud track is hosted by AWS and uses a different infrastructure than
+all other tracks.
 
 The organizing team
 
@@ -34,7 +34,7 @@ Dominik Winterer (chair) - University of Manchester, United Kingdom
 Martin Jonáš - Masaryk University, Czechia
 Tomáš Kolárik - Università della Svizzera italiana, Switzerland
 
-Contacts for inquiries about the cloud track:   
+Contacts for inquiries about the cloud track:
 Cayden Codel — crcodel@amazon.com
 Robert Jones — rbtjones@amazon.com
 
