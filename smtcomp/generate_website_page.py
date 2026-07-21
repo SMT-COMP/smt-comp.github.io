@@ -807,7 +807,7 @@ def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.
     virtual_datas = sq_generate_datas(config, virtual_scores, for_division, track)
 
     # For each solver Compute virtual solver without the solver
-    solvers = scores.select("division", "solver").unique()
+    solvers = scores.select("division", "solver").unique().filter(pl.col('solver').is_in(config.competitive_solvers))
     virtual_without_solver_scores = (
         intersect(scores.rename({"solver": "other_solver"}), solvers, on=["division"])
         .filter(pl.col("solver") != pl.col("other_solver"))
