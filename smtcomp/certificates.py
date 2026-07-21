@@ -215,8 +215,8 @@ def generate_certificates(
     list_dir.sort()
     for result_basename in list_dir:
         file = website_results / result_basename
-        if not file.is_file():
-            break
+        if not file.is_file() or file.suffix != ".md":
+            continue
 
         result = page.Podium.model_validate_json(file.read_text()).root
 
