@@ -152,6 +152,7 @@ class PodiumStepOverallScore(BaseModel):
     contribution: float_6dig  # nn_D * log10 N_D
     division: str
     tieBreakTimeScore: float_6dig
+    eligibleForWinning: bool
 
 
 class PodiumBestOverall(BaseModel):
@@ -593,6 +594,7 @@ def normalized_correctness_score(
                     contribution=nn_D * (math.log10(N_D) if N_D > 0 else 0),
                     tieBreakTimeScore=sol_in_div.CPUScore if k == smtcomp.scoring.Kind.seq else sol_in_div.WallScore,
                     division=division,
+                    eligibleForWinning=sol_in_div.eligibleForWinning
                 )
             )
         podiumSteps = sorted(podiumSteps, key=lambda x: (x.contribution, x.tieBreakTimeScore), reverse=True)
@@ -645,11 +647,14 @@ def best_overall_ranking(
         if l is None or not l:
             return ("-", 0.0)
         else:
-            podium: DefaultDict[str, Dict[str, float]] = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0})
+            podium: DefaultDict[str, Dict[str, Any]] = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0, "eligibleForWinning": False})
             for entry in l:
                 podium[entry.name]["score"] += entry.contribution
                 podium[entry.name]["tie_break_time"] += entry.tieBreakTimeScore
-            winner, winner_data = max(podium.items(), key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]))
+                podium[entry.name]["eligibleForWinning"] = podium[entry.name]["eligibleForWinning"] or entry.eligibleForWinning
+            winner, winner_data = max(
+                filter(lambda i: i[1]['eligibleForWinning'], podium.items()),
+                key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]))
             return (winner, winner_data["score"])
 
     sequential = normalized_correctness_score(data, scores, track, smtcomp.scoring.Kind.seq)
