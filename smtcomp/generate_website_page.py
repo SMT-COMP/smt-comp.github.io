@@ -243,9 +243,14 @@ class Podium(RootModel):
     root: PodiumDivision | PodiumCrossDivision | PodiumSummaryResults = Field(..., discriminator="layout")
 
 
-def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None) -> List[PodiumStep]:
+def podium_steps(config: defs.Config, podium: List[dict[str, Any]] | None, scoring: str) -> List[PodiumStep]:
     def par2(s: dict[str, Any]) -> Any:
-        return s["wallclock_time_score"] + 2 * config.timelimit_s * s["unsolved"]
+        if scoring == smtcomp.scoring.Kind.seq.name:
+            return s["cpu_time_score"] + 2 * config.cpuCores * config.timelimit_s * s["unsolved"]
+        elif scoring == smtcomp.scoring.Kind.twentyfour.name:
+            return s["wallclock_time_score"] + 2 * 24 * s["unsolved"]
+        else:
+            return s["wallclock_time_score"] + 2 * config.timelimit_s * s["unsolved"]
 
     if podium is None:
         return []
@@ -343,7 +348,7 @@ def make_podium(
     if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):
         steps[smtcomp.scoring.Kind.seq.name] = []
     else:
-        steps[smtcomp.scoring.Kind.seq.name] = podium_steps(config, d[smtcomp.scoring.Kind.seq.name])
+        steps[smtcomp.scoring.Kind.seq.name] = podium_steps(config, d[smtcomp.scoring.Kind.seq.name], smtcomp.scoring.Kind.seq.name)
 
     for score in (
         smtcomp.scoring.Kind.par.name,
@@ -351,7 +356,7 @@ def make_podium(
         smtcomp.scoring.Kind.unsat.name,
         smtcomp.scoring.Kind.twentyfour.name,
     ):
-        steps[score] = podium_steps(config, d[score])
+        steps[score] = podium_steps(config, d[score], score)
 
     return PodiumDivision(
         resultdate="2026-08-11",
