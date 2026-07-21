@@ -349,7 +349,9 @@ def make_podium(
     if (track == defs.Track.Cloud) | (track == defs.Track.Parallel):
         steps[smtcomp.scoring.Kind.seq.name] = []
     else:
-        steps[smtcomp.scoring.Kind.seq.name] = podium_steps(config, d[smtcomp.scoring.Kind.seq.name], smtcomp.scoring.Kind.seq.name)
+        steps[smtcomp.scoring.Kind.seq.name] = podium_steps(
+            config, d[smtcomp.scoring.Kind.seq.name], smtcomp.scoring.Kind.seq.name
+        )
 
     for score in (
         smtcomp.scoring.Kind.par.name,
@@ -594,7 +596,7 @@ def normalized_correctness_score(
                     contribution=nn_D * (math.log10(N_D) if N_D > 0 else 0),
                     tieBreakTimeScore=sol_in_div.CPUScore if k == smtcomp.scoring.Kind.seq else sol_in_div.WallScore,
                     division=division,
-                    eligibleForWinning=sol_in_div.eligibleForWinning
+                    eligibleForWinning=sol_in_div.eligibleForWinning,
                 )
             )
         podiumSteps = sorted(podiumSteps, key=lambda x: (x.contribution, x.tieBreakTimeScore), reverse=True)
@@ -647,14 +649,19 @@ def best_overall_ranking(
         if l is None or not l:
             return ("-", 0.0)
         else:
-            podium: DefaultDict[str, Dict[str, Any]] = defaultdict(lambda: {"score": 0.0, "tie_break_time": 0.0, "eligibleForWinning": False})
+            podium: DefaultDict[str, Dict[str, Any]] = defaultdict(
+                lambda: {"score": 0.0, "tie_break_time": 0.0, "eligibleForWinning": False}
+            )
             for entry in l:
                 podium[entry.name]["score"] += entry.contribution
                 podium[entry.name]["tie_break_time"] += entry.tieBreakTimeScore
-                podium[entry.name]["eligibleForWinning"] = podium[entry.name]["eligibleForWinning"] or entry.eligibleForWinning
+                podium[entry.name]["eligibleForWinning"] = (
+                    podium[entry.name]["eligibleForWinning"] or entry.eligibleForWinning
+                )
             winner, winner_data = max(
-                filter(lambda i: i[1]['eligibleForWinning'], podium.items()),
-                key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]))
+                filter(lambda i: i[1]["eligibleForWinning"], podium.items()),
+                key=lambda item: (item[1]["score"], -item[1]["tie_break_time"]),
+            )
             return (winner, winner_data["score"])
 
     sequential = normalized_correctness_score(data, scores, track, smtcomp.scoring.Kind.seq)
@@ -817,7 +824,7 @@ def largest_contribution(config: defs.Config, scores: pl.LazyFrame, track: defs.
     virtual_datas = sq_generate_datas(config, virtual_scores, for_division, track)
 
     # For each solver Compute virtual solver without the solver
-    solvers = scores.select("division", "solver").unique().filter(pl.col('solver').is_in(config.competitive_solvers))
+    solvers = scores.select("division", "solver").unique().filter(pl.col("solver").is_in(config.competitive_solvers))
     virtual_without_solver_scores = (
         intersect(scores.rename({"solver": "other_solver"}), solvers, on=["division"])
         .filter(pl.col("solver") != pl.col("other_solver"))
