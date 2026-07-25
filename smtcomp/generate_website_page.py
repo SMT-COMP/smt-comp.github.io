@@ -362,7 +362,7 @@ def make_podium(
         steps[score] = podium_steps(config, d[score], score)
 
     return PodiumDivision(
-        resultdate="2026-08-11",
+        resultdate="2026-07-25",
         year=config.current_year,
         divisions=f"divisions_{config.current_year}",
         is_competitive=competitive_division,
@@ -550,7 +550,7 @@ def biggest_lead_ranking(config: defs.Config, data: dict[str, PodiumDivision], t
         winner_seq = get_winner(sequential)
 
     return PodiumBiggestLead(
-        resultdate="2026-07-20",
+        resultdate="2026-07-25",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
@@ -677,7 +677,7 @@ def best_overall_ranking(
         winner_seq = get_winner(sequential, scores, data, track)
 
     return PodiumBestOverall(
-        resultdate="2026-07-20",
+        resultdate="2026-07-25",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
@@ -775,7 +775,7 @@ def largest_contribution_ranking(
         steps_seq = ld[smtcomp.scoring.Kind.seq]
 
     return PodiumLargestContribution(
-        resultdate="2026-08-11",
+        resultdate="2026-07-25",
         year=config.current_year,
         track=track,
         results=f"results_{config.current_year}",
