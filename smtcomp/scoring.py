@@ -114,6 +114,7 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
     wallclock_time_score = pl.when(known_answer).then(c_walltime_s).otherwise(0.0)
     """Time if answered"""
     cpu_time_score = pl.when(known_answer).then(c_cputime_s).otherwise(0.0)
+    unsolved: pl.Expr | int = 0
 
     match track:
         case defs.Track.Incremental:
@@ -132,6 +133,7 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
             error = (sat_sound_status & unsat_answer) | (unsat_sound_status & sat_answer)
             error_score = pl.when(error).then(1).otherwise(0)
             correctly_solved_score = pl.when(error.not_() & known_answer).then(1).otherwise(0)
+            unsolved = pl.when(sat_answer | unsat_answer).then(0).otherwise(1)
 
         case defs.Track.UnsatCoreValidation | defs.Track.ProofExhibition:
             raise (ValueError("Can't score those track yet", track))
@@ -144,6 +146,7 @@ def benchmark_scoring(results: pl.LazyFrame, track: defs.Track) -> pl.LazyFrame:
         correctly_solved_score=correctly_solved_score,
         wallclock_time_score=wallclock_time_score,
         cpu_time_score=cpu_time_score,
+        unsolved=unsolved,
     )
 
 
@@ -173,6 +176,7 @@ def division_score(results: pl.LazyFrame) -> pl.LazyFrame:
         pl.sum("correctly_solved_score"),
         pl.sum("cpu_time_score"),
         pl.sum("wallclock_time_score"),
+        pl.sum("unsolved"),
     )
 
 

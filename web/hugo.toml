@@ -10,6 +10,11 @@ theme = 'smtcomp'
   [markup.highlight]
     style = 'github'
 
+[security]
+  # Allow all content types (including HTML) as page sources. The chart
+  # pages under content/results are trusted, locally authored .html files.
+  allowContent = ['! ^$']
+
 [[menu.global]]
     name = 'Home'
     pageRef = '/'
@@ -35,10 +40,10 @@ theme = 'smtcomp'
     pageRef = 'previous'
     weight = 30
 
-# [[menu.year]]
-#      name = 'Results'
-#      pageRef = 'results'
-#      weight = 10
+[[menu.year]]
+     name = 'Results'
+     pageRef = 'results'
+     weight = 10
 
 [[menu.year]]
     name = 'Rules'

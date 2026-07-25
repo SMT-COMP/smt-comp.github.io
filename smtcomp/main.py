@@ -511,6 +511,99 @@ def show_scores(
     )
 
 
+@app.command(rich_help_panel=scoring_panel)
+def show_derived_improvements(
+    data: Path,
+    track: defs.Track,
+    src: List[Path] = typer.Argument(None),
+    kind: smtcomp.scoring.Kind = typer.Argument(default="par"),
+) -> None:
+    """
+    If src is empty use results in data
+    """
+    config = defs.Config(data)
+    results = smtcomp.results.helper_get_results(config, src, track)
+
+    smtcomp.scoring.sanity_check(config, results)
+
+    results = smtcomp.scoring.add_disagreements_info(results, track).filter(disagreements=False).drop("disagreements")
+
+    results = smtcomp.scoring.benchmark_scoring(results, track)
+
+    results = smtcomp.scoring.filter_for(kind, config, results)
+
+    divisions = smtcomp.scoring.division_score(results)
+
+    divisions = sort(divisions, [("division", False)] + smtcomp.scoring.scores)
+
+    divisions = divisions.with_columns(
+        par2=pl.col("wallclock_time_score") + 2 * config.timelimit_s * pl.col("unsolved")
+    )
+    base_solvers = divisions.filter(pl.col("solver").str.ends_with("-base")).with_columns(
+        solver=pl.col("solver").str.strip_suffix("-base")
+    )
+
+    results = (
+        base_solvers.join(divisions, on=["solver", "division"], how="left")
+        .with_columns(ratio=pl.col("par2_right") / pl.col("par2"))
+        .sort(["division", "solver"])
+    )
+
+    rich_print_pl(
+        "Results",
+        results.collect(),
+        Col(
+            "division",
+            "divisions",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=defs.Division.name_of_int,
+        ),
+        Col(
+            "solver",
+            "Name",
+            footer="",
+            justify="left",
+            style="cyan",
+            no_wrap=False,
+            custom=str,
+        ),
+        Col(
+            "correctly_solved_score",
+            "Correct Score",
+            justify="left",
+            style="green",
+            no_wrap=False,
+        ),
+        Col(
+            "par2_right",
+            "Derived PAR2 Score",
+            justify="left",
+            style="green",
+            no_wrap=False,
+            custom=lambda s: str(round(s, 2)),
+        ),
+        Col(
+            "par2",
+            "Base PAR2 Score",
+            justify="left",
+            style="green",
+            no_wrap=False,
+            custom=lambda s: str(round(s, 2)),
+        ),
+        Col(
+            "ratio",
+            "PAR2 Ratio (derived / base)",
+            justify="left",
+            style="green",
+            no_wrap=False,
+            custom=lambda s: str(round(s, 3)),
+        ),
+    )
+
+
 @app.command(rich_help_panel=benchexec_panel)
 def download_archive(files: List[Path], dst: Path) -> None:
     """

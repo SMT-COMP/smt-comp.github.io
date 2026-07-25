@@ -1520,20 +1520,6 @@ class Config:
     Benchmarks to remove after running the solvers. Can be used when the selection has already been done.
     """
 
-    """
-    Solver -> Base solver map for 2025
-    TODO: refactor this into Submission
-    """
-    baseSolverMap2025 = {
-        "Bitwuzla-MachBV": "Bitwuzla-MachBV-base",
-        "Z3-Inc-Z3++": "Z3-Inc-Z3++-base",
-        "Z3-Noodler-Mocha": "Z3-Noodler-Mocha-base",
-        "Z3-Owl": "Z3-Owl-base",
-        "Z3-Noodler": "Z3-Noodler-base",
-        "z3siri": "z3siri-base",
-        "Z3-alpha": "Z3-alpha-base",
-    }
-
     def __init__(self, data: Path | None) -> None:
         self.id = self.__class__.__next_id__
         self.__class__.__next_id__ += 1

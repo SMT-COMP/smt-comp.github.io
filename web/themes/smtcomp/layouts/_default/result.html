@@ -108,12 +108,18 @@
 
 {{ if eq $solver.competing "no" }}
     {{ $.Scratch.Set "hasNonCompetingSolvers" true }}
+{{ else if (not $solver.eligibleForWinning) }}
+    {{ $.Scratch.Set "hasNonEligibleSolvers" true }}
 {{ end }}
 
-
 <tr {{ if eq $solver.competing "no" }}class="non-competing" {{ end }}>
-    <td {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>
-      {{ $solver.name }} {{ if eq $solver.competing "no" }}<sup><a href="#nc">n</a></sup>{{ end }}
+  <td {{ if (not $solver.eligibleForWinning) }}style="color:grey" {{ end }}>
+    {{ $solver.name }}
+    {{ if eq $solver.competing "no" }}
+    <sup><a href="#nc">n</a></sup>
+    {{ else if (not $solver.eligibleForWinning) }}
+    <sup><a href="#ne" title="Derived score {{ $solver.par2score | printf "%.2f" }}; Base score {{ $solver.par2scoreBase | printf "%.2f" }}; ratio {{ (div $solver.par2score $solver.par2scoreBase) | printf "%.2f" }}">ne</a></sup>
+    {{ end }}
     </td>
     <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }} >{{ $solver.errorScore }}
       {{ if $solver.errorFootnote }}
@@ -123,12 +129,14 @@
     <td class="right" {{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>
     {{ lang.FormatNumberCustom 0 $solver.correctScore "- ." }}
     {{ if not (eq $solver.baseSolver "") }}
-        {{ $.Scratch.Set "hasBaseSolvers" true }}
-        {{ if not (lt $solver.deltaBaseSolver 0) }}
-      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base +{{ $solver.deltaBaseSolver }})</span>
-        {{ else }}
-            <br><span style="display: block; font-size: 0.7em; line-height: 1.4;">(base {{ $solver.deltaBaseSolver }})</span>
-        {{ end }}
+      {{ $.Scratch.Set "hasBaseSolvers" true }}
+      <br><span style="display: block; font-size: 0.7em; line-height: 1.4;" title="Derived score {{ $solver.par2score | printf "%.2f" }}; Base score {{ $solver.par2scoreBase | printf "%.2f" }}; ratio {{ (div $solver.par2score $solver.par2scoreBase) | printf "%.2f" }}">
+      {{ if not (lt $solver.deltaBaseSolver 0) }}
+        (base +{{ $solver.deltaBaseSolver }})
+      {{ else }}
+        (base {{ $solver.deltaBaseSolver }})
+      {{ end }}
+      </span>
     {{ end }}
     </td>
     <td class="right"{{ if eq $solver.competing "no" }}style="color:grey" {{ end }}>{{ lang.FormatNumberCustom 2 $solver.CPUScore "- ." }}</td>
@@ -156,6 +164,11 @@
 </span>
 {{ end }}
 
+{{ if ($.Scratch.Get "hasNonEligibleSolvers") }}
+<span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
+    <sup>ne</sup>: not eligible for winning as it does not substantially improve over the base solver (at least 10 % improvement in PAR2 score)
+</span>
+{{ end }}
 {{ if ($.Scratch.Get "hasNonCompetingSolvers") }}
 <span style="display: block; font-size: 0.7em; line-height: 1.4; color: grey">
     <sup>n</sup>: non-competing solver

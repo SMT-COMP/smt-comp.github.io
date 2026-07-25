@@ -25,7 +25,7 @@
 
 {{ $categories_pretty := .Site.Data.pretty_names.performance }}
 
-<h1>SMT-COMP 2025 Results - {{ $prettyTrack }}</h1>
+<h1>SMT-COMP 2026 Results - {{ $prettyTrack }}</h1>
 
 <p>
   Summary of all competition results for the {{ $prettyTrack }}.
@@ -55,9 +55,13 @@
 
     {{ $ranking := slice }}
     {{ range (index $division $cat) }}
+    {{ if .eligibleForWinning }}
     {{ $ranking = $ranking | append .name }}
+    {{ else if not (strings.HasSuffix .name "-base") }}
+    {{ $ranking = $ranking | append (printf "<span style=\"color:#AAAAAA\">%s</span>" .name ) }}
     {{ end }}
-    <td>{{ delimit $ranking ", " }}</td>
+    {{ end }}
+    <td>{{ delimit $ranking ", " | safeHTML }}</td>
   </tr>
   {{ end }}
 </table>
