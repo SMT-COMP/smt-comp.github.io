@@ -100,8 +100,8 @@ charts-generation:
 
 
 cache:
-	# @echo "🚀 Generating cache"
-	# @poetry run smtcomp create-cache data
+	@echo "🚀 Generating cache"
+	@poetry run smtcomp create-cache data
 
 hugo-server:
 	(cd web; hugo server)
