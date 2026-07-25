@@ -58,7 +58,7 @@
     {{ if .eligibleForWinning }}
     {{ $ranking = $ranking | append .name }}
     {{ else if not (strings.HasSuffix .name "-base") }}
-    {{ $ranking = $ranking | append (printf "<span style=\"color:gray\">%s</span>" .name ) }}
+    {{ $ranking = $ranking | append (printf "<span style=\"color:#AAAAAA\">%s</span>" .name ) }}
     {{ end }}
     {{ end }}
     <td>{{ delimit $ranking ", " | safeHTML }}</td>
