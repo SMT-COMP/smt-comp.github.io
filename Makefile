@@ -81,8 +81,8 @@ results-generation:
 	@poetry run smtcomp export-results-pages data Incremental
 	# @echo "🚀 Generating results to web/content/results for Cloud"
 	# @poetry run smtcomp export-results-pages data Cloud
-	# @echo "🚀 Generating results to web/content/results for Parallel"
-	# @poetry run smtcomp export-results-pages data Parallel
+	@echo "🚀 Generating results to web/content/results for Parallel"
+	@poetry run smtcomp export-results-pages data Parallel
 
 charts-generation:
 	@echo "🚀 Generating results to web/content/results for SingleQuery"
@@ -95,8 +95,8 @@ charts-generation:
 	@poetry run smtcomp generate-website-graphics data Incremental
 	# @echo "🚀 Generating results to web/content/results for Cloud"
 	# @poetry run smtcomp generate-website-graphics data Cloud
-	# @echo "🚀 Generating results to web/content/results for Parallel"
-	# @poetry run smtcomp generate-website-graphics data Parallel
+	@echo "🚀 Generating results to web/content/results for Parallel"
+	@poetry run smtcomp generate-website-graphics data Parallel
 
 
 cache:
